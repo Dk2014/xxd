@@ -1,0 +1,1 @@
+{"action_name":"despair_land_notify_boss_dead","module_name":"despair_land","protocol":[{"name":"camp_type","type":"enum8"},{"name":"ranks","type":"list8","fields":[{"name":"rank","type":"int64"},{"name":"pid","type":"int64"},{"name":"name","type":"text16"}]}]}

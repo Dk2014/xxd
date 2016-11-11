@@ -1,0 +1,1 @@
+{"action_name":"vip_level_total","module_name":"vip","protocol":[{"name":"vip_level_arr","type":"list8","fields":[{"name":"vip_level","type":"int16"},{"name":"total","type":"int32"}]}]}

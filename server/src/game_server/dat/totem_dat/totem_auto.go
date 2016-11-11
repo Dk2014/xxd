@@ -1,0 +1,20 @@
+package totem_dat
+
+
+const( 
+	TOTEM_BAG_SIZE = 36
+	TOTEM_POS_EMPTY = 0
+	TOTEM_MAX_LEVEL = 5
+)
+const( 
+	TOTEM_QUALITY_BLUE = 0
+	TOTEM_QUALITY_PURPLE = 1
+	TOTEM_QUALITY_GOLDEN = 2
+)
+
+
+
+
+
+
+

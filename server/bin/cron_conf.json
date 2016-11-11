@@ -1,0 +1,19 @@
+{
+    "LogDir" : "./cron-log",
+    "XdlogFileDir": "./xdlog",
+    "ServerInfo":[
+        {
+            "Sid" : 92,
+            "Database" : {
+                    "Protocol" : "tcp",
+                    "DBName" : "mobile_xxd_default",
+                    "Host" : "127.0.0.1",
+                    "Port" : 3306,
+                    "User" : "root",
+                    "Password" : ""
+            }
+        }
+    ],
+    "ServerListUrl" : "http://183.60.114.251:8888",
+    "DefaultApp" : "xxd_vn"
+}

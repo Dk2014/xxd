@@ -1,0 +1,909 @@
+2015/09/14 13:35:55 [I] - mem:1440584 goroutine:10 gc:4 pause:1ms
+2015/09/14 13:36:05 [I] - mem:1441192 goroutine:10 gc:0 pause:0ms
+2015/09/14 13:36:15 [I] - mem:1441288 goroutine:10 gc:0 pause:0ms
+2015/09/14 13:36:25 [I] - mem:1441432 goroutine:10 gc:0 pause:0ms
+2015/09/14 13:36:35 [I] - mem:1441528 goroutine:10 gc:0 pause:0ms
+2015/09/14 13:36:45 [I] - mem:1441624 goroutine:11 gc:0 pause:0ms
+2015/09/14 13:36:55 [I] - mem:1505416 goroutine:10 gc:0 pause:0ms
+2015/09/14 13:37:05 [I] - mem:1540456 goroutine:10 gc:0 pause:0ms
+2015/09/14 13:37:15 [I] - mem:1540552 goroutine:10 gc:0 pause:0ms
+2015/09/14 13:37:25 [I] - mem:1540648 goroutine:10 gc:0 pause:0ms
+2015/09/14 13:37:35 [I] - mem:1540744 goroutine:10 gc:0 pause:0ms
+2015/09/14 13:37:45 [I] - mem:1540840 goroutine:10 gc:0 pause:0ms
+2015/09/14 13:37:55 [I] - mem:1551848 goroutine:10 gc:1 pause:0ms
+2015/09/14 13:38:05 [I] - mem:1551992 goroutine:10 gc:0 pause:0ms
+2015/09/14 13:38:15 [I] - mem:1552088 goroutine:10 gc:0 pause:0ms
+2015/09/14 13:38:25 [I] - mem:1552184 goroutine:10 gc:0 pause:0ms
+2015/09/14 13:38:35 [I] - mem:1552280 goroutine:10 gc:0 pause:0ms
+2015/09/14 13:38:45 [I] - mem:1552376 goroutine:10 gc:0 pause:0ms
+2015/09/14 13:38:55 [I] - mem:1601744 goroutine:10 gc:0 pause:0ms
+2015/09/14 13:39:05 [I] - mem:1601888 goroutine:10 gc:0 pause:0ms
+2015/09/14 13:39:15 [I] - mem:1601984 goroutine:10 gc:0 pause:0ms
+2015/09/14 13:39:25 [I] - mem:1602080 goroutine:10 gc:0 pause:0ms
+2015/09/14 13:39:35 [I] - mem:1602176 goroutine:10 gc:0 pause:0ms
+2015/09/14 13:39:45 [I] - mem:1602272 goroutine:10 gc:0 pause:0ms
+2015/09/14 13:39:55 [I] - mem:1582008 goroutine:10 gc:1 pause:0ms
+2015/09/14 13:40:05 [I] - mem:1582104 goroutine:10 gc:0 pause:0ms
+2015/09/14 13:40:15 [I] - mem:1582248 goroutine:10 gc:0 pause:0ms
+2015/09/14 13:40:25 [I] - mem:1582344 goroutine:10 gc:0 pause:0ms
+2015/09/14 13:40:35 [I] - mem:1582440 goroutine:10 gc:0 pause:0ms
+2015/09/14 13:40:45 [I] - mem:1582536 goroutine:11 gc:0 pause:0ms
+2015/09/14 13:40:45 [E] - RPC error
+Error   	= rpc: can't find method RemoteServe.CronGetOnlineCount
+serviceAPI 	= RemoteServe.CronGetOnlineCount
+Args    = &rpc.Args_CronGetOnlineCount{
+    RPCArgTag: rpc.RPCArgTag{
+        ClientId: -2,
+    },
+}
+
+
+
+Result  = &rpc.Reply_CronGetOnlineCount{
+    IosCount: 0,
+    AndroidCount: 0,
+}
+2015/09/14 13:40:55 [I] - mem:1687984 goroutine:11 gc:0 pause:0ms
+2015/09/14 13:41:05 [I] - mem:1688080 goroutine:11 gc:0 pause:0ms
+2015/09/14 13:41:15 [I] - mem:1688176 goroutine:11 gc:0 pause:0ms
+2015/09/14 13:41:25 [I] - mem:1688272 goroutine:11 gc:0 pause:0ms
+2015/09/14 13:41:35 [I] - mem:1688368 goroutine:11 gc:0 pause:0ms
+2015/09/14 13:41:45 [I] - mem:1688464 goroutine:11 gc:0 pause:0ms
+2015/09/14 13:41:55 [I] - mem:1612816 goroutine:11 gc:2 pause:2ms
+2015/09/14 13:42:05 [I] - mem:1612912 goroutine:11 gc:0 pause:0ms
+2015/09/14 13:42:15 [I] - mem:1613008 goroutine:11 gc:0 pause:0ms
+2015/09/14 13:42:25 [I] - mem:1613200 goroutine:11 gc:0 pause:0ms
+2015/09/14 13:42:35 [I] - mem:1613296 goroutine:11 gc:0 pause:0ms
+2015/09/14 13:42:45 [I] - mem:1613392 goroutine:11 gc:0 pause:0ms
+2015/09/14 13:42:55 [I] - mem:1648520 goroutine:11 gc:0 pause:0ms
+2015/09/14 13:43:05 [I] - mem:1648616 goroutine:11 gc:0 pause:0ms
+2015/09/14 13:43:15 [I] - mem:1648712 goroutine:11 gc:0 pause:0ms
+2015/09/14 13:43:25 [I] - mem:1648808 goroutine:11 gc:0 pause:0ms
+2015/09/14 13:43:35 [I] - mem:1648952 goroutine:11 gc:0 pause:0ms
+2015/09/14 13:43:45 [I] - mem:1649048 goroutine:11 gc:0 pause:0ms
+2015/09/14 13:43:55 [I] - mem:1615024 goroutine:11 gc:1 pause:0ms
+2015/09/14 13:44:05 [I] - mem:1615168 goroutine:11 gc:0 pause:0ms
+2015/09/14 13:44:15 [I] - mem:1615264 goroutine:11 gc:0 pause:0ms
+2015/09/14 13:44:25 [I] - mem:1615360 goroutine:11 gc:0 pause:0ms
+2015/09/14 13:44:35 [I] - mem:1615504 goroutine:11 gc:0 pause:0ms
+2015/09/14 13:44:45 [I] - mem:1615600 goroutine:11 gc:0 pause:0ms
+2015/09/14 13:44:55 [I] - mem:1649144 goroutine:11 gc:0 pause:0ms
+2015/09/14 13:45:05 [I] - mem:1649240 goroutine:11 gc:0 pause:0ms
+2015/09/14 13:45:15 [I] - mem:1649336 goroutine:11 gc:0 pause:0ms
+2015/09/14 13:45:25 [I] - mem:1649432 goroutine:11 gc:0 pause:0ms
+2015/09/14 13:45:35 [I] - mem:1649576 goroutine:11 gc:0 pause:0ms
+2015/09/14 13:45:45 [I] - mem:1649672 goroutine:11 gc:0 pause:0ms
+2015/09/14 13:45:45 [E] - RPC error
+Error   	= rpc: can't find method RemoteServe.CronGetOnlineCount
+serviceAPI 	= RemoteServe.CronGetOnlineCount
+Args    = &rpc.Args_CronGetOnlineCount{
+    RPCArgTag: rpc.RPCArgTag{
+        ClientId: -2,
+    },
+}
+
+
+
+Result  = &rpc.Reply_CronGetOnlineCount{
+    IosCount: 0,
+    AndroidCount: 0,
+}
+2015/09/14 13:45:55 [I] - mem:1614960 goroutine:11 gc:2 pause:0ms
+2015/09/14 13:46:05 [I] - mem:1615104 goroutine:11 gc:0 pause:0ms
+2015/09/14 13:46:15 [I] - mem:1615200 goroutine:11 gc:0 pause:0ms
+2015/09/14 13:46:25 [I] - mem:1615296 goroutine:11 gc:0 pause:0ms
+2015/09/14 13:46:35 [I] - mem:1615392 goroutine:11 gc:0 pause:0ms
+2015/09/14 13:46:45 [I] - mem:1615488 goroutine:11 gc:0 pause:0ms
+2015/09/14 13:46:55 [I] - mem:1648792 goroutine:11 gc:0 pause:0ms
+2015/09/14 13:47:05 [I] - mem:1648888 goroutine:11 gc:0 pause:0ms
+2015/09/14 13:47:15 [I] - mem:1648984 goroutine:11 gc:0 pause:0ms
+2015/09/14 13:47:25 [I] - mem:1649080 goroutine:11 gc:0 pause:0ms
+2015/09/14 13:47:35 [I] - mem:1649176 goroutine:11 gc:0 pause:0ms
+2015/09/14 13:47:45 [I] - mem:1649272 goroutine:11 gc:0 pause:0ms
+2015/09/14 13:47:55 [I] - mem:1624872 goroutine:11 gc:1 pause:0ms
+2015/09/14 13:48:05 [I] - mem:1625064 goroutine:11 gc:0 pause:0ms
+2015/09/14 13:48:15 [I] - mem:1625160 goroutine:11 gc:0 pause:0ms
+2015/09/14 13:48:25 [I] - mem:1625256 goroutine:11 gc:0 pause:0ms
+2015/09/14 13:48:35 [I] - mem:1625352 goroutine:11 gc:0 pause:0ms
+2015/09/14 13:48:45 [I] - mem:1625448 goroutine:11 gc:0 pause:0ms
+2015/09/14 13:48:55 [I] - mem:1658800 goroutine:11 gc:0 pause:0ms
+2015/09/14 13:49:05 [I] - mem:1658896 goroutine:11 gc:0 pause:0ms
+2015/09/14 13:49:15 [I] - mem:1658992 goroutine:11 gc:0 pause:0ms
+2015/09/14 13:49:25 [I] - mem:1659088 goroutine:11 gc:0 pause:0ms
+2015/09/14 13:49:35 [I] - mem:1659184 goroutine:11 gc:0 pause:0ms
+2015/09/14 13:49:45 [I] - mem:1659280 goroutine:11 gc:0 pause:0ms
+2015/09/14 13:49:55 [I] - mem:1614720 goroutine:11 gc:1 pause:0ms
+2015/09/14 13:50:05 [I] - mem:1614816 goroutine:11 gc:0 pause:0ms
+2015/09/14 13:50:15 [I] - mem:1614912 goroutine:11 gc:0 pause:0ms
+2015/09/14 13:50:25 [I] - mem:1615008 goroutine:11 gc:0 pause:0ms
+2015/09/14 13:50:35 [I] - mem:1615104 goroutine:11 gc:0 pause:0ms
+2015/09/14 13:50:45 [I] - mem:1615200 goroutine:11 gc:0 pause:0ms
+2015/09/14 13:50:45 [E] - RPC error
+Error   	= rpc: can't find method RemoteServe.CronGetOnlineCount
+serviceAPI 	= RemoteServe.CronGetOnlineCount
+Args    = &rpc.Args_CronGetOnlineCount{
+    RPCArgTag: rpc.RPCArgTag{
+        ClientId: -2,
+    },
+}
+
+
+
+Result  = &rpc.Reply_CronGetOnlineCount{
+    IosCount: 0,
+    AndroidCount: 0,
+}
+2015/09/14 13:50:55 [I] - mem:1657376 goroutine:11 gc:0 pause:0ms
+2015/09/14 13:51:05 [I] - mem:1657472 goroutine:11 gc:0 pause:0ms
+2015/09/14 13:51:15 [I] - mem:1657568 goroutine:11 gc:0 pause:0ms
+2015/09/14 13:51:25 [I] - mem:1657664 goroutine:11 gc:0 pause:0ms
+2015/09/14 13:51:35 [I] - mem:1657760 goroutine:11 gc:0 pause:0ms
+2015/09/14 13:51:45 [I] - mem:1657856 goroutine:11 gc:0 pause:0ms
+2015/09/14 13:51:55 [I] - mem:1628128 goroutine:11 gc:2 pause:0ms
+2015/09/14 13:52:05 [I] - mem:1628224 goroutine:11 gc:0 pause:0ms
+2015/09/14 13:52:15 [I] - mem:1628320 goroutine:11 gc:0 pause:0ms
+2015/09/14 13:52:25 [I] - mem:1628416 goroutine:11 gc:0 pause:0ms
+2015/09/14 13:52:35 [I] - mem:1628512 goroutine:11 gc:0 pause:0ms
+2015/09/14 13:52:45 [I] - mem:1628656 goroutine:11 gc:0 pause:0ms
+2015/09/14 13:52:55 [I] - mem:1670104 goroutine:11 gc:0 pause:0ms
+2015/09/14 13:53:05 [I] - mem:1670200 goroutine:11 gc:0 pause:0ms
+2015/09/14 13:53:15 [I] - mem:1670296 goroutine:11 gc:0 pause:0ms
+2015/09/14 13:53:25 [I] - mem:1670392 goroutine:11 gc:0 pause:0ms
+2015/09/14 13:53:35 [I] - mem:1670488 goroutine:11 gc:0 pause:0ms
+2015/09/14 13:53:45 [I] - mem:1670584 goroutine:11 gc:0 pause:0ms
+2015/09/14 13:53:55 [I] - mem:1624160 goroutine:11 gc:1 pause:0ms
+2015/09/14 13:54:05 [I] - mem:1624304 goroutine:11 gc:0 pause:0ms
+2015/09/14 13:54:15 [I] - mem:1624448 goroutine:11 gc:0 pause:0ms
+2015/09/14 13:54:25 [I] - mem:1624544 goroutine:11 gc:0 pause:0ms
+2015/09/14 13:54:35 [I] - mem:1624640 goroutine:11 gc:0 pause:0ms
+2015/09/14 13:54:45 [I] - mem:1624736 goroutine:11 gc:0 pause:0ms
+2015/09/14 13:54:55 [I] - mem:1658280 goroutine:11 gc:0 pause:0ms
+2015/09/14 13:55:05 [I] - mem:1658424 goroutine:11 gc:0 pause:0ms
+2015/09/14 13:55:15 [I] - mem:1658520 goroutine:11 gc:0 pause:0ms
+2015/09/14 13:55:25 [I] - mem:1658616 goroutine:11 gc:0 pause:0ms
+2015/09/14 13:55:35 [I] - mem:1658712 goroutine:11 gc:0 pause:0ms
+2015/09/14 13:55:45 [I] - mem:1658808 goroutine:11 gc:0 pause:0ms
+2015/09/14 13:55:45 [E] - RPC error
+Error   	= rpc: can't find method RemoteServe.CronGetOnlineCount
+serviceAPI 	= RemoteServe.CronGetOnlineCount
+Args    = &rpc.Args_CronGetOnlineCount{
+    RPCArgTag: rpc.RPCArgTag{
+        ClientId: -2,
+    },
+}
+
+
+
+Result  = &rpc.Reply_CronGetOnlineCount{
+    IosCount: 0,
+    AndroidCount: 0,
+}
+2015/09/14 13:55:55 [I] - mem:1617472 goroutine:11 gc:2 pause:0ms
+2015/09/14 13:56:05 [I] - mem:1617664 goroutine:11 gc:0 pause:0ms
+2015/09/14 13:56:15 [I] - mem:1617760 goroutine:11 gc:0 pause:0ms
+2015/09/14 13:56:25 [I] - mem:1617856 goroutine:11 gc:0 pause:0ms
+2015/09/14 13:56:35 [I] - mem:1617952 goroutine:11 gc:0 pause:0ms
+2015/09/14 13:56:45 [I] - mem:1618048 goroutine:11 gc:0 pause:0ms
+2015/09/14 13:56:55 [I] - mem:1651928 goroutine:11 gc:0 pause:0ms
+2015/09/14 13:57:05 [I] - mem:1652024 goroutine:11 gc:0 pause:0ms
+2015/09/14 13:57:15 [I] - mem:1652120 goroutine:11 gc:0 pause:0ms
+2015/09/14 13:57:25 [I] - mem:1652216 goroutine:11 gc:0 pause:0ms
+2015/09/14 13:57:35 [I] - mem:1652312 goroutine:11 gc:0 pause:0ms
+2015/09/14 13:57:45 [I] - mem:1652408 goroutine:11 gc:0 pause:0ms
+2015/09/14 13:57:55 [I] - mem:1630576 goroutine:11 gc:1 pause:0ms
+2015/09/14 13:58:05 [I] - mem:1630720 goroutine:11 gc:0 pause:0ms
+2015/09/14 13:58:15 [I] - mem:1630816 goroutine:11 gc:0 pause:0ms
+2015/09/14 13:58:25 [I] - mem:1630912 goroutine:11 gc:0 pause:0ms
+2015/09/14 13:58:35 [I] - mem:1631008 goroutine:11 gc:0 pause:0ms
+2015/09/14 13:58:45 [I] - mem:1631104 goroutine:11 gc:0 pause:0ms
+2015/09/14 13:58:55 [I] - mem:1665224 goroutine:11 gc:0 pause:0ms
+2015/09/14 13:59:05 [I] - mem:1665320 goroutine:11 gc:0 pause:0ms
+2015/09/14 13:59:15 [I] - mem:1665512 goroutine:11 gc:0 pause:0ms
+2015/09/14 13:59:25 [I] - mem:1665608 goroutine:11 gc:0 pause:0ms
+2015/09/14 13:59:35 [I] - mem:1665704 goroutine:11 gc:0 pause:0ms
+2015/09/14 13:59:45 [I] - mem:1665800 goroutine:11 gc:0 pause:0ms
+2015/09/14 13:59:55 [I] - mem:1631448 goroutine:11 gc:1 pause:0ms
+2015/09/14 14:00:05 [I] - mem:1631640 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:00:15 [I] - mem:1631736 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:00:25 [I] - mem:1631832 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:00:35 [I] - mem:1631928 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:00:45 [I] - mem:1632024 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:00:45 [E] - RPC error
+Error   	= rpc: can't find method RemoteServe.CronGetOnlineCount
+serviceAPI 	= RemoteServe.CronGetOnlineCount
+Args    = &rpc.Args_CronGetOnlineCount{
+    RPCArgTag: rpc.RPCArgTag{
+        ClientId: -2,
+    },
+}
+
+
+
+Result  = &rpc.Reply_CronGetOnlineCount{
+    IosCount: 0,
+    AndroidCount: 0,
+}
+2015/09/14 14:00:55 [I] - mem:1680072 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:01:05 [I] - mem:1680168 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:01:15 [I] - mem:1680264 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:01:25 [I] - mem:1680360 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:01:35 [I] - mem:1680456 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:01:45 [I] - mem:1680552 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:01:55 [I] - mem:1619024 goroutine:11 gc:2 pause:0ms
+2015/09/14 14:02:05 [I] - mem:1619120 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:02:15 [I] - mem:1619216 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:02:25 [I] - mem:1619360 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:02:35 [I] - mem:1619504 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:02:45 [I] - mem:1619600 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:02:55 [I] - mem:1653048 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:03:05 [I] - mem:1653144 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:03:15 [I] - mem:1653240 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:03:25 [I] - mem:1653336 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:03:35 [I] - mem:1653432 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:03:45 [I] - mem:1653528 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:03:55 [I] - mem:1630272 goroutine:11 gc:1 pause:0ms
+2015/09/14 14:04:05 [I] - mem:1630416 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:04:15 [I] - mem:1630512 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:04:25 [I] - mem:1630608 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:04:35 [I] - mem:1630704 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:04:45 [I] - mem:1630800 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:04:55 [I] - mem:1663992 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:05:05 [I] - mem:1664088 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:05:15 [I] - mem:1664184 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:05:25 [I] - mem:1664280 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:05:35 [I] - mem:1664376 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:05:45 [I] - mem:1664520 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:05:45 [E] - RPC error
+Error   	= rpc: can't find method RemoteServe.CronGetOnlineCount
+serviceAPI 	= RemoteServe.CronGetOnlineCount
+Args    = &rpc.Args_CronGetOnlineCount{
+    RPCArgTag: rpc.RPCArgTag{
+        ClientId: -2,
+    },
+}
+
+
+
+Result  = &rpc.Reply_CronGetOnlineCount{
+    IosCount: 0,
+    AndroidCount: 0,
+}
+2015/09/14 14:05:55 [I] - mem:1619088 goroutine:11 gc:2 pause:0ms
+2015/09/14 14:06:05 [I] - mem:1619184 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:06:15 [I] - mem:1619280 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:06:25 [I] - mem:1619376 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:06:35 [I] - mem:1619520 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:06:45 [I] - mem:1619616 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:06:55 [I] - mem:1653096 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:07:05 [I] - mem:1653192 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:07:15 [I] - mem:1653288 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:07:25 [I] - mem:1653384 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:07:35 [I] - mem:1653480 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:07:45 [I] - mem:1653576 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:07:55 [I] - mem:1621616 goroutine:11 gc:1 pause:0ms
+2015/09/14 14:08:05 [I] - mem:1621760 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:08:15 [I] - mem:1621856 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:08:25 [I] - mem:1621952 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:08:35 [I] - mem:1622048 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:08:45 [I] - mem:1622144 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:08:55 [I] - mem:1655208 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:09:05 [I] - mem:1655304 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:09:15 [I] - mem:1655400 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:09:25 [I] - mem:1655496 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:09:35 [I] - mem:1655592 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:09:45 [I] - mem:1655688 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:09:55 [I] - mem:1655424 goroutine:11 gc:1 pause:0ms
+2015/09/14 14:10:05 [I] - mem:1655568 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:10:15 [I] - mem:1655664 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:10:25 [I] - mem:1655760 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:10:35 [I] - mem:1655856 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:10:45 [I] - mem:1655952 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:10:45 [E] - RPC error
+Error   	= rpc: can't find method RemoteServe.CronGetOnlineCount
+serviceAPI 	= RemoteServe.CronGetOnlineCount
+Args    = &rpc.Args_CronGetOnlineCount{
+    RPCArgTag: rpc.RPCArgTag{
+        ClientId: -2,
+    },
+}
+
+
+
+Result  = &rpc.Reply_CronGetOnlineCount{
+    IosCount: 0,
+    AndroidCount: 0,
+}
+2015/09/14 14:10:55 [I] - mem:1694368 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:11:05 [I] - mem:1694464 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:11:15 [I] - mem:1694560 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:11:25 [I] - mem:1694704 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:11:35 [I] - mem:1694800 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:11:45 [I] - mem:1694896 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:11:55 [I] - mem:1653712 goroutine:11 gc:2 pause:0ms
+2015/09/14 14:12:05 [I] - mem:1653808 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:12:15 [I] - mem:1653904 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:12:25 [I] - mem:1654000 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:12:35 [I] - mem:1654096 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:12:45 [I] - mem:1654240 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:12:55 [I] - mem:1687672 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:13:05 [I] - mem:1687768 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:13:15 [I] - mem:1687864 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:13:25 [I] - mem:1687960 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:13:35 [I] - mem:1688056 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:13:45 [I] - mem:1688152 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:13:55 [I] - mem:1655712 goroutine:11 gc:1 pause:0ms
+2015/09/14 14:14:05 [I] - mem:1655856 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:14:15 [I] - mem:1656000 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:14:25 [I] - mem:1656096 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:14:35 [I] - mem:1656192 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:14:45 [I] - mem:1656288 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:14:55 [I] - mem:1689832 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:15:05 [I] - mem:1689976 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:15:15 [I] - mem:1690120 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:15:25 [I] - mem:1690216 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:15:35 [I] - mem:1690312 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:15:45 [I] - mem:1690408 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:15:45 [E] - RPC error
+Error   	= rpc: can't find method RemoteServe.CronGetOnlineCount
+serviceAPI 	= RemoteServe.CronGetOnlineCount
+Args    = &rpc.Args_CronGetOnlineCount{
+    RPCArgTag: rpc.RPCArgTag{
+        ClientId: -2,
+    },
+}
+
+
+
+Result  = &rpc.Reply_CronGetOnlineCount{
+    IosCount: 0,
+    AndroidCount: 0,
+}
+2015/09/14 14:15:55 [I] - mem:1655728 goroutine:11 gc:2 pause:0ms
+2015/09/14 14:16:05 [I] - mem:1655872 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:16:15 [I] - mem:1656016 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:16:25 [I] - mem:1656112 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:16:35 [I] - mem:1656208 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:16:45 [I] - mem:1656400 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:16:55 [I] - mem:1690168 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:17:05 [I] - mem:1690312 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:17:15 [I] - mem:1690408 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:17:25 [I] - mem:1690504 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:17:35 [I] - mem:1690600 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:17:45 [I] - mem:1690696 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:17:55 [I] - mem:1657936 goroutine:11 gc:1 pause:0ms
+2015/09/14 14:18:05 [I] - mem:1658032 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:18:15 [I] - mem:1658128 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:18:25 [I] - mem:1658224 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:18:35 [I] - mem:1658320 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:18:45 [I] - mem:1658512 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:18:55 [I] - mem:1691816 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:19:05 [I] - mem:1691912 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:19:15 [I] - mem:1692008 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:19:25 [I] - mem:1692104 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:19:35 [I] - mem:1692200 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:19:45 [I] - mem:1692296 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:19:55 [I] - mem:1666352 goroutine:11 gc:1 pause:0ms
+2015/09/14 14:20:05 [I] - mem:1666496 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:20:15 [I] - mem:1666592 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:20:25 [I] - mem:1666736 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:20:35 [I] - mem:1666832 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:20:45 [I] - mem:1666976 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:20:45 [E] - RPC error
+Error   	= rpc: can't find method RemoteServe.CronGetOnlineCount
+serviceAPI 	= RemoteServe.CronGetOnlineCount
+Args    = &rpc.Args_CronGetOnlineCount{
+    RPCArgTag: rpc.RPCArgTag{
+        ClientId: -2,
+    },
+}
+
+
+
+Result  = &rpc.Reply_CronGetOnlineCount{
+    IosCount: 0,
+    AndroidCount: 0,
+}
+2015/09/14 14:20:55 [I] - mem:1706176 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:21:05 [I] - mem:1706272 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:21:15 [I] - mem:1706368 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:21:25 [I] - mem:1706464 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:21:35 [I] - mem:1706560 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:21:45 [I] - mem:1706656 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:21:55 [I] - mem:1663760 goroutine:11 gc:2 pause:0ms
+2015/09/14 14:22:05 [I] - mem:1663904 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:22:15 [I] - mem:1664000 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:22:25 [I] - mem:1664096 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:22:35 [I] - mem:1664192 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:22:45 [I] - mem:1664288 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:22:55 [I] - mem:1697640 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:23:05 [I] - mem:1697784 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:23:15 [I] - mem:1697880 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:23:25 [I] - mem:1697976 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:23:35 [I] - mem:1698072 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:23:45 [I] - mem:1698168 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:23:55 [I] - mem:1664576 goroutine:11 gc:1 pause:0ms
+2015/09/14 14:24:05 [I] - mem:1664672 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:24:15 [I] - mem:1664816 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:24:25 [I] - mem:1664912 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:24:35 [I] - mem:1665008 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:24:45 [I] - mem:1665104 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:24:55 [I] - mem:1698568 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:25:05 [I] - mem:1698664 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:25:15 [I] - mem:1698760 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:25:25 [I] - mem:1698856 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:25:35 [I] - mem:1698952 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:25:45 [I] - mem:1699048 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:25:45 [E] - RPC error
+Error   	= rpc: can't find method RemoteServe.CronGetOnlineCount
+serviceAPI 	= RemoteServe.CronGetOnlineCount
+Args    = &rpc.Args_CronGetOnlineCount{
+    RPCArgTag: rpc.RPCArgTag{
+        ClientId: -2,
+    },
+}
+
+
+
+Result  = &rpc.Reply_CronGetOnlineCount{
+    IosCount: 0,
+    AndroidCount: 0,
+}
+2015/09/14 14:25:55 [I] - mem:1665256 goroutine:11 gc:2 pause:0ms
+2015/09/14 14:26:05 [I] - mem:1665400 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:26:15 [I] - mem:1665496 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:26:25 [I] - mem:1665592 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:26:35 [I] - mem:1665688 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:26:45 [I] - mem:1665784 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:26:55 [I] - mem:1699376 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:27:05 [I] - mem:1699472 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:27:15 [I] - mem:1699568 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:27:25 [I] - mem:1699664 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:27:35 [I] - mem:1699760 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:27:45 [I] - mem:1699856 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:27:55 [I] - mem:1654816 goroutine:11 gc:1 pause:0ms
+2015/09/14 14:28:05 [I] - mem:1654960 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:28:15 [I] - mem:1655056 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:28:25 [I] - mem:1655152 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:28:35 [I] - mem:1655248 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:28:45 [I] - mem:1655344 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:28:55 [I] - mem:1688696 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:29:05 [I] - mem:1688792 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:29:15 [I] - mem:1688888 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:29:25 [I] - mem:1688984 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:29:35 [I] - mem:1689080 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:29:45 [I] - mem:1689176 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:29:55 [I] - mem:1667464 goroutine:11 gc:1 pause:0ms
+2015/09/14 14:30:05 [I] - mem:1667656 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:30:15 [I] - mem:1667752 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:30:25 [I] - mem:1667848 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:30:35 [I] - mem:1667944 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:30:45 [I] - mem:1668040 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:30:45 [E] - RPC error
+Error   	= rpc: can't find method RemoteServe.CronGetOnlineCount
+serviceAPI 	= RemoteServe.CronGetOnlineCount
+Args    = &rpc.Args_CronGetOnlineCount{
+    RPCArgTag: rpc.RPCArgTag{
+        ClientId: -2,
+    },
+}
+
+
+
+Result  = &rpc.Reply_CronGetOnlineCount{
+    IosCount: 0,
+    AndroidCount: 0,
+}
+2015/09/14 14:30:55 [I] - mem:1714456 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:31:05 [I] - mem:1714552 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:31:15 [I] - mem:1714648 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:31:25 [I] - mem:1714744 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:31:35 [I] - mem:1714840 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:31:45 [I] - mem:1714936 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:31:55 [I] - mem:1654688 goroutine:11 gc:2 pause:0ms
+2015/09/14 14:32:05 [I] - mem:1654832 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:32:15 [I] - mem:1654928 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:32:25 [I] - mem:1655024 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:32:35 [I] - mem:1655120 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:32:45 [I] - mem:1655216 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:32:55 [I] - mem:1688648 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:33:05 [I] - mem:1688840 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:33:15 [I] - mem:1688936 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:33:25 [I] - mem:1689032 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:33:35 [I] - mem:1689128 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:33:45 [I] - mem:1689224 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:33:55 [I] - mem:1657008 goroutine:11 gc:1 pause:0ms
+2015/09/14 14:34:05 [I] - mem:1657152 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:34:15 [I] - mem:1657248 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:34:25 [I] - mem:1657344 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:34:35 [I] - mem:1657440 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:34:45 [I] - mem:1657536 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:34:55 [I] - mem:1694712 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:35:05 [I] - mem:1694808 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:35:15 [I] - mem:1694904 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:35:25 [I] - mem:1695000 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:35:35 [I] - mem:1695144 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:35:45 [I] - mem:1695240 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:35:45 [E] - RPC error
+Error   	= rpc: can't find method RemoteServe.CronGetOnlineCount
+serviceAPI 	= RemoteServe.CronGetOnlineCount
+Args    = &rpc.Args_CronGetOnlineCount{
+    RPCArgTag: rpc.RPCArgTag{
+        ClientId: -2,
+    },
+}
+
+
+
+Result  = &rpc.Reply_CronGetOnlineCount{
+    IosCount: 0,
+    AndroidCount: 0,
+}
+2015/09/14 14:35:55 [I] - mem:1665416 goroutine:11 gc:2 pause:0ms
+2015/09/14 14:36:05 [I] - mem:1665560 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:36:15 [I] - mem:1665656 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:36:25 [I] - mem:1665800 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:36:35 [I] - mem:1665944 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:36:45 [I] - mem:1666040 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:36:55 [I] - mem:1699648 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:37:05 [I] - mem:1699744 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:37:15 [I] - mem:1699840 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:37:25 [I] - mem:1699936 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:37:35 [I] - mem:1700032 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:37:45 [I] - mem:1700128 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:37:55 [I] - mem:1667432 goroutine:11 gc:1 pause:0ms
+2015/09/14 14:38:05 [I] - mem:1667576 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:38:15 [I] - mem:1667672 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:38:25 [I] - mem:1667768 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:38:35 [I] - mem:1667864 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:38:45 [I] - mem:1667960 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:38:55 [I] - mem:1709360 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:39:05 [I] - mem:1709552 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:39:15 [I] - mem:1709648 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:39:25 [I] - mem:1709744 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:39:35 [I] - mem:1709840 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:39:45 [I] - mem:1709936 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:39:55 [I] - mem:1665520 goroutine:11 gc:1 pause:0ms
+2015/09/14 14:40:05 [I] - mem:1665664 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:40:15 [I] - mem:1665760 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:40:25 [I] - mem:1665856 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:40:35 [I] - mem:1665952 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:40:45 [I] - mem:1666048 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:40:45 [E] - RPC error
+Error   	= rpc: can't find method RemoteServe.CronGetOnlineCount
+serviceAPI 	= RemoteServe.CronGetOnlineCount
+Args    = &rpc.Args_CronGetOnlineCount{
+    RPCArgTag: rpc.RPCArgTag{
+        ClientId: -2,
+    },
+}
+
+
+
+Result  = &rpc.Reply_CronGetOnlineCount{
+    IosCount: 0,
+    AndroidCount: 0,
+}
+2015/09/14 14:40:55 [I] - mem:1704960 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:41:05 [I] - mem:1705056 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:41:15 [I] - mem:1705152 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:41:25 [I] - mem:1705248 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:41:35 [I] - mem:1705344 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:41:45 [I] - mem:1705440 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:41:55 [I] - mem:1667480 goroutine:11 gc:2 pause:0ms
+2015/09/14 14:42:05 [I] - mem:1667624 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:42:15 [I] - mem:1667720 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:42:25 [I] - mem:1667816 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:42:35 [I] - mem:1667912 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:42:45 [I] - mem:1668104 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:42:55 [I] - mem:1701856 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:43:05 [I] - mem:1702000 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:43:15 [I] - mem:1702096 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:43:25 [I] - mem:1702192 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:43:35 [I] - mem:1702288 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:43:45 [I] - mem:1702384 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:43:55 [I] - mem:1657984 goroutine:11 gc:1 pause:0ms
+2015/09/14 14:44:05 [I] - mem:1658128 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:44:15 [I] - mem:1658224 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:44:25 [I] - mem:1658320 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:44:35 [I] - mem:1658416 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:44:45 [I] - mem:1658512 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:44:55 [I] - mem:1691784 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:45:05 [I] - mem:1691976 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:45:15 [I] - mem:1692072 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:45:25 [I] - mem:1692168 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:45:35 [I] - mem:1692264 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:45:45 [I] - mem:1692360 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:45:45 [E] - RPC error
+Error   	= rpc: can't find method RemoteServe.CronGetOnlineCount
+serviceAPI 	= RemoteServe.CronGetOnlineCount
+Args    = &rpc.Args_CronGetOnlineCount{
+    RPCArgTag: rpc.RPCArgTag{
+        ClientId: -2,
+    },
+}
+
+
+
+Result  = &rpc.Reply_CronGetOnlineCount{
+    IosCount: 0,
+    AndroidCount: 0,
+}
+2015/09/14 14:45:55 [I] - mem:1655760 goroutine:11 gc:2 pause:0ms
+2015/09/14 14:46:05 [I] - mem:1655856 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:46:15 [I] - mem:1655952 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:46:25 [I] - mem:1656048 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:46:35 [I] - mem:1656144 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:46:45 [I] - mem:1656240 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:46:55 [I] - mem:1689528 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:47:05 [I] - mem:1689672 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:47:15 [I] - mem:1689768 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:47:25 [I] - mem:1689864 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:47:35 [I] - mem:1690008 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:47:45 [I] - mem:1690104 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:47:55 [I] - mem:1658704 goroutine:11 gc:1 pause:0ms
+2015/09/14 14:48:05 [I] - mem:1658896 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:48:15 [I] - mem:1658992 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:48:25 [I] - mem:1659088 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:48:35 [I] - mem:1659184 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:48:45 [I] - mem:1659280 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:48:55 [I] - mem:1692408 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:49:05 [I] - mem:1692504 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:49:15 [I] - mem:1692600 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:49:25 [I] - mem:1692696 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:49:35 [I] - mem:1692792 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:49:45 [I] - mem:1692888 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:49:55 [I] - mem:1664616 goroutine:11 gc:1 pause:0ms
+2015/09/14 14:50:05 [I] - mem:1664808 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:50:15 [I] - mem:1664904 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:50:25 [I] - mem:1665000 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:50:35 [I] - mem:1665096 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:50:45 [I] - mem:1665192 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:50:45 [E] - RPC error
+Error   	= rpc: can't find method RemoteServe.CronGetOnlineCount
+serviceAPI 	= RemoteServe.CronGetOnlineCount
+Args    = &rpc.Args_CronGetOnlineCount{
+    RPCArgTag: rpc.RPCArgTag{
+        ClientId: -2,
+    },
+}
+
+
+
+Result  = &rpc.Reply_CronGetOnlineCount{
+    IosCount: 0,
+    AndroidCount: 0,
+}
+2015/09/14 14:50:55 [I] - mem:1715576 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:51:05 [I] - mem:1715672 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:51:15 [I] - mem:1715768 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:51:25 [I] - mem:1715864 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:51:35 [I] - mem:1715960 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:51:45 [I] - mem:1716056 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:51:55 [I] - mem:1655696 goroutine:11 gc:2 pause:0ms
+2015/09/14 14:52:05 [I] - mem:1655888 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:52:15 [I] - mem:1655984 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:52:25 [I] - mem:1656080 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:52:35 [I] - mem:1656224 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:52:45 [I] - mem:1656320 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:52:55 [I] - mem:1689784 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:53:05 [I] - mem:1689880 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:53:15 [I] - mem:1689976 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:53:25 [I] - mem:1690072 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:53:35 [I] - mem:1690168 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:53:45 [I] - mem:1690264 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:53:55 [I] - mem:1667496 goroutine:11 gc:1 pause:0ms
+2015/09/14 14:54:05 [I] - mem:1667592 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:54:15 [I] - mem:1667688 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:54:25 [I] - mem:1667784 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:54:35 [I] - mem:1667928 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:54:45 [I] - mem:1668024 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:54:55 [I] - mem:1701008 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:55:05 [I] - mem:1701104 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:55:15 [I] - mem:1701200 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:55:25 [I] - mem:1701296 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:55:35 [I] - mem:1701392 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:55:45 [I] - mem:1701488 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:55:45 [E] - RPC error
+Error   	= rpc: can't find method RemoteServe.CronGetOnlineCount
+serviceAPI 	= RemoteServe.CronGetOnlineCount
+Args    = &rpc.Args_CronGetOnlineCount{
+    RPCArgTag: rpc.RPCArgTag{
+        ClientId: -2,
+    },
+}
+
+
+
+Result  = &rpc.Reply_CronGetOnlineCount{
+    IosCount: 0,
+    AndroidCount: 0,
+}
+2015/09/14 14:55:55 [I] - mem:1654368 goroutine:11 gc:2 pause:0ms
+2015/09/14 14:56:05 [I] - mem:1654512 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:56:15 [I] - mem:1654608 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:56:25 [I] - mem:1654704 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:56:35 [I] - mem:1654800 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:56:45 [I] - mem:1654896 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:56:55 [I] - mem:1688104 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:57:05 [I] - mem:1688200 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:57:15 [I] - mem:1688296 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:57:25 [I] - mem:1688392 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:57:35 [I] - mem:1688488 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:57:45 [I] - mem:1688584 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:57:55 [I] - mem:1664312 goroutine:11 gc:1 pause:0ms
+2015/09/14 14:58:05 [I] - mem:1664504 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:58:15 [I] - mem:1664600 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:58:25 [I] - mem:1664696 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:58:35 [I] - mem:1664792 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:58:45 [I] - mem:1664888 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:58:55 [I] - mem:1698160 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:59:05 [I] - mem:1698256 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:59:15 [I] - mem:1698352 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:59:25 [I] - mem:1698448 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:59:35 [I] - mem:1698544 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:59:45 [I] - mem:1698640 goroutine:11 gc:0 pause:0ms
+2015/09/14 14:59:55 [I] - mem:1652448 goroutine:11 gc:1 pause:0ms
+2015/09/14 15:00:05 [I] - mem:1652592 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:00:15 [I] - mem:1652688 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:00:25 [I] - mem:1652784 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:00:35 [I] - mem:1652880 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:00:45 [I] - mem:1652976 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:00:45 [E] - RPC error
+Error   	= rpc: can't find method RemoteServe.CronGetOnlineCount
+serviceAPI 	= RemoteServe.CronGetOnlineCount
+Args    = &rpc.Args_CronGetOnlineCount{
+    RPCArgTag: rpc.RPCArgTag{
+        ClientId: -2,
+    },
+}
+
+
+
+Result  = &rpc.Reply_CronGetOnlineCount{
+    IosCount: 0,
+    AndroidCount: 0,
+}
+2015/09/14 15:00:55 [I] - mem:1693616 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:01:05 [I] - mem:1693712 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:01:15 [I] - mem:1693808 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:01:25 [I] - mem:1693904 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:01:35 [I] - mem:1694000 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:01:45 [I] - mem:1694096 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:01:55 [I] - mem:1666096 goroutine:11 gc:2 pause:0ms
+2015/09/14 15:02:05 [I] - mem:1666192 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:02:15 [I] - mem:1666288 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:02:25 [I] - mem:1666384 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:02:35 [I] - mem:1666576 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:02:45 [I] - mem:1666672 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:02:55 [I] - mem:1700264 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:03:05 [I] - mem:1700360 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:03:15 [I] - mem:1700456 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:03:25 [I] - mem:1700552 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:03:35 [I] - mem:1700648 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:03:45 [I] - mem:1700744 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:03:55 [I] - mem:1664864 goroutine:11 gc:1 pause:0ms
+2015/09/14 15:04:05 [I] - mem:1665056 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:04:15 [I] - mem:1665152 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:04:25 [I] - mem:1665248 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:04:35 [I] - mem:1665344 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:04:45 [I] - mem:1665440 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:04:55 [I] - mem:1698616 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:05:05 [I] - mem:1698712 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:05:15 [I] - mem:1698808 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:05:25 [I] - mem:1698904 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:05:35 [I] - mem:1699000 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:05:45 [I] - mem:1699096 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:05:45 [E] - RPC error
+Error   	= rpc: can't find method RemoteServe.CronGetOnlineCount
+serviceAPI 	= RemoteServe.CronGetOnlineCount
+Args    = &rpc.Args_CronGetOnlineCount{
+    RPCArgTag: rpc.RPCArgTag{
+        ClientId: -2,
+    },
+}
+
+
+
+Result  = &rpc.Reply_CronGetOnlineCount{
+    IosCount: 0,
+    AndroidCount: 0,
+}
+2015/09/14 15:05:55 [I] - mem:1653728 goroutine:11 gc:2 pause:0ms
+2015/09/14 15:06:05 [I] - mem:1653872 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:06:15 [I] - mem:1653968 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:06:25 [I] - mem:1654112 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:06:35 [I] - mem:1654208 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:06:45 [I] - mem:1654304 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:06:55 [I] - mem:1687496 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:07:05 [I] - mem:1687640 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:07:15 [I] - mem:1687736 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:07:25 [I] - mem:1687832 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:07:35 [I] - mem:1687928 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:07:45 [I] - mem:1688024 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:07:55 [I] - mem:1675416 goroutine:11 gc:1 pause:0ms
+2015/09/14 15:08:05 [I] - mem:1675608 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:08:15 [I] - mem:1675704 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:08:25 [I] - mem:1675848 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:08:35 [I] - mem:1675944 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:08:45 [I] - mem:1676040 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:08:55 [I] - mem:1710016 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:09:05 [I] - mem:1710112 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:09:15 [I] - mem:1710208 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:09:25 [I] - mem:1710304 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:09:35 [I] - mem:1710400 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:09:45 [I] - mem:1710496 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:09:55 [I] - mem:1683680 goroutine:11 gc:1 pause:0ms
+2015/09/14 15:10:05 [I] - mem:1683872 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:10:15 [I] - mem:1683968 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:10:25 [I] - mem:1684064 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:10:35 [I] - mem:1684160 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:10:45 [I] - mem:1684256 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:10:45 [E] - RPC error
+Error   	= rpc: can't find method RemoteServe.CronGetOnlineCount
+serviceAPI 	= RemoteServe.CronGetOnlineCount
+Args    = &rpc.Args_CronGetOnlineCount{
+    RPCArgTag: rpc.RPCArgTag{
+        ClientId: -2,
+    },
+}
+
+
+
+Result  = &rpc.Reply_CronGetOnlineCount{
+    IosCount: 0,
+    AndroidCount: 0,
+}
+2015/09/14 15:10:55 [I] - mem:1723216 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:11:05 [I] - mem:1723312 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:11:15 [I] - mem:1723408 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:11:25 [I] - mem:1723504 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:11:35 [I] - mem:1723600 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:11:45 [I] - mem:1723696 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:11:55 [I] - mem:1654240 goroutine:11 gc:2 pause:0ms
+2015/09/14 15:12:05 [I] - mem:1654336 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:12:15 [I] - mem:1654432 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:12:25 [I] - mem:1654576 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:12:35 [I] - mem:1654672 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:12:45 [I] - mem:1654768 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:12:55 [I] - mem:1687944 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:13:05 [I] - mem:1688088 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:13:15 [I] - mem:1688184 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:13:25 [I] - mem:1688280 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:13:35 [I] - mem:1688376 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:13:45 [I] - mem:1688472 goroutine:10 gc:0 pause:0ms
+2015/09/14 15:13:55 [I] - mem:1654288 goroutine:10 gc:1 pause:7ms
+2015/09/14 15:14:05 [I] - mem:1654384 goroutine:10 gc:0 pause:0ms
+2015/09/14 15:14:15 [I] - mem:1654480 goroutine:10 gc:0 pause:0ms
+2015/09/14 15:14:25 [I] - mem:1654576 goroutine:10 gc:0 pause:0ms
+2015/09/14 15:14:35 [I] - mem:1654672 goroutine:10 gc:0 pause:0ms
+2015/09/14 15:14:45 [I] - mem:1654768 goroutine:10 gc:0 pause:0ms
+2015/09/14 15:14:55 [I] - mem:1688856 goroutine:10 gc:0 pause:0ms
+2015/09/14 15:15:05 [I] - mem:1688952 goroutine:10 gc:0 pause:0ms
+2015/09/14 15:15:15 [I] - mem:1689048 goroutine:10 gc:0 pause:0ms
+2015/09/14 15:15:25 [I] - mem:1689144 goroutine:10 gc:0 pause:0ms
+2015/09/14 15:15:35 [I] - mem:1689240 goroutine:10 gc:0 pause:0ms
+2015/09/14 15:15:45 [I] - mem:1689336 goroutine:10 gc:0 pause:0ms
+2015/09/14 15:15:45 [E] - RPC error
+Error   	= connection is shut down
+serviceAPI 	= RemoteServe.CronGetOnlineCount
+Args    = &rpc.Args_CronGetOnlineCount{
+    RPCArgTag: rpc.RPCArgTag{
+        ClientId: -2,
+    },
+}
+
+
+
+Result  = &rpc.Reply_CronGetOnlineCount{
+    IosCount: 0,
+    AndroidCount: 0,
+}
+2015/09/14 15:15:55 [I] - mem:1657312 goroutine:11 gc:2 pause:3ms
+2015/09/14 15:16:05 [I] - mem:1657408 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:16:15 [I] - mem:1657504 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:16:25 [I] - mem:1657600 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:16:35 [I] - mem:1657744 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:16:45 [I] - mem:1657840 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:16:55 [I] - mem:1672432 goroutine:14 gc:0 pause:0ms
+2015/09/14 15:17:05 [I] - mem:1691752 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:17:15 [I] - mem:1691896 goroutine:11 gc:0 pause:0ms

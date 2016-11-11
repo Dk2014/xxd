@@ -1,0 +1,15 @@
+<?php
+// 区分当前发布版本 -- 国服 or 越南 .etc
+function _S() {  // switch
+    $target_nation = exec("hg branch");
+    $soha_reg = '/^soha_?.*$/i';
+    $tencent_reg = '/^tencent_?.*$/i';
+    if(preg_match($soha_reg, $target_nation)){
+        return func_get_arg(2);
+    }else if(preg_match($tencent_reg, $target_nation)) {
+        return func_get_arg(1);
+    }else{
+        return func_get_arg(0); 
+    }
+}
+?>

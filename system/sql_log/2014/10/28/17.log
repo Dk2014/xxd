@@ -1,0 +1,4 @@
+-- ------------------------------------------------------
+-- 10/28/2014 17:08 插入或更新发生在表quest_activity_center
+UPDATE `quest_activity_center` SET `relative` = '8', `sign` = 'EVENT_VIP_AWARDS', `weight` = '0', `name` = '月卡活动', `title` = '月卡活动', `content` = '', `start` = '0', `end` = '0', `dispose` = '0', `is_go` = '0', `tag` = '0', `is_mail` = '0', `condition_template` = '', `mail_title` = '', `mail_content` = '' WHERE `id` = 1;
+

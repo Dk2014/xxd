@@ -1,0 +1,1 @@
+{"action_name":"get_all_items","module_name":"taoyuan","protocol":[{"name":"items","type":"list8","fields":[{"name":"id","type":"int64"},{"name":"item_id","type":"int16"},{"name":"num","type":"int16"}]},{"name":"buy_records","type":"list8","fields":[{"name":"item_id","type":"int16"},{"name":"num","type":"int16"}]}]}

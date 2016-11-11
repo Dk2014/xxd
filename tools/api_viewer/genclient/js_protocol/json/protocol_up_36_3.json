@@ -1,0 +1,1 @@
+{"action_name":"hijack_boat","module_name":"clique_escort","protocol":[{"name":"boat_id","type":"int64"},{"name":"pay","type":"bool"}]}

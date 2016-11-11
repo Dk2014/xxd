@@ -1,0 +1,1 @@
+{"action_name":"get_event_recharge_award","module_name":"event","protocol":[{"name":"page","type":"int32"},{"name":"requireid","type":"int32"}]}

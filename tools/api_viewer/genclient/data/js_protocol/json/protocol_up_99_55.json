@@ -1,0 +1,1 @@
+{"action_name":"add_fame","module_name":"debug","protocol":[{"name":"system","type":"int16"},{"name":"val","type":"int32"}]}

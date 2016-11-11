@@ -1,0 +1,8 @@
+-- ------------------------------------------------------
+-- 11/18/2014 15:41 插入或更新发生在表arena_buy_cost_config
+INSERT INTO `arena_buy_cost_config` SET `times` = '1', `cost` = '10' ;
+
+-- ------------------------------------------------------
+-- 11/18/2014 15:41 插入或更新发生在表arena_buy_cost_config
+UPDATE `arena_buy_cost_config` SET `times` = '1', `cost` = '10' WHERE `id` = 23;INSERT INTO `arena_buy_cost_config` SET `times` = '2', `cost` = '10' ;
+

@@ -1,0 +1,433 @@
+//
+// 区域相关通讯接口
+//
+mod mission = 4
+{
+	type out_result enum {
+		FAILED     = 0  // 失败
+		SUCCEED    = 1  // 成功
+	}
+
+	type extend_type enum {
+		RESOURCE = 1 // 资源关卡
+		ACTIVITY = 2 // 活动关卡
+	}
+
+	type extend_level_type enum {
+		RESOURCE = 1 // 资源关卡
+		BUDDY = 9 // 伙伴关卡
+		PET = 10 // 灵宠关卡
+		GHOST = 11 // 魂侍关卡
+	}
+
+	type extend_level_sub_type enum {
+		NONE = 0
+		COIN = 1 // 铜钱关卡
+		EXP = 2 // 经验关卡
+	}
+
+	type battle_type enum {
+		MISSION            = 0 // 区域关卡
+		RESOURCE           = 1 // 资源关卡
+		TOWER			   = 2 // 通天塔
+		MultiLevel		   = 3 // 多人关卡
+		HARD		   	   = 8 // 难度关卡
+		BUDDY		   	   = 9 // 伙伴关卡
+		PET		   	   	   = 10 // 灵宠关卡
+		GHOST		   	   = 11 // 魂侍关卡
+		RAINBOW		   	   = 12 // 彩虹关卡
+		PVE		   	   = 13 // PVE关卡
+	}
+
+	//
+	// 开启区域
+	//
+	api open = 0 {
+		in {
+			mission_id : int16 	// 区域id
+		}
+
+		out {
+			result	: out_result // 0 -- 失败； 1 -- 成功
+		}
+	}
+
+	//
+	// 获取区域关卡
+	//
+	api get_mission_level = 1 {
+		in {
+			mission_id : int16  // 区域ID
+		}
+
+		out {
+			result	: out_result // 0 -- 失败； 1 -- 成功
+			levels : list {
+				level_id : int32 // 关卡id
+				round_num: int8  	// 战斗回合数
+				daily_num: int8  // 今日已进入关卡次数（-1表示不限关卡进入次数）
+				waiting_shadows: int8 // 等待清剿的影之间隙个数
+                remain_buy_times: int16 //关卡剩余购买次数（仅限于boss关卡）
+			}
+		}
+	}
+
+	//
+	// 进入关卡
+	//
+	api enter_level = 2 {
+		in {
+			mission_level_id : int32  // 关卡ID
+		}
+
+		out {
+			result	: out_result // 0 -- 失败； 1 -- 成功
+			smallbox : list{
+				box_id : int32 // 出现宝箱ID
+			}
+			meng_yao : list{
+				my_id : int32 //出现关卡梦妖ID
+			}
+			shadow : list{
+				shaded_id : int32 // 等待清剿的影之间隙ID
+			}
+		}
+	}
+
+	//
+	// 关卡通关开宝箱
+	//
+	api open_level_box = 3 {
+		in {
+			pos : int8 // 宝箱序号[1~5](从左到右)
+		}
+
+		out {
+			box_id : int64 // 获得宝箱ID(0--空宝箱)
+		}
+	}
+
+	// 关卡阵亡复活
+	api use_ingot_relive = 4 {
+		in{}
+		out{
+			ingot : int32 // 下一次复活需要花费的元宝数
+		}
+	}
+
+	// 关卡中使用道具(影响buff和生命等)，成功下发role_battle_status_change通知
+	api use_item = 5 {
+		in{
+			role_id : int8 // 角色id
+			item_id : int16 // 道具id
+		}
+		out{}
+	}
+
+	// 关卡恢复，当玩家登陆成功，获取player::info接口后通知（如果上次在关卡内掉线）
+	api rebuild = 6 {
+		out{
+			level_type : battle_type 
+			level_id : int32 		// 要恢复关卡ID
+			relive_ingot : int32   	// 当前关卡中复活需要的元宝数
+			total_round : int16   	// 累计回合数
+			buddy_role_id : int8   	// 伙伴关卡伙伴角色
+			main_role_pos : int8   	// 伙伴关卡主角位置
+			buddy_pos : int8   	// 伙伴关卡伙伴位置
+			last_fighting_map : int32 // 正在战斗的地图，0为主地图
+			pass: list {			// 已通过的怪物组id
+				enemy_id : int32
+			}
+			smallbox : list{
+				box_id : int32 // 出现的宝箱ID
+			}
+			meng_yao : list{
+				my_id : int32 //出现关卡梦妖ID
+			}		
+			shadow : list{
+				shaded_id : int32 // 等待开启的影之间隙宝箱所属的影之间隙ID
+			}
+		}
+	}
+
+	// 资源/活动关卡进入
+	api enter_extend_level = 7 {
+		in {
+			level_type: extend_level_type
+			level_id : int32  // 关卡ID
+		}
+
+		out {
+			result	: out_result // 0 -- 失败； 1 -- 成功
+		}
+	}
+
+	// 资源/活动/boss/深渊关卡信息
+	api get_extend_level_info = 8 {
+		in {
+			level_type : extend_type
+		}
+		out {
+			info : list {
+				level_type : extend_level_type
+				level_sub_type : extend_level_sub_type
+				daily_num : int8   // 进入通关次数
+				max_level : int16  // 通关的最大等级   0--无通关最大记录，不能扫荡,  大于0的值  表示小于及等于它的关卡都可以扫荡
+				buy_num   : int16  // 购买次数 --暂时只有资源关卡需要
+			}
+		}
+	}
+
+	// 开小宝箱
+	api open_small_box = 9 {
+		in {
+			box_id : int32 // 宝箱ID
+		}
+		out {
+			items : list {
+				box_item_id : int32 // 小宝箱物品ID
+			}
+		}
+	}
+
+	// 灵宠捕捉
+	api notify_catch_battle_pet = 10 {
+		out {
+			petId  : int32  // 捕捉到的灵宠, 0 -- 失败
+		}
+	}
+
+	// 进入难度关卡
+	api enter_hard_level = 11 {
+		in {
+			level_id : int32  // 关卡ID
+		}
+		out {
+			result	: out_result // 0 -- 失败； 1 -- 成功
+		}
+	}
+
+	// 进入过的取难度关卡信息列表
+	api get_hard_level = 12 {
+		in {}
+		out {
+		 	levels : list {
+				level_id : 	int32 	// 关卡id
+				daily_num: 	int8  	// 今日已进入关卡次数
+				round_num: 	int8  	// 通关回合数
+				buy_times: int16 // 今日购买次数
+                remain_buy_times: int16 //剩余购买次数
+		 	}
+		}
+	}
+
+	// 获取伙伴关卡随机角色
+	api get_buddy_level_role_id = 13 {
+		in {}
+		out{
+			role_id : int8
+		}
+	}
+
+	// 伙伴关卡队伍设置
+	api set_buddy_level_team = 14 {
+		in {
+			role_pos  : int8 // 主角位置范围[1-6]
+			buddy_pos : int8 // 伙伴位置范围[1-6]
+			tactical  : int8 // 战术编号[0-1]
+		}
+		out {
+			result	: bool // false -- 失败
+		}
+	}
+
+	// 关卡扫荡
+	api auto_fight_level= 15 {
+		in {
+			level_type 	: battle_type 		// 关卡类型 0--区域关卡； 8--难度关卡 13--灵宠pve
+			level_id   	: int32       	// 关卡ID
+			times		: int8 		// 扫荡次数
+		}
+		out {
+			result	: list {
+				level_box	:	list {
+					box_id : int64 		// 获得宝箱ID
+				}
+				battle_pet	:	list {
+							pet_id		: int32	//遇到的灵宠ID
+							catched		: bool	//是否捕获成功
+							consume_balls	: int8	//消耗契约球数量
+				}
+				small_box	:	list {
+							box_item_id 	: int32 //宝箱ID
+				}
+				random_award_box  :    list {
+					box_id : int64 		// 获得宝箱ID
+				}
+				addition_quest_item : list { //支线任务掉落
+					item_id: int16 //支线任务关卡掉落
+					item_num : int16 //支线任务关卡掉落数量
+				}
+			}
+		}
+	}
+
+	//
+	// 进入彩虹关卡
+	//
+	api enter_rainbow_level = 16 {
+		in {
+			mission_level_id : int32  // 关卡ID
+		}
+
+		out {
+			used_ghost : list {
+				ghost_id : int16 //使用过的魂侍ID
+			}
+			called_pet : list {
+				pet_id : int32 //使用过的灵宠ID
+			}
+		}
+	}
+	
+	//
+	//促发关卡梦妖
+	//
+	api open_meng_yao = 17 {
+		in {
+			meng_yao_id : int32  //关卡梦妖id
+		}
+		out{
+			meng_yao_id : int32  //关卡梦妖id
+		}
+	}
+
+	//
+	// 获取产出制定物品的区域关卡
+	//
+	api get_mission_level_by_item_id = 18 {
+		in {
+			item_id : int16  // 物品ID
+		}
+
+		out {
+			levels : list {
+				level_id : int32 // 关卡id
+				round_num: int8  	// 战斗回合数
+				daily_num: int8  // 今日已进入关卡次数（-1表示不限关卡进入次数）
+			}
+		}
+	}
+
+	//
+	// 购买深渊关卡次数(根据vip不同而不同)
+	//
+	api buy_hard_level_times = 19 {
+		in {
+			level_id : int32  // 关卡ID
+		}
+		out {
+			result	: out_result // 0 -- 失败； 1 -- 成功
+		}
+	}
+
+	//
+	// 关卡通关开奖励随机宝箱，一个奖励
+	//
+	api open_random_award_box = 20 {
+		in {
+			level_id : int32  // 关卡ID
+		}
+
+		out {
+			box_id : int64 // 获得宝箱ID(0--空宝箱)
+		}
+	}
+
+	//
+	// 关卡战斗结束，进入战斗结算及奖励领取流程
+	//
+	api evaluate_level = 21 {
+		in {
+		}
+		out {
+			additional_quest_items: list{
+				item_id: int16  // 物品id
+				item_cnt: int16 // 物品数量
+			}
+		}
+	}
+
+	//
+	// 开启影之间隙宝箱
+	//
+	api open_shaded_box = 22 {
+		in {
+			shaded_id : int32 // 相关影之间隙ID
+		}
+		out {
+		}
+	}
+
+
+	//
+	// 获取区域评星总数及奖励已领取等级
+	//
+	api get_mission_total_star_info = 23 {
+		in {
+			town_id : int16    //城镇ID
+		}
+		out {
+			town_id 		: int16    //城镇ID 防止客户单滑快了,对不上城镇
+			total_star  	: int16  // 区域总更得到的评星数
+			box_type_list 	: list {
+				box_type 	: int8   // 已经领取了的类型
+			}
+			missionstars    :  list {
+		    	missionid   : int16   
+				stars       : int16
+			}
+		}
+	}
+
+	//
+	// 领取区域评星奖励
+	//
+	api get_mission_total_star_awards = 24 {
+		in {
+			town_id 	: int16    //城镇ID
+			box_type 	: int8    //领奖等级
+		}
+		out {
+			town_id 	: int16    //城镇ID
+			box_type 	: int8    //领奖等级
+		}
+	}
+
+	//清除战场信息
+	api clear_mission_level_state = 25 {
+		in{}
+		out {}
+	}
+
+	//购买资源关卡次数
+	api buy_resource_mission_level_times = 26 {
+		in {
+		    sub_type                : int8    //关卡类型 铜钱关卡: 1  经验关卡: 2 
+		}
+		out {}
+	}
+
+	//
+	// 购买boss关卡次数(根据vip不同而不同)
+	//
+	api buy_boss_level_times = 27 {
+		in {
+			level_id : int32  // 关卡ID
+		}
+		out {
+			result	: out_result // 0 -- 失败； 1 -- 成功
+		}
+	}
+
+}

@@ -1,0 +1,82 @@
+package main
+
+import (
+	"fmt"
+	"time"
+
+	"client_test"
+	"game_server/api/protocol/notify_api"
+	"game_server/api/protocol/player_api"
+	"game_server/api/protocol/town_api"
+)
+
+func main() {
+	client := client_test.NewClient("127.0.0.1:8080")
+	//client.Player_FromPlatformLogin("npc01", "npc01", 1, "", 0, false)
+	client.Player_FromPlatformLogin("npc02", "npc02", 1, "", 0, false)
+
+	//注册回调函数
+	client.OutPlayer_Info = func(out *player_api.Info_Out) {
+		fmt.Println("\n==============")
+		fmt.Printf("player_api.InfoOut:\n%#v\n", out)
+		fmt.Println("==============\n")
+	}
+
+	client.OutNotify_ItemChange = func(out *notify_api.ItemChange_Out) {
+		fmt.Println("\n==============")
+		fmt.Printf("notify_api.ItemChange_Out:\n%#v\n", out)
+		fmt.Println("==============\n")
+	}
+	client.OutTown_TalkedNpcList = func(out *town_api.TalkedNpcList_Out) {
+		fmt.Println("\n==============")
+		fmt.Printf("town_api.TalkedNpcList_Out:\n%#v\n", out)
+		fmt.Println("==============\n")
+	}
+
+
+	//获取用户信息
+	client.Player_Info()
+
+	//进入神龙岛
+	client.Town_Enter(1)
+
+	//获取对话过的NPC列表
+	client.Town_TalkedNpcList(1) //神龙岛
+
+	//和龙姬对话
+	client.Town_NpcFirstTalk(1) //龙姬
+
+	//获取对话过的NPC列表
+	client.Town_TalkedNpcList(1) //神龙岛
+
+
+	b := time.Tick(5 * time.Second)
+	<-b
+}
+
+/*
+bash-3.2$ ./npc_talk
+
+==============
+player_api.InfoOut:
+&player_api.Info_Out{Nickname:[]uint8{0x6e, 0x70, 0x63, 0x30, 0x31}, TownId:1, RoleId:1, RoleLv:1, RoleExp:0, VipLevel:0, Ingot:0, Coins:0, HeartNum:10, Physical:100, PhysicalBuyCount:0, GetHeartCount:0, CoinsBuyCount:0, BatchBoughtCoins:false, FuncKey:0, PlayedKey:0, TownLock:0, MissionKey:0, MissionMaxOrder:0, MissionLevelMaxLock:0, HardLevelLock:0, QuestId:1, QuestState:1}
+==============
+
+
+==============
+town_api.TalkedNpcList_Out:
+&town_api.TalkedNpcList_Out{NpcList:[]town_api.TalkedNpcList_Out_NpcList{}}
+==============
+
+
+==============
+notify_api.ItemChange_Out:
+&notify_api.ItemChange_Out{Items:[]notify_api.ItemChange_Out_Items{notify_api.ItemChange_Out_Items{Id:401, ItemId:31, Num:1, Attack:0, Defence:0, Health:0, Speed:0, Cultivation:0, HitLevel:0, CriticalLevel:0, BlockLevel:0, DestroyLevel:0, TenacityLevel:0, DodgeLevel:0, RefineLevel:0, RecastAttr:0}}}
+==============
+
+
+==============
+town_api.TalkedNpcList_Out:
+&town_api.TalkedNpcList_Out{NpcList:[]town_api.TalkedNpcList_Out_NpcList{town_api.TalkedNpcList_Out_NpcList{NpcId:1}}}
+==============
+*/

@@ -1,0 +1,1 @@
+{"action_name":"notify_recover_battle_win","module_name":"clique_escort","protocol":[{"name":"boat_id","type":"int64"},{"name":"result","type":"enum8"},{"name":"owner_nick","type":"text16"}]}

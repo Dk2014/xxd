@@ -1,0 +1,1 @@
+{"action_name":"hijack_boat","module_name":"clique_escort","protocol":[{"name":"result","type":"enum8"},{"name":"boat_id","type":"int64"},{"name":"boat_owner_pid","type":"int64"},{"name":"boat_owner_nick","type":"text16"}]}

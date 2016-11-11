@@ -1,0 +1,1 @@
+{"action_name":"get_ingot_change_total","module_name":"event","protocol":[{"name":"is_in","type":"bool"}]}

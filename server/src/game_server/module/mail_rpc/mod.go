@@ -1,0 +1,111 @@
+package mail_rpc
+
+import (
+	"core/time"
+	"game_server/api/protocol/notify_api"
+	"game_server/dat/mail_dat"
+	"game_server/mdb"
+	"game_server/module"
+	"game_server/module/rpc"
+)
+
+func init() {
+	module.MailRPC = MailRPCMod{}
+}
+
+type MailRPCMod struct{}
+
+//如果玩家因为不在线导致有全局邮件没有领取那么就在这里发送（仅在互动服被调用）
+func (mod MailRPCMod) SendGlobaldMail(db *mdb.Database, pid int64) {
+	var mails []*mail_dat.EmptyMail
+	nowUnix := time.GetNowTime()
+	playerMailState := db.Lookup.PlayerGlobalMailState(pid)
+
+	db.Select.GlobalMail(func(row *mdb.GlobalMailRow) {
+		if playerMailState.MaxTimestamp >= row.SendTime() {
+			return
+		}
+		if row.SendTime() > nowUnix {
+			return
+		}
+		if row.ExpireTime() > 1 && row.ExpireTime() < nowUnix {
+			return
+		}
+		var attachments []*mail_dat.Attachment
+		db.Select.GlobalMailAttachments(func(attRow *mdb.GlobalMailAttachmentsRow) {
+			if attRow.GlobalMailId() == row.Id() {
+				attachments = append(attachments, &mail_dat.Attachment{
+					AttachmentType: attRow.AttachmentType(),
+					ItemId:         attRow.ItemId(),
+					ItemNum:        int64(attRow.ItemNum()),
+				})
+			}
+		})
+		var expireTime int64
+		if len(attachments) > 0 {
+			//全局邮件如果有附件那么立即领取后立即删除，否则过期后删除
+			expireTime = mail_dat.AUTO_DELETE_AFTER_READ_WITHOUT_ATTACHMENT
+		}
+		mail := &mail_dat.EmptyMail{
+			MailId:      0, //全局邮件使用一个特殊地模版ID(MailId)
+			Title:       row.Title(),
+			Content:     row.Content(),
+			SendTime:    row.SendTime(),
+			Priority:    row.Priority(),
+			ExpireTime:  expireTime,
+			MinVIPLevel: row.MinVipLevel(),
+			MaxVIPLevel: row.MaxVipLevel(),
+			MinLevel:    row.MinLevel(),
+			MaxLevel:    row.MaxLevel(),
+		}
+		mail.Attachments = attachments
+		mails = append(mails, mail)
+	})
+
+	rpc.RemoteMailBatchSend(pid, mails)
+}
+
+//增加一封全局邮件（仅在互动服务起调用）
+func (mod MailRPCMod) AddGlobalMail(db *mdb.Database, title string, content string, attachments []*mail_dat.Attachment, sendTime int64, expireTime int64, priority int8, minLevel, minVIPLevel, maxLevel, maxVIPLevel int16) {
+	nowTime := time.GetNowTime()
+
+	// 不接受已失效或者正在进行的邮件。只能添加未来邮件
+	if nowTime >= expireTime || nowTime > sendTime {
+		return
+	}
+
+	mail := &mdb.GlobalMail{
+		Title:       title,
+		Content:     content,
+		SendTime:    sendTime,
+		ExpireTime:  expireTime, //此处是全局邮件的过期时间
+		Priority:    priority,   //优先级
+		MinLevel:    minLevel,
+		MaxLevel:    maxLevel,
+		MinVipLevel: minVIPLevel,
+		MaxVipLevel: maxVIPLevel,
+	}
+
+	db.Insert.GlobalMail(mail)
+
+	for _, attachment := range attachments {
+		db.Insert.GlobalMailAttachments(&mdb.GlobalMailAttachments{
+			GlobalMailId:   mail.Id,
+			AttachmentType: attachment.AttachmentType,
+			ItemId:         attachment.ItemId,
+			ItemNum:        attachment.ItemNum,
+		})
+	}
+
+	module.PostContent(&module.PostUnit{
+		Type:      module.GLOBAL_POST_UNIT_TYPE_MAIL,
+		StartTime: sendTime,
+		EndTime:   expireTime,
+		Response:  &notify_api.SendGlobalMail_Out{},
+	}, sendTime-nowTime)
+}
+
+//帮派发工资
+func (mod MailRPCMod) SendSalaryMail(pid int64, mail mail_dat.Mailer) {
+	rpc.RemoteMailSend(pid, mail)
+}

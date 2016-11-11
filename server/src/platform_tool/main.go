@@ -1,0 +1,233 @@
+package platform_tool
+
+import (
+	"core/log"
+	"flag"
+	"fmt"
+	"platform_server"
+)
+
+/*
+ * usage:
+ * platform_tool <options>
+ *
+ *  <options>
+ *      -config=<config.json>						配置文件
+ *		-app=<appid>								app标识，区别渠道
+ *		-revision									当前的revision
+ *    	-import=<path,rev>							指定所需导入的服务器配置文件的路径和revision
+ *    	-commit=<server_list_revision>				指定所需提交到数据库的服务器配置的版本号
+ *    	-export=<path>								指定将数据库内所存储的服务器配置导出的路径
+ *    	-hot=<svr_id>								将id为<svr_id>的服务器设置为推荐服务器
+ *		-cancelHot=<svr_id>							取消id为<svr_id>的服务器的推荐服务器状态
+ *		-jammed=<svr_id>							将id为<svr_id>的服务器设置为拥挤
+ *		-busy=<svr_id>								将id为<svr_id>的服务器设置为繁忙
+ *  	-statusMsg=<message> 						服务器处于特殊状态时的附带信息
+ *		-new=<svr_id>								将id为<svr_id>的服务器设置为新服
+ *		-cancelNew=<svr_id>							取消id为<svr_id>的服务器的新服状态
+ *    	-close=<svr_id>								关闭id为<svr_id>的服务器
+ *    	-open=<svr_id>								打开id为<svr_id>的服务器
+ *		-modifyName=<svr_id>						修改id为<svr_id>的服务器名
+ *    	-list										查看当前服务器列表
+ *		-addServers=<server_list.json>				指定服务器配置文件的路径,导入配置文件里的服务器配置，只会添加，不会删除更新
+ *		-add										新增逻辑区服
+ *		-addGameServer								新增游戏服务器
+ *		-setHDServer=<game_server_id>				指定所需要被设定为互动服务器的游戏服务器id
+ *		-modifyIpAndPort=<game_server_id>			修改id为<game_server_id>的游戏服务器的Ip和Port
+ *		-setOpenTime=<open_time,server_id>			将id为server_id的服务器开放时间设为open_time
+ *      -stat=<platform_server_ip:port>
+ *      -releaseVersion=<type[,version]>                        查看或设置type代表平台的Release版本
+ *      -minVersion=<type[,version]>                            查看或设置type代表平台的最小版本
+ *      -patchUrl=<url_prefix>                                  查看或设置patchUrl
+ *      -patch=<type[,version_serverversion][,patch]>           查看或设置patch
+ *      -user=<type,openid>                                     查看type平台的用户角色
+ *      -delRole=<type,openid,sid>                              删除某服务器的某个角色
+ *      -announce=<type[,content]>								查看或设置type平台的公告
+ *      -openidWhite=<list/add/rm, openid>						查看/添加/移除 openid白名单
+ *      -versionBlack=<list/add/rm, type, version>              查看/添加/移除 version白名单
+ *      -upgradeUrl=<type[,url]>                                查看/设置客户端更新url
+ *      -optPlayerCount=<sid>									查看服务器玩家注册数
+ *      -optSetActionAudit=<type,0/1>							设置某些活动是否处于审核（关闭）
+ *  说明：
+ *    	每个逻辑区服（svr）代表一个用户可见的入口
+ *    	每个逻辑区服（svr）拥有多个游戏服务进程（game_server或gs）
+ *    	每个逻辑区服（svr）必须有且仅有一个互动服务进程（hd_server或hd）
+ *    	所有游戏和互动服务器（gs）的id(gsid)必须唯一
+ */
+
+func usage() {
+	flag.PrintDefaults()
+}
+
+// exectuble entry points
+func Main() {
+
+	var (
+		optApp              = flag.String("app", "xxd_qq", "redis server database name. Useage:-app=xxd_qq")
+		optConfig           = flag.String("config", "", "redis server config.Useage:-config")
+		optRevision         = flag.Bool("revision", false, "current server list revision.Useage:-revision")
+		optInitDB           = flag.String("initDB", "", "redis server database name. Useage:-initDB=xxd_qq")
+		optImport           = flag.String("import", "", "import serverlist.json. Usage:-import=<path>")
+		optAddServers       = flag.String("addServers", "", "add serverlist../z. Usage:-addServers=<path>")
+		optCommit           = flag.Int("commit", -1, "commit serverlist to specified revsion. Usage:-commit=<server_list_version>")
+		optExport           = flag.String("export", "", "export serverlist. Usage:-export=<path>")
+		optClose            = flag.String("close", "", "close server entrence. Usage:-close=<server_id>")
+		optOpen             = flag.String("open", "", "open server entrence. Usage:-open=<server_id>")
+		optHot              = flag.String("hot", "", "set the server a hot server. Usage:-hot=<svr_id>")
+		optCHot             = flag.String("cancelHot", "", "set the server not hot. Usage:-cancelHot=<svr_id>")
+		optJammed           = flag.String("jammed", "", "set the server a jammed server. Usage:-jammed=<svr_id>")
+		optBusy             = flag.String("busy", "", "set the server a busy server. Usage:-busy=<svr_id>")
+		optStatusMsg        = flag.String("statusMsg", "", "set the server status msg. Usage:-statusMsg=<status message>")
+		optNew              = flag.String("new", "", "set the server a new server. Usage:-new=<svr_id>")
+		optCNew             = flag.String("cancelNew", "", "set the server not new. Usage:-cancelNew=<svr_id>")
+		optMName            = flag.String("modifyServerName", "", "modify the server name. Usage:-modifyServerName=<svr_id>")
+		optList             = flag.Bool("list", false, "show server list. Usage:-list")
+		optAdd              = flag.Bool("add", false, "add server(not game server). Usage:-add")
+		optDelSvr           = flag.String("deleteServer", "", "delete server. Usage:-deleteServer=<sid>")
+		optAddGSer          = flag.Bool("addGameServer", false, "add game server. Usage:-addGameServer")
+		optSetHD            = flag.String("setHDServer", "", "set HDServer. Usage:-setHDServer=<game_server_id>")
+		optMIAndP           = flag.String("modifyIpAndPort", "", "set IP and Port of game server. Usage:-modifyIpAndPort=gsid,ip,port,rpcip,rpcport")
+		optSetOT            = flag.String("setOpenTime", "", "set open time of server. Usage:-setOpenTime=<opem time+server id>.For example,-setOpenTime=2014-06-04_19:00:00,5")
+		optRelease          = flag.String("releaseVersion", "", "get or set client release version of some type. Usage:-releaseVersion=type,version")
+		optAudit            = flag.String("auditVersion", "", "get or set client audit version of some type.Usage: -auditVersion=type,version")
+		optMinVersion       = flag.String("minVersion", "", "get or set client min version of some type.Usage: -minVersion=type,version")
+		optPatchUrl         = flag.String("patchUrl", "", "get or set client patch url. Usage: -patchUrl=url or -patchUrl=show")
+		optResourceUrl      = flag.String("resourceUrl", "", "get or set resource patch ulr. Usage: -resourceUrl=url or -resourceUrl=show")
+		optPatch            = flag.String("patch", "", "列出patch或者设置patch,such as -patch=1, -patch=1, -patch=1:2:5:17:18,version1_version2_patch.dat:version3_version2_patch.dat")
+		optTotalResource    = flag.String("totalResource", "", "列出totalResource或者设置totalResource,such as -totalResource=list, -totalResource=6553 -totalResource=6553,1_totalResource.dat_size:2_resource.dat_size")
+		optUserRole         = flag.String("user", "", "列出type平台下该openid下的所有角色. Usage: -user=type,openid")
+		optDelRole          = flag.String("delRole", "", "删除type平台下该openid下某服的角色. Usage: -delRole=type,openid,sid")
+		optAnnounce         = flag.String("announce", "", "查看或设置当前公告.Usage: -announce=type -announce=type,announce")
+		optOpenidWhite      = flag.String("openidWhite", "", "Usage: -openidWhite=<list/add/rm, openid>")
+		optVersionBlack     = flag.String("versionBlack", "", "Usage: -versionBlack=<list/add/rm, type, version>")
+		optIpBlack          = flag.String("ipBlack", "", "Usage: -ipBlack=<list/add/rm, ip>")
+		optUpgradeUrl       = flag.String("upgradeUrl", "", "Usage: -upgradeUrl=<type[,url]>")
+		optPlayerCount      = flag.String("playerCount", "", "Usage: -playerCount=<sid>")
+		optSetActionAudit   = flag.String("setActionAudit", "", "Usage: -actionAudit=<type,0/1>")
+		optCloseType        = flag.String("closeType", "", "Usage: -closeType=<type>")
+		optOpenType         = flag.String("openType", "", "Usage: -openType=<type>")
+		optDisableActionPic = flag.String("disableActionPic", "", "Usage: -disableActionPic=<type, list/add/rm, pic>")
+		optImportRoles      = flag.String("importRoles", "", "Usage: -importRoles=roles.json,type")
+		optDarkLaunch       = flag.String("darkLaunch", "", "Usage: -darkLaunch=<type,sid1:sid2,version,0,url>)")
+
+		optHelp = flag.Bool("h", false, "this help.")
+	)
+
+	// parse arguments
+	flag.Parse()
+
+	if *optHelp {
+		usage()
+		return
+	}
+
+	log.Setup("./log", false)
+
+	config := platform_server.LoadConfig(*optConfig)
+	err := platform_server.InitRedis(config.Redis, config.Apps)
+	if err != nil {
+		fmt.Println("Redis connection error:", err)
+		return
+	}
+
+	if *optList {
+		showList(*optApp)
+		return
+	}
+
+	if *optAdd {
+		serverInfoAdd(*optApp)
+		return
+	}
+
+	if *optAddGSer {
+		addGameServer(*optApp)
+		return
+	}
+
+	if len(*optInitDB) > 0 {
+		initDB(*optInitDB)
+		return
+	}
+
+	switch {
+	case len(*optExport) > 0:
+		exportServerListByRev(*optExport, *optApp)
+	case *optRevision:
+		currentRevision(*optApp)
+	case *optCommit > 0:
+		commitServerListByRevsion(*optCommit, *optApp)
+	case len(*optImport) > 0:
+		importServerListByFile(*optImport, *optApp)
+	case len(*optAddServers) > 0:
+		addServerListByFile(*optAddServers, *optApp)
+	case len(*optClose) > 0:
+		closeServer(*optClose, *optApp)
+	case len(*optOpen) > 0:
+		openServer(*optOpen, *optApp)
+	case len(*optJammed) > 0:
+		setServerStatus(*optJammed, platform_server.GAME_SERVER_STATUS_CROWDING, *optStatusMsg, *optApp)
+	case len(*optBusy) > 0:
+		setServerStatus(*optBusy, platform_server.GAME_SERVER_STATUS_BUSY, "", *optApp)
+	case len(*optHot) > 0:
+		operateHotServer(*optHot, true, *optApp)
+	case len(*optCHot) > 0:
+		operateHotServer(*optCHot, false, *optApp)
+	case len(*optNew) > 0:
+		operateNewServer(*optNew, true, *optApp)
+	case len(*optCNew) > 0:
+		operateNewServer(*optCNew, false, *optApp)
+	case len(*optMName) > 0:
+		modifyServerName(*optMName, *optApp)
+	case len(*optSetHD) > 0:
+		setHDServer(*optSetHD, *optApp)
+	case len(*optMIAndP) > 0:
+		modifyIpAndPort(*optMIAndP, *optApp)
+	case len(*optSetOT) > 0:
+		setOpenTime(*optSetOT, *optApp)
+	case len(*optRelease) > 0:
+		operateReleaseVersion(*optRelease, *optApp)
+	case len(*optAudit) > 0:
+		operateAuditVersion(*optAudit, *optApp)
+	case len(*optMinVersion) > 0:
+		operateMinVersion(*optMinVersion, *optApp)
+	case len(*optPatchUrl) > 0:
+		operatePatchUrl(*optPatchUrl, *optApp)
+	case len(*optResourceUrl) > 0:
+		operateResourceUrl(*optResourceUrl, *optApp)
+	case len(*optPatch) > 0:
+		operatePatch(*optPatch, *optApp)
+	case len(*optUserRole) > 0:
+		getUserRoles(*optUserRole, *optApp)
+	case len(*optDelRole) > 0:
+		delUserRole(*optDelRole, *optApp)
+	case len(*optAnnounce) > 0:
+		operateAnnounce(*optAnnounce, *optApp)
+	case len(*optOpenidWhite) > 0:
+		operateOpenidWhiteTable(*optOpenidWhite, *optApp)
+	case len(*optVersionBlack) > 0:
+		operateVersionBlackTable(*optVersionBlack, *optApp)
+	case len(*optIpBlack) > 0:
+		operateIpBlackTable(*optIpBlack, *optApp)
+	case len(*optUpgradeUrl) > 0:
+		operateUpgradeUrl(*optUpgradeUrl, *optApp)
+	case len(*optPlayerCount) > 0:
+		showPlayerCount(*optPlayerCount, *optApp)
+	case len(*optSetActionAudit) > 0:
+		setActionAudit(*optSetActionAudit, *optApp)
+	case len(*optCloseType) > 0:
+		setCloseStatus(*optCloseType, 1, *optApp)
+	case len(*optOpenType) > 0:
+		setCloseStatus(*optOpenType, 0, *optApp)
+	case len(*optDisableActionPic) > 0:
+		operateDisableActionPic(*optDisableActionPic, *optApp)
+	case len(*optDelSvr) > 0:
+		delServer(*optDelSvr, *optApp)
+	case len(*optTotalResource) > 0:
+		operateTotalResource(*optTotalResource, *optApp)
+	case len(*optImportRoles) > 0:
+		importRoles(*optImportRoles, *optApp)
+	case len(*optDarkLaunch) > 0:
+		setDarkLaunch(*optDarkLaunch, *optApp)
+	}
+}

@@ -1,0 +1,1323 @@
+mdb.load (1) cost time: 305.018753ms
+mdb.load (2) cost time: 305.015612ms
+mdb.load (0) cost time: 304.995543ms
+mdb.load success.
+mdb.load (3) cost time: 305.046049ms
+2014/10/30 11:18:11 [I] - load player
+2014/10/30 11:18:11 [I] - load player
+2014/10/30 11:18:11 [I] - load player
+2014/10/30 11:18:11 [I] - load player
+2014/10/30 11:18:11 [I] - load player_activity
+2014/10/30 11:18:11 [I] - load player_activity
+2014/10/30 11:18:11 [I] - load player_activity
+2014/10/30 11:18:11 [I] - load player_activity
+2014/10/30 11:18:11 [I] - load player_arena
+2014/10/30 11:18:11 [I] - load player_arena
+2014/10/30 11:18:11 [I] - load player_arena
+2014/10/30 11:18:11 [I] - load player_arena
+2014/10/30 11:18:11 [I] - load player_arena_record
+2014/10/30 11:18:11 [I] - load player_arena_record
+2014/10/30 11:18:11 [I] - load player_arena_record
+2014/10/30 11:18:11 [I] - load player_arena_record
+2014/10/30 11:18:11 [I] - load player_battle_pet
+2014/10/30 11:18:11 [I] - load player_battle_pet
+2014/10/30 11:18:11 [I] - load player_battle_pet
+2014/10/30 11:18:11 [I] - load player_battle_pet
+2014/10/30 11:18:11 [I] - load player_battle_pet_config
+2014/10/30 11:18:11 [I] - load player_battle_pet_config
+2014/10/30 11:18:11 [I] - load player_battle_pet_config
+2014/10/30 11:18:11 [I] - load player_battle_pet_config
+2014/10/30 11:18:11 [I] - load player_chest_state
+2014/10/30 11:18:11 [I] - load player_chest_state
+2014/10/30 11:18:11 [I] - load player_chest_state
+2014/10/30 11:18:11 [I] - load player_chest_state
+2014/10/30 11:18:11 [I] - load player_coins
+2014/10/30 11:18:11 [I] - load player_coins
+2014/10/30 11:18:11 [I] - load player_coins
+2014/10/30 11:18:11 [I] - load player_coins
+2014/10/30 11:18:11 [I] - load player_daily_quest
+2014/10/30 11:18:11 [I] - load player_daily_quest
+2014/10/30 11:18:11 [I] - load player_daily_quest
+2014/10/30 11:18:11 [I] - load player_daily_quest
+2014/10/30 11:18:11 [I] - load player_daily_sign_in_record
+2014/10/30 11:18:11 [I] - load player_daily_sign_in_record
+2014/10/30 11:18:11 [I] - load player_daily_sign_in_record
+2014/10/30 11:18:11 [I] - load player_daily_sign_in_record
+2014/10/30 11:18:11 [I] - load player_daily_sign_in_state
+2014/10/30 11:18:11 [I] - load player_daily_sign_in_state
+2014/10/30 11:18:11 [I] - load player_daily_sign_in_state
+2014/10/30 11:18:11 [I] - load player_daily_sign_in_state
+2014/10/30 11:18:11 [I] - load player_equipment
+2014/10/30 11:18:11 [I] - load player_equipment
+2014/10/30 11:18:11 [I] - load player_equipment
+2014/10/30 11:18:11 [I] - load player_equipment
+2014/10/30 11:18:11 [I] - load player_event_award_record
+2014/10/30 11:18:11 [I] - load player_event_award_record
+2014/10/30 11:18:11 [I] - load player_event_award_record
+2014/10/30 11:18:11 [I] - load player_event_award_record
+2014/10/30 11:18:11 [I] - load player_events_fight_power
+2014/10/30 11:18:11 [I] - load player_events_fight_power
+2014/10/30 11:18:11 [I] - load player_events_fight_power
+2014/10/30 11:18:11 [I] - load player_events_fight_power
+2014/10/30 11:18:11 [I] - load player_extend_level
+2014/10/30 11:18:11 [I] - load player_extend_level
+2014/10/30 11:18:11 [I] - load player_extend_level
+2014/10/30 11:18:11 [I] - load player_extend_level
+2014/10/30 11:18:11 [I] - load player_fashion
+2014/10/30 11:18:11 [I] - load player_fashion
+2014/10/30 11:18:11 [I] - load player_fashion
+2014/10/30 11:18:11 [I] - load player_fashion
+2014/10/30 11:18:11 [I] - load player_fashion_state
+2014/10/30 11:18:11 [I] - load player_fashion_state
+2014/10/30 11:18:11 [I] - load player_fashion_state
+2014/10/30 11:18:11 [I] - load player_fashion_state
+2014/10/30 11:18:11 [I] - load player_fight_num
+2014/10/30 11:18:11 [I] - load player_fight_num
+2014/10/30 11:18:11 [I] - load player_fight_num
+2014/10/30 11:18:11 [I] - load player_fight_num
+2014/10/30 11:18:11 [I] - load player_formation
+2014/10/30 11:18:11 [I] - load player_formation
+2014/10/30 11:18:11 [I] - load player_formation
+2014/10/30 11:18:11 [I] - load player_formation
+2014/10/30 11:18:11 [I] - load player_func_key
+2014/10/30 11:18:11 [I] - load player_func_key
+2014/10/30 11:18:11 [I] - load player_func_key
+2014/10/30 11:18:11 [I] - load player_func_key
+2014/10/30 11:18:11 [I] - load player_ghost
+2014/10/30 11:18:11 [I] - load player_ghost
+2014/10/30 11:18:11 [I] - load player_ghost
+2014/10/30 11:18:11 [I] - load player_ghost
+2014/10/30 11:18:11 [I] - load player_ghost_equipment
+2014/10/30 11:18:11 [I] - load player_ghost_equipment
+2014/10/30 11:18:11 [I] - load player_ghost_equipment
+2014/10/30 11:18:11 [I] - load player_ghost_equipment
+2014/10/30 11:18:11 [I] - load player_ghost_state
+2014/10/30 11:18:11 [I] - load player_ghost_state
+2014/10/30 11:18:11 [I] - load player_ghost_state
+2014/10/30 11:18:11 [I] - load player_ghost_state
+2014/10/30 11:18:11 [I] - load player_ghost_umbra
+2014/10/30 11:18:11 [I] - load player_ghost_umbra
+2014/10/30 11:18:11 [I] - load player_ghost_umbra
+2014/10/30 11:18:11 [I] - load player_ghost_umbra
+2014/10/30 11:18:11 [I] - load player_hard_level
+2014/10/30 11:18:11 [I] - load player_hard_level
+2014/10/30 11:18:11 [I] - load player_hard_level
+2014/10/30 11:18:11 [I] - load player_hard_level
+2014/10/30 11:18:11 [I] - load player_hard_level_record
+2014/10/30 11:18:11 [I] - load player_hard_level_record
+2014/10/30 11:18:11 [I] - load player_hard_level_record
+2014/10/30 11:18:11 [I] - load player_hard_level_record
+2014/10/30 11:18:11 [I] - load player_hard_level_state
+2014/10/30 11:18:11 [I] - load player_hard_level_state
+2014/10/30 11:18:11 [I] - load player_hard_level_state
+2014/10/30 11:18:11 [I] - load player_hard_level_state
+2014/10/30 11:18:11 [I] - load player_heart
+2014/10/30 11:18:11 [I] - load player_heart
+2014/10/30 11:18:11 [I] - load player_heart
+2014/10/30 11:18:11 [I] - load player_heart
+2014/10/30 11:18:11 [I] - load player_heart_draw
+2014/10/30 11:18:11 [I] - load player_heart_draw
+2014/10/30 11:18:11 [I] - load player_heart_draw
+2014/10/30 11:18:11 [I] - load player_heart_draw
+2014/10/30 11:18:11 [I] - load player_heart_draw_card_record
+2014/10/30 11:18:11 [I] - load player_heart_draw_card_record
+2014/10/30 11:18:11 [I] - load player_heart_draw_card_record
+2014/10/30 11:18:11 [I] - load player_heart_draw_card_record
+2014/10/30 11:18:11 [I] - load player_heart_draw_wheel_record
+2014/10/30 11:18:11 [I] - load player_heart_draw_wheel_record
+2014/10/30 11:18:11 [I] - load player_heart_draw_wheel_record
+2014/10/30 11:18:11 [I] - load player_heart_draw_wheel_record
+2014/10/30 11:18:11 [I] - load player_info
+2014/10/30 11:18:11 [I] - load player_info
+2014/10/30 11:18:11 [I] - load player_info
+2014/10/30 11:18:11 [I] - load player_info
+2014/10/30 11:18:11 [I] - load player_is_operated
+2014/10/30 11:18:11 [I] - load player_is_operated
+2014/10/30 11:18:11 [I] - load player_is_operated
+2014/10/30 11:18:11 [I] - load player_is_operated
+2014/10/30 11:18:11 [I] - load player_item
+2014/10/30 11:18:11 [I] - load player_item
+2014/10/30 11:18:11 [I] - load player_item
+2014/10/30 11:18:11 [I] - load player_item
+2014/10/30 11:18:11 [I] - load player_item_appendix
+2014/10/30 11:18:11 [I] - load player_item_appendix
+2014/10/30 11:18:11 [I] - load player_item_appendix
+2014/10/30 11:18:11 [I] - load player_item_appendix
+2014/10/30 11:18:11 [I] - load player_item_buyback
+2014/10/30 11:18:11 [I] - load player_item_buyback
+2014/10/30 11:18:11 [I] - load player_item_buyback
+2014/10/30 11:18:11 [I] - load player_item_buyback
+2014/10/30 11:18:11 [I] - load player_item_recast_state
+2014/10/30 11:18:11 [I] - load player_item_recast_state
+2014/10/30 11:18:11 [I] - load player_item_recast_state
+2014/10/30 11:18:11 [I] - load player_item_recast_state
+2014/10/30 11:18:11 [I] - load player_login_award_record
+2014/10/30 11:18:11 [I] - load player_login_award_record
+2014/10/30 11:18:11 [I] - load player_login_award_record
+2014/10/30 11:18:11 [I] - load player_login_award_record
+2014/10/30 11:18:11 [I] - load player_mail
+2014/10/30 11:18:11 [I] - load player_mail
+2014/10/30 11:18:11 [I] - load player_mail
+2014/10/30 11:18:11 [I] - load player_mail
+2014/10/30 11:18:11 [I] - load player_mail_attachment
+2014/10/30 11:18:11 [I] - load player_mail_attachment
+2014/10/30 11:18:11 [I] - load player_mail_attachment
+2014/10/30 11:18:11 [I] - load player_mail_attachment
+2014/10/30 11:18:11 [I] - load player_meditation_state
+2014/10/30 11:18:11 [I] - load player_meditation_state
+2014/10/30 11:18:11 [I] - load player_meditation_state
+2014/10/30 11:18:11 [I] - load player_meditation_state
+2014/10/30 11:18:11 [I] - load player_mission
+2014/10/30 11:18:11 [I] - load player_mission
+2014/10/30 11:18:11 [I] - load player_mission
+2014/10/30 11:18:11 [I] - load player_mission
+2014/10/30 11:18:11 [I] - load player_mission_level
+2014/10/30 11:18:11 [I] - load player_mission_level
+2014/10/30 11:18:11 [I] - load player_mission_level
+2014/10/30 11:18:11 [I] - load player_mission_level
+2014/10/30 11:18:11 [I] - load player_mission_level_record
+2014/10/30 11:18:11 [I] - load player_mission_level_record
+2014/10/30 11:18:11 [I] - load player_mission_level_record
+2014/10/30 11:18:11 [I] - load player_mission_level_record
+2014/10/30 11:18:11 [I] - load player_mission_level_state_bin
+2014/10/30 11:18:11 [I] - load player_mission_level_state_bin
+2014/10/30 11:18:11 [I] - load player_mission_level_state_bin
+2014/10/30 11:18:11 [I] - load player_mission_level_state_bin
+2014/10/30 11:18:11 [I] - load player_mission_record
+2014/10/30 11:18:11 [I] - load player_mission_record
+2014/10/30 11:18:11 [I] - load player_mission_record
+2014/10/30 11:18:11 [I] - load player_mission_record
+2014/10/30 11:18:11 [I] - load player_month_card_award_record
+2014/10/30 11:18:11 [I] - load player_month_card_award_record
+2014/10/30 11:18:11 [I] - load player_month_card_award_record
+2014/10/30 11:18:11 [I] - load player_month_card_award_record
+2014/10/30 11:18:11 [I] - load player_multi_level_info
+2014/10/30 11:18:11 [I] - load player_multi_level_info
+2014/10/30 11:18:11 [I] - load player_multi_level_info
+2014/10/30 11:18:11 [I] - load player_multi_level_info
+2014/10/30 11:18:11 [I] - load player_npc_talk_record
+2014/10/30 11:18:11 [I] - load player_npc_talk_record
+2014/10/30 11:18:11 [I] - load player_npc_talk_record
+2014/10/30 11:18:11 [I] - load player_npc_talk_record
+2014/10/30 11:18:11 [I] - load player_physical
+2014/10/30 11:18:11 [I] - load player_physical
+2014/10/30 11:18:11 [I] - load player_physical
+2014/10/30 11:18:11 [I] - load player_physical
+2014/10/30 11:18:11 [I] - load player_purchase_record
+2014/10/30 11:18:11 [I] - load player_purchase_record
+2014/10/30 11:18:11 [I] - load player_purchase_record
+2014/10/30 11:18:11 [I] - load player_purchase_record
+2014/10/30 11:18:11 [I] - load player_push_notify_switch
+2014/10/30 11:18:11 [I] - load player_push_notify_switch
+2014/10/30 11:18:11 [I] - load player_push_notify_switch
+2014/10/30 11:18:11 [I] - load player_push_notify_switch
+2014/10/30 11:18:11 [I] - load player_quest
+2014/10/30 11:18:11 [I] - load player_quest
+2014/10/30 11:18:11 [I] - load player_quest
+2014/10/30 11:18:11 [I] - load player_quest
+2014/10/30 11:18:11 [I] - load player_rainbow_level
+2014/10/30 11:18:11 [I] - load player_rainbow_level
+2014/10/30 11:18:11 [I] - load player_rainbow_level
+2014/10/30 11:18:11 [I] - load player_rainbow_level
+2014/10/30 11:18:11 [I] - load player_rainbow_level_state_bin
+2014/10/30 11:18:11 [I] - load player_rainbow_level_state_bin
+2014/10/30 11:18:11 [I] - load player_rainbow_level_state_bin
+2014/10/30 11:18:11 [I] - load player_rainbow_level_state_bin
+2014/10/30 11:18:11 [I] - load player_role
+2014/10/30 11:18:11 [I] - load player_role
+2014/10/30 11:18:11 [I] - load player_role
+2014/10/30 11:18:11 [I] - load player_role
+2014/10/30 11:18:11 [I] - load player_send_heart_record
+2014/10/30 11:18:11 [I] - load player_send_heart_record
+2014/10/30 11:18:11 [I] - load player_send_heart_record
+2014/10/30 11:18:11 [I] - load player_send_heart_record
+2014/10/30 11:18:11 [I] - load player_skill
+2014/10/30 11:18:11 [I] - load player_skill
+2014/10/30 11:18:11 [I] - load player_skill
+2014/10/30 11:18:11 [I] - load player_skill
+2014/10/30 11:18:11 [I] - load player_state
+2014/10/30 11:18:11 [I] - load player_state
+2014/10/30 11:18:11 [I] - load player_state
+2014/10/30 11:18:11 [I] - load player_state
+2014/10/30 11:18:12 [I] - load player_sword_soul
+2014/10/30 11:18:12 [I] - load player_sword_soul
+2014/10/30 11:18:12 [I] - load player_sword_soul
+2014/10/30 11:18:12 [I] - load player_sword_soul
+2014/10/30 11:18:12 [I] - load player_sword_soul_equipment
+2014/10/30 11:18:12 [I] - load player_sword_soul_equipment
+2014/10/30 11:18:12 [I] - load player_sword_soul_equipment
+2014/10/30 11:18:12 [I] - load player_sword_soul_equipment
+2014/10/30 11:18:12 [I] - load player_sword_soul_state
+2014/10/30 11:18:12 [I] - load player_sword_soul_state
+2014/10/30 11:18:12 [I] - load player_sword_soul_state
+2014/10/30 11:18:12 [I] - load player_sword_soul_state
+2014/10/30 11:18:12 [I] - load player_tb_xxd_roleinfo
+2014/10/30 11:18:12 [I] - load player_tb_xxd_roleinfo
+2014/10/30 11:18:12 [I] - load player_tb_xxd_roleinfo
+2014/10/30 11:18:12 [I] - load player_tb_xxd_roleinfo
+2014/10/30 11:18:12 [I] - load player_tower_level
+2014/10/30 11:18:12 [I] - load player_tower_level
+2014/10/30 11:18:12 [I] - load player_tower_level
+2014/10/30 11:18:12 [I] - load player_tower_level
+2014/10/30 11:18:12 [I] - load player_town
+2014/10/30 11:18:12 [I] - load player_town
+2014/10/30 11:18:12 [I] - load player_town
+2014/10/30 11:18:12 [I] - load player_town
+2014/10/30 11:18:12 [I] - load player_trader_refresh_state
+2014/10/30 11:18:12 [I] - load player_trader_refresh_state
+2014/10/30 11:18:12 [I] - load player_trader_refresh_state
+2014/10/30 11:18:12 [I] - load player_trader_refresh_state
+2014/10/30 11:18:12 [I] - load player_trader_store_state
+2014/10/30 11:18:12 [I] - load player_trader_store_state
+2014/10/30 11:18:12 [I] - load player_trader_store_state
+2014/10/30 11:18:12 [I] - load player_trader_store_state
+2014/10/30 11:18:12 [I] - load player_use_skill
+2014/10/30 11:18:12 [I] - load player_use_skill
+2014/10/30 11:18:12 [I] - load player_use_skill
+2014/10/30 11:18:12 [I] - load player_use_skill
+2014/10/30 11:18:12 [I] - load player_vip
+2014/10/30 11:18:12 [I] - load player_vip
+2014/10/30 11:18:12 [I] - load player_vip
+2014/10/30 11:18:12 [I] - load player_vip
+mdb.load (0) cost time: 7.137107ms
+mdb.load (3) cost time: 7.118925ms
+mdb.load success.
+mdb.load (2) cost time: 7.181517ms
+mdb.load (1) cost time: 7.217593ms
+2014/10/30 11:18:20 [I] - load global_announcement
+2014/10/30 11:18:20 [I] - load global_arena_rank
+2014/10/30 11:18:20 [I] - load global_mail
+2014/10/30 11:18:20 [I] - load global_mail_attachments
+2014/10/30 11:18:20 [I] - load global_tb_xxd_onlinecnt
+2014/10/30 11:18:20 [I] - load player_global_arena_rank
+2014/10/30 11:18:20 [I] - load player_global_arena_rank
+2014/10/30 11:18:20 [I] - load player_global_arena_rank
+2014/10/30 11:18:20 [I] - load player_global_arena_rank
+2014/10/30 11:18:20 [I] - load player_global_friend
+2014/10/30 11:18:20 [I] - load player_global_friend
+2014/10/30 11:18:20 [I] - load player_global_friend
+2014/10/30 11:18:20 [I] - load player_global_friend
+2014/10/30 11:18:20 [I] - load player_global_friend_chat
+2014/10/30 11:18:20 [I] - load player_global_friend_chat
+2014/10/30 11:18:20 [I] - load player_global_friend_chat
+2014/10/30 11:18:20 [I] - load player_global_friend_chat
+2014/10/30 11:18:20 [I] - load player_global_friend_state
+2014/10/30 11:18:20 [I] - load player_global_friend_state
+2014/10/30 11:18:20 [I] - load player_global_friend_state
+2014/10/30 11:18:20 [I] - load player_global_friend_state
+2014/10/30 11:18:20 [I] - load player_global_mail_state
+2014/10/30 11:18:20 [I] - load player_global_mail_state
+2014/10/30 11:18:20 [I] - load player_global_mail_state
+2014/10/30 11:18:20 [I] - load player_global_mail_state
+2014/10/30 11:20:11 [E] - [tlog] GameSvrState error. write udp4 172.26.166.37:6667: connection refused
+ info: &{2014-10-30 11:20:11.597581961 +0800 CST 172.26.166.37}
+2014/10/30 11:20:20 [E] - [tlog] GameSvrState error. write udp4 172.26.166.37:6667: connection refused
+ info: &{2014-10-30 11:20:20.048011345 +0800 CST 172.26.166.37}
+2014/10/30 11:22:11 [E] - [tlog] GameSvrState error. write udp4 172.26.166.37:6667: connection refused
+ info: &{2014-10-30 11:22:11.599770755 +0800 CST 172.26.166.37}
+2014/10/30 11:22:20 [E] - [tlog] GameSvrState error. write udp4 172.26.166.37:6667: connection refused
+ info: &{2014-10-30 11:22:20.048871949 +0800 CST 172.26.166.37}
+2014/10/30 11:24:11 [E] - [tlog] GameSvrState error. write udp4 172.26.166.37:6667: connection refused
+ info: &{2014-10-30 11:24:11.600325795 +0800 CST 172.26.166.37}
+2014/10/30 11:24:20 [E] - [tlog] GameSvrState error. write udp4 172.26.166.37:6667: connection refused
+ info: &{2014-10-30 11:24:20.049585121 +0800 CST 172.26.166.37}
+2014/10/30 11:25:05 [E] - [tlog] PlayerLogin error. write udp4 172.26.166.37:6667: connection refused
+ info: &{1 2014-10-30 11:25:05.641372266 +0800 CST game_1_app_id 1 lee223 1 0 0.98 macos intel xxx wifi 0 0 0.999999111 0 intel 001 1024 opengl 0.1 4.3 mac 10.94}
+2014/10/30 11:25:06 [E] - Request Failed
+Error   = {loginGlobal hash incorrect}
+Session = {PlayerId:0, Nickname:"", RoleId:"0", TownId:0}
+Request = &player_api.GlobalLogin_In{
+    Pid: 4294967298,
+    Openid: []uint8{ 108, 101, 101, 50, 50, 51 },
+    Nick: []uint8{ 229, 189, 173, 232, 139, 177, 231, 162, 167 },
+    RoleId: 1,
+    RoleLevel: 1,
+    FightNum: 920,
+    Time: 1414639505,
+    Hash: []uint8{ 105, 116, 55, 43, 71, 108, 113, 74, 75, 65, 50, 52, 87, 113, 112, 114, 56, 80, 113, 90, 103, 65, 61, 61 },
+    PlatformType: 2,
+    Username: []uint8{ 108, 101, 101, 50, 50, 51 },
+    Openkey: []uint8{ },
+    PayToken: []uint8{ },
+    Pfkey: []uint8{ },
+    Zoneid: 1,
+    Pf: []uint8{ },
+}
+
+Stack   =
+    at func.001() [/Users/tangweichen/xxd-server/server/src/game_server/api/server.go:96]
+    at panic() [/usr/local/go/src/pkg/runtime/panic.c:248]
+    at func.008() [/Users/tangweichen/xxd-server/server/src/game_server/mdb/transaction.go:65]
+    at panic() [/usr/local/go/src/pkg/runtime/panic.c:248]
+    at When() [/Users/tangweichen/xxd-server/server/src/core/fail/fail.go:5]
+    at loginGlobal() [/Users/tangweichen/xxd-server/server/src/game_server/module/player/login_global.go:35]
+    at PlayerAPI.GlobalLogin() [/Users/tangweichen/xxd-server/server/src/game_server/module/player/api.go:86]
+    at PlayerAPI.GlobalLogin.i() [<autogenerated>:19]
+    at (*GlobalLogin_In).Process() [/Users/tangweichen/xxd-server/server/src/game_server/api/protocol/player_api/player_api.go:619]
+    at func.002() [/Users/tangweichen/xxd-server/server/src/game_server/api/server.go:138]
+    at (*transController).Transaction() [/Users/tangweichen/xxd-server/server/src/game_server/mdb/transaction.go:69]
+    at (*Database).Transaction() [/Users/tangweichen/xxd-server/server/src/game_server/mdb/zd_tables.go:70]
+    at Transaction() [/Users/tangweichen/xxd-server/server/src/game_server/module/session.go:215]
+    at requestHandler() [/Users/tangweichen/xxd-server/server/src/game_server/api/server.go:140]
+    at requestHandlerFunc.Handle() [/Users/tangweichen/xxd-server/server/src/core/net/session.go:27]
+    at (*Session).readLoop() [/Users/tangweichen/xxd-server/server/src/core/net/session.go:93]
+    at goexit() [/usr/local/go/src/pkg/runtime/proc.c:1445]
+2014/10/30 11:25:08 [E] - Request Failed
+Error   = {runtime error: invalid memory address or nil pointer dereference}
+Session = {PlayerId:4294967298, Nickname:"龙馨夜", RoleId:"1", TownId:1}
+Request = &event_api.GetEvents_In{
+}
+
+Stack   =
+    at func.001() [/Users/tangweichen/xxd-server/server/src/game_server/api/server.go:96]
+    at panic() [/usr/local/go/src/pkg/runtime/panic.c:248]
+    at func.008() [/Users/tangweichen/xxd-server/server/src/game_server/mdb/transaction.go:65]
+    at panic() [/usr/local/go/src/pkg/runtime/panic.c:248]
+    at panicstring() [/usr/local/go/src/pkg/runtime/panic.c:552]
+    at sigpanic() [/usr/local/go/src/pkg/runtime/os_darwin.c:454]
+    at getEvents() [/Users/tangweichen/xxd-server/server/src/game_server/module/event/event.go:71]
+    at EventAPI.GetEvents() [/Users/tangweichen/xxd-server/server/src/game_server/module/event/api.go:30]
+    at EventAPI.GetEvents.i() [<autogenerated>:10]
+    at (*GetEvents_In).Process() [/Users/tangweichen/xxd-server/server/src/game_server/api/protocol/event_api/event_api.go:197]
+    at func.002() [/Users/tangweichen/xxd-server/server/src/game_server/api/server.go:138]
+    at (*transController).Transaction() [/Users/tangweichen/xxd-server/server/src/game_server/mdb/transaction.go:69]
+    at (*Database).Transaction() [/Users/tangweichen/xxd-server/server/src/game_server/mdb/zd_tables.go:70]
+    at Transaction() [/Users/tangweichen/xxd-server/server/src/game_server/module/session.go:215]
+    at requestHandler() [/Users/tangweichen/xxd-server/server/src/game_server/api/server.go:140]
+    at requestHandlerFunc.Handle() [/Users/tangweichen/xxd-server/server/src/core/net/session.go:27]
+    at (*Session).readLoop() [/Users/tangweichen/xxd-server/server/src/core/net/session.go:93]
+    at goexit() [/usr/local/go/src/pkg/runtime/proc.c:1445]
+2014/10/30 11:25:09 [E] - [tlog] PlayerLogin error. write udp4 172.26.166.37:6667: connection refused
+ info: &{1 2014-10-30 11:25:09.705909973 +0800 CST game_1_app_id 1 lee223 1 0 90000  HTML5  WiFi 0 0 0 0  0   }
+2014/10/30 11:25:11 [E] - [tlog] GameSvrState error. write udp4 172.26.166.37:6667: connection refused
+ info: &{2014-10-30 11:25:11.6013771 +0800 CST 172.26.166.37}
+2014/10/30 11:25:15 [E] - [tlog] PlayerLogin error. write udp4 172.26.166.37:6667: connection refused
+ info: &{1 2014-10-30 11:25:15.50135564 +0800 CST game_1_app_id 1 lee223 1 0 0.98 macos intel xxx wifi 0 0 0.999999111 0 intel 001 1024 opengl 0.1 4.3 mac 10.94}
+2014/10/30 11:25:16 [E] - Request Failed
+Error   = {runtime error: invalid memory address or nil pointer dereference}
+Session = {PlayerId:4294967298, Nickname:"彭英碧", RoleId:"1", TownId:1}
+Request = &event_api.GetEvents_In{
+}
+
+Stack   =
+    at func.001() [/Users/tangweichen/xxd-server/server/src/game_server/api/server.go:96]
+    at panic() [/usr/local/go/src/pkg/runtime/panic.c:248]
+    at func.008() [/Users/tangweichen/xxd-server/server/src/game_server/mdb/transaction.go:65]
+    at panic() [/usr/local/go/src/pkg/runtime/panic.c:248]
+    at panicstring() [/usr/local/go/src/pkg/runtime/panic.c:552]
+    at sigpanic() [/usr/local/go/src/pkg/runtime/os_darwin.c:454]
+    at getEvents() [/Users/tangweichen/xxd-server/server/src/game_server/module/event/event.go:71]
+    at EventAPI.GetEvents() [/Users/tangweichen/xxd-server/server/src/game_server/module/event/api.go:30]
+    at EventAPI.GetEvents.i() [<autogenerated>:10]
+    at (*GetEvents_In).Process() [/Users/tangweichen/xxd-server/server/src/game_server/api/protocol/event_api/event_api.go:197]
+    at func.002() [/Users/tangweichen/xxd-server/server/src/game_server/api/server.go:138]
+    at (*transController).Transaction() [/Users/tangweichen/xxd-server/server/src/game_server/mdb/transaction.go:69]
+    at (*Database).Transaction() [/Users/tangweichen/xxd-server/server/src/game_server/mdb/zd_tables.go:70]
+    at Transaction() [/Users/tangweichen/xxd-server/server/src/game_server/module/session.go:215]
+    at requestHandler() [/Users/tangweichen/xxd-server/server/src/game_server/api/server.go:140]
+    at requestHandlerFunc.Handle() [/Users/tangweichen/xxd-server/server/src/core/net/session.go:27]
+    at (*Session).readLoop() [/Users/tangweichen/xxd-server/server/src/core/net/session.go:93]
+    at goexit() [/usr/local/go/src/pkg/runtime/proc.c:1445]
+2014/10/30 11:25:17 [E] - [tlog] PlayerLogin error. write udp4 172.26.166.37:6667: connection refused
+ info: &{1 2014-10-30 11:25:17.704264628 +0800 CST game_1_app_id 1 lee223 1 0 90000  HTML5  WiFi 0 0 0 0  0   }
+2014/10/30 11:25:28 [E] - [tlog] PlayerRegister error. write udp4 172.26.166.37:6667: connection refused
+ info: &{1 2014-10-30 11:25:28.016041441 +0800 CST game_1_app_id 1 lee222 90000  HTML5  WiFi 0 0 0 0  0   }
+2014/10/30 11:25:28 [E] - RPC-Call found error when excute client.Call
+Error   	= RPC::getClient can't found rpc-server 10
+serviceAPI 	= RemoteServe.GetPlayerInfoWithOpenId
+Args    = &rpc.Args_GetInfoWithOpenId{
+    RPCArgTag: rpc.RPCArgTag{
+        ClientId: 0,
+    },
+    OpenId: []uint8{ 108, 101, 101, 50, 50, 50 },
+    PlayerId: 4294967299,
+    GameServerId: 10,
+}
+
+Result  = &rpc.Reply_GetInfoWithOpenId{
+    PlayerInfo: nil,
+}
+2014/10/30 11:25:28 [E] - RPC-Call panic
+Error   = {RPC::getClient can't found rpc-server 10}
+serviceAPI = RemoteServe.GetPlayerInfoWithOpenId
+Args    = &rpc.Args_GetInfoWithOpenId{
+    RPCArgTag: rpc.RPCArgTag{
+        ClientId: 0,
+    },
+    OpenId: []uint8{ 108, 101, 101, 50, 50, 50 },
+    PlayerId: 4294967299,
+    GameServerId: 10,
+}
+
+Result  = &rpc.Reply_GetInfoWithOpenId{
+    PlayerInfo: nil,
+}
+
+Stack   =
+    at func.003() [/Users/tangweichen/xxd-server/server/src/game_server/rpc/rpc.go:107]
+    at panic() [/usr/local/go/src/pkg/runtime/panic.c:248]
+    at func.008() [/Users/tangweichen/xxd-server/server/src/game_server/mdb/transaction.go:65]
+    at panic() [/usr/local/go/src/pkg/runtime/panic.c:248]
+    at When() [/Users/tangweichen/xxd-server/server/src/core/fail/fail.go:5]
+    at func.003() [/Users/tangweichen/xxd-server/server/src/game_server/module/role/api.go:122]
+    at func.161() [/Users/tangweichen/xxd-server/server/src/game_server/module/rpc/rpc_player.go:90]
+    at func.004() [/Users/tangweichen/xxd-server/server/src/game_server/rpc/rpc.go:137]
+    at (*transController).Transaction() [/Users/tangweichen/xxd-server/server/src/game_server/mdb/transaction.go:69]
+    at (*Database).Transaction() [/Users/tangweichen/xxd-server/server/src/game_server/mdb/zd_tables.go:70]
+    at Transaction() [/Users/tangweichen/xxd-server/server/src/game_server/mdb/database.go:104]
+    at func.005() [/Users/tangweichen/xxd-server/server/src/game_server/rpc/rpc.go:138]
+    at goexit() [/usr/local/go/src/pkg/runtime/proc.c:1445]
+2014/10/30 11:25:31 [E] - [tlog] PlayerLogout error. write udp4 172.26.166.37:6667: connection refused
+ info: &{1 2014-10-30 11:25:31.523379054 +0800 CST game_1_app_id 1 lee222 3 1 0 90000  HTML5  WiFi 0 0 0 0  0   }
+2014/10/30 11:25:43 [E] - [tlog] PlayerLogin error. write udp4 172.26.166.37:6667: connection refused
+ info: &{1 2014-10-30 11:25:43.1896953 +0800 CST game_1_app_id 1 lee222 1 0 0.98 macos intel xxx wifi 0 0 0.999999111 0 intel 001 1024 opengl 0.1 4.3 mac 10.94}
+2014/10/30 11:25:59 [E] - [tlog] PlayerLogin error. write udp4 172.26.166.37:6667: connection refused
+ info: &{1 2014-10-30 11:25:59.91388807 +0800 CST game_1_app_id 1 lee222 1 0 90000  HTML5  WiFi 0 0 0 0  0   }
+2014/10/30 11:26:03 [E] - [tlog] MoneyFlow error. write udp4 172.26.166.37:6667: connection refused
+ info: &{1 2014-10-30 11:26:03.0013311 +0800 CST 0 game_1_app_id 1 lee222 1 10 10 26 0 0 0 0}
+2014/10/30 11:26:20 [E] - [tlog] GameSvrState error. write udp4 172.26.166.37:6667: connection refused
+ info: &{2014-10-30 11:26:20.050237091 +0800 CST 172.26.166.37}
+2014/10/30 11:27:11 [E] - [tlog] GameSvrState error. write udp4 172.26.166.37:6667: connection refused
+ info: &{2014-10-30 11:27:11.602253665 +0800 CST 172.26.166.37}
+2014/10/30 11:27:50 [E] - [tlog] PlayerLogin error. write udp4 172.26.166.37:6667: connection refused
+ info: &{1 2014-10-30 11:27:50.976763841 +0800 CST game_1_app_id 1 lee222 1 0 90000  HTML5  WiFi 0 0 0 0  0   }
+2014/10/30 11:28:11 [E] - [tlog] GameSvrState error. write udp4 172.26.166.37:6667: connection refused
+ info: &{2014-10-30 11:28:11.603484881 +0800 CST 172.26.166.37}
+2014/10/30 11:28:20 [E] - [tlog] GameSvrState error. write udp4 172.26.166.37:6667: connection refused
+ info: &{2014-10-30 11:28:20.052106949 +0800 CST 172.26.166.37}
+2014/10/30 11:28:58 [E] - [tlog] PlayerLogin error. write udp4 172.26.166.37:6667: connection refused
+ info: &{1 2014-10-30 11:28:58.943711892 +0800 CST game_1_app_id 1 lee222 1 0 90000  HTML5  WiFi 0 0 0 0  0   }
+2014/10/30 11:29:01 [E] - Request Failed
+Error   = {loginGlobal hash incorrect}
+Session = {PlayerId:0, Nickname:"", RoleId:"0", TownId:0}
+Request = &player_api.GlobalLogin_In{
+    Pid: 4294967299,
+    Openid: []uint8{ 108, 101, 101, 50, 50, 50 },
+    Nick: []uint8{ 229, 144, 149, 228, 184, 184, 233, 149, 135 },
+    RoleId: 1,
+    RoleLevel: 1,
+    FightNum: 920,
+    Time: 1414639739,
+    Hash: []uint8{ 83, 90, 73, 47, 102, 57, 56, 104, 118, 113, 81, 113, 107, 113, 69, 57, 98, 120, 71, 47, 89, 81, 61, 61 },
+    PlatformType: 2,
+    Username: []uint8{ 108, 101, 101, 50, 50, 50 },
+    Openkey: []uint8{ },
+    PayToken: []uint8{ },
+    Pfkey: []uint8{ },
+    Zoneid: 1,
+    Pf: []uint8{ },
+}
+
+Stack   =
+    at func.001() [/Users/tangweichen/xxd-server/server/src/game_server/api/server.go:96]
+    at panic() [/usr/local/go/src/pkg/runtime/panic.c:248]
+    at func.008() [/Users/tangweichen/xxd-server/server/src/game_server/mdb/transaction.go:65]
+    at panic() [/usr/local/go/src/pkg/runtime/panic.c:248]
+    at When() [/Users/tangweichen/xxd-server/server/src/core/fail/fail.go:5]
+    at loginGlobal() [/Users/tangweichen/xxd-server/server/src/game_server/module/player/login_global.go:35]
+    at PlayerAPI.GlobalLogin() [/Users/tangweichen/xxd-server/server/src/game_server/module/player/api.go:86]
+    at PlayerAPI.GlobalLogin.i() [<autogenerated>:19]
+    at (*GlobalLogin_In).Process() [/Users/tangweichen/xxd-server/server/src/game_server/api/protocol/player_api/player_api.go:619]
+    at func.002() [/Users/tangweichen/xxd-server/server/src/game_server/api/server.go:138]
+    at (*transController).Transaction() [/Users/tangweichen/xxd-server/server/src/game_server/mdb/transaction.go:69]
+    at (*Database).Transaction() [/Users/tangweichen/xxd-server/server/src/game_server/mdb/zd_tables.go:70]
+    at Transaction() [/Users/tangweichen/xxd-server/server/src/game_server/module/session.go:215]
+    at requestHandler() [/Users/tangweichen/xxd-server/server/src/game_server/api/server.go:140]
+    at requestHandlerFunc.Handle() [/Users/tangweichen/xxd-server/server/src/core/net/session.go:27]
+    at (*Session).readLoop() [/Users/tangweichen/xxd-server/server/src/core/net/session.go:93]
+    at goexit() [/usr/local/go/src/pkg/runtime/proc.c:1445]
+2014/10/30 11:29:03 [E] - Request Failed
+Error   = {loginGlobal hash incorrect}
+Session = {PlayerId:0, Nickname:"", RoleId:"0", TownId:0}
+Request = &player_api.GlobalLogin_In{
+    Pid: 4294967299,
+    Openid: []uint8{ 108, 101, 101, 50, 50, 50 },
+    Nick: []uint8{ 229, 144, 149, 228, 184, 184, 233, 149, 135 },
+    RoleId: 1,
+    RoleLevel: 1,
+    FightNum: 920,
+    Time: 1414639739,
+    Hash: []uint8{ 83, 90, 73, 47, 102, 57, 56, 104, 118, 113, 81, 113, 107, 113, 69, 57, 98, 120, 71, 47, 89, 81, 61, 61 },
+    PlatformType: 2,
+    Username: []uint8{ 108, 101, 101, 50, 50, 50 },
+    Openkey: []uint8{ },
+    PayToken: []uint8{ },
+    Pfkey: []uint8{ },
+    Zoneid: 1,
+    Pf: []uint8{ },
+}
+
+Stack   =
+    at func.001() [/Users/tangweichen/xxd-server/server/src/game_server/api/server.go:96]
+    at panic() [/usr/local/go/src/pkg/runtime/panic.c:248]
+    at func.008() [/Users/tangweichen/xxd-server/server/src/game_server/mdb/transaction.go:65]
+    at panic() [/usr/local/go/src/pkg/runtime/panic.c:248]
+    at When() [/Users/tangweichen/xxd-server/server/src/core/fail/fail.go:5]
+    at loginGlobal() [/Users/tangweichen/xxd-server/server/src/game_server/module/player/login_global.go:35]
+    at PlayerAPI.GlobalLogin() [/Users/tangweichen/xxd-server/server/src/game_server/module/player/api.go:86]
+    at PlayerAPI.GlobalLogin.i() [<autogenerated>:19]
+    at (*GlobalLogin_In).Process() [/Users/tangweichen/xxd-server/server/src/game_server/api/protocol/player_api/player_api.go:619]
+    at func.002() [/Users/tangweichen/xxd-server/server/src/game_server/api/server.go:138]
+    at (*transController).Transaction() [/Users/tangweichen/xxd-server/server/src/game_server/mdb/transaction.go:69]
+    at (*Database).Transaction() [/Users/tangweichen/xxd-server/server/src/game_server/mdb/zd_tables.go:70]
+    at Transaction() [/Users/tangweichen/xxd-server/server/src/game_server/module/session.go:215]
+    at requestHandler() [/Users/tangweichen/xxd-server/server/src/game_server/api/server.go:140]
+    at requestHandlerFunc.Handle() [/Users/tangweichen/xxd-server/server/src/core/net/session.go:27]
+    at (*Session).readLoop() [/Users/tangweichen/xxd-server/server/src/core/net/session.go:93]
+    at goexit() [/usr/local/go/src/pkg/runtime/proc.c:1445]
+2014/10/30 11:29:05 [E] - Request Failed
+Error   = {loginGlobal hash incorrect}
+Session = {PlayerId:0, Nickname:"", RoleId:"0", TownId:0}
+Request = &player_api.GlobalLogin_In{
+    Pid: 4294967299,
+    Openid: []uint8{ 108, 101, 101, 50, 50, 50 },
+    Nick: []uint8{ 229, 144, 149, 228, 184, 184, 233, 149, 135 },
+    RoleId: 1,
+    RoleLevel: 1,
+    FightNum: 920,
+    Time: 1414639739,
+    Hash: []uint8{ 83, 90, 73, 47, 102, 57, 56, 104, 118, 113, 81, 113, 107, 113, 69, 57, 98, 120, 71, 47, 89, 81, 61, 61 },
+    PlatformType: 2,
+    Username: []uint8{ 108, 101, 101, 50, 50, 50 },
+    Openkey: []uint8{ },
+    PayToken: []uint8{ },
+    Pfkey: []uint8{ },
+    Zoneid: 1,
+    Pf: []uint8{ },
+}
+
+Stack   =
+    at func.001() [/Users/tangweichen/xxd-server/server/src/game_server/api/server.go:96]
+    at panic() [/usr/local/go/src/pkg/runtime/panic.c:248]
+    at func.008() [/Users/tangweichen/xxd-server/server/src/game_server/mdb/transaction.go:65]
+    at panic() [/usr/local/go/src/pkg/runtime/panic.c:248]
+    at When() [/Users/tangweichen/xxd-server/server/src/core/fail/fail.go:5]
+    at loginGlobal() [/Users/tangweichen/xxd-server/server/src/game_server/module/player/login_global.go:35]
+    at PlayerAPI.GlobalLogin() [/Users/tangweichen/xxd-server/server/src/game_server/module/player/api.go:86]
+    at PlayerAPI.GlobalLogin.i() [<autogenerated>:19]
+    at (*GlobalLogin_In).Process() [/Users/tangweichen/xxd-server/server/src/game_server/api/protocol/player_api/player_api.go:619]
+    at func.002() [/Users/tangweichen/xxd-server/server/src/game_server/api/server.go:138]
+    at (*transController).Transaction() [/Users/tangweichen/xxd-server/server/src/game_server/mdb/transaction.go:69]
+    at (*Database).Transaction() [/Users/tangweichen/xxd-server/server/src/game_server/mdb/zd_tables.go:70]
+    at Transaction() [/Users/tangweichen/xxd-server/server/src/game_server/module/session.go:215]
+    at requestHandler() [/Users/tangweichen/xxd-server/server/src/game_server/api/server.go:140]
+    at requestHandlerFunc.Handle() [/Users/tangweichen/xxd-server/server/src/core/net/session.go:27]
+    at (*Session).readLoop() [/Users/tangweichen/xxd-server/server/src/core/net/session.go:93]
+    at goexit() [/usr/local/go/src/pkg/runtime/proc.c:1445]
+2014/10/30 11:29:06 [E] - Request Failed
+Error   = {loginGlobal hash incorrect}
+Session = {PlayerId:0, Nickname:"", RoleId:"0", TownId:0}
+Request = &player_api.GlobalLogin_In{
+    Pid: 4294967299,
+    Openid: []uint8{ 108, 101, 101, 50, 50, 50 },
+    Nick: []uint8{ 229, 144, 149, 228, 184, 184, 233, 149, 135 },
+    RoleId: 1,
+    RoleLevel: 1,
+    FightNum: 920,
+    Time: 1414639739,
+    Hash: []uint8{ 83, 90, 73, 47, 102, 57, 56, 104, 118, 113, 81, 113, 107, 113, 69, 57, 98, 120, 71, 47, 89, 81, 61, 61 },
+    PlatformType: 2,
+    Username: []uint8{ 108, 101, 101, 50, 50, 50 },
+    Openkey: []uint8{ },
+    PayToken: []uint8{ },
+    Pfkey: []uint8{ },
+    Zoneid: 1,
+    Pf: []uint8{ },
+}
+
+Stack   =
+    at func.001() [/Users/tangweichen/xxd-server/server/src/game_server/api/server.go:96]
+    at panic() [/usr/local/go/src/pkg/runtime/panic.c:248]
+    at func.008() [/Users/tangweichen/xxd-server/server/src/game_server/mdb/transaction.go:65]
+    at panic() [/usr/local/go/src/pkg/runtime/panic.c:248]
+    at When() [/Users/tangweichen/xxd-server/server/src/core/fail/fail.go:5]
+    at loginGlobal() [/Users/tangweichen/xxd-server/server/src/game_server/module/player/login_global.go:35]
+    at PlayerAPI.GlobalLogin() [/Users/tangweichen/xxd-server/server/src/game_server/module/player/api.go:86]
+    at PlayerAPI.GlobalLogin.i() [<autogenerated>:19]
+    at (*GlobalLogin_In).Process() [/Users/tangweichen/xxd-server/server/src/game_server/api/protocol/player_api/player_api.go:619]
+    at func.002() [/Users/tangweichen/xxd-server/server/src/game_server/api/server.go:138]
+    at (*transController).Transaction() [/Users/tangweichen/xxd-server/server/src/game_server/mdb/transaction.go:69]
+    at (*Database).Transaction() [/Users/tangweichen/xxd-server/server/src/game_server/mdb/zd_tables.go:70]
+    at Transaction() [/Users/tangweichen/xxd-server/server/src/game_server/module/session.go:215]
+    at requestHandler() [/Users/tangweichen/xxd-server/server/src/game_server/api/server.go:140]
+    at requestHandlerFunc.Handle() [/Users/tangweichen/xxd-server/server/src/core/net/session.go:27]
+    at (*Session).readLoop() [/Users/tangweichen/xxd-server/server/src/core/net/session.go:93]
+    at goexit() [/usr/local/go/src/pkg/runtime/proc.c:1445]
+2014/10/30 11:29:07 [E] - Request Failed
+Error   = {loginGlobal hash incorrect}
+Session = {PlayerId:0, Nickname:"", RoleId:"0", TownId:0}
+Request = &player_api.GlobalLogin_In{
+    Pid: 4294967299,
+    Openid: []uint8{ 108, 101, 101, 50, 50, 50 },
+    Nick: []uint8{ 229, 144, 149, 228, 184, 184, 233, 149, 135 },
+    RoleId: 1,
+    RoleLevel: 1,
+    FightNum: 920,
+    Time: 1414639739,
+    Hash: []uint8{ 83, 90, 73, 47, 102, 57, 56, 104, 118, 113, 81, 113, 107, 113, 69, 57, 98, 120, 71, 47, 89, 81, 61, 61 },
+    PlatformType: 2,
+    Username: []uint8{ 108, 101, 101, 50, 50, 50 },
+    Openkey: []uint8{ },
+    PayToken: []uint8{ },
+    Pfkey: []uint8{ },
+    Zoneid: 1,
+    Pf: []uint8{ },
+}
+
+Stack   =
+    at func.001() [/Users/tangweichen/xxd-server/server/src/game_server/api/server.go:96]
+    at panic() [/usr/local/go/src/pkg/runtime/panic.c:248]
+    at func.008() [/Users/tangweichen/xxd-server/server/src/game_server/mdb/transaction.go:65]
+    at panic() [/usr/local/go/src/pkg/runtime/panic.c:248]
+    at When() [/Users/tangweichen/xxd-server/server/src/core/fail/fail.go:5]
+    at loginGlobal() [/Users/tangweichen/xxd-server/server/src/game_server/module/player/login_global.go:35]
+    at PlayerAPI.GlobalLogin() [/Users/tangweichen/xxd-server/server/src/game_server/module/player/api.go:86]
+    at PlayerAPI.GlobalLogin.i() [<autogenerated>:19]
+    at (*GlobalLogin_In).Process() [/Users/tangweichen/xxd-server/server/src/game_server/api/protocol/player_api/player_api.go:619]
+    at func.002() [/Users/tangweichen/xxd-server/server/src/game_server/api/server.go:138]
+    at (*transController).Transaction() [/Users/tangweichen/xxd-server/server/src/game_server/mdb/transaction.go:69]
+    at (*Database).Transaction() [/Users/tangweichen/xxd-server/server/src/game_server/mdb/zd_tables.go:70]
+    at Transaction() [/Users/tangweichen/xxd-server/server/src/game_server/module/session.go:215]
+    at requestHandler() [/Users/tangweichen/xxd-server/server/src/game_server/api/server.go:140]
+    at requestHandlerFunc.Handle() [/Users/tangweichen/xxd-server/server/src/core/net/session.go:27]
+    at (*Session).readLoop() [/Users/tangweichen/xxd-server/server/src/core/net/session.go:93]
+    at goexit() [/usr/local/go/src/pkg/runtime/proc.c:1445]
+2014/10/30 11:29:08 [E] - Request Failed
+Error   = {loginGlobal hash incorrect}
+Session = {PlayerId:0, Nickname:"", RoleId:"0", TownId:0}
+Request = &player_api.GlobalLogin_In{
+    Pid: 4294967299,
+    Openid: []uint8{ 108, 101, 101, 50, 50, 50 },
+    Nick: []uint8{ 229, 144, 149, 228, 184, 184, 233, 149, 135 },
+    RoleId: 1,
+    RoleLevel: 1,
+    FightNum: 920,
+    Time: 1414639739,
+    Hash: []uint8{ 83, 90, 73, 47, 102, 57, 56, 104, 118, 113, 81, 113, 107, 113, 69, 57, 98, 120, 71, 47, 89, 81, 61, 61 },
+    PlatformType: 2,
+    Username: []uint8{ 108, 101, 101, 50, 50, 50 },
+    Openkey: []uint8{ },
+    PayToken: []uint8{ },
+    Pfkey: []uint8{ },
+    Zoneid: 1,
+    Pf: []uint8{ },
+}
+
+Stack   =
+    at func.001() [/Users/tangweichen/xxd-server/server/src/game_server/api/server.go:96]
+    at panic() [/usr/local/go/src/pkg/runtime/panic.c:248]
+    at func.008() [/Users/tangweichen/xxd-server/server/src/game_server/mdb/transaction.go:65]
+    at panic() [/usr/local/go/src/pkg/runtime/panic.c:248]
+    at When() [/Users/tangweichen/xxd-server/server/src/core/fail/fail.go:5]
+    at loginGlobal() [/Users/tangweichen/xxd-server/server/src/game_server/module/player/login_global.go:35]
+    at PlayerAPI.GlobalLogin() [/Users/tangweichen/xxd-server/server/src/game_server/module/player/api.go:86]
+    at PlayerAPI.GlobalLogin.i() [<autogenerated>:19]
+    at (*GlobalLogin_In).Process() [/Users/tangweichen/xxd-server/server/src/game_server/api/protocol/player_api/player_api.go:619]
+    at func.002() [/Users/tangweichen/xxd-server/server/src/game_server/api/server.go:138]
+    at (*transController).Transaction() [/Users/tangweichen/xxd-server/server/src/game_server/mdb/transaction.go:69]
+    at (*Database).Transaction() [/Users/tangweichen/xxd-server/server/src/game_server/mdb/zd_tables.go:70]
+    at Transaction() [/Users/tangweichen/xxd-server/server/src/game_server/module/session.go:215]
+    at requestHandler() [/Users/tangweichen/xxd-server/server/src/game_server/api/server.go:140]
+    at requestHandlerFunc.Handle() [/Users/tangweichen/xxd-server/server/src/core/net/session.go:27]
+    at (*Session).readLoop() [/Users/tangweichen/xxd-server/server/src/core/net/session.go:93]
+    at goexit() [/usr/local/go/src/pkg/runtime/proc.c:1445]
+2014/10/30 11:29:09 [E] - Request Failed
+Error   = {loginGlobal hash incorrect}
+Session = {PlayerId:0, Nickname:"", RoleId:"0", TownId:0}
+Request = &player_api.GlobalLogin_In{
+    Pid: 4294967299,
+    Openid: []uint8{ 108, 101, 101, 50, 50, 50 },
+    Nick: []uint8{ 229, 144, 149, 228, 184, 184, 233, 149, 135 },
+    RoleId: 1,
+    RoleLevel: 1,
+    FightNum: 920,
+    Time: 1414639739,
+    Hash: []uint8{ 83, 90, 73, 47, 102, 57, 56, 104, 118, 113, 81, 113, 107, 113, 69, 57, 98, 120, 71, 47, 89, 81, 61, 61 },
+    PlatformType: 2,
+    Username: []uint8{ 108, 101, 101, 50, 50, 50 },
+    Openkey: []uint8{ },
+    PayToken: []uint8{ },
+    Pfkey: []uint8{ },
+    Zoneid: 1,
+    Pf: []uint8{ },
+}
+
+Stack   =
+    at func.001() [/Users/tangweichen/xxd-server/server/src/game_server/api/server.go:96]
+    at panic() [/usr/local/go/src/pkg/runtime/panic.c:248]
+    at func.008() [/Users/tangweichen/xxd-server/server/src/game_server/mdb/transaction.go:65]
+    at panic() [/usr/local/go/src/pkg/runtime/panic.c:248]
+    at When() [/Users/tangweichen/xxd-server/server/src/core/fail/fail.go:5]
+    at loginGlobal() [/Users/tangweichen/xxd-server/server/src/game_server/module/player/login_global.go:35]
+    at PlayerAPI.GlobalLogin() [/Users/tangweichen/xxd-server/server/src/game_server/module/player/api.go:86]
+    at PlayerAPI.GlobalLogin.i() [<autogenerated>:19]
+    at (*GlobalLogin_In).Process() [/Users/tangweichen/xxd-server/server/src/game_server/api/protocol/player_api/player_api.go:619]
+    at func.002() [/Users/tangweichen/xxd-server/server/src/game_server/api/server.go:138]
+    at (*transController).Transaction() [/Users/tangweichen/xxd-server/server/src/game_server/mdb/transaction.go:69]
+    at (*Database).Transaction() [/Users/tangweichen/xxd-server/server/src/game_server/mdb/zd_tables.go:70]
+    at Transaction() [/Users/tangweichen/xxd-server/server/src/game_server/module/session.go:215]
+    at requestHandler() [/Users/tangweichen/xxd-server/server/src/game_server/api/server.go:140]
+    at requestHandlerFunc.Handle() [/Users/tangweichen/xxd-server/server/src/core/net/session.go:27]
+    at (*Session).readLoop() [/Users/tangweichen/xxd-server/server/src/core/net/session.go:93]
+    at goexit() [/usr/local/go/src/pkg/runtime/proc.c:1445]
+2014/10/30 11:29:11 [E] - [tlog] GameSvrState error. write udp4 172.26.166.37:6667: connection refused
+ info: &{2014-10-30 11:29:11.604196031 +0800 CST 172.26.166.37}
+2014/10/30 11:29:10 [E] - Request Failed
+Error   = {loginGlobal hash incorrect}
+Session = {PlayerId:0, Nickname:"", RoleId:"0", TownId:0}
+Request = &player_api.GlobalLogin_In{
+    Pid: 4294967299,
+    Openid: []uint8{ 108, 101, 101, 50, 50, 50 },
+    Nick: []uint8{ 229, 144, 149, 228, 184, 184, 233, 149, 135 },
+    RoleId: 1,
+    RoleLevel: 1,
+    FightNum: 920,
+    Time: 1414639739,
+    Hash: []uint8{ 83, 90, 73, 47, 102, 57, 56, 104, 118, 113, 81, 113, 107, 113, 69, 57, 98, 120, 71, 47, 89, 81, 61, 61 },
+    PlatformType: 2,
+    Username: []uint8{ 108, 101, 101, 50, 50, 50 },
+    Openkey: []uint8{ },
+    PayToken: []uint8{ },
+    Pfkey: []uint8{ },
+    Zoneid: 1,
+    Pf: []uint8{ },
+}
+
+Stack   =
+    at func.001() [/Users/tangweichen/xxd-server/server/src/game_server/api/server.go:96]
+    at panic() [/usr/local/go/src/pkg/runtime/panic.c:248]
+    at func.008() [/Users/tangweichen/xxd-server/server/src/game_server/mdb/transaction.go:65]
+    at panic() [/usr/local/go/src/pkg/runtime/panic.c:248]
+    at When() [/Users/tangweichen/xxd-server/server/src/core/fail/fail.go:5]
+    at loginGlobal() [/Users/tangweichen/xxd-server/server/src/game_server/module/player/login_global.go:35]
+    at PlayerAPI.GlobalLogin() [/Users/tangweichen/xxd-server/server/src/game_server/module/player/api.go:86]
+    at PlayerAPI.GlobalLogin.i() [<autogenerated>:19]
+    at (*GlobalLogin_In).Process() [/Users/tangweichen/xxd-server/server/src/game_server/api/protocol/player_api/player_api.go:619]
+    at func.002() [/Users/tangweichen/xxd-server/server/src/game_server/api/server.go:138]
+    at (*transController).Transaction() [/Users/tangweichen/xxd-server/server/src/game_server/mdb/transaction.go:69]
+    at (*Database).Transaction() [/Users/tangweichen/xxd-server/server/src/game_server/mdb/zd_tables.go:70]
+    at Transaction() [/Users/tangweichen/xxd-server/server/src/game_server/module/session.go:215]
+    at requestHandler() [/Users/tangweichen/xxd-server/server/src/game_server/api/server.go:140]
+    at requestHandlerFunc.Handle() [/Users/tangweichen/xxd-server/server/src/core/net/session.go:27]
+    at (*Session).readLoop() [/Users/tangweichen/xxd-server/server/src/core/net/session.go:93]
+    at goexit() [/usr/local/go/src/pkg/runtime/proc.c:1445]
+2014/10/30 11:29:11 [E] - Request Failed
+Error   = {loginGlobal hash incorrect}
+Session = {PlayerId:0, Nickname:"", RoleId:"0", TownId:0}
+Request = &player_api.GlobalLogin_In{
+    Pid: 4294967299,
+    Openid: []uint8{ 108, 101, 101, 50, 50, 50 },
+    Nick: []uint8{ 229, 144, 149, 228, 184, 184, 233, 149, 135 },
+    RoleId: 1,
+    RoleLevel: 1,
+    FightNum: 920,
+    Time: 1414639739,
+    Hash: []uint8{ 83, 90, 73, 47, 102, 57, 56, 104, 118, 113, 81, 113, 107, 113, 69, 57, 98, 120, 71, 47, 89, 81, 61, 61 },
+    PlatformType: 2,
+    Username: []uint8{ 108, 101, 101, 50, 50, 50 },
+    Openkey: []uint8{ },
+    PayToken: []uint8{ },
+    Pfkey: []uint8{ },
+    Zoneid: 1,
+    Pf: []uint8{ },
+}
+
+Stack   =
+    at func.001() [/Users/tangweichen/xxd-server/server/src/game_server/api/server.go:96]
+    at panic() [/usr/local/go/src/pkg/runtime/panic.c:248]
+    at func.008() [/Users/tangweichen/xxd-server/server/src/game_server/mdb/transaction.go:65]
+    at panic() [/usr/local/go/src/pkg/runtime/panic.c:248]
+    at When() [/Users/tangweichen/xxd-server/server/src/core/fail/fail.go:5]
+    at loginGlobal() [/Users/tangweichen/xxd-server/server/src/game_server/module/player/login_global.go:35]
+    at PlayerAPI.GlobalLogin() [/Users/tangweichen/xxd-server/server/src/game_server/module/player/api.go:86]
+    at PlayerAPI.GlobalLogin.i() [<autogenerated>:19]
+    at (*GlobalLogin_In).Process() [/Users/tangweichen/xxd-server/server/src/game_server/api/protocol/player_api/player_api.go:619]
+    at func.002() [/Users/tangweichen/xxd-server/server/src/game_server/api/server.go:138]
+    at (*transController).Transaction() [/Users/tangweichen/xxd-server/server/src/game_server/mdb/transaction.go:69]
+    at (*Database).Transaction() [/Users/tangweichen/xxd-server/server/src/game_server/mdb/zd_tables.go:70]
+    at Transaction() [/Users/tangweichen/xxd-server/server/src/game_server/module/session.go:215]
+    at requestHandler() [/Users/tangweichen/xxd-server/server/src/game_server/api/server.go:140]
+    at requestHandlerFunc.Handle() [/Users/tangweichen/xxd-server/server/src/core/net/session.go:27]
+    at (*Session).readLoop() [/Users/tangweichen/xxd-server/server/src/core/net/session.go:93]
+    at goexit() [/usr/local/go/src/pkg/runtime/proc.c:1445]
+2014/10/30 11:29:12 [E] - Request Failed
+Error   = {loginGlobal hash incorrect}
+Session = {PlayerId:0, Nickname:"", RoleId:"0", TownId:0}
+Request = &player_api.GlobalLogin_In{
+    Pid: 4294967299,
+    Openid: []uint8{ 108, 101, 101, 50, 50, 50 },
+    Nick: []uint8{ 229, 144, 149, 228, 184, 184, 233, 149, 135 },
+    RoleId: 1,
+    RoleLevel: 1,
+    FightNum: 920,
+    Time: 1414639739,
+    Hash: []uint8{ 83, 90, 73, 47, 102, 57, 56, 104, 118, 113, 81, 113, 107, 113, 69, 57, 98, 120, 71, 47, 89, 81, 61, 61 },
+    PlatformType: 2,
+    Username: []uint8{ 108, 101, 101, 50, 50, 50 },
+    Openkey: []uint8{ },
+    PayToken: []uint8{ },
+    Pfkey: []uint8{ },
+    Zoneid: 1,
+    Pf: []uint8{ },
+}
+
+Stack   =
+    at func.001() [/Users/tangweichen/xxd-server/server/src/game_server/api/server.go:96]
+    at panic() [/usr/local/go/src/pkg/runtime/panic.c:248]
+    at func.008() [/Users/tangweichen/xxd-server/server/src/game_server/mdb/transaction.go:65]
+    at panic() [/usr/local/go/src/pkg/runtime/panic.c:248]
+    at When() [/Users/tangweichen/xxd-server/server/src/core/fail/fail.go:5]
+    at loginGlobal() [/Users/tangweichen/xxd-server/server/src/game_server/module/player/login_global.go:35]
+    at PlayerAPI.GlobalLogin() [/Users/tangweichen/xxd-server/server/src/game_server/module/player/api.go:86]
+    at PlayerAPI.GlobalLogin.i() [<autogenerated>:19]
+    at (*GlobalLogin_In).Process() [/Users/tangweichen/xxd-server/server/src/game_server/api/protocol/player_api/player_api.go:619]
+    at func.002() [/Users/tangweichen/xxd-server/server/src/game_server/api/server.go:138]
+    at (*transController).Transaction() [/Users/tangweichen/xxd-server/server/src/game_server/mdb/transaction.go:69]
+    at (*Database).Transaction() [/Users/tangweichen/xxd-server/server/src/game_server/mdb/zd_tables.go:70]
+    at Transaction() [/Users/tangweichen/xxd-server/server/src/game_server/module/session.go:215]
+    at requestHandler() [/Users/tangweichen/xxd-server/server/src/game_server/api/server.go:140]
+    at requestHandlerFunc.Handle() [/Users/tangweichen/xxd-server/server/src/core/net/session.go:27]
+    at (*Session).readLoop() [/Users/tangweichen/xxd-server/server/src/core/net/session.go:93]
+    at goexit() [/usr/local/go/src/pkg/runtime/proc.c:1445]
+2014/10/30 11:29:14 [E] - Request Failed
+Error   = {loginGlobal hash incorrect}
+Session = {PlayerId:0, Nickname:"", RoleId:"0", TownId:0}
+Request = &player_api.GlobalLogin_In{
+    Pid: 4294967299,
+    Openid: []uint8{ 108, 101, 101, 50, 50, 50 },
+    Nick: []uint8{ 229, 144, 149, 228, 184, 184, 233, 149, 135 },
+    RoleId: 1,
+    RoleLevel: 1,
+    FightNum: 920,
+    Time: 1414639739,
+    Hash: []uint8{ 83, 90, 73, 47, 102, 57, 56, 104, 118, 113, 81, 113, 107, 113, 69, 57, 98, 120, 71, 47, 89, 81, 61, 61 },
+    PlatformType: 2,
+    Username: []uint8{ 108, 101, 101, 50, 50, 50 },
+    Openkey: []uint8{ },
+    PayToken: []uint8{ },
+    Pfkey: []uint8{ },
+    Zoneid: 1,
+    Pf: []uint8{ },
+}
+
+Stack   =
+    at func.001() [/Users/tangweichen/xxd-server/server/src/game_server/api/server.go:96]
+    at panic() [/usr/local/go/src/pkg/runtime/panic.c:248]
+    at func.008() [/Users/tangweichen/xxd-server/server/src/game_server/mdb/transaction.go:65]
+    at panic() [/usr/local/go/src/pkg/runtime/panic.c:248]
+    at When() [/Users/tangweichen/xxd-server/server/src/core/fail/fail.go:5]
+    at loginGlobal() [/Users/tangweichen/xxd-server/server/src/game_server/module/player/login_global.go:35]
+    at PlayerAPI.GlobalLogin() [/Users/tangweichen/xxd-server/server/src/game_server/module/player/api.go:86]
+    at PlayerAPI.GlobalLogin.i() [<autogenerated>:19]
+    at (*GlobalLogin_In).Process() [/Users/tangweichen/xxd-server/server/src/game_server/api/protocol/player_api/player_api.go:619]
+    at func.002() [/Users/tangweichen/xxd-server/server/src/game_server/api/server.go:138]
+    at (*transController).Transaction() [/Users/tangweichen/xxd-server/server/src/game_server/mdb/transaction.go:69]
+    at (*Database).Transaction() [/Users/tangweichen/xxd-server/server/src/game_server/mdb/zd_tables.go:70]
+    at Transaction() [/Users/tangweichen/xxd-server/server/src/game_server/module/session.go:215]
+    at requestHandler() [/Users/tangweichen/xxd-server/server/src/game_server/api/server.go:140]
+    at requestHandlerFunc.Handle() [/Users/tangweichen/xxd-server/server/src/core/net/session.go:27]
+    at (*Session).readLoop() [/Users/tangweichen/xxd-server/server/src/core/net/session.go:93]
+    at goexit() [/usr/local/go/src/pkg/runtime/proc.c:1445]
+2014/10/30 11:29:15 [E] - Request Failed
+Error   = {loginGlobal hash incorrect}
+Session = {PlayerId:0, Nickname:"", RoleId:"0", TownId:0}
+Request = &player_api.GlobalLogin_In{
+    Pid: 4294967299,
+    Openid: []uint8{ 108, 101, 101, 50, 50, 50 },
+    Nick: []uint8{ 229, 144, 149, 228, 184, 184, 233, 149, 135 },
+    RoleId: 1,
+    RoleLevel: 1,
+    FightNum: 920,
+    Time: 1414639739,
+    Hash: []uint8{ 83, 90, 73, 47, 102, 57, 56, 104, 118, 113, 81, 113, 107, 113, 69, 57, 98, 120, 71, 47, 89, 81, 61, 61 },
+    PlatformType: 2,
+    Username: []uint8{ 108, 101, 101, 50, 50, 50 },
+    Openkey: []uint8{ },
+    PayToken: []uint8{ },
+    Pfkey: []uint8{ },
+    Zoneid: 1,
+    Pf: []uint8{ },
+}
+
+Stack   =
+    at func.001() [/Users/tangweichen/xxd-server/server/src/game_server/api/server.go:96]
+    at panic() [/usr/local/go/src/pkg/runtime/panic.c:248]
+    at func.008() [/Users/tangweichen/xxd-server/server/src/game_server/mdb/transaction.go:65]
+    at panic() [/usr/local/go/src/pkg/runtime/panic.c:248]
+    at When() [/Users/tangweichen/xxd-server/server/src/core/fail/fail.go:5]
+    at loginGlobal() [/Users/tangweichen/xxd-server/server/src/game_server/module/player/login_global.go:35]
+    at PlayerAPI.GlobalLogin() [/Users/tangweichen/xxd-server/server/src/game_server/module/player/api.go:86]
+    at PlayerAPI.GlobalLogin.i() [<autogenerated>:19]
+    at (*GlobalLogin_In).Process() [/Users/tangweichen/xxd-server/server/src/game_server/api/protocol/player_api/player_api.go:619]
+    at func.002() [/Users/tangweichen/xxd-server/server/src/game_server/api/server.go:138]
+    at (*transController).Transaction() [/Users/tangweichen/xxd-server/server/src/game_server/mdb/transaction.go:69]
+    at (*Database).Transaction() [/Users/tangweichen/xxd-server/server/src/game_server/mdb/zd_tables.go:70]
+    at Transaction() [/Users/tangweichen/xxd-server/server/src/game_server/module/session.go:215]
+    at requestHandler() [/Users/tangweichen/xxd-server/server/src/game_server/api/server.go:140]
+    at requestHandlerFunc.Handle() [/Users/tangweichen/xxd-server/server/src/core/net/session.go:27]
+    at (*Session).readLoop() [/Users/tangweichen/xxd-server/server/src/core/net/session.go:93]
+    at goexit() [/usr/local/go/src/pkg/runtime/proc.c:1445]
+2014/10/30 11:29:16 [E] - Request Failed
+Error   = {loginGlobal hash incorrect}
+Session = {PlayerId:0, Nickname:"", RoleId:"0", TownId:0}
+Request = &player_api.GlobalLogin_In{
+    Pid: 4294967299,
+    Openid: []uint8{ 108, 101, 101, 50, 50, 50 },
+    Nick: []uint8{ 229, 144, 149, 228, 184, 184, 233, 149, 135 },
+    RoleId: 1,
+    RoleLevel: 1,
+    FightNum: 920,
+    Time: 1414639739,
+    Hash: []uint8{ 83, 90, 73, 47, 102, 57, 56, 104, 118, 113, 81, 113, 107, 113, 69, 57, 98, 120, 71, 47, 89, 81, 61, 61 },
+    PlatformType: 2,
+    Username: []uint8{ 108, 101, 101, 50, 50, 50 },
+    Openkey: []uint8{ },
+    PayToken: []uint8{ },
+    Pfkey: []uint8{ },
+    Zoneid: 1,
+    Pf: []uint8{ },
+}
+
+Stack   =
+    at func.001() [/Users/tangweichen/xxd-server/server/src/game_server/api/server.go:96]
+    at panic() [/usr/local/go/src/pkg/runtime/panic.c:248]
+    at func.008() [/Users/tangweichen/xxd-server/server/src/game_server/mdb/transaction.go:65]
+    at panic() [/usr/local/go/src/pkg/runtime/panic.c:248]
+    at When() [/Users/tangweichen/xxd-server/server/src/core/fail/fail.go:5]
+    at loginGlobal() [/Users/tangweichen/xxd-server/server/src/game_server/module/player/login_global.go:35]
+    at PlayerAPI.GlobalLogin() [/Users/tangweichen/xxd-server/server/src/game_server/module/player/api.go:86]
+    at PlayerAPI.GlobalLogin.i() [<autogenerated>:19]
+    at (*GlobalLogin_In).Process() [/Users/tangweichen/xxd-server/server/src/game_server/api/protocol/player_api/player_api.go:619]
+    at func.002() [/Users/tangweichen/xxd-server/server/src/game_server/api/server.go:138]
+    at (*transController).Transaction() [/Users/tangweichen/xxd-server/server/src/game_server/mdb/transaction.go:69]
+    at (*Database).Transaction() [/Users/tangweichen/xxd-server/server/src/game_server/mdb/zd_tables.go:70]
+    at Transaction() [/Users/tangweichen/xxd-server/server/src/game_server/module/session.go:215]
+    at requestHandler() [/Users/tangweichen/xxd-server/server/src/game_server/api/server.go:140]
+    at requestHandlerFunc.Handle() [/Users/tangweichen/xxd-server/server/src/core/net/session.go:27]
+    at (*Session).readLoop() [/Users/tangweichen/xxd-server/server/src/core/net/session.go:93]
+    at goexit() [/usr/local/go/src/pkg/runtime/proc.c:1445]
+mdb.load (3) cost time: 238.944323ms
+mdb.load (0) cost time: 239.032129ms
+mdb.load (2) cost time: 238.957267ms
+mdb.load (1) cost time: 239.077158ms
+mdb.load success.
+2014/10/30 20:50:45 [I] - load player
+2014/10/30 20:50:45 [I] - load player
+2014/10/30 20:50:45 [I] - load player
+2014/10/30 20:50:45 [I] - load player
+2014/10/30 20:50:45 [I] - load player_activity
+2014/10/30 20:50:45 [I] - load player_activity
+2014/10/30 20:50:45 [I] - load player_activity
+2014/10/30 20:50:45 [I] - load player_activity
+2014/10/30 20:50:45 [I] - load player_arena
+2014/10/30 20:50:45 [I] - load player_arena
+2014/10/30 20:50:45 [I] - load player_arena
+2014/10/30 20:50:45 [I] - load player_arena
+2014/10/30 20:50:45 [I] - load player_arena_record
+2014/10/30 20:50:45 [I] - load player_arena_record
+2014/10/30 20:50:45 [I] - load player_arena_record
+2014/10/30 20:50:45 [I] - load player_arena_record
+2014/10/30 20:50:45 [I] - load player_battle_pet
+2014/10/30 20:50:45 [I] - load player_battle_pet
+2014/10/30 20:50:45 [I] - load player_battle_pet
+2014/10/30 20:50:45 [I] - load player_battle_pet
+2014/10/30 20:50:45 [I] - load player_battle_pet_grid
+2014/10/30 20:50:45 [I] - load player_battle_pet_grid
+2014/10/30 20:50:45 [I] - load player_battle_pet_grid
+2014/10/30 20:50:45 [I] - load player_battle_pet_grid
+2014/10/30 20:50:45 [I] - load player_chest_state
+2014/10/30 20:50:45 [I] - load player_chest_state
+2014/10/30 20:50:45 [I] - load player_chest_state
+2014/10/30 20:50:45 [I] - load player_chest_state
+2014/10/30 20:50:45 [I] - load player_coins
+2014/10/30 20:50:45 [I] - load player_coins
+2014/10/30 20:50:45 [I] - load player_coins
+2014/10/30 20:50:45 [I] - load player_coins
+2014/10/30 20:50:45 [I] - load player_daily_quest
+2014/10/30 20:50:45 [I] - load player_daily_quest
+2014/10/30 20:50:45 [I] - load player_daily_quest
+2014/10/30 20:50:45 [I] - load player_daily_quest
+2014/10/30 20:50:45 [I] - load player_daily_sign_in_record
+2014/10/30 20:50:45 [I] - load player_daily_sign_in_record
+2014/10/30 20:50:45 [I] - load player_daily_sign_in_record
+2014/10/30 20:50:45 [I] - load player_daily_sign_in_record
+2014/10/30 20:50:45 [I] - load player_daily_sign_in_state
+2014/10/30 20:50:45 [I] - load player_daily_sign_in_state
+2014/10/30 20:50:45 [I] - load player_daily_sign_in_state
+2014/10/30 20:50:45 [I] - load player_daily_sign_in_state
+2014/10/30 20:50:45 [I] - load player_equipment
+2014/10/30 20:50:45 [I] - load player_equipment
+2014/10/30 20:50:45 [I] - load player_equipment
+2014/10/30 20:50:45 [I] - load player_equipment
+2014/10/30 20:50:45 [I] - load player_event_award_record
+2014/10/30 20:50:45 [I] - load player_event_award_record
+2014/10/30 20:50:45 [I] - load player_event_award_record
+2014/10/30 20:50:45 [I] - load player_event_award_record
+2014/10/30 20:50:45 [I] - load player_events_fight_power
+2014/10/30 20:50:45 [I] - load player_events_fight_power
+2014/10/30 20:50:45 [I] - load player_events_fight_power
+2014/10/30 20:50:45 [I] - load player_events_fight_power
+2014/10/30 20:50:45 [I] - load player_extend_level
+2014/10/30 20:50:45 [I] - load player_extend_level
+2014/10/30 20:50:45 [I] - load player_extend_level
+2014/10/30 20:50:45 [I] - load player_extend_level
+2014/10/30 20:50:45 [I] - load player_fashion
+2014/10/30 20:50:45 [I] - load player_fashion
+2014/10/30 20:50:45 [I] - load player_fashion
+2014/10/30 20:50:45 [I] - load player_fashion
+2014/10/30 20:50:45 [I] - load player_fashion_state
+2014/10/30 20:50:45 [I] - load player_fashion_state
+2014/10/30 20:50:45 [I] - load player_fashion_state
+2014/10/30 20:50:45 [I] - load player_fashion_state
+2014/10/30 20:50:45 [I] - load player_fight_num
+2014/10/30 20:50:45 [I] - load player_fight_num
+2014/10/30 20:50:45 [I] - load player_fight_num
+2014/10/30 20:50:45 [I] - load player_fight_num
+2014/10/30 20:50:45 [I] - load player_formation
+2014/10/30 20:50:45 [I] - load player_formation
+2014/10/30 20:50:45 [I] - load player_formation
+2014/10/30 20:50:45 [I] - load player_formation
+2014/10/30 20:50:45 [I] - load player_func_key
+2014/10/30 20:50:45 [I] - load player_func_key
+2014/10/30 20:50:45 [I] - load player_func_key
+2014/10/30 20:50:45 [I] - load player_func_key
+2014/10/30 20:50:45 [I] - load player_ghost
+2014/10/30 20:50:45 [I] - load player_ghost
+2014/10/30 20:50:45 [I] - load player_ghost
+2014/10/30 20:50:45 [I] - load player_ghost
+2014/10/30 20:50:45 [I] - load player_ghost_equipment
+2014/10/30 20:50:45 [I] - load player_ghost_equipment
+2014/10/30 20:50:45 [I] - load player_ghost_equipment
+2014/10/30 20:50:45 [I] - load player_ghost_equipment
+2014/10/30 20:50:45 [I] - load player_ghost_state
+2014/10/30 20:50:45 [I] - load player_ghost_state
+2014/10/30 20:50:45 [I] - load player_ghost_state
+2014/10/30 20:50:45 [I] - load player_ghost_state
+2014/10/30 20:50:45 [I] - load player_ghost_umbra
+2014/10/30 20:50:45 [I] - load player_ghost_umbra
+2014/10/30 20:50:45 [I] - load player_ghost_umbra
+2014/10/30 20:50:45 [I] - load player_ghost_umbra
+2014/10/30 20:50:45 [I] - load player_hard_level
+2014/10/30 20:50:45 [I] - load player_hard_level
+2014/10/30 20:50:45 [I] - load player_hard_level
+2014/10/30 20:50:45 [I] - load player_hard_level
+2014/10/30 20:50:45 [I] - load player_hard_level_record
+2014/10/30 20:50:45 [I] - load player_hard_level_record
+2014/10/30 20:50:45 [I] - load player_hard_level_record
+2014/10/30 20:50:45 [I] - load player_hard_level_record
+2014/10/30 20:50:45 [I] - load player_hard_level_state
+2014/10/30 20:50:45 [I] - load player_hard_level_state
+2014/10/30 20:50:45 [I] - load player_hard_level_state
+2014/10/30 20:50:45 [I] - load player_hard_level_state
+2014/10/30 20:50:45 [I] - load player_heart
+2014/10/30 20:50:45 [I] - load player_heart
+2014/10/30 20:50:45 [I] - load player_heart
+2014/10/30 20:50:45 [I] - load player_heart
+2014/10/30 20:50:45 [I] - load player_heart_draw
+2014/10/30 20:50:45 [I] - load player_heart_draw
+2014/10/30 20:50:45 [I] - load player_heart_draw
+2014/10/30 20:50:45 [I] - load player_heart_draw
+2014/10/30 20:50:45 [I] - load player_heart_draw_card_record
+2014/10/30 20:50:45 [I] - load player_heart_draw_card_record
+2014/10/30 20:50:45 [I] - load player_heart_draw_card_record
+2014/10/30 20:50:45 [I] - load player_heart_draw_card_record
+2014/10/30 20:50:45 [I] - load player_heart_draw_wheel_record
+2014/10/30 20:50:45 [I] - load player_heart_draw_wheel_record
+2014/10/30 20:50:45 [I] - load player_heart_draw_wheel_record
+2014/10/30 20:50:45 [I] - load player_heart_draw_wheel_record
+2014/10/30 20:50:45 [I] - load player_info
+2014/10/30 20:50:45 [I] - load player_info
+2014/10/30 20:50:45 [I] - load player_info
+2014/10/30 20:50:45 [I] - load player_info
+2014/10/30 20:50:45 [I] - load player_is_operated
+2014/10/30 20:50:45 [I] - load player_is_operated
+2014/10/30 20:50:45 [I] - load player_is_operated
+2014/10/30 20:50:45 [I] - load player_is_operated
+2014/10/30 20:50:45 [I] - load player_item
+2014/10/30 20:50:45 [I] - load player_item
+2014/10/30 20:50:45 [I] - load player_item
+2014/10/30 20:50:45 [I] - load player_item
+2014/10/30 20:50:45 [I] - load player_item_appendix
+2014/10/30 20:50:45 [I] - load player_item_appendix
+2014/10/30 20:50:45 [I] - load player_item_appendix
+2014/10/30 20:50:45 [I] - load player_item_appendix
+2014/10/30 20:50:45 [I] - load player_item_buyback
+2014/10/30 20:50:45 [I] - load player_item_buyback
+2014/10/30 20:50:45 [I] - load player_item_buyback
+2014/10/30 20:50:45 [I] - load player_item_buyback
+2014/10/30 20:50:45 [I] - load player_item_recast_state
+2014/10/30 20:50:45 [I] - load player_item_recast_state
+2014/10/30 20:50:45 [I] - load player_item_recast_state
+2014/10/30 20:50:45 [I] - load player_item_recast_state
+2014/10/30 20:50:45 [I] - load player_login_award_record
+2014/10/30 20:50:45 [I] - load player_login_award_record
+2014/10/30 20:50:45 [I] - load player_login_award_record
+2014/10/30 20:50:45 [I] - load player_login_award_record
+2014/10/30 20:50:45 [I] - load player_mail
+2014/10/30 20:50:45 [I] - load player_mail
+2014/10/30 20:50:45 [I] - load player_mail
+2014/10/30 20:50:45 [I] - load player_mail
+2014/10/30 20:50:45 [I] - load player_mail_attachment
+2014/10/30 20:50:45 [I] - load player_mail_attachment
+2014/10/30 20:50:45 [I] - load player_mail_attachment
+2014/10/30 20:50:45 [I] - load player_mail_attachment
+2014/10/30 20:50:45 [I] - load player_meditation_state
+2014/10/30 20:50:45 [I] - load player_meditation_state
+2014/10/30 20:50:45 [I] - load player_meditation_state
+2014/10/30 20:50:45 [I] - load player_meditation_state
+2014/10/30 20:50:45 [I] - load player_mission
+2014/10/30 20:50:45 [I] - load player_mission
+2014/10/30 20:50:45 [I] - load player_mission
+2014/10/30 20:50:45 [I] - load player_mission
+2014/10/30 20:50:45 [I] - load player_mission_level
+2014/10/30 20:50:45 [I] - load player_mission_level
+2014/10/30 20:50:45 [I] - load player_mission_level
+2014/10/30 20:50:45 [I] - load player_mission_level
+2014/10/30 20:50:45 [I] - load player_mission_level_record
+2014/10/30 20:50:45 [I] - load player_mission_level_record
+2014/10/30 20:50:45 [I] - load player_mission_level_record
+2014/10/30 20:50:45 [I] - load player_mission_level_record
+2014/10/30 20:50:45 [I] - load player_mission_level_state_bin
+2014/10/30 20:50:45 [I] - load player_mission_level_state_bin
+2014/10/30 20:50:45 [I] - load player_mission_level_state_bin
+2014/10/30 20:50:45 [I] - load player_mission_level_state_bin
+2014/10/30 20:50:45 [I] - load player_mission_record
+2014/10/30 20:50:45 [I] - load player_mission_record
+2014/10/30 20:50:45 [I] - load player_mission_record
+2014/10/30 20:50:45 [I] - load player_mission_record
+2014/10/30 20:50:45 [I] - load player_month_card_award_record
+2014/10/30 20:50:45 [I] - load player_month_card_award_record
+2014/10/30 20:50:45 [I] - load player_month_card_award_record
+2014/10/30 20:50:45 [I] - load player_month_card_award_record
+2014/10/30 20:50:45 [I] - load player_multi_level_info
+2014/10/30 20:50:45 [I] - load player_multi_level_info
+2014/10/30 20:50:45 [I] - load player_multi_level_info
+2014/10/30 20:50:45 [I] - load player_multi_level_info
+2014/10/30 20:50:45 [I] - load player_npc_talk_record
+2014/10/30 20:50:45 [I] - load player_npc_talk_record
+2014/10/30 20:50:45 [I] - load player_npc_talk_record
+2014/10/30 20:50:45 [I] - load player_npc_talk_record
+2014/10/30 20:50:45 [I] - load player_physical
+2014/10/30 20:50:45 [I] - load player_physical
+2014/10/30 20:50:45 [I] - load player_physical
+2014/10/30 20:50:45 [I] - load player_physical
+2014/10/30 20:50:45 [I] - load player_purchase_record
+2014/10/30 20:50:45 [I] - load player_purchase_record
+2014/10/30 20:50:45 [I] - load player_purchase_record
+2014/10/30 20:50:45 [I] - load player_purchase_record
+2014/10/30 20:50:45 [I] - load player_push_notify_switch
+2014/10/30 20:50:45 [I] - load player_push_notify_switch
+2014/10/30 20:50:45 [I] - load player_push_notify_switch
+2014/10/30 20:50:45 [I] - load player_push_notify_switch
+2014/10/30 20:50:45 [I] - load player_quest
+2014/10/30 20:50:45 [I] - load player_quest
+2014/10/30 20:50:45 [I] - load player_quest
+2014/10/30 20:50:45 [I] - load player_quest
+2014/10/30 20:50:45 [I] - load player_rainbow_level
+2014/10/30 20:50:45 [I] - load player_rainbow_level
+2014/10/30 20:50:45 [I] - load player_rainbow_level
+2014/10/30 20:50:45 [I] - load player_rainbow_level
+2014/10/30 20:50:45 [I] - load player_rainbow_level_state_bin
+2014/10/30 20:50:45 [I] - load player_rainbow_level_state_bin
+2014/10/30 20:50:45 [I] - load player_role
+2014/10/30 20:50:45 [I] - load player_rainbow_level_state_bin
+2014/10/30 20:50:45 [I] - load player_rainbow_level_state_bin
+2014/10/30 20:50:45 [I] - load player_role
+2014/10/30 20:50:45 [I] - load player_send_heart_record
+2014/10/30 20:50:45 [I] - load player_role
+2014/10/30 20:50:45 [I] - load player_send_heart_record
+2014/10/30 20:50:45 [I] - load player_send_heart_record
+2014/10/30 20:50:45 [I] - load player_skill
+2014/10/30 20:50:45 [I] - load player_state
+2014/10/30 20:50:45 [I] - load player_sword_soul
+2014/10/30 20:50:45 [I] - load player_sword_soul_equipment
+2014/10/30 20:50:45 [I] - load player_role
+2014/10/30 20:50:45 [I] - load player_sword_soul_state
+2014/10/30 20:50:45 [I] - load player_send_heart_record
+2014/10/30 20:50:45 [I] - load player_skill
+2014/10/30 20:50:45 [I] - load player_state
+2014/10/30 20:50:45 [I] - load player_sword_soul
+2014/10/30 20:50:45 [I] - load player_sword_soul_equipment
+2014/10/30 20:50:45 [I] - load player_sword_soul_state
+2014/10/30 20:50:45 [I] - load player_tb_xxd_roleinfo
+2014/10/30 20:50:45 [I] - load player_tower_level
+2014/10/30 20:50:45 [I] - load player_skill
+2014/10/30 20:50:45 [I] - load player_skill
+2014/10/30 20:50:45 [I] - load player_state
+2014/10/30 20:50:45 [I] - load player_sword_soul
+2014/10/30 20:50:45 [I] - load player_state
+2014/10/30 20:50:45 [I] - load player_sword_soul_equipment
+2014/10/30 20:50:45 [I] - load player_town
+2014/10/30 20:50:45 [I] - load player_sword_soul
+2014/10/30 20:50:45 [I] - load player_sword_soul_state
+2014/10/30 20:50:45 [I] - load player_tb_xxd_roleinfo
+2014/10/30 20:50:45 [I] - load player_tower_level
+2014/10/30 20:50:45 [I] - load player_town
+2014/10/30 20:50:45 [I] - load player_trader_refresh_state
+2014/10/30 20:50:45 [I] - load player_sword_soul_equipment
+2014/10/30 20:50:45 [I] - load player_trader_refresh_state
+2014/10/30 20:50:45 [I] - load player_sword_soul_state
+2014/10/30 20:50:45 [I] - load player_trader_store_state
+2014/10/30 20:50:45 [I] - load player_trader_store_state
+2014/10/30 20:50:45 [I] - load player_tb_xxd_roleinfo
+2014/10/30 20:50:45 [I] - load player_use_skill
+2014/10/30 20:50:45 [I] - load player_use_skill
+2014/10/30 20:50:45 [I] - load player_tower_level
+2014/10/30 20:50:45 [I] - load player_town
+2014/10/30 20:50:45 [I] - load player_trader_refresh_state
+2014/10/30 20:50:45 [I] - load player_trader_store_state
+2014/10/30 20:50:45 [I] - load player_use_skill
+2014/10/30 20:50:45 [I] - load player_tb_xxd_roleinfo
+2014/10/30 20:50:45 [I] - load player_tower_level
+2014/10/30 20:50:45 [I] - load player_town
+2014/10/30 20:50:45 [I] - load player_trader_refresh_state
+2014/10/30 20:50:45 [I] - load player_trader_store_state
+2014/10/30 20:50:45 [I] - load player_vip
+2014/10/30 20:50:45 [I] - load player_vip
+2014/10/30 20:50:45 [I] - load player_vip
+2014/10/30 20:50:45 [I] - load player_use_skill
+2014/10/30 20:50:45 [I] - load player_vip
+mdb.load (1) cost time: 7.271223ms
+mdb.load (3) cost time: 7.254149ms
+mdb.load success.
+mdb.load (0) cost time: 7.332419ms
+mdb.load (2) cost time: 7.323626ms
+2014/10/30 20:50:56 [I] - load global_announcement
+2014/10/30 20:50:56 [I] - load global_arena_rank
+2014/10/30 20:50:56 [I] - load global_mail
+2014/10/30 20:50:56 [I] - load global_mail_attachments
+2014/10/30 20:50:56 [I] - load global_tb_xxd_onlinecnt
+2014/10/30 20:50:56 [I] - load player_global_arena_rank
+2014/10/30 20:50:56 [I] - load player_global_arena_rank
+2014/10/30 20:50:56 [I] - load player_global_arena_rank
+2014/10/30 20:50:56 [I] - load player_global_arena_rank
+2014/10/30 20:50:56 [I] - load player_global_friend
+2014/10/30 20:50:56 [I] - load player_global_friend
+2014/10/30 20:50:56 [I] - load player_global_friend
+2014/10/30 20:50:56 [I] - load player_global_friend
+2014/10/30 20:50:56 [I] - load player_global_friend_chat
+2014/10/30 20:50:56 [I] - load player_global_friend_chat
+2014/10/30 20:50:56 [I] - load player_global_friend_chat
+2014/10/30 20:50:56 [I] - load player_global_friend_chat
+2014/10/30 20:50:56 [I] - load player_global_friend_state
+2014/10/30 20:50:56 [I] - load player_global_friend_state
+2014/10/30 20:50:56 [I] - load player_global_friend_state
+2014/10/30 20:50:56 [I] - load player_global_friend_state
+2014/10/30 20:50:56 [I] - load player_global_mail_state
+2014/10/30 20:50:56 [I] - load player_global_mail_state
+2014/10/30 20:50:56 [I] - load player_global_mail_state
+2014/10/30 20:50:56 [I] - load player_global_mail_state
+2014/10/30 20:52:45 [E] - [tlog] GameSvrState error. write udp4 172.26.166.37:6667: connection refused
+ info: &{2014-10-30 20:52:45.420872563 +0800 CST 172.26.166.37}
+2014/10/30 20:52:55 [E] - [tlog] GameSvrState error. write udp4 172.26.166.37:6667: connection refused
+ info: &{2014-10-30 20:52:55.99435977 +0800 CST 172.26.166.37}
+2014/10/30 20:53:05 [E] - [tlog] PlayerLogin error. write udp4 172.26.166.37:6667: connection refused
+ info: &{1 2014-10-30 20:53:05.507592521 +0800 CST game_1_app_id 1 test666 1 0 0.98 macos intel xxx wifi 0 0 0.999999111 0 intel 001 1024 opengl 0.1 4.3 mac 10.94}
+2014/10/30 20:53:34 [E] - [tlog] MoneyFlow error. write udp4 172.26.166.37:6667: connection refused
+ info: &{1 2014-10-30 20:53:34.330024462 +0800 CST 0 game_1_app_id 1 test666 1 10000 10000 -1 0 0 1 0}
+2014/10/30 20:53:45 [E] - [tlog] GameSvrState error. write udp4 172.26.166.37:6667: connection refused
+ info: &{2014-10-30 20:53:45.421757753 +0800 CST 172.26.166.37}
+2014/10/30 20:53:50 [E] - [tlog] PlayerFightNumFlow error. write udp4 172.26.166.37:6667: connection refused
+ info: &{1 2014-10-30 20:53:50.823726025 +0800 CST game_1_app_id 1 test666 1 0 1020}
+2014/10/30 20:54:56 [E] - [tlog] GameSvrState error. write udp4 172.26.166.37:6667: connection refused
+ info: &{2014-10-30 20:54:56.000756752 +0800 CST 172.26.166.37}

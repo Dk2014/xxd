@@ -1,0 +1,728 @@
+package clique_boss
+
+import (
+	"core/debug"
+	"core/fail"
+	"core/i18l"
+	"core/log"
+	"core/net"
+	"core/time"
+	"fmt"
+	"game_server/api/protocol/battle_api"
+	"game_server/api/protocol/clique_boss_api"
+	baseBattle "game_server/battle"
+	"game_server/config"
+	"game_server/dat/clique_boss_dat"
+	"game_server/dat/item_dat"
+	"game_server/dat/mail_dat"
+	"game_server/dat/mission_dat"
+	"game_server/mdb"
+	"game_server/module"
+	"game_server/module/battle"
+	"game_server/module/clique_boss_common"
+	"game_server/module/rpc"
+	"strconv"
+	gotime "time"
+)
+
+var Gsids []int
+
+type CliqueBossMod struct{}
+
+func init() {
+	module.CliqueBoss = CliqueBossMod{}
+}
+
+// init when server start
+func (mod CliqueBossMod) HandleInit(gsids []int) {
+	Gsids = gsids
+	LoadGlobal()
+	CheckStart()
+	CheckClose()
+}
+
+// start time which used to check
+// whether restart despair mission level
+func CheckStart() {
+	if len(Gsids) > 0 {
+		mdb.GlobalExecute(func(globalDB *mdb.Database) {
+			cliqueBossInfo1 := GetGlobalCliqueBoss(globalDB)
+			duration := GetOpenUnix(cliqueBossInfo1.Timestamp)
+			gotime.AfterFunc(gotime.Second*gotime.Duration(duration), func() {
+				defer func() {
+					if err := recover(); err != nil {
+						log.Errorf("module.CliqueBoss.CheckStart() error: %v\n Stack %s \n", err, debug.Stack(1, "    "))
+					}
+				}()
+				defer CheckStart()
+
+				mdb.Transaction(mdb.TRANS_TAG_CliqueBossCheckStart, func() {
+					cliqueBossInfo := GetGlobalCliqueBoss(globalDB)
+					if cliqueBossInfo.DeadTimestamp > 0 {
+						doUpdateBoss(globalDB, cliqueBossInfo)
+					} else {
+						doDescLevel(globalDB, cliqueBossInfo)
+					}
+					ResetGlobal(cliqueBossInfo)
+					ResetGLobalCliqueBoss(globalDB, cliqueBossInfo)
+					// rpc 通知对应的游戏互动服，boss开启
+					for _, v := range Gsids {
+						var sid int
+						if v == 2 || v == 12 || v == 929 || v == 939 || v == 101 || v == 50101 {
+							//todo 本地测试固定rpc列表
+							sid = v
+						} else if config.ServerCfg.EnableCliqueBossDebugMode != true {
+							if v != 1 && v != 10 && v != 11 && v != 9988 && v != 4 && v != 928 && v != 938 && v != 10101 && v != 50001 {
+								serverIndex := string(strconv.Itoa(v)[1])
+								if serverIndex == "1" {
+									sid = v
+								}
+							}
+						}
+						if sid > 0 {
+							rpc.RemoteCliqueBossOpenNotify(sid)
+						}
+					}
+					globalDB.Select.GlobalCliqueBossPlayerHurt(func(row *mdb.GlobalCliqueBossPlayerHurtRow) {
+						if row.Hurt() > 0 {
+							data := row.GoObject()
+							data.Hurt = 0
+							data.Awarded = 0
+							globalDB.Update.GlobalCliqueBossPlayerHurt(data)
+						}
+					})
+					globalDB.Select.GlobalCliqueBossCliqueHurt(func(row *mdb.GlobalCliqueBossCliqueHurtRow) {
+						if row.Hurt() > 0 {
+							data := row.GoObject()
+							data.Hurt = 0
+							globalDB.Update.GlobalCliqueBossCliqueHurt(data)
+						}
+					})
+				})
+			})
+		})
+	}
+}
+
+func CheckClose() {
+	if len(Gsids) > 0 {
+		mdb.GlobalExecute(func(globalDB *mdb.Database) {
+			var durationWait int64
+			cliqueBossInfo := GetGlobalCliqueBoss(globalDB)
+			duration := GetOpenUnix(cliqueBossInfo.Timestamp)
+			if config.ServerCfg.EnableCliqueBossDebugMode != true {
+				durationWait = duration + 60*60*clique_boss_dat.BOSS_DURATION
+			} else {
+				durationWait = duration + 560
+			}
+			gotime.AfterFunc(gotime.Second*gotime.Duration(durationWait), func() {
+				defer func() {
+					if err := recover(); err != nil {
+						log.Errorf("module.CliqueBoss.CheckClose() error: %v\n Stack %s \n", err, debug.Stack(1, "    "))
+					}
+				}()
+				defer CheckClose()
+
+				mdb.Transaction(mdb.TRANS_TAG_CliqueBossCheckClose, func() {
+					cliqueBossInfo := GetGlobalCliqueBoss(globalDB)
+					globalDB.Select.GlobalCliqueBossPlayerHurt(func(row *mdb.GlobalCliqueBossPlayerHurtRow) {
+						if row.Version() == cliqueBossInfo.Version && row.Hurt() > 0 && row.Awarded() == 0 {
+							data := row.GoObject()
+							rpc.RemoteCliqueBossHurtAward(data)
+							data.Awarded = 1
+							globalDB.Update.GlobalCliqueBossPlayerHurt(data)
+						}
+					})
+					// rpc 通知对应的游戏互动服，boss开启
+					for _, v := range Gsids {
+						var sid int
+						if v == 2 || v == 12 || v == 929 || v == 939 || v == 101 || v == 50101 {
+							//todo 本地测试固定rpc列表
+							sid = v
+						} else if config.ServerCfg.EnableCliqueBossDebugMode != true {
+							if v != 1 && v != 10 && v != 11 && v != 9988 && v != 4 && v == 928 && v == 938 && v == 10101 && v == 50001 {
+								serverIndex := string(strconv.Itoa(v)[1])
+								if serverIndex == "1" {
+									sid = v
+								}
+							}
+						}
+						if sid > 0 {
+							rpc.RemoteCliqueBossCloseNotify(sid)
+						}
+					}
+				})
+			})
+		})
+	}
+}
+
+func (mod CliqueBossMod) UpdateGlobal(db *mdb.Database, bossBattleInfo []clique_boss_common.CliqueBossBattleInfo) {
+	var (
+		hurtTotal int64 //总伤害
+	)
+	bossInfo := GetGlobalCliqueBoss(db)
+	for i := 0; i < len(bossBattleInfo); i++ {
+		if bossInfo.Hp == 0 {
+			continue
+		}
+		cliqueHurtInfo := GetGlobalCliqueBossCliqueHurt(db, bossBattleInfo[i].CliqueId, int8(bossBattleInfo[i].Sid), bossBattleInfo[i].CliqueName)
+		playerHurtInfo := GetGlobalCliqueBossPlayerHurt(db, bossBattleInfo[i].Pid, bossBattleInfo[i].CliqueId, int8(bossBattleInfo[i].Sid), bossBattleInfo[i].Name)
+		hurtTotal += bossBattleInfo[i].Hurt
+		bossInfo.DeadNum += bossBattleInfo[i].Dead
+		bossInfo.BossBattleNum += int32(bossBattleInfo[i].BattleNum)
+		globalPlayerRankTable.AddWithLock(clique_boss_common.GlobalPlayerRankData{
+			Pid:  bossBattleInfo[i].Pid,
+			Name: bossBattleInfo[i].Name,
+			Hurt: bossBattleInfo[i].Hurt,
+			Sid:  bossBattleInfo[i].Sid,
+		})
+		globalCliqueRankTable.AddWithLock(clique_boss_common.GlobalCliqueRankData{
+			CliqueId: bossBattleInfo[i].CliqueId,
+			Name:     bossBattleInfo[i].CliqueName,
+			Hurt:     bossBattleInfo[i].Hurt,
+			Sid:      bossBattleInfo[i].Sid,
+		})
+		globalCliqueBossTable.AddBossBattleData(clique_boss_common.GlobalCliqueBossData{
+			BossBattleNum: bossBattleInfo[i].BattleNum,
+			Dead:          bossBattleInfo[i].Dead,
+		})
+		cliqueHurtInfo.Hurt += bossBattleInfo[i].Hurt
+		cliqueHurtInfo.Version = bossInfo.Version
+		cliqueHurtInfo.ServerId = int8(bossBattleInfo[i].Sid)
+		cliqueHurtInfo.Timestamp = time.GetNowTime()
+		db.Update.GlobalCliqueBossCliqueHurt(cliqueHurtInfo)
+		playerHurtInfo.Hurt += bossBattleInfo[i].Hurt
+		playerHurtInfo.Version = bossInfo.Version
+		playerHurtInfo.CliqueId = bossBattleInfo[i].CliqueId
+		playerHurtInfo.ServerId = int8(bossBattleInfo[i].Sid)
+		playerHurtInfo.Timestamp = time.GetNowTime()
+		db.Update.GlobalCliqueBossPlayerHurt(playerHurtInfo)
+	}
+	if hurtTotal > 0 {
+		if bossInfo.Hp < hurtTotal {
+			bossInfo.Hp = 0
+			bossInfo.DeadTimestamp = time.GetNowTime()
+			module.CliqueBoss.BossDead(db, bossInfo)
+		} else {
+			bossInfo.Hp -= hurtTotal
+		}
+		db.Update.GlobalCliqueBoss(bossInfo)
+	}
+}
+
+func (mod CliqueBossMod) GetGlobalCliqueBoss(db *mdb.Database) *mdb.GlobalCliqueBoss {
+	return GetGlobalCliqueBoss(db)
+}
+
+func (mod CliqueBossMod) SetGlobalCliqueBossByLevel(globalCliqueBoss *mdb.GlobalCliqueBoss) {
+	SetGlobalCliqueBossByLevel(globalCliqueBoss)
+}
+
+//游戏服
+func (mod CliqueBossMod) StartCliqueBossLevel(session *net.Session, levelId int32) {
+	state := module.State(session)
+	db := state.Database
+	nowTime := time.GetNowTime()
+
+	playerCliqueBossBattleTime := db.Lookup.PlayerCliqueBossBattleTime(state.PlayerId)
+	if playerCliqueBossBattleTime != nil {
+		fail.When(playerCliqueBossBattleTime.DeadTime+clique_boss_dat.CD_TIME > nowTime, "battle is now cd")
+	}
+	rpc.RemoteGetPlayerCliqueInfo(state.PlayerId, func(Reply *rpc.Reply_GetPlayerCliqueInfo) {
+		fail.When(Reply.CliqueId <= 0, "enter clique_boss must join a clique")
+		fail.When(nowTime-Reply.JoinTime < clique_boss_dat.JOIN_TIME_LIMIT*60*60, "join clique must greate than 24 hours")
+
+		levelEnemyIds := mission_dat.GetEnemyIdByMissionLevelId(levelId)
+		levelEnemy := mission_dat.GetMissionLevelEnemyById(levelEnemyIds[0])
+		levelInfo := mission_dat.GetMissionLevelById(levelId)
+
+		sid := clique_boss_common.HttpGetMainHd()
+		//犹豫不需要用到排行榜,所以传0
+		rpc.RemoteCliqueGetBossInfo(sid, state.PlayerId, 0, func(reply *rpc.Reply_CliqueGetBossInfo) {
+			fail.When(reply.StartTimestamp == 0, "Fail cause clique boss maybe not open")
+			// 进入关卡
+			module.Mission.DoEnterMissionLevel(session, levelInfo, int8(battle_api.BATTLE_TYPE_CLIQUE_BOSS))
+
+			// 战场boss属性修改
+			var boss *baseBattle.Fighter
+			defendSide := module.NewBattleSideWithEnemyDeployFormFilterByLevel(int8(battle_api.BATTLE_TYPE_CLIQUE_BOSS), int32(reply.Level), levelEnemy.Id, func(fighter *baseBattle.Fighter) bool {
+				fighter.Health = int(reply.Hp)
+				boss = fighter
+				return false
+			})
+
+			// 开始战斗
+			state.Battle = module.Battle.NewBattleForCliqueBoss(session, defendSide)
+			state.Battle.(*battle.Battle_MissionLevel).Boss = boss
+			state.Battle.(*battle.Battle_MissionLevel).BossStartHp = int(reply.Hp)
+		})
+	})
+}
+
+func BattleBossEnd(session *net.Session) {
+	state := module.State(session)
+	db := state.Database
+
+	pid := state.PlayerId
+	player := db.Lookup.Player(pid)
+	nick := player.Nick
+	bt := state.Battle.GetBattle()
+	dead_num := bt.Attackers.GetDead()
+	hurt := int64(state.Battle.(*battle.Battle_MissionLevel).GetBossHpLoss())
+	playerCliqueBossBattleTime := db.Lookup.PlayerCliqueBossBattleTime(pid)
+	if playerCliqueBossBattleTime == nil {
+		db.Insert.PlayerCliqueBossBattleTime(&mdb.PlayerCliqueBossBattleTime{
+			Pid:      pid,
+			DeadTime: time.GetNowTime(),
+		})
+	} else {
+		playerCliqueBossBattleTime.DeadTime = time.GetNowTime()
+		db.Update.PlayerCliqueBossBattleTime(playerCliqueBossBattleTime)
+	}
+	rpc.RemoteGetPlayerCliqueInfo(pid, func(reply *rpc.Reply_GetPlayerCliqueInfo) {
+		mdb.GlobalExecute(func(globalDb *mdb.Database) {
+			globalDb.AgentExecute(pid, func(db *mdb.Database) {
+				timeNow := time.GetNowTime()
+				var sid int
+				if config.ServerCfg.EnableCliqueBossDebugMode != true {
+					sid = int(pid >> 32 / 10)
+				} else {
+					sid = int(pid >> 32)
+				}
+				updateData.AddBossBattleInfo(clique_boss_common.CliqueBossBattleInfo{
+					Sid:        sid,
+					Pid:        pid,
+					Name:       nick,
+					CliqueId:   reply.CliqueId,
+					CliqueName: reply.CliqueName,
+					TimeStamp:  timeNow,
+					Hurt:       hurt,
+					Dead:       int64(dead_num),
+					BattleNum:  1,
+				})
+				out := &clique_boss_api.CliqueBattleBossAwardInfo_Out{}
+				out.Hurt = hurt
+				if session, ok := module.Player.GetPlayerOnline(pid); ok {
+					session.Send(out)
+				}
+			})
+		})
+	})
+}
+
+func (mod CliqueBossMod) BattleBossWin(session *net.Session) {
+	BattleBossEnd(session)
+}
+
+func (mod CliqueBossMod) BattleBossLose(session *net.Session) {
+	BattleBossEnd(session)
+}
+
+// do something when login
+func (mod CliqueBossMod) HandleLogin(session *net.Session) {
+	handleLogin(session)
+}
+
+//游戏服
+// after login,
+// 1. check whether should award
+func handleLogin(session *net.Session) {
+	state := module.State(session)
+	pid := state.PlayerId
+
+	hdid := clique_boss_common.HttpGetMainHd()
+	//犹豫不需要用到排行榜,所以传0
+	rpc.RemoteCliqueGetBossInfo(hdid, pid, 0, func(reply *rpc.Reply_CliqueGetBossInfo) {
+		nowTime := time.GetNowTime()
+		// boss not open
+		if reply.StartTimestamp == 0 {
+			return
+		}
+		// boss not dead and boss still fight
+		if reply.DeadTimestamp == 0 && nowTime-reply.StartTimestamp <= clique_boss_dat.BOSS_DURATION*60*60 {
+			return
+		}
+		//boss没被击败，奖励内容有：伤害奖励
+		//boss被击败，奖励内容有：伤害奖励，讨伐点兑换奖励，伤害排名奖励
+		//排名奖励 在boss死亡时 统一强制发送
+		mdb.GlobalExecute(func(globalDb *mdb.Database) {
+			globalDb.AgentExecute(pid, func(db *mdb.Database) {
+				playerHuntInfo := db.Lookup.GlobalCliqueBossPlayerHurt(pid)
+				if playerHuntInfo != nil {
+					if playerHuntInfo.Awarded == 1 {
+						return
+					}
+					if reply.DeadTimestamp != 0 {
+						// boss dead
+						module.CliqueBoss.SendHurtAward(db, playerHuntInfo)
+						playerHuntInfo.Awarded = 1
+						db.Update.GlobalCliqueBossPlayerHurt(playerHuntInfo)
+					}
+				}
+			})
+		})
+	})
+}
+
+func notifyGlobalCliqueBossDead(topPlayers []clique_boss_common.GlobalPlayerRankData, topCliques []clique_boss_common.GlobalCliqueRankData) {
+	out := &clique_boss_api.CliqueNotifyBossDead_Out{}
+	for i, max := 0, len(topPlayers); i < max; i++ {
+		globalPlayerRankData := topPlayers[i]
+
+		out.Ranks = append(out.Ranks, clique_boss_api.CliqueNotifyBossDead_Out_Ranks{
+			Rank: int64(i + 1),
+			Pid:  globalPlayerRankData.Pid,
+			Name: []byte(globalPlayerRankData.Name),
+			Sid:  int8(globalPlayerRankData.Sid),
+		})
+	}
+
+	for i, max := 0, len(topCliques); i < max; i++ {
+		globalCliqueRankData := topCliques[i]
+
+		out.CliqueRanks = append(out.CliqueRanks, clique_boss_api.CliqueNotifyBossDead_Out_CliqueRanks{
+			Rank:     int64(i + 1),
+			CliqueId: globalCliqueRankData.CliqueId,
+			Name:     []byte(globalCliqueRankData.Name),
+			Sid:      int8(globalCliqueRankData.Sid),
+		})
+	}
+
+	// 通知在线玩家
+	// 需要通知所有对应的互动服
+	if len(Gsids) > 0 {
+		for _, v := range Gsids {
+			var sid int
+			if v == 2 || v == 12 || v == 929 || v == 939 || v == 101 || v == 50101 {
+				//todo 本地测试固定rpc列表
+				sid = v
+			} else if config.ServerCfg.EnableCliqueBossDebugMode != true {
+				if v != 1 && v != 10 && v != 11 && v != 9988 && v != 4 && v != 928 && v != 938 && v != 10101 && v != 50001 {
+					serverIndex := string(strconv.Itoa(v)[1])
+					if serverIndex == "1" {
+						sid = v
+					}
+				}
+			}
+			if sid > 0 {
+				rpc.RemoteCliqueBossDeadNotify(sid, out)
+			}
+		}
+	}
+}
+
+func (mod CliqueBossMod) BossDead(db *mdb.Database, globalCliqueBoss *mdb.GlobalCliqueBoss) {
+
+	globalCliqueBossInfo := GetGlobalCliqueBoss(db)
+	topPids := map[int64]int64{} // {pid : rank}
+	topPlayers := []clique_boss_common.GlobalPlayerRankData{}
+	for i := int64(0); i <= 9; i++ {
+		globalPlayerRankData, ok := globalPlayerRankTable.GetByRank(i)
+		if !ok {
+			break
+		}
+		topPids[globalPlayerRankData.Pid] = i + 1
+		topPlayers = append(topPlayers, globalPlayerRankData)
+		rpc.RemoteCliqueBossTopHurtPla(globalPlayerRankData.Pid, i+1)
+	}
+
+	topCliqueIds := map[int64]int64{}
+	topCliques := []clique_boss_common.GlobalCliqueRankData{}
+	for i := int64(0); i <= 9999; i++ {
+		globalCliqueRankData, ok := globalCliqueRankTable.GetByRank(i)
+		if !ok {
+			break
+		}
+		topCliqueIds[globalCliqueRankData.CliqueId] = i + 1
+		topCliques = append(topCliques, globalCliqueRankData)
+		db.Select.GlobalCliqueBossPlayerHurt(func(row *mdb.GlobalCliqueBossPlayerHurtRow) {
+			if row.CliqueId() == globalCliqueRankData.CliqueId && row.Version() == globalCliqueBossInfo.Version && row.Hurt() > 0 {
+				rpc.RemoteCliqueBossTopHurtCli(row.Pid(), i+1, globalCliqueRankData.Name)
+			}
+		})
+	}
+
+	db.Select.GlobalCliqueBossPlayerHurt(func(row *mdb.GlobalCliqueBossPlayerHurtRow) {
+		if row.Version() == globalCliqueBossInfo.Version && row.Hurt() > 0 && row.Awarded() == 0 {
+			data := row.GoObject()
+			rpc.RemoteCliqueBossHurtAward(data)
+			data.Awarded = 1
+			db.Update.GlobalCliqueBossPlayerHurt(data)
+		}
+	})
+
+	// // 通知boss死亡
+	notifyGlobalCliqueBossDead(topPlayers, topCliques)
+}
+
+func (mod CliqueBossMod) GetTopPlayerRanks(pid int64) (playerRankDatas []clique_boss_api.BossInfo_Out_RanksPlayer) {
+	var hasRank bool
+	for i := int64(0); i <= 4; i++ {
+		globalPlayerRankData, ok := globalPlayerRankTable.GetByRank(i)
+		if !ok {
+			break
+		}
+		if globalPlayerRankData.Pid == pid {
+			hasRank = true
+		}
+		playerRankDatas = append(playerRankDatas, clique_boss_api.BossInfo_Out_RanksPlayer{
+			Rank:     int64(i) + 1,
+			Pid:      globalPlayerRankData.Pid,
+			Name:     []byte(globalPlayerRankData.Name),
+			Hurt:     globalPlayerRankData.Hurt,
+			ServerId: int8(globalPlayerRankData.Sid),
+		})
+	}
+	if !hasRank {
+		rank, globalPlayerRankData, ok := globalPlayerRankTable.GetByPid(pid)
+		if ok {
+			playerRankDatas = append(playerRankDatas, clique_boss_api.BossInfo_Out_RanksPlayer{
+				Rank:     rank + 1,
+				Pid:      globalPlayerRankData.Pid,
+				Name:     []byte(globalPlayerRankData.Name),
+				Hurt:     globalPlayerRankData.Hurt,
+				ServerId: int8(globalPlayerRankData.Sid),
+			})
+		}
+	}
+	return playerRankDatas
+}
+
+func (mod CliqueBossMod) GetTopCliqueRanks(cliqueId int64) (cliqueRankDatas []clique_boss_api.BossInfo_Out_RanksClique) {
+	var hasRank bool
+	for i := int64(0); i <= 4; i++ {
+		globalCliqueRankData, ok := globalCliqueRankTable.GetByRank(i)
+		if !ok {
+			break
+		}
+		if globalCliqueRankData.CliqueId == cliqueId {
+			hasRank = true
+		}
+		cliqueRankDatas = append(cliqueRankDatas, clique_boss_api.BossInfo_Out_RanksClique{
+			Cliqueid: globalCliqueRankData.CliqueId,
+			Name:     []byte(globalCliqueRankData.Name),
+			Hurt:     globalCliqueRankData.Hurt,
+			ServerId: int8(globalCliqueRankData.Sid),
+			Rank:     int64(i) + 1,
+		})
+	}
+	if !hasRank {
+		rank, globalCliqueRankData, ok := globalCliqueRankTable.GetByPid(cliqueId)
+		if ok {
+			cliqueRankDatas = append(cliqueRankDatas, clique_boss_api.BossInfo_Out_RanksClique{
+				Rank:     rank + 1,
+				Cliqueid: globalCliqueRankData.CliqueId,
+				Name:     []byte(globalCliqueRankData.Name),
+				Hurt:     globalCliqueRankData.Hurt,
+				ServerId: int8(globalCliqueRankData.Sid),
+			})
+		}
+	}
+	return cliqueRankDatas
+}
+
+func (mod CliqueBossMod) SendHurtAward(db *mdb.Database, playerHurtInfo *mdb.GlobalCliqueBossPlayerHurt) {
+	hurt := playerHurtInfo.Hurt
+	if hurt == 0 {
+		return
+	}
+
+	// 1.每造成100点伤害，奖励1经验
+	// 2.每造成200点伤害，奖励1铜钱
+	// 3.每造成2000点伤害，奖励1帮贡
+	exp := int64(hurt / 100)
+	coins := int64(hurt / 200)
+	contri := int64(hurt / 2000)
+	mainRoleId := module.Role.GetMainRole(db).RoleId
+
+	attachments := []*mail_dat.Attachment{}
+	if exp > 0 {
+		attachments = append(attachments, &mail_dat.Attachment{
+			AttachmentType: mail_dat.ATTACHMENT_SINGLE_ROLE_EXP,
+			ItemId:         int16(mainRoleId),
+			ItemNum:        exp,
+		})
+	}
+	if coins > 0 {
+		attachments = append(attachments, &mail_dat.Attachment{
+			AttachmentType: mail_dat.ATTACHMENT_COINS,
+			ItemNum:        coins,
+		})
+	}
+	if contri > 0 {
+		attachments = append(attachments, &mail_dat.Attachment{
+			AttachmentType: mail_dat.ATTACHMENT_CONTRIB,
+			ItemNum:        contri,
+		})
+	}
+	mail := &mail_dat.MailCliqueBossHurt{}
+	mail.Attachments = attachments
+	mail.Hurt = fmt.Sprint(hurt)
+	mail.Exp = fmt.Sprint(exp)
+	mail.Coins = fmt.Sprint(coins)
+	mail.Contri = fmt.Sprint(contri)
+	module.Mail.SendMail(db, mail)
+}
+
+func (mod CliqueBossMod) SendTopHurtPlaAward(db *mdb.Database, rank int64) {
+	var itemId int16
+	attachments := []*mail_dat.Attachment{}
+
+	if rank == 1 {
+		itemId = clique_boss_dat.CLIQUE_BOSS_PLAYER_GOLD_BOX
+	} else if rank <= 3 {
+		itemId = clique_boss_dat.CLIQUE_BOSS_PLAYER_SILVER_BOX
+	} else {
+		itemId = clique_boss_dat.CLIQUE_BOSS_PLAYER_COPPER_BOX
+	}
+	attachments = append(attachments, &mail_dat.Attachment{
+		AttachmentType: mail_dat.ATTACHMENT_ITEM,
+		ItemId:         itemId,
+		ItemNum:        1,
+	})
+	itemInfo := item_dat.GetItem(itemId)
+
+	mail := &mail_dat.MailCliqueBossRankPla{}
+	mail.Attachments = attachments
+	mail.Rank = fmt.Sprint(rank)
+	mail.Item = fmt.Sprint(i18l.T.Tran(itemInfo.Name))
+	module.Mail.SendMail(db, mail)
+}
+
+func (mod CliqueBossMod) SendTopHurtCliAward(db *mdb.Database, rank int64, cliqueName string) {
+	var itemId int16
+	attachments := []*mail_dat.Attachment{}
+
+	if rank == 1 {
+		itemId = clique_boss_dat.CLIQUE_BOSS_CLIQUE_GOLD_BOX
+	} else if rank <= 5 {
+		itemId = clique_boss_dat.CLIQUE_BOSS_CLIQUE_SILVER_BOX
+	} else if rank <= 10 {
+		itemId = clique_boss_dat.CLIQUE_BOSS_CLIQUE_COPPER_BOX
+	} else {
+		itemId = clique_boss_dat.CLIQUE_BOSS_CLIQUE_WOOD_BOX
+	}
+	attachments = append(attachments, &mail_dat.Attachment{
+		AttachmentType: mail_dat.ATTACHMENT_ITEM,
+		ItemId:         itemId,
+		ItemNum:        1,
+	})
+	itemInfo := item_dat.GetItem(itemId)
+
+	mail := &mail_dat.MailCliqueBossRankCli{}
+	mail.Attachments = attachments
+	mail.Rank = fmt.Sprint(rank)
+	mail.Item = fmt.Sprint(i18l.T.Tran(itemInfo.Name))
+	mail.CliqueName = fmt.Sprint(cliqueName)
+	module.Mail.SendMail(db, mail)
+}
+
+func GetOpenUnix(openTime int64) int64 {
+	var duration int64 = 0
+	if config.ServerCfg.EnableCliqueBossDebugMode != true {
+		nowTime := gotime.Now()
+		nowUnix := nowTime.Unix()
+		time1 := gotime.Date(nowTime.Year(), nowTime.Month(), nowTime.Day(), clique_boss_dat.DAILY_BOSS_OPEN_TIME_HOUR_1, clique_boss_dat.DAILY_BOSS_OPEN_TIME_MINUTE_1, 0, 0, nowTime.Location()).Unix()
+		time2 := gotime.Date(nowTime.Year(), nowTime.Month(), nowTime.Day(), clique_boss_dat.DAILY_BOSS_OPEN_TIME_HOUR_2, clique_boss_dat.DAILY_BOSS_OPEN_TIME_MINUTE_2, 0, 0, nowTime.Location()).Unix()
+		timeNextDay := gotime.Date(nowTime.Year(), nowTime.Month(), nowTime.Day()+1, clique_boss_dat.DAILY_BOSS_OPEN_TIME_HOUR_1, clique_boss_dat.DAILY_BOSS_OPEN_TIME_MINUTE_1, 0, 0, nowTime.Location()).Unix()
+		if openTime <= time1 && nowUnix < time1+clique_boss_dat.BOSS_DURATION*60*60 {
+			duration = time1 - nowUnix
+		} else if openTime <= time2 && nowUnix < time2+clique_boss_dat.BOSS_DURATION*60*60 {
+			duration = time2 - nowUnix
+		} else if openTime <= timeNextDay && nowUnix < timeNextDay+clique_boss_dat.BOSS_DURATION*60*60 {
+			duration = timeNextDay - nowUnix
+		} else {
+			duration = 9999999
+		}
+	} else {
+		//十分钟开启
+		nowUnix := gotime.Now().Unix()
+		nowHour := time.GetNextHourTime(gotime.Now()) - 3600
+		nowHourSecond := nowUnix - nowHour
+		duration = 600 - nowHourSecond%600
+		if duration == 0 {
+			duration = 600
+		}
+	}
+	return duration
+}
+
+func doUpdateBoss(db *mdb.Database, cliqueBossInfo *mdb.GlobalCliqueBoss) {
+	db.Select.GlobalCliqueBossHistory(func(row *mdb.GlobalCliqueBossHistoryRow) {
+		if row.Version() == cliqueBossInfo.Version {
+			updateRow := row.GoObject()
+			updateRow.DeadTimestamp = cliqueBossInfo.DeadTimestamp
+			updateRow.StartTimestamp = cliqueBossInfo.Timestamp
+			updateRow.Level = cliqueBossInfo.Level
+			db.Update.GlobalCliqueBossHistory(updateRow)
+		}
+	})
+	offTimestamp := cliqueBossInfo.DeadTimestamp - cliqueBossInfo.Timestamp
+	timeUnit := int64(60)
+	if config.ServerCfg.EnableCliqueBossDebugMode == true {
+		timeUnit = int64(12)
+	}
+	if offTimestamp > 0 {
+		// boss被打死的情况
+		maxAddLevel := int16(0)
+		if offTimestamp <= int64(5)*timeUnit {
+			maxAddLevel = 5
+		} else if offTimestamp <= int64(20)*timeUnit {
+			maxAddLevel = 2
+		} else if offTimestamp <= int64(40)*timeUnit {
+			maxAddLevel = 1
+		}
+		cliqueBossInfo.Level += maxAddLevel
+		if cliqueBossInfo.Level > clique_boss_dat.MAX_BOSS_LEVEL {
+			cliqueBossInfo.Level = clique_boss_dat.MAX_BOSS_LEVEL
+		}
+	}
+	SetGlobalCliqueBossByLevel(cliqueBossInfo)
+
+	cliqueBossInfo.Timestamp = 0
+	cliqueBossInfo.DeadTimestamp = 0
+	cliqueBossInfo.Hp = cliqueBossInfo.MaxHp
+	db.Update.GlobalCliqueBoss(cliqueBossInfo)
+}
+
+func doDescLevel(db *mdb.Database, cliqueBossInfo *mdb.GlobalCliqueBoss) {
+	db.Select.GlobalCliqueBossHistory(func(row *mdb.GlobalCliqueBossHistoryRow) {
+		if row.Version() == cliqueBossInfo.Version {
+			updateRow := row.GoObject()
+			updateRow.StartTimestamp = cliqueBossInfo.Timestamp
+			updateRow.Level = cliqueBossInfo.Level
+			db.Update.GlobalCliqueBossHistory(updateRow)
+		}
+	})
+	if cliqueBossInfo.Level > 1 {
+		needDesc := false
+		db.Select.GlobalCliqueBossHistory(func(row *mdb.GlobalCliqueBossHistoryRow) {
+			if row.Level() == cliqueBossInfo.Level && row.Version() == cliqueBossInfo.Version-1 && row.DeadTimestamp() == 0 {
+				needDesc = true
+			}
+		})
+		if needDesc {
+			cliqueBossInfo.Level -= clique_boss_dat.DEC_LEVEL
+		}
+	}
+	SetGlobalCliqueBossByLevel(cliqueBossInfo)
+	cliqueBossInfo.Timestamp = 0
+	cliqueBossInfo.DeadTimestamp = 0
+	cliqueBossInfo.Hp = cliqueBossInfo.MaxHp
+	db.Update.GlobalCliqueBoss(cliqueBossInfo)
+}
+
+func AddGlobalDespairBossHistory(db *mdb.Database, globalCliqueBoss *mdb.GlobalCliqueBoss) {
+	globalCliqueBossHistory := &mdb.GlobalCliqueBossHistory{}
+	globalCliqueBossHistory.Version = globalCliqueBoss.Version
+	globalCliqueBossHistory.Timestamp = globalCliqueBoss.Timestamp
+	db.Insert.GlobalCliqueBossHistory(globalCliqueBossHistory)
+}
+
+func ResetGLobalCliqueBoss(db *mdb.Database, globalCliqueBoss *mdb.GlobalCliqueBoss) {
+	globalCliqueBoss.Version++
+	globalCliqueBoss.Timestamp = gotime.Now().Unix() + 1
+	db.Update.GlobalCliqueBoss(globalCliqueBoss)
+	AddGlobalDespairBossHistory(db, globalCliqueBoss)
+}

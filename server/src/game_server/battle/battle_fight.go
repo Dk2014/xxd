@@ -1,0 +1,1138 @@
+package battle
+
+import (
+	"core/log"
+	"game_server/dat/skill_dat"
+	"math"
+	"math/rand"
+)
+
+// 参与战斗的对象信息
+type Fighter struct {
+	// 外部需要传递的参战角色数据
+	Kind            int8  // 对象类型，FK_开头的常量
+	PlayerId        int64 // 玩家ID
+	RoleId          int   // 角色ID
+	Level           int   // 等级
+	Prop            int8  // 种族
+	Exp             int64 // 经验
+	Position        int   // 站位ID
+	FashionId       int16 // 时装ID
+	FriendshipLevel int16 // 羁绊等级
+	//FameLevel       int16 // 声望等级（伙伴随主角），在PVP战斗里每个高于对手的声望等级，为我方增加100必杀等级、100意志等级、10%无视防御
+
+	playerInfo *BattlePlayerInfo
+
+	// 基础属性
+	Speed            float64 // 速度
+	Attack           float64 // 普通攻击
+	Defend           float64 // 普通防御
+	Power            int     // 精气
+	MaxPower         int     // 精气上限
+	Health           int     // 生命值
+	MaxHealth        int     // 生命上限
+	Critial          float64 // 暴击
+	CritialLevel     float64 // 暴击等级
+	Dodge            float64 // 闪避
+	DodgeLevel       float64 // 闪避等级
+	Hit              float64 // 命中
+	HitLevel         float64 // 命中等级
+	Block            float64 // 格挡
+	BlockLevel       float64 // 格挡等级
+	CritialHurt      float64 // 必杀（百分数）
+	CritialHurtLevel float64 // 必杀等级
+	Cultivation      float64 // 修为
+	Tenacity         float64 // 韧性
+	TenacityLevel    float64 // 韧性等级
+	Destroy          float64 // 破击
+	DestroyLevel     float64 // 破击等级
+
+	Sleep             float64 // 睡眠抗性
+	SleepLevel        float64
+	Dizziness         float64 // 眩晕抗性
+	DizzinessLevel    float64
+	Random            float64 // 混乱抗性
+	RandomLevel       float64
+	DisableSkill      float64 // 封魔抗性
+	DisableSkillLevel float64
+	Poisoning         float64 // 中毒抗性
+	PoisoningLevel    float64
+
+	SpiritHurt float64 // 仙灵伤害
+	HumanHurt  float64 // 人兽伤害
+	DevilHurt  float64 // 妖魔伤害
+
+	AoeReduce       float64 // 范围伤害免伤
+	SingleReduce    float64 // 单体伤害免伤
+	AntiRandomLevel float64 // 抵制混乱等级
+
+	// 破甲相关属性
+	SunderMaxValue      int // 护甲值
+	SunderMinHurtRate   int // 破甲前伤害转换（百分比）
+	SunderEndHurtRate   int // 破甲后的伤害转换率（百分比）
+	SunderEndDefendRate int // 破甲后的减防御（百分比）
+	SunderAttack        int // 攻击破甲值
+	sunderValue         int // 当前护甲值
+
+	RecoverPower      int          // 每轮回精气
+	RecoverHealth     int          // 每轮回血
+	DecHealth         int          // 每轮扣血
+	SkillInfos        []*SkillInfo // 绝招信息
+	AutoFight         bool         // 自动战斗，只对主角有效
+	IsBoss            bool         // 是否是boss，只对怪物有效
+	FirstJobLevel     int          // 伙伴第一职业等级
+	SecondJobLevel    int          // 伙伴第二职业等级
+	SkillWait         int          // 绝招蓄力回合(敌人用)
+	TreatEffect       int          // 治疗效果
+	MainGhostId       int          // 主魂侍id
+	GhostSkillId      int          // 主魂侍技能
+	GhostSkillRate    float64      // 魂侍释放概率
+	EnableGhostShield bool         // 是否开启护盾
+	GhostShieldValue  int          // 护盾值
+	ghostShieldState  int          // 魂侍护盾状态，大于0表示启用
+
+	useSwordSoul   bool // 是否使用剑心
+	SwordSoulValue int  // 剑心伤害数值 大于使用
+
+	// 特殊回调
+	attackAI func(f *Fighter) (*Skill, *SkillInfo) // 攻击AI
+
+	// 初始化后产生的数据
+	Ftype        int          // 攻守方类型，FT_开头的常量
+	Skills       [4]*Skill    // 绝招
+	battle       *BattleState // 所属战场
+	side         *SideInfo    // 角色所属的一方
+	ptype        int          // 站类型(0 ~ 5)
+	miniHurt     float64      // 最小伤害
+	probLevel    float64      // 概率等级
+	raw          rawdata      // buff作用时会用到原值百分比计算的属性
+	cureAddValue float64      // 治疗加值
+	normalAttack *Skill       // 普通攻击
+
+	// 战斗过程中产生的数据
+	Buffs          *Buff   // 身上叠加的buff
+	useSkillIndex  int     // 使用绝招的索引 TODO 使用 int8
+	useSkillJob    int     // 当前绝招职业类型，伙伴用到
+	dizziness      int     // 眩晕，大于0就是处于眩晕状态
+	sleepState     int     // 睡眠状态，大于0表示处于睡眠状态
+	reduceHurt     float64 // 伤害减免%
+	random         int     // 混乱，大于0表示处于混乱状态，敌人用到
+	skillWaitCount int     // 绝招等待计算器
+	hurtAdd        float64 // 伤害加成
+	attractFire    int     // 吸引火力状态，大于0就是处于吸引活力
+	disableSkill   int     // 禁用绝招
+	defenceRate    int     //防御系数 defence = defence * (1+defenceRate/100)
+
+	absorbHurt       float64 // 吸收伤害
+	directReduceHurt float64 // 直接伤害减免
+
+	// 出手顺序排序用的数据
+	fighted bool // 本回合是否已经出手过
+	round   int  // 回合计数器
+
+	preparedRound int
+
+	// 是否初始化过
+	isBaseInit bool
+
+	//战斗结果Cache
+	//每次需要给客户端发送战报之前把 cacheIdx 重置，具体实际是
+	// 释放阵印 释放魂侍 使用道具 角色出手战斗流程 等
+	fightResultCache []FightResult
+	cacheIdx         int
+
+	buffCounts []BuffCount
+
+	FighterNum int32 // 战力 查看其他玩家的接口用
+	TotalHurt  int   // 一场战斗造成的总伤害
+
+	useItemId        int32  // 使用战场道具ID
+	triggerIdxRecord []int8 // 记录boss技能的触发索引
+
+	// 灵宠相关
+	IsBattlePet                bool
+	BattlePetLiveRound         int   // 在战场中持续出现回合数，超过后消失
+	BattlePetLiveStartRound    int   // 灵宠在战场出现时当时的回合数
+	BattlePetPerRoundAttackNum int8  // 每回合出手次数
+	NaturalSkillLv             int16 // 默认攻击方式技能等级(目前仅为灵宠技能训练等级)
+
+	// 魂侍绝招
+	//GhostPower            int
+	UsedGhostSkill        bool          //使用过魂侍技能标志
+	Ghosts                []*FightGhost //
+	useGhostSkillId       int16
+	useGhostSkillPosition int //在v2中废弃
+	InitGhostPower        int
+	ShieldGhostId         int16
+	ghostPowerIncMultiple int              // 魂力增长倍数(默认为1)
+	GhostInfo             *PlayerGhostInfo //玩家魂侍信息
+
+	//条件触发战斗事件
+	triggerEvent int // FE_ 常量
+
+	SkillLevel int16 //技能熟练度加成
+}
+
+type FightGhost struct {
+	GhostId      int16
+	GhostStar    int8
+	GhostLevel   int16
+	GhostSkillId int
+	GhostSkillLv int16
+	//GhostSkillId2 int //魂侍需要可能两个技能
+	SkillUsed     bool        //是否释放过技能
+	RelationGhost *FightGhost //关联魂侍，释放技能之后要释放相关魂侍技能
+}
+
+// BUFF计数器，用于buff衰减
+type BuffCount struct {
+	BuffId int
+	Count  float64
+}
+
+// 单次出手结果
+type FightResult struct {
+	Type          int  // 出手方类型，FT_开头的常量
+	FighterEv     int  // 出手方发生的事件
+	FighterPos    int  // 出手方站位ID
+	Power         int  // 剩余精气
+	Health        int  // 剩余血量
+	SunderValue   int  // 剩余护甲值
+	UseGhostSkill bool // 是否使用魂侍绝招
+	//IsTotemSkill   bool           //阵印技能
+	TotemId        int16          //阵印ID
+	GhostId        int16          //
+	Attacks        [2]AttackInfo  // 绝招信息
+	ItemResult     *UseItemResult // 战斗道具使用信息
+	GhostSkillRate float64        // 魂侍释放概率
+	GhostShieldOn  bool           // 是否自身触发护盾
+	GhostPower     int
+	ShieldGhostId  int16
+	CallEnemys     [2][]CallInfo //怪物召唤
+	AddPower       int           //主角技能增加的精气
+}
+
+func (result *FightResult) reset() {
+	result.FighterEv = FE_NONE
+	result.Power = 0
+	result.Health = 0
+	result.SunderValue = 0
+	result.UseGhostSkill = false
+	result.TotemId = 0
+	result.GhostId = 0
+	result.Attacks[0].SkillId = skill_dat.SKILL_IS_NULL
+	result.Attacks[1].SkillId = skill_dat.SKILL_IS_NULL
+	result.ItemResult = nil
+	result.GhostShieldOn = false
+	result.ShieldGhostId = 0
+	result.CallEnemys[0] = nil
+	result.CallEnemys[1] = nil
+	result.AddPower = 0
+
+}
+
+// 出手绝招信息
+type AttackInfo struct {
+	SkillId        int            // 所用的绝招ID
+	RestReleaseNum int            //剩余使用次数
+	Targets        []AttackResult // 一次出手中的攻击结果
+	SelfBuffs      []*Buff        // 对自己产生的buff
+	BuddyBuffs     []*Buff        // 对火伴产生的buff
+}
+
+// 攻击结果
+type AttackResult struct {
+	Type             int     // 被攻击方类型，FT_开头的常量
+	Hurt             int     // 产生的伤害
+	TargetEv         int     // 目标发生的事件，FE_开头的常量
+	TargetPos        int     // 目标站位ID
+	Buffs            []*Buff // 对目标产生的buff
+	TakeSunder       int     // 产生破甲量
+	TakeGhostShield  int     // 魂侍护盾抵挡伤害
+	DirectReductHurt int     // 直接免伤抵挡伤害
+	GhostShieldOn    bool    // 是否触发护盾
+	GhostPower       int
+	ShieldGhostId    int16
+}
+
+//设置伙伴使用的技能
+func (f *Fighter) SetBuddySkill(skillIndex int) {
+	f.useSkillIndex = skillIndex
+}
+
+func (f *Fighter) GetBuffCount(buffId int) float64 {
+	for i := 0; i < len(f.buffCounts); i++ {
+		if f.buffCounts[i].BuffId == buffId {
+			return f.buffCounts[i].Count
+		}
+	}
+	return 0
+}
+
+func (f *Fighter) AddBuffCount(buffId int) {
+	for i := 0; i < len(f.buffCounts); i++ {
+		if f.buffCounts[i].BuffId == buffId {
+			f.buffCounts[i].Count += 1
+			return
+		}
+	}
+	f.buffCounts = append(f.buffCounts, BuffCount{buffId, 1})
+}
+
+func (f *Fighter) GetMainGhost() *FightGhost {
+	if len(f.Ghosts) > 0 {
+		return f.Ghosts[0]
+	}
+	return nil
+}
+
+// 构建战斗数据
+func (f *Fighter) init(b *BattleState, ftype int) {
+	f.baseInit(b)
+	f.innerInit(b, ftype)
+}
+
+// 构建基础战斗数据
+func (f *Fighter) baseInit(b *BattleState) {
+	if !f.isBaseInit {
+		f.isBaseInit = true
+
+		// 初始命中100%
+		f.Hit += ROLE_INIT_HIT
+		// 默认的魂力的增长倍数为1
+		f.ghostPowerIncMultiple = 1
+	}
+}
+
+// 初始内部战斗数据
+func (f *Fighter) innerInit(b *BattleState, ftype int) {
+	// 初始化绝招
+	for i, skillInfo := range f.SkillInfos {
+		// 非主角不能有绝招ID＝0的情况
+		if f.Kind != FK_PLAYER && skillInfo.SkillId == 0 {
+			continue
+		}
+
+		skill := createRoleSkill(skillInfo.SkillId)
+
+		f.Skills[i] = skill
+	}
+
+	switch f.Kind {
+	case FK_PLAYER:
+		f.attackAI = mainRoleAI_2
+		f.normalAttack = normalAttack
+		f.useSkillIndex = -1
+	case FK_BUDDY:
+		f.attackAI = buddyAI
+		f.normalAttack = buddyNormalAttack
+	case FK_ENEMY:
+		f.attackAI = enemyAI
+		f.normalAttack = normalAttack
+		f.useSkillIndex = -1
+		if len(f.Skills) != 0 && f.Skills[0] != nil {
+			f.useSkillIndex = 0
+		}
+	}
+
+	f.battle = b
+	f.Ftype = ftype
+	f.ptype = int(f.Position % MAX_COLS)
+	f.fightResultCache = make([]FightResult, 2)
+	f.cacheIdx = 0
+
+	// 等级小于50级的时候，概率等级按50计算
+	// 这边除以100等于概率计算的地方乘以100，目的是把小数换算成百分数
+	if f.Level < 50 {
+		f.probLevel = float64(50) / 100
+	} else {
+		f.probLevel = float64(f.Level) / 100
+	}
+
+	// 最小伤害 = 上取(等级* (等级/10 - 1))+ 1
+	// 等级超过90以90级计算最小伤害
+	if f.Level <= 90 {
+		f.miniHurt = float64(f.Level)*math.Ceil(float64(f.Level)/10-1) + 1
+	} else {
+		f.miniHurt = 90.0*math.Ceil(90.0/10.0-1.0) + 1
+	}
+
+	// buff用的原始数据
+	f.raw.Speed = f.Speed
+	f.raw.Attack = f.Attack
+	f.raw.Defend = f.Defend
+	f.raw.Block = f.Block
+	f.raw.DodgeLevel = f.DodgeLevel
+	f.raw.CritialLevel = f.CritialLevel
+	f.raw.HitLevel = f.HitLevel
+
+	f.sunderValue = f.SunderMaxValue
+
+	f.skillWaitCount = f.SkillWait
+}
+
+//严重受伤: 血量小于 60%
+//ps 人都死了 还问受伤了没 那就是调用者的错了
+func (f *Fighter) BadlyHurt() bool {
+	return float64(f.Health)/float64(f.MaxHealth) < 0.6 //FIXME 移除常量
+}
+
+//获取player信息
+func (f *Fighter) GetPlayerInfo() *BattlePlayerInfo {
+	if f.PlayerId <= 0 { //怪物之类的
+		return nil
+	}
+	//因为战场中 player 数量是非常有限的，实际的时间复杂度可以看做 O(1)
+	for _, player := range f.battle.Attackers.Players {
+		if player.PlayerId == f.PlayerId {
+			return player
+		}
+	}
+	for _, player := range f.battle.Defenders.Players {
+		if player.PlayerId == f.PlayerId {
+			return player
+		}
+	}
+	return nil
+}
+
+//设置触发事件
+func (f *Fighter) SetTriggerEvent(event int) {
+	f.triggerEvent = event
+}
+
+//重置触发事件
+func (f *Fighter) ResetTriggerEvent() {
+	f.triggerEvent = FE_NONE
+}
+
+//获取触发事件
+func (f *Fighter) GetTriggerEvent() int {
+	return f.triggerEvent
+}
+
+// 一次出手
+func (f *Fighter) fight() *FightResult {
+	if f.cacheIdx >= len(f.fightResultCache) {
+		f.fightResultCache = append(f.fightResultCache, FightResult{})
+	}
+	result := &f.fightResultCache[f.cacheIdx]
+	f.cacheIdx++
+
+	result.reset()
+	result.Type = f.Ftype
+	result.FighterPos = f.Position
+
+	// 破甲恢复
+	if f.SunderMaxValue > 0 {
+		switch {
+		// 破甲结束
+		case f.sunderValue == -1:
+			f.sunderValue = f.SunderMaxValue
+		// 破甲中
+		case f.sunderValue < 0:
+			f.sunderValue += 1
+		}
+	}
+
+	// 是否可以出手
+	var canFight = true
+
+	var useGhost = false
+	var useItem = false
+	var useTotem = false
+
+	var (
+		skill     *Skill     // 绝招
+		skillInfo *SkillInfo // 绝招信息
+	)
+
+	// 判断晕的状态
+	if f.dizziness > 0 || f.sleepState > 0 {
+		canFight = false
+	} else {
+		// 混乱或者禁用绝招状态只用普通攻击
+		if f.random == 0 && f.disableSkill == 0 {
+			skill, skillInfo = f.attackAI(f)
+		} else {
+			skill = f.normalAttack
+			skillInfo = normalSkillInfo
+		}
+
+		if skill == nil {
+			canFight = false
+		}
+
+	}
+
+	//在伙伴使用了技能或者被无法出手时需要重置技能，
+	//例外：因为魂侍技能得出手时不需要重置技能
+	if f.Kind == FK_BUDDY && f.useGhostSkillId <= 0 {
+		f.useSkillIndex = 0
+	}
+
+	// 避免一大块if代码
+	if !canFight && !f.battle.launchBattleTotem {
+		//阵印需要在无需判断是否能够出手
+		goto exit
+	}
+
+	// 使用战场道具
+	if f.useItemId > 0 {
+		useItem = true
+		var ok bool
+		result.ItemResult, ok = f.UseBattleItem(f.useItemId)
+		f.useItemId = 0
+		// 成功使用道具
+		if ok {
+			goto exit
+		}
+	}
+
+	if f.battle.launchBattleTotem {
+		useTotem = true
+		//TODO 干掉下面这行
+		totem := f.side.TotemInfo[f.battle.GetRounds()]
+		skill, skillInfo = createTotemSkill(totem.SkillId, totem.Level)
+		result.TotemId = f.side.TotemInfo[f.battle.GetRounds()].Id
+	} else if f.GhostInfo != nil {
+		if f.useGhostSkillId == 0 && f.GhostInfo.GhostPower < 100 { // 如果没释放，则增加魂力
+			log.Verbosef("战场 [%p] [GHOST] %d 回合 pid %d pos %d  攻击 原魂力 %d 获得 %d",
+				f.battle, f.battle.round, f.PlayerId, f.Position, f.GhostInfo.GhostPower, (ATTACK_ADD_GHOST_POWER * f.ghostPowerIncMultiple))
+			f.GhostInfo.GhostPower += (ATTACK_ADD_GHOST_POWER * f.ghostPowerIncMultiple)
+			if f.GhostInfo.GhostPower > FULL_GHOST_POWER {
+				f.GhostInfo.GhostPower = FULL_GHOST_POWER
+			}
+		} else if f.useGhostSkillId > 0 { // 释放魂侍绝招
+			log.Verbosef("战场 [%p] [GHOST] %d 回合 pid %d pos %d  使用魂侍技能 %d 原魂力 %d ",
+				f.battle, f.battle.round, f.PlayerId, f.Position, f.useGhostSkillId, f.GhostInfo.GhostPower)
+			//这里没有考虑魂力不满的情况，需要在外面坚持
+			result.GhostId = f.Ghosts[0].GhostId
+			skill, skillInfo = createGhostSkill(f)
+			//策划需求：初始魂力只在战场构造战斗角色的时候起作用
+			//f.GhostInfo.GhostPower = f.GhostInfo.InitGhostPower
+			f.GhostInfo.GhostPower = 0
+			result.UseGhostSkill = true
+			useGhost = true
+		}
+	}
+
+	// 扣除精气
+	if f.Kind == FK_PLAYER {
+		f.Power -= skill.DecPower
+	}
+
+	// 提升精气
+	f.Power += skill.IncPower
+	result.AddPower += skill.IncPower
+
+	// 防止溢出
+	switch {
+	case f.Power < 0:
+		f.Power = 0
+	case f.Power > f.MaxPower:
+		f.Power = f.MaxPower
+	}
+
+	// 释放绝技
+	for i := 0; i < 2; i++ {
+		var skillForce float64
+		var skillTrnLv int16
+
+		if i == 0 {
+			skillForce = skillInfo.SkillForce
+			skillTrnLv = skillInfo.SkillTrnLv
+		} else {
+			skillForce = skillInfo.SkillForce2
+			skillTrnLv = skillInfo.SkillTrnLv2
+		}
+		//if !skill.IsTotemSkill {
+		if skill.IsRoleSkill {
+			skillTrnLv += f.SkillLevel
+		}
+
+		var attackInfo = &result.Attacks[i]
+		// 清理状态
+		attackInfo.reset()
+
+		attackInfo.SkillId = skill.SkillId
+		result.CallEnemys[i] = skill.CallEnemys
+		// 总伤害
+		var totalAttack int
+
+		// 绝招有攻击特性
+		if skill._FindTargets != nil {
+			// 寻找攻击目标
+			var targets []*Fighter
+
+			// 混乱状态判断
+			if f.random == 0 {
+				targets = skill._FindTargets(f)
+			} else {
+				targets = findBuddyWithoutSelf(f)
+			}
+			// 逐个攻击
+			for _, t := range targets {
+				if t != nil && t.Health > MIN_HEALTH && f.Health > MIN_HEALTH {
+					//技能可能触发战斗事件 batle_const.go FE_*  常量
+					if skill._EventTrigger != nil {
+						skill._EventTrigger(f, t)
+					}
+					var attackResult = f.attack(skill, skillForce, skillTrnLv, t)
+					//重置事件
+					t.triggerEvent = FE_NONE
+
+					// 技能特殊附加效果：命中敌方后增加主角精气
+					if skill.AppendSpecialType == APPEND_SPECIAL_TYPE_ATTACKED_INC_POWER && attackResult.TargetEv != FE_DODGE {
+						f.Power += int(skill.AppendSpecialValue)
+						result.AddPower += int(skill.AppendSpecialValue)
+					}
+
+					attackInfo.Targets = append(attackInfo.Targets, attackResult)
+					totalAttack += attackResult.Hurt
+				}
+			}
+
+			// 防止精气溢出
+			if f.Power > f.MaxPower {
+				f.Power = f.MaxPower
+			}
+		}
+
+		// 绝招有伙伴buff
+		if skill._BuffToBuddy != nil {
+			attackInfo.BuddyBuffs = skill._BuffToBuddy(f, totalAttack, skillForce, skillTrnLv, dummyGhostSkill)
+		}
+
+		// 绝招释放自身buff
+		if skill._BuffToSelf != nil {
+			attackInfo.SelfBuffs = skill._BuffToSelf(f, totalAttack, skillForce, skillTrnLv, dummyGhostSkill)
+		}
+
+		// 累加本次总伤害
+		f.TotalHurt += totalAttack
+
+		// 灵宠可能会有多次攻击
+		if f.IsBattlePet && f.BattlePetPerRoundAttackNum > 1 {
+			skill = createRoleSkill(skillInfo.SkillId)
+			skillInfo.SkillForce2 = skillInfo.SkillForce
+			if skill != nil {
+				continue
+			}
+			break
+		}
+
+		if skillInfo.SkillId2 == SKILL_EMPTY {
+			break
+		}
+
+		// 缺省配置了技能2，再进行一次普攻攻击
+		if skillInfo.SkillId2 == DEFAULT_SKILL_ID {
+			skill = f.normalAttack
+			continue
+		}
+
+		skill = createRoleSkill(skillInfo.SkillId2)
+		//使用一次魂侍技能可能有两种不同的技能，在这里更新 useGhostSkillId
+		//在增加buff时 用 f.useGhostSkillId 来判断当前的buff是否来自自己的魂侍技能
+		if f.useGhostSkillId > 0 {
+			f.useGhostSkillId = int16(skillInfo.SkillId2)
+		}
+
+		if skill == nil {
+			break
+		}
+	}
+
+	//使用技能出手完毕
+	if skillInfo.MaxReleaseNum > 0 {
+		skillInfo.ReleaseNum--
+		result.Attacks[0].RestReleaseNum = skillInfo.ReleaseNum
+	} else {
+		result.Attacks[0].RestReleaseNum = -1
+	}
+
+exit:
+
+	// 每回合损血，中毒等（使用魂侍和物品不扣血）
+	if f.DecHealth > 0 && f.battle.Attackers.live > 0 && f.battle.Defenders.live > 0 && !useItem && !useGhost && !useTotem {
+		f.Health -= f.DecHealth
+		if f.Health > MIN_HEALTH && f.EnableGhostShield && f.ghostShieldState < 1 && float64(f.Health) < float64(f.MaxHealth)*0.3 {
+			f.addBuff(f, BUFF_GHOST_SHIELD, 1, 3, GHOST_SHIELD_SKILL_ID, 0, false)
+			result.ShieldGhostId = f.ShieldGhostId
+			result.GhostShieldOn = true
+		}
+	}
+	//假设本次出手死亡，那么召唤怪物无效
+	if f.Health <= MIN_HEALTH {
+		result.CallEnemys[0] = nil
+		result.CallEnemys[1] = nil
+	}
+
+	//// 自杀之类的
+	if !useTotem {
+		//使用阵印的角色有可能已经死亡，这样会导致 UpdateLiveNum 错误地减少出手方存活人数
+		f.UpdateLiveNum()
+	}
+
+	result.Power = f.Power
+	result.Health = f.Health
+	result.GhostPower = f.GetGhostPower()
+	result.SunderValue = f.sunderValue
+	result.GhostSkillRate = f.GhostSkillRate
+
+	return result
+}
+
+// 攻击具体目标
+func (f *Fighter) attack(skill *Skill, skillForce float64, skillTrnlv int16, t *Fighter) AttackResult {
+	var result AttackResult
+
+	var (
+		hurt       float64 // 伤害值
+		realHurt   int     // 真实伤害
+		takeSunder int     // 产生破甲值
+		buffs      []*Buff // 产生buff
+		defend     = t.Defend
+		attack     float64 // 攻击数，因绝招而异
+	)
+
+	attack = skill._GetAttack(f, skillForce, skillTrnlv)
+
+	result.TargetEv = FE_NONE
+
+	// 受到攻击将被中断睡眠
+	if t.sleepState > 0 {
+		t.Buffs.CleanSleep(t)
+	}
+
+	// 命中数 = 初始命中(95%) + 攻方实际命中 - 守方实际闪避
+	// 攻防实际命中 = 攻方命中 + (攻方命中等级 * 命中等级系数 / 守方概率等级)
+	// 守方实际闪避 = 守方闪避 + (守方闪避等级 * 闪避等级系数 / 攻方概率等级)
+	hit := (f.Hit + (f.HitLevel * HIT_LEVEL_ARG / t.probLevel)) - (t.Dodge + (t.DodgeLevel * DODGE_LEVEL_ARG / f.probLevel))
+
+	// 命中至少为10%
+	if hit < 10 {
+		hit = 10
+	}
+
+	// 随机结果大于等于命中数，攻击没命中
+	// 眩晕时不闪避
+	if !skill.NotMiss && t.dizziness <= 0 && (rand.Float64()*100 >= hit || t.triggerEvent == FE_DODGE) {
+		result.TargetEv = FE_DODGE
+		f.ResetTriggerEvent()
+	} else {
+		//防御百分比buff对防御的影响
+		defend *= (1 + float64(t.defenceRate)/100)
+
+		// 无视防御
+		if skill.ReduceDefend > 0 {
+			defend -= defend * skill.ReduceDefend
+		}
+
+		// 破甲后减防效果
+		if t.SunderMaxValue != 0 {
+			// 已破甲
+			if t.sunderValue <= 0 {
+				defend -= defend * (float64(t.SunderEndDefendRate) / 100)
+			}
+		}
+
+		// 最低防御
+		if defend < 0 {
+			defend = 0
+		}
+
+		block := t.Block + (t.BlockLevel * BLOCK_LEVEL_ARG / f.probLevel)
+		destroy := f.Destroy + (f.DestroyLevel * DESTROY_LEVEL_ARG / t.probLevel)
+
+		// 随机结果小于等于格挡数，攻击被格挡
+		// 格挡数 = 守方实际格挡
+		// 守方实际格挡 = 守方格挡 + (守方格挡等级 * 格挡等级系数 / 攻方概率等级)
+		// 眩晕时不格挡
+		if !skill.IsTotemSkill && t.dizziness <= 0 && (rand.Float64()*100 <= (block-destroy) || t.triggerEvent == FE_BLOCK) {
+			result.TargetEv = FE_BLOCK
+			t.ResetTriggerEvent()
+		}
+
+		// 如果没发生格挡则判断是否发生暴击
+		if result.TargetEv != FE_BLOCK {
+			critial := f.Critial + (f.CritialLevel * CRITIAL_LEVEL_ARG / t.probLevel)
+			tenacity := t.Tenacity + (f.TenacityLevel * TENACITY_LEVEL_ARG / f.probLevel)
+
+			if skill.Critial != 0 {
+				critial = skill.Critial
+			}
+
+			// 随机结果小于等于暴击数，攻击发生暴击
+			// 暴击数 = 攻方暴击
+			// 攻方实际暴击 ＝ 攻方暴击 + (攻方暴击等级 * 暴击等级系数 / 守方概率等级)
+			if !skill.IsTotemSkill && rand.Float64()*100 <= (critial-tenacity) || t.triggerEvent == FE_CRIT {
+				result.TargetEv = FE_CRIT
+				// 暴击伤害数 = (攻方攻击 - 守方防御) * 攻击范围数 * (1.25 + 攻方实际暴击伤害)
+				// 攻方实际暴击伤害 ＝ 攻方暴击伤害 ＋ 攻方暴击伤害等级 ＊ 暴击伤害等级系数 / 守方概率等级
+				critialHurtLevel := f.CritialHurtLevel
+				hurt = (attack - defend) * skill.AttackRangeRatio * (125.0 + (f.CritialHurt + (critialHurtLevel * CRITIAL_HURT_LEVEL_ARG / t.probLevel))) * 0.01 // 百分数换算成小数
+			}
+		}
+
+		// 没发生暴击就按普通伤害计算
+		// 普通伤害 = （攻方攻击力 +（攻方内力 *系数，向上取整）- 敌方防御力）*攻击范围系数
+		if result.TargetEv != FE_CRIT {
+			hurt = (attack - defend) * skill.AttackRangeRatio
+		}
+
+		// 物种相克
+		switch t.Prop {
+		case FP_SPIRIT:
+			hurt += hurt * (f.SpiritHurt * SPIRIT_HURT_ARG / t.probLevel) * 0.01
+		case FP_HUMAN:
+			hurt += hurt * (f.HumanHurt * HUMAN_HURT_ARG / t.probLevel) * 0.01
+		case FP_DEVIL:
+			hurt += hurt * (f.DevilHurt * DEVIL_HURT_ARG / t.probLevel) * 0.01
+		}
+
+		// 最小伤害判断
+		if hurt < f.miniHurt {
+			if skill.IsTotemSkill {
+				hurt = 0
+			} else {
+				// 最小伤害 + rand(10) + 绝招固定值 + 绝招威力
+				hurt = f.miniHurt + float64((rand.Intn(10)+1)+skill.FixedValue) + skillForce
+			}
+		}
+
+		// 如果格挡了，伤害减半
+		if result.TargetEv == FE_BLOCK {
+			hurt = hurt / 2
+		}
+
+		hurt += hurt * (f.hurtAdd * 0.01)
+
+		// 前面先计算攻方会产生多少伤害，这里再计算守方可以免掉多少伤害
+		hurt -= hurt * t.reduceHurt * 0.01
+		if hurt < 0 {
+			hurt = 0
+		}
+
+		switch {
+		case skill.AttackMode == SKILL_ATTACK_MODE_SINGLE && t.SingleReduce > 0:
+			hurt -= hurt * t.SingleReduce * 0.01
+		case skill.AttackMode == SKILL_ATTACK_MODE_AOE && t.AoeReduce > 0:
+			hurt -= hurt * t.AoeReduce * 0.01
+		}
+
+		// 拥有最大护甲
+		if t.SunderMaxValue != 0 {
+			if t.sunderValue > 0 {
+				// 已破甲伤害加成
+				hurt = hurt * (float64(t.SunderMinHurtRate) * 0.01)
+			} else {
+				// 破甲伤害
+				hurt = hurt * float64(t.SunderEndHurtRate) / 100
+			}
+		}
+
+		// 扣血
+		realHurt = int(math.Ceil(hurt))
+		if realHurt < 0 {
+			realHurt = 0
+		}
+
+		// 魂力
+		if t.GhostInfo != nil {
+			log.Verbosef("战场 [%p] [GHOST] %d 回合 pid %d pos %d 被 %d 攻击 ，原魂力 %d 获得 %d",
+				t.battle, t.battle.round, t.PlayerId, t.Position, f.Position, t.GhostInfo.GhostPower, (ATTACKED_ADD_GHOST_POWER * f.ghostPowerIncMultiple))
+			t.GhostInfo.GhostPower += (ATTACKED_ADD_GHOST_POWER * f.ghostPowerIncMultiple)
+			if t.GhostInfo.GhostPower > FULL_GHOST_POWER {
+				t.GhostInfo.GhostPower = FULL_GHOST_POWER
+			}
+		}
+
+		// 选护盾吸收伤害最大的来作用
+		switch t.getMaxAbsorbHurt() {
+		case BUFF_GHOST_SHIELD:
+			if t.ghostShieldState > 0 && t.GhostShieldValue > 0 {
+				if realHurt > t.GhostShieldValue {
+					result.TakeGhostShield = t.GhostShieldValue
+				} else {
+					result.TakeGhostShield = realHurt
+				}
+
+				t.GhostShieldValue -= realHurt
+
+				if t.GhostShieldValue < 0 {
+					t.Health += t.GhostShieldValue
+					realHurt = -t.GhostShieldValue
+				} else {
+					realHurt = 0
+				}
+			}
+
+		// 有直接免伤buff
+		case BUFF_DIRECT_REDUCE_HURT:
+			if t.directReduceHurt > 0 {
+				if realHurt > int(t.directReduceHurt) {
+					result.DirectReductHurt = int(t.directReduceHurt)
+					realHurt -= int(t.directReduceHurt)
+				} else {
+					result.DirectReductHurt = realHurt
+					realHurt = 0
+				}
+			}
+
+			t.Health -= realHurt
+
+		// 伤害吸收
+		case BUFF_ABSORB_HURT:
+			if t.absorbHurt > 0 {
+				if realHurt > int(t.absorbHurt) {
+					result.DirectReductHurt = int(t.absorbHurt)
+					realHurt -= int(t.absorbHurt)
+					t.Buffs.UpdateAbortHurtBuffValue(float64(t.absorbHurt), t)
+					t.absorbHurt = 0
+				} else {
+					result.DirectReductHurt = realHurt
+					t.absorbHurt -= float64(realHurt)
+					if t.absorbHurt < 0 {
+						t.absorbHurt = 0
+					}
+					t.Buffs.UpdateAbortHurtBuffValue(float64(realHurt), t)
+					realHurt = 0
+				}
+			}
+
+			t.Health -= realHurt
+		}
+
+		//造成伤害并且尚未破甲，掉护甲
+		if t.SunderMaxValue != 0 && realHurt > 0 && t.sunderValue > 0 {
+			takeSunder = f.SunderAttack + skill.SunderAttack
+			if takeSunder > 0 {
+				t.sunderValue -= takeSunder
+			}
+
+			// 发生破甲
+			if t.sunderValue <= 0 {
+
+				// 眩晕
+				buff := t.addBuff(f, BUFF_DIZZINESS, 1, 2 /*t.SunderDizziness*/, SUNDER_DIZZINESS_SKILL_ID, 1, false)
+				buffs = append(buffs, buff)
+				//破甲
+				buff2 := t.addBuff(f, BUFF_SUNDER_STATE, 1, 2 /*t.SunderDizziness*/, SUNDER_DIZZINESS_SKILL_ID, 1, false)
+				buffs = append(buffs, buff2)
+
+				// 守卫者被破甲清除免伤
+				t.Buffs.CleanKeeperReduceHurt(t)
+			}
+		}
+
+		//绝招释放目标buff
+		if skill._BuffToTarget != nil {
+			if !skill.TriggerTargetBuff || (t.triggerEvent != FE_NONE) {
+				//技能目标buff要求 关联触发事件时检查被攻击角色是否发生了战斗事件
+				//下面的魂侍技能已废弃没有做更新
+				targetBuffs := skill._BuffToTarget(f, t, realHurt, skillForce, skillTrnlv)
+				if buffs == nil {
+					buffs = targetBuffs
+				} else {
+					buffs = append(buffs, targetBuffs...)
+				}
+			}
+		}
+	}
+
+	// 阵亡判断
+	if t.Health <= MIN_HEALTH {
+		t.side.live -= 1
+		t.useSkillIndex = 0
+
+		if !t.IsBattlePet {
+			t.side.deadNums += 1
+		}
+
+		if t.IsBoss {
+			t.side.live = 0
+		}
+		// 设置主角阵亡状态
+		if t.Kind == FK_PLAYER {
+			MainRoleDead(t)
+		}
+		if f.EnableGhost() {
+			log.Verbosef("战场 [%p] [GHOST] %d 回合 pid %d pos %d  击杀 %d，原魂力 %d 获得 %d", f.battle, f.battle.round, f.PlayerId, f.Position, t.Position, f.GhostInfo.GhostPower, 10)
+			f.GhostInfo.GhostPower += 10
+			if f.GhostInfo.GhostPower > FULL_GHOST_POWER {
+				f.GhostInfo.GhostPower = FULL_GHOST_POWER
+			}
+		}
+	} else if t.EnableGhostShield && t.ghostShieldState < 1 && float64(t.Health) < float64(t.MaxHealth)*0.3 {
+		t.addBuff(t, BUFF_GHOST_SHIELD, 1, 3, GHOST_SHIELD_SKILL_ID, 0, false)
+		result.ShieldGhostId = t.ShieldGhostId
+		result.GhostShieldOn = true
+	}
+
+	result.Type = t.Ftype
+	result.Hurt = realHurt
+	result.Buffs = buffs
+	result.TargetPos = t.Position
+	result.TakeSunder = takeSunder
+	result.GhostPower = t.GetGhostPower()
+
+	return result
+}
+
+func (f *Fighter) getMaxAbsorbHurt() (maxHurtType int) {
+	// 默认伤害吸收是当前有效护盾
+	maxHurt := f.absorbHurt
+	maxHurtType = BUFF_ABSORB_HURT
+
+	if f.directReduceHurt >= maxHurt {
+		maxHurtType = BUFF_DIRECT_REDUCE_HURT
+	}
+
+	// 护盾要开启才判断是否最大
+	if f.ghostShieldState > 0 && f.GhostShieldValue >= int(maxHurt) {
+		maxHurtType = BUFF_GHOST_SHIELD
+	}
+
+	return
+}
+
+func (f *Fighter) getBuddies() (result []*Fighter) {
+	return f.side.Fighters
+}
+
+func (f *Fighter) getTargets() (result []*Fighter) {
+	if f.Ftype == FT_ATK {
+		result = f.battle.Defenders.Fighters
+	} else {
+		result = f.battle.Attackers.Fighters
+	}
+
+	return
+}
+
+func (f *Fighter) getOtherSide() *SideInfo {
+	if f.Ftype == FT_ATK {
+		return f.battle.Defenders
+	}
+
+	return f.battle.Attackers
+}
+
+func (f *Fighter) IncReduceHurt(incPercent float64) {
+	f.reduceHurt += 100 * incPercent
+}
+
+func (f *Fighter) SetSunderValue(sunderValue int) {
+	f.sunderValue = sunderValue
+}
+
+//魂侍信息已初始化并且至少装备了一个魂侍
+func (f *Fighter) EnableGhost() bool {
+	if f.GhostInfo != nil {
+		return f.GhostInfo.EnableGhost
+	}
+	return false
+}
+
+func (f *Fighter) canReleaseGhostSkill() bool {
+	return f.dizziness <= 0 && f.sleepState <= 0 && f.random <= 0 && f.disableSkill <= 0 && !f.UsedGhostSkill && len(f.Ghosts) > 0 && f.Ghosts[0] != nil && f.GhostInfo.GhostPower == FULL_GHOST_POWER
+}
+
+func (f *Fighter) AddPower(val int) {
+	f.Power += val
+	if f.Power > f.MaxPower {
+		f.Power = f.MaxPower
+	}
+	if f.Power < 0 {
+		f.Power = 0
+	}
+}
+
+func (f *Fighter) GetGhostPower() int {
+	if f.GhostInfo == nil || !f.EnableGhost() { //如果完全没有初始化魂侍数据结构或者魂侍功能没有开启
+		return 0
+	}
+	return f.GhostInfo.GhostPower
+}
+
+func (f *Fighter) GetSunderValue() int {
+	return f.sunderValue
+}
+
+// 主角死亡时触发
+func MainRoleDead(fighter *Fighter) {
+	// 灵宠消失
+	for _, f := range fighter.side.Fighters {
+		if f == nil || !f.IsBattlePet || f.Health <= MIN_HEALTH {
+			continue
+		}
+		setDisappearWithBattlePet(f)
+	}
+}
+
+//更新出售方战场人数
+func (f *Fighter) UpdateLiveNum() {
+	if f.Health <= MIN_HEALTH {
+		f.side.live -= 1
+		if !f.IsBattlePet {
+			//召唤物不算死亡数
+			f.side.deadNums += 1
+		}
+		if f.IsBoss {
+			f.side.live = 0
+		}
+		if f.Kind == FK_PLAYER {
+			MainRoleDead(f)
+		}
+	}
+
+}
+
+// 灵宠是否存活
+func (f *Fighter) IsBattlePetAlive() bool {
+	if f.battle.GetRounds()-f.BattlePetLiveStartRound >= f.BattlePetLiveRound {
+		return false
+	}
+
+	if f.Health <= MIN_HEALTH {
+		return false
+	}
+
+	return true
+}
+
+// 灵宠消失处理
+func setDisappearWithBattlePet(f *Fighter) {
+	f.Health = MIN_HEALTH
+	f.side.live -= 1
+}
+
+func (atk *AttackInfo) reset() {
+	atk.SkillId = skill_dat.SKILL_IS_NULL
+	atk.SelfBuffs = nil
+	atk.BuddyBuffs = nil
+
+	if atk.Targets == nil {
+		atk.Targets = make([]AttackResult, 0, MAX_FORM_ROLES)
+	} else {
+		atk.Targets = atk.Targets[:0]
+	}
+}
+
+func (f *Fighter) IsAuto() (auto bool) {
+	if f.Kind == FK_ENEMY {
+		return true
+	}
+	if f.Kind == FK_PLAYER {
+		return f.AutoFight
+	}
+	for i := 0; i < len(f.side.Fighters); i++ {
+		if f.side.Fighters[i] != nil && f.side.Fighters[i].PlayerId == f.PlayerId && f.side.Fighters[i].Kind == FK_PLAYER && f.side.Fighters[i].AutoFight {
+			auto = true
+			break
+		}
+	}
+	return auto
+}

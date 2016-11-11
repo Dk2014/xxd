@@ -1,0 +1,411 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<metalib tagsetversion="1" name="Log" version="2">
+
+<!--//////////////////////////////////////////////
+///////登录、登出日志///////////////////////////////
+/////////////////////////////////////////////////-->
+<struct name="LoginFlow" version="1" desc="􏴑􏲠􏴒􏴑􏱂􏰅􏰆􏴑􏲠􏴒􏴑􏱂􏰅􏰆􏴑􏲠登录、登出日志">
+	<entry name="Cid" type="int" desc="(必填)平台渠道ID" />
+	<entry name="Sid" type="int" desc="(必填)区唯一ID,如果不分区则为0"/>
+	<entry name="Account" type="string" desc="(必填)平台帐号"/>
+	<entry name="Pid" type="bigint" desc="(必填)玩家角色ID"/>
+	<entry name="Name" type="string" desc="(必填)角色名"/>
+	<entry name="Time" type="bigint" desc="(必填)登陆时间戳"/>
+	<entry name="Ip" type="string" desc="(必填)登陆IP"/>
+	<entry name="Type" type="int" desc="(必填)类型0:登出；1:登入"/>
+	<entry name="Ispay" type="int" desc="(必填)是否付费玩家1:付费;0:非付费"/>
+	<entry name="Level" type="int" desc="(必填)等级"/>
+	<entry name="Vip" type="int" desc="(必填)VIP等级"/>
+</struct>
+
+<!--/////////////////////////////////////////////
+///////角色创建创建日志/////////////////////////////
+/////////////////////////////////////////////////-->
+<struct name="CreateFlow" version="1" desc="角色创建创建日志">
+	<entry name="Cid" type="int" desc="(必填)平台渠道ID" />
+	<entry name="Sid" type="int" desc="(必填)区唯一ID,如果不分区则为0"/>
+	<entry name="Account" type="string" desc="(必填)平台帐号"/>
+	<entry name="Pid" type="bigint" desc="(必填)玩家角色ID"/>
+	<entry name="Name" type="string" desc="(必填)角色名"/>
+	<entry name="Time" type="bigint" desc="(必填)登陆时间戳"/>
+	<entry name="Ip" type="string" desc="(必填)登陆IP"/>
+	<entry name="Guest" type="int" desc="(必填)是否游客"/>
+</struct>
+
+<!--/////////////////////////////////////////////
+///////充值日志///////////////////////////////////
+/////////////////////////////////////////////////-->
+<struct name="ChargeFlow" version="1" desc="充值日志">
+	<entry name="Cid" type="int" desc="(必填)平台渠道ID" />
+	<entry name="Sid" type="int" desc="(必填)区唯一ID,如果不分区则为0"/>
+	<entry name="Account" type="string" desc="(必填)平台帐号"/>
+	<entry name="Pid" type="bigint" desc="(必填)玩家角色ID"/>
+	<entry name="Name" type="string" desc="(必填)角色名"/>
+	<entry name="Time" type="bigint" desc="(必填)登陆时间戳"/>
+	<entry name="Ip" type="string" desc="(必填)登陆IP"/>
+	<entry name="Oid" type="string" desc="(必填)􏴥􏴯订单ID"/>
+	<entry name="Poid" type="string" desc="(必填)渠道方订单ID"/>
+	<entry name="Type" type="string" desc="(必填)充值渠道类型"/>
+	<entry name="Level" type="int" desc="(必填)充值时等级"/>
+	<entry name="Amount" type="float" desc="(必填)充值货币数"/>
+	<entry name="Coins" type="bigint" desc="(必填)兑换的游戏币数"/>
+	<entry name="Currency" type="string" desc="(必填)货币类型"/>
+</struct>
+
+<!--/////////////////////////////////////////////
+///////玩家操作事件日志/////////////////////////////
+/////////////////////////////////////////////////-->
+<struct name="EventFlow" version="1" desc="玩家操作事件日志">
+	<entry name="Cid" type="int" desc="(必填)平台渠道ID" />
+	<entry name="Sid" type="int" desc="(必填)区唯一ID,如果不分区则为0"/>
+	<entry name="Account" type="string" desc="(必填)平台帐号"/>
+	<entry name="Pid" type="bigint" desc="(必填)玩家角色ID"/>
+	<entry name="Name" type="string" desc="(必填)角色名"/>
+	<entry name="Time" type="bigint" desc="(必填)操作时间戳"/>
+	<entry name="Ispay" type="int" desc="(必填)是否付费玩家1:付费;0:非付费"/>
+	<entry name="Type" type="int" desc="(必填)事件类型ID"/>
+	<entry name="Count" type="int" desc="(必填)操作次数"/>
+</struct>
+
+<!--/////////////////////////////////////////////
+///////游戏币获取日志//////////////////////////////
+/////////////////////////////////////////////////-->
+<struct name="IncomeFlow" version="1" desc="游戏币获取日志">
+	<entry name="Cid" type="int" desc="(必填)平台渠道ID" />
+	<entry name="Sid" type="int" desc="(必填)区唯一ID,如果不分区则为0"/>
+	<entry name="Account" type="string" desc="(必填)平台帐号"/>
+	<entry name="Pid" type="bigint" desc="(必填)玩家角色ID"/>
+	<entry name="Name" type="string" desc="(必填)角色名"/>
+	<entry name="Time" type="bigint" desc="(必填)操作时间戳"/>
+	<entry name="Ispay" type="int" desc="(必填)是否付费玩家1:付费;0:非付费"/>
+	<entry name="Value" type="int" desc="(必填)获取数额"/>
+	<entry name="Coin_type" type="int" desc="(必填)游戏币类型0:铜钱,1:元宝"/>
+	<entry name="Type" type="int" desc="(必填)事件类型ID"/>
+	<entry name="After" type="int" desc="(必填)变动后的游戏币数"/>
+	<entry name="Param" type="string" desc="(必填)其他参数，备用"/>
+</struct>
+
+<!--/////////////////////////////////////////////
+///////游戏币消耗日志//////////////////////////////
+/////////////////////////////////////////////////-->
+<struct name="ConsumeFlow" version="1" desc="游戏币消耗日志">
+	<entry name="Cid" type="int" desc="(必填)平台渠道ID" />
+	<entry name="Sid" type="int" desc="(必填)区唯一ID,如果不分区则为0"/>
+	<entry name="Account" type="string" desc="(必填)平台帐号"/>
+	<entry name="Pid" type="bigint" desc="(必填)玩家角色ID"/>
+	<entry name="Name" type="string" desc="(必填)角色名"/>
+	<entry name="Time" type="bigint" desc="(必填)操作时间戳"/>
+	<entry name="Ispay" type="int" desc="(必填)是否付费玩家1:付费;0:非付费"/>
+	<entry name="Value" type="int" desc="(必填)获取数额"/>
+	<entry name="Coin_type" type="int" desc="(必填)游戏币类型0:铜钱,1:元宝"/>
+	<entry name="Type" type="int" desc="(必填)事件类型ID"/>
+	<entry name="Kind" type="int" desc="(必填)消耗类型"/>
+	<entry name="After" type="int" desc="(必填)变动后的游戏币数"/>
+</struct>
+
+<!--/////////////////////////////////////////////
+///////物品获取日志////////////////////////////////
+/////////////////////////////////////////////////-->
+<struct name="ItemFlow" version="1" desc="物品获取日志">
+	<entry name="Cid" type="int" desc="(必填)平台渠道ID" />
+	<entry name="Sid" type="int" desc="(必填)区唯一ID,如果不分区则为0"/>
+	<entry name="Account" type="string" desc="(必填)平台帐号"/>
+	<entry name="Pid" type="bigint" desc="(必填)玩家角色ID"/>
+	<entry name="Name" type="string" desc="(必填)角色名"/>
+	<entry name="Time" type="bigint" desc="(必填)操作时间戳"/>
+	<entry name="Ispay" type="int" desc="(必填)是否付费玩家1:付费;0:非付费"/>
+	<entry name="Itemid" type="int" desc="(必填)物品ID"/>
+	<entry name="Value" type="int" desc="(必填)获取数额"/>
+	<entry name="From_pid" type="int" desc="(必填)来源玩家ID,系统为0"/>
+	<entry name="Type" type="int" desc="(必填)事件类型ID"/>
+	<entry name="After" type="int" desc="(必填)变动后的游戏币数"/>
+	<entry name="Param" type="string" desc="(必填)其他参数，备用" />
+</struct>
+
+<!--/////////////////////////////////////////////
+///////物品使用日志////////////////////////////////
+/////////////////////////////////////////////////-->
+<struct name="PropsFlow" version="1" desc="物品使用日志">
+	<entry name="Cid" type="int" desc="(必填)平台渠道ID" />
+	<entry name="Sid" type="int" desc="(必填)区唯一ID,如果不分区则为0"/>
+	<entry name="Account" type="string" desc="(必填)平台帐号"/>
+	<entry name="Pid" type="bigint" desc="(必填)玩家角色ID"/>
+	<entry name="Name" type="string" desc="(必填)角色名"/>
+	<entry name="Time" type="bigint" desc="(必填)操作时间戳"/>
+	<entry name="Ispay" type="int" desc="(必填)是否付费玩家1:付费;0:非付费"/>
+	<entry name="Itemid" type="int" desc="(必填)物品ID"/>
+	<entry name="Value" type="int" desc="(必填)消费数额"/>
+	<entry name="Type" type="int" desc="(必填)事件类型ID"/>
+	<entry name="After" type="int" desc="(必填)变动后的游戏币数"/>
+</struct>
+
+<!--/////////////////////////////////////////////
+///////等级升级日志////////////////////////////////
+/////////////////////////////////////////////////-->
+<struct name="LevelFlow" version="1" desc="等级升级日志">
+	<entry name="Cid" type="int" desc="(必填)平台渠道ID" />
+	<entry name="Sid" type="int" desc="(必填)区唯一ID,如果不分区则为0"/>
+	<entry name="Account" type="string" desc="(必填)平台帐号"/>
+	<entry name="Pid" type="bigint" desc="(必填)玩家角色ID"/>
+	<entry name="Name" type="string" desc="(必填)角色名"/>
+	<entry name="Time" type="bigint" desc="(必填)时间戳"/>
+	<entry name="Exp" type="int" desc="(必填)获得经验"/>
+	<entry name="From" type="int" desc="(必填)升级前等级"/>
+	<entry name="To" type="int" desc="(必填)升级后等级"/>
+	<entry name="Ispay" type="int" desc="(必填)是否付费玩家1:付费;0:非付费"/>
+</struct>
+
+<!--/////////////////////////////////////////////
+///////VIP等级升级日志/////////////////////////////
+/////////////////////////////////////////////////-->
+<struct name="VipFlow" version="1" desc="等级升级日志">
+	<entry name="Cid" type="int" desc="(必填)平台渠道ID" />
+	<entry name="Sid" type="int" desc="(必填)区唯一ID,如果不分区则为0"/>
+	<entry name="Account" type="string" desc="(必填)平台帐号"/>
+	<entry name="Pid" type="bigint" desc="(必填)玩家角色ID"/>
+	<entry name="Name" type="string" desc="(必填)角色名"/>
+	<entry name="Time" type="bigint" desc="(必填)时间戳"/>
+	<entry name="Exp" type="int" desc="(必填)获得VIP经验"/>
+	<entry name="From" type="int" desc="(必填)升级前VIP等级"/>
+	<entry name="To" type="int" desc="(必填)升级后VIP等级"/>
+	<entry name="Ispay" type="int" desc="(必填)是否付费玩家1:付费;0:非付费"/>
+</struct>
+
+<!--/////////////////////////////////////////////
+///////在线玩家数/////////////////////////////////
+/////////////////////////////////////////////////-->
+<struct name="OnlineFlow" version="1" desc="在线玩家数">
+	<entry name="Cid" type="int" desc="(必填)平台渠道ID" />
+	<entry name="Sid" type="int" desc="(必填)区唯一ID,如果不分区则为0"/>
+	<entry name="Time" type="bigint" desc="(必填)时间戳"/>
+	<entry name="Count_all" type="int" desc="(必填)总在线人数"/>
+</struct>
+
+<!--/////////////////////////////////////////////
+///////每月付费玩家快照/////////////////////////////
+/////////////////////////////////////////////////-->
+<struct name="SnapshotFlow" version="1" desc="每月付费玩家快照">
+	<entry name="Cid" type="int" desc="(必填)平台渠道ID" />
+	<entry name="Sid" type="int" desc="(必填)区唯一ID,如果不分区则为0"/>
+	<entry name="Account" type="string" desc="(必填)平台帐号"/>
+	<entry name="Pid" type="bigint" desc="(必填)玩家角色ID"/>
+	<entry name="Name" type="string" desc="(必填)角色名"/>
+	<entry name="Coins" type="bigint" desc="(必填)当前剩余的全部游戏币数量"/>
+	<entry name="Charge_coins" type="bigint" desc="(必填)剩余的充值的游戏币数量"/>
+	<entry name="Login_time" type="bigint" desc="(必填)最后登录时间"/>
+	<entry name="Item" type="string" desc="(必填)对应物品id的json数据"/>
+	<entry name="Level" type="int" desc="(必填)对应角色等级"/>
+	<entry name="Vip_level" type="int" desc="(必填)VIP等级"/>
+	<entry name="FriendsLevel" type="int" desc="(必填)伙伴等级的json数据"/>
+</struct>
+
+<!--/////////////////////////////////////////////
+///////玩家副本日志////////////////////////////////
+/////////////////////////////////////////////////-->
+<struct name="MissionFlow" version="1" desc="玩家副本日志">
+	<entry name="Cid" type="int" desc="(必填)平台渠道ID" />
+	<entry name="Sid" type="int" desc="(必填)区唯一ID,如果不分区则为0"/>
+	<entry name="Account" type="string" desc="(必填)平台帐号"/>
+	<entry name="Pid" type="bigint" desc="(必填)玩家角色ID"/>
+	<entry name="Name" type="string" desc="(必填)角色名"/>
+	<entry name="Time" type="bigint" desc="(必填)操作时间戳"/>
+	<entry name="MissionID" type="int" desc="(必填)副本ID"/>
+	<entry name="MissionType" type="int" desc="(必填)副本类型"/>
+	<entry name="MissionLock" type="int" desc="(必填)副本权值"/>
+	<entry name="MaxLock" type="int" desc="(必填)人物最大权值"/>
+	<entry name="Ispay" type="int" desc="(必填)是否付费玩家1:付费;0:非付费"/>
+	<entry name="Level" type="int" desc="(必填)等级"/>
+	<entry name="Vip" type="int" desc="(必填)VIP等级"/>
+	<entry name="Action" type="int" desc="(必填)进入0/完成1/扫荡2"/>
+</struct>
+
+<!--/////////////////////////////////////////////
+///////玩家兑换码使用日志////////////////////////////////
+/////////////////////////////////////////////////-->
+<struct name="GiftcodeFlow" version="1" desc="玩家兑换码使用日志">
+	<entry name="Cid" type="int" desc="(必填)平台渠道ID" />
+	<entry name="Sid" type="int" desc="(必填)区唯一ID,如果不分区则为0"/>
+	<entry name="Account" type="string" desc="(必填)平台帐号"/>
+	<entry name="Pid" type="bigint" desc="(必填)玩家角色ID"/>
+	<entry name="Name" type="string" desc="(必填)角色名"/>
+	<entry name="Time" type="bigint" desc="(必填)操作时间戳"/>
+	<entry name="Code" type="string" desc="(必填)兑换码"/>
+	<entry name="CodeType" type="int" desc="(必填)兑换码类型"/>
+	<entry name="Ispay" type="int" desc="(必填)是否付费玩家1:付费;0:非付费"/>
+	<entry name="Level" type="int" desc="(必填)等级"/>
+</struct>
+
+<!--/////////////////////////////////////////////
+///////玩家战力日志////////////////////////////////
+/////////////////////////////////////////////////-->
+<struct name="FightnumFlow" version="1" desc="玩家兑换码使用日志">
+	<entry name="Cid" type="int" desc="(必填)平台渠道ID" />
+	<entry name="Sid" type="int" desc="(必填)区唯一ID,如果不分区则为0"/>
+	<entry name="Account" type="string" desc="(必填)平台帐号"/>
+	<entry name="Pid" type="bigint" desc="(必填)玩家角色ID"/>
+	<entry name="Name" type="string" desc="(必填)角色名"/>
+	<entry name="Time" type="bigint" desc="(必填)操作时间戳"/>
+	<entry name="FightNum" type="bigint" desc="(必填)战力"/>
+	<entry name="Ispay" type="int" desc="(必填)是否付费玩家1:付费;0:非付费"/>
+	<entry name="Level" type="int" desc="(必填)等级"/>
+</struct>
+
+
+<macrosgroup name="LoginType" desc="登录、登出类型">
+	<macro name="LOGIN" value="0" desc="登录">
+	<macro name="LOGOUT" value="1" desc="登出">
+</macrosgroup>
+
+<macrosgroup name="ConsumeKind" desc="消耗类型">
+	<macro name="RECENT" value="1" desc="实时">
+	<macro name="TIMER" value="1" desc="时长">
+	<macro name="FOREVER" value="1" desc="永久">
+</macrosgroup>
+
+
+<macrosgroup name="PayType" desc="付费类型">
+	<macro name="ISPAY" value="0" desc="付费玩家">
+	<macro name="NOTPAY" value="1" desc="非付费玩家">
+</macrosgroup>
+ <macrosgroup name="MoneyType" desc="货币类型">
+ 	<macro name="MT_INGOT"     value="0" desc="元宝"/>
+    <macro name="MT_COIN"       value="1" desc="铜币"/>
+	<macro name="MT_HEART"     value="2" desc="爱心"/>
+	<macro name="MT_SWORD_SOUL_FRAGMENT"  value="3" desc="剑心碎片"/>
+  </macrosgroup>
+
+<macrosgroup name="MissionAction" desc="副本动作类型">
+      <macro name="MA_ENTER"       value="0" desc="进入"/>
+      <macro name="MA_FINISH"     value="1" desc="完成"/>
+      <macro name="MA_AUTO"     value="2" desc="扫荡"/>
+</macrosgroup>
+
+<macrosgroup name="EventType" desc="事件类型">
+	<macro name="ET_DEBUG" value="0" desc="DEBUG获得"/>
+	<macro name="ET_BUY_ITEM" value="1" desc="购买游戏内物品"/>
+	<macro name="ET_SELL_ITEM" value="2" desc="游戏内出售物品"/>
+	<macro name="ET_BUY_BACK_ITEM" value="3" desc="游戏内物品回购"/>
+	<macro name="ET_ITEM_DECOMPOSE" value="4" desc="分解装备"/>
+	<macro name="ET_OPEN_ITEM_CHEST" value="5" desc="打开物品宝箱"/>
+	<macro name="ET_GHOST_COMPOSE" value="6" desc="魂侍合成"/>
+	<macro name="ET_MAIL_TAKE_ATTACHMENT" value="7" desc="获取邮件附件"/>
+	<macro name="ET_MISSION_STAR_AWARD" value="8" desc="副本星级奖励"/>
+	<macro name="ET_BATTLE_PET_UPGRADE" value="9" desc="灵宠升级"/>
+	<macro name="ET_OPEN_FUNC" value="10" desc="功能开放"/>
+	<macro name="ET_MISSION_LEVEL_AWARD" value="11" desc="通关奖励"/>
+	<macro name="ET_MISSION_LEVEL_SMALL_BOX" value="12" desc="打开副本内小宝箱"/>
+	<macro name="ET_AUTO_FIGHT" value="13" desc="关卡扫荡"/>
+	<macro name="ET_MISSION_LEVEL_CATCH_PET" value="14" desc="关卡灵宠抓取"/>
+	<macro name="ET_MISSION_LEVEL_USE_ITEM" value="15" desc="副本中使用物品"/>
+	<macro name="ET_SHADED_AWARD" value="16" desc="影之间隙奖励"/>
+	<macro name="ET_MISSION_LEVEL_RANDOM_AWARD" value="17" desc="通关奖励随机宝箱"/>
+	<macro name="ET_MISSION_OPEN" value="18" desc="开启区域"/>
+	<macro name="ET_DISPOSE_EVENT" value="19" desc="掉线自动奖励"/>
+	<macro name="ET_ITEM_ROLE_USE" value="20" desc="角色使用物品"/>
+	<macro name="ET_ARENA_AWARD_BOX" value="21" desc="比武场奖励"/>
+	<macro name="ET_PET_VIRTUAL" value="22" desc="灵宠幻境"/>
+	<macro name="ET_ADDITION_QUEST" value="23" desc="支线任务"/>
+	<macro name="ET_DAILY_QUEST" value="24" desc="每日任务"/>
+	<macro name="ET_EXTEND_QUEST" value="25" desc="扩展任务"/>
+	<macro name="ET_QUEST" value="26" desc="主线任务"/>
+	<macro name="ET_GHOST_SKILL" value="27" desc="魂侍技能"/>
+	<macro name="ET_PET_VIRTUAL_AUTO_FIGHT" value="28" desc="灵宠幻境扫荡"/>
+	<macro name="ET_PET_VIRTUAL_WIN" value="29" desc="灵宠幻境胜利"/>
+	<macro name="ET_PET_VIRTUAL_LOSE" value="30" desc="灵宠幻境失败"/>
+	<macro name="ET_MISSION_LEVEL_WIN" value="31" desc="关卡胜利"/>
+	<macro name="ET_DAILY_SIGN" value="32" desc="每日签到"/>
+	<macro name="ET_STAR_FATE_BOX_FREE" value="33" desc="免费星辉命锁宝箱"/>
+	<macro name="ET_STAR_FATE_BOX_ONE" value="34" desc="命锁星辉宝箱一次"/>
+	<macro name="ET_STAR_FATE_BOX_TEN" value="35" desc="命锁星辉宝箱十次"/>
+	<macro name="ET_MOON_FATE_BOX_FREE" value="36" desc="免费月影命锁宝箱"/>
+	<macro name="ET_MOON_FATE_BOX_ONE" value="37" desc="命锁月影宝箱一次"/>
+	<macro name="ET_MOON_FATE_BOX_TEN" value="38" desc="命锁月影宝箱十次"/>
+	<macro name="ET_SUN_FATE_BOX_FREE" value="39" desc="免费日耀命锁宝箱"/>
+	<macro name="ET_SUN_FATE_BOX_ONE" value="40" desc="命锁日耀宝箱一次"/>
+	<macro name="ET_SUN_FATE_BOX_TEN" value="41" desc="命锁日耀宝箱十次"/>
+	<macro name="ET_HUNYUAN_FATE_BOX_FREE" value="42" desc="免费混元命锁宝箱"/>
+	<macro name="ET_HUNYUAN_FATE_BOX_ONE" value="43" desc="命锁混元宝箱一次"/>
+	<macro name="ET_HUNYUAN_FATE_BOX_TEN" value="44" desc="命锁混元宝箱十次"/>
+	<macro name="ET_HEART_DRAW" value="45" desc="爱心抽奖"/>
+	<macro name="ET_CLOUD_CLIMB" value="46" desc="开启云海御剑云层"/>
+	<macro name="ET_EVENT_CENTER" value="47" desc="活动中心"/>
+	<macro name="ET_MOUNTAIN_TREASURE_OPEN" value="48" desc="开启仙山宝箱"/>
+	<macro name="ET_AWARD_GARRISON" value="49" desc="驻守奖励"/>
+	<macro name="ET_TOWN_TREASURES" value="50" desc="城镇奖励"/>
+	<macro name="ET_NPC_TALK" value="51" desc="npc对话奖励"/>
+	<macro name="ET_DRIVING_VISIT_AWARD" value="52" desc="仙山拜访"/>
+	<macro name="ET_DRIVING_SWORD_WIN" value="53" desc="云海御剑胜利"/>
+	<macro name="ET_GHOST_TRAIN" value="54" desc="魂侍培养"/>
+	<macro name="ET_GHOST_UPGRADE" value="55" desc="魂侍升星"/>
+	<macro name="ET_FLUSH_GHOST_ATTR" value="56" desc="魂侍洗点"/>
+	<macro name="ET_EQUIPMENT_RECAST" value="57" desc="装备重铸"/>
+	<macro name="ET_USE_ITEM" value="58" desc="使用物品"/>
+	<macro name="ET_MULTI_LEVEL" value="59" desc="多人关卡"/>
+	<macro name="ET_RAINBOW" value="60" desc="彩虹关卡"/>
+	<macro name="ET_FRIEND_SHIP" value="61" desc="羁绊"/>
+	<macro name="ET_TOTEM" value="62" desc="阵印"/>
+	<macro name="ET_TRADER" value="63" desc="神秘商人"/>
+	<macro name="ET_PET_SKILL" value="64" desc="灵宠技能"/>
+	<macro name="ET_BUY_HARD_LEVEL_TIMES" value="65" desc="深渊关卡次数购买"/>
+	<macro name="ET_MONEY_TREE" value="66" desc="摇钱树"/>
+	<macro name="ET_BUY_PHYSICAL" value="67" desc="购买体力"/>
+	<macro name="ET_ROLE_SKILL" value="68" desc="角色技能"/>
+	<macro name="ET_ARENA_CD" value="69" desc="比武场CD"/>
+	<macro name="ET_WORLD_CHAT" value="70" desc="世界聊天"/>
+	<macro name="ET_MISSION_LEVEL_RELIVE" value="71" desc="战斗复活"/>
+	<macro name="ET_CLIQUE_DONATE" value="72" desc="帮派捐赠"/>
+	<macro name="ET_CLIQUE_DONATE_BANK_TRADE" value="73" desc="帮派钱庄交易操作"/>
+	<macro name="ET_CLIQUE_TEMPLE" value="74" desc="帮派上香"/>
+	<macro name="ET_CLIQUE_BOAT" value="75" desc="帮派运镖"/>
+	<macro name="ET_CLIQUE" value="76" desc="帮派相关"/>
+	<macro name="ET_DRIVING_ACTION_TIMES" value="77" desc="云海购买行动点"/>
+	<macro name="ET_SEALEDBOOK" value="78" desc="天书"/>
+	<macro name="ET_EQUIPMENT_REFINE" value="79" desc="装备强化"/>
+	<macro name="ET_CORNUCOPIA" value="80" desc="聚宝盆"/>
+	<macro name="ET_BUY_CONINS" value="81" desc="开元通宝"/>
+	<macro name="ET_MONTH_CARD" value="82" desc="月卡"/>
+	<macro name="ET_DRAW_SWORD_SOUL" value="83" desc="剑山拔剑"/>
+	<macro name="ET_EXCHANGE_SWORD_SOUL" value="84" desc="碎片兑换剑心"/>
+	<macro name="ET_CHARGE" value="85" desc="充值"/>
+    <macro name="ET_GHOST_BAPTIZE" value="86" desc="魂侍洗炼"/>
+    <macro name="ET_EXCHANGE_GHOST_CRYSTAL" value="87" desc="兑换魂侍水晶"/>
+    <macro name="ET_EVENT_CENTER_LEVEL_AWARD" value="88" desc="活动中心_等级活动"/>
+    <macro name="ET_EVENT_CENTER_STRONG_AWARD" value="89" desc="活动中心_战力活动"/>
+    <macro name="ET_EVENT_CENTER_ARENA_RANK_AWARDS" value="90" desc="活动中心_比武场活动"/>
+    <macro name="ET_EVENT_CENTER_PHYSICAL_AWARDS" value="91" desc="活动中心_活跃度活动"/>
+    <macro name="ET_EVENT_CENTER_DINNER_AWARDS" value="92" desc="活动中心_午餐活动"/>
+    <macro name="ET_EVENT_CENTER_SUPPER_AWARDS" value="93" desc="活动中心_晚餐活动"/>
+    <macro name="ET_EVENT_CENTER_QQVIP_GIFT_AWARDS" value="94" desc="活动中心_QQ会员特权活动"/>
+    <macro name="ET_EVENT_CENTER_TOTAL_LOGIN" value="95" desc="活动中心_连续登陆活动"/>
+    <macro name="ET_EVENT_CENTER_VIP_CLUB" value="96" desc="活动中心_仙尊俱乐部活动"/>
+    <macro name="ET_EVENT_CENTER_SHARE_AWARDS" value="97" desc="活动中心_分享活动"/>
+    <macro name="ET_EVENT_CENTER_TEN_DRAW" value="98" desc="活动中心_十连抽活动"/>
+    <macro name="ET_EVENT_CENTER_TOTAL_CONSUME" value="99" desc="活动中心_累计消费活动"/>
+    <macro name="ET_EVENT_CENTER_FIRST_RECHARGE_DAILY" value="100" desc="活动中心_每日首冲活动"/>
+    <macro name="ET_EVENT_CENTER_SEVEN_DAY_AWARDS" value="101" desc="活动中心_七日登陆活动"/>
+    <macro name="ET_EVENT_CENTER_TOTAL_RECHARGE" value="102" desc="活动中心_累计充值活动"/>
+    <macro name="ET_EVENT_CENTER_JSON_ARENA_RANK" value="103" desc="活动中心_比武场排名高级活动"/>
+    <macro name="ET_EVENT_CENTER_JSON_FIRST_RECHARGE_DAILY" value="104" desc="活动中心_每日首冲高级活动"/>
+    <macro name="ET_EVENT_CENTER_JSON_NEW_YEAR" value="105" desc="活动中心_春节高级活动"/>
+    <macro name="ET_EVENT_CENTER_JSON_SINGLE_CONSUME" value="106" desc="活动中心_单笔消费高级活动"/>
+    <macro name="ET_EVENT_CENTER_JSON_TEN_DRAW" value="107" desc="活动中心_十连抽高级活动"/>
+    <macro name="ET_EVENT_CENTER_JSON_TOTAL_CONSUME" value="108" desc="活动中心_累计消费高级活动"/>
+    <macro name="ET_EVENT_CENTER_JSON_TOTAL_RECHARGE" value="109" desc="活动中心_累计充值高级活动"/>
+    <macro name="ET_CHARGE_PRESENT" value="110" desc="充值返利"/>
+    <macro name="ET_BUY_RESOURCE_MISSION_LEVEL_TIMES" value="111" desc="购买资源关卡次数"/>
+    <macro name="ET_EVENT_CENTER_JSON_SINGLE_RECHARGE" value="112" desc="活动中心_单笔充值高级活动"/>
+	<macro name="ET_CHARGE_FRIST" value="113" desc="首冲奖励"/>
+	<macro name="ET_EVENT_CENTER_JSON_TOTAL_CONSUME_COIN" value="114" desc="活动中心_累计消费铜钱高级活动" />
+	<macro name="ET_BUY_BOSS_LEVEL_TIMES" value="115" desc="购买BOSS关卡次数"/>
+	<macro name="ET_ROLE_AWAKEN" value="116" desc="觉醒属性"/>
+</macrosgroup>
+
+<macrosgroup name="MissionType">
+	<macro name="MT_NORMAL" value="0" desc="普通副本"/>
+	<macro name="MT_RESOURCE" value="1" desc="资源关卡"/>
+	<macro name="MT_HARD_LEVEL" value="8" desc="深渊关卡"/>
+	<macro name="MT_BUDDY" value="9" desc="伙伴关卡"/>
+	<macro name="MT_PET" value="10" desc="灵宠关卡"/>
+	<macro name="MT_GHOST" value="11" desc="魂侍关卡"/>
+  </macrosgroup>
+</metalib>

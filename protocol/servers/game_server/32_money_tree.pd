@@ -1,0 +1,35 @@
+//
+// 摇钱树接口
+//
+mod money_tree = 32
+{
+	// 获取摇钱树状态
+	api get_tree_status = 0 {
+		in {}
+		out {
+			times: int8
+			money: int32
+			last_time: int64 //上次摇树的时间戳
+			remind: int8 // 剩余次数
+			status: int8 // 状态 0代表摇钱树CD中，1代表可以摇树，2代表可以领取摇钱树的钱
+		}
+	}
+
+	// 领取摇钱树铜钱
+	api get_tree_money = 1 {
+		in {}
+		out {
+			code: int8 // 0表示成功
+		}
+	}
+
+	// 摇树
+	api wave_tree = 2 {
+		in {}
+		out {
+			status: int8 // 状态 0代表摇钱树CD中，1代表可以摇树，2代表可以领取摇钱树的钱
+			money: int32
+			remaind: int8 // 剩余次数
+		}
+	}
+}

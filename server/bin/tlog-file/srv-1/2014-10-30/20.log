@@ -1,0 +1,19 @@
+GameSvrState|2014-10-30 20:51:45|172.26.166.37
+GameSvrState|2014-10-30 20:52:45|172.26.166.37
+PlayerLogin|1|2014-10-30 20:53:05|game_1_app_id|1|test666|1|0|7022||HTML5||WiFi|0|0|0|0||0|||
+PlayerLogin|1|2014-10-30 20:53:05|game_1_app_id|1|test666|1|0|0.98|macos|intel|xxx|wifi|0|0|0.999999111|0|intel 001|1024|opengl 0.1|4.3|mac 10.94
+PlayerFightNumFlow|1|2014-10-30 20:53:06|game_1_app_id|1|test666|1|0|920
+MoneyFlow|1|2014-10-30 20:53:34|0|game_1_app_id|1|test666|1|10000|10000|-1|0|0|1|0
+MoneyFlow|1|2014-10-30 20:53:35|0|game_1_app_id|1|test666|1|100010|100000|-1|0|0|0|0
+GameSvrState|2014-10-30 20:53:45|172.26.166.37
+ItemFlow|1|2014-10-30 20:53:46|0|game_1_app_id|1|test666|3|31|1|1|-1|0|0|0
+PlayerFightNumFlow|1|2014-10-30 20:53:50|game_1_app_id|1|test666|1|0|1020
+PlayerFightNumFlow|1|2014-10-30 20:54:44|game_1_app_id|1|test666|1|0|920
+GameSvrState|2014-10-30 20:54:45|172.26.166.37
+PlayerFightNumFlow|1|2014-10-30 20:54:46|game_1_app_id|1|test666|1|0|1020
+PlayerSystemModuleFlow|1|2014-10-30 20:55:28|game_1_app_id|1|test666|1|8|0
+GameSvrState|2014-10-30 20:55:45|172.26.166.37
+GameSvrState|2014-10-30 20:56:45|172.26.166.37
+GameSvrState|2014-10-30 20:57:45|172.26.166.37
+GameSvrState|2014-10-30 20:58:45|172.26.166.37
+GameSvrState|2014-10-30 20:59:45|172.26.166.37

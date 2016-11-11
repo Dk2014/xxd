@@ -1,0 +1,8 @@
+-- ------------------------------------------------------
+-- 11/26/2015 14:58 插入或更新发生在表mission_level IP:::1
+INSERT INTO `mission_level` SET `order`=0, `mission_id` = 0, `lock` = 0, `award_lock`=0, `daily_num`='-1', `physical`='0', `award_key`='0', `box_x`=0, `box_y`=0, `award_exp`=0, `enter_x`=0, `enter_y`=0, `box_dir`=0, `award_coin`=0, `parent_id`=0, `parent_type`=21, `name` = 'ffff', `type` = '0', `sign` = '111', `sign_war` = '1111', `flip_horizontal` = '0', `music` = '1111' ;
+
+-- ------------------------------------------------------
+-- 11/26/2015 14:59 插入或更新发生在表mission_enemy IP:::1
+INSERT INTO `mission_enemy` SET `mission_level_id` = 933, `shaded_mission_id`=0, `order` = '0', `best_round` = '0', `monster_num` = '0', `enter_x` = '0', `enter_y` = '0', `monster1_id` = '0', `monster1_chance` = '0', `monster2_id` = '0', `monster2_chance` = '0', `monster3_id` = '0', `monster3_chance` = '0', `monster4_id` = '0', `monster4_chance` = '0', `monster5_id` = '0', `monster5_chance` = '0', `is_boss` = '0', `boss_dir` = '0' ;
+

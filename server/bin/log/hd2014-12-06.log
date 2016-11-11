@@ -1,0 +1,6 @@
+2014/12/06 11:34:46 [E] - [tlog] GameSvrState error. write udp4 192.168.10.40:6667: can't assign requested address
+ info: &{2014-12-06 11:34:46.595910475 +0800 CST 192.168.10.40}
+2014/12/06 11:34:48 [I] - mem:12152928 goroutine:22 gc:638 pause:1717ms
+2014/12/06 11:34:58 [I] - mem:12153712 goroutine:22 gc:638 pause:1717ms
+2014/12/06 11:35:08 [I] - mem:12154496 goroutine:22 gc:638 pause:1717ms
+2014/12/06 11:35:18 [I] - mem:12155280 goroutine:22 gc:638 pause:1717ms

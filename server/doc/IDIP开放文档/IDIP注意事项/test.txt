@@ -1,0 +1,44 @@
+使用secureCRT(工具) 连接到172.25.40.113（服务器）---例子
+
+一个WINDOWS环境测试工具（64位暂无），两个LINUX环境测试工具（32/64位）
+
+步骤：
+1.  使用命令：Cd idip.test
+
+功能测试:
+二进制（协议）：
+2.1  ./idip_test --type=func --ip=10.217.249.90 --port=9111 --config_file=DZSMP_IDIP_20131218_16_game.xml   (注：二进制协议 测试例子)
+
+./idip_test --type=func --ip=10.210.143.50 --port=5574 --config_file=ZSH_IDIP_20140211_5_game.xml
+
+./idip_test --type=func --ip=10.191.140.110 --port=8001 --config_file=CBZB_IDIP_20140317_19_game.xml
+
+json（协议）：
+2.2  ./idip_test --type=func --ip=10.210.139.52 --port=8000 --path=/ --config_file=SMZT_IDIP_20140306_21_game.xml （注：JSON协议 测试例子（可参照：交互模式示例2(json)：））
+注：--path=<url路径>    url路径，http协议方式有效，与ip和port组成完整的http url请求(http://ip:port/path)。  
+
+./idip_test --type=func --ip=10.193.5.153 --port=8000 --path=/ --config_file=QMNC_IDIP_20140320_1.xml
+
+3.  cmd=................
+
+比如 ：封号，这两个命令都可以（例子）
+cmd=10019005&area=1&openid=oDvyVt3UJcXCJQ5qVPevZf7ehsjQ&times=30&source=&serial=&reason=Test
+
+cmd=0x1005&area=1&openid=oDvyVt3UJcXCJQ5qVPevZf7ehsjQ&times=30&source=&serial=&reason=Test
+
+可查看   idip测试方法.doc    idip_test使用说明v1.5.doc
+----------------------------------------------------------------------------------------------------------------
+压力测试
+(单个用户，请参照request.txt中的用例)
+./idip_test --type=pressure --ip=10.210.139.52 --port=8000 --path=/  --thread_count=15 --send_times=10000 --config_file=SGZLW_IDIP_20140314_1_game.xml --request_file=request.txt
+
+./idip_test --type=pressure --ip=10.210.143.50 --port=9001 --path=/idip.b --thread_count=1 --send_times=1000 --config_file=LTZJ_IDIP_20140217_14_game.xml --request_file=request.txt
+
+./idip_test --type=pressure --ip=172.17.157.165 --port=5995 --path=/ --thread_count=20 --send_times=100000 --config_file=CBZB_IDIP_20140217_12_game.xml --request_file=request.txt
+
+
+（多个用户并发，请参照request2.txt中的用例,qq_file.txt中就是openid（注这是其它业务的openid，对本业务没有用），可以参照这个格式填写(如用多用户并发)）
+./idip_test --type=pressure --ip=10.191.8.221 --port=3210  --path=/ --thread_count=350 --send_times=100000 --config_file=WZ_IDIP_20131231_19_game.xml  --request_file=request2.txt --qq_file=qq_file2.txt
+
+10.210.143.50
+9001

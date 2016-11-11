@@ -1,0 +1,65 @@
+html, body { margin:0; padding:0; }
+body { font-size:14px; font-family:"微软雅黑","Lucida Grande","Lucida Sans Unicode",Calibri,Arial,Helvetica,Sans,FreeSans,Jamrul,Garuda,Kalimati; }
+a { color:#426DC9; text-decoration: none; }
+a:hover{ color: #BC0000; }
+form { margin: 0; padding: 0; }
+
+#logo { font-size:24px; margin: 20px; margin-right:0; color:#333; }
+#side_bar { z-index:2; position: fixed;  background: #f9f9f9; border:solid 4px #e0e0e0; border-left:0; border-top:0; }
+#side_bar .admin { padding:0 0 0 30px; margin:20px 0 10px 0 }
+#side_bar .logout { padding:0 0 0 30px; margin-bottom:10px }
+#nav_menu { margin:20px 0; }
+#nav_menu a { padding:0 0 0 30px; margin-bottom:10px; display:block; border-left:6px #f9f9f9 solid; font-size:16px; }
+#nav_menu .current { color:#BC0000; border-left:6px #BC0000 solid; }
+
+#content { margin-left:20px; margin-right:20px; bottom:0; left:0; position:absolute; right:0; top:0; z-index:1; background:#fff; }
+#content .head { background: #fff; }
+#content .title { float: left; font-size:24px; padding: 20px 0 10px 0; background: #fff; color:#333; }
+#content .navbar { float: right; padding: 30px 0 10px 0; }
+#content .navbar a { line-height: 28px; padding: 4px; background:#efefef; font-size:14px; border-radius:3px; margin-right:6px; }
+#content .navbar .current { background:#bc0000; color:#fff; }
+#content .toolbar { margin-bottom:8px; margin-top:8px; }
+#content .body { }
+#content .location { padding-top:20px; }
+
+.table_list table { border:0; border:solid 1px #e0e0e0; border-top:0; color:#333; border-radius:3px; font-size:14px; border-right:0; width:100%; }
+.table_list td { padding:8px; border-top:solid 1px #e0e0e0; vertical-align:top; border-right:solid 1px #e0e0e0; }
+.table_list thead td, .table_list tfoot td { background:#f0f0f0; }
+.table_list tbody tr div { visibility:hidden; border:none; padding:0; margin:0; }
+.table_list tbody tr:hover div { visibility:visible; }
+.table_list .alt { background:#fafafa; }
+.table_list .row_name { font-size:14px; }
+.table_list .row_tool { margin-top:8px; }
+.table_list .row_tool a { background:#efefef; padding:2px 4px; font-size:12px; margin-right:4px; border-radius:3px; }
+.table_list .row_tool a:hover { background:#bc0000; color:#fff; }
+.table_list tbody .e { display:none; }
+.table_list tbody .e2 .row_tool { visibility: visible; }
+.table_list tbody .e3 .row_tool { visibility: hidden; }
+.table_list tbody .editor { width:98%; font-size:14px; border:solid 1px #e0e0e0; padding:3px; border-radius:3px; }
+.ck { margin-left: 4px; }
+.del_row { width:16px; height:16px; cursor:pointer; padding-left:4px; padding-top:4px;  }
+#new_row_tpl { display:none; }
+.table_list .highlight { background: #fefcdd; }
+.table_list .highlight_special_quest { background: #FF88FF; }
+
+#mark { position: absolute; z-index: 2; left: 0; top:0; right:0; height: 100%; background: #666; opacity: 0.5; display: none; }
+.form { position: absolute; z-index: 3; left:320px; top:0; right:0; background: #fff; display: none; border-radius:10px; }
+.form_close { position: absolute; right: 8px; top: 8px; width:18px; height:18px; cursor: pointer; }
+.form_box { margin: 20px; margin-top: 30px; }
+.form_box .label { width:80px; text-align: right; padding-right: 20px; }
+.form_box .input { width:150px; }
+.form_box .input input { width:100%; border-radius:3px; }
+.form_box .textbox { border: solid 1px #e0e0e0; padding:3px; font-size:14px; }
+.form_box td { padding-bottom: 10px; }
+.form_box .info { padding-left:30px; color:#666; }
+.form_box .buttons input { margin: 0 10px; }
+
+.tip { color:#ff0000; }
+
+.autocomplete-suggestions { border: 1px solid #999; background: #FFF; cursor: default; overflow: auto; }
+.autocomplete-suggestion { padding: 2px 5px; white-space: nowrap; overflow: hidden; }
+.autocomplete-selected { background: #F0F0F0; }
+.autocomplete-suggestions strong { font-weight: normal; color: #3399FF; }
+
+#table_head { background:#fff; border-right:solid 1px #fff; }
+#table_head .item { position:absolute; background:#f0f0f0; border:solid 1px #e0e0e0; padding:8px; }

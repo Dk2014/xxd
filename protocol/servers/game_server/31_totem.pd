@@ -1,0 +1,120 @@
+//
+// 阵印接口
+//
+mod totem = 31
+{
+    
+    // 召唤类型
+    type call_type enum {
+        BONE  = 0  // 兽骨召唤
+        HALLOW  = 1  // 圣器召唤
+        INGOT = 2  // 元宝召唤
+    }
+
+    // 阵印装备位    
+    type equip_pos enum {
+        POS1 = 0
+        POS2 = 1
+        POS3 = 2
+        POS4 = 3
+        POS5 = 4
+    }
+	
+    // 获取阵印信息
+    api info = 0 {
+        in {}
+        out {
+            totem : list {
+                id            : int64  // 用户阵印主键
+                totem_id : int16  // 阵印模板id
+                skill         : int16   // 阵印技能
+                level         : int8   // 阵印等级
+            }
+            rock_rune_num     : int32   // 石附文数量
+            jade_rune_num     : int32   // 玉附文数量
+            call_num     : int16   // 今日元宝召唤次数
+            pos1_id : int64  // 装备位置1上的阵印
+            pos2_id : int64  // 装备位置2上的阵印
+            pos3_id : int64  // 装备位置3上的阵印
+            pos4_id : int64  // 装备位置4上的阵印
+            pos5_id : int64  // 装备位置5上的阵印
+        }
+    }
+
+    // 召唤
+    api call_totem = 1 {
+        in {
+            call_type : call_type  // 兽骨召唤、圣器召唤、元宝召唤
+        }
+        out {}
+    }
+
+    // 铭刻
+    api upgrade  = 2 {
+        in {
+		target_id : int64 // 用户阵印主键
+        }
+        out {
+            ok            : bool  // 如果材料不够返回失败
+            id            : int64  // 用户阵印主键
+            skill         : int16   // 阵印技能
+            level         : int8   // 阵印等级
+        }
+    }
+    
+    // 分解
+    api decompose = 3 {
+        in {
+            totem_id : int64          // 分解目标ID
+        }
+        out {}
+    }
+
+    // 装备阵印，从背包移动到空装备位
+    api equip = 4 {
+        in {
+            totem_id   : int64      // 用户阵印id
+            equip_pos : equip_pos  // 阵印装备位置
+        }
+        out {}
+    }
+    
+    
+    // 卸下阵印
+    // 如果阵印备好位置已满则紧张下阵
+    api unequip = 5 {
+        in {
+            equip_pos : equip_pos  // 阵印装备位置
+        }
+        out {}
+    }
+
+    // 已装备中的阵印，移动其他备位
+    api equip_pos_change = 6 {
+        in {
+            from_pos : equip_pos      // 原位置
+            to_pos  : equip_pos  // 目标位置
+        }
+        out {}
+    }
+
+    
+    
+    // 已装备阵印和为装备阵印互换
+    api swap = 8 {
+        in {
+            equiped_id : int64  // 已装备阵印id
+            inbag_id   : int64  // 未装备阵印id
+        }
+        out {}
+    }
+
+    // 阵印背包满
+    api is_bag_full = 9 {
+        in {}
+        out {
+		full:bool //背包满
+	}
+    }
+	
+}

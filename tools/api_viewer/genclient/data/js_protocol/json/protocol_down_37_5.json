@@ -1,0 +1,1 @@
+{"action_name":"despair_land_watch_record","module_name":"despair_land","protocol":[{"name":"ok","type":"bool"},{"name":"pid","type":"int64"},{"name":"nick","type":"text16"},{"name":"level_id","type":"int32"}]}

@@ -1,0 +1,2012 @@
+mdb.load (1) cost time: 70.103499ms
+mdb.load (0) cost time: 70.125453ms
+mdb.load (2) cost time: 69.944006ms
+mdb.load (3) cost time: 69.794021ms
+mdb.load success.
+2014/10/24 13:58:12 [I] - load player
+2014/10/24 13:58:12 [I] - load player
+2014/10/24 13:58:12 [I] - load player
+2014/10/24 13:58:12 [I] - load player
+2014/10/24 13:58:12 [I] - load player_arena
+2014/10/24 13:58:12 [I] - load player_arena
+2014/10/24 13:58:12 [I] - load player_arena
+2014/10/24 13:58:12 [I] - load player_arena
+2014/10/24 13:58:12 [I] - load player_arena_record
+2014/10/24 13:58:12 [I] - load player_arena_record
+2014/10/24 13:58:12 [I] - load player_arena_record
+2014/10/24 13:58:12 [I] - load player_arena_record
+2014/10/24 13:58:12 [I] - load player_battle_pet
+2014/10/24 13:58:12 [I] - load player_battle_pet
+2014/10/24 13:58:12 [I] - load player_battle_pet
+2014/10/24 13:58:12 [I] - load player_battle_pet
+2014/10/24 13:58:12 [I] - load player_battle_pet_config
+2014/10/24 13:58:12 [I] - load player_battle_pet_config
+2014/10/24 13:58:12 [I] - load player_battle_pet_config
+2014/10/24 13:58:12 [I] - load player_battle_pet_config
+2014/10/24 13:58:12 [I] - load player_chest_state
+2014/10/24 13:58:12 [I] - load player_chest_state
+2014/10/24 13:58:12 [I] - load player_chest_state
+2014/10/24 13:58:12 [I] - load player_chest_state
+2014/10/24 13:58:12 [I] - load player_coins
+2014/10/24 13:58:12 [I] - load player_coins
+2014/10/24 13:58:12 [I] - load player_coins
+2014/10/24 13:58:12 [I] - load player_coins
+2014/10/24 13:58:12 [I] - load player_daily_quest
+2014/10/24 13:58:12 [I] - load player_daily_quest
+2014/10/24 13:58:12 [I] - load player_daily_quest
+2014/10/24 13:58:12 [I] - load player_daily_quest
+2014/10/24 13:58:12 [I] - load player_daily_sign_in_record
+2014/10/24 13:58:12 [I] - load player_daily_sign_in_record
+2014/10/24 13:58:12 [I] - load player_daily_sign_in_record
+2014/10/24 13:58:12 [I] - load player_daily_sign_in_record
+2014/10/24 13:58:12 [I] - load player_daily_sign_in_state
+2014/10/24 13:58:12 [I] - load player_daily_sign_in_state
+2014/10/24 13:58:12 [I] - load player_daily_sign_in_state
+2014/10/24 13:58:12 [I] - load player_daily_sign_in_state
+2014/10/24 13:58:12 [I] - load player_equipment
+2014/10/24 13:58:12 [I] - load player_equipment
+2014/10/24 13:58:12 [I] - load player_equipment
+2014/10/24 13:58:12 [I] - load player_equipment
+2014/10/24 13:58:12 [I] - load player_event_award_record
+2014/10/24 13:58:12 [I] - load player_event_award_record
+2014/10/24 13:58:12 [I] - load player_event_award_record
+2014/10/24 13:58:12 [I] - load player_event_award_record
+2014/10/24 13:58:12 [I] - load player_events_fight_power
+2014/10/24 13:58:12 [I] - load player_events_fight_power
+2014/10/24 13:58:12 [I] - load player_events_fight_power
+2014/10/24 13:58:12 [I] - load player_events_fight_power
+2014/10/24 13:58:12 [I] - load player_extend_level
+2014/10/24 13:58:12 [I] - load player_extend_level
+2014/10/24 13:58:12 [I] - load player_extend_level
+2014/10/24 13:58:12 [I] - load player_extend_level
+2014/10/24 13:58:12 [I] - load player_fashion
+2014/10/24 13:58:12 [I] - load player_fashion
+2014/10/24 13:58:12 [I] - load player_fashion
+2014/10/24 13:58:12 [I] - load player_fashion
+2014/10/24 13:58:12 [I] - load player_fashion_state
+2014/10/24 13:58:12 [I] - load player_fashion_state
+2014/10/24 13:58:12 [I] - load player_fashion_state
+2014/10/24 13:58:12 [I] - load player_fashion_state
+2014/10/24 13:58:12 [I] - load player_fight_num
+2014/10/24 13:58:12 [I] - load player_fight_num
+2014/10/24 13:58:12 [I] - load player_fight_num
+2014/10/24 13:58:12 [I] - load player_fight_num
+2014/10/24 13:58:12 [I] - load player_formation
+2014/10/24 13:58:12 [I] - load player_formation
+2014/10/24 13:58:12 [I] - load player_formation
+2014/10/24 13:58:12 [I] - load player_formation
+2014/10/24 13:58:12 [I] - load player_func_key
+2014/10/24 13:58:12 [I] - load player_func_key
+2014/10/24 13:58:12 [I] - load player_func_key
+2014/10/24 13:58:12 [I] - load player_func_key
+2014/10/24 13:58:12 [I] - load player_ghost
+2014/10/24 13:58:12 [I] - load player_ghost
+2014/10/24 13:58:12 [I] - load player_ghost
+2014/10/24 13:58:12 [I] - load player_ghost
+2014/10/24 13:58:12 [I] - load player_ghost_equipment
+2014/10/24 13:58:12 [I] - load player_ghost_equipment
+2014/10/24 13:58:12 [I] - load player_ghost_equipment
+2014/10/24 13:58:12 [I] - load player_ghost_equipment
+2014/10/24 13:58:12 [I] - load player_ghost_state
+2014/10/24 13:58:12 [I] - load player_ghost_state
+2014/10/24 13:58:12 [I] - load player_ghost_state
+2014/10/24 13:58:12 [I] - load player_ghost_state
+2014/10/24 13:58:12 [I] - load player_ghost_umbra
+2014/10/24 13:58:12 [I] - load player_ghost_umbra
+2014/10/24 13:58:12 [I] - load player_ghost_umbra
+2014/10/24 13:58:12 [I] - load player_ghost_umbra
+2014/10/24 13:58:12 [I] - load player_hard_level
+2014/10/24 13:58:12 [I] - load player_hard_level
+2014/10/24 13:58:12 [I] - load player_hard_level
+2014/10/24 13:58:12 [I] - load player_hard_level
+2014/10/24 13:58:12 [I] - load player_hard_level_record
+2014/10/24 13:58:12 [I] - load player_hard_level_record
+2014/10/24 13:58:12 [I] - load player_hard_level_record
+2014/10/24 13:58:12 [I] - load player_hard_level_record
+2014/10/24 13:58:12 [I] - load player_hard_level_state
+2014/10/24 13:58:12 [I] - load player_hard_level_state
+2014/10/24 13:58:12 [I] - load player_hard_level_state
+2014/10/24 13:58:12 [I] - load player_hard_level_state
+2014/10/24 13:58:12 [I] - load player_heart
+2014/10/24 13:58:12 [I] - load player_heart
+2014/10/24 13:58:12 [I] - load player_heart
+2014/10/24 13:58:12 [I] - load player_heart
+2014/10/24 13:58:12 [I] - load player_heart_draw
+2014/10/24 13:58:12 [I] - load player_heart_draw
+2014/10/24 13:58:12 [I] - load player_heart_draw
+2014/10/24 13:58:12 [I] - load player_heart_draw
+2014/10/24 13:58:12 [I] - load player_heart_draw_card_record
+2014/10/24 13:58:12 [I] - load player_heart_draw_card_record
+2014/10/24 13:58:12 [I] - load player_heart_draw_card_record
+2014/10/24 13:58:12 [I] - load player_heart_draw_wheel_record
+2014/10/24 13:58:12 [I] - load player_heart_draw_card_record
+2014/10/24 13:58:12 [I] - load player_heart_draw_wheel_record
+2014/10/24 13:58:12 [I] - load player_heart_draw_wheel_record
+2014/10/24 13:58:12 [I] - load player_info
+2014/10/24 13:58:12 [I] - load player_heart_draw_wheel_record
+2014/10/24 13:58:12 [I] - load player_info
+2014/10/24 13:58:12 [I] - load player_info
+2014/10/24 13:58:12 [I] - load player_info
+2014/10/24 13:58:12 [I] - load player_is_operated
+2014/10/24 13:58:12 [I] - load player_is_operated
+2014/10/24 13:58:12 [I] - load player_is_operated
+2014/10/24 13:58:12 [I] - load player_is_operated
+2014/10/24 13:58:12 [I] - load player_item
+2014/10/24 13:58:12 [I] - load player_item
+2014/10/24 13:58:12 [I] - load player_item
+2014/10/24 13:58:12 [I] - load player_item
+2014/10/24 13:58:12 [I] - load player_item_appendix
+2014/10/24 13:58:12 [I] - load player_item_appendix
+2014/10/24 13:58:12 [I] - load player_item_appendix
+2014/10/24 13:58:12 [I] - load player_item_appendix
+2014/10/24 13:58:12 [I] - load player_item_buyback
+2014/10/24 13:58:12 [I] - load player_item_buyback
+2014/10/24 13:58:12 [I] - load player_item_buyback
+2014/10/24 13:58:12 [I] - load player_item_buyback
+2014/10/24 13:58:12 [I] - load player_item_recast_state
+2014/10/24 13:58:12 [I] - load player_item_recast_state
+2014/10/24 13:58:12 [I] - load player_item_recast_state
+2014/10/24 13:58:12 [I] - load player_item_recast_state
+2014/10/24 13:58:12 [I] - load player_login_award_record
+2014/10/24 13:58:12 [I] - load player_login_award_record
+2014/10/24 13:58:12 [I] - load player_login_award_record
+2014/10/24 13:58:12 [I] - load player_login_award_record
+2014/10/24 13:58:12 [I] - load player_mail
+2014/10/24 13:58:12 [I] - load player_mail
+2014/10/24 13:58:12 [I] - load player_mail
+2014/10/24 13:58:12 [I] - load player_mail
+2014/10/24 13:58:12 [I] - load player_mail_attachment
+2014/10/24 13:58:12 [I] - load player_mail_attachment
+2014/10/24 13:58:12 [I] - load player_mail_attachment
+2014/10/24 13:58:12 [I] - load player_mail_attachment
+2014/10/24 13:58:12 [I] - load player_meditation_state
+2014/10/24 13:58:12 [I] - load player_meditation_state
+2014/10/24 13:58:12 [I] - load player_meditation_state
+2014/10/24 13:58:12 [I] - load player_meditation_state
+2014/10/24 13:58:12 [I] - load player_mission
+2014/10/24 13:58:12 [I] - load player_mission
+2014/10/24 13:58:12 [I] - load player_mission
+2014/10/24 13:58:12 [I] - load player_mission
+2014/10/24 13:58:12 [I] - load player_mission_level
+2014/10/24 13:58:12 [I] - load player_mission_level
+2014/10/24 13:58:12 [I] - load player_mission_level
+2014/10/24 13:58:12 [I] - load player_mission_level
+2014/10/24 13:58:12 [I] - load player_mission_level_record
+2014/10/24 13:58:12 [I] - load player_mission_level_record
+2014/10/24 13:58:12 [I] - load player_mission_level_record
+2014/10/24 13:58:12 [I] - load player_mission_level_record
+2014/10/24 13:58:12 [I] - load player_mission_level_state_bin
+2014/10/24 13:58:12 [I] - load player_mission_level_state_bin
+2014/10/24 13:58:12 [I] - load player_mission_level_state_bin
+2014/10/24 13:58:12 [I] - load player_mission_level_state_bin
+2014/10/24 13:58:12 [I] - load player_mission_record
+2014/10/24 13:58:12 [I] - load player_mission_record
+2014/10/24 13:58:12 [I] - load player_mission_record
+2014/10/24 13:58:12 [I] - load player_mission_record
+2014/10/24 13:58:12 [I] - load player_multi_level_info
+2014/10/24 13:58:12 [I] - load player_multi_level_info
+2014/10/24 13:58:12 [I] - load player_multi_level_info
+2014/10/24 13:58:12 [I] - load player_multi_level_info
+2014/10/24 13:58:12 [I] - load player_npc_talk_record
+2014/10/24 13:58:12 [I] - load player_npc_talk_record
+2014/10/24 13:58:12 [I] - load player_npc_talk_record
+2014/10/24 13:58:12 [I] - load player_npc_talk_record
+2014/10/24 13:58:12 [I] - load player_physical
+2014/10/24 13:58:12 [I] - load player_physical
+2014/10/24 13:58:12 [I] - load player_physical
+2014/10/24 13:58:12 [I] - load player_physical
+2014/10/24 13:58:12 [I] - load player_purchase_record
+2014/10/24 13:58:12 [I] - load player_purchase_record
+2014/10/24 13:58:12 [I] - load player_purchase_record
+2014/10/24 13:58:12 [I] - load player_purchase_record
+2014/10/24 13:58:12 [I] - load player_push_notify_switch
+2014/10/24 13:58:12 [I] - load player_push_notify_switch
+2014/10/24 13:58:12 [I] - load player_push_notify_switch
+2014/10/24 13:58:12 [I] - load player_push_notify_switch
+2014/10/24 13:58:12 [I] - load player_quest
+2014/10/24 13:58:12 [I] - load player_quest
+2014/10/24 13:58:12 [I] - load player_quest
+2014/10/24 13:58:12 [I] - load player_quest
+2014/10/24 13:58:12 [I] - load player_rainbow_level
+2014/10/24 13:58:12 [I] - load player_rainbow_level
+2014/10/24 13:58:12 [I] - load player_rainbow_level
+2014/10/24 13:58:12 [I] - load player_rainbow_level
+2014/10/24 13:58:12 [I] - load player_rainbow_level_state_bin
+2014/10/24 13:58:12 [I] - load player_rainbow_level_state_bin
+2014/10/24 13:58:12 [I] - load player_rainbow_level_state_bin
+2014/10/24 13:58:12 [I] - load player_rainbow_level_state_bin
+2014/10/24 13:58:12 [I] - load player_role
+2014/10/24 13:58:12 [I] - load player_role
+2014/10/24 13:58:12 [I] - load player_role
+2014/10/24 13:58:12 [I] - load player_role
+2014/10/24 13:58:12 [I] - load player_send_heart_record
+2014/10/24 13:58:12 [I] - load player_send_heart_record
+2014/10/24 13:58:12 [I] - load player_send_heart_record
+2014/10/24 13:58:12 [I] - load player_send_heart_record
+2014/10/24 13:58:12 [I] - load player_skill
+2014/10/24 13:58:12 [I] - load player_skill
+2014/10/24 13:58:12 [I] - load player_skill
+2014/10/24 13:58:12 [I] - load player_skill
+2014/10/24 13:58:12 [I] - load player_state
+2014/10/24 13:58:12 [I] - load player_state
+2014/10/24 13:58:12 [I] - load player_state
+2014/10/24 13:58:12 [I] - load player_state
+2014/10/24 13:58:12 [I] - load player_sword_soul
+2014/10/24 13:58:12 [I] - load player_sword_soul
+2014/10/24 13:58:12 [I] - load player_sword_soul
+2014/10/24 13:58:12 [I] - load player_sword_soul
+2014/10/24 13:58:12 [I] - load player_sword_soul_equipment
+2014/10/24 13:58:12 [I] - load player_sword_soul_equipment
+2014/10/24 13:58:12 [I] - load player_sword_soul_equipment
+2014/10/24 13:58:12 [I] - load player_sword_soul_equipment
+2014/10/24 13:58:12 [I] - load player_sword_soul_state
+2014/10/24 13:58:12 [I] - load player_sword_soul_state
+2014/10/24 13:58:12 [I] - load player_sword_soul_state
+2014/10/24 13:58:12 [I] - load player_sword_soul_state
+2014/10/24 13:58:12 [I] - load player_tb_xxd_roleinfo
+2014/10/24 13:58:12 [I] - load player_tb_xxd_roleinfo
+2014/10/24 13:58:12 [I] - load player_tb_xxd_roleinfo
+2014/10/24 13:58:12 [I] - load player_tb_xxd_roleinfo
+2014/10/24 13:58:12 [I] - load player_tower_level
+2014/10/24 13:58:12 [I] - load player_tower_level
+2014/10/24 13:58:12 [I] - load player_tower_level
+2014/10/24 13:58:12 [I] - load player_tower_level
+2014/10/24 13:58:12 [I] - load player_town
+2014/10/24 13:58:12 [I] - load player_town
+2014/10/24 13:58:12 [I] - load player_town
+2014/10/24 13:58:12 [I] - load player_town
+2014/10/24 13:58:12 [I] - load player_trader_refresh_state
+2014/10/24 13:58:12 [I] - load player_trader_refresh_state
+2014/10/24 13:58:12 [I] - load player_trader_refresh_state
+2014/10/24 13:58:12 [I] - load player_trader_refresh_state
+2014/10/24 13:58:12 [I] - load player_trader_store_state
+2014/10/24 13:58:12 [I] - load player_trader_store_state
+2014/10/24 13:58:12 [I] - load player_trader_store_state
+2014/10/24 13:58:12 [I] - load player_trader_store_state
+2014/10/24 13:58:12 [I] - load player_use_skill
+2014/10/24 13:58:12 [I] - load player_use_skill
+2014/10/24 13:58:12 [I] - load player_use_skill
+2014/10/24 13:58:12 [I] - load player_use_skill
+2014/10/24 13:58:12 [I] - load player_vip
+2014/10/24 13:58:12 [I] - load player_vip
+2014/10/24 13:58:12 [I] - load player_vip
+2014/10/24 13:58:12 [I] - load player_vip
+mdb.load (0) cost time: 7.471302ms
+mdb.load (2) cost time: 7.520892ms
+mdb.load (1) cost time: 7.508647ms
+mdb.load (3) cost time: 7.414868ms
+mdb.load success.
+2014/10/24 13:58:21 [I] - load global_announcement
+2014/10/24 13:58:21 [I] - load global_arena_rank
+2014/10/24 13:58:21 [I] - load global_mail
+2014/10/24 13:58:21 [I] - load global_mail_attachments
+2014/10/24 13:58:21 [I] - load global_tb_xxd_onlinecnt
+2014/10/24 13:58:21 [I] - load player_global_arena_rank
+2014/10/24 13:58:21 [I] - load player_global_arena_rank
+2014/10/24 13:58:21 [I] - load player_global_arena_rank
+2014/10/24 13:58:21 [I] - load player_global_arena_rank
+2014/10/24 13:58:21 [I] - load player_global_friend
+2014/10/24 13:58:21 [I] - load player_global_friend
+2014/10/24 13:58:21 [I] - load player_global_friend
+2014/10/24 13:58:21 [I] - load player_global_friend
+2014/10/24 13:58:21 [I] - load player_global_friend_chat
+2014/10/24 13:58:21 [I] - load player_global_friend_chat
+2014/10/24 13:58:21 [I] - load player_global_friend_chat
+2014/10/24 13:58:21 [I] - load player_global_friend_chat
+2014/10/24 13:58:21 [I] - load player_global_friend_state
+2014/10/24 13:58:21 [I] - load player_global_friend_state
+2014/10/24 13:58:21 [I] - load player_global_friend_state
+2014/10/24 13:58:21 [I] - load player_global_friend_state
+2014/10/24 13:58:21 [I] - load player_global_mail_state
+2014/10/24 13:58:21 [I] - load player_global_mail_state
+2014/10/24 13:58:21 [I] - load player_global_mail_state
+2014/10/24 13:58:21 [I] - load player_global_mail_state
+2014/10/24 14:00:12 [E] - [tlog] GameSvrState error. write udp4 172.26.166.37:6667: connection refused
+ info: &{2014-10-24 14:00:12.144424105 +0800 CST 172.26.166.37}
+2014/10/24 14:00:21 [E] - [tlog] GameSvrState error. write udp4 172.26.166.37:6667: connection refused
+ info: &{2014-10-24 14:00:21.700457752 +0800 CST 172.26.166.37}
+mdb.load (0) cost time: 23.992246ms
+mdb.load (1) cost time: 24.125789ms
+mdb.load (3) cost time: 24.818757ms
+mdb.load (2) cost time: 43.68631ms
+mdb.load success.
+2014/10/24 14:59:15 [I] - load player
+2014/10/24 14:59:15 [I] - load player
+2014/10/24 14:59:15 [I] - load player
+2014/10/24 14:59:15 [I] - load player_arena
+2014/10/24 14:59:15 [I] - load player_arena
+2014/10/24 14:59:15 [I] - load player_arena
+2014/10/24 14:59:15 [I] - load player
+2014/10/24 14:59:15 [I] - load player_arena_record
+2014/10/24 14:59:15 [I] - load player_arena_record
+2014/10/24 14:59:15 [I] - load player_arena_record
+2014/10/24 14:59:15 [I] - load player_battle_pet
+2014/10/24 14:59:15 [I] - load player_battle_pet
+2014/10/24 14:59:15 [I] - load player_battle_pet
+2014/10/24 14:59:15 [I] - load player_battle_pet_config
+2014/10/24 14:59:15 [I] - load player_battle_pet_config
+2014/10/24 14:59:15 [I] - load player_battle_pet_config
+2014/10/24 14:59:15 [I] - load player_chest_state
+2014/10/24 14:59:15 [I] - load player_chest_state
+2014/10/24 14:59:15 [I] - load player_arena
+2014/10/24 14:59:15 [I] - load player_coins
+2014/10/24 14:59:15 [I] - load player_arena_record
+2014/10/24 14:59:15 [I] - load player_coins
+2014/10/24 14:59:15 [I] - load player_battle_pet
+2014/10/24 14:59:15 [I] - load player_daily_quest
+2014/10/24 14:59:15 [I] - load player_daily_quest
+2014/10/24 14:59:15 [I] - load player_chest_state
+2014/10/24 14:59:15 [I] - load player_daily_sign_in_record
+2014/10/24 14:59:15 [I] - load player_battle_pet_config
+2014/10/24 14:59:15 [I] - load player_daily_sign_in_record
+2014/10/24 14:59:15 [I] - load player_chest_state
+2014/10/24 14:59:15 [I] - load player_daily_sign_in_state
+2014/10/24 14:59:15 [I] - load player_daily_sign_in_state
+2014/10/24 14:59:15 [I] - load player_coins
+2014/10/24 14:59:15 [I] - load player_equipment
+2014/10/24 14:59:15 [I] - load player_equipment
+2014/10/24 14:59:15 [I] - load player_daily_quest
+2014/10/24 14:59:15 [I] - load player_coins
+2014/10/24 14:59:15 [I] - load player_daily_sign_in_record
+2014/10/24 14:59:15 [I] - load player_event_award_record
+2014/10/24 14:59:15 [I] - load player_daily_quest
+2014/10/24 14:59:15 [I] - load player_event_award_record
+2014/10/24 14:59:15 [I] - load player_daily_sign_in_state
+2014/10/24 14:59:15 [I] - load player_events_fight_power
+2014/10/24 14:59:15 [I] - load player_events_fight_power
+2014/10/24 14:59:15 [I] - load player_equipment
+2014/10/24 14:59:15 [I] - load player_extend_level
+2014/10/24 14:59:15 [I] - load player_extend_level
+2014/10/24 14:59:15 [I] - load player_daily_sign_in_record
+2014/10/24 14:59:15 [I] - load player_fashion
+2014/10/24 14:59:15 [I] - load player_fashion
+2014/10/24 14:59:15 [I] - load player_event_award_record
+2014/10/24 14:59:15 [I] - load player_fashion_state
+2014/10/24 14:59:15 [I] - load player_fashion_state
+2014/10/24 14:59:15 [I] - load player_events_fight_power
+2014/10/24 14:59:15 [I] - load player_fight_num
+2014/10/24 14:59:15 [I] - load player_fight_num
+2014/10/24 14:59:15 [I] - load player_extend_level
+2014/10/24 14:59:15 [I] - load player_formation
+2014/10/24 14:59:15 [I] - load player_fashion
+2014/10/24 14:59:15 [I] - load player_formation
+2014/10/24 14:59:15 [I] - load player_func_key
+2014/10/24 14:59:15 [I] - load player_fashion_state
+2014/10/24 14:59:15 [I] - load player_func_key
+2014/10/24 14:59:15 [I] - load player_ghost
+2014/10/24 14:59:15 [I] - load player_fight_num
+2014/10/24 14:59:15 [I] - load player_ghost
+2014/10/24 14:59:15 [I] - load player_ghost_equipment
+2014/10/24 14:59:15 [I] - load player_ghost_equipment
+2014/10/24 14:59:15 [I] - load player_formation
+2014/10/24 14:59:15 [I] - load player_ghost_state
+2014/10/24 14:59:15 [I] - load player_ghost_state
+2014/10/24 14:59:15 [I] - load player_func_key
+2014/10/24 14:59:15 [I] - load player_ghost_umbra
+2014/10/24 14:59:15 [I] - load player_hard_level
+2014/10/24 14:59:15 [I] - load player_ghost_umbra
+2014/10/24 14:59:15 [I] - load player_ghost
+2014/10/24 14:59:15 [I] - load player_hard_level_record
+2014/10/24 14:59:15 [I] - load player_hard_level
+2014/10/24 14:59:15 [I] - load player_ghost_equipment
+2014/10/24 14:59:15 [I] - load player_hard_level_state
+2014/10/24 14:59:15 [I] - load player_hard_level_record
+2014/10/24 14:59:15 [I] - load player_ghost_state
+2014/10/24 14:59:15 [I] - load player_heart
+2014/10/24 14:59:15 [I] - load player_hard_level_state
+2014/10/24 14:59:15 [I] - load player_ghost_umbra
+2014/10/24 14:59:15 [I] - load player_heart
+2014/10/24 14:59:15 [I] - load player_heart_draw
+2014/10/24 14:59:15 [I] - load player_hard_level
+2014/10/24 14:59:15 [I] - load player_heart_draw
+2014/10/24 14:59:15 [I] - load player_hard_level_record
+2014/10/24 14:59:15 [I] - load player_heart_draw_card_record
+2014/10/24 14:59:15 [I] - load player_heart_draw_wheel_record
+2014/10/24 14:59:15 [I] - load player_hard_level_state
+2014/10/24 14:59:15 [I] - load player_heart_draw_card_record
+2014/10/24 14:59:15 [I] - load player_heart
+2014/10/24 14:59:15 [I] - load player_info
+2014/10/24 14:59:15 [I] - load player_heart_draw_wheel_record
+2014/10/24 14:59:15 [I] - load player_heart_draw
+2014/10/24 14:59:15 [I] - load player_info
+2014/10/24 14:59:15 [I] - load player_is_operated
+2014/10/24 14:59:15 [I] - load player_is_operated
+2014/10/24 14:59:15 [I] - load player_item
+2014/10/24 14:59:15 [I] - load player_heart_draw_card_record
+2014/10/24 14:59:15 [I] - load player_item
+2014/10/24 14:59:15 [I] - load player_daily_sign_in_state
+2014/10/24 14:59:15 [I] - load player_heart_draw_wheel_record
+2014/10/24 14:59:15 [I] - load player_info
+2014/10/24 14:59:15 [I] - load player_equipment
+2014/10/24 14:59:15 [I] - load player_item_appendix
+2014/10/24 14:59:15 [I] - load player_item_appendix
+2014/10/24 14:59:15 [I] - load player_is_operated
+2014/10/24 14:59:15 [I] - load player_item_buyback
+2014/10/24 14:59:15 [I] - load player_item_buyback
+2014/10/24 14:59:15 [I] - load player_item
+2014/10/24 14:59:15 [I] - load player_item_recast_state
+2014/10/24 14:59:15 [I] - load player_item_recast_state
+2014/10/24 14:59:15 [I] - load player_login_award_record
+2014/10/24 14:59:15 [I] - load player_login_award_record
+2014/10/24 14:59:15 [I] - load player_item_appendix
+2014/10/24 14:59:15 [I] - load player_event_award_record
+2014/10/24 14:59:15 [I] - load player_mail
+2014/10/24 14:59:15 [I] - load player_mail
+2014/10/24 14:59:15 [I] - load player_events_fight_power
+2014/10/24 14:59:15 [I] - load player_item_buyback
+2014/10/24 14:59:15 [I] - load player_item_recast_state
+2014/10/24 14:59:15 [I] - load player_mail_attachment
+2014/10/24 14:59:15 [I] - load player_mail_attachment
+2014/10/24 14:59:15 [I] - load player_extend_level
+2014/10/24 14:59:15 [I] - load player_login_award_record
+2014/10/24 14:59:15 [I] - load player_meditation_state
+2014/10/24 14:59:15 [I] - load player_meditation_state
+2014/10/24 14:59:15 [I] - load player_mission
+2014/10/24 14:59:15 [I] - load player_mail
+2014/10/24 14:59:15 [I] - load player_mission
+2014/10/24 14:59:15 [I] - load player_mission_level
+2014/10/24 14:59:15 [I] - load player_mission_level
+2014/10/24 14:59:15 [I] - load player_mission_level_record
+2014/10/24 14:59:15 [I] - load player_mail_attachment
+2014/10/24 14:59:15 [I] - load player_mission_level_record
+2014/10/24 14:59:15 [I] - load player_meditation_state
+2014/10/24 14:59:15 [I] - load player_mission_level_state_bin
+2014/10/24 14:59:15 [I] - load player_mission
+2014/10/24 14:59:15 [I] - load player_mission_record
+2014/10/24 14:59:15 [I] - load player_mission_level_state_bin
+2014/10/24 14:59:15 [I] - load player_mission_level
+2014/10/24 14:59:15 [I] - load player_mission_record
+2014/10/24 14:59:15 [I] - load player_multi_level_info
+2014/10/24 14:59:15 [I] - load player_mission_level_record
+2014/10/24 14:59:15 [I] - load player_npc_talk_record
+2014/10/24 14:59:15 [I] - load player_multi_level_info
+2014/10/24 14:59:15 [I] - load player_physical
+2014/10/24 14:59:15 [I] - load player_mission_level_state_bin
+2014/10/24 14:59:15 [I] - load player_npc_talk_record
+2014/10/24 14:59:15 [I] - load player_purchase_record
+2014/10/24 14:59:15 [I] - load player_physical
+2014/10/24 14:59:15 [I] - load player_mission_record
+2014/10/24 14:59:15 [I] - load player_push_notify_switch
+2014/10/24 14:59:15 [I] - load player_purchase_record
+2014/10/24 14:59:15 [I] - load player_quest
+2014/10/24 14:59:15 [I] - load player_push_notify_switch
+2014/10/24 14:59:15 [I] - load player_rainbow_level
+2014/10/24 14:59:15 [I] - load player_multi_level_info
+2014/10/24 14:59:15 [I] - load player_quest
+2014/10/24 14:59:15 [I] - load player_fashion
+2014/10/24 14:59:15 [I] - load player_npc_talk_record
+2014/10/24 14:59:15 [I] - load player_rainbow_level_state_bin
+2014/10/24 14:59:15 [I] - load player_rainbow_level
+2014/10/24 14:59:15 [I] - load player_physical
+2014/10/24 14:59:15 [I] - load player_role
+2014/10/24 14:59:15 [I] - load player_rainbow_level_state_bin
+2014/10/24 14:59:15 [I] - load player_purchase_record
+2014/10/24 14:59:15 [I] - load player_role
+2014/10/24 14:59:15 [I] - load player_push_notify_switch
+2014/10/24 14:59:15 [I] - load player_send_heart_record
+2014/10/24 14:59:15 [I] - load player_send_heart_record
+2014/10/24 14:59:15 [I] - load player_skill
+2014/10/24 14:59:15 [I] - load player_quest
+2014/10/24 14:59:15 [I] - load player_skill
+2014/10/24 14:59:15 [I] - load player_fashion_state
+2014/10/24 14:59:15 [I] - load player_rainbow_level
+2014/10/24 14:59:15 [I] - load player_rainbow_level_state_bin
+2014/10/24 14:59:15 [I] - load player_state
+2014/10/24 14:59:15 [I] - load player_role
+2014/10/24 14:59:15 [I] - load player_fight_num
+2014/10/24 14:59:15 [I] - load player_state
+2014/10/24 14:59:15 [I] - load player_sword_soul
+2014/10/24 14:59:15 [I] - load player_formation
+2014/10/24 14:59:15 [I] - load player_sword_soul_equipment
+2014/10/24 14:59:15 [I] - load player_sword_soul
+2014/10/24 14:59:15 [I] - load player_send_heart_record
+2014/10/24 14:59:15 [I] - load player_sword_soul_equipment
+2014/10/24 14:59:15 [I] - load player_sword_soul_state
+2014/10/24 14:59:15 [I] - load player_skill
+2014/10/24 14:59:15 [I] - load player_tb_xxd_roleinfo
+2014/10/24 14:59:15 [I] - load player_sword_soul_state
+2014/10/24 14:59:15 [I] - load player_tb_xxd_roleinfo
+2014/10/24 14:59:15 [I] - load player_tower_level
+2014/10/24 14:59:15 [I] - load player_state
+2014/10/24 14:59:15 [I] - load player_tower_level
+2014/10/24 14:59:15 [I] - load player_town
+2014/10/24 14:59:15 [I] - load player_town
+2014/10/24 14:59:15 [I] - load player_sword_soul
+2014/10/24 14:59:15 [I] - load player_trader_refresh_state
+2014/10/24 14:59:15 [I] - load player_sword_soul_equipment
+2014/10/24 14:59:15 [I] - load player_trader_refresh_state
+2014/10/24 14:59:15 [I] - load player_trader_store_state
+2014/10/24 14:59:15 [I] - load player_sword_soul_state
+2014/10/24 14:59:15 [I] - load player_trader_store_state
+2014/10/24 14:59:15 [I] - load player_use_skill
+2014/10/24 14:59:15 [I] - load player_tb_xxd_roleinfo
+2014/10/24 14:59:15 [I] - load player_use_skill
+2014/10/24 14:59:15 [I] - load player_tower_level
+2014/10/24 14:59:15 [I] - load player_vip
+2014/10/24 14:59:15 [I] - load player_town
+2014/10/24 14:59:15 [I] - load player_vip
+2014/10/24 14:59:15 [I] - load player_trader_refresh_state
+2014/10/24 14:59:15 [I] - load player_func_key
+2014/10/24 14:59:15 [I] - load player_trader_store_state
+2014/10/24 14:59:15 [I] - load player_ghost
+2014/10/24 14:59:15 [I] - load player_use_skill
+2014/10/24 14:59:15 [I] - load player_ghost_equipment
+2014/10/24 14:59:15 [I] - load player_vip
+2014/10/24 14:59:15 [I] - load player_ghost_state
+2014/10/24 14:59:15 [I] - load player_ghost_umbra
+2014/10/24 14:59:15 [I] - load player_hard_level
+2014/10/24 14:59:15 [I] - load player_hard_level_record
+2014/10/24 14:59:15 [I] - load player_hard_level_state
+2014/10/24 14:59:15 [I] - load player_heart
+2014/10/24 14:59:15 [I] - load player_heart_draw
+2014/10/24 14:59:15 [I] - load player_heart_draw_card_record
+2014/10/24 14:59:15 [I] - load player_heart_draw_wheel_record
+2014/10/24 14:59:15 [I] - load player_info
+2014/10/24 14:59:15 [I] - load player_is_operated
+2014/10/24 14:59:15 [I] - load player_item
+2014/10/24 14:59:15 [I] - load player_item_appendix
+2014/10/24 14:59:15 [I] - load player_item_buyback
+2014/10/24 14:59:15 [I] - load player_item_recast_state
+2014/10/24 14:59:15 [I] - load player_login_award_record
+2014/10/24 14:59:15 [I] - load player_mail
+2014/10/24 14:59:15 [I] - load player_mail_attachment
+2014/10/24 14:59:15 [I] - load player_meditation_state
+2014/10/24 14:59:15 [I] - load player_mission
+2014/10/24 14:59:15 [I] - load player_mission_level
+2014/10/24 14:59:15 [I] - load player_mission_level_record
+2014/10/24 14:59:15 [I] - load player_mission_level_state_bin
+2014/10/24 14:59:15 [I] - load player_mission_record
+2014/10/24 14:59:15 [I] - load player_multi_level_info
+2014/10/24 14:59:15 [I] - load player_npc_talk_record
+2014/10/24 14:59:15 [I] - load player_physical
+2014/10/24 14:59:15 [I] - load player_purchase_record
+2014/10/24 14:59:15 [I] - load player_push_notify_switch
+2014/10/24 14:59:15 [I] - load player_quest
+2014/10/24 14:59:15 [I] - load player_rainbow_level
+2014/10/24 14:59:15 [I] - load player_rainbow_level_state_bin
+2014/10/24 14:59:15 [I] - load player_role
+2014/10/24 14:59:15 [I] - load player_send_heart_record
+2014/10/24 14:59:15 [I] - load player_skill
+2014/10/24 14:59:15 [I] - load player_state
+2014/10/24 14:59:15 [I] - load player_sword_soul
+2014/10/24 14:59:15 [I] - load player_sword_soul_equipment
+2014/10/24 14:59:15 [I] - load player_sword_soul_state
+2014/10/24 14:59:15 [I] - load player_tb_xxd_roleinfo
+2014/10/24 14:59:15 [I] - load player_tower_level
+2014/10/24 14:59:15 [I] - load player_town
+2014/10/24 14:59:15 [I] - load player_trader_refresh_state
+2014/10/24 14:59:15 [I] - load player_trader_store_state
+2014/10/24 14:59:15 [I] - load player_use_skill
+2014/10/24 14:59:15 [I] - load player_vip
+mdb.load (2) cost time: 1.614842ms
+mdb.load (0) cost time: 1.682501ms
+mdb.load (3) cost time: 1.671564ms
+mdb.load (1) cost time: 1.892096ms
+mdb.load success.
+2014/10/24 14:59:18 [E] - Request Failed
+Error   = {unsupported request}
+Session = {PlayerId:4294967297, Nickname:"秦区五", RoleId:"1", TownId:0}
+Request = invalid
+
+Stack   =
+    at func.001() [/Users/tangweichen/xxd-server/server/src/game_server/api/server.go:96]
+    at panic() [/usr/local/go/src/pkg/runtime/panic.c:248]
+    at func.001() [/Users/tangweichen/xxd-server/server/src/game_server/api/protocol/api.go:53]
+    at panic() [/usr/local/go/src/pkg/runtime/panic.c:248]
+    at DecodeIn() [/Users/tangweichen/xxd-server/server/src/game_server/api/protocol/meditation_api/meditation_api.go:48]
+    at DecodeIn() [/Users/tangweichen/xxd-server/server/src/game_server/api/protocol/api.go:112]
+    at requestHandler() [/Users/tangweichen/xxd-server/server/src/game_server/api/server.go:124]
+    at requestHandlerFunc.Handle() [/Users/tangweichen/xxd-server/server/src/core/net/session.go:27]
+    at (*Session).readLoop() [/Users/tangweichen/xxd-server/server/src/core/net/session.go:93]
+    at goexit() [/usr/local/go/src/pkg/runtime/proc.c:1445]
+2014/10/24 14:59:17 [I] - load global_announcement
+2014/10/24 14:59:17 [I] - load global_arena_rank
+2014/10/24 14:59:17 [I] - load global_mail
+2014/10/24 14:59:17 [I] - load global_mail_attachments
+2014/10/24 14:59:17 [I] - load global_tb_xxd_onlinecnt
+2014/10/24 14:59:17 [I] - load player_global_arena_rank
+2014/10/24 14:59:17 [I] - load player_global_arena_rank
+2014/10/24 14:59:17 [I] - load player_global_arena_rank
+2014/10/24 14:59:17 [I] - load player_global_friend
+2014/10/24 14:59:17 [I] - load player_global_arena_rank
+2014/10/24 14:59:17 [I] - load player_global_friend
+2014/10/24 14:59:17 [I] - load player_global_friend
+2014/10/24 14:59:17 [I] - load player_global_friend_chat
+2014/10/24 14:59:17 [I] - load player_global_friend_chat
+2014/10/24 14:59:17 [I] - load player_global_friend_chat
+2014/10/24 14:59:17 [I] - load player_global_friend
+2014/10/24 14:59:17 [I] - load player_global_friend_state
+2014/10/24 14:59:17 [I] - load player_global_friend_state
+2014/10/24 14:59:17 [I] - load player_global_friend_state
+2014/10/24 14:59:17 [I] - load player_global_friend_chat
+2014/10/24 14:59:17 [I] - load player_global_mail_state
+2014/10/24 14:59:17 [I] - load player_global_mail_state
+2014/10/24 14:59:17 [I] - load player_global_mail_state
+2014/10/24 14:59:17 [I] - load player_global_friend_state
+2014/10/24 14:59:17 [I] - load player_global_mail_state
+mdb.load (0) cost time: 12.822196ms
+mdb.load (2) cost time: 12.923351ms
+mdb.load (1) cost time: 12.876297ms
+mdb.load (3) cost time: 13.055529ms
+mdb.load success.
+mdb.load (0) cost time: 1.103966ms
+mdb.load (1) cost time: 1.12261ms
+mdb.load (2) cost time: 1.259302ms
+mdb.load success.
+mdb.load (3) cost time: 1.475294ms
+2014/10/24 15:04:27 [I] - load player
+2014/10/24 15:04:27 [I] - load player
+2014/10/24 15:04:27 [I] - load player
+2014/10/24 15:04:27 [I] - load player
+2014/10/24 15:04:27 [I] - load player_arena
+2014/10/24 15:04:27 [I] - load player_arena
+2014/10/24 15:04:27 [I] - load player_arena
+2014/10/24 15:04:27 [I] - load player_arena_record
+2014/10/24 15:04:27 [I] - load player_arena_record
+2014/10/24 15:04:27 [I] - load player_arena
+2014/10/24 15:04:27 [I] - load player_battle_pet
+2014/10/24 15:04:27 [I] - load player_battle_pet
+2014/10/24 15:04:27 [I] - load player_arena_record
+2014/10/24 15:04:27 [I] - load player_battle_pet_config
+2014/10/24 15:04:27 [I] - load player_battle_pet_config
+2014/10/24 15:04:27 [I] - load player_battle_pet
+2014/10/24 15:04:27 [I] - load player_arena_record
+2014/10/24 15:04:27 [I] - load player_chest_state
+2014/10/24 15:04:27 [I] - load player_chest_state
+2014/10/24 15:04:27 [I] - load player_battle_pet_config
+2014/10/24 15:04:27 [I] - load player_battle_pet
+2014/10/24 15:04:27 [I] - load player_chest_state
+2014/10/24 15:04:27 [I] - load player_battle_pet_config
+2014/10/24 15:04:27 [I] - load player_coins
+2014/10/24 15:04:27 [I] - load player_coins
+2014/10/24 15:04:27 [I] - load player_chest_state
+2014/10/24 15:04:27 [I] - load player_coins
+2014/10/24 15:04:27 [I] - load player_daily_quest
+2014/10/24 15:04:27 [I] - load player_daily_quest
+2014/10/24 15:04:27 [I] - load player_daily_quest
+2014/10/24 15:04:27 [I] - load player_daily_sign_in_record
+2014/10/24 15:04:27 [I] - load player_coins
+2014/10/24 15:04:27 [I] - load player_daily_sign_in_record
+2014/10/24 15:04:27 [I] - load player_daily_quest
+2014/10/24 15:04:27 [I] - load player_daily_sign_in_record
+2014/10/24 15:04:27 [I] - load player_daily_sign_in_state
+2014/10/24 15:04:27 [I] - load player_daily_sign_in_state
+2014/10/24 15:04:27 [I] - load player_daily_sign_in_state
+2014/10/24 15:04:27 [I] - load player_daily_sign_in_record
+2014/10/24 15:04:27 [I] - load player_equipment
+2014/10/24 15:04:27 [I] - load player_equipment
+2014/10/24 15:04:27 [I] - load player_daily_sign_in_state
+2014/10/24 15:04:27 [I] - load player_equipment
+2014/10/24 15:04:27 [I] - load player_equipment
+2014/10/24 15:04:27 [I] - load player_event_award_record
+2014/10/24 15:04:27 [I] - load player_event_award_record
+2014/10/24 15:04:27 [I] - load player_event_award_record
+2014/10/24 15:04:27 [I] - load player_events_fight_power
+2014/10/24 15:04:27 [I] - load player_event_award_record
+2014/10/24 15:04:27 [I] - load player_events_fight_power
+2014/10/24 15:04:27 [I] - load player_extend_level
+2014/10/24 15:04:27 [I] - load player_events_fight_power
+2014/10/24 15:04:27 [I] - load player_events_fight_power
+2014/10/24 15:04:27 [I] - load player_extend_level
+2014/10/24 15:04:27 [I] - load player_fashion
+2014/10/24 15:04:27 [I] - load player_extend_level
+2014/10/24 15:04:27 [I] - load player_extend_level
+2014/10/24 15:04:27 [I] - load player_fashion
+2014/10/24 15:04:27 [I] - load player_fashion_state
+2014/10/24 15:04:27 [I] - load player_fashion
+2014/10/24 15:04:27 [I] - load player_fashion
+2014/10/24 15:04:27 [I] - load player_fashion_state
+2014/10/24 15:04:27 [I] - load player_fight_num
+2014/10/24 15:04:27 [I] - load player_fashion_state
+2014/10/24 15:04:27 [I] - load player_fashion_state
+2014/10/24 15:04:27 [I] - load player_fight_num
+2014/10/24 15:04:27 [I] - load player_formation
+2014/10/24 15:04:27 [I] - load player_fight_num
+2014/10/24 15:04:27 [I] - load player_fight_num
+2014/10/24 15:04:27 [I] - load player_formation
+2014/10/24 15:04:27 [I] - load player_func_key
+2014/10/24 15:04:27 [I] - load player_formation
+2014/10/24 15:04:27 [I] - load player_formation
+2014/10/24 15:04:27 [I] - load player_func_key
+2014/10/24 15:04:27 [I] - load player_ghost
+2014/10/24 15:04:27 [I] - load player_func_key
+2014/10/24 15:04:27 [I] - load player_func_key
+2014/10/24 15:04:27 [I] - load player_ghost_equipment
+2014/10/24 15:04:27 [I] - load player_ghost
+2014/10/24 15:04:27 [I] - load player_ghost
+2014/10/24 15:04:27 [I] - load player_ghost
+2014/10/24 15:04:27 [I] - load player_ghost_state
+2014/10/24 15:04:27 [I] - load player_ghost_equipment
+2014/10/24 15:04:27 [I] - load player_ghost_equipment
+2014/10/24 15:04:27 [I] - load player_ghost_equipment
+2014/10/24 15:04:27 [I] - load player_ghost_umbra
+2014/10/24 15:04:27 [I] - load player_ghost_state
+2014/10/24 15:04:27 [I] - load player_ghost_state
+2014/10/24 15:04:27 [I] - load player_ghost_state
+2014/10/24 15:04:27 [I] - load player_hard_level
+2014/10/24 15:04:27 [I] - load player_ghost_umbra
+2014/10/24 15:04:27 [I] - load player_ghost_umbra
+2014/10/24 15:04:27 [I] - load player_ghost_umbra
+2014/10/24 15:04:27 [I] - load player_hard_level_record
+2014/10/24 15:04:27 [I] - load player_hard_level
+2014/10/24 15:04:27 [I] - load player_hard_level
+2014/10/24 15:04:27 [I] - load player_hard_level
+2014/10/24 15:04:27 [I] - load player_hard_level_state
+2014/10/24 15:04:27 [I] - load player_hard_level_record
+2014/10/24 15:04:27 [I] - load player_hard_level_record
+2014/10/24 15:04:27 [I] - load player_hard_level_record
+2014/10/24 15:04:27 [I] - load player_hard_level_state
+2014/10/24 15:04:27 [I] - load player_heart
+2014/10/24 15:04:27 [I] - load player_hard_level_state
+2014/10/24 15:04:27 [I] - load player_heart
+2014/10/24 15:04:27 [I] - load player_hard_level_state
+2014/10/24 15:04:27 [I] - load player_heart_draw
+2014/10/24 15:04:27 [I] - load player_heart
+2014/10/24 15:04:27 [I] - load player_heart
+2014/10/24 15:04:27 [I] - load player_heart_draw
+2014/10/24 15:04:27 [I] - load player_heart_draw
+2014/10/24 15:04:27 [I] - load player_heart_draw
+2014/10/24 15:04:27 [I] - load player_heart_draw_card_record
+2014/10/24 15:04:27 [I] - load player_heart_draw_card_record
+2014/10/24 15:04:27 [I] - load player_heart_draw_wheel_record
+2014/10/24 15:04:27 [I] - load player_heart_draw_wheel_record
+2014/10/24 15:04:27 [I] - load player_heart_draw_card_record
+2014/10/24 15:04:27 [I] - load player_heart_draw_card_record
+2014/10/24 15:04:27 [I] - load player_info
+2014/10/24 15:04:27 [I] - load player_heart_draw_wheel_record
+2014/10/24 15:04:27 [I] - load player_info
+2014/10/24 15:04:27 [I] - load player_heart_draw_wheel_record
+2014/10/24 15:04:27 [I] - load player_is_operated
+2014/10/24 15:04:27 [I] - load player_info
+2014/10/24 15:04:27 [I] - load player_info
+2014/10/24 15:04:27 [I] - load player_item
+2014/10/24 15:04:27 [I] - load player_is_operated
+2014/10/24 15:04:27 [I] - load player_is_operated
+2014/10/24 15:04:27 [I] - load player_is_operated
+2014/10/24 15:04:27 [I] - load player_item
+2014/10/24 15:04:27 [I] - load player_item
+2014/10/24 15:04:27 [I] - load player_item
+2014/10/24 15:04:27 [I] - load player_item_appendix
+2014/10/24 15:04:27 [I] - load player_item_buyback
+2014/10/24 15:04:27 [I] - load player_item_appendix
+2014/10/24 15:04:27 [I] - load player_item_appendix
+2014/10/24 15:04:27 [I] - load player_item_appendix
+2014/10/24 15:04:27 [I] - load player_item_recast_state
+2014/10/24 15:04:27 [I] - load player_item_buyback
+2014/10/24 15:04:27 [I] - load player_item_buyback
+2014/10/24 15:04:27 [I] - load player_item_buyback
+2014/10/24 15:04:27 [I] - load player_login_award_record
+2014/10/24 15:04:27 [I] - load player_item_recast_state
+2014/10/24 15:04:27 [I] - load player_item_recast_state
+2014/10/24 15:04:27 [I] - load player_item_recast_state
+2014/10/24 15:04:27 [I] - load player_mail
+2014/10/24 15:04:27 [I] - load player_login_award_record
+2014/10/24 15:04:27 [I] - load player_login_award_record
+2014/10/24 15:04:27 [I] - load player_login_award_record
+2014/10/24 15:04:27 [I] - load player_mail
+2014/10/24 15:04:27 [I] - load player_mail
+2014/10/24 15:04:27 [I] - load player_mail
+2014/10/24 15:04:27 [I] - load player_mail_attachment
+2014/10/24 15:04:27 [I] - load player_meditation_state
+2014/10/24 15:04:27 [I] - load player_mail_attachment
+2014/10/24 15:04:27 [I] - load player_mail_attachment
+2014/10/24 15:04:27 [I] - load player_mail_attachment
+2014/10/24 15:04:27 [I] - load player_meditation_state
+2014/10/24 15:04:27 [I] - load player_meditation_state
+2014/10/24 15:04:27 [I] - load player_meditation_state
+2014/10/24 15:04:27 [I] - load player_mission
+2014/10/24 15:04:27 [I] - load player_mission
+2014/10/24 15:04:27 [I] - load player_mission
+2014/10/24 15:04:27 [I] - load player_mission_level
+2014/10/24 15:04:27 [I] - load player_mission
+2014/10/24 15:04:27 [I] - load player_mission_level
+2014/10/24 15:04:27 [I] - load player_mission_level
+2014/10/24 15:04:27 [I] - load player_mission_level_record
+2014/10/24 15:04:27 [I] - load player_mission_level
+2014/10/24 15:04:27 [I] - load player_mission_level_record
+2014/10/24 15:04:27 [I] - load player_mission_level_record
+2014/10/24 15:04:27 [I] - load player_mission_level_record
+2014/10/24 15:04:27 [I] - load player_mission_level_state_bin
+2014/10/24 15:04:27 [I] - load player_mission_level_state_bin
+2014/10/24 15:04:27 [I] - load player_mission_level_state_bin
+2014/10/24 15:04:27 [I] - load player_mission_record
+2014/10/24 15:04:27 [I] - load player_mission_level_state_bin
+2014/10/24 15:04:27 [I] - load player_mission_record
+2014/10/24 15:04:27 [I] - load player_mission_record
+2014/10/24 15:04:27 [I] - load player_mission_record
+2014/10/24 15:04:27 [I] - load player_multi_level_info
+2014/10/24 15:04:27 [I] - load player_multi_level_info
+2014/10/24 15:04:27 [I] - load player_multi_level_info
+2014/10/24 15:04:27 [I] - load player_multi_level_info
+2014/10/24 15:04:27 [I] - load player_npc_talk_record
+2014/10/24 15:04:27 [I] - load player_npc_talk_record
+2014/10/24 15:04:27 [I] - load player_npc_talk_record
+2014/10/24 15:04:27 [I] - load player_npc_talk_record
+2014/10/24 15:04:27 [I] - load player_physical
+2014/10/24 15:04:27 [I] - load player_physical
+2014/10/24 15:04:27 [I] - load player_physical
+2014/10/24 15:04:27 [I] - load player_physical
+2014/10/24 15:04:27 [I] - load player_purchase_record
+2014/10/24 15:04:27 [I] - load player_purchase_record
+2014/10/24 15:04:27 [I] - load player_purchase_record
+2014/10/24 15:04:27 [I] - load player_push_notify_switch
+2014/10/24 15:04:27 [I] - load player_purchase_record
+2014/10/24 15:04:27 [I] - load player_push_notify_switch
+2014/10/24 15:04:27 [I] - load player_push_notify_switch
+2014/10/24 15:04:27 [I] - load player_quest
+2014/10/24 15:04:27 [I] - load player_push_notify_switch
+2014/10/24 15:04:27 [I] - load player_quest
+2014/10/24 15:04:27 [I] - load player_quest
+2014/10/24 15:04:27 [I] - load player_rainbow_level
+2014/10/24 15:04:27 [I] - load player_quest
+2014/10/24 15:04:27 [I] - load player_rainbow_level
+2014/10/24 15:04:27 [I] - load player_rainbow_level
+2014/10/24 15:04:27 [I] - load player_rainbow_level_state_bin
+2014/10/24 15:04:27 [I] - load player_rainbow_level
+2014/10/24 15:04:27 [I] - load player_rainbow_level_state_bin
+2014/10/24 15:04:27 [I] - load player_rainbow_level_state_bin
+2014/10/24 15:04:27 [I] - load player_role
+2014/10/24 15:04:27 [I] - load player_role
+2014/10/24 15:04:27 [I] - load player_rainbow_level_state_bin
+2014/10/24 15:04:27 [I] - load player_role
+2014/10/24 15:04:27 [I] - load player_role
+2014/10/24 15:04:27 [I] - load player_send_heart_record
+2014/10/24 15:04:27 [I] - load player_send_heart_record
+2014/10/24 15:04:27 [I] - load player_send_heart_record
+2014/10/24 15:04:27 [I] - load player_skill
+2014/10/24 15:04:27 [I] - load player_skill
+2014/10/24 15:04:27 [I] - load player_send_heart_record
+2014/10/24 15:04:27 [I] - load player_skill
+2014/10/24 15:04:27 [I] - load player_skill
+2014/10/24 15:04:27 [I] - load player_state
+2014/10/24 15:04:27 [I] - load player_state
+2014/10/24 15:04:27 [I] - load player_state
+2014/10/24 15:04:27 [I] - load player_sword_soul
+2014/10/24 15:04:27 [I] - load player_state
+2014/10/24 15:04:27 [I] - load player_sword_soul
+2014/10/24 15:04:27 [I] - load player_sword_soul
+2014/10/24 15:04:27 [I] - load player_sword_soul_equipment
+2014/10/24 15:04:27 [I] - load player_sword_soul_equipment
+2014/10/24 15:04:27 [I] - load player_sword_soul
+2014/10/24 15:04:27 [I] - load player_sword_soul_equipment
+2014/10/24 15:04:27 [I] - load player_sword_soul_state
+2014/10/24 15:04:27 [I] - load player_sword_soul_state
+2014/10/24 15:04:27 [I] - load player_sword_soul_equipment
+2014/10/24 15:04:27 [I] - load player_sword_soul_state
+2014/10/24 15:04:27 [I] - load player_tb_xxd_roleinfo
+2014/10/24 15:04:27 [I] - load player_tb_xxd_roleinfo
+2014/10/24 15:04:27 [I] - load player_sword_soul_state
+2014/10/24 15:04:27 [I] - load player_tb_xxd_roleinfo
+2014/10/24 15:04:27 [I] - load player_tower_level
+2014/10/24 15:04:27 [I] - load player_tower_level
+2014/10/24 15:04:27 [I] - load player_tower_level
+2014/10/24 15:04:27 [I] - load player_tb_xxd_roleinfo
+2014/10/24 15:04:27 [I] - load player_town
+2014/10/24 15:04:27 [I] - load player_town
+2014/10/24 15:04:27 [I] - load player_town
+2014/10/24 15:04:27 [I] - load player_tower_level
+2014/10/24 15:04:27 [I] - load player_trader_refresh_state
+2014/10/24 15:04:27 [I] - load player_trader_refresh_state
+2014/10/24 15:04:27 [I] - load player_town
+2014/10/24 15:04:27 [I] - load player_trader_refresh_state
+2014/10/24 15:04:27 [I] - load player_trader_store_state
+2014/10/24 15:04:27 [I] - load player_trader_store_state
+2014/10/24 15:04:27 [I] - load player_trader_store_state
+2014/10/24 15:04:27 [I] - load player_trader_refresh_state
+2014/10/24 15:04:27 [I] - load player_use_skill
+2014/10/24 15:04:27 [I] - load player_use_skill
+2014/10/24 15:04:27 [I] - load player_trader_store_state
+2014/10/24 15:04:27 [I] - load player_use_skill
+2014/10/24 15:04:27 [I] - load player_use_skill
+2014/10/24 15:04:27 [I] - load player_vip
+2014/10/24 15:04:27 [I] - load player_vip
+2014/10/24 15:04:27 [I] - load player_vip
+2014/10/24 15:04:27 [I] - load player_vip
+2014/10/24 15:04:28 [I] - load global_announcement
+2014/10/24 15:04:28 [I] - load global_arena_rank
+2014/10/24 15:04:28 [I] - load global_mail
+2014/10/24 15:04:28 [I] - load global_mail_attachments
+2014/10/24 15:04:28 [I] - load global_tb_xxd_onlinecnt
+2014/10/24 15:04:28 [I] - load player_global_arena_rank
+2014/10/24 15:04:28 [I] - load player_global_arena_rank
+2014/10/24 15:04:28 [I] - load player_global_friend
+2014/10/24 15:04:28 [I] - load player_global_arena_rank
+2014/10/24 15:04:28 [I] - load player_global_friend
+2014/10/24 15:04:28 [I] - load player_global_arena_rank
+2014/10/24 15:04:28 [I] - load player_global_friend_chat
+2014/10/24 15:04:28 [I] - load player_global_friend_chat
+2014/10/24 15:04:28 [I] - load player_global_friend
+2014/10/24 15:04:28 [I] - load player_global_friend_state
+2014/10/24 15:04:28 [I] - load player_global_friend_state
+2014/10/24 15:04:28 [I] - load player_global_friend_chat
+2014/10/24 15:04:28 [I] - load player_global_friend
+2014/10/24 15:04:28 [I] - load player_global_mail_state
+2014/10/24 15:04:28 [I] - load player_global_friend_state
+2014/10/24 15:04:28 [I] - load player_global_mail_state
+2014/10/24 15:04:28 [I] - load player_global_friend_chat
+2014/10/24 15:04:28 [I] - load player_global_mail_state
+2014/10/24 15:04:28 [I] - load player_global_friend_state
+2014/10/24 15:04:28 [I] - load player_global_mail_state
+2014/10/24 15:15:25 [E] - RPC-Serve panic
+Error    = {runtime error: invalid memory address or nil pointer dereference}
+ClientId = -1
+serviceAPI  = RemoteServe.IdipDelNotice
+Args     = &rpc.Args_IdipDelNotice{
+    RPCArgTag: rpc.RPCArgTag{
+        ClientId: -1,
+    },
+    NoticeId: 2,
+}
+
+Stack    =     at func.001() [/Users/tangweichen/xxd-server/server/src/game_server/rpc/rpc.go:76]
+    at panic() [/usr/local/go/src/pkg/runtime/panic.c:248]
+    at func.005() [/Users/tangweichen/xxd-server/server/src/game_server/mdb/transaction.go:65]
+    at panic() [/usr/local/go/src/pkg/runtime/panic.c:248]
+    at panicstring() [/usr/local/go/src/pkg/runtime/panic.c:552]
+    at sigpanic() [/usr/local/go/src/pkg/runtime/os_darwin.c:454]
+    at func.045() [/Users/tangweichen/xxd-server/server/src/game_server/module/rpc/idip_rpc_notice.go:108]
+    at func.002() [/Users/tangweichen/xxd-server/server/src/game_server/rpc/rpc.go:85]
+    at (*transController).Transaction() [/Users/tangweichen/xxd-server/server/src/game_server/mdb/transaction.go:69]
+    at (*Database).Transaction() [/Users/tangweichen/xxd-server/server/src/game_server/mdb/zd_tables.go:74]
+    at Transaction() [/Users/tangweichen/xxd-server/server/src/game_server/mdb/database.go:110]
+    at (*RPC).Serve() [/Users/tangweichen/xxd-server/server/src/game_server/rpc/rpc.go:86]
+    at (*RemoteServe).IdipDelNotice() [/Users/tangweichen/xxd-server/server/src/game_server/module/rpc/idip_rpc_notice.go:114]
+    at call64() [/usr/local/go/src/pkg/runtime/asm_amd64.s:362]
+    at Value.call() [/usr/local/go/src/pkg/reflect/value.go:563]
+    at Value.Call() [/usr/local/go/src/pkg/reflect/value.go:411]
+    at (*service).call() [/usr/local/go/src/pkg/net/rpc/server.go:382]
+    at goexit() [/usr/local/go/src/pkg/runtime/proc.c:1445]
+2014/10/24 15:15:28 [E] - RPC-Serve panic
+Error    = {runtime error: invalid memory address or nil pointer dereference}
+ClientId = -1
+serviceAPI  = RemoteServe.IdipDelNotice
+Args     = &rpc.Args_IdipDelNotice{
+    RPCArgTag: rpc.RPCArgTag{
+        ClientId: -1,
+    },
+    NoticeId: 2,
+}
+
+Stack    =     at func.001() [/Users/tangweichen/xxd-server/server/src/game_server/rpc/rpc.go:76]
+    at panic() [/usr/local/go/src/pkg/runtime/panic.c:248]
+    at func.005() [/Users/tangweichen/xxd-server/server/src/game_server/mdb/transaction.go:65]
+    at panic() [/usr/local/go/src/pkg/runtime/panic.c:248]
+    at panicstring() [/usr/local/go/src/pkg/runtime/panic.c:552]
+    at sigpanic() [/usr/local/go/src/pkg/runtime/os_darwin.c:454]
+    at func.045() [/Users/tangweichen/xxd-server/server/src/game_server/module/rpc/idip_rpc_notice.go:108]
+    at func.002() [/Users/tangweichen/xxd-server/server/src/game_server/rpc/rpc.go:85]
+    at (*transController).Transaction() [/Users/tangweichen/xxd-server/server/src/game_server/mdb/transaction.go:69]
+    at (*Database).Transaction() [/Users/tangweichen/xxd-server/server/src/game_server/mdb/zd_tables.go:74]
+    at Transaction() [/Users/tangweichen/xxd-server/server/src/game_server/mdb/database.go:110]
+    at (*RPC).Serve() [/Users/tangweichen/xxd-server/server/src/game_server/rpc/rpc.go:86]
+    at (*RemoteServe).IdipDelNotice() [/Users/tangweichen/xxd-server/server/src/game_server/module/rpc/idip_rpc_notice.go:114]
+    at call64() [/usr/local/go/src/pkg/runtime/asm_amd64.s:362]
+    at Value.call() [/usr/local/go/src/pkg/reflect/value.go:563]
+    at Value.Call() [/usr/local/go/src/pkg/reflect/value.go:411]
+    at (*service).call() [/usr/local/go/src/pkg/net/rpc/server.go:382]
+    at goexit() [/usr/local/go/src/pkg/runtime/proc.c:1445]
+mdb.load (1) cost time: 22.583365ms
+mdb.load (3) cost time: 23.00751ms
+mdb.load (0) cost time: 25.560797ms
+mdb.load success.
+mdb.load (2) cost time: 44.450431ms
+2014/10/24 15:19:31 [I] - load player
+2014/10/24 15:19:31 [I] - load player
+2014/10/24 15:19:31 [I] - load player_arena
+2014/10/24 15:19:31 [I] - load player_arena
+2014/10/24 15:19:31 [I] - load player_arena_record
+2014/10/24 15:19:31 [I] - load player_arena_record
+2014/10/24 15:19:31 [I] - load player_battle_pet
+2014/10/24 15:19:31 [I] - load player_battle_pet
+2014/10/24 15:19:31 [I] - load player_battle_pet_config
+2014/10/24 15:19:31 [I] - load player
+2014/10/24 15:19:31 [I] - load player_chest_state
+2014/10/24 15:19:31 [I] - load player_battle_pet_config
+2014/10/24 15:19:31 [I] - load player_coins
+2014/10/24 15:19:31 [I] - load player_chest_state
+2014/10/24 15:19:31 [I] - load player_arena
+2014/10/24 15:19:31 [I] - load player_daily_quest
+2014/10/24 15:19:31 [I] - load player_coins
+2014/10/24 15:19:31 [I] - load player_daily_sign_in_record
+2014/10/24 15:19:31 [I] - load player_daily_quest
+2014/10/24 15:19:31 [I] - load player_daily_sign_in_state
+2014/10/24 15:19:31 [I] - load player_arena_record
+2014/10/24 15:19:31 [I] - load player_daily_sign_in_record
+2014/10/24 15:19:31 [I] - load player_equipment
+2014/10/24 15:19:31 [I] - load player_daily_sign_in_state
+2014/10/24 15:19:31 [I] - load player_battle_pet
+2014/10/24 15:19:31 [I] - load player_battle_pet_config
+2014/10/24 15:19:31 [I] - load player_equipment
+2014/10/24 15:19:31 [I] - load player_event_award_record
+2014/10/24 15:19:31 [I] - load player_chest_state
+2014/10/24 15:19:31 [I] - load player_events_fight_power
+2014/10/24 15:19:31 [I] - load player_event_award_record
+2014/10/24 15:19:31 [I] - load player_events_fight_power
+2014/10/24 15:19:31 [I] - load player_extend_level
+2014/10/24 15:19:31 [I] - load player_extend_level
+2014/10/24 15:19:31 [I] - load player_coins
+2014/10/24 15:19:31 [I] - load player_fashion
+2014/10/24 15:19:31 [I] - load player_fashion
+2014/10/24 15:19:31 [I] - load player_fashion_state
+2014/10/24 15:19:31 [I] - load player_daily_quest
+2014/10/24 15:19:31 [I] - load player_fashion_state
+2014/10/24 15:19:31 [I] - load player_fight_num
+2014/10/24 15:19:31 [I] - load player_fight_num
+2014/10/24 15:19:31 [I] - load player_daily_sign_in_record
+2014/10/24 15:19:31 [I] - load player_formation
+2014/10/24 15:19:31 [I] - load player_formation
+2014/10/24 15:19:31 [I] - load player_daily_sign_in_state
+2014/10/24 15:19:31 [I] - load player_func_key
+2014/10/24 15:19:31 [I] - load player_func_key
+2014/10/24 15:19:31 [I] - load player_ghost
+2014/10/24 15:19:31 [I] - load player_equipment
+2014/10/24 15:19:31 [I] - load player_ghost
+2014/10/24 15:19:31 [I] - load player
+2014/10/24 15:19:31 [I] - load player_ghost_equipment
+2014/10/24 15:19:31 [I] - load player_ghost_equipment
+2014/10/24 15:19:31 [I] - load player_ghost_state
+2014/10/24 15:19:31 [I] - load player_ghost_state
+2014/10/24 15:19:31 [I] - load player_ghost_umbra
+2014/10/24 15:19:31 [I] - load player_ghost_umbra
+2014/10/24 15:19:31 [I] - load player_arena
+2014/10/24 15:19:31 [I] - load player_hard_level
+2014/10/24 15:19:31 [I] - load player_hard_level
+2014/10/24 15:19:31 [I] - load player_hard_level_record
+2014/10/24 15:19:31 [I] - load player_event_award_record
+2014/10/24 15:19:31 [I] - load player_hard_level_record
+2014/10/24 15:19:31 [I] - load player_hard_level_state
+2014/10/24 15:19:31 [I] - load player_hard_level_state
+2014/10/24 15:19:31 [I] - load player_events_fight_power
+2014/10/24 15:19:31 [I] - load player_heart
+2014/10/24 15:19:31 [I] - load player_heart
+2014/10/24 15:19:31 [I] - load player_extend_level
+2014/10/24 15:19:31 [I] - load player_arena_record
+2014/10/24 15:19:31 [I] - load player_heart_draw
+2014/10/24 15:19:31 [I] - load player_heart_draw
+2014/10/24 15:19:31 [I] - load player_battle_pet
+2014/10/24 15:19:31 [I] - load player_heart_draw_card_record
+2014/10/24 15:19:31 [I] - load player_heart_draw_card_record
+2014/10/24 15:19:31 [I] - load player_fashion
+2014/10/24 15:19:31 [I] - load player_heart_draw_wheel_record
+2014/10/24 15:19:31 [I] - load player_heart_draw_wheel_record
+2014/10/24 15:19:31 [I] - load player_info
+2014/10/24 15:19:31 [I] - load player_info
+2014/10/24 15:19:31 [I] - load player_fashion_state
+2014/10/24 15:19:31 [I] - load player_fight_num
+2014/10/24 15:19:31 [I] - load player_is_operated
+2014/10/24 15:19:31 [I] - load player_is_operated
+2014/10/24 15:19:31 [I] - load player_item
+2014/10/24 15:19:31 [I] - load player_formation
+2014/10/24 15:19:31 [I] - load player_item
+2014/10/24 15:19:31 [I] - load player_battle_pet_config
+2014/10/24 15:19:31 [I] - load player_item_appendix
+2014/10/24 15:19:31 [I] - load player_func_key
+2014/10/24 15:19:31 [I] - load player_chest_state
+2014/10/24 15:19:31 [I] - load player_item_appendix
+2014/10/24 15:19:31 [I] - load player_ghost
+2014/10/24 15:19:31 [I] - load player_item_buyback
+2014/10/24 15:19:31 [I] - load player_coins
+2014/10/24 15:19:31 [I] - load player_item_buyback
+2014/10/24 15:19:31 [I] - load player_ghost_equipment
+2014/10/24 15:19:31 [I] - load player_daily_quest
+2014/10/24 15:19:31 [I] - load player_item_recast_state
+2014/10/24 15:19:31 [I] - load player_item_recast_state
+2014/10/24 15:19:31 [I] - load player_ghost_state
+2014/10/24 15:19:31 [I] - load player_login_award_record
+2014/10/24 15:19:31 [I] - load player_daily_sign_in_record
+2014/10/24 15:19:31 [I] - load player_login_award_record
+2014/10/24 15:19:31 [I] - load player_daily_sign_in_state
+2014/10/24 15:19:31 [I] - load player_mail
+2014/10/24 15:19:31 [I] - load player_ghost_umbra
+2014/10/24 15:19:31 [I] - load player_mail
+2014/10/24 15:19:31 [I] - load player_equipment
+2014/10/24 15:19:31 [I] - load player_hard_level
+2014/10/24 15:19:31 [I] - load player_mail_attachment
+2014/10/24 15:19:31 [I] - load player_hard_level_record
+2014/10/24 15:19:31 [I] - load player_mail_attachment
+2014/10/24 15:19:31 [I] - load player_event_award_record
+2014/10/24 15:19:31 [I] - load player_meditation_state
+2014/10/24 15:19:31 [I] - load player_hard_level_state
+2014/10/24 15:19:31 [I] - load player_meditation_state
+2014/10/24 15:19:31 [I] - load player_mission
+2014/10/24 15:19:31 [I] - load player_heart
+2014/10/24 15:19:31 [I] - load player_events_fight_power
+2014/10/24 15:19:31 [I] - load player_mission
+2014/10/24 15:19:31 [I] - load player_mission_level
+2014/10/24 15:19:31 [I] - load player_extend_level
+2014/10/24 15:19:31 [I] - load player_heart_draw
+2014/10/24 15:19:31 [I] - load player_mission_level
+2014/10/24 15:19:31 [I] - load player_mission_level_record
+2014/10/24 15:19:31 [I] - load player_mission_level_record
+2014/10/24 15:19:31 [I] - load player_fashion
+2014/10/24 15:19:31 [I] - load player_heart_draw_card_record
+2014/10/24 15:19:31 [I] - load player_fashion_state
+2014/10/24 15:19:31 [I] - load player_heart_draw_wheel_record
+2014/10/24 15:19:31 [I] - load player_mission_level_state_bin
+2014/10/24 15:19:31 [I] - load player_mission_level_state_bin
+2014/10/24 15:19:31 [I] - load player_info
+2014/10/24 15:19:31 [I] - load player_mission_record
+2014/10/24 15:19:31 [I] - load player_mission_record
+2014/10/24 15:19:31 [I] - load player_fight_num
+2014/10/24 15:19:31 [I] - load player_is_operated
+2014/10/24 15:19:31 [I] - load player_formation
+2014/10/24 15:19:31 [I] - load player_multi_level_info
+2014/10/24 15:19:31 [I] - load player_item
+2014/10/24 15:19:31 [I] - load player_multi_level_info
+2014/10/24 15:19:31 [I] - load player_func_key
+2014/10/24 15:19:31 [I] - load player_npc_talk_record
+2014/10/24 15:19:31 [I] - load player_npc_talk_record
+2014/10/24 15:19:31 [I] - load player_ghost
+2014/10/24 15:19:31 [I] - load player_physical
+2014/10/24 15:19:31 [I] - load player_physical
+2014/10/24 15:19:31 [I] - load player_item_appendix
+2014/10/24 15:19:31 [I] - load player_ghost_equipment
+2014/10/24 15:19:31 [I] - load player_item_buyback
+2014/10/24 15:19:31 [I] - load player_purchase_record
+2014/10/24 15:19:31 [I] - load player_purchase_record
+2014/10/24 15:19:31 [I] - load player_ghost_state
+2014/10/24 15:19:31 [I] - load player_push_notify_switch
+2014/10/24 15:19:31 [I] - load player_push_notify_switch
+2014/10/24 15:19:31 [I] - load player_item_recast_state
+2014/10/24 15:19:31 [I] - load player_ghost_umbra
+2014/10/24 15:19:31 [I] - load player_login_award_record
+2014/10/24 15:19:31 [I] - load player_quest
+2014/10/24 15:19:31 [I] - load player_quest
+2014/10/24 15:19:31 [I] - load player_rainbow_level
+2014/10/24 15:19:31 [I] - load player_rainbow_level
+2014/10/24 15:19:31 [I] - load player_mail
+2014/10/24 15:19:31 [I] - load player_rainbow_level_state_bin
+2014/10/24 15:19:31 [I] - load player_rainbow_level_state_bin
+2014/10/24 15:19:31 [I] - load player_role
+2014/10/24 15:19:31 [I] - load player_role
+2014/10/24 15:19:31 [I] - load player_hard_level
+2014/10/24 15:19:31 [I] - load player_mail_attachment
+2014/10/24 15:19:31 [I] - load player_hard_level_record
+2014/10/24 15:19:31 [I] - load player_meditation_state
+2014/10/24 15:19:31 [I] - load player_send_heart_record
+2014/10/24 15:19:31 [I] - load player_send_heart_record
+2014/10/24 15:19:31 [I] - load player_skill
+2014/10/24 15:19:31 [I] - load player_mission
+2014/10/24 15:19:31 [I] - load player_skill
+2014/10/24 15:19:31 [I] - load player_hard_level_state
+2014/10/24 15:19:31 [I] - load player_mission_level
+2014/10/24 15:19:31 [I] - load player_state
+2014/10/24 15:19:31 [I] - load player_mission_level_record
+2014/10/24 15:19:31 [I] - load player_state
+2014/10/24 15:19:31 [I] - load player_sword_soul
+2014/10/24 15:19:31 [I] - load player_sword_soul
+2014/10/24 15:19:31 [I] - load player_heart
+2014/10/24 15:19:31 [I] - load player_sword_soul_equipment
+2014/10/24 15:19:31 [I] - load player_sword_soul_equipment
+2014/10/24 15:19:31 [I] - load player_mission_level_state_bin
+2014/10/24 15:19:31 [I] - load player_sword_soul_state
+2014/10/24 15:19:31 [I] - load player_sword_soul_state
+2014/10/24 15:19:31 [I] - load player_mission_record
+2014/10/24 15:19:31 [I] - load player_tb_xxd_roleinfo
+2014/10/24 15:19:31 [I] - load player_tb_xxd_roleinfo
+2014/10/24 15:19:31 [I] - load player_tower_level
+2014/10/24 15:19:31 [I] - load player_tower_level
+2014/10/24 15:19:31 [I] - load player_town
+2014/10/24 15:19:31 [I] - load player_multi_level_info
+2014/10/24 15:19:31 [I] - load player_trader_refresh_state
+2014/10/24 15:19:31 [I] - load player_npc_talk_record
+2014/10/24 15:19:31 [I] - load player_town
+2014/10/24 15:19:31 [I] - load player_physical
+2014/10/24 15:19:31 [I] - load player_trader_store_state
+2014/10/24 15:19:31 [I] - load player_trader_refresh_state
+2014/10/24 15:19:31 [I] - load player_use_skill
+2014/10/24 15:19:31 [I] - load player_purchase_record
+2014/10/24 15:19:31 [I] - load player_trader_store_state
+2014/10/24 15:19:31 [I] - load player_push_notify_switch
+2014/10/24 15:19:31 [I] - load player_vip
+2014/10/24 15:19:31 [I] - load player_quest
+2014/10/24 15:19:31 [I] - load player_use_skill
+2014/10/24 15:19:31 [I] - load player_rainbow_level
+2014/10/24 15:19:31 [I] - load player_heart_draw
+2014/10/24 15:19:31 [I] - load player_rainbow_level_state_bin
+2014/10/24 15:19:31 [I] - load player_vip
+2014/10/24 15:19:31 [I] - load player_role
+2014/10/24 15:19:31 [I] - load player_heart_draw_card_record
+2014/10/24 15:19:31 [I] - load player_heart_draw_wheel_record
+2014/10/24 15:19:31 [I] - load player_send_heart_record
+2014/10/24 15:19:31 [I] - load player_info
+2014/10/24 15:19:31 [I] - load player_skill
+2014/10/24 15:19:31 [I] - load player_is_operated
+2014/10/24 15:19:31 [I] - load player_state
+2014/10/24 15:19:31 [I] - load player_item
+2014/10/24 15:19:31 [I] - load player_sword_soul
+2014/10/24 15:19:31 [I] - load player_sword_soul_equipment
+2014/10/24 15:19:31 [I] - load player_item_appendix
+2014/10/24 15:19:31 [I] - load player_sword_soul_state
+2014/10/24 15:19:31 [I] - load player_item_buyback
+2014/10/24 15:19:31 [I] - load player_tb_xxd_roleinfo
+2014/10/24 15:19:31 [I] - load player_item_recast_state
+2014/10/24 15:19:31 [I] - load player_tower_level
+2014/10/24 15:19:31 [I] - load player_login_award_record
+2014/10/24 15:19:31 [I] - load player_town
+2014/10/24 15:19:31 [I] - load player_trader_refresh_state
+2014/10/24 15:19:31 [I] - load player_mail
+2014/10/24 15:19:31 [I] - load player_trader_store_state
+2014/10/24 15:19:31 [I] - load player_use_skill
+2014/10/24 15:19:31 [I] - load player_mail_attachment
+2014/10/24 15:19:31 [I] - load player_meditation_state
+2014/10/24 15:19:31 [I] - load player_vip
+2014/10/24 15:19:31 [I] - load player_mission
+2014/10/24 15:19:31 [I] - load player_mission_level
+2014/10/24 15:19:31 [I] - load player_mission_level_record
+2014/10/24 15:19:31 [I] - load player_mission_level_state_bin
+2014/10/24 15:19:31 [I] - load player_mission_record
+2014/10/24 15:19:31 [I] - load player_multi_level_info
+2014/10/24 15:19:31 [I] - load player_npc_talk_record
+2014/10/24 15:19:31 [I] - load player_physical
+2014/10/24 15:19:31 [I] - load player_purchase_record
+2014/10/24 15:19:31 [I] - load player_push_notify_switch
+2014/10/24 15:19:31 [I] - load player_quest
+2014/10/24 15:19:31 [I] - load player_rainbow_level
+2014/10/24 15:19:31 [I] - load player_rainbow_level_state_bin
+2014/10/24 15:19:31 [I] - load player_role
+2014/10/24 15:19:31 [I] - load player_send_heart_record
+2014/10/24 15:19:31 [I] - load player_skill
+2014/10/24 15:19:31 [I] - load player_state
+2014/10/24 15:19:31 [I] - load player_sword_soul
+2014/10/24 15:19:31 [I] - load player_sword_soul_equipment
+2014/10/24 15:19:31 [I] - load player_sword_soul_state
+2014/10/24 15:19:31 [I] - load player_tb_xxd_roleinfo
+2014/10/24 15:19:31 [I] - load player_tower_level
+2014/10/24 15:19:31 [I] - load player_town
+2014/10/24 15:19:31 [I] - load player_trader_refresh_state
+2014/10/24 15:19:31 [I] - load player_trader_store_state
+2014/10/24 15:19:31 [I] - load player_use_skill
+2014/10/24 15:19:31 [I] - load player_vip
+mdb.load (1) cost time: 1.767851ms
+mdb.load (3) cost time: 1.728348ms
+mdb.load (2) cost time: 2.10203ms
+mdb.load (0) cost time: 2.413429ms
+mdb.load success.
+2014/10/24 15:19:35 [I] - load global_announcement
+2014/10/24 15:19:35 [I] - load global_arena_rank
+2014/10/24 15:19:35 [I] - load global_mail
+2014/10/24 15:19:35 [I] - load global_mail_attachments
+2014/10/24 15:19:35 [I] - load global_tb_xxd_onlinecnt
+2014/10/24 15:19:35 [I] - load player_global_arena_rank
+2014/10/24 15:19:35 [I] - load player_global_arena_rank
+2014/10/24 15:19:35 [I] - load player_global_arena_rank
+2014/10/24 15:19:35 [I] - load player_global_friend
+2014/10/24 15:19:35 [I] - load player_global_arena_rank
+2014/10/24 15:19:35 [I] - load player_global_friend_chat
+2014/10/24 15:19:35 [I] - load player_global_friend
+2014/10/24 15:19:35 [I] - load player_global_friend
+2014/10/24 15:19:35 [I] - load player_global_friend_chat
+2014/10/24 15:19:35 [I] - load player_global_friend_state
+2014/10/24 15:19:35 [I] - load player_global_friend_chat
+2014/10/24 15:19:35 [I] - load player_global_friend_state
+2014/10/24 15:19:35 [I] - load player_global_mail_state
+2014/10/24 15:19:35 [I] - load player_global_friend_state
+2014/10/24 15:19:35 [I] - load player_global_mail_state
+2014/10/24 15:19:35 [I] - load player_global_mail_state
+2014/10/24 15:19:35 [I] - load player_global_friend
+2014/10/24 15:19:35 [I] - load player_global_friend_chat
+2014/10/24 15:19:35 [I] - load player_global_friend_state
+2014/10/24 15:19:35 [I] - load player_global_mail_state
+2014/10/24 15:20:59 [E] - RPC-Serve panic
+Error    = {runtime error: invalid memory address or nil pointer dereference}
+ClientId = -1
+serviceAPI  = RemoteServe.IdipDelNotice
+Args     = &rpc.Args_IdipDelNotice{
+    RPCArgTag: rpc.RPCArgTag{
+        ClientId: -1,
+    },
+    NoticeId: 3,
+}
+
+Stack    =     at func.001() [/Users/tangweichen/xxd-server/server/src/game_server/rpc/rpc.go:76]
+    at panic() [/usr/local/go/src/pkg/runtime/panic.c:248]
+    at func.005() [/Users/tangweichen/xxd-server/server/src/game_server/mdb/transaction.go:65]
+    at panic() [/usr/local/go/src/pkg/runtime/panic.c:248]
+    at panicstring() [/usr/local/go/src/pkg/runtime/panic.c:552]
+    at sigpanic() [/usr/local/go/src/pkg/runtime/os_darwin.c:454]
+    at func.045() [/Users/tangweichen/xxd-server/server/src/game_server/module/rpc/idip_rpc_notice.go:108]
+    at func.002() [/Users/tangweichen/xxd-server/server/src/game_server/rpc/rpc.go:85]
+    at (*transController).Transaction() [/Users/tangweichen/xxd-server/server/src/game_server/mdb/transaction.go:69]
+    at (*Database).Transaction() [/Users/tangweichen/xxd-server/server/src/game_server/mdb/zd_tables.go:74]
+    at Transaction() [/Users/tangweichen/xxd-server/server/src/game_server/mdb/database.go:110]
+    at (*RPC).Serve() [/Users/tangweichen/xxd-server/server/src/game_server/rpc/rpc.go:86]
+    at (*RemoteServe).IdipDelNotice() [/Users/tangweichen/xxd-server/server/src/game_server/module/rpc/idip_rpc_notice.go:114]
+    at call64() [/usr/local/go/src/pkg/runtime/asm_amd64.s:362]
+    at Value.call() [/usr/local/go/src/pkg/reflect/value.go:563]
+    at Value.Call() [/usr/local/go/src/pkg/reflect/value.go:411]
+    at (*service).call() [/usr/local/go/src/pkg/net/rpc/server.go:382]
+    at goexit() [/usr/local/go/src/pkg/runtime/proc.c:1445]
+2014/10/24 15:21:18 [E] - RPC-Serve panic
+Error    = {runtime error: invalid memory address or nil pointer dereference}
+ClientId = -1
+serviceAPI  = RemoteServe.IdipDelNotice
+Args     = &rpc.Args_IdipDelNotice{
+    RPCArgTag: rpc.RPCArgTag{
+        ClientId: -1,
+    },
+    NoticeId: 3,
+}
+
+Stack    =     at func.001() [/Users/tangweichen/xxd-server/server/src/game_server/rpc/rpc.go:76]
+    at panic() [/usr/local/go/src/pkg/runtime/panic.c:248]
+    at func.005() [/Users/tangweichen/xxd-server/server/src/game_server/mdb/transaction.go:65]
+    at panic() [/usr/local/go/src/pkg/runtime/panic.c:248]
+    at panicstring() [/usr/local/go/src/pkg/runtime/panic.c:552]
+    at sigpanic() [/usr/local/go/src/pkg/runtime/os_darwin.c:454]
+    at func.045() [/Users/tangweichen/xxd-server/server/src/game_server/module/rpc/idip_rpc_notice.go:108]
+    at func.002() [/Users/tangweichen/xxd-server/server/src/game_server/rpc/rpc.go:85]
+    at (*transController).Transaction() [/Users/tangweichen/xxd-server/server/src/game_server/mdb/transaction.go:69]
+    at (*Database).Transaction() [/Users/tangweichen/xxd-server/server/src/game_server/mdb/zd_tables.go:74]
+    at Transaction() [/Users/tangweichen/xxd-server/server/src/game_server/mdb/database.go:110]
+    at (*RPC).Serve() [/Users/tangweichen/xxd-server/server/src/game_server/rpc/rpc.go:86]
+    at (*RemoteServe).IdipDelNotice() [/Users/tangweichen/xxd-server/server/src/game_server/module/rpc/idip_rpc_notice.go:114]
+    at call64() [/usr/local/go/src/pkg/runtime/asm_amd64.s:362]
+    at Value.call() [/usr/local/go/src/pkg/reflect/value.go:563]
+    at Value.Call() [/usr/local/go/src/pkg/reflect/value.go:411]
+    at (*service).call() [/usr/local/go/src/pkg/net/rpc/server.go:382]
+    at goexit() [/usr/local/go/src/pkg/runtime/proc.c:1445]
+mdb.load (2) cost time: 18.331719ms
+mdb.load (0) cost time: 17.824527ms
+mdb.load (1) cost time: 19.501431ms
+mdb.load (3) cost time: 39.564331ms
+mdb.load success.
+mdb.load (2) cost time: 3.436536ms
+mdb.load (0) cost time: 3.535215ms
+mdb.load (1) cost time: 3.643705ms
+mdb.load (3) cost time: 3.703796ms
+mdb.load success.
+2014/10/24 15:27:59 [I] - load player
+2014/10/24 15:27:59 [I] - load player
+2014/10/24 15:27:59 [I] - load player
+2014/10/24 15:27:59 [I] - load player_arena
+2014/10/24 15:27:59 [I] - load player_arena
+2014/10/24 15:27:59 [I] - load player_arena_record
+2014/10/24 15:27:59 [I] - load player_arena_record
+2014/10/24 15:27:59 [I] - load player_arena
+2014/10/24 15:27:59 [I] - load player_battle_pet
+2014/10/24 15:27:59 [I] - load player_arena_record
+2014/10/24 15:27:59 [I] - load player_battle_pet
+2014/10/24 15:27:59 [I] - load player_battle_pet_config
+2014/10/24 15:27:59 [I] - load player_battle_pet
+2014/10/24 15:27:59 [I] - load player_battle_pet_config
+2014/10/24 15:27:59 [I] - load player_battle_pet_config
+2014/10/24 15:27:59 [I] - load player_chest_state
+2014/10/24 15:27:59 [I] - load player_chest_state
+2014/10/24 15:27:59 [I] - load player_chest_state
+2014/10/24 15:27:59 [I] - load player
+2014/10/24 15:27:59 [I] - load player_coins
+2014/10/24 15:27:59 [I] - load player_coins
+2014/10/24 15:27:59 [I] - load player_daily_quest
+2014/10/24 15:27:59 [I] - load player_coins
+2014/10/24 15:27:59 [I] - load player_daily_quest
+2014/10/24 15:27:59 [I] - load player_daily_sign_in_record
+2014/10/24 15:27:59 [I] - load player_daily_sign_in_record
+2014/10/24 15:27:59 [I] - load player_daily_quest
+2014/10/24 15:27:59 [I] - load player_arena
+2014/10/24 15:27:59 [I] - load player_daily_sign_in_state
+2014/10/24 15:27:59 [I] - load player_daily_sign_in_state
+2014/10/24 15:27:59 [I] - load player_daily_sign_in_record
+2014/10/24 15:27:59 [I] - load player_equipment
+2014/10/24 15:27:59 [I] - load player_daily_sign_in_state
+2014/10/24 15:27:59 [I] - load player_arena_record
+2014/10/24 15:27:59 [I] - load player_equipment
+2014/10/24 15:27:59 [I] - load player_equipment
+2014/10/24 15:27:59 [I] - load player_battle_pet
+2014/10/24 15:27:59 [I] - load player_event_award_record
+2014/10/24 15:27:59 [I] - load player_event_award_record
+2014/10/24 15:27:59 [I] - load player_battle_pet_config
+2014/10/24 15:27:59 [I] - load player_events_fight_power
+2014/10/24 15:27:59 [I] - load player_event_award_record
+2014/10/24 15:27:59 [I] - load player_events_fight_power
+2014/10/24 15:27:59 [I] - load player_events_fight_power
+2014/10/24 15:27:59 [I] - load player_extend_level
+2014/10/24 15:27:59 [I] - load player_extend_level
+2014/10/24 15:27:59 [I] - load player_extend_level
+2014/10/24 15:27:59 [I] - load player_fashion
+2014/10/24 15:27:59 [I] - load player_fashion
+2014/10/24 15:27:59 [I] - load player_fashion
+2014/10/24 15:27:59 [I] - load player_fashion_state
+2014/10/24 15:27:59 [I] - load player_fashion_state
+2014/10/24 15:27:59 [I] - load player_fashion_state
+2014/10/24 15:27:59 [I] - load player_fight_num
+2014/10/24 15:27:59 [I] - load player_fight_num
+2014/10/24 15:27:59 [I] - load player_fight_num
+2014/10/24 15:27:59 [I] - load player_formation
+2014/10/24 15:27:59 [I] - load player_formation
+2014/10/24 15:27:59 [I] - load player_chest_state
+2014/10/24 15:27:59 [I] - load player_formation
+2014/10/24 15:27:59 [I] - load player_func_key
+2014/10/24 15:27:59 [I] - load player_func_key
+2014/10/24 15:27:59 [I] - load player_func_key
+2014/10/24 15:27:59 [I] - load player_coins
+2014/10/24 15:27:59 [I] - load player_ghost
+2014/10/24 15:27:59 [I] - load player_ghost
+2014/10/24 15:27:59 [I] - load player_ghost
+2014/10/24 15:27:59 [I] - load player_ghost_equipment
+2014/10/24 15:27:59 [I] - load player_ghost_equipment
+2014/10/24 15:27:59 [I] - load player_ghost_equipment
+2014/10/24 15:27:59 [I] - load player_ghost_state
+2014/10/24 15:27:59 [I] - load player_ghost_state
+2014/10/24 15:27:59 [I] - load player_ghost_state
+2014/10/24 15:27:59 [I] - load player_ghost_umbra
+2014/10/24 15:27:59 [I] - load player_ghost_umbra
+2014/10/24 15:27:59 [I] - load player_ghost_umbra
+2014/10/24 15:27:59 [I] - load player_hard_level
+2014/10/24 15:27:59 [I] - load player_hard_level
+2014/10/24 15:27:59 [I] - load player_hard_level
+2014/10/24 15:27:59 [I] - load player_hard_level_record
+2014/10/24 15:27:59 [I] - load player_daily_quest
+2014/10/24 15:27:59 [I] - load player_hard_level_record
+2014/10/24 15:27:59 [I] - load player_hard_level_record
+2014/10/24 15:27:59 [I] - load player_hard_level_state
+2014/10/24 15:27:59 [I] - load player_hard_level_state
+2014/10/24 15:27:59 [I] - load player_daily_sign_in_record
+2014/10/24 15:27:59 [I] - load player_heart
+2014/10/24 15:27:59 [I] - load player_heart
+2014/10/24 15:27:59 [I] - load player_hard_level_state
+2014/10/24 15:27:59 [I] - load player_heart_draw
+2014/10/24 15:27:59 [I] - load player_heart_draw
+2014/10/24 15:27:59 [I] - load player_heart
+2014/10/24 15:27:59 [I] - load player_heart_draw
+2014/10/24 15:27:59 [I] - load player_heart_draw_card_record
+2014/10/24 15:27:59 [I] - load player_heart_draw_card_record
+2014/10/24 15:27:59 [I] - load player_heart_draw_wheel_record
+2014/10/24 15:27:59 [I] - load player_heart_draw_wheel_record
+2014/10/24 15:27:59 [I] - load player_info
+2014/10/24 15:27:59 [I] - load player_heart_draw_card_record
+2014/10/24 15:27:59 [I] - load player_info
+2014/10/24 15:27:59 [I] - load player_is_operated
+2014/10/24 15:27:59 [I] - load player_heart_draw_wheel_record
+2014/10/24 15:27:59 [I] - load player_is_operated
+2014/10/24 15:27:59 [I] - load player_daily_sign_in_state
+2014/10/24 15:27:59 [I] - load player_item
+2014/10/24 15:27:59 [I] - load player_info
+2014/10/24 15:27:59 [I] - load player_item
+2014/10/24 15:27:59 [I] - load player_is_operated
+2014/10/24 15:27:59 [I] - load player_item_appendix
+2014/10/24 15:27:59 [I] - load player_item_appendix
+2014/10/24 15:27:59 [I] - load player_item
+2014/10/24 15:27:59 [I] - load player_item_buyback
+2014/10/24 15:27:59 [I] - load player_item_buyback
+2014/10/24 15:27:59 [I] - load player_item_recast_state
+2014/10/24 15:27:59 [I] - load player_item_recast_state
+2014/10/24 15:27:59 [I] - load player_equipment
+2014/10/24 15:27:59 [I] - load player_item_appendix
+2014/10/24 15:27:59 [I] - load player_login_award_record
+2014/10/24 15:27:59 [I] - load player_login_award_record
+2014/10/24 15:27:59 [I] - load player_item_buyback
+2014/10/24 15:27:59 [I] - load player_mail
+2014/10/24 15:27:59 [I] - load player_mail
+2014/10/24 15:27:59 [I] - load player_item_recast_state
+2014/10/24 15:27:59 [I] - load player_login_award_record
+2014/10/24 15:27:59 [I] - load player_mail_attachment
+2014/10/24 15:27:59 [I] - load player_mail_attachment
+2014/10/24 15:27:59 [I] - load player_event_award_record
+2014/10/24 15:27:59 [I] - load player_meditation_state
+2014/10/24 15:27:59 [I] - load player_mail
+2014/10/24 15:27:59 [I] - load player_meditation_state
+2014/10/24 15:27:59 [I] - load player_mission
+2014/10/24 15:27:59 [I] - load player_mission
+2014/10/24 15:27:59 [I] - load player_mission_level
+2014/10/24 15:27:59 [I] - load player_mission_level
+2014/10/24 15:27:59 [I] - load player_events_fight_power
+2014/10/24 15:27:59 [I] - load player_mission_level_record
+2014/10/24 15:27:59 [I] - load player_mail_attachment
+2014/10/24 15:27:59 [I] - load player_mission_level_record
+2014/10/24 15:27:59 [I] - load player_meditation_state
+2014/10/24 15:27:59 [I] - load player_mission_level_state_bin
+2014/10/24 15:27:59 [I] - load player_mission
+2014/10/24 15:27:59 [I] - load player_mission_level_state_bin
+2014/10/24 15:27:59 [I] - load player_mission_record
+2014/10/24 15:27:59 [I] - load player_mission_record
+2014/10/24 15:27:59 [I] - load player_extend_level
+2014/10/24 15:27:59 [I] - load player_mission_level
+2014/10/24 15:27:59 [I] - load player_mission_level_record
+2014/10/24 15:27:59 [I] - load player_multi_level_info
+2014/10/24 15:27:59 [I] - load player_multi_level_info
+2014/10/24 15:27:59 [I] - load player_npc_talk_record
+2014/10/24 15:27:59 [I] - load player_fashion
+2014/10/24 15:27:59 [I] - load player_mission_level_state_bin
+2014/10/24 15:27:59 [I] - load player_npc_talk_record
+2014/10/24 15:27:59 [I] - load player_physical
+2014/10/24 15:27:59 [I] - load player_mission_record
+2014/10/24 15:27:59 [I] - load player_physical
+2014/10/24 15:27:59 [I] - load player_purchase_record
+2014/10/24 15:27:59 [I] - load player_purchase_record
+2014/10/24 15:27:59 [I] - load player_push_notify_switch
+2014/10/24 15:27:59 [I] - load player_push_notify_switch
+2014/10/24 15:27:59 [I] - load player_multi_level_info
+2014/10/24 15:27:59 [I] - load player_quest
+2014/10/24 15:27:59 [I] - load player_quest
+2014/10/24 15:27:59 [I] - load player_npc_talk_record
+2014/10/24 15:27:59 [I] - load player_rainbow_level
+2014/10/24 15:27:59 [I] - load player_rainbow_level
+2014/10/24 15:27:59 [I] - load player_physical
+2014/10/24 15:27:59 [I] - load player_rainbow_level_state_bin
+2014/10/24 15:27:59 [I] - load player_rainbow_level_state_bin
+2014/10/24 15:27:59 [I] - load player_role
+2014/10/24 15:27:59 [I] - load player_purchase_record
+2014/10/24 15:27:59 [I] - load player_role
+2014/10/24 15:27:59 [I] - load player_push_notify_switch
+2014/10/24 15:27:59 [I] - load player_quest
+2014/10/24 15:27:59 [I] - load player_fashion_state
+2014/10/24 15:27:59 [I] - load player_send_heart_record
+2014/10/24 15:27:59 [I] - load player_send_heart_record
+2014/10/24 15:27:59 [I] - load player_rainbow_level
+2014/10/24 15:27:59 [I] - load player_fight_num
+2014/10/24 15:27:59 [I] - load player_skill
+2014/10/24 15:27:59 [I] - load player_skill
+2014/10/24 15:27:59 [I] - load player_formation
+2014/10/24 15:27:59 [I] - load player_rainbow_level_state_bin
+2014/10/24 15:27:59 [I] - load player_state
+2014/10/24 15:27:59 [I] - load player_role
+2014/10/24 15:27:59 [I] - load player_state
+2014/10/24 15:27:59 [I] - load player_sword_soul
+2014/10/24 15:27:59 [I] - load player_sword_soul
+2014/10/24 15:27:59 [I] - load player_func_key
+2014/10/24 15:27:59 [I] - load player_sword_soul_equipment
+2014/10/24 15:27:59 [I] - load player_send_heart_record
+2014/10/24 15:27:59 [I] - load player_sword_soul_equipment
+2014/10/24 15:27:59 [I] - load player_skill
+2014/10/24 15:27:59 [I] - load player_sword_soul_state
+2014/10/24 15:27:59 [I] - load player_sword_soul_state
+2014/10/24 15:27:59 [I] - load player_ghost
+2014/10/24 15:27:59 [I] - load player_tb_xxd_roleinfo
+2014/10/24 15:27:59 [I] - load player_tb_xxd_roleinfo
+2014/10/24 15:27:59 [I] - load player_state
+2014/10/24 15:27:59 [I] - load player_tower_level
+2014/10/24 15:27:59 [I] - load player_ghost_equipment
+2014/10/24 15:27:59 [I] - load player_tower_level
+2014/10/24 15:27:59 [I] - load player_sword_soul
+2014/10/24 15:27:59 [I] - load player_town
+2014/10/24 15:27:59 [I] - load player_ghost_state
+2014/10/24 15:27:59 [I] - load player_sword_soul_equipment
+2014/10/24 15:27:59 [I] - load player_town
+2014/10/24 15:27:59 [I] - load player_trader_refresh_state
+2014/10/24 15:27:59 [I] - load player_ghost_umbra
+2014/10/24 15:27:59 [I] - load player_trader_refresh_state
+2014/10/24 15:27:59 [I] - load player_sword_soul_state
+2014/10/24 15:27:59 [I] - load player_trader_store_state
+2014/10/24 15:27:59 [I] - load player_trader_store_state
+2014/10/24 15:27:59 [I] - load player_tb_xxd_roleinfo
+2014/10/24 15:27:59 [I] - load player_use_skill
+2014/10/24 15:27:59 [I] - load player_tower_level
+2014/10/24 15:27:59 [I] - load player_use_skill
+2014/10/24 15:27:59 [I] - load player_town
+2014/10/24 15:27:59 [I] - load player_vip
+2014/10/24 15:27:59 [I] - load player_vip
+2014/10/24 15:27:59 [I] - load player_trader_refresh_state
+2014/10/24 15:27:59 [I] - load player_trader_store_state
+2014/10/24 15:27:59 [I] - load player_hard_level
+2014/10/24 15:27:59 [I] - load player_use_skill
+2014/10/24 15:27:59 [I] - load player_hard_level_record
+2014/10/24 15:27:59 [I] - load player_vip
+2014/10/24 15:27:59 [I] - load player_hard_level_state
+2014/10/24 15:27:59 [I] - load player_heart
+2014/10/24 15:27:59 [I] - load player_heart_draw
+2014/10/24 15:27:59 [I] - load player_heart_draw_card_record
+2014/10/24 15:27:59 [I] - load player_heart_draw_wheel_record
+2014/10/24 15:27:59 [I] - load player_info
+2014/10/24 15:27:59 [I] - load player_is_operated
+2014/10/24 15:27:59 [I] - load player_item
+2014/10/24 15:27:59 [I] - load player_item_appendix
+2014/10/24 15:27:59 [I] - load player_item_buyback
+2014/10/24 15:27:59 [I] - load player_item_recast_state
+2014/10/24 15:27:59 [I] - load player_login_award_record
+2014/10/24 15:27:59 [I] - load player_mail
+2014/10/24 15:27:59 [I] - load player_mail_attachment
+2014/10/24 15:27:59 [I] - load player_meditation_state
+2014/10/24 15:27:59 [I] - load player_mission
+2014/10/24 15:27:59 [I] - load player_mission_level
+2014/10/24 15:27:59 [I] - load player_mission_level_record
+2014/10/24 15:27:59 [I] - load player_mission_level_state_bin
+2014/10/24 15:27:59 [I] - load player_mission_record
+2014/10/24 15:27:59 [I] - load player_multi_level_info
+2014/10/24 15:27:59 [I] - load player_npc_talk_record
+2014/10/24 15:27:59 [I] - load player_physical
+2014/10/24 15:27:59 [I] - load player_purchase_record
+2014/10/24 15:27:59 [I] - load player_push_notify_switch
+2014/10/24 15:27:59 [I] - load player_quest
+2014/10/24 15:27:59 [I] - load player_rainbow_level
+2014/10/24 15:27:59 [I] - load player_rainbow_level_state_bin
+2014/10/24 15:27:59 [I] - load player_role
+2014/10/24 15:27:59 [I] - load player_send_heart_record
+2014/10/24 15:27:59 [I] - load player_skill
+2014/10/24 15:27:59 [I] - load player_state
+2014/10/24 15:27:59 [I] - load player_sword_soul
+2014/10/24 15:27:59 [I] - load player_sword_soul_equipment
+2014/10/24 15:27:59 [I] - load player_sword_soul_state
+2014/10/24 15:27:59 [I] - load player_tb_xxd_roleinfo
+2014/10/24 15:27:59 [I] - load player_tower_level
+2014/10/24 15:27:59 [I] - load player_town
+2014/10/24 15:27:59 [I] - load player_trader_refresh_state
+2014/10/24 15:27:59 [I] - load player_trader_store_state
+2014/10/24 15:27:59 [I] - load player_use_skill
+2014/10/24 15:27:59 [I] - load player_vip
+2014/10/24 15:28:01 [I] - load global_announcement
+2014/10/24 15:28:01 [I] - load global_arena_rank
+2014/10/24 15:28:01 [I] - load global_mail
+2014/10/24 15:28:01 [I] - load global_mail_attachments
+2014/10/24 15:28:01 [I] - load global_tb_xxd_onlinecnt
+2014/10/24 15:28:01 [I] - load player_global_arena_rank
+2014/10/24 15:28:01 [I] - load player_global_arena_rank
+2014/10/24 15:28:01 [I] - load player_global_friend
+2014/10/24 15:28:01 [I] - load player_global_arena_rank
+2014/10/24 15:28:01 [I] - load player_global_arena_rank
+2014/10/24 15:28:01 [I] - load player_global_friend
+2014/10/24 15:28:01 [I] - load player_global_friend_chat
+2014/10/24 15:28:01 [I] - load player_global_friend_chat
+2014/10/24 15:28:01 [I] - load player_global_friend
+2014/10/24 15:28:01 [I] - load player_global_friend_state
+2014/10/24 15:28:01 [I] - load player_global_friend_state
+2014/10/24 15:28:01 [I] - load player_global_friend
+2014/10/24 15:28:01 [I] - load player_global_friend_chat
+2014/10/24 15:28:01 [I] - load player_global_mail_state
+2014/10/24 15:28:01 [I] - load player_global_mail_state
+2014/10/24 15:28:01 [I] - load player_global_friend_state
+2014/10/24 15:28:01 [I] - load player_global_friend_chat
+2014/10/24 15:28:01 [I] - load player_global_friend_state
+2014/10/24 15:28:01 [I] - load player_global_mail_state
+2014/10/24 15:28:01 [I] - load player_global_mail_state
+2014/10/24 15:28:39 [E] - RPC-Serve panic
+Error    = {runtime error: invalid memory address or nil pointer dereference}
+ClientId = -1
+serviceAPI  = RemoteServe.IdipDelNotice
+Args     = &rpc.Args_IdipDelNotice{
+    RPCArgTag: rpc.RPCArgTag{
+        ClientId: -1,
+    },
+    NoticeId: 3,
+}
+
+Stack    =     at func.001() [/Users/tangweichen/xxd-server/server/src/game_server/rpc/rpc.go:76]
+    at panic() [/usr/local/go/src/pkg/runtime/panic.c:248]
+    at func.005() [/Users/tangweichen/xxd-server/server/src/game_server/mdb/transaction.go:65]
+    at panic() [/usr/local/go/src/pkg/runtime/panic.c:248]
+    at panicstring() [/usr/local/go/src/pkg/runtime/panic.c:552]
+    at sigpanic() [/usr/local/go/src/pkg/runtime/os_darwin.c:454]
+    at func.045() [/Users/tangweichen/xxd-server/server/src/game_server/module/rpc/idip_rpc_notice.go:108]
+    at func.002() [/Users/tangweichen/xxd-server/server/src/game_server/rpc/rpc.go:85]
+    at (*transController).Transaction() [/Users/tangweichen/xxd-server/server/src/game_server/mdb/transaction.go:69]
+    at (*Database).Transaction() [/Users/tangweichen/xxd-server/server/src/game_server/mdb/zd_tables.go:74]
+    at Transaction() [/Users/tangweichen/xxd-server/server/src/game_server/mdb/database.go:110]
+    at (*RPC).Serve() [/Users/tangweichen/xxd-server/server/src/game_server/rpc/rpc.go:86]
+    at (*RemoteServe).IdipDelNotice() [/Users/tangweichen/xxd-server/server/src/game_server/module/rpc/idip_rpc_notice.go:114]
+    at call64() [/usr/local/go/src/pkg/runtime/asm_amd64.s:362]
+    at Value.call() [/usr/local/go/src/pkg/reflect/value.go:563]
+    at Value.Call() [/usr/local/go/src/pkg/reflect/value.go:411]
+    at (*service).call() [/usr/local/go/src/pkg/net/rpc/server.go:382]
+    at goexit() [/usr/local/go/src/pkg/runtime/proc.c:1445]
+2014/10/24 15:29:53 [E] - RPC-Serve panic
+Error    = {runtime error: invalid memory address or nil pointer dereference}
+ClientId = -1
+serviceAPI  = RemoteServe.IdipDelNotice
+Args     = &rpc.Args_IdipDelNotice{
+    RPCArgTag: rpc.RPCArgTag{
+        ClientId: -1,
+    },
+    NoticeId: 85899,
+}
+
+Stack    =     at func.001() [/Users/tangweichen/xxd-server/server/src/game_server/rpc/rpc.go:76]
+    at panic() [/usr/local/go/src/pkg/runtime/panic.c:248]
+    at func.005() [/Users/tangweichen/xxd-server/server/src/game_server/mdb/transaction.go:65]
+    at panic() [/usr/local/go/src/pkg/runtime/panic.c:248]
+    at panicstring() [/usr/local/go/src/pkg/runtime/panic.c:552]
+    at sigpanic() [/usr/local/go/src/pkg/runtime/os_darwin.c:454]
+    at func.045() [/Users/tangweichen/xxd-server/server/src/game_server/module/rpc/idip_rpc_notice.go:108]
+    at func.002() [/Users/tangweichen/xxd-server/server/src/game_server/rpc/rpc.go:85]
+    at (*transController).Transaction() [/Users/tangweichen/xxd-server/server/src/game_server/mdb/transaction.go:69]
+    at (*Database).Transaction() [/Users/tangweichen/xxd-server/server/src/game_server/mdb/zd_tables.go:74]
+    at Transaction() [/Users/tangweichen/xxd-server/server/src/game_server/mdb/database.go:110]
+    at (*RPC).Serve() [/Users/tangweichen/xxd-server/server/src/game_server/rpc/rpc.go:86]
+    at (*RemoteServe).IdipDelNotice() [/Users/tangweichen/xxd-server/server/src/game_server/module/rpc/idip_rpc_notice.go:114]
+    at call64() [/usr/local/go/src/pkg/runtime/asm_amd64.s:362]
+    at Value.call() [/usr/local/go/src/pkg/reflect/value.go:563]
+    at Value.Call() [/usr/local/go/src/pkg/reflect/value.go:411]
+    at (*service).call() [/usr/local/go/src/pkg/net/rpc/server.go:382]
+    at goexit() [/usr/local/go/src/pkg/runtime/proc.c:1445]
+mdb.load (2) cost time: 21.777026ms
+mdb.load (1) cost time: 21.955237ms
+mdb.load (3) cost time: 21.568028ms
+mdb.load (0) cost time: 36.179206ms
+mdb.load success.
+2014/10/24 15:33:07 [I] - load player
+2014/10/24 15:33:07 [I] - load player
+2014/10/24 15:33:07 [I] - load player
+2014/10/24 15:33:07 [I] - load player_arena
+2014/10/24 15:33:07 [I] - load player_arena
+2014/10/24 15:33:07 [I] - load player_arena_record
+2014/10/24 15:33:07 [I] - load player_arena_record
+2014/10/24 15:33:07 [I] - load player_arena
+2014/10/24 15:33:07 [I] - load player_battle_pet
+2014/10/24 15:33:07 [I] - load player_battle_pet
+2014/10/24 15:33:07 [I] - load player_arena_record
+2014/10/24 15:33:07 [I] - load player_battle_pet_config
+2014/10/24 15:33:07 [I] - load player_battle_pet
+2014/10/24 15:33:07 [I] - load player_battle_pet_config
+2014/10/24 15:33:07 [I] - load player_battle_pet_config
+2014/10/24 15:33:07 [I] - load player_chest_state
+2014/10/24 15:33:07 [I] - load player_chest_state
+2014/10/24 15:33:07 [I] - load player_chest_state
+2014/10/24 15:33:07 [I] - load player_coins
+2014/10/24 15:33:07 [I] - load player_coins
+2014/10/24 15:33:07 [I] - load player_coins
+2014/10/24 15:33:07 [I] - load player_daily_quest
+2014/10/24 15:33:07 [I] - load player_daily_quest
+2014/10/24 15:33:07 [I] - load player_daily_quest
+2014/10/24 15:33:07 [I] - load player_daily_sign_in_record
+2014/10/24 15:33:07 [I] - load player_daily_sign_in_record
+2014/10/24 15:33:07 [I] - load player_daily_sign_in_record
+2014/10/24 15:33:07 [I] - load player_daily_sign_in_state
+2014/10/24 15:33:07 [I] - load player_daily_sign_in_state
+2014/10/24 15:33:07 [I] - load player_daily_sign_in_state
+2014/10/24 15:33:07 [I] - load player_equipment
+2014/10/24 15:33:07 [I] - load player_equipment
+2014/10/24 15:33:07 [I] - load player
+2014/10/24 15:33:07 [I] - load player_equipment
+2014/10/24 15:33:07 [I] - load player_event_award_record
+2014/10/24 15:33:07 [I] - load player_event_award_record
+2014/10/24 15:33:07 [I] - load player_events_fight_power
+2014/10/24 15:33:07 [I] - load player_event_award_record
+2014/10/24 15:33:07 [I] - load player_events_fight_power
+2014/10/24 15:33:07 [I] - load player_extend_level
+2014/10/24 15:33:07 [I] - load player_events_fight_power
+2014/10/24 15:33:07 [I] - load player_extend_level
+2014/10/24 15:33:07 [I] - load player_fashion
+2014/10/24 15:33:07 [I] - load player_extend_level
+2014/10/24 15:33:07 [I] - load player_fashion
+2014/10/24 15:33:07 [I] - load player_fashion_state
+2014/10/24 15:33:07 [I] - load player_fashion
+2014/10/24 15:33:07 [I] - load player_fashion_state
+2014/10/24 15:33:07 [I] - load player_fight_num
+2014/10/24 15:33:07 [I] - load player_fashion_state
+2014/10/24 15:33:07 [I] - load player_formation
+2014/10/24 15:33:07 [I] - load player_fight_num
+2014/10/24 15:33:07 [I] - load player_fight_num
+2014/10/24 15:33:07 [I] - load player_formation
+2014/10/24 15:33:07 [I] - load player_func_key
+2014/10/24 15:33:07 [I] - load player_formation
+2014/10/24 15:33:07 [I] - load player_func_key
+2014/10/24 15:33:07 [I] - load player_ghost
+2014/10/24 15:33:07 [I] - load player_ghost
+2014/10/24 15:33:07 [I] - load player_func_key
+2014/10/24 15:33:07 [I] - load player_arena
+2014/10/24 15:33:07 [I] - load player_ghost_equipment
+2014/10/24 15:33:07 [I] - load player_ghost_equipment
+2014/10/24 15:33:07 [I] - load player_ghost
+2014/10/24 15:33:07 [I] - load player_ghost_equipment
+2014/10/24 15:33:07 [I] - load player_ghost_state
+2014/10/24 15:33:07 [I] - load player_ghost_state
+2014/10/24 15:33:07 [I] - load player_ghost_state
+2014/10/24 15:33:07 [I] - load player_ghost_umbra
+2014/10/24 15:33:07 [I] - load player_ghost_umbra
+2014/10/24 15:33:07 [I] - load player_arena_record
+2014/10/24 15:33:07 [I] - load player_ghost_umbra
+2014/10/24 15:33:07 [I] - load player_hard_level
+2014/10/24 15:33:07 [I] - load player_hard_level
+2014/10/24 15:33:07 [I] - load player_hard_level
+2014/10/24 15:33:07 [I] - load player_hard_level_record
+2014/10/24 15:33:07 [I] - load player_hard_level_record
+2014/10/24 15:33:07 [I] - load player_hard_level_record
+2014/10/24 15:33:07 [I] - load player_hard_level_state
+2014/10/24 15:33:07 [I] - load player_hard_level_state
+2014/10/24 15:33:07 [I] - load player_hard_level_state
+2014/10/24 15:33:07 [I] - load player_heart
+2014/10/24 15:33:07 [I] - load player_heart
+2014/10/24 15:33:07 [I] - load player_heart
+2014/10/24 15:33:07 [I] - load player_heart_draw
+2014/10/24 15:33:07 [I] - load player_heart_draw
+2014/10/24 15:33:07 [I] - load player_battle_pet
+2014/10/24 15:33:07 [I] - load player_heart_draw
+2014/10/24 15:33:07 [I] - load player_battle_pet_config
+2014/10/24 15:33:07 [I] - load player_heart_draw_card_record
+2014/10/24 15:33:07 [I] - load player_heart_draw_card_record
+2014/10/24 15:33:07 [I] - load player_heart_draw_card_record
+2014/10/24 15:33:07 [I] - load player_heart_draw_wheel_record
+2014/10/24 15:33:07 [I] - load player_heart_draw_wheel_record
+2014/10/24 15:33:07 [I] - load player_heart_draw_wheel_record
+2014/10/24 15:33:07 [I] - load player_info
+2014/10/24 15:33:07 [I] - load player_info
+2014/10/24 15:33:07 [I] - load player_info
+2014/10/24 15:33:07 [I] - load player_is_operated
+2014/10/24 15:33:07 [I] - load player_is_operated
+2014/10/24 15:33:07 [I] - load player_is_operated
+2014/10/24 15:33:07 [I] - load player_item
+2014/10/24 15:33:07 [I] - load player_item
+2014/10/24 15:33:07 [I] - load player_item
+2014/10/24 15:33:07 [I] - load player_item_appendix
+2014/10/24 15:33:07 [I] - load player_item_appendix
+2014/10/24 15:33:07 [I] - load player_item_appendix
+2014/10/24 15:33:07 [I] - load player_item_buyback
+2014/10/24 15:33:07 [I] - load player_item_buyback
+2014/10/24 15:33:07 [I] - load player_item_buyback
+2014/10/24 15:33:07 [I] - load player_chest_state
+2014/10/24 15:33:07 [I] - load player_item_recast_state
+2014/10/24 15:33:07 [I] - load player_item_recast_state
+2014/10/24 15:33:07 [I] - load player_item_recast_state
+2014/10/24 15:33:07 [I] - load player_login_award_record
+2014/10/24 15:33:07 [I] - load player_login_award_record
+2014/10/24 15:33:07 [I] - load player_login_award_record
+2014/10/24 15:33:07 [I] - load player_mail
+2014/10/24 15:33:07 [I] - load player_mail
+2014/10/24 15:33:07 [I] - load player_mail
+2014/10/24 15:33:07 [I] - load player_mail_attachment
+2014/10/24 15:33:07 [I] - load player_mail_attachment
+2014/10/24 15:33:07 [I] - load player_mail_attachment
+2014/10/24 15:33:07 [I] - load player_meditation_state
+2014/10/24 15:33:07 [I] - load player_meditation_state
+2014/10/24 15:33:07 [I] - load player_coins
+2014/10/24 15:33:07 [I] - load player_meditation_state
+2014/10/24 15:33:07 [I] - load player_mission
+2014/10/24 15:33:07 [I] - load player_mission
+2014/10/24 15:33:07 [I] - load player_mission
+2014/10/24 15:33:07 [I] - load player_mission_level
+2014/10/24 15:33:07 [I] - load player_mission_level
+2014/10/24 15:33:07 [I] - load player_mission_level
+2014/10/24 15:33:07 [I] - load player_mission_level_record
+2014/10/24 15:33:07 [I] - load player_mission_level_record
+2014/10/24 15:33:07 [I] - load player_daily_quest
+2014/10/24 15:33:07 [I] - load player_mission_level_record
+2014/10/24 15:33:07 [I] - load player_daily_sign_in_record
+2014/10/24 15:33:07 [I] - load player_mission_level_state_bin
+2014/10/24 15:33:07 [I] - load player_mission_level_state_bin
+2014/10/24 15:33:07 [I] - load player_mission_level_state_bin
+2014/10/24 15:33:07 [I] - load player_daily_sign_in_state
+2014/10/24 15:33:07 [I] - load player_mission_record
+2014/10/24 15:33:07 [I] - load player_mission_record
+2014/10/24 15:33:07 [I] - load player_mission_record
+2014/10/24 15:33:07 [I] - load player_equipment
+2014/10/24 15:33:07 [I] - load player_multi_level_info
+2014/10/24 15:33:07 [I] - load player_multi_level_info
+2014/10/24 15:33:07 [I] - load player_multi_level_info
+2014/10/24 15:33:07 [I] - load player_event_award_record
+2014/10/24 15:33:07 [I] - load player_npc_talk_record
+2014/10/24 15:33:07 [I] - load player_npc_talk_record
+2014/10/24 15:33:07 [I] - load player_npc_talk_record
+2014/10/24 15:33:07 [I] - load player_physical
+2014/10/24 15:33:07 [I] - load player_physical
+2014/10/24 15:33:07 [I] - load player_physical
+2014/10/24 15:33:07 [I] - load player_events_fight_power
+2014/10/24 15:33:07 [I] - load player_purchase_record
+2014/10/24 15:33:07 [I] - load player_purchase_record
+2014/10/24 15:33:07 [I] - load player_purchase_record
+2014/10/24 15:33:07 [I] - load player_extend_level
+2014/10/24 15:33:07 [I] - load player_push_notify_switch
+2014/10/24 15:33:07 [I] - load player_push_notify_switch
+2014/10/24 15:33:07 [I] - load player_push_notify_switch
+2014/10/24 15:33:07 [I] - load player_quest
+2014/10/24 15:33:07 [I] - load player_quest
+2014/10/24 15:33:07 [I] - load player_quest
+2014/10/24 15:33:07 [I] - load player_rainbow_level
+2014/10/24 15:33:07 [I] - load player_rainbow_level
+2014/10/24 15:33:07 [I] - load player_rainbow_level
+2014/10/24 15:33:07 [I] - load player_rainbow_level_state_bin
+2014/10/24 15:33:07 [I] - load player_fashion
+2014/10/24 15:33:07 [I] - load player_rainbow_level_state_bin
+2014/10/24 15:33:07 [I] - load player_rainbow_level_state_bin
+2014/10/24 15:33:07 [I] - load player_role
+2014/10/24 15:33:07 [I] - load player_role
+2014/10/24 15:33:07 [I] - load player_role
+2014/10/24 15:33:07 [I] - load player_fashion_state
+2014/10/24 15:33:07 [I] - load player_fight_num
+2014/10/24 15:33:07 [I] - load player_send_heart_record
+2014/10/24 15:33:07 [I] - load player_send_heart_record
+2014/10/24 15:33:07 [I] - load player_send_heart_record
+2014/10/24 15:33:07 [I] - load player_formation
+2014/10/24 15:33:07 [I] - load player_skill
+2014/10/24 15:33:07 [I] - load player_skill
+2014/10/24 15:33:07 [I] - load player_skill
+2014/10/24 15:33:07 [I] - load player_func_key
+2014/10/24 15:33:07 [I] - load player_state
+2014/10/24 15:33:07 [I] - load player_state
+2014/10/24 15:33:07 [I] - load player_state
+2014/10/24 15:33:07 [I] - load player_ghost
+2014/10/24 15:33:07 [I] - load player_sword_soul
+2014/10/24 15:33:07 [I] - load player_sword_soul
+2014/10/24 15:33:07 [I] - load player_sword_soul
+2014/10/24 15:33:07 [I] - load player_sword_soul_equipment
+2014/10/24 15:33:07 [I] - load player_ghost_equipment
+2014/10/24 15:33:07 [I] - load player_sword_soul_equipment
+2014/10/24 15:33:07 [I] - load player_sword_soul_equipment
+2014/10/24 15:33:07 [I] - load player_sword_soul_state
+2014/10/24 15:33:07 [I] - load player_sword_soul_state
+2014/10/24 15:33:07 [I] - load player_sword_soul_state
+2014/10/24 15:33:07 [I] - load player_tb_xxd_roleinfo
+2014/10/24 15:33:07 [I] - load player_tb_xxd_roleinfo
+2014/10/24 15:33:07 [I] - load player_ghost_state
+2014/10/24 15:33:07 [I] - load player_tb_xxd_roleinfo
+2014/10/24 15:33:07 [I] - load player_tower_level
+2014/10/24 15:33:07 [I] - load player_tower_level
+2014/10/24 15:33:07 [I] - load player_ghost_umbra
+2014/10/24 15:33:07 [I] - load player_tower_level
+2014/10/24 15:33:07 [I] - load player_town
+2014/10/24 15:33:07 [I] - load player_town
+2014/10/24 15:33:07 [I] - load player_town
+2014/10/24 15:33:07 [I] - load player_trader_refresh_state
+2014/10/24 15:33:07 [I] - load player_trader_refresh_state
+2014/10/24 15:33:07 [I] - load player_trader_refresh_state
+2014/10/24 15:33:07 [I] - load player_trader_store_state
+2014/10/24 15:33:07 [I] - load player_trader_store_state
+2014/10/24 15:33:07 [I] - load player_trader_store_state
+2014/10/24 15:33:07 [I] - load player_use_skill
+2014/10/24 15:33:07 [I] - load player_use_skill
+2014/10/24 15:33:07 [I] - load player_use_skill
+2014/10/24 15:33:07 [I] - load player_hard_level
+2014/10/24 15:33:07 [I] - load player_vip
+2014/10/24 15:33:07 [I] - load player_vip
+2014/10/24 15:33:07 [I] - load player_vip
+2014/10/24 15:33:07 [I] - load player_hard_level_record
+2014/10/24 15:33:07 [I] - load player_hard_level_state
+2014/10/24 15:33:07 [I] - load player_heart
+2014/10/24 15:33:07 [I] - load player_heart_draw
+2014/10/24 15:33:07 [I] - load player_heart_draw_card_record
+2014/10/24 15:33:07 [I] - load player_heart_draw_wheel_record
+2014/10/24 15:33:07 [I] - load player_info
+2014/10/24 15:33:07 [I] - load player_is_operated
+2014/10/24 15:33:07 [I] - load player_item
+2014/10/24 15:33:07 [I] - load player_item_appendix
+2014/10/24 15:33:07 [I] - load player_item_buyback
+2014/10/24 15:33:07 [I] - load player_item_recast_state
+2014/10/24 15:33:07 [I] - load player_login_award_record
+2014/10/24 15:33:07 [I] - load player_mail
+2014/10/24 15:33:07 [I] - load player_mail_attachment
+2014/10/24 15:33:07 [I] - load player_meditation_state
+2014/10/24 15:33:07 [I] - load player_mission
+2014/10/24 15:33:07 [I] - load player_mission_level
+2014/10/24 15:33:07 [I] - load player_mission_level_record
+2014/10/24 15:33:07 [I] - load player_mission_level_state_bin
+2014/10/24 15:33:07 [I] - load player_mission_record
+2014/10/24 15:33:07 [I] - load player_multi_level_info
+2014/10/24 15:33:07 [I] - load player_npc_talk_record
+2014/10/24 15:33:07 [I] - load player_physical
+2014/10/24 15:33:07 [I] - load player_purchase_record
+2014/10/24 15:33:07 [I] - load player_push_notify_switch
+2014/10/24 15:33:07 [I] - load player_quest
+2014/10/24 15:33:07 [I] - load player_rainbow_level
+2014/10/24 15:33:07 [I] - load player_rainbow_level_state_bin
+2014/10/24 15:33:07 [I] - load player_role
+2014/10/24 15:33:07 [I] - load player_send_heart_record
+2014/10/24 15:33:07 [I] - load player_skill
+2014/10/24 15:33:07 [I] - load player_state
+2014/10/24 15:33:07 [I] - load player_sword_soul
+2014/10/24 15:33:07 [I] - load player_sword_soul_equipment
+2014/10/24 15:33:07 [I] - load player_sword_soul_state
+2014/10/24 15:33:07 [I] - load player_tb_xxd_roleinfo
+2014/10/24 15:33:07 [I] - load player_tower_level
+2014/10/24 15:33:07 [I] - load player_town
+2014/10/24 15:33:07 [I] - load player_trader_refresh_state
+2014/10/24 15:33:07 [I] - load player_trader_store_state
+2014/10/24 15:33:07 [I] - load player_use_skill
+2014/10/24 15:33:07 [I] - load player_vip
+mdb.load (1) cost time: 3.927144ms
+mdb.load (0) cost time: 4.068256ms
+mdb.load (2) cost time: 3.802045ms
+mdb.load success.
+mdb.load (3) cost time: 1.569712ms
+2014/10/24 15:33:10 [I] - load global_announcement
+2014/10/24 15:33:10 [I] - load global_arena_rank
+2014/10/24 15:33:10 [I] - load global_mail
+2014/10/24 15:33:10 [I] - load global_mail_attachments
+2014/10/24 15:33:10 [I] - load global_tb_xxd_onlinecnt
+2014/10/24 15:33:10 [I] - load player_global_arena_rank
+2014/10/24 15:33:10 [I] - load player_global_arena_rank
+2014/10/24 15:33:10 [I] - load player_global_arena_rank
+2014/10/24 15:33:10 [I] - load player_global_friend
+2014/10/24 15:33:10 [I] - load player_global_friend
+2014/10/24 15:33:10 [I] - load player_global_friend
+2014/10/24 15:33:10 [I] - load player_global_friend_chat
+2014/10/24 15:33:10 [I] - load player_global_friend_chat
+2014/10/24 15:33:10 [I] - load player_global_friend_chat
+2014/10/24 15:33:10 [I] - load player_global_friend_state
+2014/10/24 15:33:10 [I] - load player_global_friend_state
+2014/10/24 15:33:10 [I] - load player_global_friend_state
+2014/10/24 15:33:10 [I] - load player_global_mail_state
+2014/10/24 15:33:10 [I] - load player_global_mail_state
+2014/10/24 15:33:10 [I] - load player_global_mail_state
+2014/10/24 15:33:10 [I] - load player_global_arena_rank
+2014/10/24 15:33:10 [I] - load player_global_friend
+2014/10/24 15:33:10 [I] - load player_global_friend_chat
+2014/10/24 15:33:10 [I] - load player_global_friend_state
+2014/10/24 15:33:10 [I] - load player_global_mail_state

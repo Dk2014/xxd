@@ -1,0 +1,134 @@
+//
+// 比武场
+//
+mod arena = 19
+{
+	type notify_arena_mode enum {
+		ATTACKED_SUCC   = 3 // 挑战方成功
+		ATTACKED_FAILED = 4 // 挑战方失败
+	}	
+
+	// 进入比武场
+	api enter = 1 {
+		in {}
+
+		out {
+			rank 			: int32  	// 玩家当前排名
+
+			award_box_time 	: int64 	// 下次宝箱领取时间
+			daily_num		: int16		// 今日已挑战次数
+			buy_times		: int16		// 今日已购买比武场挑战次数
+			win_times		: int16 	// >0 连胜场次; 0 保持不变; -1 下降趋势
+			new_record_num  : int16		// 新战报数量
+			failed_cd_time	: int64		// 战败cd结束时间
+			daily_award_item 	:int32 	// 今日暗影果实奖励累计
+			daily_fame 	:int32 	// 今日声望奖励累计
+
+			award_box       : list { // 可领取的宝箱
+				num : int8 		// 宝箱序号 0 昨天的宝箱；1天前的宝箱；2天前的宝箱；3天前的宝箱
+				rank : int32 	// 排名
+			}
+
+			ranks			: list {
+				pid 		: int64 	// 玩家ID
+				nick 		: string 	// 玩家昵称
+				role_id 	: int8		// 角色
+				rank 		: int32 	// 排名
+				level		: int16 	// 玩家等级
+				fight_num	: int32 	// 玩家战力
+			}
+		}
+	}
+
+	// 获取玩家战报
+	api get_records = 2 {
+		in {}
+		out {
+			records : list {
+				mode : int8 // 1挑战成功，2挑战失败，3被挑战且成功，4被挑战且失败
+				time : int64 // 交手时间
+				
+				old_rank : int32 // 原排名
+				new_rank : int32 // 新排名
+				fight_num: int32 // 战力
+
+				target_pid : int64
+				target_nick : string // 对手昵称
+				target_old_rank : int32 // 对手原排名
+				target_new_rank : int32 // 对手新排名
+				target_fight_num: int32 // 对手战力
+			}
+		}
+	}
+
+	// 领取宝箱（互动）
+	[tag("global")]
+	api award_box = 3 {
+		in {
+			num : int8 // 宝箱序号 0 昨天的宝箱；1天前的宝箱；2天前的宝箱；3天前的宝箱
+		}
+
+		out {
+			result : bool // true 成功； false 失败
+		}
+	}
+
+
+	// 战败通知cd结束时间
+	api notify_failed_cd_time = 4 {
+		out {
+			cd_time : int64 // 战败冷却结束的时间
+		}
+	}
+
+	// 开始比武
+	api start_battle = 5 {
+		in {
+			player_id : int64 // 要挑战的玩家
+			player_rank : int32 // 对手名次
+		}
+		out {}
+	}
+
+	// 排名已被抢
+	api notify_lose_rank = 6 {
+		out {}
+	}
+
+	// 被挑战人在线通知
+	api notify_arena_info = 7 {
+		out {
+			notify_type : notify_arena_mode // 通知类型
+			pid         : int64             // 挑战人pid
+			nick        : string            // 挑战人昵称
+			num         : int32             // 挑战人名次
+		}
+	}
+
+	// 获取比武榜排名(互动)
+	[tag("global")]
+	api get_top_rank = 8 {
+		in {}
+		out {
+			top3 : list {		//  前三名玩家信息
+				openid : string
+				role_id : int8
+			}
+			ranks : list {
+				pid : int64
+				rank : int32
+				nick : string 
+				level : int16
+				trend : int8 // -1下降；0不变；1上升
+			}
+		}
+	}
+
+	// 花元宝消cd
+	api clean_failed_cd_time = 9 {
+		in {}
+		out {
+			failed_cd_time	: int64 // 0 表示成功
+		}
+	}
+}

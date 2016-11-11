@@ -1,0 +1,1 @@
+{"action_name":"apply_join_clique","module_name":"clique","protocol":[{"name":"clique_id","type":"int64"},{"name":"result","type":"enum8"}]}

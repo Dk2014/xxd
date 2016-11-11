@@ -1,0 +1,205 @@
+//
+// 运营活动 接口
+//
+mod event = 24
+{
+	// 获得玩家当前七天奖励情况
+	api login_award_info= 1 {
+		in{}
+		out {
+			record : int32 //奖励领取情况
+			total_login_days : int32 //累计登录天数
+		}
+	}
+
+	// 领取奖励
+	api take_login_award = 2 {
+		in {
+			day : int32 //领取第X天的奖励 [1,x)
+		}
+		out{}
+	}
+	
+	//获取有效活动
+	api get_events = 3{
+		in{
+			
+		}
+		out{
+			events : list{
+				event_id:int16
+				process:int32 //活动进行到的权值
+				player_process:int32 //玩家进行到的进度
+				page:int32 // 0代表老的那些活动，大于0则代表json配置的活动的期数
+				is_award:bool //是否是可领取
+			}
+            specials: list{
+                sign: string //活动标识
+                params: list{ //活动相关参数
+                    key:string
+                    val:string
+                }
+            }
+		}
+	}
+	
+	//获取活动奖励
+	api get_event_award = 4 {
+		in{
+			event_id: int16
+			page : int32
+			param1: int32
+			param2: int32
+			param3: int32
+		}
+		out{
+			result : int8  //0表示不可领取，1表示继续领取，2表示活动结束，3表示活动已刷新
+			award : int32 //对应奖励的权值
+		}
+	}
+	
+	//获取玩家在活跃度活动中的活跃度
+	api player_event_physical_cost = 6{
+		in{}
+		out{
+			value : int32 //活跃度
+		}
+	}
+
+	//获取月卡信息
+	api player_month_card_info = 7{
+		in{}
+		out{
+			BeginTime		:int64	//用户订阅的开始时间
+			EndTime			:int64	//用户订阅的结束时间
+		}
+}
+
+
+	//获取七天乐活动信息
+	api get_seven_info = 8 {
+		in{}
+		out{
+			status:int8 //活动状态 0表示正常 1表示未开启 2表示已结束
+			day:int16 //当前要领奖的天数
+			schedule:int32 //当前已领取的进程
+		}
+	}
+	
+	//获取七天乐活动奖励
+	api get_seven_award = 9{
+		in{}
+		out{
+			result:int8 //领取结果 0表示成功 1表示失败	
+		}
+	}
+
+
+	//获取土豪俱乐部活动信息
+	api get_richman_club_info = 10 {
+		in{}
+		out{
+				status:int8 //活动状态 0表示正常 1表示已结束
+				schedule:int32 //当前领奖的进度
+		}
+	}
+
+	//获取土豪俱乐部奖励
+	api get_richman_club_award = 11 {
+		in{
+			column : int8 //要领奖所在的目标行数 从1开始计算
+			sequence:int8 //要领奖的内容在当前行的顺序 从1开始计
+		}
+		out{
+			result : int8 //领奖结果 0表示成功 1表示活动已结束或者已经领取
+		}
+	}
+
+	//分享成功和分享次数信息
+	api info_share = 12 {
+		in{
+			is_share : bool //是否成功分享了，只获取信息则传false
+		}
+		out{
+			count : int16 //分享次数
+		}
+	}
+
+	//获取团购人数的信息
+	[tag("global")]
+	api info_group_buy = 13 {
+		in{}
+		out{
+			count : int32 //团购的人数
+		}
+	}
+
+	//获取活动期间累计操作元宝数量
+	api get_ingot_change_total = 14 {
+		in{
+			is_in : bool //true为查询累计充值，false为查询累计消耗
+		}
+		out{
+			count : int64
+		}
+	}
+
+	//获取累计充值奖励
+	api get_event_total_award = 15 {
+		in{
+			order : int16 //要领奖的顺序 从0开始
+		}
+		out{
+			result : int8 //领奖结果 0表示成功 1表示活动已结束或者已经领取
+		}
+	}
+
+	//获取比武场活动奖励名次
+	api get_event_arena_rank = 16{
+		in{}
+		out{
+			rank : int32
+		}
+	}
+
+	// 获取十连抽次数
+	api get_event_ten_draw_times = 17 {
+		in{}
+		out{
+			times : int32
+		}
+	}
+
+	// 获取是否充值和是否可以领取每日充值奖励标示
+	api get_event_recharge_award = 18 {
+		in{
+			page 		: int32
+			requireid	: int32
+		}
+		out{
+			is_rechage: bool //是否充值
+			is_award  : bool //是否是可领取
+		}
+	}
+
+	api get_event_new_year = 19 {
+		in{
+		}
+		out{
+			processes : list{
+			 day:int8
+			 ingot:int32
+			 is_awarded : bool //是否已领取
+			}
+		}
+	}
+
+	api qq_vip_continue = 20 {
+		in{
+			kind: int8 //0代表qq会员，1代表超级会员
+		}
+		out{
+			status: int16 //查询qq服务结果状态
+		}
+	}
+}

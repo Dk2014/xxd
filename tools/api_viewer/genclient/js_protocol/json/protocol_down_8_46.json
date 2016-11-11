@@ -1,0 +1,1 @@
+{"action_name":"town_player_status_change","module_name":"notify","protocol":[{"name":"player","type":"int64"},{"name":"status","type":"enum8"}]}

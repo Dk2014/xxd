@@ -1,0 +1,898 @@
+467128
+467112
+114467095
+115root:@tcp(127.0.0.1:%!s(int=3306))/mobile_xxd
+114467076
+115root:@tcp(127.0.0.1:%!s(int=3306))/mobile_xxd
+114467054
+115root:@tcp(127.0.0.1:%!s(int=3306))/mobile_xxd
+114467023
+115./cron-log
+root:@tcp(127.0.0.1:%!s(int=3306))/mobile_xxd
+114467012
+1152015/06/24 14:42:08 [I] - mem:1342032 goroutine:10 gc:3 pause:0ms
+2015/06/24 14:42:18 [I] - mem:1342352 goroutine:10 gc:0 pause:0ms
+2015/06/24 14:42:28 [I] - mem:1342448 goroutine:10 gc:0 pause:0ms
+2015/06/24 14:42:38 [I] - mem:1342544 goroutine:10 gc:0 pause:0ms
+2015/06/24 14:42:48 [I] - mem:1342640 goroutine:10 gc:0 pause:0ms
+2015/06/24 14:42:58 [I] - mem:1342736 goroutine:10 gc:0 pause:0ms
+2015/06/24 14:43:08 [I] - mem:1342832 goroutine:10 gc:0 pause:0ms
+2015/06/24 14:43:18 [I] - mem:1342928 goroutine:10 gc:0 pause:0ms
+2015/06/24 14:43:28 [I] - mem:1343024 goroutine:10 gc:0 pause:0ms
+2015/06/24 14:43:38 [I] - mem:1343120 goroutine:10 gc:0 pause:0ms
+2015/06/24 14:43:48 [I] - mem:1343216 goroutine:10 gc:0 pause:0ms
+2015/06/24 14:43:58 [I] - mem:1343312 goroutine:10 gc:0 pause:0ms
+2015/06/24 14:44:08 [I] - mem:1341872 goroutine:10 gc:1 pause:0ms
+2015/06/24 14:44:18 [I] - mem:1342064 goroutine:10 gc:0 pause:0ms
+2015/06/24 14:44:28 [I] - mem:1342208 goroutine:10 gc:0 pause:0ms
+2015/06/24 14:45:09 [I] - mem:1341856 goroutine:9 gc:3 pause:0ms
+2015/06/24 14:45:19 [I] - mem:1346752 goroutine:9 gc:0 pause:0ms
+2015/06/24 14:45:29 [I] - mem:1357032 goroutine:9 gc:0 pause:0ms
+2015/06/24 14:45:39 [I] - mem:1391672 goroutine:9 gc:0 pause:0ms
+2015/06/24 14:45:49 [I] - mem:1395608 goroutine:9 gc:0 pause:0ms
+2015/06/24 14:46:29 [I] - mem:1342544 goroutine:9 gc:3 pause:0ms
+2015/06/24 14:46:39 [I] - mem:1343360 goroutine:9 gc:0 pause:0ms
+2015/06/24 14:46:49 [I] - mem:1357720 goroutine:9 gc:0 pause:0ms
+2015/06/24 14:46:59 [I] - mem:1392312 goroutine:9 gc:0 pause:0ms
+2015/06/24 14:47:09 [I] - mem:1396248 goroutine:9 gc:0 pause:0ms
+2015/06/24 14:47:19 [I] - mem:1396344 goroutine:9 gc:0 pause:0ms
+2015/06/24 14:47:29 [I] - mem:1400040 goroutine:9 gc:0 pause:0ms
+2015/06/24 14:47:39 [I] - mem:1400136 goroutine:9 gc:0 pause:0ms
+2015/06/24 14:47:49 [I] - mem:1403832 goroutine:9 gc:0 pause:0ms
+2015/06/24 14:47:59 [I] - mem:1403928 goroutine:9 gc:0 pause:0ms
+2015/06/24 14:48:09 [I] - mem:1407624 goroutine:9 gc:0 pause:0ms
+2015/06/24 14:48:19 [I] - mem:1407720 goroutine:9 gc:0 pause:0ms
+2015/06/24 14:53:57 [I] - mem:1343680 goroutine:9 gc:3 pause:0ms
+2015/06/24 14:54:07 [I] - mem:1344112 goroutine:9 gc:0 pause:0ms
+2015/06/24 14:54:07 [E] - SnapShot() error: Error 1064: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '? group by item_id%!(EXTRA int64=3985729650689)' at line 1
+ Stack     at func.001() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:46]
+    at panic() [/usr/local/go/src/pkg/runtime/panic.c:248]
+    at FetchPlayer() [/Users/tangweichen/xxd-server/server/src/cron_server/database/api.go:54]
+    at func.002() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:52]
+    at goexit() [/usr/local/go/src/pkg/runtime/proc.c:1445]
+ 
+2015/06/24 14:54:17 [I] - mem:1362728 goroutine:9 gc:0 pause:0ms
+2015/06/24 14:54:27 [I] - mem:1397368 goroutine:9 gc:0 pause:0ms
+2015/06/24 14:54:27 [E] - SnapShot() error: Error 1064: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '? group by item_id%!(EXTRA int64=3985729650689)' at line 1
+ Stack     at func.001() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:46]
+    at panic() [/usr/local/go/src/pkg/runtime/panic.c:248]
+    at FetchPlayer() [/Users/tangweichen/xxd-server/server/src/cron_server/database/api.go:54]
+    at func.002() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:52]
+    at goexit() [/usr/local/go/src/pkg/runtime/proc.c:1445]
+ 
+2015/06/24 14:54:37 [I] - mem:1404376 goroutine:9 gc:0 pause:0ms
+2015/06/24 14:55:02 [I] - mem:1342704 goroutine:9 gc:3 pause:0ms
+2015/06/24 14:55:12 [I] - mem:1343808 goroutine:10 gc:0 pause:0ms
+2015/06/24 14:55:12 [E] - SnapShot() error: Error 1064: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '? group by item_id%!(EXTRA int64=3985729650689)' at line 1
+ Stack     at func.001() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:46]
+    at panic() [/usr/local/go/src/pkg/runtime/panic.c:248]
+    at FetchPlayer() [/Users/tangweichen/xxd-server/server/src/cron_server/database/api.go:54]
+    at func.002() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:54]
+    at goexit() [/usr/local/go/src/pkg/runtime/proc.c:1445]
+ 
+2015/06/24 14:55:22 [I] - mem:1362296 goroutine:9 gc:0 pause:0ms
+2015/06/24 14:55:37 [I] - mem:1341392 goroutine:9 gc:3 pause:0ms
+2015/06/24 14:55:47 [I] - mem:1342448 goroutine:10 gc:0 pause:0ms
+2015/06/24 14:55:47 [E] - SnapShot() error: Error 1064: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '? group by item_id%!(EXTRA int64=3985729650689)' at line 1
+ Stack     at func.001() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:46]
+    at panic() [/usr/local/go/src/pkg/runtime/panic.c:248]
+    at FetchPlayer() [/Users/tangweichen/xxd-server/server/src/cron_server/database/api.go:54]
+    at func.002() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:54]
+    at goexit() [/usr/local/go/src/pkg/runtime/proc.c:1445]
+ 
+2015/06/24 14:56:33 [I] - mem:1342224 goroutine:10 gc:3 pause:0ms
+2015/06/24 14:56:33 [E] - SnapShot() error: Error 1064: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '? group by item_id%!(EXTRA int64=3985729650689)' at line 1
+ Stack     at func.001() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:46]
+    at panic() [/usr/local/go/src/pkg/runtime/panic.c:248]
+    at FetchPlayer() [/Users/tangweichen/xxd-server/server/src/cron_server/database/api.go:56]
+    at func.002() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:54]
+    at goexit() [/usr/local/go/src/pkg/runtime/proc.c:1445]
+ 
+2015/06/24 14:56:43 [I] - mem:1361128 goroutine:9 gc:0 pause:0ms
+2015/06/24 14:56:43 [E] - SnapShot() error: Error 1064: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '? group by item_id%!(EXTRA int64=3985729650689)' at line 1
+ Stack     at func.001() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:46]
+    at panic() [/usr/local/go/src/pkg/runtime/panic.c:248]
+    at FetchPlayer() [/Users/tangweichen/xxd-server/server/src/cron_server/database/api.go:56]
+    at func.002() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:54]
+    at goexit() [/usr/local/go/src/pkg/runtime/proc.c:1445]
+ 
+2015/06/24 14:56:53 [I] - mem:1403336 goroutine:9 gc:0 pause:0ms
+2015/06/24 14:56:53 [E] - SnapShot() error: Error 1064: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '? group by item_id%!(EXTRA int64=3985729650689)' at line 1
+ Stack     at func.001() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:46]
+    at panic() [/usr/local/go/src/pkg/runtime/panic.c:248]
+    at FetchPlayer() [/Users/tangweichen/xxd-server/server/src/cron_server/database/api.go:56]
+    at func.002() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:54]
+    at goexit() [/usr/local/go/src/pkg/runtime/proc.c:1445]
+ 
+2015/06/24 14:58:00 [I] - mem:1341888 goroutine:10 gc:3 pause:0ms
+2015/06/24 14:58:00 [E] - SnapShot() error: Error 1064: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '? group by item_id%!(EXTRA int64=3985729650689)' at line 1
+ Stack     at func.001() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:46]
+    at panic() [/usr/local/go/src/pkg/runtime/panic.c:248]
+    at FetchPlayer() [/Users/tangweichen/xxd-server/server/src/cron_server/database/api.go:57]
+    at func.002() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:54]
+    at goexit() [/usr/local/go/src/pkg/runtime/proc.c:1445]
+ 
+2015/06/24 14:58:10 [I] - mem:1358728 goroutine:9 gc:0 pause:0ms
+2015/06/24 14:58:10 [E] - SnapShot() error: Error 1064: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '? group by item_id%!(EXTRA int64=3985729650689)' at line 1
+ Stack     at func.001() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:46]
+    at panic() [/usr/local/go/src/pkg/runtime/panic.c:248]
+    at FetchPlayer() [/Users/tangweichen/xxd-server/server/src/cron_server/database/api.go:57]
+    at func.002() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:54]
+    at goexit() [/usr/local/go/src/pkg/runtime/proc.c:1445]
+ 
+2015/06/24 15:34:16 [I] - mem:1343184 goroutine:10 gc:3 pause:0ms
+2015/06/24 15:34:16 [E] - SnapShot() error: write ./xdlog-file/2015-06-24: bad file descriptor
+ Stack     at func.001() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:46]
+    at panic() [/usr/local/go/src/pkg/runtime/panic.c:248]
+    at WriteToLog() [/Users/tangweichen/xxd-server/server/src/cron_server/api.go:35]
+    at func.002() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:59]
+    at goexit() [/usr/local/go/src/pkg/runtime/proc.c:1445]
+ 
+2015/06/24 15:34:26 [I] - mem:1426752 goroutine:9 gc:0 pause:0ms
+2015/06/24 15:34:26 [E] - SnapShot() error: write ./xdlog-file/2015-06-24: bad file descriptor
+ Stack     at func.001() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:46]
+    at panic() [/usr/local/go/src/pkg/runtime/panic.c:248]
+    at WriteToLog() [/Users/tangweichen/xxd-server/server/src/cron_server/api.go:35]
+    at func.002() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:59]
+    at goexit() [/usr/local/go/src/pkg/runtime/proc.c:1445]
+ 
+2015/06/24 15:34:36 [I] - mem:1519848 goroutine:9 gc:0 pause:0ms
+2015/06/24 15:34:36 [E] - SnapShot() error: write ./xdlog-file/2015-06-24: bad file descriptor
+ Stack     at func.001() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:46]
+    at panic() [/usr/local/go/src/pkg/runtime/panic.c:248]
+    at WriteToLog() [/Users/tangweichen/xxd-server/server/src/cron_server/api.go:35]
+    at func.002() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:59]
+    at goexit() [/usr/local/go/src/pkg/runtime/proc.c:1445]
+ 
+2015/06/24 15:34:46 [I] - mem:1578048 goroutine:9 gc:0 pause:0ms
+2015/06/24 15:34:46 [E] - SnapShot() error: write ./xdlog-file/2015-06-24: bad file descriptor
+ Stack     at func.001() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:46]
+    at panic() [/usr/local/go/src/pkg/runtime/panic.c:248]
+    at WriteToLog() [/Users/tangweichen/xxd-server/server/src/cron_server/api.go:35]
+    at func.002() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:59]
+    at goexit() [/usr/local/go/src/pkg/runtime/proc.c:1445]
+ 
+2015/06/24 15:34:56 [I] - mem:1636184 goroutine:9 gc:0 pause:0ms
+2015/06/24 15:34:56 [E] - SnapShot() error: write ./xdlog-file/2015-06-24: bad file descriptor
+ Stack     at func.001() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:46]
+    at panic() [/usr/local/go/src/pkg/runtime/panic.c:248]
+    at WriteToLog() [/Users/tangweichen/xxd-server/server/src/cron_server/api.go:35]
+    at func.002() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:59]
+    at goexit() [/usr/local/go/src/pkg/runtime/proc.c:1445]
+ 
+2015/06/24 15:36:00 [I] - mem:1343424 goroutine:10 gc:3 pause:0ms
+2015/06/24 15:36:00 [E] - SnapShot() error: open ./xdlog-file/snapshot/2015-06-24.log: no such file or directory
+ Stack     at func.001() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:46]
+    at panic() [/usr/local/go/src/pkg/runtime/panic.c:248]
+    at WriteToLog() [/Users/tangweichen/xxd-server/server/src/cron_server/api.go:31]
+    at func.002() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:60]
+    at goexit() [/usr/local/go/src/pkg/runtime/proc.c:1445]
+ 
+2015/06/24 15:36:10 [I] - mem:1430808 goroutine:9 gc:0 pause:0ms
+2015/06/24 15:36:10 [E] - SnapShot() error: open ./xdlog-file/snapshot/2015-06-24.log: no such file or directory
+ Stack     at func.001() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:46]
+    at panic() [/usr/local/go/src/pkg/runtime/panic.c:248]
+    at WriteToLog() [/Users/tangweichen/xxd-server/server/src/cron_server/api.go:31]
+    at func.002() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:60]
+    at goexit() [/usr/local/go/src/pkg/runtime/proc.c:1445]
+ 
+2015/06/24 15:36:20 [I] - mem:1526680 goroutine:9 gc:0 pause:0ms
+2015/06/24 15:36:20 [E] - SnapShot() error: open ./xdlog-file/snapshot/2015-06-24.log: no such file or directory
+ Stack     at func.001() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:46]
+    at panic() [/usr/local/go/src/pkg/runtime/panic.c:248]
+    at WriteToLog() [/Users/tangweichen/xxd-server/server/src/cron_server/api.go:31]
+    at func.002() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:60]
+    at goexit() [/usr/local/go/src/pkg/runtime/proc.c:1445]
+ 
+2015/06/24 15:36:30 [I] - mem:1584408 goroutine:9 gc:0 pause:0ms
+2015/06/24 15:36:30 [E] - SnapShot() error: open ./xdlog-file/snapshot/2015-06-24.log: no such file or directory
+ Stack     at func.001() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:46]
+    at panic() [/usr/local/go/src/pkg/runtime/panic.c:248]
+    at WriteToLog() [/Users/tangweichen/xxd-server/server/src/cron_server/api.go:31]
+    at func.002() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:60]
+    at goexit() [/usr/local/go/src/pkg/runtime/proc.c:1445]
+ 
+2015/06/24 15:36:40 [I] - mem:1640600 goroutine:9 gc:0 pause:0ms
+2015/06/24 15:36:40 [E] - SnapShot() error: open ./xdlog-file/snapshot/2015-06-24.log: no such file or directory
+ Stack     at func.001() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:46]
+    at panic() [/usr/local/go/src/pkg/runtime/panic.c:248]
+    at WriteToLog() [/Users/tangweichen/xxd-server/server/src/cron_server/api.go:31]
+    at func.002() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:60]
+    at goexit() [/usr/local/go/src/pkg/runtime/proc.c:1445]
+ 
+2015/06/24 15:36:50 [I] - mem:1696312 goroutine:9 gc:0 pause:0ms
+2015/06/24 15:36:50 [E] - SnapShot() error: open ./xdlog-file/snapshot/2015-06-24.log: no such file or directory
+ Stack     at func.001() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:46]
+    at panic() [/usr/local/go/src/pkg/runtime/panic.c:248]
+    at WriteToLog() [/Users/tangweichen/xxd-server/server/src/cron_server/api.go:31]
+    at func.002() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:60]
+    at goexit() [/usr/local/go/src/pkg/runtime/proc.c:1445]
+ 
+2015/06/24 15:37:00 [I] - mem:1753208 goroutine:9 gc:0 pause:0ms
+2015/06/24 15:37:00 [E] - SnapShot() error: open ./xdlog-file/snapshot/2015-06-24.log: no such file or directory
+ Stack     at func.001() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:46]
+    at panic() [/usr/local/go/src/pkg/runtime/panic.c:248]
+    at WriteToLog() [/Users/tangweichen/xxd-server/server/src/cron_server/api.go:31]
+    at func.002() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:60]
+    at goexit() [/usr/local/go/src/pkg/runtime/proc.c:1445]
+ 
+2015/06/24 15:39:14 [I] - mem:1343360 goroutine:10 gc:3 pause:0ms
+2015/06/24 15:39:14 [E] - SnapShot() error: open ./xdlog-file/snapshot/2015-06-24.log: no such file or directory
+ Stack     at func.001() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:46]
+    at panic() [/usr/local/go/src/pkg/runtime/panic.c:248]
+    at WriteToLog() [/Users/tangweichen/xxd-server/server/src/cron_server/api.go:31]
+    at func.002() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:60]
+    at goexit() [/usr/local/go/src/pkg/runtime/proc.c:1445]
+ 
+2015/06/24 15:39:24 [I] - mem:1430024 goroutine:9 gc:0 pause:0ms
+2015/06/24 15:39:24 [E] - SnapShot() error: open ./xdlog-file/snapshot/2015-06-24.log: no such file or directory
+ Stack     at func.001() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:46]
+    at panic() [/usr/local/go/src/pkg/runtime/panic.c:248]
+    at WriteToLog() [/Users/tangweichen/xxd-server/server/src/cron_server/api.go:31]
+    at func.002() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:60]
+    at goexit() [/usr/local/go/src/pkg/runtime/proc.c:1445]
+ 
+2015/06/24 15:39:34 [I] - mem:1526616 goroutine:9 gc:0 pause:0ms
+2015/06/24 15:39:34 [E] - SnapShot() error: open ./xdlog-file/snapshot/2015-06-24.log: no such file or directory
+ Stack     at func.001() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:46]
+    at panic() [/usr/local/go/src/pkg/runtime/panic.c:248]
+    at WriteToLog() [/Users/tangweichen/xxd-server/server/src/cron_server/api.go:31]
+    at func.002() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:60]
+    at goexit() [/usr/local/go/src/pkg/runtime/proc.c:1445]
+ 
+2015/06/24 15:39:44 [I] - mem:1582904 goroutine:9 gc:0 pause:0ms
+2015/06/24 15:40:44 [I] - mem:1342336 goroutine:10 gc:3 pause:0ms
+2015/06/24 15:40:44 [E] - SnapShot() error: open ./xdlog-file/snapshot/2015-06-24.log: no such file or directory
+ Stack     at func.001() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:46]
+    at panic() [/usr/local/go/src/pkg/runtime/panic.c:248]
+    at WriteToLog() [/Users/tangweichen/xxd-server/server/src/cron_server/api.go:31]
+    at func.002() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:60]
+    at goexit() [/usr/local/go/src/pkg/runtime/proc.c:1445]
+ 
+2015/06/24 15:40:54 [I] - mem:1424664 goroutine:9 gc:0 pause:0ms
+2015/06/24 15:40:54 [E] - SnapShot() error: open ./xdlog-file/snapshot/2015-06-24.log: no such file or directory
+ Stack     at func.001() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:46]
+    at panic() [/usr/local/go/src/pkg/runtime/panic.c:248]
+    at WriteToLog() [/Users/tangweichen/xxd-server/server/src/cron_server/api.go:31]
+    at func.002() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:60]
+    at goexit() [/usr/local/go/src/pkg/runtime/proc.c:1445]
+ 
+2015/06/24 15:42:00 [I] - mem:1342592 goroutine:10 gc:3 pause:0ms
+2015/06/24 15:42:00 [E] - SnapShot() error: open ./xdlog-file/snapshot/2015-06-24.log: no such file or directory
+ Stack     at func.001() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:46]
+    at panic() [/usr/local/go/src/pkg/runtime/panic.c:248]
+    at WriteToLog() [/Users/tangweichen/xxd-server/server/src/cron_server/api.go:31]
+    at func.002() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:60]
+    at goexit() [/usr/local/go/src/pkg/runtime/proc.c:1445]
+ 
+2015/06/24 15:42:10 [I] - mem:1429848 goroutine:9 gc:0 pause:0ms
+2015/06/24 15:42:10 [E] - SnapShot() error: open ./xdlog-file/snapshot/2015-06-24.log: no such file or directory
+ Stack     at func.001() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:46]
+    at panic() [/usr/local/go/src/pkg/runtime/panic.c:248]
+    at WriteToLog() [/Users/tangweichen/xxd-server/server/src/cron_server/api.go:31]
+    at func.002() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:60]
+    at goexit() [/usr/local/go/src/pkg/runtime/proc.c:1445]
+ 
+2015/06/24 15:42:20 [I] - mem:1522024 goroutine:9 gc:0 pause:0ms
+2015/06/24 15:42:20 [E] - SnapShot() error: open ./xdlog-file/snapshot/2015-06-24.log: no such file or directory
+ Stack     at func.001() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:46]
+    at panic() [/usr/local/go/src/pkg/runtime/panic.c:248]
+    at WriteToLog() [/Users/tangweichen/xxd-server/server/src/cron_server/api.go:31]
+    at func.002() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:60]
+    at goexit() [/usr/local/go/src/pkg/runtime/proc.c:1445]
+ 
+2015/06/24 15:42:30 [I] - mem:1580104 goroutine:9 gc:0 pause:0ms
+2015/06/24 15:42:30 [E] - SnapShot() error: open ./xdlog-file/snapshot/2015-06-24.log: no such file or directory
+ Stack     at func.001() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:46]
+    at panic() [/usr/local/go/src/pkg/runtime/panic.c:248]
+    at WriteToLog() [/Users/tangweichen/xxd-server/server/src/cron_server/api.go:31]
+    at func.002() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:60]
+    at goexit() [/usr/local/go/src/pkg/runtime/proc.c:1445]
+ 
+2015/06/24 15:42:40 [I] - mem:1638264 goroutine:9 gc:0 pause:0ms
+2015/06/24 15:42:40 [E] - SnapShot() error: open ./xdlog-file/snapshot/2015-06-24.log: no such file or directory
+ Stack     at func.001() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:46]
+    at panic() [/usr/local/go/src/pkg/runtime/panic.c:248]
+    at WriteToLog() [/Users/tangweichen/xxd-server/server/src/cron_server/api.go:31]
+    at func.002() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:60]
+    at goexit() [/usr/local/go/src/pkg/runtime/proc.c:1445]
+ 
+2015/06/24 15:42:50 [I] - mem:1695032 goroutine:9 gc:0 pause:0ms
+2015/06/24 15:42:50 [E] - SnapShot() error: open ./xdlog-file/snapshot/2015-06-24.log: no such file or directory
+ Stack     at func.001() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:46]
+    at panic() [/usr/local/go/src/pkg/runtime/panic.c:248]
+    at WriteToLog() [/Users/tangweichen/xxd-server/server/src/cron_server/api.go:31]
+    at func.002() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:60]
+    at goexit() [/usr/local/go/src/pkg/runtime/proc.c:1445]
+ 
+2015/06/24 15:43:00 [I] - mem:1753032 goroutine:9 gc:0 pause:0ms
+2015/06/24 15:43:00 [E] - SnapShot() error: open ./xdlog-file/snapshot/2015-06-24.log: no such file or directory
+ Stack     at func.001() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:46]
+    at panic() [/usr/local/go/src/pkg/runtime/panic.c:248]
+    at WriteToLog() [/Users/tangweichen/xxd-server/server/src/cron_server/api.go:31]
+    at func.002() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:60]
+    at goexit() [/usr/local/go/src/pkg/runtime/proc.c:1445]
+ 
+2015/06/24 15:43:10 [I] - mem:1809736 goroutine:9 gc:0 pause:0ms
+2015/06/24 15:43:10 [E] - SnapShot() error: open ./xdlog-file/snapshot/2015-06-24.log: no such file or directory
+ Stack     at func.001() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:46]
+    at panic() [/usr/local/go/src/pkg/runtime/panic.c:248]
+    at WriteToLog() [/Users/tangweichen/xxd-server/server/src/cron_server/api.go:31]
+    at func.002() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:60]
+    at goexit() [/usr/local/go/src/pkg/runtime/proc.c:1445]
+ 
+2015/06/24 15:44:06 [I] - mem:1342896 goroutine:10 gc:3 pause:0ms
+2015/06/24 15:44:06 [E] - SnapShot() error: open ./xdlog-file/snapshot/2015-06-24.log: no such file or directory
+ Stack     at func.001() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:46]
+    at panic() [/usr/local/go/src/pkg/runtime/panic.c:248]
+    at WriteToLog() [/Users/tangweichen/xxd-server/server/src/cron_server/api.go:31]
+    at func.002() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:60]
+    at goexit() [/usr/local/go/src/pkg/runtime/proc.c:1445]
+ 
+2015/06/24 15:44:16 [I] - mem:1395648 goroutine:9 gc:0 pause:0ms
+2015/06/24 15:44:16 [E] - SnapShot() error: open ./xdlog-file/snapshot/2015-06-24.log: no such file or directory
+ Stack     at func.001() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:46]
+    at panic() [/usr/local/go/src/pkg/runtime/panic.c:248]
+    at WriteToLog() [/Users/tangweichen/xxd-server/server/src/cron_server/api.go:31]
+    at func.002() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:60]
+    at goexit() [/usr/local/go/src/pkg/runtime/proc.c:1445]
+ 
+2015/06/24 15:45:11 [I] - mem:1341808 goroutine:10 gc:3 pause:0ms
+2015/06/24 15:45:11 [E] - SnapShot() error: open ./xdlog-file/snapshot/2015-06-24.log: no such file or directory
+ Stack     at func.001() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:46]
+    at panic() [/usr/local/go/src/pkg/runtime/panic.c:248]
+    at WriteToLog() [/Users/tangweichen/xxd-server/server/src/cron_server/api.go:33]
+    at func.002() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:60]
+    at goexit() [/usr/local/go/src/pkg/runtime/proc.c:1445]
+ 
+2015/06/24 15:48:31 [I] - mem:1343312 goroutine:10 gc:3 pause:0ms
+2015/06/24 15:48:31 [E] - SnapShot() error: open ./xdlog-file/snapshot/2015-06-24.log: no such file or directory
+ Stack     at func.001() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:46]
+    at panic() [/usr/local/go/src/pkg/runtime/panic.c:248]
+    at WriteToLog() [/Users/tangweichen/xxd-server/server/src/cron_server/api.go:34]
+    at func.002() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:60]
+    at goexit() [/usr/local/go/src/pkg/runtime/proc.c:1445]
+ 
+2015/06/24 15:55:13 [I] - mem:1342656 goroutine:10 gc:3 pause:0ms
+2015/06/24 15:55:13 [E] - SnapShot() error: open ./xdlog-file/snapshot/test/2015-06-24.log: invalid argument
+ Stack     at func.001() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:46]
+    at panic() [/usr/local/go/src/pkg/runtime/panic.c:248]
+    at WriteToLog() [/Users/tangweichen/xxd-server/server/src/cron_server/api.go:33]
+    at func.002() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:60]
+    at goexit() [/usr/local/go/src/pkg/runtime/proc.c:1445]
+ 
+2015/06/24 15:55:23 [I] - mem:1396128 goroutine:9 gc:0 pause:0ms
+2015/06/24 15:55:23 [E] - SnapShot() error: open ./xdlog-file/snapshot/test/2015-06-24.log: invalid argument
+ Stack     at func.001() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:46]
+    at panic() [/usr/local/go/src/pkg/runtime/panic.c:248]
+    at WriteToLog() [/Users/tangweichen/xxd-server/server/src/cron_server/api.go:33]
+    at func.002() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:60]
+    at goexit() [/usr/local/go/src/pkg/runtime/proc.c:1445]
+ 
+2015/06/24 15:55:33 [I] - mem:1455216 goroutine:9 gc:0 pause:0ms
+2015/06/24 15:55:33 [E] - SnapShot() error: open ./xdlog-file/snapshot/test/2015-06-24.log: invalid argument
+ Stack     at func.001() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:46]
+    at panic() [/usr/local/go/src/pkg/runtime/panic.c:248]
+    at WriteToLog() [/Users/tangweichen/xxd-server/server/src/cron_server/api.go:33]
+    at func.002() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:60]
+    at goexit() [/usr/local/go/src/pkg/runtime/proc.c:1445]
+ 
+2015/06/24 15:55:43 [I] - mem:1482880 goroutine:9 gc:0 pause:0ms
+2015/06/24 15:55:43 [E] - SnapShot() error: open ./xdlog-file/snapshot/test/2015-06-24.log: invalid argument
+ Stack     at func.001() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:46]
+    at panic() [/usr/local/go/src/pkg/runtime/panic.c:248]
+    at WriteToLog() [/Users/tangweichen/xxd-server/server/src/cron_server/api.go:33]
+    at func.002() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:60]
+    at goexit() [/usr/local/go/src/pkg/runtime/proc.c:1445]
+ 
+2015/06/24 15:55:53 [I] - mem:1508176 goroutine:9 gc:0 pause:0ms
+2015/06/24 15:55:53 [E] - SnapShot() error: open ./xdlog-file/snapshot/test/2015-06-24.log: invalid argument
+ Stack     at func.001() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:46]
+    at panic() [/usr/local/go/src/pkg/runtime/panic.c:248]
+    at WriteToLog() [/Users/tangweichen/xxd-server/server/src/cron_server/api.go:33]
+    at func.002() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:60]
+    at goexit() [/usr/local/go/src/pkg/runtime/proc.c:1445]
+ 
+2015/06/24 15:56:03 [I] - mem:1535472 goroutine:9 gc:0 pause:0ms
+2015/06/24 15:56:03 [E] - SnapShot() error: open ./xdlog-file/snapshot/test/2015-06-24.log: invalid argument
+ Stack     at func.001() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:46]
+    at panic() [/usr/local/go/src/pkg/runtime/panic.c:248]
+    at WriteToLog() [/Users/tangweichen/xxd-server/server/src/cron_server/api.go:33]
+    at func.002() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:60]
+    at goexit() [/usr/local/go/src/pkg/runtime/proc.c:1445]
+ 
+2015/06/24 15:56:13 [I] - mem:1558976 goroutine:9 gc:0 pause:0ms
+2015/06/24 15:56:13 [E] - SnapShot() error: open ./xdlog-file/snapshot/test/2015-06-24.log: invalid argument
+ Stack     at func.001() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:46]
+    at panic() [/usr/local/go/src/pkg/runtime/panic.c:248]
+    at WriteToLog() [/Users/tangweichen/xxd-server/server/src/cron_server/api.go:33]
+    at func.002() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:60]
+    at goexit() [/usr/local/go/src/pkg/runtime/proc.c:1445]
+ 
+2015/06/24 15:56:23 [I] - mem:1584384 goroutine:9 gc:0 pause:0ms
+2015/06/24 15:56:23 [E] - SnapShot() error: open ./xdlog-file/snapshot/test/2015-06-24.log: invalid argument
+ Stack     at func.001() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:46]
+    at panic() [/usr/local/go/src/pkg/runtime/panic.c:248]
+    at WriteToLog() [/Users/tangweichen/xxd-server/server/src/cron_server/api.go:33]
+    at func.002() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:60]
+    at goexit() [/usr/local/go/src/pkg/runtime/proc.c:1445]
+ 
+2015/06/24 15:56:33 [I] - mem:1607632 goroutine:9 gc:0 pause:0ms
+2015/06/24 15:56:33 [E] - SnapShot() error: open ./xdlog-file/snapshot/test/2015-06-24.log: invalid argument
+ Stack     at func.001() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:46]
+    at panic() [/usr/local/go/src/pkg/runtime/panic.c:248]
+    at WriteToLog() [/Users/tangweichen/xxd-server/server/src/cron_server/api.go:33]
+    at func.002() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:60]
+    at goexit() [/usr/local/go/src/pkg/runtime/proc.c:1445]
+ 
+2015/06/24 15:56:43 [I] - mem:1633472 goroutine:9 gc:0 pause:0ms
+2015/06/24 15:56:43 [E] - SnapShot() error: open ./xdlog-file/snapshot/test/2015-06-24.log: invalid argument
+ Stack     at func.001() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:46]
+    at panic() [/usr/local/go/src/pkg/runtime/panic.c:248]
+    at WriteToLog() [/Users/tangweichen/xxd-server/server/src/cron_server/api.go:33]
+    at func.002() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:60]
+    at goexit() [/usr/local/go/src/pkg/runtime/proc.c:1445]
+ 
+2015/06/24 15:56:53 [I] - mem:1658912 goroutine:9 gc:0 pause:0ms
+2015/06/24 15:56:53 [E] - SnapShot() error: open ./xdlog-file/snapshot/test/2015-06-24.log: invalid argument
+ Stack     at func.001() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:46]
+    at panic() [/usr/local/go/src/pkg/runtime/panic.c:248]
+    at WriteToLog() [/Users/tangweichen/xxd-server/server/src/cron_server/api.go:33]
+    at func.002() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:60]
+    at goexit() [/usr/local/go/src/pkg/runtime/proc.c:1445]
+ 
+2015/06/24 15:57:03 [I] - mem:1682816 goroutine:9 gc:0 pause:0ms
+2015/06/24 15:57:03 [E] - SnapShot() error: open ./xdlog-file/snapshot/test/2015-06-24.log: invalid argument
+ Stack     at func.001() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:46]
+    at panic() [/usr/local/go/src/pkg/runtime/panic.c:248]
+    at WriteToLog() [/Users/tangweichen/xxd-server/server/src/cron_server/api.go:33]
+    at func.002() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:60]
+    at goexit() [/usr/local/go/src/pkg/runtime/proc.c:1445]
+ 
+2015/06/24 15:57:13 [I] - mem:1446960 goroutine:9 gc:1 pause:0ms
+2015/06/24 15:57:13 [E] - SnapShot() error: open ./xdlog-file/snapshot/test/2015-06-24.log: invalid argument
+ Stack     at func.001() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:46]
+    at panic() [/usr/local/go/src/pkg/runtime/panic.c:248]
+    at WriteToLog() [/Users/tangweichen/xxd-server/server/src/cron_server/api.go:33]
+    at func.002() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:60]
+    at goexit() [/usr/local/go/src/pkg/runtime/proc.c:1445]
+ 
+2015/06/24 15:57:23 [I] - mem:1470592 goroutine:9 gc:0 pause:0ms
+2015/06/24 15:57:23 [E] - SnapShot() error: open ./xdlog-file/snapshot/test/2015-06-24.log: invalid argument
+ Stack     at func.001() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:46]
+    at panic() [/usr/local/go/src/pkg/runtime/panic.c:248]
+    at WriteToLog() [/Users/tangweichen/xxd-server/server/src/cron_server/api.go:33]
+    at func.002() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:60]
+    at goexit() [/usr/local/go/src/pkg/runtime/proc.c:1445]
+ 
+2015/06/24 15:58:23 [I] - mem:1377248 goroutine:10 gc:3 pause:0ms
+2015/06/24 15:58:23 [E] - SnapShot() error: open ./xdlog-file/snapshot/test/2015-06-24.log: invalid argument
+ Stack     at func.001() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:46]
+    at panic() [/usr/local/go/src/pkg/runtime/panic.c:248]
+    at WriteToLog() [/Users/tangweichen/xxd-server/server/src/cron_server/api.go:33]
+    at func.002() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:60]
+    at goexit() [/usr/local/go/src/pkg/runtime/proc.c:1445]
+ 
+2015/06/24 15:59:31 [I] - mem:1342368 goroutine:10 gc:3 pause:0ms
+2015/06/24 15:59:31 [E] - SnapShot() error: open ./xdlog-file/snapshot/2015-06-24.log: invalid argument
+ Stack     at func.001() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:46]
+    at panic() [/usr/local/go/src/pkg/runtime/panic.c:248]
+    at WriteToLog() [/Users/tangweichen/xxd-server/server/src/cron_server/api.go:33]
+    at func.002() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:60]
+    at goexit() [/usr/local/go/src/pkg/runtime/proc.c:1445]
+ 
+2015/06/24 16:00:14 [I] - mem:1342976 goroutine:10 gc:3 pause:0ms
+2015/06/24 16:00:14 [E] - SnapShot() error: open ./xdlog-file/snapshot/2015-06-24.log: invalid argument
+ Stack     at func.001() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:46]
+    at panic() [/usr/local/go/src/pkg/runtime/panic.c:248]
+    at WriteToLog() [/Users/tangweichen/xxd-server/server/src/cron_server/api.go:35]
+    at func.002() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:60]
+    at goexit() [/usr/local/go/src/pkg/runtime/proc.c:1445]
+ 
+2015/06/24 16:00:52 [I] - mem:1341920 goroutine:10 gc:3 pause:0ms
+2015/06/24 16:00:52 [E] - SnapShot() error: open ./xdlog-file/snapshot/2015-06-24.log: invalid argument
+ Stack     at func.001() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:46]
+    at panic() [/usr/local/go/src/pkg/runtime/panic.c:248]
+    at WriteToLog() [/Users/tangweichen/xxd-server/server/src/cron_server/api.go:35]
+    at func.002() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:60]
+    at goexit() [/usr/local/go/src/pkg/runtime/proc.c:1445]
+ 
+2015/06/24 16:01:02 [I] - mem:1393408 goroutine:9 gc:0 pause:0ms
+2015/06/24 16:01:02 [E] - SnapShot() error: open ./xdlog-file/snapshot/2015-06-24.log: invalid argument
+ Stack     at func.001() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:46]
+    at panic() [/usr/local/go/src/pkg/runtime/panic.c:248]
+    at WriteToLog() [/Users/tangweichen/xxd-server/server/src/cron_server/api.go:35]
+    at func.002() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:60]
+    at goexit() [/usr/local/go/src/pkg/runtime/proc.c:1445]
+ 
+2015/06/24 16:01:12 [I] - mem:1454928 goroutine:9 gc:0 pause:0ms
+2015/06/24 16:01:12 [E] - SnapShot() error: open ./xdlog-file/snapshot/2015-06-24.log: invalid argument
+ Stack     at func.001() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:46]
+    at panic() [/usr/local/go/src/pkg/runtime/panic.c:248]
+    at WriteToLog() [/Users/tangweichen/xxd-server/server/src/cron_server/api.go:35]
+    at func.002() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:60]
+    at goexit() [/usr/local/go/src/pkg/runtime/proc.c:1445]
+ 
+2015/06/24 16:01:22 [I] - mem:1484016 goroutine:9 gc:0 pause:0ms
+2015/06/24 16:01:22 [E] - SnapShot() error: open ./xdlog-file/snapshot/2015-06-24.log: invalid argument
+ Stack     at func.001() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:46]
+    at panic() [/usr/local/go/src/pkg/runtime/panic.c:248]
+    at WriteToLog() [/Users/tangweichen/xxd-server/server/src/cron_server/api.go:35]
+    at func.002() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:60]
+    at goexit() [/usr/local/go/src/pkg/runtime/proc.c:1445]
+ 
+2015/06/24 16:01:41 [I] - mem:1343328 goroutine:10 gc:3 pause:0ms
+2015/06/24 16:01:41 [E] - SnapShot() error: open ./xdlog-file/snapshot/2015-06-24.log: invalid argument
+ Stack     at func.001() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:46]
+    at panic() [/usr/local/go/src/pkg/runtime/panic.c:248]
+    at WriteToLog() [/Users/tangweichen/xxd-server/server/src/cron_server/api.go:35]
+    at func.002() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:60]
+    at goexit() [/usr/local/go/src/pkg/runtime/proc.c:1445]
+ 
+2015/06/24 16:01:51 [I] - mem:1395568 goroutine:9 gc:0 pause:0ms
+2015/06/24 16:01:51 [E] - SnapShot() error: open ./xdlog-file/snapshot/2015-06-24.log: invalid argument
+ Stack     at func.001() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:46]
+    at panic() [/usr/local/go/src/pkg/runtime/panic.c:248]
+    at WriteToLog() [/Users/tangweichen/xxd-server/server/src/cron_server/api.go:35]
+    at func.002() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:60]
+    at goexit() [/usr/local/go/src/pkg/runtime/proc.c:1445]
+ 
+2015/06/24 16:02:01 [I] - mem:1454384 goroutine:9 gc:0 pause:0ms
+2015/06/24 16:02:01 [E] - SnapShot() error: open ./xdlog-file/snapshot/2015-06-24.log: invalid argument
+ Stack     at func.001() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:46]
+    at panic() [/usr/local/go/src/pkg/runtime/panic.c:248]
+    at WriteToLog() [/Users/tangweichen/xxd-server/server/src/cron_server/api.go:35]
+    at func.002() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:60]
+    at goexit() [/usr/local/go/src/pkg/runtime/proc.c:1445]
+ 
+2015/06/24 16:02:19 [I] - mem:1342992 goroutine:10 gc:3 pause:0ms
+2015/06/24 16:02:19 [E] - SnapShot() error: open ./xdlog-file/snapshot/2015-06-24.log: invalid argument
+ Stack     at func.001() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:46]
+    at panic() [/usr/local/go/src/pkg/runtime/panic.c:248]
+    at WriteToLog() [/Users/tangweichen/xxd-server/server/src/cron_server/api.go:36]
+    at func.002() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:60]
+    at goexit() [/usr/local/go/src/pkg/runtime/proc.c:1445]
+ 
+2015/06/24 16:02:29 [I] - mem:1396448 goroutine:9 gc:0 pause:0ms
+2015/06/24 16:02:29 [E] - SnapShot() error: open ./xdlog-file/snapshot/2015-06-24.log: invalid argument
+ Stack     at func.001() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:46]
+    at panic() [/usr/local/go/src/pkg/runtime/panic.c:248]
+    at WriteToLog() [/Users/tangweichen/xxd-server/server/src/cron_server/api.go:36]
+    at func.002() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:60]
+    at goexit() [/usr/local/go/src/pkg/runtime/proc.c:1445]
+ 
+2015/06/24 16:02:39 [I] - mem:1455888 goroutine:9 gc:0 pause:0ms
+2015/06/24 16:02:39 [E] - SnapShot() error: open ./xdlog-file/snapshot/2015-06-24.log: invalid argument
+ Stack     at func.001() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:46]
+    at panic() [/usr/local/go/src/pkg/runtime/panic.c:248]
+    at WriteToLog() [/Users/tangweichen/xxd-server/server/src/cron_server/api.go:36]
+    at func.002() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:60]
+    at goexit() [/usr/local/go/src/pkg/runtime/proc.c:1445]
+ 
+2015/06/24 16:02:49 [I] - mem:1484720 goroutine:9 gc:0 pause:0ms
+2015/06/24 16:02:49 [E] - SnapShot() error: open ./xdlog-file/snapshot/2015-06-24.log: invalid argument
+ Stack     at func.001() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:46]
+    at panic() [/usr/local/go/src/pkg/runtime/panic.c:248]
+    at WriteToLog() [/Users/tangweichen/xxd-server/server/src/cron_server/api.go:36]
+    at func.002() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:60]
+    at goexit() [/usr/local/go/src/pkg/runtime/proc.c:1445]
+ 
+2015/06/24 16:02:59 [I] - mem:1510048 goroutine:9 gc:0 pause:0ms
+2015/06/24 16:02:59 [E] - SnapShot() error: open ./xdlog-file/snapshot/2015-06-24.log: invalid argument
+ Stack     at func.001() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:46]
+    at panic() [/usr/local/go/src/pkg/runtime/panic.c:248]
+    at WriteToLog() [/Users/tangweichen/xxd-server/server/src/cron_server/api.go:36]
+    at func.002() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:60]
+    at goexit() [/usr/local/go/src/pkg/runtime/proc.c:1445]
+ 
+2015/06/24 16:03:09 [I] - mem:1535488 goroutine:9 gc:0 pause:0ms
+2015/06/24 16:03:09 [E] - SnapShot() error: open ./xdlog-file/snapshot/2015-06-24.log: invalid argument
+ Stack     at func.001() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:46]
+    at panic() [/usr/local/go/src/pkg/runtime/panic.c:248]
+    at WriteToLog() [/Users/tangweichen/xxd-server/server/src/cron_server/api.go:36]
+    at func.002() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:60]
+    at goexit() [/usr/local/go/src/pkg/runtime/proc.c:1445]
+ 
+2015/06/24 16:03:39 [I] - mem:1343360 goroutine:10 gc:3 pause:0ms
+2015/06/24 16:03:39 [E] - SnapShot() error: open ./xdlog-file/snapshot/2015-06-24.log: invalid argument
+ Stack     at func.001() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:46]
+    at panic() [/usr/local/go/src/pkg/runtime/panic.c:248]
+    at WriteToLog() [/Users/tangweichen/xxd-server/server/src/cron_server/api.go:36]
+    at func.002() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:60]
+    at goexit() [/usr/local/go/src/pkg/runtime/proc.c:1445]
+ 
+2015/06/24 16:03:49 [I] - mem:1397280 goroutine:9 gc:0 pause:0ms
+2015/06/24 16:03:49 [E] - SnapShot() error: open ./xdlog-file/snapshot/2015-06-24.log: invalid argument
+ Stack     at func.001() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:46]
+    at panic() [/usr/local/go/src/pkg/runtime/panic.c:248]
+    at WriteToLog() [/Users/tangweichen/xxd-server/server/src/cron_server/api.go:36]
+    at func.002() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:60]
+    at goexit() [/usr/local/go/src/pkg/runtime/proc.c:1445]
+ 
+2015/06/24 16:03:59 [I] - mem:1456384 goroutine:9 gc:0 pause:0ms
+2015/06/24 16:03:59 [E] - SnapShot() error: open ./xdlog-file/snapshot/2015-06-24.log: invalid argument
+ Stack     at func.001() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:46]
+    at panic() [/usr/local/go/src/pkg/runtime/panic.c:248]
+    at WriteToLog() [/Users/tangweichen/xxd-server/server/src/cron_server/api.go:36]
+    at func.002() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:60]
+    at goexit() [/usr/local/go/src/pkg/runtime/proc.c:1445]
+ 
+2015/06/24 16:04:09 [I] - mem:1483840 goroutine:9 gc:0 pause:0ms
+2015/06/24 16:04:09 [E] - SnapShot() error: open ./xdlog-file/snapshot/2015-06-24.log: invalid argument
+ Stack     at func.001() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:46]
+    at panic() [/usr/local/go/src/pkg/runtime/panic.c:248]
+    at WriteToLog() [/Users/tangweichen/xxd-server/server/src/cron_server/api.go:36]
+    at func.002() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:60]
+    at goexit() [/usr/local/go/src/pkg/runtime/proc.c:1445]
+ 
+2015/06/24 16:04:19 [I] - mem:1510832 goroutine:9 gc:0 pause:0ms
+2015/06/24 16:04:19 [E] - SnapShot() error: open ./xdlog-file/snapshot/2015-06-24.log: invalid argument
+ Stack     at func.001() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:46]
+    at panic() [/usr/local/go/src/pkg/runtime/panic.c:248]
+    at WriteToLog() [/Users/tangweichen/xxd-server/server/src/cron_server/api.go:36]
+    at func.002() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:60]
+    at goexit() [/usr/local/go/src/pkg/runtime/proc.c:1445]
+ 
+2015/06/24 16:04:29 [I] - mem:1536272 goroutine:9 gc:0 pause:0ms
+2015/06/24 16:04:29 [E] - SnapShot() error: open ./xdlog-file/snapshot/2015-06-24.log: invalid argument
+ Stack     at func.001() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:46]
+    at panic() [/usr/local/go/src/pkg/runtime/panic.c:248]
+    at WriteToLog() [/Users/tangweichen/xxd-server/server/src/cron_server/api.go:36]
+    at func.002() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:60]
+    at goexit() [/usr/local/go/src/pkg/runtime/proc.c:1445]
+ 
+2015/06/24 16:04:39 [I] - mem:1562128 goroutine:9 gc:0 pause:0ms
+2015/06/24 16:04:39 [E] - SnapShot() error: open ./xdlog-file/snapshot/2015-06-24.log: invalid argument
+ Stack     at func.001() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:46]
+    at panic() [/usr/local/go/src/pkg/runtime/panic.c:248]
+    at WriteToLog() [/Users/tangweichen/xxd-server/server/src/cron_server/api.go:36]
+    at func.002() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:60]
+    at goexit() [/usr/local/go/src/pkg/runtime/proc.c:1445]
+ 
+2015/06/24 16:04:49 [I] - mem:1587136 goroutine:9 gc:0 pause:0ms
+2015/06/24 16:04:49 [E] - SnapShot() error: open ./xdlog-file/snapshot/2015-06-24.log: invalid argument
+ Stack     at func.001() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:46]
+    at panic() [/usr/local/go/src/pkg/runtime/panic.c:248]
+    at WriteToLog() [/Users/tangweichen/xxd-server/server/src/cron_server/api.go:36]
+    at func.002() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:60]
+    at goexit() [/usr/local/go/src/pkg/runtime/proc.c:1445]
+ 
+2015/06/24 16:04:59 [I] - mem:1610416 goroutine:9 gc:0 pause:0ms
+2015/06/24 16:04:59 [E] - SnapShot() error: open ./xdlog-file/snapshot/2015-06-24.log: invalid argument
+ Stack     at func.001() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:46]
+    at panic() [/usr/local/go/src/pkg/runtime/panic.c:248]
+    at WriteToLog() [/Users/tangweichen/xxd-server/server/src/cron_server/api.go:36]
+    at func.002() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:60]
+    at goexit() [/usr/local/go/src/pkg/runtime/proc.c:1445]
+ 
+2015/06/24 16:05:09 [I] - mem:1635536 goroutine:9 gc:0 pause:0ms
+2015/06/24 16:05:09 [E] - SnapShot() error: open ./xdlog-file/snapshot/2015-06-24.log: invalid argument
+ Stack     at func.001() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:46]
+    at panic() [/usr/local/go/src/pkg/runtime/panic.c:248]
+    at WriteToLog() [/Users/tangweichen/xxd-server/server/src/cron_server/api.go:36]
+    at func.002() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:60]
+    at goexit() [/usr/local/go/src/pkg/runtime/proc.c:1445]
+ 
+2015/06/24 16:05:29 [I] - mem:1342720 goroutine:9 gc:3 pause:0ms
+2015/06/24 16:05:29 [E] - SnapShot() error: open ./xdlog-file/snapshot/2015-06-24.log: invalid argument
+ Stack     at func.001() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:46]
+    at panic() [/usr/local/go/src/pkg/runtime/panic.c:248]
+    at WriteToLog() [/Users/tangweichen/xxd-server/server/src/cron_server/api.go:37]
+    at func.002() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:60]
+    at goexit() [/usr/local/go/src/pkg/runtime/proc.c:1445]
+ 
+2015/06/24 16:05:39 [I] - mem:1395616 goroutine:9 gc:0 pause:0ms
+2015/06/24 16:05:39 [E] - SnapShot() error: open ./xdlog-file/snapshot/2015-06-24.log: invalid argument
+ Stack     at func.001() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:46]
+    at panic() [/usr/local/go/src/pkg/runtime/panic.c:248]
+    at WriteToLog() [/Users/tangweichen/xxd-server/server/src/cron_server/api.go:37]
+    at func.002() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:60]
+    at goexit() [/usr/local/go/src/pkg/runtime/proc.c:1445]
+ 
+2015/06/24 16:05:49 [I] - mem:1454576 goroutine:9 gc:0 pause:0ms
+2015/06/24 16:05:49 [E] - SnapShot() error: open ./xdlog-file/snapshot/2015-06-24.log: invalid argument
+ Stack     at func.001() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:46]
+    at panic() [/usr/local/go/src/pkg/runtime/panic.c:248]
+    at WriteToLog() [/Users/tangweichen/xxd-server/server/src/cron_server/api.go:37]
+    at func.002() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:60]
+    at goexit() [/usr/local/go/src/pkg/runtime/proc.c:1445]
+ 
+2015/06/24 16:05:59 [I] - mem:1482064 goroutine:9 gc:0 pause:0ms
+2015/06/24 16:05:59 [E] - SnapShot() error: open ./xdlog-file/snapshot/2015-06-24.log: invalid argument
+ Stack     at func.001() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:46]
+    at panic() [/usr/local/go/src/pkg/runtime/panic.c:248]
+    at WriteToLog() [/Users/tangweichen/xxd-server/server/src/cron_server/api.go:37]
+    at func.002() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:60]
+    at goexit() [/usr/local/go/src/pkg/runtime/proc.c:1445]
+ 
+2015/06/24 16:06:09 [I] - mem:1507472 goroutine:9 gc:0 pause:0ms
+2015/06/24 16:06:09 [E] - SnapShot() error: open ./xdlog-file/snapshot/2015-06-24.log: invalid argument
+ Stack     at func.001() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:46]
+    at panic() [/usr/local/go/src/pkg/runtime/panic.c:248]
+    at WriteToLog() [/Users/tangweichen/xxd-server/server/src/cron_server/api.go:37]
+    at func.002() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:60]
+    at goexit() [/usr/local/go/src/pkg/runtime/proc.c:1445]
+ 
+2015/06/24 16:06:19 [I] - mem:1533568 goroutine:9 gc:0 pause:0ms
+2015/06/24 16:06:19 [E] - SnapShot() error: open ./xdlog-file/snapshot/2015-06-24.log: invalid argument
+ Stack     at func.001() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:46]
+    at panic() [/usr/local/go/src/pkg/runtime/panic.c:248]
+    at WriteToLog() [/Users/tangweichen/xxd-server/server/src/cron_server/api.go:37]
+    at func.002() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:60]
+    at goexit() [/usr/local/go/src/pkg/runtime/proc.c:1445]
+ 
+2015/06/24 16:06:29 [I] - mem:1562176 goroutine:9 gc:0 pause:0ms
+2015/06/24 16:06:29 [E] - SnapShot() error: open ./xdlog-file/snapshot/2015-06-24.log: invalid argument
+ Stack     at func.001() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:46]
+    at panic() [/usr/local/go/src/pkg/runtime/panic.c:248]
+    at WriteToLog() [/Users/tangweichen/xxd-server/server/src/cron_server/api.go:37]
+    at func.002() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:60]
+    at goexit() [/usr/local/go/src/pkg/runtime/proc.c:1445]
+ 
+2015/06/24 16:06:39 [I] - mem:1586512 goroutine:9 gc:0 pause:0ms
+2015/06/24 16:06:39 [E] - SnapShot() error: open ./xdlog-file/snapshot/2015-06-24.log: invalid argument
+ Stack     at func.001() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:46]
+    at panic() [/usr/local/go/src/pkg/runtime/panic.c:248]
+    at WriteToLog() [/Users/tangweichen/xxd-server/server/src/cron_server/api.go:37]
+    at func.002() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:60]
+    at goexit() [/usr/local/go/src/pkg/runtime/proc.c:1445]
+ 
+2015/06/24 16:08:11 [I] - mem:1342768 goroutine:10 gc:3 pause:0ms
+2015/06/24 16:08:11 [E] - SnapShot() error: open ./xdlog-file/snapshot/2015-06-24.log: invalid argument
+ Stack     at func.001() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:46]
+    at panic() [/usr/local/go/src/pkg/runtime/panic.c:248]
+    at WriteToLog() [/Users/tangweichen/xxd-server/server/src/cron_server/api.go:37]
+    at func.002() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:60]
+    at goexit() [/usr/local/go/src/pkg/runtime/proc.c:1445]
+ 
+2015/06/24 16:08:21 [I] - mem:1395136 goroutine:9 gc:0 pause:0ms
+2015/06/24 16:08:21 [E] - SnapShot() error: open ./xdlog-file/snapshot/2015-06-24.log: invalid argument
+ Stack     at func.001() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:46]
+    at panic() [/usr/local/go/src/pkg/runtime/panic.c:248]
+    at WriteToLog() [/Users/tangweichen/xxd-server/server/src/cron_server/api.go:37]
+    at func.002() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:60]
+    at goexit() [/usr/local/go/src/pkg/runtime/proc.c:1445]
+ 
+2015/06/24 16:09:01 [I] - mem:1342560 goroutine:10 gc:3 pause:0ms
+2015/06/24 16:14:02 [I] - mem:1341936 goroutine:10 gc:3 pause:0ms
+2015/06/24 16:14:12 [I] - mem:1397128 goroutine:9 gc:0 pause:0ms
+2015/06/24 16:14:22 [I] - mem:1456368 goroutine:9 gc:0 pause:0ms
+2015/06/24 16:14:32 [I] - mem:1481384 goroutine:9 gc:0 pause:0ms
+2015/06/24 16:14:42 [I] - mem:1510896 goroutine:9 gc:0 pause:0ms
+2015/06/24 16:14:52 [I] - mem:1536952 goroutine:9 gc:0 pause:0ms
+2015/06/24 16:15:02 [I] - mem:1563744 goroutine:9 gc:0 pause:0ms
+2015/06/24 16:15:12 [I] - mem:1588696 goroutine:9 gc:0 pause:0ms
+2015/06/24 17:02:57 [I] - mem:1342592 goroutine:10 gc:3 pause:0ms
+2015/06/24 17:03:07 [I] - mem:1342960 goroutine:10 gc:0 pause:0ms
+2015/06/24 17:03:17 [I] - mem:1343056 goroutine:10 gc:0 pause:0ms
+2015/06/24 17:03:27 [I] - mem:1343152 goroutine:10 gc:0 pause:0ms
+2015/06/24 17:03:37 [I] - mem:1343248 goroutine:10 gc:0 pause:0ms
+2015/06/24 17:03:47 [I] - mem:1343344 goroutine:11 gc:0 pause:0ms
+2015/06/24 17:03:47 [E] - OnlineCount() error: Error 1064: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '%d order by id desc limit 192' at line 1
+ Stack     at func.003() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:63]
+    at panic() [/usr/local/go/src/pkg/runtime/panic.c:248]
+    at FetchOnline() [/Users/tangweichen/xxd-server/server/src/cron_server/database/api.go:105]
+    at func.004() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:68]
+    at goexit() [/usr/local/go/src/pkg/runtime/proc.c:1445]
+ 
+2015/06/24 17:03:57 [I] - mem:1355304 goroutine:10 gc:0 pause:0ms
+2015/06/24 17:04:07 [I] - mem:1389896 goroutine:10 gc:0 pause:0ms
+2015/06/24 17:04:17 [I] - mem:1389992 goroutine:10 gc:0 pause:0ms
+2015/06/24 17:04:27 [I] - mem:1390088 goroutine:10 gc:0 pause:0ms
+2015/06/24 17:04:37 [I] - mem:1390184 goroutine:10 gc:0 pause:0ms
+2015/06/24 17:04:47 [I] - mem:1390280 goroutine:10 gc:0 pause:0ms
+2015/06/24 17:04:47 [E] - OnlineCount() error: Error 1064: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '%d order by id desc limit 192' at line 1
+ Stack     at func.003() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:63]
+    at panic() [/usr/local/go/src/pkg/runtime/panic.c:248]
+    at FetchOnline() [/Users/tangweichen/xxd-server/server/src/cron_server/database/api.go:105]
+    at func.004() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:68]
+    at goexit() [/usr/local/go/src/pkg/runtime/proc.c:1445]
+ 
+2015/06/24 17:04:57 [I] - mem:1393912 goroutine:10 gc:1 pause:0ms
+2015/06/24 17:05:07 [I] - mem:1394104 goroutine:10 gc:0 pause:0ms
+2015/06/24 17:05:17 [I] - mem:1394200 goroutine:10 gc:0 pause:0ms
+2015/06/24 17:05:27 [I] - mem:1394344 goroutine:10 gc:0 pause:0ms
+2015/06/24 17:05:37 [I] - mem:1394440 goroutine:10 gc:0 pause:0ms
+2015/06/24 17:05:47 [I] - mem:1394536 goroutine:10 gc:0 pause:0ms
+2015/06/24 17:05:47 [E] - OnlineCount() error: Error 1064: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '%d order by id desc limit 192' at line 1
+ Stack     at func.003() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:63]
+    at panic() [/usr/local/go/src/pkg/runtime/panic.c:248]
+    at FetchOnline() [/Users/tangweichen/xxd-server/server/src/cron_server/database/api.go:105]
+    at func.004() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:68]
+    at goexit() [/usr/local/go/src/pkg/runtime/proc.c:1445]
+ 
+2015/06/24 17:05:57 [I] - mem:1398376 goroutine:10 gc:0 pause:0ms
+2015/06/24 17:06:07 [I] - mem:1398472 goroutine:10 gc:0 pause:0ms
+2015/06/24 17:06:17 [I] - mem:1398568 goroutine:10 gc:0 pause:0ms
+2015/06/24 17:06:27 [I] - mem:1398664 goroutine:10 gc:0 pause:0ms
+2015/06/24 17:06:37 [I] - mem:1398760 goroutine:10 gc:0 pause:0ms
+2015/06/24 17:06:47 [I] - mem:1398856 goroutine:10 gc:0 pause:0ms
+2015/06/24 17:06:47 [E] - OnlineCount() error: Error 1064: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '%d order by id desc limit 192' at line 1
+ Stack     at func.003() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:63]
+    at panic() [/usr/local/go/src/pkg/runtime/panic.c:248]
+    at FetchOnline() [/Users/tangweichen/xxd-server/server/src/cron_server/database/api.go:105]
+    at func.004() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:68]
+    at goexit() [/usr/local/go/src/pkg/runtime/proc.c:1445]
+ 
+2015/06/24 17:06:57 [I] - mem:1390536 goroutine:10 gc:1 pause:0ms
+2015/06/24 17:07:07 [I] - mem:1390776 goroutine:10 gc:0 pause:0ms
+2015/06/24 17:07:17 [I] - mem:1390872 goroutine:10 gc:0 pause:0ms
+2015/06/24 17:07:27 [I] - mem:1390968 goroutine:10 gc:0 pause:0ms
+2015/06/24 17:07:37 [I] - mem:1391064 goroutine:10 gc:0 pause:0ms
+2015/06/24 17:07:47 [I] - mem:1391160 goroutine:10 gc:0 pause:0ms
+2015/06/24 17:07:47 [E] - OnlineCount() error: Error 1064: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '%d order by id desc limit 192' at line 1
+ Stack     at func.003() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:63]
+    at panic() [/usr/local/go/src/pkg/runtime/panic.c:248]
+    at FetchOnline() [/Users/tangweichen/xxd-server/server/src/cron_server/database/api.go:105]
+    at func.004() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:68]
+    at goexit() [/usr/local/go/src/pkg/runtime/proc.c:1445]
+ 
+2015/06/24 17:07:57 [I] - mem:1394520 goroutine:10 gc:0 pause:0ms
+2015/06/24 17:08:07 [I] - mem:1394616 goroutine:10 gc:0 pause:0ms
+2015/06/24 17:08:17 [I] - mem:1394712 goroutine:10 gc:0 pause:0ms
+2015/06/24 17:08:27 [I] - mem:1394808 goroutine:10 gc:0 pause:0ms
+2015/06/24 17:08:49 [I] - mem:1343072 goroutine:10 gc:3 pause:0ms
+2015/06/24 17:09:08 [I] - mem:1377312 goroutine:10 gc:3 pause:0ms
+2015/06/24 17:09:18 [I] - mem:1377632 goroutine:10 gc:0 pause:0ms
+2015/06/24 17:09:28 [I] - mem:1377728 goroutine:10 gc:0 pause:0ms
+2015/06/24 17:09:38 [I] - mem:1377824 goroutine:10 gc:0 pause:0ms
+2015/06/24 17:09:48 [I] - mem:1377920 goroutine:10 gc:0 pause:0ms
+2015/06/24 17:09:58 [I] - mem:1378672 goroutine:11 gc:0 pause:0ms
+2015/06/24 17:09:58 [E] - OnlineCount() error: Error 1064: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '%d order by id desc limit 192' at line 1
+ Stack     at func.003() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:63]
+    at panic() [/usr/local/go/src/pkg/runtime/panic.c:248]
+    at FetchOnline() [/Users/tangweichen/xxd-server/server/src/cron_server/database/api.go:106]
+    at func.004() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:68]
+    at goexit() [/usr/local/go/src/pkg/runtime/proc.c:1445]
+ 
+2015/06/24 17:10:08 [I] - mem:1395192 goroutine:10 gc:0 pause:0ms
+2015/06/24 17:10:18 [I] - mem:1395336 goroutine:10 gc:0 pause:0ms
+2015/06/24 17:10:28 [I] - mem:1395432 goroutine:10 gc:0 pause:0ms
+2015/06/24 17:10:38 [I] - mem:1395528 goroutine:10 gc:0 pause:0ms
+2015/06/24 17:10:48 [I] - mem:1395624 goroutine:10 gc:0 pause:0ms
+2015/06/24 17:11:13 [I] - mem:1347280 goroutine:10 gc:3 pause:0ms
+2015/06/24 17:11:23 [I] - mem:1347936 goroutine:10 gc:0 pause:0ms
+2015/06/24 17:11:33 [I] - mem:1348032 goroutine:10 gc:0 pause:0ms
+2015/06/24 17:11:43 [I] - mem:1348128 goroutine:10 gc:0 pause:0ms
+2015/06/24 17:11:53 [I] - mem:1348224 goroutine:10 gc:0 pause:0ms
+2015/06/24 17:12:03 [I] - mem:1348368 goroutine:11 gc:0 pause:0ms
+2015/06/24 17:12:13 [I] - mem:1359352 goroutine:10 gc:0 pause:0ms
+2015/06/24 17:12:23 [I] - mem:1393944 goroutine:10 gc:0 pause:0ms
+2015/06/24 17:12:33 [I] - mem:1394040 goroutine:10 gc:0 pause:0ms
+2015/06/24 17:12:43 [I] - mem:1394136 goroutine:10 gc:0 pause:0ms
+2015/06/24 17:12:53 [I] - mem:1394232 goroutine:10 gc:0 pause:0ms
+2015/06/24 17:13:03 [I] - mem:1394328 goroutine:10 gc:0 pause:0ms
+2015/06/24 17:13:13 [I] - mem:1390584 goroutine:10 gc:2 pause:1ms
+2015/06/24 17:13:23 [I] - mem:1390680 goroutine:10 gc:0 pause:0ms
+2015/06/24 17:13:33 [I] - mem:1391192 goroutine:10 gc:0 pause:0ms
+2015/06/24 17:13:43 [I] - mem:1391288 goroutine:10 gc:0 pause:0ms
+2015/06/24 17:13:53 [I] - mem:1391384 goroutine:10 gc:0 pause:0ms
+2015/06/24 17:14:03 [I] - mem:1391480 goroutine:10 gc:0 pause:0ms
+2015/06/24 17:14:13 [I] - mem:1394384 goroutine:10 gc:0 pause:0ms
+2015/06/24 17:14:23 [I] - mem:1394480 goroutine:10 gc:0 pause:0ms
+2015/06/24 17:14:33 [I] - mem:1394576 goroutine:10 gc:0 pause:0ms
+2015/06/24 17:14:43 [I] - mem:1394672 goroutine:10 gc:0 pause:0ms
+2015/06/24 17:14:53 [I] - mem:1394768 goroutine:10 gc:0 pause:0ms
+2015/06/24 17:15:17 [I] - mem:1342672 goroutine:10 gc:3 pause:0ms
+2015/06/24 17:15:27 [I] - mem:1342944 goroutine:10 gc:0 pause:0ms
+2015/06/24 17:15:37 [I] - mem:1343040 goroutine:10 gc:0 pause:0ms
+2015/06/24 17:15:47 [I] - mem:1343184 goroutine:10 gc:0 pause:0ms
+2015/06/24 17:15:57 [I] - mem:1343280 goroutine:10 gc:0 pause:0ms
+2015/06/24 17:16:07 [I] - mem:1343424 goroutine:11 gc:0 pause:0ms
+2015/06/24 17:16:17 [I] - mem:1361352 goroutine:10 gc:0 pause:0ms
+2015/06/24 17:16:27 [I] - mem:1430616 goroutine:10 gc:0 pause:0ms
+2015/06/24 17:16:37 [I] - mem:1430808 goroutine:10 gc:0 pause:0ms
+2015/06/24 17:16:47 [I] - mem:1430904 goroutine:10 gc:0 pause:0ms
+2015/06/24 17:16:57 [I] - mem:1431000 goroutine:10 gc:0 pause:0ms
+2015/06/24 17:17:07 [I] - mem:1431096 goroutine:10 gc:0 pause:0ms
+2015/06/24 17:17:17 [I] - mem:1423648 goroutine:10 gc:2 pause:0ms
+2015/06/24 17:17:27 [I] - mem:1423840 goroutine:10 gc:0 pause:0ms
+2015/06/24 17:17:37 [I] - mem:1423936 goroutine:10 gc:0 pause:0ms
+2015/06/24 17:19:17 [I] - mem:1346448 goroutine:10 gc:3 pause:0ms
+2015/06/24 17:19:27 [I] - mem:1347104 goroutine:10 gc:0 pause:0ms
+2015/06/24 17:19:37 [I] - mem:1347200 goroutine:10 gc:0 pause:0ms
+2015/06/24 17:19:47 [I] - mem:1347296 goroutine:10 gc:0 pause:0ms
+2015/06/24 17:19:57 [I] - mem:1347392 goroutine:10 gc:0 pause:0ms
+2015/06/24 17:20:07 [I] - mem:1347776 goroutine:11 gc:0 pause:0ms
+2015/06/24 17:20:17 [I] - mem:1362488 goroutine:10 gc:0 pause:0ms
+2015/06/24 17:20:27 [I] - mem:1397080 goroutine:10 gc:0 pause:0ms

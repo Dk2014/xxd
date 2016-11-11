@@ -1,0 +1,26 @@
+//
+// 推送通知 接口
+//
+mod push_notify = 26
+{
+	// 推送设置信息
+	api push_info= 1 {
+		in{ }
+		out {
+			//玩家开启的推送通知列表
+			effect_notification :list { 
+				notification_id: int 
+			}
+		}
+	}
+
+	// 推送通知开关
+	api push_notification_switch= 2 {
+		in {
+			notification_id : int // 通知ID
+			turn_on : bool // 开关
+		}
+		out{
+		}
+	}
+}

@@ -1,0 +1,9 @@
+<?php
+$config=array(
+  array('const',
+  'WHICH_BRANCH' => _S(1, 1, 2),
+  'TENCENT' => 1,
+  'SOHA' => 2,
+  ),
+);
+?>

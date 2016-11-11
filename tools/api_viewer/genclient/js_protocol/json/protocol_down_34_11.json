@@ -1,0 +1,1 @@
+{"action_name":"clique_temple_info","module_name":"clique_building","protocol":[{"name":"totaldonatecoins","type":"int64"},{"name":"isworship","type":"bool"},{"name":"worship_type","type":"int8"},{"name":"worshipcnt","type":"int8"},{"name":"temple_building_level","type":"int16"},{"name":"temple_building_coins","type":"int32"}]}

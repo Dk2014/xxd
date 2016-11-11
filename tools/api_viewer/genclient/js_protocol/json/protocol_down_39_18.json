@@ -1,0 +1,1 @@
+{"action_name":"skill_info","module_name":"taoyuan","protocol":[{"name":"skill_info","type":"list8","fields":[{"name":"skill_id","type":"int16"},{"name":"skill_type","type":"int8"},{"name":"make_times","type":"int64"}]}]}

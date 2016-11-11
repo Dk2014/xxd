@@ -1,0 +1,53 @@
+{
+	"Port" : "80",
+	"LogPath" : "./payment",
+	"DisableSoha": true,
+	"PrivateKey" : "0E40239183AE25023E91B1A3CFBB1E86",
+	"EnhancedValidate": true,
+	"EnhancedPrivateKey": "ZGVlOTk1YzkzMzkwNjgwMTBhNDM",
+	"ProductInfo": {
+		"sg70_sc_10": {"GameMoney": 50, "PresentGameMoney": 10, "IsMonthCard": false, "Cost": 10.0},
+		"sg70_sc_20": {"GameMoney": 50, "PresentGameMoney": 10, "IsMonthCard": false, "Cost: 9.9}
+	},
+	"Debug" : true,
+	"Database" : {
+		"Protocol" : "tcp",
+		"Name" : "payment",
+		"Address" : "127.0.0.1:3306",
+		"User" : "supei",
+		"Password" : "123456"
+	},
+	"GooglePlayVerify": {
+		"Enable": true,
+		"DefaultPkg": "com.wegames.rog.and",
+		"TimeoutSecond": 10,
+		"PublicKeyPath": "google_public_key.json",
+		"NewPaymentQueueSize": 10000
+	},
+	"AppStoreVerify": {
+		"Enable": true,
+		"TimeoutSecond": 10,
+		"IsProduction": false,
+		"NewPaymentQueueSize": 10000,
+		"SandServerList": [10001, 10002]
+	},
+	"Wegames": {
+		"Enable": true,
+		"GameCode": "AAACAA",
+		"IsProduction": false,
+		"PrivateKey": "c5a7b0b41b3774863d31e88f221ba42b",
+		"ProductUrl":  "http://api.wegames.com.tw/api/",
+		"DevUrl":  "http://test-api.wegames.com.tw/api/",
+	},
+	
+  	"RPCServerList": [
+    		{
+      			"id": 91,
+      			"name": "xxd",
+      			"addr": "127.0.0.1:8081"
+    		}
+  	],
+	"EnableHTTPConfig" : true,
+	"RPCServerConfigURL" : "http://platform.xxd.io:8888/gserverall",
+	"RPCServerConfigApp" : "xxd_vn"
+}

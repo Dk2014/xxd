@@ -1,0 +1,1 @@
+{"action_name":"get_extend_quest_info_by_npc_id","module_name":"quest","protocol":[{"name":"quest","type":"list8","fields":[{"name":"id","type":"int32"},{"name":"progress","type":"int16"},{"name":"state","type":"int8"}]}]}

@@ -1,0 +1,1 @@
+{"action_name":"list_opened_town_treasures","module_name":"town","protocol":[{"name":"treasures","type":"list16","fields":[{"name":"town_id","type":"int16"}]}]}

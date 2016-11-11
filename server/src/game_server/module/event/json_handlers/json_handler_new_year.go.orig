@@ -1,0 +1,242 @@
+// json配置的春节活动处理模块
+package json_handlers
+
+import (
+	"core/net"
+	"encoding/json"
+	"fmt"
+	"game_server/api/protocol/event_api"
+	. "game_server/config"
+	"game_server/dat/event_dat"
+	"game_server/dat/mail_dat"
+	"game_server/module"
+	"strconv"
+	"strings"
+	gotime "time"
+)
+
+type json_new_year_handler struct{}
+
+func init() {
+	JsonEventHandlers[event_dat.JSON_EVENT_NEW_YEAR] = &json_new_year_handler{}
+}
+
+func (handler *json_new_year_handler) GetJsonEventStatus(session *net.Session, page int32) event_api.GetEvents_Out_Events {
+	var result event_api.GetEvents_Out_Events
+	// 只对新年红包活动进行检测，过期且有没领取的奖励则发送奖励邮件，其他情况不做任何处理
+	if eventInfo, exists := event_dat.GetJsonEventInfoById(event_dat.JSON_EVENT_NEW_YEAR, event_dat.EVENT_NEW_YEAR_INVAILD_PAGE); exists {
+		if eventInfo.IsRelative || eventInfo.EndUnixTime > ServerCfg.ServerOpenTime { // 红包活动领奖开始后开的区 不下发红包活动
+			result = event_api.GetEvents_Out_Events{
+				EventId: event_dat.JSON_EVENT_NEW_YEAR,
+				Page:    event_dat.EVENT_NEW_YEAR_INVAILD_PAGE,
+			}
+		}
+	}
+	return result
+}
+
+func (handler *json_new_year_handler) GetJsonEventAward(session *net.Session, page int32, params *event_api.GetEventAward_In) {
+	//新年红包
+	state := module.State(session)
+	out := &event_api.GetEventAward_Out{}
+	out.Result = 3
+	if eventinfo, exists := event_dat.GetJsonEventInfoById(event_dat.JSON_EVENT_NEW_YEAR, event_dat.EVENT_NEW_YEAR_INVAILD_PAGE); exists && !eventinfo.CheckStatus(event_dat.NOT_END) && eventinfo.CheckStatus(event_dat.NOT_DISPOSE) {
+		day_order := params.Param1 // param1用来存放要领红包的天数 从1开始
+		var status int32 = 0
+		jsonEventRecord, existss := state.JsonEventsState.GetStatus(event_dat.JSON_EVENT_NEW_YEAR, event_dat.EVENT_NEW_YEAR_INVAILD_PAGE)
+		if existss {
+			status = jsonEventRecord.Awarded
+		}
+		if status&(1<<uint(day_order-1)) == 0 {
+			// 没有领取过
+			record := state.Database.Lookup.PlayerNewYearConsumeRecord(state.PlayerId)
+			if record != nil {
+				realRecord := make(map[string]int)
+				json.Unmarshal([]byte(record.ConsumeRecord), &realRecord)
+				key := fmt.Sprintf("%d-%d", gotime.Now().Year(), day_order)
+				if val, ok := realRecord[key]; ok && val > 0 {
+					if val < 10 {
+						val = 10
+					}
+					//TODO 不直接增加元宝，改为邮件发送
+					attachments := make([]*mail_dat.Attachment, 0)
+					num_ingot := int64(float32(val) * event_dat.EVENT_NEW_YEAR_RATE)
+					if _, awardInfo := eventinfo.GetGradeByIndex(int32(day_order)); awardInfo != nil {
+						award := awardInfo.Award
+						if award.Coin > 0 {
+							attachments = append(attachments, &mail_dat.Attachment{
+								AttachmentType: mail_dat.ATTACHMENT_COINS,
+								ItemNum:        int64(award.Coin),
+							})
+						}
+						if award.Ingot > 0 {
+							num_ingot += int64(award.Ingot)
+						}
+						if award.Heart > 0 {
+							attachments = append(attachments, &mail_dat.Attachment{
+								AttachmentType: mail_dat.ATTACHMENT_HEART,
+								ItemNum:        int64(award.Heart),
+							})
+						}
+						if award.Item1Id > 0 && award.Item1Num > 0 {
+							attachments = append(attachments, &mail_dat.Attachment{
+								AttachmentType: mail_dat.ATTACHMENT_ITEM,
+								ItemId:         award.Item1Id,
+								ItemNum:        int64(award.Item1Num),
+							})
+						}
+						if award.Item2Id > 0 && award.Item2Num > 0 {
+							attachments = append(attachments, &mail_dat.Attachment{
+								AttachmentType: mail_dat.ATTACHMENT_ITEM,
+								ItemId:         award.Item2Id,
+								ItemNum:        int64(award.Item2Num),
+							})
+						}
+						if award.Item3Id > 0 && award.Item3Num > 0 {
+							attachments = append(attachments, &mail_dat.Attachment{
+								AttachmentType: mail_dat.ATTACHMENT_ITEM,
+								ItemId:         award.Item3Id,
+								ItemNum:        int64(award.Item3Num),
+							})
+						}
+						if award.Item4Id > 0 && award.Item4Num > 0 {
+							attachments = append(attachments, &mail_dat.Attachment{
+								AttachmentType: mail_dat.ATTACHMENT_ITEM,
+								ItemId:         award.Item4Id,
+								ItemNum:        int64(award.Item4Num),
+							})
+						}
+						if award.Item5Id > 0 && award.Item5Num > 0 {
+							attachments = append(attachments, &mail_dat.Attachment{
+								AttachmentType: mail_dat.ATTACHMENT_ITEM,
+								ItemId:         award.Item5Id,
+								ItemNum:        int64(award.Item5Num),
+							})
+						}
+					}
+					attachments = append(attachments, &mail_dat.Attachment{
+						AttachmentType: mail_dat.ATTACHMENT_INGOT,
+						ItemNum:        num_ingot,
+					})
+					module.Mail.SendMail(state.Database, &mail_dat.EmptyMail{
+						MailId:      0,
+						Title:       "新年红包",
+						Content:     "尊敬的大侠，感谢您一直以来对仙侠道的支持～开红包拿礼物哦～快来收下我们给你准备的大礼吧～令祝大家新年快乐～",
+						Parameters:  "",
+						Attachments: attachments,
+						ExpireTime:  1,
+						Priority:    0,
+					})
+					//module.Player.IncMoney(state.Database, state.MoneyState, int64(float32(val)*event_dat.EVENT_NEW_YEAR_RATE), player_dat.INGOT, tlog.MFR_EVENT_CENTER, xdlog.ET_EVENT_CENTER_JSON_NEW_YEAR, fmt.Sprintf("%d", page))
+					// 更新领取状态
+					state.JsonEventsState.ChangeStatus(event_dat.JSON_EVENT_NEW_YEAR, event_dat.EVENT_NEW_YEAR_INVAILD_PAGE, 0, status+1<<uint(day_order-1))
+					state.JsonEventsState.Save(state.Database)
+					out.Result = 1
+				}
+			}
+		}
+	}
+
+	session.Send(out)
+}
+
+func _is_over(eventInfo *event_dat.JsonEvent, process map[string]int, awarded int32) (attachments []*mail_dat.Attachment, exists bool) {
+	var year = gotime.Now().Year()
+	attachments = make([]*mail_dat.Attachment, 0)
+	var num_ingot, num_coin, num_heart int
+	items := make(map[int16]int)
+	for key, val := range process {
+		if val > 0 && val < 10 { //确保至少会获得1个元宝
+			val = 10
+		}
+		key_slice := strings.Split(key, "-")
+		if key_slice[0] == fmt.Sprintf("%d", year) {
+			day_order, _ := strconv.Atoi(key_slice[1])
+			if awarded&(1<<uint(day_order-1)) == 0 {
+				exists = true
+				num_ingot += int(float32(val) * event_dat.EVENT_NEW_YEAR_RATE)
+				// 春节活动附加奖励
+				if _, awardInfo := eventInfo.GetGradeByIndex(int32(day_order)); awardInfo != nil {
+					award := awardInfo.Award
+					switch {
+					case award.Coin > 0:
+						num_coin += int(award.Coin)
+						fallthrough
+					case award.Ingot > 0:
+						num_ingot += int(award.Ingot)
+						fallthrough
+					case award.Heart > 0:
+						num_heart += int(award.Heart)
+						fallthrough
+					case award.Item1Id > 0 && award.Item1Num > 0:
+						if _, ined := items[award.Item1Id]; ined {
+							items[award.Item1Id] += int(award.Item1Num)
+						} else {
+							items[award.Item1Id] = int(award.Item1Num)
+						}
+						fallthrough
+					case award.Item2Id > 0 && award.Item2Num > 0:
+						if _, ined := items[award.Item2Id]; ined {
+							items[award.Item2Id] += int(award.Item2Num)
+						} else {
+							items[award.Item2Id] = int(award.Item2Num)
+						}
+						fallthrough
+					case award.Item3Id > 0 && award.Item3Num > 0:
+						if _, ined := items[award.Item3Id]; ined {
+							items[award.Item3Id] += int(award.Item3Num)
+						} else {
+							items[award.Item3Id] = int(award.Item3Num)
+						}
+						fallthrough
+					case award.Item4Id > 0 && award.Item4Num > 0:
+						if _, ined := items[award.Item4Id]; ined {
+							items[award.Item4Id] += int(award.Item4Num)
+						} else {
+							items[award.Item4Id] = int(award.Item4Num)
+						}
+						fallthrough
+					case award.Item5Id > 0 && award.Item5Num > 0:
+						if _, ined := items[award.Item5Id]; ined {
+							items[award.Item5Id] += int(award.Item5Num)
+						} else {
+							items[award.Item5Id] = int(award.Item5Num)
+						}
+					}
+				}
+			}
+		}
+		if exists {
+			// 有未领取的奖励
+			if num_coin > 0 {
+				attachments = append(attachments, &mail_dat.Attachment{
+					AttachmentType: mail_dat.ATTACHMENT_COINS,
+					ItemNum:        int64(num_coin),
+				})
+			}
+			if num_heart > 0 {
+				attachments = append(attachments, &mail_dat.Attachment{
+					AttachmentType: mail_dat.ATTACHMENT_HEART,
+					ItemNum:        int64(num_heart),
+				})
+			}
+			if num_ingot > 0 {
+				attachments = append(attachments, &mail_dat.Attachment{
+					AttachmentType: mail_dat.ATTACHMENT_INGOT,
+					ItemNum:        int64(num_ingot),
+				})
+			}
+			for itemId, itemNum := range items {
+				if itemId > 0 && itemNum > 0 {
+					attachments = append(attachments, &mail_dat.Attachment{
+						AttachmentType: mail_dat.ATTACHMENT_ITEM,
+						ItemId:         itemId,
+						ItemNum:        int64(itemNum),
+					})
+				}
+			}
+		}
+	}
+
+	return
+}

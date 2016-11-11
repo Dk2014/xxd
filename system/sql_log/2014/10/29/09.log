@@ -1,0 +1,4 @@
+-- ------------------------------------------------------
+-- 10/29/2014 09:56 删除操作发生在表quest_activity_center
+DELETE FROM `quest_activity_center` WHERE `id` = 10;
+

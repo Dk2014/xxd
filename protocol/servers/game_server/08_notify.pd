@@ -1,0 +1,453 @@
+// 各种通知模块
+mod notify = 8
+{
+
+    // buff类型
+    type buff_mode enum {
+        POWER              = 0  // 精气
+        SPEED              = 1  // 速度
+        ATTACK             = 2  // 攻击
+        DEFEND             = 3  // 防御
+        HEALTH             = 4  // 生命
+        DIZZINESS          = 5  // 眩晕
+        POISONING          = 6  // 中毒
+        CLEAN_BAD          = 7  // 清除负面buff
+        CLEAN_GOOD         = 8  // 清除增益buff
+        REDUCE_HURT        = 9  // 伤害减免
+        RANDOM             = 10 // 混乱
+        BLOCK              = 11 // 格挡概率
+        BLOCK_LEVEL        = 12 // 格挡概率等级
+        DODGE_LEVEL        = 13 // 闪避概率等级
+        CRITIAL_LEVEL      = 14 // 暴击等级
+        HIT_LEVEL          = 15 // 命中等级
+        HURT_ADD           = 16 // 伤害加值（百分数）
+        MAX_HEALTH         = 17 // 最大生命
+        KEEPER_REDUCE_HURT = 18 // 守卫者免伤
+        ATTRACT_FIRE       = 19 // 吸引火力
+        DESTROY_LEVEL      = 20 // 破击
+        TENACITY_LEVEL     = 21 // 韧性
+        SUNDER             = 22 // 护甲
+	SLEEP              = 23 // 睡眠
+        DISABLE_SKILL      = 24 // 禁用绝招
+	DIRECT_REDUCE_HURT = 25  // 直接免伤
+	ABSORB_HURT   = 26  // 伤害吸收
+	GHOST_POWER   = 27  // 魂力
+	PET_LIVE_ROUND= 28  // 灵宠回合数
+	BUDDY_SKILL   = 29  // 伙伴技能
+	CLEAR_ABSORB_HURT = 30 //清除伤害吸收
+	SLEEP_LEVEL         = 31 //睡眠抗性等级
+	DIZZINESS_LEVEL     = 32 //眩晕抗性等级
+	RANDOM_LEVEL        = 33 //混乱抗性等级
+	DISABLE_SKILL_LEVEL = 34 //封魔抗性等级
+	BUFF_POISONING_LEVEL     = 35 //中毒抗性等级
+	BUFF_RECOVER_BUDDY_SKILL = 36  //回复伙伴进阶技能使用次数
+	BUFF_MAKE_POWER_FULL     = 37  //精力恢复至满
+	BUFF_DOGE= 38  //闪避
+	BUFF_HIT= 39  //命中
+	BUFF_CRITIAL= 40  //暴击
+	BUFF_TENACITY= 41  //韧性
+	BUFF_TAKE_SUNSER= 42  //破甲
+	BUFF_DEFEND_PERSENT = 43 //防御百分比
+	BUFF_SUNDER_STATE = 44 //破甲状态
+    }
+    
+    // buffer信息
+    type buffer_info struct {
+        mode         : buff_mode // buff类型
+        keep         : int8      // 持续会合，等于0时整场战斗有效
+        value        : int32     // buff效果
+        skill_id     : int16     // buff产生buff的绝招id
+        max_override : int8      // 最大叠加数量
+        override_num : int8      // 当前已叠加数量
+    }
+
+    
+    // 属性类型
+    type attribute enum {
+        NULL           = 0   // 无
+        ATTACK         = 1   // 攻击
+        DEFENCE        = 2   // 防御
+        HEALTH         = 3   // 生命
+        SPEED          = 4   // 速度
+        CULTIVATION    = 5   // 内力
+        HIT_LEVEL      = 6   // 命中
+        CRITICAL_LEVEL = 7   // 暴击
+        BLOCK_LEVEL    = 8   // 格挡
+        DESTROY_LEVEL  = 9   // 破击
+        TENACITY_LEVEL = 10  // 韧性
+        DODGE_LEVEL    = 11  // 闪避
+        NUM            = 11  // 属性数目
+    }
+
+    //
+    // 玩家钥匙数量变更
+    //
+    api player_key_changed = 0 {
+        in {}
+        out {
+            key       : int32     // 变更后的钥匙数量
+            max_order : int8     // 已开启区域的最大序号
+        }
+    }
+
+
+    //
+    // 区域关卡权值变更
+    //
+    api mission_level_lock_changed = 1 {
+        out {
+            //lock      : int32     // 变更后的关卡权值
+            max_lock    : int32     // 已开启的关卡最大权值
+            award_lock  : int32     //已奖励的权值
+        }
+    }
+
+    //
+    // 通知角色经验改变
+    // 
+    api role_exp_change = 2 {
+        out {
+        role_id : int8   // 角色id
+            add_exp    : int64  // 增加的经验
+            exp        : int64  // 变更后的经验
+            level     : int16  // 变更后的等级
+        }
+    }
+
+
+    //
+    // 通知玩家体力更新
+    // 
+    api physical_change = 3 {
+        out {
+            value : int16 // 玩家当前体力
+        }
+    }    
+
+    //
+    // 通知玩家货币更新
+    // 
+    api money_change = 4 {
+        out {
+            moneytype 	: int8 // 玩家货币类型0-铜钱,1-元宝,2-剑心碎片
+            value 	    : int64 // 玩家货币类型对应数值
+            timestamp 	: int64 // 变更时间戳
+        }
+    } 
+
+    //
+    // 通知玩家绝招增加
+    // 
+    api skill_add = 5 {
+        out {
+            role_id  : int8  // 角色ID
+            skill_id : int16 // 绝招ID
+        }
+    } 
+
+    //
+    // 通知玩家背包变动
+    //
+    api item_change = 6 {
+        out {
+            items : list {
+                id        : int64   // 物品唯一标识
+                item_id   : int16   // 物品ID
+                num       : int16   // 物品数量,0为删除
+				
+				//附加属性
+                attack         : int32  // 攻击
+                defence        : int32  // 防御
+                health         : int32  // 生命
+                speed          : int32  // 速度
+                cultivation    : int32  // 内力
+                hit_level      : int32  // 命中
+                critical_level : int32  // 暴击
+                block_level    : int32  // 格挡
+                destroy_level  : int32  // 破击
+                tenacity_level : int32  // 韧性
+                dodge_level    : int32  // 闪避
+                
+                refine_level : int16       // 精练等级
+                recast_attr  : attribute  // 重铸锁定属性
+            }
+        }
+    }
+
+    // 通知关卡内角色状态改变
+    api role_battle_status_change = 7 {
+        out {
+            roles : list {
+                role_id : int8
+                health  : int
+                buffs   : list {
+                    buffer : buffer_info
+                }
+            }
+        }
+    }
+
+    // 新邮件
+    api new_mail = 8 {
+        out {
+        }
+    }
+    
+    // 通知爱心更新
+    api heart_change = 9 {
+        out {
+            value : int16 // 玩家当前爱心
+        }
+    }
+
+    //
+    // 通知任务状态改变
+    //
+    api quest_change = 10 {
+        out {
+            quest_id : int16  // 任务ID
+            state :    int8   // 任务状态
+        }
+    }
+
+    // 通知城镇权值变动
+    api townLock_change = 11 {
+        out {
+            lock : int32 // 变更后的值
+        }
+    }
+
+    // 通知聊天消息
+    api chat = 12 {
+        out {
+            pid       : int64         // 玩家ID
+            role_id   : int8          // 玩家角色ID
+            nickname  : string        // 玩家昵称
+            level     : int16         // 玩家等级
+            fight_num : int32         // 战斗力 
+            message   : text          // 聊天内容
+        }
+    }
+
+    //
+    // 玩家功能权值改变
+    //
+    api func_key_change = 13 {
+        out {
+            func_key : int16 // 玩家功能权值
+        }
+    }
+    
+    //
+    // 装备重铸状态重建
+    //
+    api item_recast_state_rebuild = 14 {
+        out {
+            id : int64  // 物品的唯一标识
+            selected_attr : attribute
+            attrs : list { // 属性列表
+                attr  : attribute
+                value : int32 
+            }
+        }
+    }
+
+    //
+    // 新公告（互动）
+    //
+    api send_announcement = 15 {
+        out {
+            id                  : int64     // 公告id
+            tpl_id    			: int32  	// 公告模板数据id
+            expire_time  		: int64  	// 公告过期时间戳
+            parameters 			: string 	// 模板参数值
+            content 			: string 	// 模板内容
+            spacing_time        : int32     // 间隔时间
+        }
+    }
+
+    //
+    // 玩家VIP等级改变
+    //
+    api vip_level_change = 16 {
+        out {
+            level: int16 // 玩家VIP等级
+        }
+    }
+
+    // 添加新伙伴通知
+    api notify_new_buddy = 17 {
+        out {
+            role_id : int8 // 伙伴角色模板ID
+            role_level : int16 // 伙伴等级
+        }
+    }
+
+    //
+    // 难度关卡权值变更
+    //
+    api hard_level_lock_changed = 18 {
+        out {
+            lock      : int32     // 变更后的关卡权值
+        }
+    }
+
+    //
+    // 通知玩家拔剑次数更新
+    // 
+    api send_sword_soul_draw_num_change = 19 {
+        out {
+            num : 	int16 // 当前可拔剑次数
+            cd_time : 	int64 // 下次恢复一次拔剑机会的时间，0则无需恢复
+        }
+    }    
+	type chest_type enum {
+        COIN_FREE  = 0  //青铜宝箱免费一次
+        INGOT_FREE = 1  //神龙宝箱免费一次
+	}
+
+    //
+    // 通知获得新魂侍
+    // 
+    api send_have_new_ghost = 21 {
+        out {
+            player_ghost_id 	: 	int64 //玩家新魂侍ID
+        }
+    }
+
+
+    //
+    // 通知下次爱心恢复时间
+    // 
+    api send_heart_recover_time= 22 {
+        out {
+            timestamp : 	int64 // 下次恢复一次时间
+        }
+    } 
+    //
+    // 通知客户端有全局邮件（互动）
+    // 
+    [tag("global")]
+    api send_global_mail= 23 {
+        out {}
+    } 
+    //
+    // 通知下次体力恢复时间
+    // 
+    api send_physical_recover_time= 24 {
+        out {
+            timestamp : 	int64 // 下次恢复一次时间
+        }
+    } 
+
+    api send_fashion_change= 25 {
+	out {
+		fashion_id: int16 //时装模版ID
+		expire_time: int64 //过期时间戳
+	}
+    }
+
+    // 通知客户端 事务内发生错误
+    api trans_error = 26 {
+        out {}
+    }
+	
+	//通知客户端 活动中心更新
+	api send_event_center_change = 27{
+		out {}
+	}
+
+	// 打坐状态
+	api meditation_state= 29 {
+		out{
+		}
+	}
+
+    //
+    // 删除公告新公告（互动）
+    //
+    api delete_announcement = 31 {
+        out {
+            id                  : int64     // 公告id
+        }
+    }
+
+    //
+    // 获得新灵宠通
+    //
+    api send_have_new_pet = 32 {
+        out {
+            pet_id                  : int32     //怪物敌人ID
+        }
+    }
+
+    // 同一账号在其他地方登陆,通知客户端登出
+    api send_logout = 33 {
+        out {}
+    }
+
+    //
+    // 通知玩家声望更新
+    // 
+    api fame_change = 34 {
+        out {
+            fame : int // 玩家当前声望
+        }
+    }    
+	
+	//全局聊天推送通知（全局）(废弃）
+	//[tag("global")]
+	//api send_global_chats = 35 {
+	//	out {
+	//		chats : list {
+	//			pid : int64 //玩家ID
+	//			nickname : string //昵称
+	//			timestamp: int64 //时间戳
+	//			content : string //聊天内容
+	//		}
+	//	}
+	//}
+
+    // 月卡激活的通知
+    api notify_month_card_open = 36{
+        out{}
+    }
+
+    // 月卡续费通知
+    api notify_month_card_renewal = 37 {
+        out{}
+    }
+
+    // 新阵印
+    api notify_new_totem = 38 {
+        out{
+            id            : int64  // 用户阵印主键
+            totem_id : int16  // 开出的阵印
+            skill         : int16   // 阵印技能
+	}
+    }
+
+    //符文数量变化
+    api notify_rune_change = 39 {
+        out{
+            rock_rune_num         : int32   // 石符文数量
+            jade_rune_num         : int32   // 玉符文数量
+	}
+    }
+
+    //月卡时间刷新
+    api notify_month_card_change = 40 {
+        out{
+            expire_at         : int64   // 过期时间戳
+	}
+    }
+
+    //首次充值状态改变
+    api notify_first_recharge_state = 41 {
+        out{
+		never_recharge : bool //从来未充值
+	}
+    }
+
+
+}

@@ -1,0 +1,10 @@
+PlayerLogin|1|2014-11-03 23:00:29|game_1_app_id|1|test666|35|0|7236||HTML5||WiFi|0|0|0|0||0|||
+PlayerLogout|1|2014-11-03 23:00:29|game_1_app_id|1|test666|0|35|0|7236||HTML5||WiFi|0|0|0|0||0||||0
+PlayerLogin|1|2014-11-03 23:00:43|game_1_app_id|1|test666|35|0|7236||HTML5||WiFi|0|0|0|0||0|||
+PlayerLogin|1|2014-11-03 23:00:44|game_1_app_id|1|test666|35|0|0.98|macos|intel|xxx|wifi|0|0|0.999999111|0|intel 001|1024|opengl 0.1|4.3|mac 10.94
+PlayerFightNumFlow|1|2014-11-03 23:00:44|game_1_app_id|1|test666|35|0|8321
+ItemFlow|1|2014-11-03 23:01:17|0|game_1_app_id|1|test666|15|302|1|1|31|0|0|0
+ItemMoneyFlow|1|2014-11-03 23:01:17|0|game_1_app_id|1|test666|15|302|1|30|35|2|0
+TradeBuyFlow|1|2014-11-03 23:01:17|game_1_app_id|1|test666|302|1|30|2|35|0
+PlayerSystemModuleFlow|1|2014-11-03 23:01:17|game_1_app_id|1|test666|35|1|0
+GameSvrState|2014-11-03 23:01:28|172.26.166.37

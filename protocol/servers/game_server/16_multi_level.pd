@@ -1,0 +1,208 @@
+//
+// 多人关卡
+//
+mod multi_level = 16
+{
+	// 房间状态
+	type room_status enum {
+		SUCCESS               = 0
+		FAILED_FULL	          = 1 // 满员
+		FAILED_NOT_EXIST      = 2 // 已解散
+		FAILED_FIGHTING       = 3 // 战斗中
+		FAILED_REQUIRE_LEVEL  = 4 // 等级不足
+		FAILED_REQUIRE_LOCK   = 5 // 权值不足
+	}
+
+	type partner_info struct {
+		pid           : int64
+		nick          : string
+		role_id       : int8
+		fashion_id    : int16 //时装模版ID
+		level         : int16
+		buddy_role_id : int8
+	}
+
+	// 创建房间
+	api create_room = 1 {
+		in {
+			level_id : int32  // 关卡id
+		}
+		out {
+			status : room_status
+		}
+	}
+
+	// 进入指定房间
+	[tag("cross")]
+	api enter_room = 2 {
+		in {
+			room_id  : int64
+		}
+		out {
+			status : room_status
+		}
+	}
+
+	// 随机加入房间
+	api auto_enter_room = 3 {
+		in {
+			level_id : int32  // 关卡id
+		}
+		out {
+			success    : bool  // 是否成功
+		}
+	}
+
+	// 获得房间中的玩家信息
+	api notify_room_info = 4 {
+		out {
+			room_id    : int64
+			leader_pid : int64
+			level_id   : int32	// 多人关卡ID
+
+			partners   : list {
+				partner : partner_info
+			}
+		}
+	}
+
+	// 离开房间
+	api leave_room = 5 {
+		in {
+		}
+
+		// 通知房间所有玩家
+		out {
+			pid        : int64 // 离开的队友
+			leader_pid : int64 // 现任队长
+		}
+	}
+
+	// 通知房间的已在队友，新增的玩家信息
+	api notify_join_partner = 6 {
+		out {
+			partner : partner_info
+		}
+	}
+
+	// 更换伙伴
+	api change_buddy = 7 {
+		in {
+			buddy_role_id : int8
+		}
+
+		out {
+			success : bool  // 是否成功
+		}
+	}
+
+	// 获取布阵
+	api get_form_info = 8 {
+		in {
+		}
+		out {
+			tactical : int8 // 战术
+			buddy_role_id  : int8 	// 伙伴角色模板ID
+			buddy_role_row : int8 	// 伙伴所在的行(1,2)
+		}
+	}
+
+	// 修改自己主角和伙伴的位置
+	api change_form = 9 {
+		in {
+			main_role_row  : int8 // 主角所在的行(1,2)
+			buddy_role_row : int8 // 伙伴所在的行(1,2)
+		}
+
+		out {
+			success : bool  // 是否成功
+		}
+	}
+
+	// 获取玩家多人关卡信息
+	api get_info = 10 {
+		in {}
+		out {
+			daily_num : int8 // 今日已进入次数
+			lock : int32 // 当前权值
+		}
+	}
+
+	// 取消自动匹配
+	api cancel_auto_match = 11 {
+		in {}
+		out{}
+	}
+
+	// 获取玩家在线好友(附带多人关卡状态)
+	api get_online_friend = 12 {
+		in {}
+		out {
+			friends : list {
+				pid             : int64         // 玩家ID
+				role_id         : int8          // 玩家角色ID
+				nickname        : string        // 玩家昵称
+				level           : int16         // 玩家等级
+				fight_num       : int32         // 战斗力
+				daily_num 		: int8			// 玩家进入已进入关卡次数
+				lock			: int32 		// 玩家多人关卡权值
+			}
+		}
+	}
+
+	// 邀请好友到房间
+	api invite_into_room = 13 {
+		in {
+			pid : int64 // 邀请的好友ID
+		}
+		out {
+			isOffline : bool // 邀请的好友已经离线
+		}
+	}
+
+	// 好友被邀请通知
+	api notify_room_invite = 14 {
+		out {
+			room_id   : int64	// 房间ID
+			level_id  : int32   // 多人关卡ID
+			nickname  : string  // 邀请发起者的昵称
+			inviter_id : int64 //邀请发起者的ID
+			daily_num : int8 	// 被邀请者今日已进入多人关卡的次数
+			game_server_id : int64 // 邀请者的游戏服ID
+		}
+	}
+	
+
+	// 进入战场时，通知玩家信息（随机关卡）
+	api notify_players_info = 15 {
+		out {
+			players : list {
+				player_id : int64
+				nickname  : string
+			}
+		}
+	}
+	
+	// 拒绝好友的邀请
+	api refuse_room_invite = 16 {
+		in {
+			room_id : int64 //邀请的好友所在房间
+			inviter_id : int64 //邀请者的用户ID
+		}
+		out{}
+	}
+	
+	//好友邀请被拒绝通知
+	api notify_room_invite_refuse = 17 {
+		out{
+			nickname : string //被邀请人昵称
+		}
+	}
+
+	// 通知房间的已在队友，改变
+	api notify_update_partner = 18 {
+		out {
+			partner : partner_info
+		}
+	}
+}

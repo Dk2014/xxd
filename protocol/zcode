@@ -1,0 +1,4 @@
+#!/bin/sh
+php protodoc.php invoke game_server server_code
+php protodoc.php invoke game_server client_test
+php protodoc.php invoke game_server sync_protocol

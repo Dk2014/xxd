@@ -1,0 +1,30 @@
+//
+// 觉醒
+//
+mod awaken = 38
+{
+	//人物觉醒数据
+	api awaken_info = 0 {
+		in {
+			role_id: int8 //角色id
+		}
+		out {
+			attrs: list {
+				attr_impl: int16 //觉醒实例id
+				level: int8 //觉醒等级
+			}
+		}
+	}
+
+	//觉醒升级
+	api levelup_attr = 1 {
+		in {
+			role_id: int8 //角色id
+			attr_impl: int16 //觉醒实例id
+		}
+		out {
+			role_id: int8 //角色id
+			attr_impl: int16 //觉醒实例id
+		}
+	}
+}

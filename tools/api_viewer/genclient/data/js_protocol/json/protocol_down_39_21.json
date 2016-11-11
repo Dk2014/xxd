@@ -1,0 +1,1 @@
+{"action_name":"taoyuan_message_info","module_name":"taoyuan","protocol":[{"name":"message_info","type":"list8","fields":[{"name":"id","type":"int64"},{"name":"nick","type":"text16"},{"name":"exp","type":"int32"}]}]}

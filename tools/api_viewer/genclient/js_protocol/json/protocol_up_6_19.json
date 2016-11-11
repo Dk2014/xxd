@@ -1,0 +1,1 @@
+{"action_name":"set_skill","module_name":"battle","protocol":[{"name":"is_attacker","type":"bool"},{"name":"pos_idx","type":"int8"},{"name":"skill_idx","type":"int8"}]}

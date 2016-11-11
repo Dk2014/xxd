@@ -1,0 +1,1 @@
+{"action_name":"invite_fight","module_name":"battle_pvp","protocol":[{"name":"target_pid","type":"int64"}]}

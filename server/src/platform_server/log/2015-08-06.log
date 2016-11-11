@@ -1,0 +1,153 @@
+2015/08/06 10:59:38 [I] - [access]127.0.0.1 - - [2015-08-06 10:59:38.61795468 +0800 CST] "/user/gsinfo 
+  {
+    "OpenId": "_test_id9018944639578443162",
+    "Type": 1,
+    "Sid": 1,
+	"Token": "_SANDBOX_",
+	"App": "xxd_qq"
+  }"
+2015/08/06 10:59:38 [I] - send user _test_id9018944639578443162 of 1 to 1, svn.vvv.io:8080
+2015/08/06 10:59:38 [I] - [access]127.0.0.1 - - /user/gsinfo used time: 159ms
+2015/08/06 10:59:38 [I] - [access]127.0.0.1 - - [2015-08-06 10:59:38.777054358 +0800 CST] "/user/gsinfo 
+  {
+    "OpenId": "_test_id9018944639578443162",
+    "Type": 1,
+    "Sid": 1,
+	"Token": "_SANDBOX_",
+	"App": "xxd_qq"
+  }"
+2015/08/06 10:59:38 [E] - Recovered in runtime error: invalid memory address or nil pointer dereference: /Users/tangweichen/xxd-server/server/src/platform_server/user.go:104 (0x65475)
+	func.016: log.Errorf("Recovered in %v: %v", r, string(debug.Stack()))
+/usr/local/go/src/pkg/runtime/panic.c:248 (0x1035d)
+	panic: runtime·newstackcall(d->fn, (byte*)d->args, d->siz);
+/usr/local/go/src/pkg/runtime/panic.c:552 (0x10e0d)
+	panicstring: runtime·panic(err);
+/usr/local/go/src/pkg/runtime/os_darwin.c:454 (0xfa1e)
+	sigpanic: runtime·panicstring("invalid memory address or nil pointer dereference");
+/Users/tangweichen/xxd-server/server/src/platform_server/config.go:61 (0x4a021)
+	getCidOfApp: if len(config.Apps) == 0 {
+/Users/tangweichen/xxd-server/server/src/platform_server/user.go:113 (0x58bc5)
+	logFirstCreateUser: cid := getCidOfApp(app, iType)
+/usr/local/go/src/pkg/runtime/proc.c:1445 (0x14ba0)
+	goexit: runtime·goexit(void)
+2015/08/06 10:59:38 [I] - [access]127.0.0.1 - - /user/gsinfo used time: 90ms
+2015/08/06 10:59:38 [I] - [access]127.0.0.1 - - [2015-08-06 10:59:38.868015154 +0800 CST] "/user/gsinfo 
+  {
+    "OpenId": "_test_id9018944639578443162",
+    "Type": 1,
+    "Sid": 1,
+	"Token": "_SANDBOX_",
+	"App": "xxd_qq"
+  }"
+2015/08/06 10:59:38 [I] - [access]127.0.0.1 - - /user/gsinfo used time: 95ms
+2015/08/06 10:59:38 [I] - [access]127.0.0.1 - - [2015-08-06 10:59:38.963636058 +0800 CST] "/user/gsinfo 
+  {
+    "OpenId": "_test_id9018944639578443162",
+    "Type": 1,
+    "Sid": 1,
+	"Token": "_SANDBOX_",
+	"App": "xxd_qq"
+  }"
+2015/08/06 10:59:39 [I] - [access]127.0.0.1 - - /user/gsinfo used time: 90ms
+2015/08/06 10:59:39 [I] - [access]127.0.0.1 - - [2015-08-06 10:59:39.053768504 +0800 CST] "/user/gsinfo 
+  {
+    "OpenId": "_test_id9018944639578443162",
+    "Type": 1,
+    "Sid": 1,
+	"Token": "_SANDBOX_",
+	"App": "xxd_qq"
+  }"
+2015/08/06 10:59:39 [I] - [access]127.0.0.1 - - /user/gsinfo used time: 100ms
+2015/08/06 10:59:39 [I] - [access]127.0.0.1 - - [2015-08-06 10:59:39.153947176 +0800 CST] "/user/gsinfo 
+  {
+    "OpenId": "_test_id9018944639578443162",
+    "Type": 1,
+    "Sid": 1,
+	"Token": "_SANDBOX_",
+	"App": "xxd_qq"
+  }"
+2015/08/06 10:59:39 [I] - [access]127.0.0.1 - - /user/gsinfo used time: 109ms
+2015/08/06 10:59:39 [I] - [access]127.0.0.1 - - [2015-08-06 10:59:39.263928094 +0800 CST] "/user/gsinfo 
+  {
+    "OpenId": "_test_id9018944639578443162",
+    "Type": 1,
+    "Sid": 1,
+	"Token": "_SANDBOX_",
+	"App": "xxd_qq"
+  }"
+2015/08/06 10:59:39 [I] - [access]127.0.0.1 - - /user/gsinfo used time: 100ms
+2015/08/06 10:59:39 [I] - [access]127.0.0.1 - - [2015-08-06 10:59:39.364474886 +0800 CST] "/user/gsinfo 
+  {
+    "OpenId": "_test_id9018944639578443162",
+    "Type": 1,
+    "Sid": 1,
+	"Token": "_SANDBOX_",
+	"App": "xxd_qq"
+  }"
+2015/08/06 10:59:39 [I] - [access]127.0.0.1 - - /user/gsinfo used time: 119ms
+2015/08/06 10:59:39 [I] - [access]127.0.0.1 - - [2015-08-06 10:59:39.484167238 +0800 CST] "/user/gsinfo 
+  {
+    "OpenId": "_test_id9018944639578443162",
+    "Type": 1,
+    "Sid": 1,
+	"Token": "_SANDBOX_",
+	"App": "xxd_qq"
+  }"
+2015/08/06 10:59:39 [I] - [access]127.0.0.1 - - /user/gsinfo used time: 124ms
+2015/08/06 10:59:39 [I] - [access]127.0.0.1 - - [2015-08-06 10:59:39.60831958 +0800 CST] "/user/gsinfo 
+  {
+    "OpenId": "_test_id9018944639578443162",
+    "Type": 1,
+    "Sid": 1,
+	"Token": "_SANDBOX_",
+	"App": "xxd_qq"
+  }"
+2015/08/06 10:59:39 [I] - [access]127.0.0.1 - - /user/gsinfo used time: 115ms
+2015/08/06 10:59:39 [I] - [access]127.0.0.1 - - [2015-08-06 10:59:39.723958364 +0800 CST] "/user/create 
+  {
+    "OpenId": "_test_id9018944639578443162",
+    "Type": 1,
+    "Sid": 1,
+    "RoleId": 1,
+    "Nick": "_test_nick9018944639578443162",
+		"Token": "_SANDBOX_"
+  }"
+2015/08/06 10:59:39 [E] - Process error nick name too long: _test_nick9018944639578443162
+2015/08/06 10:59:39 [I] - [access]127.0.0.1 - - /user/create used time: 0ms
+2015/08/06 10:59:39 [I] - [access]127.0.0.1 - - [2015-08-06 10:59:39.724129856 +0800 CST] "/user/logon 
+  {
+    "OpenId": "_test_id9018944639578443162",
+    "Type": 1,
+    "Sid": 1,
+		"Token": "_SANDBOX_"
+  }"
+2015/08/06 10:59:39 [E] - user nick not found, openid:_test_id9018944639578443162, itype:1, sid:1
+2015/08/06 10:59:39 [I] - [access]127.0.0.1 - - /user/logon used time: 123ms
+2015/08/06 10:59:39 [I] - [access]127.0.0.1 - - [2015-08-06 10:59:39.848126651 +0800 CST] "/user/list 
+  {
+    "OpenId": "_test_id9018944639578443162",
+    "Type": 1
+  }"
+2015/08/06 10:59:40 [I] - [access]127.0.0.1 - - /user/list used time: 275ms
+2015/08/06 10:59:40 [I] - [access]127.0.0.1 - - [2015-08-06 10:59:40.123813035 +0800 CST] "/user/update 
+  {
+    "OpenId": "_test_id9018944639578443162",
+    "Type": 1,
+    "Sid": 1,
+    "RoleLevel": 3,
+		"Token": "_SANDBOX_"
+  }"
+2015/08/06 10:59:40 [I] - [access]127.0.0.1 - - /user/update used time: 110ms
+2015/08/06 10:59:40 [I] - [access]127.0.0.1 - - [2015-08-06 10:59:40.234238575 +0800 CST] "/user/list 
+  {
+    "OpenId": "_test_id9018944639578443162",
+    "Type": 1
+  }"
+2015/08/06 10:59:40 [I] - [access]127.0.0.1 - - /user/list used time: 324ms
+2015/08/06 10:59:40 [I] - [access]127.0.0.1 - - [2015-08-06 10:59:40.558476517 +0800 CST] "/user/logon 
+  {
+    "OpenId": "_test_id_not_exist",
+    "Type": 1,
+    "Sid": 1,
+		"Token": "_SANDBOX_"
+  }"

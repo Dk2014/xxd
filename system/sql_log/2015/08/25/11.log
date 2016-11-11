@@ -1,0 +1,4 @@
+-- ------------------------------------------------------
+-- 08/25/2015 11:11 插入或更新发生在表item_box_new_content IP:::1
+INSERT INTO `item_box_new_content` SET `item_id` = 856, `type` = '2', `min_num` = '10', `max_num` = '10', `probability` = '10', `get_item_id` = '256' ;INSERT INTO `item_box_new_content` SET `item_id` = 856, `type` = '2', `min_num` = '1', `max_num` = '1', `probability` = '10', `get_item_id` = '61' ;INSERT INTO `item_box_new_content` SET `item_id` = 856, `type` = '2', `min_num` = '1', `max_num` = '1', `probability` = '50', `get_item_id` = '230' ;INSERT INTO `item_box_new_content` SET `item_id` = 856, `type` = '1', `min_num` = '100', `max_num` = '100', `probability` = '30', `get_item_id` = '0' ;
+

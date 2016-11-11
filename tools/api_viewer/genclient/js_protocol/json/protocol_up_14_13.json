@@ -1,0 +1,1 @@
+{"action_name":"send_heart_to_all_friends","module_name":"friend","protocol":[{"name":"friend_type","type":"enum8"},{"name":"friends","type":"list16","fields":[{"name":"nickname","type":"text16"},{"name":"pid","type":"int64"}]}]}

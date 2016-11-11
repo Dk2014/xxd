@@ -1,0 +1,81 @@
+{
+    "version": 0.1,
+
+    "mapping": [
+        {
+            "id": ".*.*.id",
+            "display": "ID"
+        },
+        {
+            "id": ".mapping.*.display",
+            "display": "Display Name"
+        },
+        {
+            "id": ".editor.*.editor",
+            "display": "Editor ID"
+        },
+        {
+            "id": ".editor.*.init",
+            "display": "Initialize Value"
+        },
+        {
+            "id": ".mapping",
+            "display": "Name Mapping"
+        },
+        {
+            "id": ".editor",
+            "display": "Editor Mapping"
+        },
+        {
+            "id": ".version",
+            "display": "Version"
+        }
+    ],
+
+    "editor": [
+        {
+            "id": ".mapping",
+            "editor": "table",
+            "init": {
+                "ignore_row_ids": [],
+                "ignore_columns": []
+            }
+        },
+        {
+            "id": ".editor",
+            "editor": "table",
+            "init": {
+                "ignore_row_ids": [],
+                "ignore_columns": []
+            }
+        },
+        {
+            "id": "",
+            "editor": "list",
+            "init": {
+                "exclude": [
+                    "version"
+                ]
+            }
+        },
+        {
+            "id": ".version",
+            "editor": "number",
+            "init": {
+                "default": "0.0"
+            }
+        },
+        {
+            "id": ".*.*.*",
+            "editor": "text",
+            "init": {
+                "default": ""
+            }
+        },
+        {
+            "id": ".editor.*.init",
+            "editor": "rawjson",
+            "init": {"dummy": "dummy"}
+        }
+    ]
+}

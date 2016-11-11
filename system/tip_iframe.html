@@ -1,0 +1,46 @@
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<script src="jquery.min.js"></script>
+
+<body>
+
+	<div style="width:70%;height:60%;margin:12% auto;"></div>
+
+</body>
+
+<script type="text/javascript">
+var loc = window.location.toString().split('?');
+
+$(document).ready(function(){
+	$.get("resource_ajax.php?" + loc[1], function(data, status){
+		if (data=="") {
+			$('div').html("无法加载到素材");
+			return;
+		}
+		config = JSON.parse(data);
+		var w = config.width / config.frames;
+		var div = $('div').get(0);
+		div.style.width = w + "px";
+		div.style.height = config.height + "px";
+		div.style.backgroundImage = 'url("' + config.realPath +'")';
+		
+		var positionX = 0;
+		div.style.backgroundPosition = positionX + "px, 0px";
+		
+		setInterval(
+			function () {
+				positionX -= w;
+				div.style.backgroundPosition = positionX + "px, 0px";
+				
+				if (positionX == -config.width + w) positionX = w;
+			},
+			config.interval
+		);
+	});
+});
+
+</script>
+
+</html>

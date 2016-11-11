@@ -1,0 +1,1 @@
+{"action_name":"get_all_roles","module_name":"role","protocol":[{"name":"roles","type":"list8","fields":[{"name":"role_id","type":"int8"},{"name":"level","type":"int16"},{"name":"exp","type":"int64"},{"name":"friendship_level","type":"int16"},{"name":"in_form","type":"bool"},{"name":"status","type":"int8"},{"name":"coop_id","type":"int16"}]}]}

@@ -1,0 +1,2258 @@
+2015/05/27 17:59:00 [I] - mem:1486320 goroutine:15 gc:4 pause:0ms
+2015/05/27 17:59:10 [I] - mem:1521104 goroutine:15 gc:0 pause:0ms
+2015/05/27 17:59:56 [I] - mem:1485424 goroutine:15 gc:4 pause:0ms
+2015/05/27 18:00:06 [I] - mem:1555104 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:00:16 [I] - mem:1555248 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:00:26 [I] - mem:1555344 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:00:36 [I] - mem:1555440 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:00:46 [I] - mem:1555536 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:00:56 [I] - mem:1555920 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:01:06 [I] - mem:1556016 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:01:16 [I] - mem:1556112 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:01:26 [I] - mem:1556208 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:01:36 [I] - mem:1556304 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:01:46 [I] - mem:1556400 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:01:56 [I] - mem:1549848 goroutine:15 gc:2 pause:3ms
+2015/05/27 18:02:06 [I] - mem:1550040 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:02:16 [I] - mem:1550136 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:02:26 [I] - mem:1550232 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:02:36 [I] - mem:1550328 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:02:46 [I] - mem:1550424 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:02:56 [I] - mem:1550808 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:03:06 [I] - mem:1550904 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:03:16 [I] - mem:1551000 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:03:26 [I] - mem:1551096 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:03:36 [I] - mem:1551192 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:03:46 [I] - mem:1551576 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:03:56 [I] - mem:1550136 goroutine:15 gc:1 pause:0ms
+2015/05/27 18:04:06 [I] - mem:1550328 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:04:16 [I] - mem:1550424 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:04:26 [I] - mem:1550520 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:04:36 [I] - mem:1550616 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:04:46 [I] - mem:1551000 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:04:56 [I] - mem:1551096 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:05:06 [I] - mem:1551192 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:05:16 [I] - mem:1551288 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:05:26 [I] - mem:1551384 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:05:36 [I] - mem:1551480 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:05:46 [I] - mem:1551624 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:05:56 [I] - mem:1550136 goroutine:15 gc:1 pause:0ms
+2015/05/27 18:06:06 [I] - mem:1550328 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:06:16 [I] - mem:1550424 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:06:26 [I] - mem:1550520 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:06:36 [I] - mem:1550664 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:06:46 [I] - mem:1550760 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:06:56 [I] - mem:1551144 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:07:06 [I] - mem:1551240 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:07:16 [I] - mem:1551336 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:07:26 [I] - mem:1551432 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:07:36 [I] - mem:1551528 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:07:46 [I] - mem:1551624 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:07:56 [I] - mem:1550136 goroutine:15 gc:1 pause:0ms
+2015/05/27 18:08:06 [I] - mem:1550376 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:08:16 [I] - mem:1550472 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:08:26 [I] - mem:1550568 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:08:36 [I] - mem:1550664 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:08:46 [I] - mem:1551048 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:08:56 [I] - mem:1551144 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:09:06 [I] - mem:1551240 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:09:16 [I] - mem:1551336 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:09:26 [I] - mem:1551432 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:09:36 [I] - mem:1551528 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:09:46 [I] - mem:1551912 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:09:56 [I] - mem:1550136 goroutine:15 gc:1 pause:0ms
+2015/05/27 18:10:06 [I] - mem:1550328 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:10:16 [I] - mem:1550472 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:10:26 [I] - mem:1550568 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:10:36 [I] - mem:1550664 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:10:46 [I] - mem:1550760 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:10:56 [I] - mem:1551144 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:11:06 [I] - mem:1551240 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:11:16 [I] - mem:1551336 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:11:26 [I] - mem:1551432 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:11:36 [I] - mem:1551528 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:11:46 [I] - mem:1551624 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:11:56 [I] - mem:1550232 goroutine:15 gc:1 pause:0ms
+2015/05/27 18:12:06 [I] - mem:1550376 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:12:16 [I] - mem:1550472 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:12:26 [I] - mem:1550616 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:12:36 [I] - mem:1550712 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:12:46 [I] - mem:1551096 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:12:56 [I] - mem:1551192 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:13:06 [I] - mem:1551288 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:13:16 [I] - mem:1551384 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:13:26 [I] - mem:1551480 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:13:36 [I] - mem:1551576 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:13:46 [I] - mem:1551672 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:13:56 [I] - mem:1550184 goroutine:15 gc:1 pause:0ms
+2015/05/27 18:14:06 [I] - mem:1550424 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:14:16 [I] - mem:1550520 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:14:26 [I] - mem:1550616 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:14:36 [I] - mem:1550712 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:14:46 [I] - mem:1550808 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:14:56 [I] - mem:1551240 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:15:06 [I] - mem:1551336 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:15:16 [I] - mem:1551480 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:15:26 [I] - mem:1551576 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:15:36 [I] - mem:1551672 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:15:46 [I] - mem:1551768 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:15:56 [I] - mem:1550184 goroutine:15 gc:1 pause:0ms
+2015/05/27 18:16:06 [I] - mem:1550328 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:16:16 [I] - mem:1550472 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:16:26 [I] - mem:1550568 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:16:36 [I] - mem:1550664 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:16:46 [I] - mem:1550808 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:16:56 [I] - mem:1551144 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:17:06 [I] - mem:1551288 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:17:16 [I] - mem:1551384 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:17:26 [I] - mem:1551480 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:17:36 [I] - mem:1551576 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:17:46 [I] - mem:1551960 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:17:56 [I] - mem:1550232 goroutine:15 gc:1 pause:0ms
+2015/05/27 18:18:06 [I] - mem:1550424 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:18:16 [I] - mem:1550520 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:18:26 [I] - mem:1550616 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:18:36 [I] - mem:1550712 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:18:46 [I] - mem:1550808 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:18:56 [I] - mem:1551192 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:19:06 [I] - mem:1551288 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:19:16 [I] - mem:1551384 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:19:26 [I] - mem:1551480 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:19:36 [I] - mem:1551576 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:19:46 [I] - mem:1551672 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:19:56 [I] - mem:1550088 goroutine:15 gc:1 pause:0ms
+2015/05/27 18:20:06 [I] - mem:1550328 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:20:16 [I] - mem:1550472 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:20:26 [I] - mem:1550568 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:20:36 [I] - mem:1576552 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:20:46 [I] - mem:1576936 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:20:56 [I] - mem:1577032 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:21:06 [I] - mem:1577128 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:21:16 [I] - mem:1577224 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:21:26 [I] - mem:1577320 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:21:36 [I] - mem:1577464 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:21:46 [I] - mem:1598064 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:21:56 [I] - mem:1555176 goroutine:15 gc:1 pause:0ms
+2015/05/27 18:22:06 [I] - mem:1555368 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:22:16 [I] - mem:1555464 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:22:26 [I] - mem:1555560 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:22:46 [I] - mem:1535512 goroutine:15 gc:4 pause:0ms
+2015/05/27 18:22:56 [I] - mem:1570232 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:23:06 [I] - mem:1570328 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:23:21 [I] - idip request parameter: /
+2015/05/27 18:23:21 [D] - unhandled request: /
+2015/05/27 18:23:23 [I] - idip request parameter: /
+2015/05/27 18:23:23 [D] - unhandled request: /
+2015/05/27 18:23:28 [I] - mem:1514696 goroutine:15 gc:4 pause:0ms
+2015/05/27 18:23:38 [I] - mem:1549464 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:23:48 [I] - mem:1549560 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:24:11 [I] - mem:1488512 goroutine:15 gc:4 pause:0ms
+2015/05/27 18:24:21 [I] - idip request parameter: /
+2015/05/27 18:24:21 [D] - unhandled request: /
+2015/05/27 18:24:21 [I] - mem:1549904 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:24:24 [I] - idip request parameter: /
+2015/05/27 18:24:24 [D] - unhandled request: /
+2015/05/27 18:24:31 [I] - mem:1605944 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:24:41 [I] - mem:1606040 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:24:51 [I] - mem:1606136 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:25:01 [I] - mem:1606232 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:25:11 [I] - mem:1606616 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:25:21 [I] - mem:1606712 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:25:31 [I] - mem:1606808 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:25:41 [I] - mem:1606904 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:25:51 [I] - mem:1607000 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:26:01 [I] - mem:1607384 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:26:11 [I] - mem:1557752 goroutine:15 gc:2 pause:0ms
+2015/05/27 18:26:21 [I] - mem:1557896 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:26:31 [I] - mem:1558040 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:26:41 [I] - mem:1558136 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:26:51 [I] - mem:1558232 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:27:01 [I] - mem:1558328 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:27:11 [I] - mem:1558712 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:27:21 [I] - mem:1558856 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:27:31 [I] - mem:1558952 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:27:41 [I] - mem:1559048 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:27:51 [I] - mem:1559144 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:28:01 [I] - mem:1559288 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:28:11 [I] - mem:1558088 goroutine:15 gc:1 pause:0ms
+2015/05/27 18:28:21 [I] - mem:1558232 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:28:31 [I] - mem:1558328 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:28:41 [I] - mem:1558424 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:28:51 [I] - mem:1558520 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:29:05 [I] - idip request parameter: /get_player_info?time=1​430236800&channel_id=1&server_id=2&sign=C2649CBD5D68C2E86C7CD122F5283C8B346E0D7E
+2015/05/27 18:29:05 [D] - unhandled request: /get_player_info
+2015/05/27 18:29:12 [I] - mem:1517440 goroutine:15 gc:4 pause:0ms
+2015/05/27 18:29:13 [I] - idip request parameter: /get_player_info?time=1​430236800&channel_id=1&server_id=2&sign=C2649CBD5D68C2E86C7CD122F5283C8B346E0D7E
+2015/05/27 18:29:13 [D] - unhandled request: /get_player_info
+2015/05/27 18:29:22 [I] - mem:1574840 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:29:32 [I] - mem:1574936 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:29:42 [I] - mem:1575032 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:29:55 [I] - idip request parameter: /get_player_info?time=1​430236800&channel_id=1&server_id=2&sign=C2649CBD5D68C2E86C7CD122F5283C8B346E0D7E
+2015/05/27 18:29:55 [D] - unhandled request: /get_player_info
+2015/05/27 18:30:04 [I] - mem:1516800 goroutine:15 gc:4 pause:1ms
+2015/05/27 18:30:14 [I] - mem:1551808 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:30:21 [I] - idip request parameter: /get_player_info?time=1430236800&channel_id=1&server_id=2&sign=C2649CBD5D68C2E86C7CD122F5283C8B346E0D7E
+2015/05/27 18:30:21 [D] - unhandled request: /get_player_info
+2015/05/27 18:30:24 [I] - mem:1574328 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:30:34 [I] - mem:1574424 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:30:38 [I] - idip request parameter: /get_player_info/?time=1430236800&channel_id=1&server_id=2&sign=C2649CBD5D68C2E86C7CD122F5283C8B346E0D7E
+2015/05/27 18:30:38 [D] - unhandled request: /get_player_info/
+2015/05/27 18:30:42 [I] - idip request parameter: /get_player_info/?time=1430236800&channel_id=1&server_id=2&sign=C2649CBD5D68C2E86C7CD122F5283C8B346E0D7E
+2015/05/27 18:30:42 [D] - unhandled request: /get_player_info/
+2015/05/27 18:30:44 [I] - mem:1599896 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:30:54 [I] - mem:1600280 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:31:24 [I] - idip request parameter: /get_player_info/?time=1430236800&channel_id=1&server_id=2&sign=C2649CBD5D68C2E86C7CD122F5283C8B346E0D7E
+2015/05/27 18:31:24 [D] - unhandled request: /get_player_info/
+2015/05/27 18:31:29 [I] - mem:1515536 goroutine:15 gc:4 pause:0ms
+2015/05/27 18:31:39 [I] - mem:1550496 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:31:56 [I] - idip request parameter: /get_player_info/?time=1430236800&channel_id=1&server_id=2&sign=C2649CBD5D68C2E86C7CD122F5283C8B346E0D7E
+2015/05/27 18:31:56 [D] - unhandled request: /get_player_info/
+2015/05/27 18:32:04 [I] - mem:1512528 goroutine:15 gc:4 pause:1ms
+2015/05/27 18:32:14 [I] - mem:1547120 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:32:24 [I] - mem:1547216 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:32:34 [I] - mem:1547312 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:32:44 [I] - idip request parameter: /get_player_info/?time=1430236800&channel_id=1&server_id=2&sign=C2649CBD5D68C2E86C7CD122F5283C8B346E0D7E
+2015/05/27 18:32:44 [D] - sign wrong.need:C2649CBD5D68C2E86C7CD122F5283C8B346E0D7E,have: 0x4033d20
+2015/05/27 18:32:53 [I] - mem:1521984 goroutine:15 gc:4 pause:1ms
+2015/05/27 18:33:03 [I] - mem:1556992 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:33:13 [I] - mem:1557088 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:33:23 [I] - mem:1557184 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:33:32 [I] - idip request parameter: /get_player_info/?time=1430236800&channel_id=1&server_id=2&sign=C2649CBD5D68C2E86C7CD122F5283C8B346E0D7E
+2015/05/27 18:33:32 [D] - sign wrong.need:C2649CBD5D68C2E86C7CD122F5283C8B346E0D7E,have: 0x4033d20
+2015/05/27 18:33:39 [I] - mem:1521600 goroutine:15 gc:4 pause:0ms
+2015/05/27 18:33:49 [I] - mem:1556288 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:33:59 [I] - mem:1556384 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:34:09 [I] - mem:1556480 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:34:19 [I] - mem:1556576 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:34:29 [I] - idip request parameter: /get_player_info/?time=1430236800&channel_id=1&server_id=2&sign=C2649CBD5D68C2E86C7CD122F5283C8B346E0D7E
+2015/05/27 18:34:29 [D] - sign wrong.need:C2649CBD5D68C2E86C7CD122F5283C8B346E0D7E,have: 0x4033d00
+2015/05/27 18:34:36 [I] - mem:1516160 goroutine:15 gc:4 pause:0ms
+2015/05/27 18:34:46 [I] - mem:1585376 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:34:56 [I] - mem:1585472 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:35:06 [I] - mem:1585568 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:35:24 [I] - idip request parameter: /get_player_info/?time=1430236800&channel_id=1&server_id=2&sign=C2649CBD5D68C2E86C7CD122F5283C8B346E0D7E
+2015/05/27 18:35:24 [D] - sign wrong.need:C2649CBD5D68C2E86C7CD122F5283C8B346E0D7E,have: 0x4033d00
+2015/05/27 18:35:32 [I] - mem:1559120 goroutine:15 gc:4 pause:1ms
+2015/05/27 18:35:42 [I] - mem:1559632 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:35:52 [I] - mem:1559728 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:36:02 [I] - mem:1559824 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:36:12 [I] - mem:1559920 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:36:22 [I] - mem:1560016 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:36:32 [I] - mem:1560400 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:36:42 [I] - mem:1560496 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:36:52 [I] - mem:1560592 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:37:02 [I] - mem:1595264 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:37:07 [I] - idip request parameter: /get_player_info/?time=1430236800&channel_id=1&server_id=2&sign=C2649CBD5D68C2E86C7CD122F5283C8B346E0D7E
+2015/05/27 18:37:07 [D] - sign wrong.need:C2649CBD5D68C2E86C7CD122F5283C8B346E0D7E,have: 0x4033d00
+2015/05/27 18:37:12 [I] - mem:1599456 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:37:16 [I] - idip request parameter: /get_player_info/?time=1430236800&channel_id=1&server_id=2&sign=C2649CBD5D68C2E86C7CD122F5283C8B346E0D7E
+2015/05/27 18:37:16 [D] - sign wrong.need:C2649CBD5D68C2E86C7CD122F5283C8B346E0D7E,have: 0x4033d00
+2015/05/27 18:37:22 [I] - mem:1603952 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:37:32 [I] - mem:1569048 goroutine:15 gc:2 pause:1ms
+2015/05/27 18:37:42 [I] - mem:1569192 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:37:52 [I] - mem:1569288 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:38:02 [I] - mem:1569432 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:38:12 [I] - mem:1569576 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:38:27 [I] - idip request parameter: /get_player_info/?time=1430236800&channel_id=1&server_id=2&sign=C2649CBD5D68C2E86C7CD122F5283C8B346E0D7E
+2015/05/27 18:38:27 [D] - sign wrong.need:C2649CBD5D68C2E86C7CD122F5283C8B346E0D7E,have: 0x4033d20
+2015/05/27 18:38:35 [I] - mem:1525248 goroutine:15 gc:4 pause:4ms
+2015/05/27 18:38:45 [I] - mem:1560304 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:38:55 [I] - mem:1560400 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:39:05 [I] - mem:1560496 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:39:15 [I] - idip request parameter: /get_player_info/?time=1430236800&channel_id=1&server_id=2&sign=C2649CBD5D68C2E86C7CD122F5283C8B346E0D7E
+2015/05/27 18:39:15 [D] - sign wrong.need:C2649CBD5D68C2E86C7CD122F5283C8B346E0D7E,have: 0x4033d20
+2015/05/27 18:39:23 [I] - mem:1524000 goroutine:15 gc:3 pause:2ms
+2015/05/27 18:39:33 [I] - mem:1558640 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:39:43 [I] - mem:1558784 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:39:53 [I] - mem:1558880 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:40:03 [I] - mem:1558976 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:40:13 [I] - mem:1559360 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:40:23 [I] - mem:1559456 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:40:33 [I] - mem:1559552 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:40:43 [I] - mem:1559648 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:40:53 [I] - mem:1559744 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:41:03 [I] - mem:1559840 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:41:13 [I] - mem:1560224 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:41:23 [I] - mem:1528272 goroutine:15 gc:2 pause:1ms
+2015/05/27 18:41:33 [I] - mem:1528464 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:41:43 [I] - mem:1528608 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:41:53 [I] - mem:1528704 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:42:03 [I] - mem:1528800 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:42:13 [I] - mem:1529184 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:42:23 [I] - mem:1529280 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:42:33 [I] - mem:1529376 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:42:43 [I] - mem:1529472 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:42:53 [I] - mem:1529568 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:43:03 [I] - mem:1529664 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:43:13 [I] - mem:1530048 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:43:23 [I] - mem:1528320 goroutine:15 gc:1 pause:0ms
+2015/05/27 18:43:33 [I] - mem:1528512 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:43:43 [I] - mem:1528608 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:43:53 [I] - mem:1528704 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:44:03 [I] - mem:1528800 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:44:13 [I] - mem:1529184 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:44:23 [I] - mem:1529280 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:44:33 [I] - mem:1529376 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:44:34 [I] - idip request parameter: /get_player_info?time=1430236800&channel_id=1&server_id=2&sign=C2649CBD5D68C2E86C7CD122F5283C8B346E0D7E
+2015/05/27 18:44:34 [D] - unhandled request: /get_player_info
+2015/05/27 18:44:43 [I] - mem:1553752 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:44:53 [I] - mem:1553848 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:45:03 [I] - mem:1553944 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:45:13 [I] - mem:1554328 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:45:23 [I] - mem:1548192 goroutine:15 gc:1 pause:3ms
+2015/05/27 18:45:33 [I] - mem:1548384 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:45:43 [I] - mem:1548480 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:45:53 [I] - mem:1548576 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:46:03 [I] - mem:1548672 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:46:13 [I] - mem:1549056 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:46:23 [I] - mem:1549152 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:46:33 [I] - mem:1549248 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:46:43 [I] - mem:1549344 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:46:47 [I] - idip request parameter: /get_player_info?time=1430236800&channel_id=1&server_id=2&sign=C2649CBD5D68C2E86C7CD122F5283C8B346E0D7E
+2015/05/27 18:46:47 [D] - unhandled request: /get_player_info
+2015/05/27 18:46:53 [I] - mem:1572440 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:47:03 [I] - mem:1572536 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:47:13 [I] - mem:1572920 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:47:23 [I] - mem:1566656 goroutine:15 gc:1 pause:0ms
+2015/05/27 18:47:33 [I] - mem:1567168 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:47:43 [I] - mem:1567312 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:47:48 [I] - idip request parameter: /get_player_info?time=1430236800&channel_id=1&server_id=2&sign=C2649CBD5D68C2E86C7CD122F5283C8B346E0D7E
+2015/05/27 18:47:48 [D] - unhandled request: /get_player_info
+2015/05/27 18:47:56 [I] - mem:1510400 goroutine:15 gc:4 pause:2ms
+2015/05/27 18:48:06 [I] - mem:1579984 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:48:16 [I] - mem:1580080 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:48:26 [I] - mem:1580176 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:48:36 [I] - mem:1580272 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:48:46 [I] - mem:1580368 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:48:56 [I] - mem:1580992 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:49:06 [I] - mem:1581088 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:49:16 [I] - mem:1581184 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:49:26 [I] - mem:1581280 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:49:36 [I] - mem:1581376 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:49:43 [I] - idip request parameter: /get_player_info?time=1430236800&channel_id=1&server_id=2&sign=C2649CBD5D68C2E86C7CD122F5283C8B346E0D7E
+2015/05/27 18:49:43 [D] - unhandled request: /get_player_info
+2015/05/27 18:49:46 [I] - mem:1608264 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:49:56 [I] - mem:1555128 goroutine:15 gc:2 pause:2ms
+2015/05/27 18:50:06 [I] - mem:1555272 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:50:16 [I] - mem:1555368 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:50:26 [I] - mem:1555464 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:50:36 [I] - mem:1555560 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:50:46 [I] - mem:1555944 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:50:53 [I] - idip request parameter: /get_player_info?time=1430236800&channel_id=1&server_id=2&sign=C2649CBD5D68C2E86C7CD122F5283C8B346E0D7E
+2015/05/27 18:50:53 [D] - sign wrong.need:C2649CBD5D68C2E86C7CD122F5283C8B346E0D7E,have: 0x4033d00
+2015/05/27 18:51:02 [I] - mem:1521728 goroutine:15 gc:4 pause:0ms
+2015/05/27 18:51:12 [I] - mem:1556688 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:51:22 [I] - mem:1556784 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:51:32 [I] - mem:1556880 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:51:42 [I] - mem:1556976 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:51:52 [I] - mem:1557072 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:52:02 [I] - mem:1557504 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:52:11 [I] - idip request parameter: /?time=1&channel_id=1&server_id=2&sign=xxx
+2015/05/27 18:52:11 [D] - unhandled request: /
+2015/05/27 18:52:12 [I] - mem:1564072 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:52:22 [I] - mem:1598984 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:52:32 [I] - mem:1599128 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:52:42 [I] - mem:1599224 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:52:52 [I] - mem:1601016 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:53:02 [I] - mem:1560592 goroutine:15 gc:2 pause:1ms
+2015/05/27 18:53:12 [I] - mem:1560736 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:53:22 [I] - mem:1560832 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:53:23 [I] - idip request parameter: /get_player_info?time=1430236800&channel_id=1&server_id=2&sign=C2649CBD5D68C2E86C7CD122F5283C8B346E0D7E
+2015/05/27 18:53:23 [D] - sign wrong.need:C2649CBD5D68C2E86C7CD122F5283C8B346E0D7E,have: 0x4033d00
+2015/05/27 18:53:32 [I] - mem:1587296 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:53:42 [I] - mem:1587392 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:53:52 [I] - mem:1587776 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:54:02 [I] - mem:1587872 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:54:12 [I] - mem:1587968 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:54:22 [I] - mem:1588064 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:54:32 [I] - mem:1588160 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:54:42 [I] - mem:1588256 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:54:52 [I] - mem:1588352 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:55:02 [I] - mem:1580368 goroutine:15 gc:1 pause:0ms
+2015/05/27 18:55:12 [I] - mem:1580560 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:55:22 [I] - mem:1580656 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:55:35 [I] - idip request parameter: /get_player_info?time=1430236800&channel_id=1&server_id=2&sign=C2649CBD5D68C2E86C7CD122F5283C8B346E0D7E
+2015/05/27 18:55:35 [D] - sign wrong.need:C2649CBD5D68C2E86C7CD122F5283C8B346E0D7E,have: 0x4033a50
+2015/05/27 18:55:42 [I] - mem:1517072 goroutine:15 gc:4 pause:1ms
+2015/05/27 18:55:42 [I] - idip request parameter: /get_player_info?time=1430236800&channel_id=1&server_id=2&sign=C2649CBD5D68C2E86C7CD122F5283C8B346E0D7E
+2015/05/27 18:55:42 [D] - sign wrong.need:C2649CBD5D68C2E86C7CD122F5283C8B346E0D7E,have: 0x4033a50
+2015/05/27 18:55:44 [I] - idip request parameter: /get_player_info?time=1430236800&channel_id=1&server_id=2&sign=C2649CBD5D68C2E86C7CD122F5283C8B346E0D7E
+2015/05/27 18:55:44 [D] - sign wrong.need:C2649CBD5D68C2E86C7CD122F5283C8B346E0D7E,have: 0x4033a50
+2015/05/27 18:55:52 [I] - mem:1619584 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:56:02 [I] - mem:1619680 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:56:12 [I] - mem:1619776 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:56:22 [I] - mem:1619920 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:56:33 [I] - idip request parameter: /get_player_info?time=1430236800&channel_id=1&server_id=2&sign=C2649CBD5D68C2E86C7CD122F5283C8B346E0D7E
+2015/05/27 18:56:33 [D] - sign wrong.need:C2649CBD5D68C2E86C7CD122F5283C8B346E0D7E,have: 0x4033c10
+2015/05/27 18:56:40 [I] - mem:1525264 goroutine:15 gc:4 pause:1ms
+2015/05/27 18:56:50 [I] - mem:1560272 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:57:00 [I] - mem:1560368 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:57:10 [I] - mem:1560464 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:57:20 [I] - mem:1560560 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:57:30 [I] - mem:1560944 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:57:40 [I] - mem:1561040 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:57:50 [I] - idip request parameter: /get_player_info?time=1430236800&channel_id=1&server_id=2&sign=C2649CBD5D68C2E86C7CD122F5283C8B346E0D7E
+2015/05/27 18:57:50 [D] - sign wrong.need:C2649CBD5D68C2E86C7CD122F5283C8B346E0D7E,have: 0x4033b40
+2015/05/27 18:57:57 [I] - mem:1524064 goroutine:15 gc:4 pause:1ms
+2015/05/27 18:58:07 [I] - mem:1558752 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:58:17 [I] - mem:1558848 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:58:27 [I] - mem:1558944 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:58:37 [I] - mem:1559040 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:58:47 [I] - mem:1559136 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:58:57 [I] - mem:1559520 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:59:07 [I] - mem:1559616 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:59:17 [I] - mem:1559712 goroutine:15 gc:0 pause:0ms
+2015/05/27 18:59:17 [I] - idip request parameter: /get_player_info?time=1430236800&channel_id=1&server_id=2&sign=A11552470DF7EC2676242540B4B3C84F25567748
+2015/05/27 18:59:17 [D] - sign wrong.need:A11552470DF7EC2676242540B4B3C84F25567748,have: 0x4033b40
+2015/05/27 18:59:32 [I] - idip request parameter: /get_player_info?time=1430236800&channel_id=1&server_id=2&sign=A11552470DF7EC2676242540B4B3C84F25567748
+2015/05/27 18:59:32 [E] - RPC error
+Error   	= RPC server 928 not exists
+serviceAPI 	= RemoteServe.XdgmGetUserInfo
+Args    = &rpc.Args_XdgmGetUserinfo{
+    RPCArgTag: rpc.RPCArgTag{
+        ClientId: 0,
+    },
+    Pid: 3985729650689,
+}
+
+
+
+Result  = &rpc.Reply_XdgmGetUserinfo{
+    RoleName: "",
+    Pid: 0,
+    Level: 0,
+    Vip: 0,
+    Exp: 0,
+    Coin: 0,
+    Ingot: 0,
+    Physical: 0,
+    RegisterTime: 0,
+    LastLoginTime: 0,
+}
+2015/05/27 18:59:40 [I] - mem:1528176 goroutine:15 gc:4 pause:0ms
+2015/05/27 18:59:50 [I] - mem:1563280 goroutine:15 gc:0 pause:0ms
+2015/05/27 19:00:00 [I] - mem:1563376 goroutine:15 gc:0 pause:0ms
+2015/05/27 19:00:10 [I] - mem:1563472 goroutine:15 gc:0 pause:0ms
+2015/05/27 19:00:20 [I] - mem:1563568 goroutine:15 gc:0 pause:0ms
+2015/05/27 19:00:30 [I] - mem:1563664 goroutine:15 gc:0 pause:0ms
+2015/05/27 19:00:40 [I] - mem:1564176 goroutine:15 gc:0 pause:0ms
+2015/05/27 19:00:50 [I] - mem:1564272 goroutine:15 gc:0 pause:0ms
+2015/05/27 19:01:00 [I] - mem:1564368 goroutine:15 gc:0 pause:0ms
+2015/05/27 19:01:10 [I] - mem:1564832 goroutine:15 gc:0 pause:0ms
+2015/05/27 19:01:21 [I] - idip request parameter: /get_player_info?time=1430236800&channel_id=1&server_id=2&sign=A11552470DF7EC2676242540B4B3C84F25567748
+2015/05/27 19:01:21 [E] - RPC error
+Error   	= RPC server 928 not exists
+serviceAPI 	= RemoteServe.XdgmGetUserInfo
+Args    = &rpc.Args_XdgmGetUserinfo{
+    RPCArgTag: rpc.RPCArgTag{
+        ClientId: 0,
+    },
+    Pid: 3985729650689,
+}
+
+
+
+Result  = &rpc.Reply_XdgmGetUserinfo{
+    RoleName: "",
+    Pid: 0,
+    Level: 0,
+    Vip: 0,
+    Exp: 0,
+    Coin: 0,
+    Ingot: 0,
+    Physical: 0,
+    RegisterTime: 0,
+    LastLoginTime: 0,
+}
+2015/05/27 19:01:28 [I] - mem:1524864 goroutine:15 gc:4 pause:0ms
+2015/05/27 19:01:38 [I] - mem:1559456 goroutine:15 gc:0 pause:0ms
+2015/05/27 19:01:46 [I] - idip request parameter: /get_player_info?time=1430236800&channel_id=1&server_id=2&sign=A11552470DF7EC2676242540B4B3C84F25567748
+2015/05/27 19:01:46 [E] - RPC error
+Error   	= RPC server 928 not exists
+serviceAPI 	= RemoteServe.XdgmGetUserInfo
+Args    = &rpc.Args_XdgmGetUserinfo{
+    RPCArgTag: rpc.RPCArgTag{
+        ClientId: 0,
+    },
+    Pid: 3985729650689,
+}
+
+
+
+Result  = &rpc.Reply_XdgmGetUserinfo{
+    RoleName: "",
+    Pid: 0,
+    Level: 0,
+    Vip: 0,
+    Exp: 0,
+    Coin: 0,
+    Ingot: 0,
+    Physical: 0,
+    RegisterTime: 0,
+    LastLoginTime: 0,
+}
+2015/05/27 19:01:54 [I] - mem:1556448 goroutine:15 gc:4 pause:1ms
+2015/05/27 19:02:04 [I] - mem:1556544 goroutine:15 gc:0 pause:0ms
+2015/05/27 19:02:14 [I] - mem:1556640 goroutine:15 gc:0 pause:0ms
+2015/05/27 19:02:24 [I] - mem:1556736 goroutine:15 gc:0 pause:0ms
+2015/05/27 19:02:25 [I] - idip request parameter: /get_player_info?time=1430236800&channel_id=1&server_id=2&sign=A11552470DF7EC2676242540B4B3C84F25567748
+2015/05/27 19:02:25 [D] - sign wrong.need:A11552470DF7EC2676242540B4B3C84F25567748,have: 0x4032800
+2015/05/27 19:02:34 [I] - mem:1590448 goroutine:15 gc:0 pause:0ms
+2015/05/27 19:02:34 [I] - idip request parameter: /get_player_info?time=1430236800&channel_id=1&server_id=2&sign=A11552470DF7EC2676242540B4B3C84F25567748
+2015/05/27 19:02:34 [D] - sign wrong.need:A11552470DF7EC2676242540B4B3C84F25567748,have: 0x4032800
+2015/05/27 19:02:44 [I] - mem:1595984 goroutine:15 gc:0 pause:0ms
+2015/05/27 19:02:54 [I] - mem:1596368 goroutine:15 gc:0 pause:0ms
+2015/05/27 19:02:54 [I] - idip request parameter: /get_player_info?time=1430236800&channel_id=1&server_id=2&sign=9E3FD328A724D023D3657245E23417B4293911B9
+2015/05/27 19:02:54 [E] - RPC error
+Error   	= RPC server 928 not exists
+serviceAPI 	= RemoteServe.XdgmGetUserInfo
+Args    = &rpc.Args_XdgmGetUserinfo{
+    RPCArgTag: rpc.RPCArgTag{
+        ClientId: 0,
+    },
+    Pid: 3985729650689,
+}
+
+
+
+Result  = &rpc.Reply_XdgmGetUserinfo{
+    RoleName: "",
+    Pid: 0,
+    Level: 0,
+    Vip: 0,
+    Exp: 0,
+    Coin: 0,
+    Ingot: 0,
+    Physical: 0,
+    RegisterTime: 0,
+    LastLoginTime: 0,
+}
+2015/05/27 19:02:54 [E] - RPC error
+Error   	= RPC server 0 not exists
+serviceAPI 	= RemoteServe.XdgmGetUserInfo
+Args    = &rpc.Args_XdgmGetUserinfo{
+    RPCArgTag: rpc.RPCArgTag{
+        ClientId: 0,
+    },
+    Pid: 1,
+}
+
+
+
+Result  = &rpc.Reply_XdgmGetUserinfo{
+    RoleName: "",
+    Pid: 0,
+    Level: 0,
+    Vip: 0,
+    Exp: 0,
+    Coin: 0,
+    Ingot: 0,
+    Physical: 0,
+    RegisterTime: 0,
+    LastLoginTime: 0,
+}
+2015/05/27 19:03:04 [I] - mem:1621056 goroutine:15 gc:0 pause:0ms
+2015/05/27 19:03:14 [I] - mem:1621152 goroutine:15 gc:0 pause:0ms
+2015/05/27 19:03:24 [I] - mem:1621248 goroutine:15 gc:0 pause:0ms
+2015/05/27 19:03:34 [I] - mem:1621344 goroutine:15 gc:0 pause:0ms
+2015/05/27 19:03:44 [I] - mem:1622896 goroutine:15 gc:0 pause:0ms
+2015/05/27 19:03:54 [I] - mem:1542888 goroutine:15 gc:2 pause:1ms
+2015/05/27 19:04:04 [I] - mem:1543032 goroutine:15 gc:0 pause:0ms
+2015/05/27 19:04:14 [I] - mem:1543128 goroutine:15 gc:0 pause:0ms
+2015/05/27 19:04:24 [I] - mem:1543224 goroutine:15 gc:0 pause:0ms
+2015/05/27 19:04:34 [I] - mem:1543320 goroutine:15 gc:0 pause:0ms
+2015/05/27 19:04:44 [I] - mem:1543464 goroutine:15 gc:0 pause:0ms
+2015/05/27 19:04:54 [I] - mem:1543560 goroutine:15 gc:0 pause:0ms
+2015/05/27 19:05:04 [I] - mem:1543656 goroutine:15 gc:0 pause:0ms
+2015/05/27 19:05:14 [I] - mem:1543752 goroutine:15 gc:0 pause:0ms
+2015/05/27 19:05:24 [I] - mem:1543848 goroutine:15 gc:0 pause:0ms
+2015/05/27 19:05:34 [I] - mem:1543944 goroutine:15 gc:0 pause:0ms
+2015/05/27 19:05:44 [I] - mem:1544040 goroutine:15 gc:0 pause:0ms
+2015/05/27 19:05:54 [I] - mem:1537920 goroutine:15 gc:1 pause:0ms
+2015/05/27 19:06:04 [I] - mem:1538160 goroutine:15 gc:0 pause:0ms
+2015/05/27 19:06:14 [I] - mem:1538256 goroutine:15 gc:0 pause:0ms
+2015/05/27 19:06:24 [I] - mem:1538352 goroutine:15 gc:0 pause:0ms
+2015/05/27 19:06:34 [I] - mem:1538448 goroutine:15 gc:0 pause:0ms
+2015/05/27 19:06:44 [I] - mem:1538640 goroutine:15 gc:0 pause:0ms
+2015/05/27 19:06:54 [I] - mem:1538736 goroutine:15 gc:0 pause:0ms
+2015/05/27 19:07:04 [I] - mem:1538832 goroutine:15 gc:0 pause:0ms
+2015/05/27 19:07:14 [I] - mem:1538928 goroutine:15 gc:0 pause:0ms
+2015/05/27 19:07:24 [I] - mem:1539024 goroutine:15 gc:0 pause:0ms
+2015/05/27 19:07:34 [I] - mem:1539120 goroutine:15 gc:0 pause:0ms
+2015/05/27 19:07:44 [I] - mem:1539264 goroutine:15 gc:0 pause:0ms
+2015/05/27 19:07:54 [I] - mem:1537968 goroutine:15 gc:1 pause:0ms
+2015/05/27 19:08:04 [I] - mem:1538160 goroutine:15 gc:0 pause:0ms
+2015/05/27 19:08:14 [I] - mem:1538256 goroutine:15 gc:0 pause:0ms
+2015/05/27 19:08:24 [I] - mem:1538352 goroutine:15 gc:0 pause:0ms
+2015/05/27 19:08:34 [I] - mem:1538448 goroutine:15 gc:0 pause:0ms
+2015/05/27 19:08:44 [I] - mem:1538592 goroutine:15 gc:0 pause:0ms
+2015/05/27 19:08:54 [I] - mem:1538688 goroutine:15 gc:0 pause:0ms
+2015/05/27 19:09:04 [I] - mem:1538880 goroutine:15 gc:0 pause:0ms
+2015/05/27 19:09:14 [I] - mem:1538976 goroutine:15 gc:0 pause:0ms
+2015/05/27 19:09:17 [I] - idip request parameter: /get_player_info?time=1430236800&channel_id=1&server_id=2&sign=9E3FD328A724D023D3657245E23417B4293911B9
+2015/05/27 19:09:17 [E] - RPC error
+Error   	= RPC server 928 not exists
+serviceAPI 	= RemoteServe.XdgmGetUserInfo
+Args    = &rpc.Args_XdgmGetUserinfo{
+    RPCArgTag: rpc.RPCArgTag{
+        ClientId: 0,
+    },
+    Pid: 3985729650689,
+}
+
+
+
+Result  = &rpc.Reply_XdgmGetUserinfo{
+    RoleName: "",
+    Pid: 0,
+    Level: 0,
+    Vip: 0,
+    Exp: 0,
+    Coin: 0,
+    Ingot: 0,
+    Physical: 0,
+    RegisterTime: 0,
+    LastLoginTime: 0,
+}
+2015/05/27 19:09:17 [E] - RPC error
+Error   	= RPC server 0 not exists
+serviceAPI 	= RemoteServe.XdgmGetUserInfo
+Args    = &rpc.Args_XdgmGetUserinfo{
+    RPCArgTag: rpc.RPCArgTag{
+        ClientId: 0,
+    },
+    Pid: 1,
+}
+
+
+
+Result  = &rpc.Reply_XdgmGetUserinfo{
+    RoleName: "",
+    Pid: 0,
+    Level: 0,
+    Vip: 0,
+    Exp: 0,
+    Coin: 0,
+    Ingot: 0,
+    Physical: 0,
+    RegisterTime: 0,
+    LastLoginTime: 0,
+}
+2015/05/27 19:09:24 [I] - mem:1573488 goroutine:15 gc:0 pause:0ms
+2015/05/27 19:09:34 [I] - mem:1573584 goroutine:15 gc:0 pause:0ms
+2015/05/27 19:09:44 [I] - mem:1573680 goroutine:15 gc:0 pause:0ms
+2015/05/27 19:09:54 [I] - mem:1556736 goroutine:15 gc:1 pause:0ms
+2015/05/27 19:10:04 [I] - mem:1556928 goroutine:15 gc:0 pause:0ms
+2015/05/27 19:10:14 [I] - mem:1557072 goroutine:15 gc:0 pause:0ms
+2015/05/27 19:10:24 [I] - mem:1557168 goroutine:15 gc:0 pause:0ms
+2015/05/27 19:10:34 [I] - mem:1557312 goroutine:15 gc:0 pause:0ms
+2015/05/27 19:10:44 [I] - mem:1557456 goroutine:15 gc:0 pause:0ms
+2015/05/27 19:10:54 [I] - mem:1557552 goroutine:15 gc:0 pause:0ms
+2015/05/27 19:11:04 [I] - mem:1557648 goroutine:15 gc:0 pause:0ms
+2015/05/27 19:11:14 [I] - mem:1557744 goroutine:15 gc:0 pause:0ms
+2015/05/27 19:11:24 [I] - mem:1557888 goroutine:15 gc:0 pause:0ms
+2015/05/27 19:11:34 [I] - mem:1557984 goroutine:15 gc:0 pause:0ms
+2015/05/27 19:11:41 [I] - idip request parameter: /get_player_info?time=1430236800&channel_id=1&server_id=2&sign=9E3FD328A724D023D3657245E23417B4293911B9
+2015/05/27 19:11:41 [E] - RPC error
+Error   	= RPC server 928 not exists
+serviceAPI 	= RemoteServe.XdgmGetUserInfo
+Args    = &rpc.Args_XdgmGetUserinfo{
+    RPCArgTag: rpc.RPCArgTag{
+        ClientId: 0,
+    },
+    Pid: 3985729650689,
+}
+
+
+
+Result  = &rpc.Reply_XdgmGetUserinfo{
+    RoleName: "",
+    Pid: 0,
+    Level: 0,
+    Vip: 0,
+    Exp: 0,
+    Coin: 0,
+    Ingot: 0,
+    Physical: 0,
+    RegisterTime: 0,
+    LastLoginTime: 0,
+}
+2015/05/27 19:11:41 [E] - RPC error
+Error   	= RPC server 0 not exists
+serviceAPI 	= RemoteServe.XdgmGetUserInfo
+Args    = &rpc.Args_XdgmGetUserinfo{
+    RPCArgTag: rpc.RPCArgTag{
+        ClientId: 0,
+    },
+    Pid: 1,
+}
+
+
+
+Result  = &rpc.Reply_XdgmGetUserinfo{
+    RoleName: "",
+    Pid: 0,
+    Level: 0,
+    Vip: 0,
+    Exp: 0,
+    Coin: 0,
+    Ingot: 0,
+    Physical: 0,
+    RegisterTime: 0,
+    LastLoginTime: 0,
+}
+2015/05/27 19:11:44 [I] - mem:1593408 goroutine:15 gc:0 pause:0ms
+2015/05/27 19:11:54 [I] - mem:1576320 goroutine:15 gc:1 pause:0ms
+2015/05/27 19:12:04 [I] - mem:1576464 goroutine:15 gc:0 pause:0ms
+2015/05/27 19:12:14 [I] - mem:1576560 goroutine:15 gc:0 pause:0ms
+2015/05/27 19:12:24 [I] - mem:1577072 goroutine:15 gc:0 pause:0ms
+2015/05/27 19:12:34 [I] - mem:1577168 goroutine:15 gc:0 pause:0ms
+2015/05/27 19:12:44 [I] - mem:1577312 goroutine:15 gc:0 pause:0ms
+2015/05/27 19:12:54 [I] - mem:1577408 goroutine:15 gc:0 pause:0ms
+2015/05/27 19:13:04 [I] - mem:1577504 goroutine:15 gc:0 pause:0ms
+2015/05/27 19:18:00 [I] - mem:1487888 goroutine:15 gc:4 pause:0ms
+2015/05/27 19:18:10 [I] - mem:1522992 goroutine:15 gc:0 pause:0ms
+2015/05/27 19:18:20 [I] - mem:1523136 goroutine:15 gc:0 pause:0ms
+2015/05/27 19:18:30 [I] - mem:1523232 goroutine:15 gc:0 pause:0ms
+2015/05/27 19:18:40 [I] - mem:1523328 goroutine:15 gc:0 pause:0ms
+2015/05/27 19:18:50 [I] - mem:1523424 goroutine:15 gc:0 pause:0ms
+2015/05/27 19:19:00 [I] - mem:1523808 goroutine:15 gc:0 pause:0ms
+2015/05/27 19:19:10 [I] - mem:1523904 goroutine:15 gc:0 pause:0ms
+2015/05/27 19:19:20 [I] - mem:1524000 goroutine:15 gc:0 pause:0ms
+2015/05/27 19:19:30 [I] - mem:1524096 goroutine:15 gc:0 pause:0ms
+2015/05/27 19:19:40 [I] - mem:1524192 goroutine:15 gc:0 pause:0ms
+2015/05/27 19:19:50 [I] - mem:1524576 goroutine:15 gc:0 pause:0ms
+2015/05/27 19:20:00 [I] - mem:1517304 goroutine:15 gc:2 pause:2ms
+2015/05/27 19:20:10 [I] - mem:1517448 goroutine:15 gc:0 pause:0ms
+2015/05/27 19:20:16 [I] - idip request parameter: /get_player_info?time=1430236800&channel_id=1&server_id=2&sign=9E3FD328A724D023D3657245E23417B4293911B9
+2015/05/27 19:20:16 [E] - RPC error
+Error   	= RPC server 928 not exists
+serviceAPI 	= RemoteServe.XdgmGetUserInfo
+Args    = &rpc.Args_XdgmGetUserinfo{
+    RPCArgTag: rpc.RPCArgTag{
+        ClientId: 0,
+    },
+    Pid: 3985729650689,
+}
+
+
+
+Result  = &rpc.Reply_XdgmGetUserinfo{
+    RoleName: "",
+    Pid: 0,
+    Level: 0,
+    Vip: 0,
+    Exp: 0,
+    Coin: 0,
+    Ingot: 0,
+    Physical: 0,
+    RegisterTime: 0,
+    LastLoginTime: 0,
+}
+2015/05/27 19:20:16 [E] - RPC error
+Error   	= RPC server 0 not exists
+serviceAPI 	= RemoteServe.XdgmGetUserInfo
+Args    = &rpc.Args_XdgmGetUserinfo{
+    RPCArgTag: rpc.RPCArgTag{
+        ClientId: 0,
+    },
+    Pid: 1,
+}
+
+
+
+Result  = &rpc.Reply_XdgmGetUserinfo{
+    RoleName: "",
+    Pid: 0,
+    Level: 0,
+    Vip: 0,
+    Exp: 0,
+    Coin: 0,
+    Ingot: 0,
+    Physical: 0,
+    RegisterTime: 0,
+    LastLoginTime: 0,
+}
+2015/05/27 19:20:20 [I] - mem:1563800 goroutine:15 gc:0 pause:0ms
+2015/05/27 19:20:30 [I] - mem:1563944 goroutine:15 gc:0 pause:0ms
+2015/05/27 19:20:40 [I] - mem:1564040 goroutine:15 gc:0 pause:0ms
+2015/05/27 19:20:50 [I] - mem:1564424 goroutine:15 gc:0 pause:0ms
+2015/05/27 19:21:00 [I] - mem:1564520 goroutine:15 gc:0 pause:0ms
+2015/05/27 19:21:10 [I] - mem:1564616 goroutine:15 gc:0 pause:0ms
+2015/05/27 19:21:20 [I] - mem:1564712 goroutine:15 gc:0 pause:0ms
+2015/05/27 19:21:30 [I] - mem:1564808 goroutine:15 gc:0 pause:0ms
+2015/05/27 19:21:40 [I] - mem:1564904 goroutine:15 gc:0 pause:0ms
+2015/05/27 19:21:50 [I] - mem:1565288 goroutine:15 gc:0 pause:0ms
+2015/05/27 19:22:00 [I] - mem:1527272 goroutine:15 gc:1 pause:0ms
+2015/05/27 19:22:10 [I] - mem:1527416 goroutine:15 gc:0 pause:0ms
+2015/05/27 19:22:20 [I] - mem:1527512 goroutine:15 gc:0 pause:0ms
+2015/05/27 19:22:36 [I] - mem:1486128 goroutine:15 gc:4 pause:0ms
+2015/05/27 19:22:46 [I] - mem:1521280 goroutine:15 gc:0 pause:0ms
+2015/05/27 19:22:56 [I] - mem:1521376 goroutine:15 gc:0 pause:0ms
+2015/05/27 19:23:06 [I] - mem:1521472 goroutine:15 gc:0 pause:0ms
+2015/05/27 19:23:16 [I] - mem:1521568 goroutine:15 gc:0 pause:0ms
+2015/05/27 19:23:26 [I] - mem:1521664 goroutine:15 gc:0 pause:0ms
+2015/05/27 19:23:27 [I] - idip request parameter: /get_player_info?time=1430236800&channel_id=1&server_id=2&sign=9E3FD328A724D023D3657245E23417B4293911B9
+2015/05/27 19:23:27 [E] - RPC error
+Error   	= RPC server 928 not exists
+serviceAPI 	= RemoteServe.XdgmGetUserInfo
+Args    = &rpc.Args_XdgmGetUserinfo{
+    RPCArgTag: rpc.RPCArgTag{
+        ClientId: 0,
+    },
+    Pid: 3985729650689,
+}
+
+
+
+Result  = &rpc.Reply_XdgmGetUserinfo{
+    RoleName: "",
+    Pid: 0,
+    Level: 0,
+    Vip: 0,
+    Exp: 0,
+    Coin: 0,
+    Ingot: 0,
+    Physical: 0,
+    RegisterTime: 0,
+    LastLoginTime: 0,
+}
+2015/05/27 19:23:27 [E] - RPC error
+Error   	= RPC server 0 not exists
+serviceAPI 	= RemoteServe.XdgmGetUserInfo
+Args    = &rpc.Args_XdgmGetUserinfo{
+    RPCArgTag: rpc.RPCArgTag{
+        ClientId: 0,
+    },
+    Pid: 1,
+}
+
+
+
+Result  = &rpc.Reply_XdgmGetUserinfo{
+    RoleName: "",
+    Pid: 0,
+    Level: 0,
+    Vip: 0,
+    Exp: 0,
+    Coin: 0,
+    Ingot: 0,
+    Physical: 0,
+    RegisterTime: 0,
+    LastLoginTime: 0,
+}
+2015/05/27 19:23:36 [I] - mem:1568720 goroutine:15 gc:0 pause:0ms
+2015/05/27 19:23:46 [I] - mem:1568816 goroutine:15 gc:0 pause:0ms
+2015/05/27 19:23:56 [I] - mem:1568912 goroutine:15 gc:0 pause:0ms
+2015/05/27 19:24:06 [I] - mem:1569008 goroutine:15 gc:0 pause:0ms
+2015/05/27 19:24:07 [I] - idip request parameter: /get_player_info?time=1430236800&channel_id=1&server_id=2&sign=9E3FD328A724D023D3657245E23417B4293911B9
+2015/05/27 19:24:07 [E] - RPC error
+Error   	= RPC server 928 not exists
+serviceAPI 	= RemoteServe.XdgmGetUserInfo
+Args    = &rpc.Args_XdgmGetUserinfo{
+    RPCArgTag: rpc.RPCArgTag{
+        ClientId: 0,
+    },
+    Pid: 3985729650689,
+}
+
+
+
+Result  = &rpc.Reply_XdgmGetUserinfo{
+    RoleName: "",
+    Pid: 0,
+    Level: 0,
+    Vip: 0,
+    Exp: 0,
+    Coin: 0,
+    Ingot: 0,
+    Physical: 0,
+    RegisterTime: 0,
+    LastLoginTime: 0,
+}
+2015/05/27 19:24:07 [E] - RPC error
+Error   	= RPC server 0 not exists
+serviceAPI 	= RemoteServe.XdgmGetUserInfo
+Args    = &rpc.Args_XdgmGetUserinfo{
+    RPCArgTag: rpc.RPCArgTag{
+        ClientId: 0,
+    },
+    Pid: 1,
+}
+
+
+
+Result  = &rpc.Reply_XdgmGetUserinfo{
+    RoleName: "",
+    Pid: 0,
+    Level: 0,
+    Vip: 0,
+    Exp: 0,
+    Coin: 0,
+    Ingot: 0,
+    Physical: 0,
+    RegisterTime: 0,
+    LastLoginTime: 0,
+}
+2015/05/27 19:24:16 [I] - mem:1584608 goroutine:15 gc:0 pause:0ms
+2015/05/27 19:24:26 [I] - mem:1584704 goroutine:15 gc:0 pause:0ms
+2015/05/27 19:24:36 [I] - mem:1525496 goroutine:15 gc:2 pause:1ms
+2015/05/27 19:24:46 [I] - mem:1525688 goroutine:15 gc:0 pause:0ms
+2015/05/27 19:24:56 [I] - mem:1525832 goroutine:15 gc:0 pause:0ms
+2015/05/27 19:25:06 [I] - mem:1525928 goroutine:15 gc:0 pause:0ms
+2015/05/27 19:25:16 [I] - mem:1526024 goroutine:15 gc:0 pause:0ms
+2015/05/27 19:25:26 [I] - mem:1526168 goroutine:15 gc:0 pause:0ms
+2015/05/27 19:25:36 [I] - mem:1526552 goroutine:15 gc:0 pause:0ms
+2015/05/27 19:25:46 [I] - mem:1526648 goroutine:15 gc:0 pause:0ms
+2015/05/27 19:25:56 [I] - mem:1526792 goroutine:15 gc:0 pause:0ms
+2015/05/27 19:26:06 [I] - mem:1526888 goroutine:15 gc:0 pause:0ms
+2015/05/27 19:26:10 [I] - idip request parameter: /get_player_info?time=1430236800&channel_id=1&server_id=2&sign=9E3FD328A724D023D3657245E23417B4293911B9
+2015/05/27 19:26:10 [E] - RPC error
+Error   	= RPC server 928 not exists
+serviceAPI 	= RemoteServe.XdgmGetUserInfo
+Args    = &rpc.Args_XdgmGetUserinfo{
+    RPCArgTag: rpc.RPCArgTag{
+        ClientId: 0,
+    },
+    Pid: 3985729650689,
+}
+
+
+
+Result  = &rpc.Reply_XdgmGetUserinfo{
+    RoleName: "",
+    Pid: 0,
+    Level: 0,
+    Vip: 0,
+    Exp: 0,
+    Coin: 0,
+    Ingot: 0,
+    Physical: 0,
+    RegisterTime: 0,
+    LastLoginTime: 0,
+}
+2015/05/27 19:26:10 [E] - RPC error
+Error   	= RPC server 0 not exists
+serviceAPI 	= RemoteServe.XdgmGetUserInfo
+Args    = &rpc.Args_XdgmGetUserinfo{
+    RPCArgTag: rpc.RPCArgTag{
+        ClientId: 0,
+    },
+    Pid: 1,
+}
+
+
+
+Result  = &rpc.Reply_XdgmGetUserinfo{
+    RoleName: "",
+    Pid: 0,
+    Level: 0,
+    Vip: 0,
+    Exp: 0,
+    Coin: 0,
+    Ingot: 0,
+    Physical: 0,
+    RegisterTime: 0,
+    LastLoginTime: 0,
+}
+2015/05/27 19:26:16 [I] - mem:1563112 goroutine:15 gc:0 pause:0ms
+2015/05/27 19:26:31 [I] - mem:1493376 goroutine:15 gc:4 pause:0ms
+2015/05/27 19:26:41 [I] - mem:1533440 goroutine:15 gc:0 pause:0ms
+2015/05/27 19:26:43 [I] - idip request parameter: /get_player_info?time=1430236800&channel_id=1&server_id=2&sign=9E3FD328A724D023D3657245E23417B4293911B9
+2015/05/27 19:26:43 [E] - RPC error
+Error   	= RPC server 928 not exists
+serviceAPI 	= RemoteServe.XdgmGetUserInfo
+Args    = &rpc.Args_XdgmGetUserinfo{
+    RPCArgTag: rpc.RPCArgTag{
+        ClientId: 0,
+    },
+    Pid: 3985729650689,
+}
+
+
+
+Result  = &rpc.Reply_XdgmGetUserinfo{
+    RoleName: "",
+    Pid: 0,
+    Level: 0,
+    Vip: 0,
+    Exp: 0,
+    Coin: 0,
+    Ingot: 0,
+    Physical: 0,
+    RegisterTime: 0,
+    LastLoginTime: 0,
+}
+2015/05/27 19:26:43 [E] - RPC error
+Error   	= RPC server 0 not exists
+serviceAPI 	= RemoteServe.XdgmGetUserInfo
+Args    = &rpc.Args_XdgmGetUserinfo{
+    RPCArgTag: rpc.RPCArgTag{
+        ClientId: 0,
+    },
+    Pid: 1,
+}
+
+
+
+Result  = &rpc.Reply_XdgmGetUserinfo{
+    RoleName: "",
+    Pid: 0,
+    Level: 0,
+    Vip: 0,
+    Exp: 0,
+    Coin: 0,
+    Ingot: 0,
+    Physical: 0,
+    RegisterTime: 0,
+    LastLoginTime: 0,
+}
+2015/05/27 19:26:51 [I] - mem:1583680 goroutine:15 gc:0 pause:0ms
+2015/05/27 19:27:01 [I] - mem:1592912 goroutine:15 gc:0 pause:0ms
+2015/05/27 19:27:11 [I] - mem:1597520 goroutine:15 gc:0 pause:0ms
+2015/05/27 19:27:21 [I] - mem:1602576 goroutine:15 gc:0 pause:0ms
+2015/05/27 19:27:31 [I] - mem:1607632 goroutine:15 gc:0 pause:0ms
+2015/05/27 19:27:41 [I] - mem:1612976 goroutine:15 gc:0 pause:0ms
+2015/05/27 19:27:42 [I] - idip request parameter: /get_player_info?time=1430236800&channel_id=1&server_id=2&sign=9E3FD328A724D023D3657245E23417B4293911B9
+2015/05/27 19:27:42 [D] - sign wrong.need:9E3FD328A724D023D3657245E23417B4293911B9,have: 0x4032c20
+2015/05/27 19:28:00 [I] - idip request parameter: /get_player_info?time=1430236800&channel_id=1&server_id=2&sign=9E3FD328A724D023D3657245E23417B4293911B9
+2015/05/27 19:28:00 [D] - sign wrong.need:9E3FD328A724D023D3657245E23417B4293911B9,have: 0x4032c80
+2015/05/27 19:28:04 [I] - mem:1562336 goroutine:15 gc:4 pause:0ms
+2015/05/27 19:28:09 [I] - idip request parameter: /get_player_info?time=1430236800&channel_id=1&server_id=2&sign=9E3FD328A724D023D3657245E23417B4293911B9
+2015/05/27 19:28:09 [E] - RPC error
+Error   	= RPC server 928 not exists
+serviceAPI 	= RemoteServe.XdgmGetUserInfo
+Args    = &rpc.Args_XdgmGetUserinfo{
+    RPCArgTag: rpc.RPCArgTag{
+        ClientId: 0,
+    },
+    Pid: 3985729650689,
+}
+
+
+
+Result  = &rpc.Reply_XdgmGetUserinfo{
+    RoleName: "",
+    Pid: 0,
+    Level: 0,
+    Vip: 0,
+    Exp: 0,
+    Coin: 0,
+    Ingot: 0,
+    Physical: 0,
+    RegisterTime: 0,
+    LastLoginTime: 0,
+}
+2015/05/27 19:28:09 [E] - RPC error
+Error   	= RPC server 0 not exists
+serviceAPI 	= RemoteServe.XdgmGetUserInfo
+Args    = &rpc.Args_XdgmGetUserinfo{
+    RPCArgTag: rpc.RPCArgTag{
+        ClientId: 0,
+    },
+    Pid: 1,
+}
+
+
+
+Result  = &rpc.Reply_XdgmGetUserinfo{
+    RoleName: "",
+    Pid: 0,
+    Level: 0,
+    Vip: 0,
+    Exp: 0,
+    Coin: 0,
+    Ingot: 0,
+    Physical: 0,
+    RegisterTime: 0,
+    LastLoginTime: 0,
+}
+2015/05/27 19:28:12 [I] - idip request parameter: /get_player_info?time=1430236800&channel_id=1&server_id=2&sign=9E3FD328A724D023D3657245E23417B4293911B9
+2015/05/27 19:28:12 [E] - RPC error
+Error   	= RPC server 928 not exists
+serviceAPI 	= RemoteServe.XdgmGetUserInfo
+Args    = &rpc.Args_XdgmGetUserinfo{
+    RPCArgTag: rpc.RPCArgTag{
+        ClientId: 0,
+    },
+    Pid: 3985729650689,
+}
+
+
+
+Result  = &rpc.Reply_XdgmGetUserinfo{
+    RoleName: "",
+    Pid: 0,
+    Level: 0,
+    Vip: 0,
+    Exp: 0,
+    Coin: 0,
+    Ingot: 0,
+    Physical: 0,
+    RegisterTime: 0,
+    LastLoginTime: 0,
+}
+2015/05/27 19:28:12 [E] - RPC error
+Error   	= RPC server 0 not exists
+serviceAPI 	= RemoteServe.XdgmGetUserInfo
+Args    = &rpc.Args_XdgmGetUserinfo{
+    RPCArgTag: rpc.RPCArgTag{
+        ClientId: 0,
+    },
+    Pid: 1,
+}
+
+
+
+Result  = &rpc.Reply_XdgmGetUserinfo{
+    RoleName: "",
+    Pid: 0,
+    Level: 0,
+    Vip: 0,
+    Exp: 0,
+    Coin: 0,
+    Ingot: 0,
+    Physical: 0,
+    RegisterTime: 0,
+    LastLoginTime: 0,
+}
+2015/05/27 19:28:14 [I] - mem:1643904 goroutine:15 gc:0 pause:0ms
+2015/05/27 19:28:24 [I] - mem:1646880 goroutine:15 gc:0 pause:0ms
+2015/05/27 19:28:34 [I] - mem:1649856 goroutine:15 gc:0 pause:0ms
+2015/05/27 19:28:44 [I] - mem:1653360 goroutine:15 gc:0 pause:0ms
+2015/05/27 19:28:54 [I] - mem:1656048 goroutine:15 gc:0 pause:0ms
+2015/05/27 19:29:08 [I] - idip request parameter: /get_player_info?time=1430236800&channel_id=1&server_id=2&sign=9E3FD328A724D023D3657245E23417B4293911B9
+2015/05/27 19:29:08 [E] - RPC error
+Error   	= RPC server 928 not exists
+serviceAPI 	= RemoteServe.XdgmGetUserInfo
+Args    = &rpc.Args_XdgmGetUserinfo{
+    RPCArgTag: rpc.RPCArgTag{
+        ClientId: 0,
+    },
+    Pid: 3985729650689,
+}
+
+
+
+Result  = &rpc.Reply_XdgmGetUserinfo{
+    RoleName: "",
+    Pid: 0,
+    Level: 0,
+    Vip: 0,
+    Exp: 0,
+    Coin: 0,
+    Ingot: 0,
+    Physical: 0,
+    RegisterTime: 0,
+    LastLoginTime: 0,
+}
+2015/05/27 19:29:08 [E] - RPC error
+Error   	= RPC server 0 not exists
+serviceAPI 	= RemoteServe.XdgmGetUserInfo
+Args    = &rpc.Args_XdgmGetUserinfo{
+    RPCArgTag: rpc.RPCArgTag{
+        ClientId: 0,
+    },
+    Pid: 1,
+}
+
+
+
+Result  = &rpc.Reply_XdgmGetUserinfo{
+    RoleName: "",
+    Pid: 0,
+    Level: 0,
+    Vip: 0,
+    Exp: 0,
+    Coin: 0,
+    Ingot: 0,
+    Physical: 0,
+    RegisterTime: 0,
+    LastLoginTime: 0,
+}
+2015/05/27 19:29:09 [I] - idip request parameter: /get_player_info?time=1430236800&channel_id=1&server_id=2&sign=9E3FD328A724D023D3657245E23417B4293911B9
+2015/05/27 19:29:09 [E] - RPC error
+Error   	= RPC server 928 not exists
+serviceAPI 	= RemoteServe.XdgmGetUserInfo
+Args    = &rpc.Args_XdgmGetUserinfo{
+    RPCArgTag: rpc.RPCArgTag{
+        ClientId: 0,
+    },
+    Pid: 3985729650689,
+}
+
+
+
+Result  = &rpc.Reply_XdgmGetUserinfo{
+    RoleName: "",
+    Pid: 0,
+    Level: 0,
+    Vip: 0,
+    Exp: 0,
+    Coin: 0,
+    Ingot: 0,
+    Physical: 0,
+    RegisterTime: 0,
+    LastLoginTime: 0,
+}
+2015/05/27 19:29:09 [E] - RPC error
+Error   	= RPC server 0 not exists
+serviceAPI 	= RemoteServe.XdgmGetUserInfo
+Args    = &rpc.Args_XdgmGetUserinfo{
+    RPCArgTag: rpc.RPCArgTag{
+        ClientId: 0,
+    },
+    Pid: 1,
+}
+
+
+
+Result  = &rpc.Reply_XdgmGetUserinfo{
+    RoleName: "",
+    Pid: 0,
+    Level: 0,
+    Vip: 0,
+    Exp: 0,
+    Coin: 0,
+    Ingot: 0,
+    Physical: 0,
+    RegisterTime: 0,
+    LastLoginTime: 0,
+}
+2015/05/27 19:29:11 [I] - idip request parameter: /get_player_info?time=1430236800&channel_id=1&server_id=2&sign=9E3FD328A724D023D3657245E23417B4293911B9
+2015/05/27 19:29:11 [E] - RPC error
+Error   	= RPC server 928 not exists
+serviceAPI 	= RemoteServe.XdgmGetUserInfo
+Args    = &rpc.Args_XdgmGetUserinfo{
+    RPCArgTag: rpc.RPCArgTag{
+        ClientId: 0,
+    },
+    Pid: 3985729650689,
+}
+
+
+
+Result  = &rpc.Reply_XdgmGetUserinfo{
+    RoleName: "",
+    Pid: 0,
+    Level: 0,
+    Vip: 0,
+    Exp: 0,
+    Coin: 0,
+    Ingot: 0,
+    Physical: 0,
+    RegisterTime: 0,
+    LastLoginTime: 0,
+}
+2015/05/27 19:29:11 [E] - RPC error
+Error   	= RPC server 0 not exists
+serviceAPI 	= RemoteServe.XdgmGetUserInfo
+Args    = &rpc.Args_XdgmGetUserinfo{
+    RPCArgTag: rpc.RPCArgTag{
+        ClientId: 0,
+    },
+    Pid: 1,
+}
+
+
+
+Result  = &rpc.Reply_XdgmGetUserinfo{
+    RoleName: "",
+    Pid: 0,
+    Level: 0,
+    Vip: 0,
+    Exp: 0,
+    Coin: 0,
+    Ingot: 0,
+    Physical: 0,
+    RegisterTime: 0,
+    LastLoginTime: 0,
+}
+2015/05/27 19:29:15 [I] - mem:1595872 goroutine:15 gc:4 pause:0ms
+2015/05/27 19:29:25 [I] - mem:1633184 goroutine:15 gc:0 pause:0ms
+2015/05/27 19:29:35 [I] - mem:1636816 goroutine:15 gc:0 pause:0ms
+2015/05/27 19:29:49 [I] - idip request parameter: /get_player_info?time=1430236800&channel_id=1&server_id=2&sign=9E3FD328A724D023D3657245E23417B4293911B9
+2015/05/27 19:29:49 [E] - RPC error
+Error   	= RPC server 0 not exists
+serviceAPI 	= RemoteServe.XdgmGetUserInfo
+Args    = &rpc.Args_XdgmGetUserinfo{
+    RPCArgTag: rpc.RPCArgTag{
+        ClientId: 0,
+    },
+    Pid: 1,
+}
+
+
+
+Result  = &rpc.Reply_XdgmGetUserinfo{
+    RoleName: "",
+    Pid: 0,
+    Level: 0,
+    Vip: 0,
+    Exp: 0,
+    Coin: 0,
+    Ingot: 0,
+    Physical: 0,
+    RegisterTime: 0,
+    LastLoginTime: 0,
+}
+2015/05/27 19:29:52 [I] - idip request parameter: /get_player_info?time=1430236800&channel_id=1&server_id=2&sign=9E3FD328A724D023D3657245E23417B4293911B9
+2015/05/27 19:29:52 [E] - RPC error
+Error   	= RPC server 0 not exists
+serviceAPI 	= RemoteServe.XdgmGetUserInfo
+Args    = &rpc.Args_XdgmGetUserinfo{
+    RPCArgTag: rpc.RPCArgTag{
+        ClientId: 0,
+    },
+    Pid: 1,
+}
+
+
+
+Result  = &rpc.Reply_XdgmGetUserinfo{
+    RoleName: "",
+    Pid: 0,
+    Level: 0,
+    Vip: 0,
+    Exp: 0,
+    Coin: 0,
+    Ingot: 0,
+    Physical: 0,
+    RegisterTime: 0,
+    LastLoginTime: 0,
+}
+2015/05/27 19:29:57 [I] - mem:1623448 goroutine:16 gc:4 pause:0ms
+2015/05/27 19:30:07 [I] - mem:1661336 goroutine:16 gc:0 pause:0ms
+2015/05/27 19:30:17 [I] - mem:1664024 goroutine:16 gc:0 pause:0ms
+2015/05/27 19:30:27 [I] - mem:1667656 goroutine:16 gc:0 pause:0ms
+2015/05/27 19:30:37 [I] - mem:1670872 goroutine:16 gc:0 pause:0ms
+2015/05/27 19:30:47 [I] - mem:1673608 goroutine:16 gc:0 pause:0ms
+2015/05/27 19:30:57 [I] - mem:1676824 goroutine:16 gc:0 pause:0ms
+2015/05/27 19:31:07 [I] - mem:1679512 goroutine:16 gc:0 pause:0ms
+2015/05/27 19:31:17 [I] - mem:1682536 goroutine:16 gc:0 pause:0ms
+2015/05/27 19:31:27 [I] - mem:1685464 goroutine:16 gc:0 pause:0ms
+2015/05/27 19:31:37 [I] - mem:1688728 goroutine:16 gc:0 pause:0ms
+2015/05/27 19:31:47 [I] - mem:1691416 goroutine:16 gc:0 pause:0ms
+2015/05/27 19:31:57 [I] - mem:1570456 goroutine:16 gc:2 pause:0ms
+2015/05/27 19:32:07 [I] - mem:1573480 goroutine:16 gc:0 pause:0ms
+2015/05/27 19:32:17 [I] - mem:1576728 goroutine:16 gc:0 pause:0ms
+2015/05/27 19:32:27 [I] - mem:1580184 goroutine:16 gc:0 pause:0ms
+2015/05/27 19:32:37 [I] - mem:1582872 goroutine:16 gc:0 pause:0ms
+2015/05/27 19:32:47 [I] - mem:1585896 goroutine:16 gc:0 pause:0ms
+2015/05/27 19:32:57 [I] - mem:1589112 goroutine:16 gc:0 pause:0ms
+2015/05/27 19:33:07 [I] - mem:1592088 goroutine:16 gc:0 pause:0ms
+2015/05/27 19:33:17 [I] - mem:1595064 goroutine:16 gc:0 pause:0ms
+2015/05/27 19:33:27 [I] - mem:1598040 goroutine:16 gc:0 pause:0ms
+2015/05/27 19:33:37 [I] - mem:1600776 goroutine:16 gc:0 pause:0ms
+2015/05/27 19:33:47 [I] - mem:1603992 goroutine:15 gc:0 pause:0ms
+2015/05/27 19:33:52 [I] - idip request parameter: /get_player_info?time=1430236800&channel_id=1&server_id=2&sign=9E3FD328A724D023D3657245E23417B4293911B9
+2015/05/27 19:33:52 [E] - RPC error
+Error   	= connection is shut down
+serviceAPI 	= RemoteServe.XdgmGetUserInfo
+Args    = &rpc.Args_XdgmGetUserinfo{
+    RPCArgTag: rpc.RPCArgTag{
+        ClientId: -1,
+    },
+    Pid: 3985729650689,
+}
+
+
+
+Result  = &rpc.Reply_XdgmGetUserinfo{
+    RoleName: "",
+    Pid: 0,
+    Level: 0,
+    Vip: 0,
+    Exp: 0,
+    Coin: 0,
+    Ingot: 0,
+    Physical: 0,
+    RegisterTime: 0,
+    LastLoginTime: 0,
+}
+2015/05/27 19:33:52 [E] - RPC error
+Error   	= RPC server 0 not exists
+serviceAPI 	= RemoteServe.XdgmGetUserInfo
+Args    = &rpc.Args_XdgmGetUserinfo{
+    RPCArgTag: rpc.RPCArgTag{
+        ClientId: 0,
+    },
+    Pid: 1,
+}
+
+
+
+Result  = &rpc.Reply_XdgmGetUserinfo{
+    RoleName: "",
+    Pid: 0,
+    Level: 0,
+    Vip: 0,
+    Exp: 0,
+    Coin: 0,
+    Ingot: 0,
+    Physical: 0,
+    RegisterTime: 0,
+    LastLoginTime: 0,
+}
+2015/05/27 19:33:57 [I] - mem:1606984 goroutine:15 gc:1 pause:0ms
+2015/05/27 19:34:07 [I] - mem:1610712 goroutine:15 gc:0 pause:0ms
+2015/05/27 19:34:10 [I] - idip request parameter: /get_player_info?time=1430236800&channel_id=1&server_id=2&sign=9E3FD328A724D023D3657245E23417B4293911B9
+2015/05/27 19:34:10 [E] - RPC error
+Error   	= RPC server 0 not exists
+serviceAPI 	= RemoteServe.XdgmGetUserInfo
+Args    = &rpc.Args_XdgmGetUserinfo{
+    RPCArgTag: rpc.RPCArgTag{
+        ClientId: 0,
+    },
+    Pid: 1,
+}
+
+
+
+Result  = &rpc.Reply_XdgmGetUserinfo{
+    RoleName: "",
+    Pid: 0,
+    Level: 0,
+    Vip: 0,
+    Exp: 0,
+    Coin: 0,
+    Ingot: 0,
+    Physical: 0,
+    RegisterTime: 0,
+    LastLoginTime: 0,
+}
+2015/05/27 19:34:17 [I] - mem:1673120 goroutine:16 gc:0 pause:0ms
+2015/05/27 19:34:27 [I] - mem:1676096 goroutine:16 gc:0 pause:0ms
+2015/05/27 19:34:37 [I] - mem:1679072 goroutine:16 gc:0 pause:0ms
+2015/05/27 19:34:47 [I] - mem:1682432 goroutine:16 gc:0 pause:0ms
+2015/05/27 19:34:57 [I] - mem:1685360 goroutine:16 gc:0 pause:0ms
+2015/05/27 19:35:07 [I] - mem:1688576 goroutine:16 gc:0 pause:0ms
+2015/05/27 19:35:17 [I] - mem:1691264 goroutine:16 gc:0 pause:0ms
+2015/05/27 19:35:27 [I] - mem:1694240 goroutine:16 gc:0 pause:0ms
+2015/05/27 19:35:37 [I] - mem:1697456 goroutine:16 gc:0 pause:0ms
+2015/05/27 19:35:47 [I] - mem:1700576 goroutine:16 gc:0 pause:0ms
+2015/05/27 19:35:57 [I] - mem:1605608 goroutine:16 gc:1 pause:0ms
+2015/05/27 19:36:07 [I] - mem:1608392 goroutine:16 gc:0 pause:0ms
+2015/05/27 19:36:17 [I] - mem:1611896 goroutine:16 gc:0 pause:0ms
+2015/05/27 19:36:27 [I] - mem:1614872 goroutine:16 gc:0 pause:0ms
+2015/05/27 19:36:37 [I] - mem:1617560 goroutine:16 gc:0 pause:0ms
+2015/05/27 19:36:47 [I] - mem:1620824 goroutine:16 gc:0 pause:0ms
+2015/05/27 19:36:57 [I] - mem:1623800 goroutine:16 gc:0 pause:0ms
+2015/05/27 19:37:07 [I] - mem:1626776 goroutine:16 gc:0 pause:0ms
+2015/05/27 19:37:17 [I] - mem:1629464 goroutine:16 gc:0 pause:0ms
+2015/05/27 19:37:27 [I] - mem:1632728 goroutine:16 gc:0 pause:0ms
+2015/05/27 19:37:37 [I] - mem:1635416 goroutine:16 gc:0 pause:0ms
+2015/05/27 19:37:47 [I] - mem:1638728 goroutine:16 gc:0 pause:0ms
+2015/05/27 19:37:57 [I] - mem:1605256 goroutine:16 gc:1 pause:0ms
+2015/05/27 19:38:07 [I] - mem:1608280 goroutine:16 gc:0 pause:0ms
+2015/05/27 19:38:22 [I] - idip request parameter: /get_player_info?time=1430236800&channel_id=1&server_id=2&sign=9E3FD328A724D023D3657245E23417B4293911B9
+2015/05/27 19:38:22 [E] - RPC error
+Error   	= RPC server 0 not exists
+serviceAPI 	= RemoteServe.XdgmGetUserInfo
+Args    = &rpc.Args_XdgmGetUserinfo{
+    RPCArgTag: rpc.RPCArgTag{
+        ClientId: 0,
+    },
+    Pid: 1,
+}
+
+
+
+Result  = &rpc.Reply_XdgmGetUserinfo{
+    RoleName: "",
+    Pid: 0,
+    Level: 0,
+    Vip: 0,
+    Exp: 0,
+    Coin: 0,
+    Ingot: 0,
+    Physical: 0,
+    RegisterTime: 0,
+    LastLoginTime: 0,
+}
+2015/05/27 19:38:30 [I] - mem:1588944 goroutine:16 gc:4 pause:0ms
+2015/05/27 19:38:40 [I] - mem:1626832 goroutine:16 gc:0 pause:0ms
+2015/05/27 19:38:49 [I] - idip request parameter: /get_player_info?time=1430236800&channel_id=1&server_id=2&sign=9E3FD328A724D023D3657245E23417B4293911B9
+2015/05/27 19:38:49 [E] - RPC error
+Error   	= RPC server 0 not exists
+serviceAPI 	= RemoteServe.XdgmGetUserInfo
+Args    = &rpc.Args_XdgmGetUserinfo{
+    RPCArgTag: rpc.RPCArgTag{
+        ClientId: 0,
+    },
+    Pid: 1,
+}
+
+
+
+Result  = &rpc.Reply_XdgmGetUserinfo{
+    RoleName: "",
+    Pid: 0,
+    Level: 0,
+    Vip: 0,
+    Exp: 0,
+    Coin: 0,
+    Ingot: 0,
+    Physical: 0,
+    RegisterTime: 0,
+    LastLoginTime: 0,
+}
+2015/05/27 19:38:55 [I] - mem:1604000 goroutine:16 gc:4 pause:1ms
+2015/05/27 19:39:05 [I] - mem:1641696 goroutine:16 gc:0 pause:0ms
+2015/05/27 19:39:15 [I] - mem:1644672 goroutine:16 gc:0 pause:0ms
+2015/05/27 19:39:25 [I] - mem:1647888 goroutine:16 gc:0 pause:0ms
+2015/05/27 19:39:35 [I] - mem:1650576 goroutine:16 gc:0 pause:0ms
+2015/05/27 19:39:45 [I] - mem:1653552 goroutine:16 gc:0 pause:0ms
+2015/05/27 19:39:55 [I] - mem:1656816 goroutine:16 gc:0 pause:0ms
+2015/05/27 19:40:05 [I] - mem:1659504 goroutine:16 gc:0 pause:0ms
+2015/05/27 19:40:15 [I] - mem:1662768 goroutine:16 gc:0 pause:0ms
+2015/05/27 19:40:25 [I] - mem:1665456 goroutine:16 gc:0 pause:0ms
+2015/05/27 19:40:35 [I] - mem:1668720 goroutine:16 gc:0 pause:0ms
+2015/05/27 19:40:45 [I] - mem:1671696 goroutine:16 gc:0 pause:0ms
+2015/05/27 19:40:55 [I] - mem:1571504 goroutine:16 gc:2 pause:0ms
+2015/05/27 19:41:05 [I] - mem:1574528 goroutine:16 gc:0 pause:0ms
+2015/05/27 19:41:15 [I] - mem:1577312 goroutine:16 gc:0 pause:0ms
+2015/05/27 19:41:25 [I] - mem:1580576 goroutine:16 gc:0 pause:0ms
+2015/05/27 19:41:35 [I] - mem:1583648 goroutine:16 gc:0 pause:0ms
+2015/05/27 19:41:45 [I] - mem:1586512 goroutine:16 gc:0 pause:0ms
+2015/05/27 19:41:55 [I] - mem:1589440 goroutine:16 gc:0 pause:0ms
+2015/05/27 19:42:05 [I] - mem:1592704 goroutine:16 gc:0 pause:0ms
+2015/05/27 19:42:15 [I] - mem:1595440 goroutine:16 gc:0 pause:0ms
+2015/05/27 19:42:25 [I] - mem:1598416 goroutine:16 gc:0 pause:0ms
+2015/05/27 19:42:35 [I] - mem:1601392 goroutine:16 gc:0 pause:0ms
+2015/05/27 19:42:45 [I] - mem:1604656 goroutine:16 gc:0 pause:0ms
+2015/05/27 19:42:55 [I] - mem:1571488 goroutine:16 gc:1 pause:0ms
+2015/05/27 19:43:05 [I] - mem:1574560 goroutine:16 gc:0 pause:0ms
+2015/05/27 19:43:15 [I] - mem:1577248 goroutine:16 gc:0 pause:0ms
+2015/05/27 19:43:25 [I] - mem:1580512 goroutine:16 gc:0 pause:0ms
+2015/05/27 19:43:35 [I] - mem:1583488 goroutine:16 gc:0 pause:0ms
+2015/05/27 19:43:45 [I] - mem:1586464 goroutine:16 gc:0 pause:0ms
+2015/05/27 19:43:50 [I] - idip request parameter: /get_player_info?time=1430236800&channel_id=1&server_id=2&sign=9E3FD328A724D023D3657245E23417B4293911B9
+2015/05/27 19:43:50 [E] - RPC error
+Error   	= RPC server 0 not exists
+serviceAPI 	= RemoteServe.XdgmGetUserInfo
+Args    = &rpc.Args_XdgmGetUserinfo{
+    RPCArgTag: rpc.RPCArgTag{
+        ClientId: 0,
+    },
+    Pid: 1,
+}
+
+
+
+Result  = &rpc.Reply_XdgmGetUserinfo{
+    RoleName: "",
+    Pid: 0,
+    Level: 0,
+    Vip: 0,
+    Exp: 0,
+    Coin: 0,
+    Ingot: 0,
+    Physical: 0,
+    RegisterTime: 0,
+    LastLoginTime: 0,
+}
+2015/05/27 19:43:59 [I] - mem:1608848 goroutine:16 gc:4 pause:0ms
+2015/05/27 19:44:09 [I] - mem:1646688 goroutine:16 gc:0 pause:0ms
+2015/05/27 19:44:19 [I] - mem:1649472 goroutine:16 gc:0 pause:0ms
+2015/05/27 19:44:29 [I] - mem:1652736 goroutine:16 gc:0 pause:0ms
+2015/05/27 19:44:39 [I] - mem:1655712 goroutine:16 gc:0 pause:0ms
+2015/05/27 19:44:49 [I] - mem:1658400 goroutine:16 gc:0 pause:0ms
+2015/05/27 19:44:59 [I] - mem:1661664 goroutine:16 gc:0 pause:0ms
+2015/05/27 19:45:09 [I] - mem:1664640 goroutine:16 gc:0 pause:0ms
+2015/05/27 19:45:21 [I] - idip request parameter: /get_player_info?time=1430236800&channel_id=1&server_id=2&sign=9E3FD328A724D023D3657245E23417B4293911B9
+2015/05/27 19:45:21 [E] - RPC error
+Error   	= RPC server 0 not exists
+serviceAPI 	= RemoteServe.XdgmGetUserInfo
+Args    = &rpc.Args_XdgmGetUserinfo{
+    RPCArgTag: rpc.RPCArgTag{
+        ClientId: 0,
+    },
+    Pid: 1,
+}
+
+
+
+Result  = &rpc.Reply_XdgmGetUserinfo{
+    RoleName: "",
+    Pid: 0,
+    Level: 0,
+    Vip: 0,
+    Exp: 0,
+    Coin: 0,
+    Ingot: 0,
+    Physical: 0,
+    RegisterTime: 0,
+    LastLoginTime: 0,
+}
+2015/05/27 19:45:30 [I] - mem:1602320 goroutine:16 gc:4 pause:0ms
+2015/05/27 19:45:40 [I] - mem:1640576 goroutine:16 gc:0 pause:0ms
+2015/05/27 19:45:50 [I] - mem:1643600 goroutine:16 gc:0 pause:0ms
+2015/05/27 19:46:00 [I] - mem:1646864 goroutine:16 gc:0 pause:0ms
+2015/05/27 19:46:10 [I] - mem:1649792 goroutine:16 gc:0 pause:0ms
+2015/05/27 19:46:20 [I] - mem:1653056 goroutine:16 gc:0 pause:0ms
+2015/05/27 19:46:30 [I] - mem:1655744 goroutine:16 gc:0 pause:0ms
+2015/05/27 19:46:40 [I] - mem:1659008 goroutine:16 gc:0 pause:0ms
+2015/05/27 19:46:50 [I] - mem:1662272 goroutine:16 gc:0 pause:0ms
+2015/05/27 19:47:00 [I] - mem:1665056 goroutine:16 gc:0 pause:0ms
+2015/05/27 19:47:08 [I] - idip request parameter: /get_player_info?time=1430236800&channel_id=1&server_id=2&sign=9E3FD328A724D023D3657245E23417B4293911B9
+2015/05/27 19:47:08 [E] - RPC error
+Error   	= RPC server 0 not exists
+serviceAPI 	= RemoteServe.XdgmGetUserInfo
+Args    = &rpc.Args_XdgmGetUserinfo{
+    RPCArgTag: rpc.RPCArgTag{
+        ClientId: 0,
+    },
+    Pid: 1,
+}
+
+
+
+Result  = &rpc.Reply_XdgmGetUserinfo{
+    RoleName: "",
+    Pid: 0,
+    Level: 0,
+    Vip: 0,
+    Exp: 0,
+    Coin: 0,
+    Ingot: 0,
+    Physical: 0,
+    RegisterTime: 0,
+    LastLoginTime: 0,
+}
+2015/05/27 19:47:16 [I] - mem:1610736 goroutine:16 gc:4 pause:0ms
+2015/05/27 19:47:26 [I] - mem:1648656 goroutine:16 gc:0 pause:0ms
+2015/05/27 19:47:36 [I] - mem:1651632 goroutine:16 gc:0 pause:0ms
+2015/05/27 19:47:46 [I] - mem:1654944 goroutine:16 gc:0 pause:0ms
+2015/05/27 19:47:56 [I] - mem:1657920 goroutine:16 gc:0 pause:0ms
+2015/05/27 19:48:06 [I] - mem:1660896 goroutine:16 gc:0 pause:0ms
+2015/05/27 19:48:14 [I] - idip request parameter: /get_player_info?time=1430236800&channel_id=1&server_id=2&sign=9E3FD328A724D023D3657245E23417B4293911B9
+2015/05/27 19:48:14 [E] - RPC error
+Error   	= RPC server 0 not exists
+serviceAPI 	= RemoteServe.XdgmGetUserInfo
+Args    = &rpc.Args_XdgmGetUserinfo{
+    RPCArgTag: rpc.RPCArgTag{
+        ClientId: 0,
+    },
+    Pid: 1,
+}
+
+
+
+Result  = &rpc.Reply_XdgmGetUserinfo{
+    RoleName: "",
+    Pid: 0,
+    Level: 0,
+    Vip: 0,
+    Exp: 0,
+    Coin: 0,
+    Ingot: 0,
+    Physical: 0,
+    RegisterTime: 0,
+    LastLoginTime: 0,
+}
+2015/05/27 19:48:23 [I] - mem:1603520 goroutine:16 gc:4 pause:0ms
+2015/05/27 19:48:33 [I] - mem:1641248 goroutine:16 gc:0 pause:0ms
+2015/05/27 19:48:41 [I] - idip request parameter: /get_player_info?time=1430236800&channel_id=1&server_id=2&sign=9E3FD328A724D023D3657245E23417B4293911B9
+2015/05/27 19:48:41 [E] - RPC error
+Error   	= RPC server 0 not exists
+serviceAPI 	= RemoteServe.XdgmGetUserInfo
+Args    = &rpc.Args_XdgmGetUserinfo{
+    RPCArgTag: rpc.RPCArgTag{
+        ClientId: 0,
+    },
+    Pid: 1,
+}
+
+
+
+Result  = &rpc.Reply_XdgmGetUserinfo{
+    RoleName: "",
+    Pid: 0,
+    Level: 0,
+    Vip: 0,
+    Exp: 0,
+    Coin: 0,
+    Ingot: 0,
+    Physical: 0,
+    RegisterTime: 0,
+    LastLoginTime: 0,
+}
+2015/05/27 19:48:49 [I] - mem:1621808 goroutine:16 gc:4 pause:1ms
+2015/05/27 19:48:59 [I] - mem:1625312 goroutine:16 gc:0 pause:0ms
+2015/05/27 19:49:01 [I] - idip request parameter: /get_player_info?time=1430236800&channel_id=1&server_id=2&sign=9E3FD328A724D023D3657245E23417B4293911B9
+2015/05/27 19:49:01 [D] - sign wrong.need:9E3FD328A724D023D3657245E23417B4293911B9,have: 0x4032d80
+2015/05/27 19:49:09 [I] - mem:1655424 goroutine:16 gc:0 pause:0ms
+2015/05/27 19:49:09 [I] - idip request parameter: /get_player_info?time=1430236800&channel_id=1&server_id=2&sign=9E3FD328A724D023D3657245E23417B4293911B9
+2015/05/27 19:49:09 [D] - sign wrong.need:9E3FD328A724D023D3657245E23417B4293911B9,have: 0x4032d80
+2015/05/27 19:49:19 [I] - mem:1664992 goroutine:16 gc:0 pause:0ms
+2015/05/27 19:49:29 [I] - mem:1667680 goroutine:16 gc:0 pause:0ms
+2015/05/27 19:49:30 [I] - idip request parameter: /get_player_info?time=1430236800&channel_id=1&server_id=2&sign=A11552470DF7EC2676242540B4B3C84F25567748
+2015/05/27 19:49:39 [I] - mem:1678072 goroutine:16 gc:0 pause:0ms
+2015/05/27 19:49:49 [I] - mem:1681048 goroutine:16 gc:0 pause:0ms
+2015/05/27 19:49:59 [I] - mem:1684024 goroutine:16 gc:0 pause:0ms
+2015/05/27 19:50:09 [I] - mem:1687288 goroutine:16 gc:0 pause:0ms
+2015/05/27 19:50:24 [I] - idip request parameter: /get_player_info?time=1430236800&channel_id=1&server_id=2&sign=A11552470DF7EC2676242540B4B3C84F25567748
+2015/05/27 19:50:29 [I] - mem:1616672 goroutine:16 gc:4 pause:1ms
+2015/05/27 19:50:39 [I] - mem:1620256 goroutine:16 gc:0 pause:0ms
+2015/05/27 19:50:49 [I] - mem:1623472 goroutine:16 gc:0 pause:0ms
+2015/05/27 19:50:59 [I] - mem:1626448 goroutine:16 gc:0 pause:0ms
+2015/05/27 19:51:09 [I] - mem:1629136 goroutine:16 gc:0 pause:0ms
+2015/05/27 19:51:19 [I] - mem:1632400 goroutine:16 gc:0 pause:0ms
+2015/05/27 19:51:31 [I] - idip request parameter: /get_player_info?time=1430236800&channel_id=1&server_id=2&sign=A11552470DF7EC2676242540B4B3C84F25567748
+2015/05/27 19:51:31 [E] - RPC error
+Error   	= RPC server 928 not exists
+serviceAPI 	= RemoteServe.XdgmGetUserInfo
+Args    = &rpc.Args_XdgmGetUserinfo{
+    RPCArgTag: rpc.RPCArgTag{
+        ClientId: 0,
+    },
+    Pid: 3985729650689,
+}
+
+
+
+Result  = &rpc.Reply_XdgmGetUserinfo{
+    RoleName: "",
+    Pid: 0,
+    Level: 0,
+    Vip: 0,
+    Exp: 0,
+    Coin: 0,
+    Ingot: 0,
+    Physical: 0,
+    RegisterTime: 0,
+    LastLoginTime: 0,
+}
+2015/05/27 19:51:38 [I] - idip request parameter: /get_player_info?time=1430236800&channel_id=1&server_id=2&sign=A11552470DF7EC2676242540B4B3C84F25567748
+2015/05/27 19:51:40 [I] - idip request parameter: /get_player_info?time=1430236800&channel_id=1&server_id=2&sign=A11552470DF7EC2676242540B4B3C84F25567748
+2015/05/27 19:51:40 [I] - mem:1602816 goroutine:16 gc:4 pause:0ms
+2015/05/27 19:51:50 [I] - mem:1640752 goroutine:16 gc:0 pause:0ms
+2015/05/27 19:52:00 [I] - mem:1643728 goroutine:16 gc:0 pause:0ms
+2015/05/27 19:52:10 [I] - mem:1646704 goroutine:16 gc:0 pause:0ms
+2015/05/27 19:52:20 [I] - mem:1649680 goroutine:16 gc:0 pause:0ms
+2015/05/27 19:52:30 [I] - mem:1652656 goroutine:16 gc:0 pause:0ms
+2015/05/27 19:52:40 [I] - mem:1655344 goroutine:16 gc:0 pause:0ms
+2015/05/27 19:52:52 [I] - idip request parameter: /get_player_info?time=1430236800&channel_id=1&server_id=2&sign=A11552470DF7EC2676242540B4B3C84F25567748
+2015/05/27 19:53:00 [I] - mem:1638336 goroutine:16 gc:4 pause:0ms
+2015/05/27 19:53:10 [I] - mem:1641680 goroutine:16 gc:0 pause:0ms
+2015/05/27 19:53:20 [I] - mem:1644368 goroutine:16 gc:0 pause:0ms
+2015/05/27 19:53:30 [I] - mem:1647872 goroutine:16 gc:0 pause:0ms
+2015/05/27 19:53:40 [I] - mem:1650848 goroutine:16 gc:0 pause:0ms
+2015/05/27 19:53:50 [I] - mem:1653776 goroutine:16 gc:0 pause:0ms
+2015/05/27 19:54:00 [I] - mem:1656800 goroutine:16 gc:0 pause:0ms
+2015/05/27 19:54:10 [I] - mem:1659776 goroutine:16 gc:0 pause:0ms
+2015/05/27 19:54:20 [I] - mem:1663040 goroutine:16 gc:0 pause:0ms
+2015/05/27 19:54:30 [I] - mem:1665728 goroutine:16 gc:0 pause:0ms
+2015/05/27 19:54:40 [I] - mem:1668704 goroutine:16 gc:0 pause:0ms
+2015/05/27 19:54:50 [I] - mem:1671680 goroutine:16 gc:0 pause:0ms
+2015/05/27 19:55:00 [I] - mem:1573936 goroutine:16 gc:2 pause:4ms
+2015/05/27 19:55:10 [I] - mem:1577008 goroutine:16 gc:0 pause:0ms
+2015/05/27 19:55:20 [I] - mem:1580224 goroutine:16 gc:0 pause:0ms
+2015/05/27 19:55:30 [I] - mem:1583200 goroutine:16 gc:0 pause:0ms
+2015/05/27 19:55:40 [I] - mem:1586224 goroutine:16 gc:0 pause:0ms
+2015/05/27 19:55:50 [I] - mem:1589296 goroutine:16 gc:0 pause:0ms
+2015/05/27 19:56:00 [I] - mem:1592512 goroutine:16 gc:0 pause:0ms
+2015/05/27 19:56:10 [I] - mem:1595200 goroutine:15 gc:0 pause:0ms
+2015/05/27 19:56:17 [I] - idip request parameter: /get_player_info?time=1430236800&channel_id=1&server_id=2&sign=9E3FD328A724D023D3657245E23417B4293911B9
+2015/05/27 19:56:17 [E] - RPC error
+Error   	= connection is shut down
+serviceAPI 	= RemoteServe.XdgmGetUserInfo
+Args    = &rpc.Args_XdgmGetUserinfo{
+    RPCArgTag: rpc.RPCArgTag{
+        ClientId: -1,
+    },
+    Pid: 3985729650689,
+}
+
+
+
+Result  = &rpc.Reply_XdgmGetUserinfo{
+    RoleName: "",
+    Pid: 0,
+    Level: 0,
+    Vip: 0,
+    Exp: 0,
+    Coin: 0,
+    Ingot: 0,
+    Physical: 0,
+    RegisterTime: 0,
+    LastLoginTime: 0,
+}
+2015/05/27 19:56:17 [E] - RPC error
+Error   	= RPC server 0 not exists
+serviceAPI 	= RemoteServe.XdgmGetUserInfo
+Args    = &rpc.Args_XdgmGetUserinfo{
+    RPCArgTag: rpc.RPCArgTag{
+        ClientId: 0,
+    },
+    Pid: 1,
+}
+
+
+
+Result  = &rpc.Reply_XdgmGetUserinfo{
+    RoleName: "",
+    Pid: 0,
+    Level: 0,
+    Vip: 0,
+    Exp: 0,
+    Coin: 0,
+    Ingot: 0,
+    Physical: 0,
+    RegisterTime: 0,
+    LastLoginTime: 0,
+}
+2015/05/27 19:56:20 [I] - mem:1635976 goroutine:15 gc:0 pause:0ms
+2015/05/27 19:56:29 [I] - idip request parameter: /get_player_info?time=1430236800&channel_id=1&server_id=2&sign=A11552470DF7EC2676242540B4B3C84F25567748
+2015/05/27 19:56:29 [E] - RPC error
+Error   	= {runtime error: invalid memory address or nil pointer dereference}
+serviceAPI 	= RemoteServe.XdgmGetUserInfo
+Args    = &rpc.Args_XdgmGetUserinfo{
+    RPCArgTag: rpc.RPCArgTag{
+        ClientId: -1,
+    },
+    Pid: 3985729650689,
+}
+
+
+
+Result  = &rpc.Reply_XdgmGetUserinfo{
+    RoleName: "",
+    Pid: 0,
+    Level: 0,
+    Vip: 0,
+    Exp: 0,
+    Coin: 0,
+    Ingot: 0,
+    Physical: 0,
+    RegisterTime: 0,
+    LastLoginTime: 0,
+}
+2015/05/27 19:56:30 [I] - mem:1702608 goroutine:16 gc:0 pause:0ms
+2015/05/27 19:56:40 [I] - mem:1706160 goroutine:16 gc:0 pause:0ms
+2015/05/27 19:56:50 [I] - mem:1709136 goroutine:16 gc:0 pause:0ms
+2015/05/27 19:57:00 [I] - mem:1619040 goroutine:16 gc:1 pause:1ms
+2015/05/27 19:57:10 [I] - mem:1621776 goroutine:16 gc:0 pause:0ms
+2015/05/27 19:57:20 [I] - mem:1624752 goroutine:16 gc:0 pause:0ms
+2015/05/27 19:57:30 [I] - mem:1662512 goroutine:16 gc:0 pause:0ms
+2015/05/27 19:57:40 [I] - mem:1665488 goroutine:16 gc:0 pause:0ms
+2015/05/27 19:57:50 [I] - mem:1668176 goroutine:16 gc:0 pause:0ms
+2015/05/27 19:57:55 [I] - idip request parameter: /get_player_info?time=1430236800&channel_id=1&server_id=2&sign=A11552470DF7EC2676242540B4B3C84F25567748
+2015/05/27 19:57:55 [E] - RPC error
+Error   	= connection is shut down
+serviceAPI 	= RemoteServe.XdgmGetUserInfo
+Args    = &rpc.Args_XdgmGetUserinfo{
+    RPCArgTag: rpc.RPCArgTag{
+        ClientId: -1,
+    },
+    Pid: 3985729650689,
+}
+
+
+
+Result  = &rpc.Reply_XdgmGetUserinfo{
+    RoleName: "",
+    Pid: 0,
+    Level: 0,
+    Vip: 0,
+    Exp: 0,
+    Coin: 0,
+    Ingot: 0,
+    Physical: 0,
+    RegisterTime: 0,
+    LastLoginTime: 0,
+}
+2015/05/27 19:58:00 [I] - mem:1682024 goroutine:15 gc:0 pause:0ms
+2015/05/27 19:58:02 [I] - idip request parameter: /get_player_info?time=1430236800&channel_id=1&server_id=2&sign=A11552470DF7EC2676242540B4B3C84F25567748
+2015/05/27 19:58:02 [E] - RPC error
+Error   	= {runtime error: invalid memory address or nil pointer dereference}
+serviceAPI 	= RemoteServe.XdgmGetUserInfo
+Args    = &rpc.Args_XdgmGetUserinfo{
+    RPCArgTag: rpc.RPCArgTag{
+        ClientId: -1,
+    },
+    Pid: 3985729650689,
+}
+
+
+
+Result  = &rpc.Reply_XdgmGetUserinfo{
+    RoleName: "",
+    Pid: 0,
+    Level: 0,
+    Vip: 0,
+    Exp: 0,
+    Coin: 0,
+    Ingot: 0,
+    Physical: 0,
+    RegisterTime: 0,
+    LastLoginTime: 0,
+}
+2015/05/27 19:58:10 [I] - mem:1744096 goroutine:16 gc:0 pause:0ms
+2015/05/27 19:58:20 [I] - mem:1747024 goroutine:16 gc:0 pause:0ms
+2015/05/27 19:58:30 [I] - mem:1750096 goroutine:16 gc:0 pause:0ms
+2015/05/27 19:58:40 [I] - mem:1753072 goroutine:16 gc:0 pause:0ms
+2015/05/27 19:58:50 [I] - mem:1756048 goroutine:16 gc:0 pause:0ms
+2015/05/27 19:59:00 [I] - mem:1673536 goroutine:16 gc:1 pause:0ms
+2015/05/27 19:59:10 [I] - mem:1676608 goroutine:16 gc:0 pause:0ms
+2015/05/27 19:59:20 [I] - mem:1679392 goroutine:16 gc:0 pause:0ms
+2015/05/27 19:59:30 [I] - mem:1682608 goroutine:16 gc:0 pause:0ms
+2015/05/27 19:59:40 [I] - mem:1685584 goroutine:16 gc:0 pause:0ms
+2015/05/27 19:59:50 [I] - mem:1688272 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:00:00 [I] - mem:1691536 goroutine:15 gc:0 pause:0ms
+2015/05/27 20:00:00 [I] - idip request parameter: /get_player_info?time=1430236800&channel_id=1&server_id=2&sign=A11552470DF7EC2676242540B4B3C84F25567748
+2015/05/27 20:00:00 [E] - RPC error
+Error   	= connection is shut down
+serviceAPI 	= RemoteServe.XdgmGetUserInfo
+Args    = &rpc.Args_XdgmGetUserinfo{
+    RPCArgTag: rpc.RPCArgTag{
+        ClientId: -1,
+    },
+    Pid: 3985729650689,
+}
+
+
+
+Result  = &rpc.Reply_XdgmGetUserinfo{
+    RoleName: "",
+    Pid: 0,
+    Level: 0,
+    Vip: 0,
+    Exp: 0,
+    Coin: 0,
+    Ingot: 0,
+    Physical: 0,
+    RegisterTime: 0,
+    LastLoginTime: 0,
+}
+2015/05/27 20:00:06 [I] - idip request parameter: /get_player_info?time=1430236800&channel_id=1&server_id=2&sign=A11552470DF7EC2676242540B4B3C84F25567748
+2015/05/27 20:00:06 [E] - RPC error
+Error   	= {runtime error: invalid memory address or nil pointer dereference}
+serviceAPI 	= RemoteServe.XdgmGetUserInfo
+Args    = &rpc.Args_XdgmGetUserinfo{
+    RPCArgTag: rpc.RPCArgTag{
+        ClientId: -1,
+    },
+    Pid: 3985729650689,
+}
+
+
+
+Result  = &rpc.Reply_XdgmGetUserinfo{
+    RoleName: "",
+    Pid: 0,
+    Level: 0,
+    Vip: 0,
+    Exp: 0,
+    Coin: 0,
+    Ingot: 0,
+    Physical: 0,
+    RegisterTime: 0,
+    LastLoginTime: 0,
+}
+2015/05/27 20:00:10 [I] - mem:1757248 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:00:20 [I] - mem:1759984 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:00:30 [I] - mem:1763200 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:00:40 [I] - mem:1766176 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:00:50 [I] - mem:1769152 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:01:00 [I] - mem:1686848 goroutine:16 gc:1 pause:0ms
+2015/05/27 20:01:10 [I] - mem:1690112 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:01:20 [I] - mem:1693088 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:01:30 [I] - mem:1696064 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:01:40 [I] - mem:1699040 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:01:50 [I] - mem:1701728 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:02:00 [I] - mem:1704992 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:02:10 [I] - mem:1707680 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:02:20 [I] - mem:1710704 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:02:30 [I] - mem:1713968 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:02:40 [I] - mem:1716944 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:02:50 [I] - mem:1719632 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:03:00 [I] - mem:1686672 goroutine:16 gc:1 pause:0ms
+2015/05/27 20:03:10 [I] - mem:1689792 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:03:20 [I] - mem:1692720 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:03:30 [I] - mem:1695696 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:03:40 [I] - mem:1698960 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:03:50 [I] - mem:1701936 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:04:00 [I] - mem:1704624 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:04:10 [I] - mem:1707888 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:04:20 [I] - mem:1710864 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:04:30 [I] - mem:1713552 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:04:40 [I] - mem:1716816 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:04:50 [I] - mem:1719792 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:05:00 [I] - mem:1686864 goroutine:16 gc:1 pause:0ms
+2015/05/27 20:05:10 [I] - mem:1689648 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:05:20 [I] - mem:1692912 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:05:30 [I] - mem:1695600 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:05:40 [I] - mem:1698864 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:05:50 [I] - mem:1701648 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:06:00 [I] - mem:1704624 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:06:10 [I] - mem:1707600 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:06:20 [I] - mem:1710864 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:06:30 [I] - mem:1713600 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:06:40 [I] - mem:1716864 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:06:50 [I] - mem:1719600 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:07:00 [I] - mem:1686672 goroutine:16 gc:1 pause:0ms
+2015/05/27 20:07:10 [I] - mem:1689984 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:07:20 [I] - mem:1692960 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:07:30 [I] - mem:1695648 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:07:40 [I] - mem:1698624 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:07:50 [I] - mem:1701600 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:08:00 [I] - mem:1704672 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:08:10 [I] - mem:1707936 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:08:20 [I] - mem:1710624 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:08:30 [I] - mem:1713600 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:08:39 [I] - idip request parameter: /get_player_info?time=1430236800&channel_id=1&server_id=2&sign=A11552470DF7EC2676242540B4B3C84F25567748
+2015/05/27 20:08:39 [E] - RPC error
+Error   	= connection is shut down
+serviceAPI 	= RemoteServe.XdgmGetUserInfo
+Args    = &rpc.Args_XdgmGetUserinfo{
+    RPCArgTag: rpc.RPCArgTag{
+        ClientId: -1,
+    },
+    Pid: 3985729650689,
+}
+
+
+
+Result  = &rpc.Reply_XdgmGetUserinfo{
+    RoleName: "",
+    Pid: 0,
+    Level: 0,
+    Vip: 0,
+    Exp: 0,
+    Coin: 0,
+    Ingot: 0,
+    Physical: 0,
+    RegisterTime: 0,
+    LastLoginTime: 0,
+}
+2015/05/27 20:08:40 [I] - mem:1727352 goroutine:15 gc:0 pause:0ms
+2015/05/27 20:08:40 [I] - idip request parameter: /get_player_info?time=1430236800&channel_id=1&server_id=2&sign=A11552470DF7EC2676242540B4B3C84F25567748
+2015/05/27 20:08:45 [I] - idip request parameter: /get_player_info?time=1430236800&channel_id=1&server_id=2&sign=9E3FD328A724D023D3657245E23417B4293911B9
+2015/05/27 20:08:45 [E] - RPC error
+Error   	= RPC server 0 not exists
+serviceAPI 	= RemoteServe.XdgmGetUserInfo
+Args    = &rpc.Args_XdgmGetUserinfo{
+    RPCArgTag: rpc.RPCArgTag{
+        ClientId: 0,
+    },
+    Pid: 1,
+}
+
+
+
+Result  = &rpc.Reply_XdgmGetUserinfo{
+    RoleName: "",
+    Pid: 0,
+    Level: 0,
+    Vip: 0,
+    Exp: 0,
+    Coin: 0,
+    Ingot: 0,
+    Physical: 0,
+    RegisterTime: 0,
+    LastLoginTime: 0,
+}
+2015/05/27 20:08:50 [I] - mem:1785104 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:09:00 [I] - mem:1690344 goroutine:16 gc:1 pause:0ms
+2015/05/27 20:09:10 [I] - mem:1693368 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:09:20 [I] - mem:1696056 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:09:30 [I] - mem:1699320 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:09:40 [I] - mem:1702056 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:09:50 [I] - mem:1705320 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:10:00 [I] - mem:1708296 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:10:10 [I] - mem:1710984 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:10:20 [I] - mem:1714248 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:10:30 [I] - mem:1716936 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:10:40 [I] - mem:1719912 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:10:50 [I] - mem:1722888 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:11:00 [I] - mem:1689008 goroutine:16 gc:1 pause:0ms
+2015/05/27 20:11:10 [I] - mem:1692032 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:11:20 [I] - mem:1695008 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:11:30 [I] - mem:1697984 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:11:40 [I] - mem:1701008 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:11:50 [I] - mem:1704224 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:12:00 [I] - mem:1706912 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:12:10 [I] - mem:1710176 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:12:20 [I] - mem:1713152 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:12:30 [I] - mem:1715840 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:12:40 [I] - mem:1718864 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:12:50 [I] - mem:1721840 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:13:00 [I] - mem:1689344 goroutine:16 gc:1 pause:0ms
+2015/05/27 20:13:12 [I] - idip request parameter: /get_player_info?time=1430236800&channel_id=1&server_id=2&sign=9E3FD328A724D023D3657245E23417B4293911B9
+2015/05/27 20:13:12 [E] - RPC error
+Error   	= RPC server 0 not exists
+serviceAPI 	= RemoteServe.XdgmGetUserInfo
+Args    = &rpc.Args_XdgmGetUserinfo{
+    RPCArgTag: rpc.RPCArgTag{
+        ClientId: 0,
+    },
+    Pid: 1,
+}
+
+
+
+Result  = &rpc.Reply_XdgmGetUserinfo{
+    RoleName: "",
+    Pid: 0,
+    Level: 0,
+    Vip: 0,
+    Exp: 0,
+    Coin: 0,
+    Ingot: 0,
+    Physical: 0,
+    RegisterTime: 0,
+    LastLoginTime: 0,
+}
+2015/05/27 20:13:20 [I] - mem:1609392 goroutine:16 gc:4 pause:1ms
+2015/05/27 20:13:30 [I] - mem:1647520 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:13:40 [I] - mem:1650624 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:13:50 [I] - mem:1653600 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:14:00 [I] - mem:1656288 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:14:10 [I] - mem:1659312 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:14:20 [I] - mem:1662240 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:14:30 [I] - mem:1665552 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:14:40 [I] - mem:1668240 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:14:50 [I] - mem:1671552 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:15:00 [I] - mem:1674240 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:15:10 [I] - mem:1677456 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:15:20 [I] - mem:1579856 goroutine:16 gc:2 pause:2ms
+2015/05/27 20:15:30 [I] - mem:1582928 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:15:40 [I] - mem:1585904 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:15:50 [I] - mem:1588880 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:16:00 [I] - mem:1591568 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:16:10 [I] - mem:1594768 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:16:20 [I] - mem:1597696 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:16:30 [I] - mem:1601008 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:16:40 [I] - mem:1603984 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:16:50 [I] - mem:1606720 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:17:00 [I] - mem:1609936 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:17:10 [I] - mem:1612912 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:17:20 [I] - mem:1575456 goroutine:16 gc:1 pause:0ms
+2015/05/27 20:17:30 [I] - mem:1578480 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:17:40 [I] - mem:1581504 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:17:50 [I] - mem:1584480 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:18:00 [I] - mem:1587168 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:18:10 [I] - mem:1624640 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:18:20 [I] - mem:1627616 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:18:30 [I] - mem:1630592 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:18:40 [I] - mem:1633856 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:18:50 [I] - mem:1636832 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:19:00 [I] - mem:1639808 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:19:10 [I] - mem:1642864 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:19:20 [I] - mem:1610176 goroutine:16 gc:1 pause:0ms
+2015/05/27 20:19:30 [I] - mem:1613200 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:19:40 [I] - mem:1616176 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:19:50 [I] - mem:1619440 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:20:00 [I] - mem:1622128 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:20:10 [I] - mem:1625104 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:20:20 [I] - mem:1628080 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:20:30 [I] - mem:1631344 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:20:40 [I] - mem:1634320 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:20:50 [I] - mem:1637008 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:21:00 [I] - mem:1639984 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:21:10 [I] - mem:1642960 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:21:20 [I] - mem:1610240 goroutine:16 gc:1 pause:0ms
+2015/05/27 20:21:30 [I] - mem:1613552 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:21:40 [I] - mem:1616528 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:21:50 [I] - mem:1619216 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:22:00 [I] - mem:1622528 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:22:10 [I] - mem:1625216 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:22:20 [I] - mem:1628192 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:22:30 [I] - mem:1631456 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:22:40 [I] - mem:1634240 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:22:50 [I] - mem:1637120 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:23:00 [I] - mem:1640384 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:23:10 [I] - mem:1643120 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:23:20 [I] - mem:1610528 goroutine:16 gc:1 pause:0ms
+2015/05/27 20:23:30 [I] - mem:1613600 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:23:40 [I] - mem:1616576 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:23:50 [I] - mem:1619552 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:24:00 [I] - mem:1622240 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:24:10 [I] - mem:1625504 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:24:20 [I] - mem:1628480 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:24:30 [I] - mem:1631168 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:24:40 [I] - mem:1634144 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:24:50 [I] - mem:1637168 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:25:00 [I] - mem:1640192 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:25:10 [I] - mem:1643120 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:25:20 [I] - mem:1610816 goroutine:16 gc:1 pause:0ms
+2015/05/27 20:25:30 [I] - mem:1613552 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:25:40 [I] - mem:1616992 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:25:50 [I] - mem:1619680 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:26:00 [I] - mem:1622704 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:26:10 [I] - mem:1625728 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:26:20 [I] - mem:1628704 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:26:30 [I] - mem:1631968 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:26:40 [I] - mem:1634656 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:26:50 [I] - mem:1637680 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:27:00 [I] - mem:1640896 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:27:10 [I] - mem:1643872 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:27:20 [I] - mem:1610480 goroutine:16 gc:1 pause:0ms
+2015/05/27 20:27:30 [I] - mem:1613680 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:27:40 [I] - mem:1616944 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:27:50 [I] - mem:1619632 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:28:00 [I] - mem:1622896 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:28:10 [I] - mem:1625632 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:28:20 [I] - mem:1628560 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:28:30 [I] - mem:1631584 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:28:40 [I] - mem:1634848 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:28:50 [I] - mem:1637536 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:29:00 [I] - mem:1640560 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:29:10 [I] - mem:1643776 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:29:20 [I] - mem:1610816 goroutine:16 gc:1 pause:0ms
+2015/05/27 20:29:30 [I] - mem:1613552 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:29:40 [I] - mem:1616624 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:29:50 [I] - mem:1619888 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:30:00 [I] - mem:1622576 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:30:10 [I] - mem:1625840 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:30:20 [I] - mem:1628576 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:30:30 [I] - mem:1631680 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:30:40 [I] - mem:1634944 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:30:50 [I] - mem:1637680 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:31:00 [I] - mem:1640944 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:31:10 [I] - mem:1643920 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:31:20 [I] - mem:1610624 goroutine:16 gc:1 pause:0ms
+2015/05/27 20:31:30 [I] - mem:1613648 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:31:40 [I] - mem:1616672 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:31:50 [I] - mem:1619648 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:32:00 [I] - mem:1622624 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:32:10 [I] - mem:1625648 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:32:20 [I] - mem:1629040 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:32:30 [I] - mem:1631728 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:32:40 [I] - mem:1634704 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:32:50 [I] - mem:1637680 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:33:00 [I] - mem:1640944 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:33:10 [I] - mem:1643920 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:33:20 [I] - mem:1610624 goroutine:16 gc:1 pause:0ms
+2015/05/27 20:33:30 [I] - mem:1614112 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:33:40 [I] - mem:1616800 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:33:50 [I] - mem:1620064 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:34:00 [I] - mem:1622800 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:34:10 [I] - mem:1625968 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:34:20 [I] - mem:1628704 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:34:30 [I] - mem:1631728 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:34:40 [I] - mem:1634752 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:34:50 [I] - mem:1637728 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:35:00 [I] - mem:1640992 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:35:10 [I] - mem:1643680 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:35:20 [I] - mem:1610576 goroutine:16 gc:1 pause:0ms
+2015/05/27 20:35:30 [I] - mem:1613600 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:35:40 [I] - mem:1616864 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:35:50 [I] - mem:1619696 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:36:00 [I] - mem:1622624 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:36:10 [I] - mem:1625888 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:36:20 [I] - mem:1628864 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:36:30 [I] - mem:1631840 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:36:40 [I] - mem:1634816 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:36:50 [I] - mem:1637504 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:37:00 [I] - mem:1640480 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:37:18 [I] - mem:1643168 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:37:20 [I] - mem:1608176 goroutine:16 gc:1 pause:0ms
+2015/05/27 20:37:30 [I] - mem:1611296 goroutine:16 gc:0 pause:0ms
+2015/05/27 20:37:40 [I] - mem:1614032 goroutine:16 gc:0 pause:0ms
+2015/05/27 23:37:48 [I] - mem:1617248 goroutine:16 gc:0 pause:0ms
+2015/05/27 23:37:50 [I] - mem:1617920 goroutine:16 gc:0 pause:0ms
+2015/05/27 23:38:00 [I] - mem:1621072 goroutine:16 gc:0 pause:0ms
+2015/05/27 23:38:10 [I] - mem:1624048 goroutine:16 gc:0 pause:0ms

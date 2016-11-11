@@ -1,0 +1,1 @@
+{"action_name":"evaluate_level","module_name":"mission","protocol":[{"name":"additional_quest_items","type":"list8","fields":[{"name":"item_id","type":"int16"},{"name":"item_cnt","type":"int16"}]}]}

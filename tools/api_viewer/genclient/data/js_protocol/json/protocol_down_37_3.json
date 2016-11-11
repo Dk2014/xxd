@@ -1,0 +1,1 @@
+{"action_name":"despair_land_camp_player_info","module_name":"despair_land","protocol":[{"name":"earliest_pid","type":"int64"},{"name":"earliest_name","type":"text16"},{"name":"closest_pid","type":"int64"},{"name":"closest_name","type":"text16"},{"name":"lowest_fightnum_pid","type":"int64"},{"name":"lowest_fightnum_name","type":"text16"}]}

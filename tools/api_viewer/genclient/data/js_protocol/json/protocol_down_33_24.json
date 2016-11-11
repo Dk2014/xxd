@@ -1,0 +1,1 @@
+{"action_name":"notify_joinclique_success","module_name":"clique","protocol":[{"name":"pidlist","type":"list8","fields":[{"name":"pid","type":"int64"},{"name":"role_id","type":"int8"},{"name":"level","type":"int16"},{"name":"nick","type":"text16"}]}]}

@@ -1,0 +1,353 @@
+mdb.load (0) cost time: 391.043168ms
+mdb.load (1) cost time: 391.056725ms
+mdb.load (2) cost time: 391.05533ms
+mdb.load (3) cost time: 391.031974ms
+mdb.load success.
+2014/12/10 16:17:08 [I] - load player
+2014/12/10 16:17:08 [I] - load player
+2014/12/10 16:17:08 [I] - load player
+2014/12/10 16:17:08 [I] - load player
+2014/12/10 16:17:08 [I] - load player_activity
+2014/12/10 16:17:08 [I] - load player_activity
+2014/12/10 16:17:08 [I] - load player_activity
+2014/12/10 16:17:08 [I] - load player_activity
+2014/12/10 16:17:08 [I] - load player_arena
+2014/12/10 16:17:08 [I] - load player_arena
+2014/12/10 16:17:08 [I] - load player_arena
+2014/12/10 16:17:08 [I] - load player_arena
+2014/12/10 16:17:08 [I] - load player_arena_record
+2014/12/10 16:17:08 [I] - load player_arena_record
+2014/12/10 16:17:08 [I] - load player_arena_record
+2014/12/10 16:17:08 [I] - load player_arena_record
+2014/12/10 16:17:08 [I] - load player_battle_pet
+2014/12/10 16:17:08 [I] - load player_battle_pet
+2014/12/10 16:17:08 [I] - load player_battle_pet
+2014/12/10 16:17:08 [I] - load player_battle_pet
+2014/12/10 16:17:08 [I] - load player_battle_pet_grid
+2014/12/10 16:17:08 [I] - load player_battle_pet_grid
+2014/12/10 16:17:08 [I] - load player_battle_pet_grid
+2014/12/10 16:17:08 [I] - load player_battle_pet_grid
+2014/12/10 16:17:08 [I] - load player_battle_pet_state
+2014/12/10 16:17:08 [I] - load player_battle_pet_state
+2014/12/10 16:17:08 [I] - load player_battle_pet_state
+2014/12/10 16:17:08 [I] - load player_battle_pet_state
+2014/12/10 16:17:08 [I] - load player_chest_state
+2014/12/10 16:17:08 [I] - load player_chest_state
+2014/12/10 16:17:08 [I] - load player_chest_state
+2014/12/10 16:17:08 [I] - load player_chest_state
+2014/12/10 16:17:08 [I] - load player_coins
+2014/12/10 16:17:08 [I] - load player_coins
+2014/12/10 16:17:08 [I] - load player_coins
+2014/12/10 16:17:08 [I] - load player_coins
+2014/12/10 16:17:08 [I] - load player_daily_quest
+2014/12/10 16:17:08 [I] - load player_daily_quest
+2014/12/10 16:17:08 [I] - load player_daily_quest
+2014/12/10 16:17:08 [I] - load player_daily_quest
+2014/12/10 16:17:08 [I] - load player_daily_sign_in_record
+2014/12/10 16:17:08 [I] - load player_daily_sign_in_record
+2014/12/10 16:17:08 [I] - load player_daily_sign_in_record
+2014/12/10 16:17:08 [I] - load player_daily_sign_in_record
+2014/12/10 16:17:08 [I] - load player_daily_sign_in_state
+2014/12/10 16:17:08 [I] - load player_daily_sign_in_state
+2014/12/10 16:17:08 [I] - load player_daily_sign_in_state
+2014/12/10 16:17:08 [I] - load player_daily_sign_in_state
+2014/12/10 16:17:08 [I] - load player_equipment
+2014/12/10 16:17:08 [I] - load player_equipment
+2014/12/10 16:17:08 [I] - load player_equipment
+2014/12/10 16:17:08 [I] - load player_equipment
+2014/12/10 16:17:08 [I] - load player_event_award_record
+2014/12/10 16:17:08 [I] - load player_event_award_record
+2014/12/10 16:17:08 [I] - load player_event_award_record
+2014/12/10 16:17:08 [I] - load player_event_award_record
+2014/12/10 16:17:08 [I] - load player_events_fight_power
+2014/12/10 16:17:08 [I] - load player_events_fight_power
+2014/12/10 16:17:08 [I] - load player_events_fight_power
+2014/12/10 16:17:08 [I] - load player_events_fight_power
+2014/12/10 16:17:08 [I] - load player_events_ingot_record
+2014/12/10 16:17:08 [I] - load player_events_ingot_record
+2014/12/10 16:17:08 [I] - load player_events_ingot_record
+2014/12/10 16:17:08 [I] - load player_events_ingot_record
+2014/12/10 16:17:08 [I] - load player_extend_level
+2014/12/10 16:17:08 [I] - load player_extend_level
+2014/12/10 16:17:08 [I] - load player_extend_level
+2014/12/10 16:17:08 [I] - load player_extend_level
+2014/12/10 16:17:08 [I] - load player_fame
+2014/12/10 16:17:08 [I] - load player_fame
+2014/12/10 16:17:08 [I] - load player_fame
+2014/12/10 16:17:08 [I] - load player_fame
+2014/12/10 16:17:08 [I] - load player_fashion
+2014/12/10 16:17:08 [I] - load player_fashion
+2014/12/10 16:17:08 [I] - load player_fashion
+2014/12/10 16:17:08 [I] - load player_fashion
+2014/12/10 16:17:08 [I] - load player_fashion_state
+2014/12/10 16:17:08 [I] - load player_fashion_state
+2014/12/10 16:17:08 [I] - load player_fashion_state
+2014/12/10 16:17:08 [I] - load player_fashion_state
+2014/12/10 16:17:08 [I] - load player_fight_num
+2014/12/10 16:17:08 [I] - load player_fight_num
+2014/12/10 16:17:08 [I] - load player_fight_num
+2014/12/10 16:17:08 [I] - load player_fight_num
+2014/12/10 16:17:08 [I] - load player_formation
+2014/12/10 16:17:08 [I] - load player_formation
+2014/12/10 16:17:08 [I] - load player_formation
+2014/12/10 16:17:08 [I] - load player_formation
+2014/12/10 16:17:08 [I] - load player_func_key
+2014/12/10 16:17:08 [I] - load player_func_key
+2014/12/10 16:17:08 [I] - load player_func_key
+2014/12/10 16:17:08 [I] - load player_func_key
+2014/12/10 16:17:08 [I] - load player_ghost
+2014/12/10 16:17:08 [I] - load player_ghost
+2014/12/10 16:17:08 [I] - load player_ghost
+2014/12/10 16:17:08 [I] - load player_ghost
+2014/12/10 16:17:08 [I] - load player_ghost_equipment
+2014/12/10 16:17:08 [I] - load player_ghost_equipment
+2014/12/10 16:17:08 [I] - load player_ghost_equipment
+2014/12/10 16:17:08 [I] - load player_ghost_equipment
+2014/12/10 16:17:08 [I] - load player_ghost_state
+2014/12/10 16:17:08 [I] - load player_ghost_state
+2014/12/10 16:17:08 [I] - load player_ghost_state
+2014/12/10 16:17:08 [I] - load player_ghost_state
+2014/12/10 16:17:08 [I] - load player_hard_level
+2014/12/10 16:17:08 [I] - load player_hard_level
+2014/12/10 16:17:08 [I] - load player_hard_level
+2014/12/10 16:17:08 [I] - load player_hard_level
+2014/12/10 16:17:08 [I] - load player_hard_level_record
+2014/12/10 16:17:08 [I] - load player_hard_level_record
+2014/12/10 16:17:08 [I] - load player_hard_level_record
+2014/12/10 16:17:08 [I] - load player_hard_level_record
+2014/12/10 16:17:08 [I] - load player_hard_level_state
+2014/12/10 16:17:08 [I] - load player_hard_level_state
+2014/12/10 16:17:08 [I] - load player_hard_level_state
+2014/12/10 16:17:08 [I] - load player_hard_level_state
+2014/12/10 16:17:08 [I] - load player_heart
+2014/12/10 16:17:08 [I] - load player_heart
+2014/12/10 16:17:08 [I] - load player_heart
+2014/12/10 16:17:08 [I] - load player_heart
+2014/12/10 16:17:08 [I] - load player_heart_draw
+2014/12/10 16:17:08 [I] - load player_heart_draw
+2014/12/10 16:17:08 [I] - load player_heart_draw
+2014/12/10 16:17:08 [I] - load player_heart_draw
+2014/12/10 16:17:08 [I] - load player_heart_draw_card_record
+2014/12/10 16:17:08 [I] - load player_heart_draw_card_record
+2014/12/10 16:17:08 [I] - load player_heart_draw_card_record
+2014/12/10 16:17:08 [I] - load player_heart_draw_card_record
+2014/12/10 16:17:08 [I] - load player_heart_draw_wheel_record
+2014/12/10 16:17:08 [I] - load player_heart_draw_wheel_record
+2014/12/10 16:17:08 [I] - load player_heart_draw_wheel_record
+2014/12/10 16:17:08 [I] - load player_heart_draw_wheel_record
+2014/12/10 16:17:08 [I] - load player_info
+2014/12/10 16:17:08 [I] - load player_info
+2014/12/10 16:17:08 [I] - load player_info
+2014/12/10 16:17:08 [I] - load player_info
+2014/12/10 16:17:08 [I] - load player_is_operated
+2014/12/10 16:17:08 [I] - load player_is_operated
+2014/12/10 16:17:08 [I] - load player_is_operated
+2014/12/10 16:17:08 [I] - load player_is_operated
+2014/12/10 16:17:08 [I] - load player_item
+2014/12/10 16:17:08 [I] - load player_item
+2014/12/10 16:17:08 [I] - load player_item
+2014/12/10 16:17:08 [I] - load player_item
+2014/12/10 16:17:08 [I] - load player_item_appendix
+2014/12/10 16:17:08 [I] - load player_item_appendix
+2014/12/10 16:17:08 [I] - load player_item_appendix
+2014/12/10 16:17:08 [I] - load player_item_appendix
+2014/12/10 16:17:08 [I] - load player_item_buyback
+2014/12/10 16:17:08 [I] - load player_item_buyback
+2014/12/10 16:17:08 [I] - load player_item_buyback
+2014/12/10 16:17:08 [I] - load player_item_buyback
+2014/12/10 16:17:08 [I] - load player_item_recast_state
+2014/12/10 16:17:08 [I] - load player_item_recast_state
+2014/12/10 16:17:08 [I] - load player_item_recast_state
+2014/12/10 16:17:08 [I] - load player_item_recast_state
+2014/12/10 16:17:08 [I] - load player_login_award_record
+2014/12/10 16:17:08 [I] - load player_login_award_record
+2014/12/10 16:17:08 [I] - load player_login_award_record
+2014/12/10 16:17:08 [I] - load player_login_award_record
+2014/12/10 16:17:08 [I] - load player_mail
+2014/12/10 16:17:08 [I] - load player_mail
+2014/12/10 16:17:08 [I] - load player_mail
+2014/12/10 16:17:08 [I] - load player_mail
+2014/12/10 16:17:08 [I] - load player_mail_attachment
+2014/12/10 16:17:08 [I] - load player_mail_attachment
+2014/12/10 16:17:08 [I] - load player_mail_attachment
+2014/12/10 16:17:08 [I] - load player_mail_attachment
+2014/12/10 16:17:08 [I] - load player_meditation_state
+2014/12/10 16:17:08 [I] - load player_meditation_state
+2014/12/10 16:17:08 [I] - load player_meditation_state
+2014/12/10 16:17:08 [I] - load player_meditation_state
+2014/12/10 16:17:08 [I] - load player_mission
+2014/12/10 16:17:08 [I] - load player_mission
+2014/12/10 16:17:08 [I] - load player_mission
+2014/12/10 16:17:08 [I] - load player_mission
+2014/12/10 16:17:08 [I] - load player_mission_level
+2014/12/10 16:17:08 [I] - load player_mission_level
+2014/12/10 16:17:08 [I] - load player_mission_level
+2014/12/10 16:17:08 [I] - load player_mission_level
+2014/12/10 16:17:08 [I] - load player_mission_level_record
+2014/12/10 16:17:08 [I] - load player_mission_level_record
+2014/12/10 16:17:08 [I] - load player_mission_level_record
+2014/12/10 16:17:08 [I] - load player_mission_level_record
+2014/12/10 16:17:08 [I] - load player_mission_level_state_bin
+2014/12/10 16:17:08 [I] - load player_mission_level_state_bin
+2014/12/10 16:17:08 [I] - load player_mission_level_state_bin
+2014/12/10 16:17:08 [I] - load player_mission_level_state_bin
+2014/12/10 16:17:08 [I] - load player_mission_record
+2014/12/10 16:17:08 [I] - load player_mission_record
+2014/12/10 16:17:08 [I] - load player_mission_record
+2014/12/10 16:17:08 [I] - load player_mission_record
+2014/12/10 16:17:08 [I] - load player_month_card_award_record
+2014/12/10 16:17:08 [I] - load player_month_card_award_record
+2014/12/10 16:17:08 [I] - load player_month_card_award_record
+2014/12/10 16:17:08 [I] - load player_month_card_award_record
+2014/12/10 16:17:08 [I] - load player_month_card_info
+2014/12/10 16:17:08 [I] - load player_month_card_info
+2014/12/10 16:17:08 [I] - load player_month_card_info
+2014/12/10 16:17:08 [I] - load player_month_card_info
+2014/12/10 16:17:08 [I] - load player_multi_level_info
+2014/12/10 16:17:08 [I] - load player_multi_level_info
+2014/12/10 16:17:08 [I] - load player_multi_level_info
+2014/12/10 16:17:08 [I] - load player_multi_level_info
+2014/12/10 16:17:08 [I] - load player_npc_talk_record
+2014/12/10 16:17:08 [I] - load player_npc_talk_record
+2014/12/10 16:17:08 [I] - load player_npc_talk_record
+2014/12/10 16:17:08 [I] - load player_npc_talk_record
+2014/12/10 16:17:08 [I] - load player_physical
+2014/12/10 16:17:08 [I] - load player_physical
+2014/12/10 16:17:08 [I] - load player_physical
+2014/12/10 16:17:08 [I] - load player_physical
+2014/12/10 16:17:08 [I] - load player_purchase_record
+2014/12/10 16:17:08 [I] - load player_purchase_record
+2014/12/10 16:17:08 [I] - load player_purchase_record
+2014/12/10 16:17:08 [I] - load player_purchase_record
+2014/12/10 16:17:08 [I] - load player_push_notify_switch
+2014/12/10 16:17:08 [I] - load player_push_notify_switch
+2014/12/10 16:17:08 [I] - load player_push_notify_switch
+2014/12/10 16:17:08 [I] - load player_push_notify_switch
+2014/12/10 16:17:08 [I] - load player_pve_state
+2014/12/10 16:17:08 [I] - load player_pve_state
+2014/12/10 16:17:08 [I] - load player_pve_state
+2014/12/10 16:17:08 [I] - load player_pve_state
+2014/12/10 16:17:08 [I] - load player_quest
+2014/12/10 16:17:08 [I] - load player_quest
+2014/12/10 16:17:08 [I] - load player_quest
+2014/12/10 16:17:08 [I] - load player_quest
+2014/12/10 16:17:08 [I] - load player_rainbow_level
+2014/12/10 16:17:08 [I] - load player_rainbow_level
+2014/12/10 16:17:08 [I] - load player_rainbow_level
+2014/12/10 16:17:08 [I] - load player_rainbow_level
+2014/12/10 16:17:08 [I] - load player_rainbow_level_state_bin
+2014/12/10 16:17:08 [I] - load player_rainbow_level_state_bin
+2014/12/10 16:17:08 [I] - load player_rainbow_level_state_bin
+2014/12/10 16:17:08 [I] - load player_rainbow_level_state_bin
+2014/12/10 16:17:08 [I] - load player_role
+2014/12/10 16:17:08 [I] - load player_role
+2014/12/10 16:17:08 [I] - load player_role
+2014/12/10 16:17:08 [I] - load player_role
+2014/12/10 16:17:08 [I] - load player_send_heart_record
+2014/12/10 16:17:08 [I] - load player_send_heart_record
+2014/12/10 16:17:08 [I] - load player_send_heart_record
+2014/12/10 16:17:08 [I] - load player_send_heart_record
+2014/12/10 16:17:08 [I] - load player_skill
+2014/12/10 16:17:08 [I] - load player_skill
+2014/12/10 16:17:08 [I] - load player_skill
+2014/12/10 16:17:08 [I] - load player_skill
+2014/12/10 16:17:08 [I] - load player_state
+2014/12/10 16:17:08 [I] - load player_state
+2014/12/10 16:17:08 [I] - load player_state
+2014/12/10 16:17:08 [I] - load player_state
+2014/12/10 16:17:08 [I] - load player_sword_soul
+2014/12/10 16:17:08 [I] - load player_sword_soul
+2014/12/10 16:17:08 [I] - load player_sword_soul
+2014/12/10 16:17:08 [I] - load player_sword_soul
+2014/12/10 16:17:08 [I] - load player_sword_soul_equipment
+2014/12/10 16:17:08 [I] - load player_sword_soul_equipment
+2014/12/10 16:17:08 [I] - load player_sword_soul_equipment
+2014/12/10 16:17:08 [I] - load player_sword_soul_equipment
+2014/12/10 16:17:08 [I] - load player_sword_soul_state
+2014/12/10 16:17:08 [I] - load player_sword_soul_state
+2014/12/10 16:17:08 [I] - load player_sword_soul_state
+2014/12/10 16:17:08 [I] - load player_sword_soul_state
+2014/12/10 16:17:08 [I] - load player_tb_xxd_roleinfo
+2014/12/10 16:17:08 [I] - load player_tb_xxd_roleinfo
+2014/12/10 16:17:08 [I] - load player_tb_xxd_roleinfo
+2014/12/10 16:17:08 [I] - load player_tb_xxd_roleinfo
+2014/12/10 16:17:08 [I] - load player_tower_level
+2014/12/10 16:17:08 [I] - load player_tower_level
+2014/12/10 16:17:08 [I] - load player_tower_level
+2014/12/10 16:17:08 [I] - load player_tower_level
+2014/12/10 16:17:08 [I] - load player_town
+2014/12/10 16:17:08 [I] - load player_town
+2014/12/10 16:17:08 [I] - load player_town
+2014/12/10 16:17:08 [I] - load player_town
+2014/12/10 16:17:08 [I] - load player_trader_refresh_state
+2014/12/10 16:17:08 [I] - load player_trader_refresh_state
+2014/12/10 16:17:08 [I] - load player_trader_refresh_state
+2014/12/10 16:17:08 [I] - load player_trader_refresh_state
+2014/12/10 16:17:08 [I] - load player_trader_store_state
+2014/12/10 16:17:08 [I] - load player_trader_store_state
+2014/12/10 16:17:08 [I] - load player_trader_store_state
+2014/12/10 16:17:08 [I] - load player_trader_store_state
+2014/12/10 16:17:08 [I] - load player_use_skill
+2014/12/10 16:17:08 [I] - load player_use_skill
+2014/12/10 16:17:08 [I] - load player_use_skill
+2014/12/10 16:17:08 [I] - load player_use_skill
+2014/12/10 16:17:08 [I] - load player_vip
+2014/12/10 16:17:08 [I] - load player_vip
+2014/12/10 16:17:08 [I] - load player_vip
+2014/12/10 16:17:08 [I] - load player_vip
+2014/12/10 16:17:18 [I] - mem:14497040 goroutine:20 gc:7 pause:24ms
+2014/12/10 16:17:28 [I] - mem:14498192 goroutine:20 gc:7 pause:24ms
+2014/12/10 16:17:38 [I] - mem:14498880 goroutine:20 gc:7 pause:24ms
+2014/12/10 16:17:48 [I] - mem:14499232 goroutine:20 gc:7 pause:24ms
+2014/12/10 16:17:58 [I] - mem:14499584 goroutine:20 gc:7 pause:24ms
+2014/12/10 16:18:08 [I] - mem:14499936 goroutine:20 gc:7 pause:24ms
+2014/12/10 16:18:18 [I] - mem:14501024 goroutine:20 gc:7 pause:24ms
+2014/12/10 16:18:28 [I] - mem:14501376 goroutine:20 gc:7 pause:24ms
+2014/12/10 16:18:38 [I] - mem:14501728 goroutine:20 gc:7 pause:24ms
+2014/12/10 16:18:48 [I] - mem:14502080 goroutine:20 gc:7 pause:24ms
+2014/12/10 16:18:58 [I] - mem:14502432 goroutine:20 gc:7 pause:24ms
+2014/12/10 16:19:08 [I] - mem:14502784 goroutine:20 gc:7 pause:24ms
+2014/12/10 16:19:18 [I] - mem:14503536 goroutine:20 gc:7 pause:24ms
+2014/12/10 16:19:28 [I] - mem:14503888 goroutine:20 gc:7 pause:24ms
+2014/12/10 16:19:38 [I] - mem:14504240 goroutine:20 gc:7 pause:24ms
+2014/12/10 16:19:48 [I] - mem:14504880 goroutine:20 gc:7 pause:24ms
+2014/12/10 16:19:58 [I] - mem:14505232 goroutine:20 gc:7 pause:24ms
+2014/12/10 16:20:08 [I] - mem:10993768 goroutine:20 gc:8 pause:33ms
+2014/12/10 16:20:18 [I] - mem:10996072 goroutine:20 gc:8 pause:33ms
+2014/12/10 16:20:28 [I] - mem:10996424 goroutine:20 gc:8 pause:33ms
+2014/12/10 16:20:38 [I] - mem:10996776 goroutine:20 gc:8 pause:33ms
+2014/12/10 16:20:48 [I] - mem:10997128 goroutine:20 gc:8 pause:33ms
+2014/12/10 16:20:58 [I] - mem:10997480 goroutine:20 gc:8 pause:33ms
+2014/12/10 16:21:08 [I] - mem:10997832 goroutine:20 gc:8 pause:33ms
+2014/12/10 16:21:18 [I] - mem:10998536 goroutine:20 gc:8 pause:33ms
+2014/12/10 16:21:28 [I] - mem:10998888 goroutine:20 gc:8 pause:33ms
+2014/12/10 16:21:38 [I] - mem:10999240 goroutine:20 gc:8 pause:33ms
+2014/12/10 16:21:48 [I] - mem:10999592 goroutine:20 gc:8 pause:33ms
+2014/12/10 16:21:58 [I] - mem:10999944 goroutine:20 gc:8 pause:33ms
+2014/12/10 16:22:08 [I] - mem:10905576 goroutine:20 gc:9 pause:37ms
+2014/12/10 16:22:18 [I] - mem:10906520 goroutine:20 gc:9 pause:37ms
+2014/12/10 16:22:28 [I] - mem:10906872 goroutine:20 gc:9 pause:37ms
+2014/12/10 16:22:38 [I] - mem:10907224 goroutine:20 gc:9 pause:37ms
+2014/12/10 16:22:48 [I] - mem:10907864 goroutine:20 gc:9 pause:37ms
+2014/12/10 16:22:58 [I] - mem:10908264 goroutine:20 gc:9 pause:37ms
+2014/12/10 16:23:08 [I] - mem:10908616 goroutine:20 gc:9 pause:37ms
+2014/12/10 16:23:18 [I] - mem:10909368 goroutine:20 gc:9 pause:37ms
+2014/12/10 16:23:28 [I] - mem:10909720 goroutine:20 gc:9 pause:37ms
+2014/12/10 16:23:38 [I] - mem:10910072 goroutine:20 gc:9 pause:37ms
+2014/12/10 16:23:48 [I] - mem:10910424 goroutine:20 gc:9 pause:37ms
+2014/12/10 16:23:58 [I] - mem:10910776 goroutine:20 gc:9 pause:37ms
+2014/12/10 16:24:08 [I] - mem:10905432 goroutine:20 gc:10 pause:45ms
+2014/12/10 16:24:18 [I] - mem:10906616 goroutine:20 gc:10 pause:45ms
+2014/12/10 16:24:28 [I] - mem:10906968 goroutine:20 gc:10 pause:45ms
+2014/12/10 16:24:38 [I] - mem:10907320 goroutine:20 gc:10 pause:45ms
+2014/12/10 16:24:48 [I] - mem:10907672 goroutine:20 gc:10 pause:45ms
+2014/12/10 16:24:58 [I] - mem:10908024 goroutine:20 gc:10 pause:45ms
+2014/12/10 16:25:08 [I] - mem:10908664 goroutine:20 gc:10 pause:45ms
+2014/12/10 16:25:18 [I] - mem:10909656 goroutine:20 gc:10 pause:45ms
+2014/12/10 16:25:28 [I] - mem:10910008 goroutine:20 gc:10 pause:45ms
+2014/12/10 16:25:38 [I] - mem:10910360 goroutine:20 gc:10 pause:45ms
+2014/12/10 16:25:48 [I] - mem:10910712 goroutine:20 gc:10 pause:45ms
+2014/12/10 16:25:58 [I] - mem:10911064 goroutine:20 gc:10 pause:45ms
+2014/12/10 16:26:08 [I] - mem:10906344 goroutine:20 gc:11 pause:61ms
+2014/12/10 16:26:18 [I] - mem:10907240 goroutine:20 gc:11 pause:61ms
+2014/12/10 16:26:28 [I] - mem:10907640 goroutine:20 gc:11 pause:61ms

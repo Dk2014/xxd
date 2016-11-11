@@ -1,0 +1,339 @@
+//
+// 物品相关接口
+//
+mod item = 7
+{
+    // 装备类型
+    type equipment_pos enum {
+        WEAPON      = 0  //武器
+        CLOTHES     = 1  //战袍
+        ACCESSORIES = 2  //饰品
+        SHOE        = 3  //靴子
+    }
+
+    // 属性类型
+    type attribute enum {
+        NULL           = 0   // 无
+        ATTACK         = 1   // 攻击
+        DEFENCE        = 2   // 防御
+        HEALTH         = 3   // 生命
+        SPEED          = 4   // 速度
+        CULTIVATION    = 5   // 内力
+        HIT_LEVEL      = 6   // 命中
+        CRITICAL_LEVEL = 7   // 暴击
+        BLOCK_LEVEL    = 8   // 格挡
+        DESTROY_LEVEL  = 9   // 破击
+        TENACITY_LEVEL = 10  // 韧性
+        DODGE_LEVEL    = 11  // 闪避
+        NUM            = 11  // 属性数目
+    }
+    
+
+    //
+    // 获取所有玩家物品
+    //
+    api get_all_items = 0 {
+        in {
+        }
+        out {
+            items : list {
+                id        : int64  // 物品唯一标识
+                item_id   : int16  // 物品ID
+                num       : int16  // 物品数量
+                
+                //附加属性
+                attack         : int32  // 攻击
+                defence        : int32  // 防御
+                health         : int32  // 生命
+                speed          : int32  // 速度
+                cultivation    : int32  // 内力
+                hit_level      : int32  // 命中
+                critical_level : int32  // 暴击
+                block_level    : int32  // 格挡
+                destroy_level  : int32  // 破击
+                tenacity_level : int32  // 韧性
+                dodge_level    : int32  // 闪避
+                
+                refine_level : int16       // 精练等级
+                refine_fail_times : int16       // 精练失败次数
+                recast_attr  : attribute  // 重铸锁定属性
+               
+            }
+            equipments : list {
+                role_id  : int8  // 角色ID
+                equips   : list {  // 该数组的索引0:武器 1:战袍 2:饰品 3:靴子
+                    id      : int64  // 物品唯一标识
+                    item_id : int16  // 物品ID
+                    
+                    //附加属性
+                    attack         : int32  // 攻击
+                    defence        : int32  // 防御
+                    health         : int32  // 生命
+                    speed          : int32  // 速度
+                    cultivation    : int32  // 内力
+                    hit_level      : int32  // 命中
+                    critical_level : int32  // 暴击
+                    block_level    : int32  // 格挡
+                    destroy_level  : int32  // 破击
+                    tenacity_level : int32  // 韧性
+                    dodge_level    : int32  // 闪避
+                    
+                    refine_level : int16       // 精练等级
+                    refine_fail_times : int16       // 精练失败次数
+                    recast_attr  : attribute  // 重铸属性
+                }
+            }
+            buybacks : list {
+                id        : int64  // 物品唯一标识
+                item_id   : int16  // 物品ID
+                num       : int16  // 物品数量
+                refine_level : int16 // 精炼等级
+                recast_attr : attribute // 重铸属性
+            }
+            buy_records : list {
+                item_id   : int16  // 物品ID
+                num       : int16  // 今日购买数量
+            }
+        }
+    }
+
+    //
+    // 丢弃物品
+    //
+    api drop_item = 1 {
+        in {
+            id : int64  // 丢弃物品的唯一标识
+        }
+        out {
+        }
+    }
+
+    //
+    // 购买物品
+    //
+    api buy_item = 2 {
+        in {
+            item_id  : int16  // 物品ID
+        }
+        out {
+            id : int64  // 购买物品的唯一标识
+        }
+    }
+
+    //
+    // 卖出背包中的物品
+    //
+    api sell_item = 3 {
+        in {
+            id : int64  // 丢弃物品的唯一标识
+        }
+        out {
+        }
+    }
+
+    //
+    // 穿装备
+    //
+    api dress = 4 {
+        in {
+            role_id : int8   // 角色ID 
+            id      : int64  // 物品的唯一标识
+        }
+        out {
+        }
+    }
+
+    //
+    // 脱装备
+    //
+    api undress = 5 {
+        in {
+            role_id : int8           // 角色ID
+            pos     : equipment_pos  // 位置
+        }
+        out {
+        }
+    }
+
+    //
+    // 回购物品
+    //
+    api buy_item_back = 6 {
+        in {
+            id : int64  // 物品的唯一标识
+        }
+        out {
+            items : list {
+                id        : int64   // 物品唯一标识
+                item_id   : int16   // 物品ID
+                num       : int16   // 物品数量,0为删除
+                
+                //附加属性
+                attack         : int32  // 攻击
+                defence        : int32  // 防御
+                health         : int32  // 生命
+                speed          : int32  // 速度
+                cultivation    : int32  // 内力
+                hit_level      : int32  // 命中
+                critical_level : int32  // 暴击
+                block_level    : int32  // 格挡
+                destroy_level  : int32  // 破击
+                tenacity_level : int32  // 韧性
+                dodge_level    : int32  // 闪避
+                
+                refine_level : int16       // 精练等级
+                recast_attr  : attribute  // 重铸锁定属性
+            }
+        }
+    }
+
+    //
+    // 判断背包满
+    //
+    api is_bag_full = 7 {
+        in {}
+        out {
+            is_full : bool  // 背包是否已满
+        }
+    }
+    
+    //
+    // 装备分解
+    // 注意判断背包是否已满（1. 物品满 2. 格子满）
+    //
+    api decompose = 8 {
+        in {
+            id : int64  // 物品的唯一标识
+        }
+        out {}
+    }
+    
+    //
+    // 装备精练
+    //
+    api refine = 9 {
+        in {
+            id : int64  // 物品的唯一标识
+            is_batch : bool //是否批量强化多次
+        }
+        out {
+            code : int8 // 状态码 0代表正常 大于0表示有问题
+            id : int64  // 物品的唯一标识
+            level : int16  // 精炼后等级
+		
+        }
+    }
+
+    //
+    // 获取装备重铸信息
+    //
+    api get_recast_info = 10 {
+        in {
+            id   : int64      // 物品的唯一标识
+            attr : attribute  // 重铸属性，物品 recast_attr 不为 0 此值为 recast_attr
+        }
+        out {
+            attrs : list { // 三条重铸属性
+                attr  : attribute
+                value : int32 
+            }
+        }
+    }
+    
+    // 
+    // 装备重铸
+    // 
+    api recast = 11 {
+        in {
+            attr : attribute  // 重铸的属性，如果选择原有属性，则为0 
+        }
+        out {}
+    }
+	
+	//
+	// 物品使用
+	//
+	api use_item = 12 {
+		in {
+			id  : int64  // 物品的唯一标识
+		}
+		out {
+			origin : int64 //客户端发送过来的物品ID
+			changed : bool //客户端发过来的物品ID是否被改变（删除或者修改)
+		}
+	}
+
+    // 针对某角色使用消耗类道具
+    api role_use_cost_item = 13 {
+        in {
+            role_id : int8 // 角色id
+            item_id : int64 // 物品唯一标识
+        }
+        out {}
+    }
+	
+  //批量使用物品（礼包和消耗类道具）
+ api batch_use_item = 14 {
+	in {
+		role_id : int8 //角色ID
+		id : int64 //物品标识
+		num : int32 //使用物品数量
+	}
+	out {
+		id : int64 //所使用的物品的标识
+	}
+}
+
+	//龙珠兑换（通知）
+	api dragon_ball_exchange_notify = 15{
+		out {
+			item_id : int16 //获得物品
+			item_num : int16 //获得物品数量
+		}
+	}
+
+	//开启聚宝盆
+	api open_cornucopia = 16 {
+		in {
+			id : int64 //物品标识
+		}
+		out {
+			coins : int64 //获得铜钱数量
+		}
+	}
+
+    //获取天书信息
+    api get_sealedbooks = 17 {
+        in {
+            item_type : int8  
+        }
+        out {
+             items : list{
+                item_type : int8   //物品类型 1：伙伴，2：魂伺，3：剑心，4：灵宠 ,5:装备,6:阵印,7:资源,,8:战斗道具
+                item_id   : int64  //物品id
+                status    : int8   //物品状态 1:曾经拥有,2：拥有,3:激活 
+            }
+        }
+    }
+
+    //激活天书
+    api activation_sealedbook = 18 {
+        in {
+            item_type : int8
+            item_id   : int64
+        //  status    : int8
+        }
+        out {
+            result : bool 
+        }
+    }
+
+    //兑换魂侍水晶
+    api exchange_ghost_crystal = 19 {
+        in {
+            item_id       : int16 //魂侍碎片id
+            exchange_type : int8  //兑换类型 0:兑换1个，1:兑换所有
+        }
+        out {}
+    }
+}

@@ -1,0 +1,489 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<!--修订记录 
+ 2014-07-23 10:40:38 建立 
+ 版本：
+ 初始化版本。
+ -->
+<metalib name="XXD" version="1" urlencode="false" encoding="utf-8" encryption="false" proto="json" content_type="text/html" open_platform="false">
+  <command name="cmd" desc="IDIP前端协议">
+    <entry cmd="10088000" req="IDIP_DO_ACTIVE_USR_REQ" rsp="IDIP_DO_ACTIVE_USR_RSP" req_value="area=AreaId#partition=Partition#platid=PlatId#openid=OpenId#source=Source#serial=Serial" rsp_value="result=Result#error_info=RetMsg" desc="激活账户"/>
+    <entry cmd="10088001" req="IDIP_DO_BAN_USR_REQ" rsp="IDIP_DO_BAN_USR_RSP" req_value="area=AreaId#partition=Partition#platid=PlatId#openid=OpenId#ban_time=BanTime#source=Source#serial=Serial" rsp_value="result=Result#error_info=RetMsg" desc="封号"/>
+    <entry cmd="10088002" req="IDIP_DO_UNBAN_USR_REQ" rsp="IDIP_DO_UNBAN_USR_RSP" req_value="area=AreaId#partition=Partition#platid=PlatId#openid=OpenId#source=Source#serial=Serial" rsp_value="result=Result#error_info=RetMsg" desc="解封"/>
+    <entry cmd="10088003" req="IDIP_DO_DEL_ITEM_REQ" rsp="IDIP_DO_DEL_ITEM_RSP" req_value="area=AreaId#partition=Partition#platid=PlatId#openid=OpenId#item_id=ItemId#item_num=ItemNum#source=Source#serial=Serial" rsp_value="result=Result#error_info=RetMsg" desc="删除道具"/>
+    <entry cmd="10088004" req="IDIP_DO_UPDATE_ROLE_EXP_REQ" rsp="IDIP_DO_UPDATE_ROLE_EXP_RSP" req_value="area=AreaId#partition=Partition#platid=PlatId#openid=OpenId#charac_no=RoleId#value=Value#source=Source#serial=Serial" rsp_value="result=Result#error_info=RetMsg" desc="修改角色经验"/>
+    <entry cmd="10088005" req="IDIP_DO_UPDATE_ROLE_GOLD_REQ" rsp="IDIP_DO_UPDATE_ROLE_GOLD_RSP" req_value="area=AreaId#partition=Partition#platid=PlatId#openid=OpenId#charac_no=RoleId#value=Value#source=Source#serial=Serial" rsp_value="result=Result#error_info=RetMsg" desc="修改用户元宝"/>
+    <entry cmd="10088006" req="IDIP_DO_UPDATE_ROLE_PHYSICAL_REQ" rsp="IDIP_DO_UPDATE_ROLE_PHYSICAL_RSP" req_value="area=AreaId#partition=Partition#platid=PlatId#openid=OpenId#charac_no=RoleId#value=Value#source=Source#serial=Serial" rsp_value="result=Result#error_info=RetMsg" desc="修改用户体力"/>
+    <entry cmd="10088007" req="IDIP_DO_UPDATE_ROLE_COIN_REQ" rsp="IDIP_DO_UPDATE_ROLE_COIN_RSP" req_value="area=AreaId#partition=Partition#platid=PlatId#openid=OpenId#charac_no=RoleId#value=Value#source=Source#serial=Serial" rsp_value="result=Result#error_info=RetMsg" desc="修改角色铜钱"/>
+    <entry cmd="10088008" req="IDIP_DO_UPDATE_ROLE_DRAGONBALL_REQ" rsp="IDIP_DO_UPDATE_ROLE_DRAGONBALL_RSP" req_value="area=AreaId#partition=Partition#platid=PlatId#openid=OpenId#charac_no=RoleId#value=Value#source=Source#serial=Serial" rsp_value="result=Result#error_info=RetMsg" desc="修改真气龙珠"/>
+    <entry cmd="10088009" req="IDIP_DO_UPDATE_ROLE_HEART_REQ" rsp="IDIP_DO_UPDATE_ROLE_HEART_RSP" req_value="area=AreaId#partition=Partition#platid=PlatId#openid=OpenId#charac_no=RoleId#value=Value#source=Source#serial=Serial" rsp_value="result=Result#error_info=RetMsg" desc="修改角色爱心"/>
+    <entry cmd="10088010" req="IDIP_DO_UPDATE_GENERAL_STATE_REQ" rsp="IDIP_DO_UPDATE_GENERAL_STATE_RSP" req_value="area=AreaId#partition=Partition#platid=PlatId#openid=OpenId#charac_no=RoleId#value=Value#source=Source#serial=Serial" rsp_value="result=Result#error_info=RetMsg" desc="修改武将境界"/>
+    <entry cmd="10088011" req="IDIP_DO_SEND_ITEM_REQ" rsp="IDIP_DO_SEND_ITEM_RSP" req_value="area=AreaId#partition=Partition#platid=PlatId#openid=OpenId#charac_no=RoleId#item_id=ItemId#item_num=ItemNum#source=Source#serial=Serial" rsp_value="result=Result#error_info=RetMsg" desc="发放道具"/>
+    <entry cmd="10088012" req="IDIP_QUERY_USR_INFO_REQ" rsp="IDIP_QUERY_USR_INFO_RSP" req_value="area=AreaId#partition=Partition#platid=PlatId#openid=OpenId" rsp_value="level=Level#vip=Vip#exp=Exp#coin=Coin#gold=Gold#physical=Physical#max_physical=MaxPhysical#max_bag=MaxBag#register_time=RegisterTime#is_online=IsOnline#acc_status=AccStatus#ban_end_time=BanEndTime#army_id=ArmyId#rank_in_army=RankInArmy#army_rank=ArmyRank#pass_progress=PassProgress#pvp_rank=PvpRank#pvp_score=PvpScore" desc="查询当前个人信息"/>
+    <entry cmd="10088013" req="IDIP_QUERY_ROLE_STATE_REQ" rsp="IDIP_QUERY_ROLE_STATE_RSP" req_value="area=AreaId#partition=Partition#platid=PlatId#openid=OpenId#charac_no=RoleId" rsp_value="list=RoleStateList_count|RoleStateList|" desc="查询角色境界信息"/>
+    <entry cmd="10088014" req="IDIP_QUERY_ROLE_EQUIP_REQ" rsp="IDIP_QUERY_ROLE_EQUIP_RSP" req_value="area=AreaId#partition=Partition#platid=PlatId#openid=OpenId#charac_no=RoleId" rsp_value="list=EquipList_count|EquipList|" desc="查询角色装备信息"/>
+    <entry cmd="10088015" req="IDIP_QUERY_ARMY_PET_INFO_REQ" rsp="IDIP_QUERY_ARMY_PET_INFO_RSP" req_value="area=AreaId#partition=Partition#platid=PlatId#openid=OpenId#charac_no=RoleId" rsp_value="list=ArmyPetList_count|ArmyPetList|" desc="查询队伍灵宠信息"/>
+    <entry cmd="10088016" req="IDIP_QUERY_ROLE_PET_INFO_REQ" rsp="IDIP_QUERY_ROLE_PET_INFO_RSP" req_value="area=AreaId#partition=Partition#platid=PlatId#openid=OpenId#charac_no=RoleId" rsp_value="list=RolePetList_count|RolePetList|" desc="查询角色灵宠信息"/>
+    <entry cmd="10088017" req="IDIP_QUERY_SWORD_INFO_REQ" rsp="IDIP_QUERY_SWORD_INFO_RSP" req_value="area=AreaId#partition=Partition#platid=PlatId#openid=OpenId#charac_no=RoleId" rsp_value="list=SwordList_count|SwordList|" desc="查询剑心信息"/>
+    <entry cmd="10088018" req="IDIP_QUERY_SOUL_INFO_REQ" rsp="IDIP_QUERY_SOUL_INFO_RSP" req_value="area=AreaId#partition=Partition#platid=PlatId#openid=OpenId#charac_no=RoleId" rsp_value="list=SoulList_count|SoulList|" desc="查询魂侍信息"/>
+    <entry cmd="10088019" req="IDIP_QUERY_TASK_INFO_REQ" rsp="IDIP_QUERY_TASK_INFO_RSP" req_value="area=AreaId#partition=Partition#platid=PlatId#openid=OpenId#begin_time=BeginTime#end_time=EndTime" rsp_value="list=TaskProgressList_count|TaskProgressList|" desc="查询任务进度"/>
+    <entry cmd="10088020" req="IDIP_QUERY_BAG_INFO_REQ" rsp="IDIP_QUERY_BAG_INFO_RSP" req_value="area=AreaId#partition=Partition#platid=PlatId#openid=OpenId#begin_time=BeginTime#end_time=EndTime" rsp_value="list=BagList_count|BagList|" desc="查询背包存量信息"/>
+  </command>
+  <macrosgroup name="NET_CMD_ID" desc="IDIP命令编码">
+    <macro name="IDIP_DO_ACTIVE_USR_REQ" value="0x1001" desc="激活账户请求"/>
+    <macro name="IDIP_DO_ACTIVE_USR_RSP" value="0x1002" desc="激活账户应答"/>
+    <macro name="IDIP_DO_BAN_USR_REQ" value="0x1003" desc="封号请求"/>
+    <macro name="IDIP_DO_BAN_USR_RSP" value="0x1004" desc="封号应答"/>
+    <macro name="IDIP_DO_UNBAN_USR_REQ" value="0x1005" desc="解封请求"/>
+    <macro name="IDIP_DO_UNBAN_USR_RSP" value="0x1006" desc="解封应答"/>
+    <macro name="IDIP_DO_DEL_ITEM_REQ" value="0x1007" desc="删除道具请求"/>
+    <macro name="IDIP_DO_DEL_ITEM_RSP" value="0x1008" desc="删除道具应答"/>
+    <macro name="IDIP_DO_UPDATE_ROLE_EXP_REQ" value="0x1009" desc="修改角色经验请求"/>
+    <macro name="IDIP_DO_UPDATE_ROLE_EXP_RSP" value="0x100a" desc="修改角色经验应答"/>
+    <macro name="IDIP_DO_UPDATE_ROLE_GOLD_REQ" value="0x100b" desc="修改用户元宝请求"/>
+    <macro name="IDIP_DO_UPDATE_ROLE_GOLD_RSP" value="0x100c" desc="修改用户元宝应答"/>
+    <macro name="IDIP_DO_UPDATE_ROLE_PHYSICAL_REQ" value="0x100d" desc="修改用户体力请求"/>
+    <macro name="IDIP_DO_UPDATE_ROLE_PHYSICAL_RSP" value="0x100e" desc="修改用户体力应答"/>
+    <macro name="IDIP_DO_UPDATE_ROLE_COIN_REQ" value="0x100f" desc="修改角色铜钱请求"/>
+    <macro name="IDIP_DO_UPDATE_ROLE_COIN_RSP" value="0x1010" desc="修改角色铜钱应答"/>
+    <macro name="IDIP_DO_UPDATE_ROLE_DRAGONBALL_REQ" value="0x1011" desc="修改真气龙珠请求"/>
+    <macro name="IDIP_DO_UPDATE_ROLE_DRAGONBALL_RSP" value="0x1012" desc="修改真气龙珠应答"/>
+    <macro name="IDIP_DO_UPDATE_ROLE_HEART_REQ" value="0x1013" desc="修改角色爱心请求"/>
+    <macro name="IDIP_DO_UPDATE_ROLE_HEART_RSP" value="0x1014" desc="修改角色爱心应答"/>
+    <macro name="IDIP_DO_UPDATE_GENERAL_STATE_REQ" value="0x1015" desc="修改武将境界请求"/>
+    <macro name="IDIP_DO_UPDATE_GENERAL_STATE_RSP" value="0x1016" desc="修改武将境界应答"/>
+    <macro name="IDIP_DO_SEND_ITEM_REQ" value="0x1017" desc="发放道具请求"/>
+    <macro name="IDIP_DO_SEND_ITEM_RSP" value="0x1018" desc="发放道具应答"/>
+    <macro name="IDIP_QUERY_USR_INFO_REQ" value="0x1019" desc="查询当前个人信息请求"/>
+    <macro name="IDIP_QUERY_USR_INFO_RSP" value="0x101a" desc="查询当前个人信息应答"/>
+    <macro name="IDIP_QUERY_ROLE_STATE_REQ" value="0x101b" desc="查询角色境界信息请求"/>
+    <macro name="IDIP_QUERY_ROLE_STATE_RSP" value="0x101c" desc="查询角色境界信息应答"/>
+    <macro name="IDIP_QUERY_ROLE_EQUIP_REQ" value="0x101d" desc="查询角色装备信息请求"/>
+    <macro name="IDIP_QUERY_ROLE_EQUIP_RSP" value="0x101e" desc="查询角色装备信息应答"/>
+    <macro name="IDIP_QUERY_ARMY_PET_INFO_REQ" value="0x101f" desc="查询队伍灵宠信息请求"/>
+    <macro name="IDIP_QUERY_ARMY_PET_INFO_RSP" value="0x1020" desc="查询队伍灵宠信息应答"/>
+    <macro name="IDIP_QUERY_ROLE_PET_INFO_REQ" value="0x1021" desc="查询角色灵宠信息请求"/>
+    <macro name="IDIP_QUERY_ROLE_PET_INFO_RSP" value="0x1022" desc="查询角色灵宠信息应答"/>
+    <macro name="IDIP_QUERY_SWORD_INFO_REQ" value="0x1023" desc="查询剑心信息请求"/>
+    <macro name="IDIP_QUERY_SWORD_INFO_RSP" value="0x1024" desc="查询剑心信息应答"/>
+    <macro name="IDIP_QUERY_SOUL_INFO_REQ" value="0x1025" desc="查询魂侍信息请求"/>
+    <macro name="IDIP_QUERY_SOUL_INFO_RSP" value="0x1026" desc="查询魂侍信息应答"/>
+    <macro name="IDIP_QUERY_TASK_INFO_REQ" value="0x1027" desc="查询任务进度请求"/>
+    <macro name="IDIP_QUERY_TASK_INFO_RSP" value="0x1028" desc="查询任务进度应答"/>
+    <macro name="IDIP_QUERY_BAG_INFO_REQ" value="0x1029" desc="查询背包存量信息请求"/>
+    <macro name="IDIP_QUERY_BAG_INFO_RSP" value="0x102a" desc="查询背包存量信息应答"/>
+  </macrosgroup>
+  <macrosgroup name="NET_MACRO" desc="系统宏">
+    <macro name="IDIP_BODY_LENGTH" value="24000" desc="封装包包体的最大值, 基本的数据包的大小在15K以下，只有查询邮件列表这个数据量比较大，在23K左右"/>
+    <macro name="SERVICE_NAME_LENGTH" value="16" desc="SERVICENAME的最大长度"/>
+    <macro name="AUTHENTICATE_LENGTH" value="32" desc="加密串的最大长度"/>
+    <macro name="ERROR_MSG_LENGTH" value="100" desc="错误码"/>
+    <macro name="MAX_OPENID_LEN" value="64" desc="openid的长度"/>
+    <macro name="MAX_SERIAL_LEN" value="64" desc="流水号，由前端生成，不需要填写的长度"/>
+    <macro name="MAX_RETMSG_LEN" value="100" desc="返回消息的长度"/>
+    <macro name="MAX_ROLESTATELIST_NUM" value="50" desc="角色境界信息列表的数组长度"/>
+    <macro name="MAX_EQUIPLIST_NUM" value="50" desc="角色装备信息列表的数组长度"/>
+    <macro name="MAX_PETNAME_LEN" value="64" desc="灵宠名称的长度"/>
+    <macro name="MAX_ARMYPETLIST_NUM" value="50" desc="队伍灵宠信息列表的数组长度"/>
+    <macro name="MAX_ROLEPETLIST_NUM" value="50" desc="角色灵宠信息列表的数组长度"/>
+    <macro name="MAX_SWORDNAME_LEN" value="64" desc="剑心名的长度"/>
+    <macro name="MAX_SWORDLIST_NUM" value="50" desc="剑心信息列表的数组长度"/>
+    <macro name="MAX_SOULLIST_NUM" value="50" desc="魂侍信息列表的数组长度"/>
+    <macro name="MAX_TASKNAME_LEN" value="64" desc="任务名称的长度"/>
+    <macro name="MAX_TASKPROGRESSLIST_NUM" value="200" desc="任务进度信息列表的数组长度"/>
+    <macro name="MAX_ITEMNAME_LEN" value="64" desc="道具名称的长度"/>
+    <macro name="MAX_BAGLIST_NUM" value="200" desc="背包存量信息列表的数组长度"/>
+    <macro name="MAX_EQUIPNAME_LEN" value="64" desc="装备名称的长度"/>
+  </macrosgroup>
+  <struct name="IdipHeader" desc="IDIP消息头">
+    <entry name="PacketLen" type="uint32" desc="包长"/>
+    <entry name="Cmdid" type="uint32" desc="命令ID"/>
+    <entry name="Seqid" type="uint32" desc="流水号"/>
+    <entry name="ServiceName" type="string" size="SERVICE_NAME_LENGTH" desc="服务名"/>
+    <entry name="SendTime" type="uint32" desc="发送时间YYYYMMDD对应的整数"/>
+    <entry name="Version" type="uint32" desc="版本号"/>
+    <entry name="Authenticate" type="string" size="AUTHENTICATE_LENGTH" desc="加密串"/>
+    <entry name="Result" type="int32" desc="错误码,返回码类型：0：处理成功，需要解开包体获得详细信息,1：处理成功，但包体返回为空，不需要处理包体（eg：查询用户角色，用户角色不存在等），-1: 网络通信异常,-2：超时,-3：数据库操作异常,-4：API返回异常,-5：服务器忙,-6：其他错误,小于-100 ：用户自定义错误，需要填写szRetErrMsg"/>
+    <entry name="RetErrMsg" type="string" size="ERROR_MSG_LENGTH" desc="错误信息"/>
+  </struct>
+  <struct name="IdipDataPaket" desc="IDIP数据包">
+    <entry name="IdipHead" type="IdipHeader" desc="包头信息"/>
+    <entry name="IdipBody" type="string" size="IDIP_BODY_LENGTH" desc="包体信息"/>
+  </struct>
+  <!--角色境界信息对象-->
+  <struct name="SRoleStateInfo" desc="角色境界信息对象">
+    <entry name="Level" type="uint32" desc="人物境界等级" test="1"/>
+    <entry name="IsBattle" type="uint8" desc="上阵1/未上阵0" test="0"/>
+  </struct>
+  <!--角色装备信息对象-->
+  <struct name="SEquipInfo" desc="角色装备信息对象">
+    <entry name="EquipId" type="uint64" desc="装备ID" test="2"/>
+    <entry name="EquipName" type="string" size="MAX_EQUIPNAME_LEN" desc="装备名称" test="test"/>
+    <entry name="Level" type="uint32" desc="装备精炼等级" test="1"/>
+    <entry name="IsBattle" type="uint8" desc="上阵1/未上阵0" test="0"/>
+  </struct>
+  <!--队伍灵宠信息对象-->
+  <struct name="SArmyPetInfo" desc="队伍灵宠信息对象">
+    <entry name="PetName" type="string" size="MAX_PETNAME_LEN" desc="队伍灵宠名" test="test"/>
+    <entry name="PetId" type="uint64" desc="灵宠ID" test="1"/>
+    <entry name="Level" type="uint32" desc="灵宠等级" test="2"/>
+  </struct>
+  <!--角色灵宠信息对象-->
+  <struct name="SRolePetInfo" desc="角色灵宠信息对象">
+    <entry name="PetId" type="uint64" desc="灵宠ID" test="1"/>
+    <entry name="PetName" type="string" size="MAX_PETNAME_LEN" desc="灵宠名称" test="test"/>
+    <entry name="Level" type="uint32" desc="灵宠等级" test="2"/>
+    <entry name="IsBattle" type="uint8" desc="上阵1/未上阵0" test="0"/>
+  </struct>
+  <!--剑心信息对象-->
+  <struct name="SSwordInfo" desc="剑心信息对象">
+    <entry name="Slot" type="uint32" desc="开启槽数" test="1"/>
+    <entry name="SwordName" type="string" size="MAX_SWORDNAME_LEN" desc="剑心名" test="test"/>
+    <entry name="Level" type="uint32" desc="剑心等级" test="2"/>
+    <entry name="IsBattle" type="uint8" desc="上阵1/未上阵0" test="0"/>
+  </struct>
+  <!--魂侍信息对象-->
+  <struct name="SSoulInfo" desc="魂侍信息对象">
+    <entry name="Slot" type="uint32" desc="开启槽数" test="1"/>
+    <entry name="MajorSoul" type="uint32" desc="主魂侍" test="2"/>
+    <entry name="MajorSoulLevel" type="uint32" desc="魂侍等级" test="3"/>
+    <entry name="Minor1Soul" type="uint32" desc="辅魂侍1" test="4"/>
+    <entry name="MinorSoul1Level" type="uint32" desc="辅魂侍1等级" test="5"/>
+    <entry name="Minor2Soul" type="uint32" desc="辅魂侍2" test="6"/>
+    <entry name="MinorSoul2Level" type="uint32" desc="辅魂侍2等级" test="7"/>
+    <entry name="IsBattle" type="uint8" desc="上阵1/未上阵0" test="0"/>
+  </struct>
+  <!--任务进度信息对象-->
+  <struct name="STaskProgressInfo" desc="任务进度信息对象">
+    <entry name="TaskName" type="string" size="MAX_TASKNAME_LEN" desc="任务名称" test="test"/>
+    <entry name="Type" type="uint8" desc="任务类型（1：主线任务 2：每日任务）" test="1"/>
+    <entry name="Status" type="uint8" desc="任务状态（1:正在进行中,2:完成未领取奖励,3:完成已领取奖励）" test="2"/>
+  </struct>
+  <!--背包存量信息对象-->
+  <struct name="SBagInfo" desc="背包存量信息对象">
+    <entry name="ItemName" type="string" size="MAX_ITEMNAME_LEN" desc="道具名称" test="test"/>
+    <entry name="ItemId" type="uint64" desc="道具ID（包括灵宠、魂侍、剑心、消耗品道具等）" test="1"/>
+    <entry name="ItemNum" type="uint32" desc="道具存量" test="2"/>
+  </struct>
+  <!--激活账户请求-->
+  <struct name="DoActiveUsrReq" id="IDIP_DO_ACTIVE_USR_REQ" desc="激活账户请求">
+    <entry name="AreaId" type="uint32" desc="大区（1微信，2手Q）" test="1"/>
+    <entry name="Partition" type="uint32" desc="小区ID" test="2"/>
+    <entry name="PlatId" type="uint8" desc="平台（0ios，1安卓）" test="0"/>
+    <entry name="OpenId" type="string" size="MAX_OPENID_LEN" desc="openid" test="732945400"/>
+    <entry name="Source" type="uint32" desc="渠道号，由前端生成，不需要填写"/>
+    <entry name="Serial" type="string" size="MAX_SERIAL_LEN" desc="流水号，由前端生成，不需要填写"/>
+  </struct>
+  <!--激活账户应答-->
+  <struct name="DoActiveUsrRsp" id="IDIP_DO_ACTIVE_USR_RSP" desc="激活账户应答">
+    <entry name="Result" type="int32" desc="结果: 0 激活成功；1 帐号曾经激活；其它失败" test="0"/>
+    <entry name="RetMsg" type="string" size="MAX_RETMSG_LEN" desc="返回消息" test="success"/>
+  </struct>
+  <!--封号请求-->
+  <struct name="DoBanUsrReq" id="IDIP_DO_BAN_USR_REQ" desc="封号请求">
+    <entry name="AreaId" type="uint32" desc="大区（1微信，2手Q）" test="1"/>
+    <entry name="Partition" type="uint32" desc="小区ID" test="2"/>
+    <entry name="PlatId" type="uint8" desc="平台（0ios，1安卓）" test="0"/>
+    <entry name="OpenId" type="string" size="MAX_OPENID_LEN" desc="openid" test="732945400"/>
+    <entry name="BanTime" type="uint32" desc="封号时长0 永久，**秒）" test="3"/>
+    <entry name="Source" type="uint32" desc="渠道号，由前端生成，不需要填写"/>
+    <entry name="Serial" type="string" size="MAX_SERIAL_LEN" desc="流水号，由前端生成，不需要填写"/>
+  </struct>
+  <!--封号应答-->
+  <struct name="DoBanUsrRsp" id="IDIP_DO_BAN_USR_RSP" desc="封号应答">
+    <entry name="Result" type="int32" desc="结果：（0）成功，（其他）失败" test="0"/>
+    <entry name="RetMsg" type="string" size="MAX_RETMSG_LEN" desc="返回消息" test="success"/>
+  </struct>
+  <!--解封请求-->
+  <struct name="DoUnbanUsrReq" id="IDIP_DO_UNBAN_USR_REQ" desc="解封请求">
+    <entry name="AreaId" type="uint32" desc="大区（1微信，2手Q）" test="1"/>
+    <entry name="Partition" type="uint32" desc="小区ID" test="3"/>
+    <entry name="PlatId" type="uint8" desc="平台（0ios，1安卓）" test="0"/>
+    <entry name="OpenId" type="string" size="MAX_OPENID_LEN" desc="openid" test="732945400"/>
+    <entry name="Source" type="uint32" desc="渠道号，由前端生成，不需要填写"/>
+    <entry name="Serial" type="string" size="MAX_SERIAL_LEN" desc="流水号，由前端生成，不需要填写"/>
+  </struct>
+  <!--解封应答-->
+  <struct name="DoUnbanUsrRsp" id="IDIP_DO_UNBAN_USR_RSP" desc="解封应答">
+    <entry name="Result" type="int32" desc="结果：（0）成功，（其他）失败" test="0"/>
+    <entry name="RetMsg" type="string" size="MAX_RETMSG_LEN" desc="返回消息" test="success"/>
+  </struct>
+  <!--删除道具请求-->
+  <struct name="DoDelItemReq" id="IDIP_DO_DEL_ITEM_REQ" desc="删除道具请求">
+    <entry name="AreaId" type="uint32" desc="大区（1微信，2手Q）" test="1"/>
+    <entry name="Partition" type="uint32" desc="小区ID" test="3"/>
+    <entry name="PlatId" type="uint8" desc="平台（0ios，1安卓）" test="0"/>
+    <entry name="OpenId" type="string" size="MAX_OPENID_LEN" desc="openid" test="732945400"/>
+    <entry name="ItemId" type="uint64" desc="道具ID" test="2"/>
+    <entry name="ItemNum" type="uint32" desc="删除数量" test="4"/>
+    <entry name="Source" type="uint32" desc="渠道号，由前端生成，不需要填写"/>
+    <entry name="Serial" type="string" size="MAX_SERIAL_LEN" desc="流水号，由前端生成，不需要填写"/>
+  </struct>
+  <!--删除道具应答-->
+  <struct name="DoDelItemRsp" id="IDIP_DO_DEL_ITEM_RSP" desc="删除道具应答">
+    <entry name="Result" type="int32" desc="结果：（0）成功，（其他）失败" test="0"/>
+    <entry name="RetMsg" type="string" size="MAX_RETMSG_LEN" desc="返回消息" test="success"/>
+  </struct>
+  <!--修改角色经验请求-->
+  <struct name="DoUpdateRoleExpReq" id="IDIP_DO_UPDATE_ROLE_EXP_REQ" desc="修改角色经验请求">
+    <entry name="AreaId" type="uint32" desc="大区（1微信，2手Q）" test="1"/>
+    <entry name="Partition" type="uint32" desc="小区ID" test="2"/>
+    <entry name="PlatId" type="uint8" desc="平台（0ios，1安卓）" test="0"/>
+    <entry name="OpenId" type="string" size="MAX_OPENID_LEN" desc="openid" test="732945400"/>
+    <entry name="RoleId" type="uint64" desc="角色ID" test="3"/>
+    <entry name="Value" type="int32" desc="修改值（正加负减）" test="4"/>
+    <entry name="Source" type="uint32" desc="渠道号，由前端生成，不需要填写"/>
+    <entry name="Serial" type="string" size="MAX_SERIAL_LEN" desc="流水号，由前端生成，不需要填写"/>
+  </struct>
+  <!--修改角色经验应答-->
+  <struct name="DoUpdateRoleExpRsp" id="IDIP_DO_UPDATE_ROLE_EXP_RSP" desc="修改角色经验应答">
+    <entry name="Result" type="int32" desc="结果：（0）成功，（其他）失败" test="0"/>
+    <entry name="RetMsg" type="string" size="MAX_RETMSG_LEN" desc="返回消息" test="success"/>
+  </struct>
+  <!--修改用户元宝请求-->
+  <struct name="DoUpdateRoleGoldReq" id="IDIP_DO_UPDATE_ROLE_GOLD_REQ" desc="修改用户元宝请求">
+    <entry name="AreaId" type="uint32" desc="大区（1微信，2手Q）" test="1"/>
+    <entry name="Partition" type="uint32" desc="小区ID" test="2"/>
+    <entry name="PlatId" type="uint8" desc="平台（0ios，1安卓）" test="0"/>
+    <entry name="OpenId" type="string" size="MAX_OPENID_LEN" desc="openid" test="732945400"/>
+    <entry name="RoleId" type="uint64" desc="角色ID" test="3"/>
+    <entry name="Value" type="int32" desc="数量（正加负减）" test="4"/>
+    <entry name="Source" type="uint32" desc="渠道号，由前端生成，不需要填写"/>
+    <entry name="Serial" type="string" size="MAX_SERIAL_LEN" desc="流水号，由前端生成，不需要填写"/>
+  </struct>
+  <!--修改用户元宝应答-->
+  <struct name="DoUpdateRoleGoldRsp" id="IDIP_DO_UPDATE_ROLE_GOLD_RSP" desc="修改用户元宝应答">
+    <entry name="Result" type="int32" desc="结果：（0）成功，（其他）失败" test="0"/>
+    <entry name="RetMsg" type="string" size="MAX_RETMSG_LEN" desc="返回消息" test="success"/>
+  </struct>
+  <!--修改用户体力请求-->
+  <struct name="DoUpdateRolePhysicalReq" id="IDIP_DO_UPDATE_ROLE_PHYSICAL_REQ" desc="修改用户体力请求">
+    <entry name="AreaId" type="uint32" desc="大区（1微信，2手Q）" test="1"/>
+    <entry name="Partition" type="uint32" desc="小区ID" test="2"/>
+    <entry name="PlatId" type="uint8" desc="平台（0ios，1安卓）" test="0"/>
+    <entry name="OpenId" type="string" size="MAX_OPENID_LEN" desc="openid" test="732945400"/>
+    <entry name="RoleId" type="uint64" desc="角色ID" test="3"/>
+    <entry name="Value" type="int32" desc="数量（正加负减）" test="4"/>
+    <entry name="Source" type="uint32" desc="渠道号，由前端生成，不需要填写"/>
+    <entry name="Serial" type="string" size="MAX_SERIAL_LEN" desc="流水号，由前端生成，不需要填写"/>
+  </struct>
+  <!--修改用户体力应答-->
+  <struct name="DoUpdateRolePhysicalRsp" id="IDIP_DO_UPDATE_ROLE_PHYSICAL_RSP" desc="修改用户体力应答">
+    <entry name="Result" type="int32" desc="结果：（0）成功，（其他）失败" test="0"/>
+    <entry name="RetMsg" type="string" size="MAX_RETMSG_LEN" desc="返回消息" test="success"/>
+  </struct>
+  <!--修改角色铜钱请求-->
+  <struct name="DoUpdateRoleCoinReq" id="IDIP_DO_UPDATE_ROLE_COIN_REQ" desc="修改角色铜钱请求">
+    <entry name="AreaId" type="uint32" desc="大区（1微信，2手Q）" test="1"/>
+    <entry name="Partition" type="uint32" desc="小区ID" test="2"/>
+    <entry name="PlatId" type="uint8" desc="平台（0ios，1安卓）" test="0"/>
+    <entry name="OpenId" type="string" size="MAX_OPENID_LEN" desc="openid" test="732945400"/>
+    <entry name="RoleId" type="uint64" desc="角色ID" test="3"/>
+    <entry name="Value" type="int32" desc="数量（正加负减）" test="4"/>
+    <entry name="Source" type="uint32" desc="渠道号，由前端生成，不需要填写"/>
+    <entry name="Serial" type="string" size="MAX_SERIAL_LEN" desc="流水号，由前端生成，不需要填写"/>
+  </struct>
+  <!--修改角色铜钱应答-->
+  <struct name="DoUpdateRoleCoinRsp" id="IDIP_DO_UPDATE_ROLE_COIN_RSP" desc="修改角色铜钱应答">
+    <entry name="Result" type="int32" desc="结果：（0）成功，（其他）失败" test="0"/>
+    <entry name="RetMsg" type="string" size="MAX_RETMSG_LEN" desc="返回消息" test="success"/>
+  </struct>
+  <!--修改真气龙珠请求-->
+  <struct name="DoUpdateRoleDragonballReq" id="IDIP_DO_UPDATE_ROLE_DRAGONBALL_REQ" desc="修改真气龙珠请求">
+    <entry name="AreaId" type="uint32" desc="大区（1微信，2手Q）" test="1"/>
+    <entry name="Partition" type="uint32" desc="小区ID" test="2"/>
+    <entry name="PlatId" type="uint8" desc="平台（0ios，1安卓）" test="0"/>
+    <entry name="OpenId" type="string" size="MAX_OPENID_LEN" desc="openid" test="732945400"/>
+    <entry name="RoleId" type="uint64" desc="角色ID" test="3"/>
+    <entry name="Value" type="int32" desc="数量（正加负减）" test="4"/>
+    <entry name="Source" type="uint32" desc="渠道号，由前端生成，不需要填写"/>
+    <entry name="Serial" type="string" size="MAX_SERIAL_LEN" desc="流水号，由前端生成，不需要填写"/>
+  </struct>
+  <!--修改真气龙珠应答-->
+  <struct name="DoUpdateRoleDragonballRsp" id="IDIP_DO_UPDATE_ROLE_DRAGONBALL_RSP" desc="修改真气龙珠应答">
+    <entry name="Result" type="int32" desc="结果：（0）成功，（其他）失败" test="0"/>
+    <entry name="RetMsg" type="string" size="MAX_RETMSG_LEN" desc="返回消息" test="success"/>
+  </struct>
+  <!--修改角色爱心请求-->
+  <struct name="DoUpdateRoleHeartReq" id="IDIP_DO_UPDATE_ROLE_HEART_REQ" desc="修改角色爱心请求">
+    <entry name="AreaId" type="uint32" desc="大区（1微信，2手Q）" test="1"/>
+    <entry name="Partition" type="uint32" desc="小区ID" test="2"/>
+    <entry name="PlatId" type="uint8" desc="平台（0ios，1安卓）" test="0"/>
+    <entry name="OpenId" type="string" size="MAX_OPENID_LEN" desc="openid" test="732945400"/>
+    <entry name="RoleId" type="uint64" desc="角色ID" test="3"/>
+    <entry name="Value" type="int32" desc="数量（正加负减）" test="4"/>
+    <entry name="Source" type="uint32" desc="渠道号，由前端生成，不需要填写"/>
+    <entry name="Serial" type="string" size="MAX_SERIAL_LEN" desc="流水号，由前端生成，不需要填写"/>
+  </struct>
+  <!--修改角色爱心应答-->
+  <struct name="DoUpdateRoleHeartRsp" id="IDIP_DO_UPDATE_ROLE_HEART_RSP" desc="修改角色爱心应答">
+    <entry name="Result" type="int32" desc="结果：（0）成功，（其他）失败" test="0"/>
+    <entry name="RetMsg" type="string" size="MAX_RETMSG_LEN" desc="返回消息" test="success"/>
+  </struct>
+  <!--修改武将境界请求-->
+  <struct name="DoUpdateGeneralStateReq" id="IDIP_DO_UPDATE_GENERAL_STATE_REQ" desc="修改武将境界请求">
+    <entry name="AreaId" type="uint32" desc="大区（1微信，2手Q）" test="1"/>
+    <entry name="Partition" type="uint32" desc="小区ID" test="2"/>
+    <entry name="PlatId" type="uint8" desc="平台（0ios，1安卓）" test="0"/>
+    <entry name="OpenId" type="string" size="MAX_OPENID_LEN" desc="openid" test="732945400"/>
+    <entry name="RoleId" type="uint64" desc="角色ID" test="3"/>
+    <entry name="Value" type="int32" desc="数量（正加负减）" test="4"/>
+    <entry name="Source" type="uint32" desc="渠道号，由前端生成，不需要填写"/>
+    <entry name="Serial" type="string" size="MAX_SERIAL_LEN" desc="流水号，由前端生成，不需要填写"/>
+  </struct>
+  <!--修改武将境界应答-->
+  <struct name="DoUpdateGeneralStateRsp" id="IDIP_DO_UPDATE_GENERAL_STATE_RSP" desc="修改武将境界应答">
+    <entry name="Result" type="int32" desc="结果：（0）成功，（其他）失败" test="0"/>
+    <entry name="RetMsg" type="string" size="MAX_RETMSG_LEN" desc="返回消息" test="success"/>
+  </struct>
+  <!--发放道具请求-->
+  <struct name="DoSendItemReq" id="IDIP_DO_SEND_ITEM_REQ" desc="发放道具请求">
+    <entry name="AreaId" type="uint32" desc="大区（1微信，2手Q）" test="1"/>
+    <entry name="Partition" type="uint32" desc="小区ID" test="3"/>
+    <entry name="PlatId" type="uint8" desc="平台（0ios，1安卓）" test="0"/>
+    <entry name="OpenId" type="string" size="MAX_OPENID_LEN" desc="openid" test="732945400"/>
+    <entry name="RoleId" type="uint64" desc="角色ID" test="3"/>
+    <entry name="ItemId" type="uint64" desc="道具ID" test="2"/>
+    <entry name="ItemNum" type="uint32" desc="数量" test="4"/>
+    <entry name="Source" type="uint32" desc="渠道号，由前端生成，不需要填写"/>
+    <entry name="Serial" type="string" size="MAX_SERIAL_LEN" desc="流水号，由前端生成，不需要填写"/>
+  </struct>
+  <!--发放道具应答-->
+  <struct name="DoSendItemRsp" id="IDIP_DO_SEND_ITEM_RSP" desc="发放道具应答">
+    <entry name="Result" type="int32" desc="结果：（0）成功，（其他）失败" test="0"/>
+    <entry name="RetMsg" type="string" size="MAX_RETMSG_LEN" desc="返回消息" test="success"/>
+  </struct>
+  <!--查询当前个人信息请求-->
+  <struct name="QueryUsrInfoReq" id="IDIP_QUERY_USR_INFO_REQ" desc="查询当前个人信息请求">
+    <entry name="AreaId" type="uint32" desc="大区（1微信，2手Q）" test="1"/>
+    <entry name="Partition" type="uint32" desc="小区ID" test="2"/>
+    <entry name="PlatId" type="uint8" desc="平台（0ios，1安卓）" test="0"/>
+    <entry name="OpenId" type="string" size="MAX_OPENID_LEN" desc="openid" test="732945400"/>
+  </struct>
+  <!--查询当前个人信息应答-->
+  <struct name="QueryUsrInfoRsp" id="IDIP_QUERY_USR_INFO_RSP" desc="查询当前个人信息应答">
+    <entry name="Level" type="uint32" desc="当前等级" test="2"/>
+    <entry name="Vip" type="uint32" desc="当前VIP等级" test="3"/>
+    <entry name="Exp" type="uint32" desc="当前经验" test="4"/>
+    <entry name="Coin" type="uint32" desc="当前铜钱" test="5"/>
+    <entry name="Gold" type="uint32" desc="当前元宝数量" test="6"/>
+    <entry name="Physical" type="uint32" desc="当前体力值" test="7"/>
+    <entry name="MaxPhysical" type="uint32" desc="体力值上限" test="8"/>
+    <entry name="MaxBag" type="uint32" desc="背包上限值" test="9"/>
+    <entry name="RegisterTime" type="uint64" desc="注册时间" test="1406021871"/>
+    <entry name="IsOnline" type="uint8" desc="是否在线（0在线，1离线）" test="0"/>
+    <entry name="AccStatus" type="uint8" desc="帐号状态（0 正常，1封号）" test="1"/>
+    <entry name="BanEndTime" type="uint64" desc="封号截至时间" test="1406021901"/>
+    <entry name="ArmyId" type="uint64" desc="所在公会" test="3"/>
+    <entry name="RankInArmy" type="uint32" desc="在公会中的排名" test="4"/>
+    <entry name="ArmyRank" type="uint32" desc="公会排名" test="2"/>
+    <entry name="PassProgress" type="uint32" desc="当前关卡进度" test="3"/>
+    <entry name="PvpRank" type="uint32" desc="个人PVP排名" test="5"/>
+    <entry name="PvpScore" type="uint32" desc="PVP积分数量" test="7"/>
+  </struct>
+  <!--查询角色境界信息请求-->
+  <struct name="QueryRoleStateReq" id="IDIP_QUERY_ROLE_STATE_REQ" desc="查询角色境界信息请求">
+    <entry name="AreaId" type="uint32" desc="大区（1微信，2手Q）" test="1"/>
+    <entry name="Partition" type="uint32" desc="小区ID" test="2"/>
+    <entry name="PlatId" type="uint8" desc="平台（0ios，1安卓）" test="0"/>
+    <entry name="OpenId" type="string" size="MAX_OPENID_LEN" desc="openid" test="732945400"/>
+    <entry name="RoleId" type="uint64" desc="角色ID" test="3"/>
+  </struct>
+  <!--查询角色境界信息应答-->
+  <struct name="QueryRoleStateRsp" id="IDIP_QUERY_ROLE_STATE_RSP" desc="查询角色境界信息应答">
+    <entry name="RoleStateList_count" type="uint32" desc="角色境界信息列表的最大数量" test="1"/>
+    <entry name="RoleStateList" type="SRoleStateInfo" size="MAX_ROLESTATELIST_NUM" param="vector,struct,RoleStateList_count,1,|, " desc="角色境界信息列表" test="0"/>
+  </struct>
+  <!--查询角色装备信息请求-->
+  <struct name="QueryRoleEquipReq" id="IDIP_QUERY_ROLE_EQUIP_REQ" desc="查询角色装备信息请求">
+    <entry name="AreaId" type="uint32" desc="大区（1微信，2手Q）" test="1"/>
+    <entry name="Partition" type="uint32" desc="小区ID" test="2"/>
+    <entry name="PlatId" type="uint8" desc="平台（0ios，1安卓）" test="0"/>
+    <entry name="OpenId" type="string" size="MAX_OPENID_LEN" desc="openid" test="732945400"/>
+    <entry name="RoleId" type="uint64" desc="角色ID" test="3"/>
+  </struct>
+  <!--查询角色装备信息应答-->
+  <struct name="QueryRoleEquipRsp" id="IDIP_QUERY_ROLE_EQUIP_RSP" desc="查询角色装备信息应答">
+    <entry name="EquipList_count" type="uint32" desc="角色装备信息列表的最大数量" test="1"/>
+    <entry name="EquipList" type="SEquipInfo" size="MAX_EQUIPLIST_NUM" param="vector,struct,EquipList_count,1,|, " desc="角色装备信息列表" test="0"/>
+  </struct>
+  <!--查询队伍灵宠信息请求-->
+  <struct name="QueryArmyPetInfoReq" id="IDIP_QUERY_ARMY_PET_INFO_REQ" desc="查询队伍灵宠信息请求">
+    <entry name="AreaId" type="uint32" desc="大区（1微信，2手Q）" test="1"/>
+    <entry name="Partition" type="uint32" desc="小区ID" test="2"/>
+    <entry name="PlatId" type="uint8" desc="平台（0ios，1安卓）" test="0"/>
+    <entry name="OpenId" type="string" size="MAX_OPENID_LEN" desc="openid" test="732945400"/>
+    <entry name="RoleId" type="uint64" desc="角色ID" test="3"/>
+  </struct>
+  <!--查询队伍灵宠信息应答-->
+  <struct name="QueryArmyPetInfoRsp" id="IDIP_QUERY_ARMY_PET_INFO_RSP" desc="查询队伍灵宠信息应答">
+    <entry name="ArmyPetList_count" type="uint32" desc="队伍灵宠信息列表的最大数量" test="1"/>
+    <entry name="ArmyPetList" type="SArmyPetInfo" size="MAX_ARMYPETLIST_NUM" param="vector,struct,ArmyPetList_count,1,|, " desc="队伍灵宠信息列表" test="0"/>
+  </struct>
+  <!--查询角色灵宠信息请求-->
+  <struct name="QueryRolePetInfoReq" id="IDIP_QUERY_ROLE_PET_INFO_REQ" desc="查询角色灵宠信息请求">
+    <entry name="AreaId" type="uint32" desc="大区（1微信，2手Q）" test="1"/>
+    <entry name="Partition" type="uint32" desc="小区ID" test="2"/>
+    <entry name="PlatId" type="uint8" desc="平台（0ios，1安卓）" test="0"/>
+    <entry name="OpenId" type="string" size="MAX_OPENID_LEN" desc="openid" test="732945400"/>
+    <entry name="RoleId" type="uint64" desc="角色ID" test="3"/>
+  </struct>
+  <!--查询角色灵宠信息应答-->
+  <struct name="QueryRolePetInfoRsp" id="IDIP_QUERY_ROLE_PET_INFO_RSP" desc="查询角色灵宠信息应答">
+    <entry name="RolePetList_count" type="uint32" desc="角色灵宠信息列表的最大数量" test="1"/>
+    <entry name="RolePetList" type="SRolePetInfo" size="MAX_ROLEPETLIST_NUM" param="vector,struct,RolePetList_count,1,|, " desc="角色灵宠信息列表" test="0"/>
+  </struct>
+  <!--查询剑心信息请求-->
+  <struct name="QuerySwordInfoReq" id="IDIP_QUERY_SWORD_INFO_REQ" desc="查询剑心信息请求">
+    <entry name="AreaId" type="uint32" desc="大区（1微信，2手Q）" test="1"/>
+    <entry name="Partition" type="uint32" desc="小区ID" test="2"/>
+    <entry name="PlatId" type="uint8" desc="平台（0ios，1安卓）" test="0"/>
+    <entry name="OpenId" type="string" size="MAX_OPENID_LEN" desc="openid" test="732945400"/>
+    <entry name="RoleId" type="uint64" desc="角色ID" test="3"/>
+  </struct>
+  <!--查询剑心信息应答-->
+  <struct name="QuerySwordInfoRsp" id="IDIP_QUERY_SWORD_INFO_RSP" desc="查询剑心信息应答">
+    <entry name="SwordList_count" type="uint32" desc="剑心信息列表的最大数量" test="1"/>
+    <entry name="SwordList" type="SSwordInfo" size="MAX_SWORDLIST_NUM" param="vector,struct,SwordList_count,1,|, " desc="剑心信息列表" test="0"/>
+  </struct>
+  <!--查询魂侍信息请求-->
+  <struct name="QuerySoulInfoReq" id="IDIP_QUERY_SOUL_INFO_REQ" desc="查询魂侍信息请求">
+    <entry name="AreaId" type="uint32" desc="大区（1微信，2手Q）" test="1"/>
+    <entry name="Partition" type="uint32" desc="小区ID" test="2"/>
+    <entry name="PlatId" type="uint8" desc="平台（0ios，1安卓）" test="0"/>
+    <entry name="OpenId" type="string" size="MAX_OPENID_LEN" desc="openid" test="732945400"/>
+    <entry name="RoleId" type="uint64" desc="角色ID" test="3"/>
+  </struct>
+  <!--查询魂侍信息应答-->
+  <struct name="QuerySoulInfoRsp" id="IDIP_QUERY_SOUL_INFO_RSP" desc="查询魂侍信息应答">
+    <entry name="SoulList_count" type="uint32" desc="魂侍信息列表的最大数量" test="1"/>
+    <entry name="SoulList" type="SSoulInfo" size="MAX_SOULLIST_NUM" param="vector,struct,SoulList_count,1,|, " desc="魂侍信息列表" test="0"/>
+  </struct>
+  <!--查询任务进度请求-->
+  <struct name="QueryTaskInfoReq" id="IDIP_QUERY_TASK_INFO_REQ" desc="查询任务进度请求">
+    <entry name="AreaId" type="uint32" desc="大区（1微信，2手Q）" test="1"/>
+    <entry name="Partition" type="uint32" desc="小区ID" test="2"/>
+    <entry name="PlatId" type="uint8" desc="平台（0ios，1安卓）" test="0"/>
+    <entry name="OpenId" type="string" size="MAX_OPENID_LEN" desc="openid" test="732945400"/>
+    <entry name="BeginTime" type="uint64" desc="开始时间" test="1406081524"/>
+    <entry name="EndTime" type="uint64" desc="结束时间" test="1406081535"/>
+  </struct>
+  <!--查询任务进度应答-->
+  <struct name="QueryTaskInfoRsp" id="IDIP_QUERY_TASK_INFO_RSP" desc="查询任务进度应答">
+    <entry name="TaskProgressList_count" type="uint32" desc="任务进度信息列表的最大数量" test="1"/>
+    <entry name="TaskProgressList" type="STaskProgressInfo" size="MAX_TASKPROGRESSLIST_NUM" param="vector,struct,TaskProgressList_count,1,|, " desc="任务进度信息列表" test="0"/>
+  </struct>
+  <!--查询背包存量信息请求-->
+  <struct name="QueryBagInfoReq" id="IDIP_QUERY_BAG_INFO_REQ" desc="查询背包存量信息请求">
+    <entry name="AreaId" type="uint32" desc="大区（1微信，2手Q）" test="1"/>
+    <entry name="Partition" type="uint32" desc="小区ID" test="2"/>
+    <entry name="PlatId" type="uint8" desc="平台（0ios，1安卓）" test="0"/>
+    <entry name="OpenId" type="string" size="MAX_OPENID_LEN" desc="openid" test="732945400"/>
+    <entry name="BeginTime" type="uint64" desc="开始时间" test="1406081787"/>
+    <entry name="EndTime" type="uint64" desc="结束时间" test="1406081797"/>
+  </struct>
+  <!--查询背包存量信息应答-->
+  <struct name="QueryBagInfoRsp" id="IDIP_QUERY_BAG_INFO_RSP" desc="查询背包存量信息应答">
+    <entry name="BagList_count" type="uint32" desc="背包存量信息列表的最大数量" test="1"/>
+    <entry name="BagList" type="SBagInfo" size="MAX_BAGLIST_NUM" param="vector,struct,BagList_count,1,|, " desc="背包存量信息列表"/>
+  </struct>
+</metalib>

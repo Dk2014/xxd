@@ -1,0 +1,10 @@
+GameSvrState|2014-11-19 21:58:18|192.168.10.35
+GameSvrState|2014-11-19 21:59:18|192.168.10.35
+PlayerRegister|928|2014-11-19 21:59:30|game_1_app_id|1|test661|7933||HTML5||WiFi|0|0|0|0||0|||
+PlayerLogin|928|2014-11-19 21:59:30|game_1_app_id|1|test661|1|0|7933||HTML5||WiFi|0|0|0|0||0|||
+PlayerGuideFlow|928|2014-11-19 21:59:31|game_1_app_id|1|test661|1|19|0|0
+PlayerLogout|928|2014-11-19 21:59:37|game_1_app_id|1|test661|7|1|0|7933||HTML5||WiFi|0|0|0|0||0||||0
+PlayerLogin|928|2014-11-19 21:59:49|game_1_app_id|1|test661|1|0|7933||HTML5||WiFi|0|0|0|0||0|||
+PlayerFightNumFlow|928|2014-11-19 21:59:50|game_1_app_id|1|test661|1|0|920
+PlayerQuestFlow|928|2014-11-19 21:59:52|game_1_app_id|1|test661|1|0|1|0|0
+PlayerLogout|928|2014-11-19 21:59:55|game_1_app_id|1|test661|5|1|0|7933||HTML5||WiFi|0|0|0|0||0||||0

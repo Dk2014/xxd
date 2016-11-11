@@ -1,0 +1,131 @@
+2014/11/19 14:35:50 [I] - [access]127.0.0.1 - - [2014-11-19 14:35:50.842501483 +0800 CST] "/user/gsinfo 
+  {
+    "OpenId": "_test_id7872345763783231860",
+    "Type": 1,
+    "Sid": 1,
+		"Token": "_SANDBOX_"
+  }"
+2014/11/19 14:35:50 [I] - send user _test_id7872345763783231860 of 1 to 1, svn.vvv.io:8080
+2014/11/19 14:35:51 [I] - [access]127.0.0.1 - - /user/gsinfo used time: 180ms
+2014/11/19 14:35:51 [I] - [access]127.0.0.1 - - [2014-11-19 14:35:51.023485209 +0800 CST] "/user/gsinfo 
+  {
+    "OpenId": "_test_id7872345763783231860",
+    "Type": 1,
+    "Sid": 1,
+		"Token": "_SANDBOX_"
+  }"
+2014/11/19 14:35:51 [I] - [access]127.0.0.1 - - /user/gsinfo used time: 89ms
+2014/11/19 14:35:51 [I] - [access]127.0.0.1 - - [2014-11-19 14:35:51.112587307 +0800 CST] "/user/gsinfo 
+  {
+    "OpenId": "_test_id7872345763783231860",
+    "Type": 1,
+    "Sid": 1,
+		"Token": "_SANDBOX_"
+  }"
+2014/11/19 14:35:51 [I] - [access]127.0.0.1 - - /user/gsinfo used time: 115ms
+2014/11/19 14:35:51 [I] - [access]127.0.0.1 - - [2014-11-19 14:35:51.228128735 +0800 CST] "/user/gsinfo 
+  {
+    "OpenId": "_test_id7872345763783231860",
+    "Type": 1,
+    "Sid": 1,
+		"Token": "_SANDBOX_"
+  }"
+2014/11/19 14:35:51 [I] - [access]127.0.0.1 - - /user/gsinfo used time: 108ms
+2014/11/19 14:35:51 [I] - [access]127.0.0.1 - - [2014-11-19 14:35:51.336424182 +0800 CST] "/user/gsinfo 
+  {
+    "OpenId": "_test_id7872345763783231860",
+    "Type": 1,
+    "Sid": 1,
+		"Token": "_SANDBOX_"
+  }"
+2014/11/19 14:35:51 [I] - [access]127.0.0.1 - - /user/gsinfo used time: 98ms
+2014/11/19 14:35:51 [I] - [access]127.0.0.1 - - [2014-11-19 14:35:51.434809421 +0800 CST] "/user/gsinfo 
+  {
+    "OpenId": "_test_id7872345763783231860",
+    "Type": 1,
+    "Sid": 1,
+		"Token": "_SANDBOX_"
+  }"
+2014/11/19 14:35:51 [I] - [access]127.0.0.1 - - /user/gsinfo used time: 88ms
+2014/11/19 14:35:51 [I] - [access]127.0.0.1 - - [2014-11-19 14:35:51.523015459 +0800 CST] "/user/gsinfo 
+  {
+    "OpenId": "_test_id7872345763783231860",
+    "Type": 1,
+    "Sid": 1,
+		"Token": "_SANDBOX_"
+  }"
+2014/11/19 14:35:51 [I] - [access]127.0.0.1 - - /user/gsinfo used time: 85ms
+2014/11/19 14:35:51 [I] - [access]127.0.0.1 - - [2014-11-19 14:35:51.609044819 +0800 CST] "/user/gsinfo 
+  {
+    "OpenId": "_test_id7872345763783231860",
+    "Type": 1,
+    "Sid": 1,
+		"Token": "_SANDBOX_"
+  }"
+2014/11/19 14:35:51 [I] - [access]127.0.0.1 - - /user/gsinfo used time: 86ms
+2014/11/19 14:35:51 [I] - [access]127.0.0.1 - - [2014-11-19 14:35:51.695446411 +0800 CST] "/user/gsinfo 
+  {
+    "OpenId": "_test_id7872345763783231860",
+    "Type": 1,
+    "Sid": 1,
+		"Token": "_SANDBOX_"
+  }"
+2014/11/19 14:35:51 [I] - [access]127.0.0.1 - - /user/gsinfo used time: 105ms
+2014/11/19 14:35:51 [I] - [access]127.0.0.1 - - [2014-11-19 14:35:51.801177752 +0800 CST] "/user/gsinfo 
+  {
+    "OpenId": "_test_id7872345763783231860",
+    "Type": 1,
+    "Sid": 1,
+		"Token": "_SANDBOX_"
+  }"
+2014/11/19 14:35:51 [I] - [access]127.0.0.1 - - /user/gsinfo used time: 84ms
+2014/11/19 14:35:51 [I] - [access]127.0.0.1 - - [2014-11-19 14:35:51.885660389 +0800 CST] "/user/create 
+  {
+    "OpenId": "_test_id7872345763783231860",
+    "Type": 1,
+    "Sid": 1,
+    "RoleId": 1,
+    "Nick": "_test_nick7872345763783231860",
+		"Token": "_SANDBOX_"
+  }"
+2014/11/19 14:35:51 [E] - Process error nick name too long: _test_nick7872345763783231860
+2014/11/19 14:35:51 [I] - [access]127.0.0.1 - - /user/create used time: 0ms
+2014/11/19 14:35:51 [I] - [access]127.0.0.1 - - [2014-11-19 14:35:51.885768511 +0800 CST] "/user/logon 
+  {
+    "OpenId": "_test_id7872345763783231860",
+    "Type": 1,
+    "Sid": 1,
+		"Token": "_SANDBOX_"
+  }"
+2014/11/19 14:35:51 [E] - user nick not found, openid:_test_id7872345763783231860, itype:1, sid:1
+2014/11/19 14:35:51 [I] - [access]127.0.0.1 - - /user/logon used time: 83ms
+2014/11/19 14:35:51 [I] - [access]127.0.0.1 - - [2014-11-19 14:35:51.96899548 +0800 CST] "/user/list 
+  {
+    "OpenId": "_test_id7872345763783231860",
+    "Type": 1
+  }"
+2014/11/19 14:35:52 [I] - [access]127.0.0.1 - - /user/list used time: 290ms
+2014/11/19 14:35:52 [I] - [access]127.0.0.1 - - [2014-11-19 14:35:52.259255118 +0800 CST] "/user/update 
+  {
+    "OpenId": "_test_id7872345763783231860",
+    "Type": 1,
+    "Sid": 1,
+    "RoleLevel": 3,
+		"Token": "_SANDBOX_"
+  }"
+2014/11/19 14:35:52 [I] - [access]127.0.0.1 - - /user/update used time: 107ms
+2014/11/19 14:35:52 [I] - [access]127.0.0.1 - - [2014-11-19 14:35:52.366854857 +0800 CST] "/user/list 
+  {
+    "OpenId": "_test_id7872345763783231860",
+    "Type": 1
+  }"
+2014/11/19 14:35:52 [I] - [access]127.0.0.1 - - /user/list used time: 278ms
+2014/11/19 14:35:52 [I] - [access]127.0.0.1 - - [2014-11-19 14:35:52.64576362 +0800 CST] "/user/logon 
+  {
+    "OpenId": "_test_id_not_exist",
+    "Type": 1,
+    "Sid": 1,
+		"Token": "_SANDBOX_"
+  }"
+2014/11/19 14:35:52 [E] - user nick not found, openid:_test_id_not_exist, itype:1, sid:1
+2014/11/19 14:35:52 [I] - [access]127.0.0.1 - - /user/logon used time: 87ms

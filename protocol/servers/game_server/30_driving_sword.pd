@@ -1,0 +1,225 @@
+//
+// 云海御剑
+//
+mod driving_sword = 30
+{
+
+	//探索仙山状态
+	type exploring_mountain_status enum {
+		UNEXPLORED = 0 //未探索
+		TREASURE_EMPTY = 1 //宝箱已清空
+		IN_GARRISON = 2 //已被驻扎
+		BROKEN = 3 //不可驻扎
+	}
+
+	//拜访仙山状态
+	type visiting_mountain_status enum {
+		UNWIN = 0 //还未胜利
+		WIN = 1 //胜利未领奖
+		AWARDED = 2 //已领奖
+	}
+
+	//事件区域类型
+	type common_event enum {
+		HOLE = 0 //传送阵
+		TELEPORT = 1 //传送点
+		OBSTACLE = 2 //障碍物
+		UNKNOW_TELEPORT = 3 //未展示出的传送点（暂时客户端不会收到这类事件）
+	}
+
+	//移动方向
+	type moving_direction enum {
+		NORTH = 0 //向北走
+		SOUTH = 1 //向南走
+		WEST  = 2 //向西走
+		EAST  = 3 //向东走
+	}
+
+	//事件区列表
+	type event_areas struct {
+		common: list { //事件区列表
+			x: uint8 //事件x坐标
+			y: uint8 //事件y坐标
+			id: int8 //事件id
+			event: common_event //事件类型
+		}
+		exploring_status: list { //仙山探险状态
+			x: uint8 //事件x坐标
+			y: uint8 //事件y坐标
+			id: int8 //事件id
+			status: exploring_mountain_status //状态
+			garrison_time: int64 //已驻守时间
+		}
+		visiting_status: list { //仙山拜访状态
+			x: uint8 //事件x坐标
+			y: uint8 //事件y坐标
+			id: int8 //事件id
+			status: visiting_mountain_status //仙山状态
+			pid: int64 //目标玩家pid
+			nick: text16 //玩家昵称
+			role_id: int8 //角色
+			level: int16 //等级
+			fight_num: int32 //玩家战力
+			fashion_id: int16 //时装ID
+			friendship_level: int16 //羁绊等级
+		}
+		treasure_progress: list { //宝藏开启进度
+			x: uint8 //事件x坐标
+			y: uint8 //事件y坐标
+			id: int8 //事件id
+			progress: int8 //进度
+		}
+	}
+
+	//云海地图
+	type cloud_map struct {
+		shadows: binary16 //阴影比特序列
+		events: event_areas //事件列表
+	}
+
+
+	//获取云海地图信息
+	api cloud_map_info = 0 {
+		in {}
+		out {
+			current_cloud: int16 //当前云层
+			highest_cloud: int16 //最高开启云层
+			current_x: uint8 //当前坐标x
+			current_y: uint8 //当前坐标y
+			allowed_action: int16 //行动点
+			daily_action_bought: int8 //元宝购买行动点次数
+			map: cloud_map //云海地图
+		}
+	}
+
+	//开启云层
+	api cloud_climb = 1 {
+		in {}
+		out {}
+	}
+
+	//云层传送
+	api cloud_teleport = 2 {
+		in {
+			cloud: int16 //目标云层
+		}
+		out {
+			map: cloud_map //目的地云海地图
+		}
+	}
+
+	//同层传送
+	api area_teleport = 3 {
+		in {}
+		out {
+			events: event_areas //事件列表
+		}
+	}
+
+	//移动
+	api area_move = 4 {
+		in {
+			direction: moving_direction //移动方向
+		}
+		out {
+			events: event_areas //事件列表
+		}
+	}
+
+	//仙山探险
+	api explorer_start_battle = 5 {
+		in {}
+		out {}
+	}
+
+	//领取仙山探险奖励
+	api explorer_award = 6 {
+		in {}
+		out {}
+	}
+
+	//凶险仙山驻军
+	api explorer_garrison = 7 {
+		in {
+			role_id: int8 //派驻角色
+		}
+		out {}
+	}
+
+	//仙山拜访
+	api visit_mountain = 8 {
+		in {}
+		out {
+			status: visiting_mountain_status //仙山状态
+			pid: int64 //目标玩家id
+			nick: text16 //玩家昵称
+			role_id: int8 //角色
+			level: int16 //等级
+			fight_num: int32 //玩家战力
+			fashion_id: int16 //时装ID
+			friendship_level: int16 //羁绊等级
+		}
+	}
+
+	//仙山拜访，切磋
+	api visiter_start_battle = 9 {
+		in {}
+		out {}
+	}
+
+	//仙山拜访，领取奖励
+	api visiter_award = 10 {
+		in {}
+		out {}
+	}
+
+	//开启仙山宝箱
+	api mountain_treasure_open = 11 {
+		in {}
+		out {}
+	}
+
+	//获取仙山驻军信息列表
+	api list_garrisons = 12 {
+		in {}
+		out {
+			garrisons: list {
+				role_id: int8 //驻守角色
+				garrison_time: int64 //已驻守时间
+				awarded_time: int64 //已领奖时间
+				cloud: int16 //驻军所在云层
+				event_id: int8 //所驻扎事件仙山
+				status: exploring_mountain_status //状态
+			}
+		}
+	}
+
+	//领取驻守奖励
+	api award_garrison = 13 {
+		in {
+			role_id: int8 //派驻角色id
+		}
+		out {
+		}
+	}
+
+	//结束驻守
+	api end_garrison = 14 {
+		in {
+			role_id: int8 //派驻角色id
+		}
+		out {	
+			x: uint8 //事件x坐标
+			y: uint8 //事件y坐标
+			status: exploring_mountain_status //状态
+			cloud_id: int16 //云层
+		}
+	}
+
+	//元宝购买行动点
+	api buy_allowed_action = 15 {
+		in {}
+		out {}
+	}
+
+}

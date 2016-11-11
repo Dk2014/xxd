@@ -1,0 +1,846 @@
+package clique_war
+
+import (
+	"core/debug"
+	"core/fail"
+	"core/log"
+	"core/net"
+	"core/time"
+	"encoding/json"
+	"fmt"
+	"game_server/api/protocol/clique_war_api"
+	"game_server/battle"
+	"game_server/config"
+	"game_server/dat/clique_war_dat"
+	"game_server/dat/mail_dat"
+	"game_server/mdb"
+	"game_server/module"
+	"game_server/module/clique_war_common"
+	"game_server/module/rpc"
+	"math/rand"
+	"strconv"
+	gotime "time"
+)
+
+var Gsids []int
+
+type CliqueWarMod struct{}
+
+func init() {
+	module.CliqueWar = CliqueWarMod{}
+	module.PrepareStoreEvent.Regisiter(PerpareStoreHandler)
+}
+
+func PerpareStoreHandler(session *net.Session) {
+	state := module.State(session)
+
+	if state.CliqueWarState != nil {
+		if state.Battle != nil {
+			state.Battle.LeaveBattle(session)
+		}
+		state.CliqueWarState = nil
+		state.Battle = nil
+	}
+}
+
+func (mod CliqueWarMod) HandleInit(gsids []int) {
+	Gsids = gsids
+	LoadGlobal()
+	CheckSignUp()
+	FightList()
+	CheckReady()
+	CheckStart()
+	CheckEnd()
+}
+
+func CheckSignUp() {
+	if len(Gsids) > 0 {
+		mdb.GlobalExecute(func(globalDB *mdb.Database) {
+			var checked bool
+			cliqueWarinfo := GetGlobalCliqueWar(globalDB)
+			if cliqueWarinfo.CheckedTimestamp > 0 {
+				checked = true
+			}
+			duration := GetCheckListUnix(checked)
+			fmt.Println(duration + 1)
+			gotime.AfterFunc(gotime.Second*gotime.Duration(duration+1), func() {
+				defer func() {
+					if err := recover(); err != nil {
+						log.Errorf("module.CliqueWar.CheckSignUp() error: %v\n Stack %s \n", err, debug.Stack(1, "    "))
+					}
+				}()
+				defer CheckSignUp()
+
+				ResetGlobal()
+				mdb.Transaction(mdb.TRANS_TAG_CliqueWarCheckSignUp, func() {
+					globalDB.Select.GlobalCliqueWarPlayerInfo(func(row *mdb.GlobalCliqueWarPlayerInfoRow) {
+						globalDB.Delete.GlobalCliqueWarPlayerInfo(row.GoObject())
+					})
+					// 	// rpc 通知对应的游戏互动服，帮派战开启
+					for _, v := range Gsids {
+						var sid int
+						if v == 2 || v == 12 || v == 929 || v == 939 || v == 101 || v == 50101 {
+							// todo 本地测试固定rpc列表
+							sid = v
+						} else if config.ServerCfg.EnableCliqueWarDebugMode != true {
+							if v != 1 && v != 10 && v != 11 && v != 9988 && v != 4 && v != 928 && v != 938 && v != 10101 && v != 50001 {
+								serverIndex := string(strconv.Itoa(v)[1])
+								if serverIndex == "1" {
+									sid = v
+								}
+							}
+						}
+						if sid > 0 {
+							rpc.RemoteCliqueWarList(sid, func(reply *rpc.Reply_CliqueWarList) {
+								for _, v := range reply.PlayerList {
+									globalDB.Insert.GlobalCliqueWarPlayerInfo(&mdb.GlobalCliqueWarPlayerInfo{
+										Pid:            v.Pid,
+										Name:           v.Nick,
+										CliqueId:       v.CliqueId,
+										CliqueServerId: int64(v.CliqueServerId),
+										FightNum:       int64(v.FightNum),
+										Point:          0,
+										Level:          v.Level,
+										RoleId:         v.RoleId,
+									})
+									globalPlayerPointTable.AddWithLock(clique_war_common.GlobalPlayerPointData{
+										Pid:      v.Pid,
+										Name:     v.Nick,
+										Sid:      v.CliqueServerId,
+										Point:    0,
+										CliqueId: v.CliqueId,
+										FightNum: v.FightNum,
+										Level:    v.Level,
+										RoleId:   v.RoleId,
+									})
+									globalPlayerFightNumTable.AddWithLock(clique_war_common.GlobalPlayerFightNumData{
+										Pid:      v.Pid,
+										Name:     v.Nick,
+										Sid:      v.CliqueServerId,
+										FightNum: v.FightNum,
+										CliqueId: v.CliqueId,
+										Level:    v.Level,
+										RoleId:   v.RoleId,
+									})
+									globalCliqueFightNumTable.AddWithLock(clique_war_common.GlobalCliqueFightNumData{
+										FightNum:   v.FightNum,
+										CliqueId:   v.CliqueId,
+										GlobalSid:  sid,
+										Sid:        v.CliqueServerId,
+										CliqueName: v.CliqueName,
+									})
+								}
+							})
+						}
+					}
+				})
+			})
+		})
+	}
+}
+
+func FightList() {
+	if len(Gsids) > 0 {
+		mdb.GlobalExecute(func(globalDB *mdb.Database) {
+			var checked bool
+			var duration int64
+			cliqueWarinfo := GetGlobalCliqueWar(globalDB)
+			if cliqueWarinfo.CheckedTimestamp > 0 {
+				checked = true
+			}
+			if config.ServerCfg.EnableCliqueWarDebugMode != true {
+				duration = GetCheckListUnix(checked) + 10*60
+			} else {
+				duration = GetCheckListUnix(checked) + 5
+			}
+			fmt.Println(duration)
+			gotime.AfterFunc(gotime.Second*gotime.Duration(duration), func() {
+				defer func() {
+					if err := recover(); err != nil {
+						log.Errorf("module.CliqueWar.FightList() error: %v\n Stack %s \n", err, debug.Stack(1, "    "))
+					}
+				}()
+				defer FightList()
+
+				mdb.Transaction(mdb.TRANS_TAG_CliqueWarFightList, func() {
+					rand.New(rand.NewSource(gotime.Now().UnixNano()))
+					globalDB.Select.GlobalCliqueWarFightInfo(func(row *mdb.GlobalCliqueWarFightInfoRow) {
+						globalDB.Delete.GlobalCliqueWarFightInfo(row.GoObject())
+					})
+					cliqueInfos := GetCliqueInfo()
+					cliqueInfoLen := len(cliqueInfos)
+					groups := cliqueInfoLen/10 + 1
+					for i := 0; i < groups; i++ {
+						var sliceLen int
+						if i == groups-1 {
+							sliceLen = cliqueInfoLen % 10
+							if sliceLen%2 != 0 {
+								failedClique := cliqueInfos[i*10+sliceLen-1]
+								rpc.RemoteCliqueWarListNotify(failedClique.GlobalSid, failedClique.CliqueId, "", false)
+								sliceLen -= 1
+							}
+						} else {
+							sliceLen = 10
+						}
+						ints := rand.Perm(sliceLen)
+						for j := 0; j < sliceLen; j++ {
+							var cliqueInfo1, cliqueInfo2 clique_war_common.GlobalCliqueFightNumData
+							if j%2 != 0 {
+								cliqueInfo1 = cliqueInfos[i*10+ints[j-1]]
+								cliqueInfo2 = cliqueInfos[i*10+ints[j]]
+								globalDB.Insert.GlobalCliqueWarFightInfo(&mdb.GlobalCliqueWarFightInfo{
+									CliqueId1:             cliqueInfo1.CliqueId,
+									CliqueName1:           cliqueInfo1.CliqueName,
+									CliqueServerId1:       int64(cliqueInfo1.Sid),
+									CliqueGlobalServerId1: int64(cliqueInfo1.GlobalSid),
+									CliquePoint1:          0,
+									CliqueId2:             cliqueInfo2.CliqueId,
+									CliqueName2:           cliqueInfo2.CliqueName,
+									CliqueServerId2:       int64(cliqueInfo2.Sid),
+									CliqueGlobalServerId2: int64(cliqueInfo1.GlobalSid),
+									CliquePoint2:          0,
+								})
+								rpc.RemoteCliqueWarListNotify(cliqueInfo1.GlobalSid, cliqueInfo1.CliqueId, cliqueInfo2.CliqueName, true)
+								rpc.RemoteCliqueWarListNotify(cliqueInfo2.GlobalSid, cliqueInfo2.CliqueId, cliqueInfo1.CliqueName, true)
+							} else {
+								continue
+							}
+						}
+					}
+					cliqueWarinfo := GetGlobalCliqueWar(globalDB)
+					cliqueWarinfo.CheckedTimestamp = time.GetNowTime()
+					globalDB.Update.GlobalCliqueWar(cliqueWarinfo)
+				})
+			})
+		})
+	}
+}
+
+func CheckReady() {
+	if len(Gsids) > 0 {
+		mdb.GlobalExecute(func(globalDB *mdb.Database) {
+			duration := GetReadyUnix()
+			cliqueWarinfo := GetGlobalCliqueWar(globalDB)
+			openDuration := GetOpenUnix(cliqueWarinfo.Timestamp)
+			fmt.Println(duration)
+			gotime.AfterFunc(gotime.Second*gotime.Duration(duration), func() {
+				defer func() {
+					if err := recover(); err != nil {
+						log.Errorf("module.CliqueWar.CheckReady() error: %v\n Stack %s \n", err, debug.Stack(1, "    "))
+					}
+				}()
+				defer CheckReady()
+
+				var checked bool
+				cliqueWarinfo := GetGlobalCliqueWar(globalDB)
+				if cliqueWarinfo.CheckedTimestamp > 0 {
+					checked = true
+				}
+
+				if checked {
+					// rpc 通知对应的游戏互动服，帮派战开启
+					for _, v := range Gsids {
+						var sid int
+						if v == 2 || v == 12 || v == 929 || v == 939 || v == 101 || v == 50101 {
+							//todo 本地测试固定rpc列表
+							sid = v
+						} else if config.ServerCfg.EnableCliqueWarDebugMode != true {
+							if v != 1 && v != 10 && v != 11 && v != 9988 && v != 4 && v != 928 && v != 938 && v != 10101 && v != 50001 {
+								serverIndex := string(strconv.Itoa(v)[1])
+								if serverIndex == "1" {
+									sid = v
+								}
+							}
+						}
+						if sid > 0 {
+							rpc.RemoteCliqueWarReadyNotify(sid, &clique_war_api.NotifyWarReady_Out{RemainTime: openDuration})
+						}
+					}
+				}
+			})
+		})
+	}
+}
+
+func CheckStart() {
+	if len(Gsids) > 0 {
+		mdb.GlobalExecute(func(globalDB *mdb.Database) {
+			cliqueWarinfo := GetGlobalCliqueWar(globalDB)
+			duration := GetOpenUnix(cliqueWarinfo.Timestamp)
+			fmt.Println(duration)
+			gotime.AfterFunc(gotime.Second*gotime.Duration(duration), func() {
+				defer func() {
+					if err := recover(); err != nil {
+						log.Errorf("module.CliqueWar.CheckStart() error: %v\n Stack %s \n", err, debug.Stack(1, "    "))
+					}
+				}()
+				defer CheckStart()
+
+				var checked bool
+				cliqueWarinfo := GetGlobalCliqueWar(globalDB)
+				if cliqueWarinfo.CheckedTimestamp > 0 {
+					checked = true
+				}
+
+				mdb.Transaction(mdb.TRANS_TAG_CliqueWarCheckStart, func() {
+					cliqueWarinfo := GetGlobalCliqueWar(globalDB)
+					ResetGLobalCliqueWar(globalDB, cliqueWarinfo)
+
+					// rpc 通知对应的游戏互动服，帮派战开启
+					if checked {
+						for _, v := range Gsids {
+							var sid int
+							if v == 2 || v == 12 || v == 929 || v == 939 || v == 101 || v == 50101 {
+								//todo 本地测试固定rpc列表
+								sid = v
+							} else if config.ServerCfg.EnableCliqueWarDebugMode != true {
+								if v != 1 && v != 10 && v != 11 && v != 9988 && v != 4 && v != 928 && v != 938 && v != 10101 && v != 50001 {
+									serverIndex := string(strconv.Itoa(v)[1])
+									if serverIndex == "1" {
+										sid = v
+									}
+								}
+							}
+							if sid > 0 {
+								rpc.RemoteCliqueWarStartNotify(sid, &clique_war_api.NotifyWarStart_Out{})
+							}
+						}
+					}
+				})
+			})
+		})
+	}
+}
+
+func CheckEnd() {
+	if len(Gsids) > 0 {
+		mdb.GlobalExecute(func(globalDB *mdb.Database) {
+			cliqueWarinfo := GetGlobalCliqueWar(globalDB)
+			duration := GetEndUnix(cliqueWarinfo.Timestamp)
+			//延迟8秒结算
+			fmt.Print(duration + 8)
+			gotime.AfterFunc(gotime.Second*gotime.Duration(duration+8), func() {
+				defer func() {
+					if err := recover(); err != nil {
+						log.Errorf("module.CliqueWar.CheckEnd() error: %v\n Stack %s \n", err, debug.Stack(1, "    "))
+					}
+				}()
+				defer CheckEnd()
+
+				var checked bool
+				cliqueWarinfo := GetGlobalCliqueWar(globalDB)
+				if cliqueWarinfo.CheckedTimestamp > 0 {
+					checked = true
+				}
+
+				mdb.Transaction(mdb.TRANS_TAG_CliqueWarCheckEnd, func() {
+					if checked {
+						globalWarInfo := module.CliqueWar.GetGlobalCliqueWar(globalDB)
+						if globalWarInfo != nil {
+							globalDB.Select.GlobalCliqueWarFightInfo(func(row *mdb.GlobalCliqueWarFightInfoRow) {
+								if row.CliquePoint1() > row.CliquePoint2() {
+									doWin(globalDB, row.CliqueId1(), row.CliqueServerId1(), row.CliquePoint1(), row.CliquePoint2(), row.CliqueName2())
+									doLose(globalDB, row.CliqueId2(), row.CliqueServerId2(), row.CliquePoint2(), row.CliquePoint1(), row.CliqueName1())
+								} else if row.CliquePoint1() == row.CliquePoint2() {
+									doLose(globalDB, row.CliqueId1(), row.CliqueServerId1(), row.CliquePoint1(), row.CliquePoint2(), row.CliqueName2())
+									doLose(globalDB, row.CliqueId2(), row.CliqueServerId2(), row.CliquePoint2(), row.CliquePoint1(), row.CliqueName1())
+								} else {
+									doLose(globalDB, row.CliqueId1(), row.CliqueServerId1(), row.CliquePoint1(), row.CliquePoint2(), row.CliqueName2())
+									doWin(globalDB, row.CliqueId2(), row.CliqueServerId2(), row.CliquePoint2(), row.CliquePoint1(), row.CliqueName1())
+								}
+								doSaveHistory(globalDB, globalWarInfo, row.GoObject())
+							})
+
+							// rpc 通知对应的游戏互动服，帮派战开启
+							for _, v := range Gsids {
+								var sid int
+								if v == 2 || v == 12 || v == 929 || v == 939 || v == 101 || v == 50101 {
+									//todo 本地测试固定rpc列表
+									sid = v
+								} else if config.ServerCfg.EnableCliqueWarDebugMode != true {
+									if v != 1 && v != 10 && v != 11 && v != 9988 && v != 4 && v != 928 && v != 938 && v != 10101 && v != 50001 {
+										serverIndex := string(strconv.Itoa(v)[1])
+										if serverIndex == "1" {
+											sid = v
+										}
+									}
+								}
+								if sid > 0 {
+									rpc.RemoteCliqueWarEndNotify(sid, &clique_war_api.NotifyWarEnd_Out{})
+								}
+							}
+						}
+						cliqueWarinfo.CheckedTimestamp = 0
+						globalDB.Update.GlobalCliqueWar(cliqueWarinfo)
+					}
+				})
+				ResetGlobal()
+			})
+		})
+	}
+}
+
+func doWin(db *mdb.Database, cliqueId int64, cliqueServerId int64, point1, point2 int16, battleCliqueName string) {
+	db.Select.GlobalCliqueWarPlayerInfo(func(row *mdb.GlobalCliqueWarPlayerInfoRow) {
+		if row.CliqueId() == cliqueId && row.CliqueServerId() == cliqueServerId {
+			attachments := []*mail_dat.Attachment{}
+			attachments = append(attachments, &mail_dat.Attachment{
+				AttachmentType: mail_dat.ATTACHMENT_CONTRIB,
+				ItemNum:        clique_war_dat.CLIQUE_WAR_WINNER_FAME,
+			})
+			attachments = append(attachments, &mail_dat.Attachment{
+				AttachmentType: mail_dat.ATTACHMENT_ITEM,
+				ItemId:         clique_war_dat.CLIQUE_WAR_WINNER_BOX,
+				ItemNum:        1,
+			})
+			mail := &mail_dat.Mailcliquewin{}
+			mail.BattleCliqueName = battleCliqueName
+			mail.Point1 = fmt.Sprint(point1)
+			mail.Point2 = fmt.Sprint(point2)
+			mail.Attachments = attachments
+			rpc.RemoteMailSend(row.Pid(), mail)
+		}
+	})
+}
+
+func doLose(db *mdb.Database, cliqueId int64, cliqueServerId int64, point1, point2 int16, battleCliqueName string) {
+	db.Select.GlobalCliqueWarPlayerInfo(func(row *mdb.GlobalCliqueWarPlayerInfoRow) {
+		if row.CliqueId() == cliqueId && row.CliqueServerId() == cliqueServerId {
+			attachments := []*mail_dat.Attachment{}
+			attachments = append(attachments, &mail_dat.Attachment{
+				AttachmentType: mail_dat.ATTACHMENT_CONTRIB,
+				ItemNum:        clique_war_dat.CLIQUE_WAR_LOSE_FAME,
+			})
+			mail := &mail_dat.Mailcliquelost{}
+			mail.BattleCliqueName = battleCliqueName
+			mail.Point1 = fmt.Sprint(point1)
+			mail.Point2 = fmt.Sprint(point2)
+			mail.Attachments = attachments
+			rpc.RemoteMailSend(row.Pid(), mail)
+		}
+	})
+}
+
+func doSaveHistory(db *mdb.Database, globalWarInfo *mdb.GlobalCliqueWar, data *mdb.GlobalCliqueWarFightInfo) {
+	db.Insert.GlobalCliqueWarHistory(&mdb.GlobalCliqueWarHistory{
+		Version:               globalWarInfo.Version,
+		Timestamp:             time.GetNowTime(),
+		StartTimestamp:        globalWarInfo.Timestamp,
+		CliqueId1:             data.CliqueId1,
+		CliqueName1:           data.CliqueName1,
+		CliqueServerId1:       data.CliqueServerId1,
+		CliqueGlobalServerId1: data.CliqueGlobalServerId1,
+		CliquePoint1:          data.CliquePoint1,
+		CliqueId2:             data.CliqueId2,
+		CliqueName2:           data.CliqueName2,
+		CliqueServerId2:       data.CliqueServerId2,
+		CliqueGlobalServerId2: data.CliqueGlobalServerId2,
+		CliquePoint2:          data.CliquePoint2,
+	})
+}
+
+func StartCliqueWar(session *net.Session, targetPlayerId int64) {
+	state := module.State(session)
+	db := state.Database
+	args := []*rpc.Args_NewPlayerFighter{{Pid: targetPlayerId, AutoFight: true}}
+	nowTime := gotime.Now()
+	nowUnix := nowTime.Unix()
+
+	var cliquewarStartTime, cliquewarEndTime int64
+	if config.ServerCfg.EnableCliqueWarDebugMode != true {
+		cliquewarStartTime = time.GetThisWeekdayPoint(clique_war_dat.CLIQUE_WAR_TIME_DAY, clique_war_dat.CLIQUE_WAR_TIME_HOUR, clique_war_dat.CLIQUE_WAR_TIME_MINUTE, nowUnix)
+		cliquewarEndTime = cliquewarStartTime + clique_war_dat.CLIQUE_WAR_DURATION
+	} else {
+		nowHour := time.GetNextHourTime(gotime.Now()) - 3600
+		nowHourSecond := nowUnix - nowHour
+		Minutes := nowHourSecond / 600
+		cliquewarStartTime = nowHour + Minutes*600 + 300
+		cliquewarEndTime = cliquewarStartTime + 240
+	}
+	if nowUnix > cliquewarEndTime || nowUnix < cliquewarStartTime {
+		fail.When(true, "not in time")
+	}
+	playerCliqueWarBattleTimes := GetPlayerCliqueWarBattleTimes(db, cliquewarStartTime, nowUnix)
+	fail.When(playerCliqueWarBattleTimes.Times == 0, "clique war battle times limit")
+	playerCliqueWarBattleTimes.Times -= 1
+	playerCliqueWarBattleTimes.Timestamp = nowUnix
+	db.Update.PlayerCliqueWarBattleTimes(playerCliqueWarBattleTimes)
+	rpc.RemoteNewPlayerFighter(args, func(replys []*rpc.Reply_NewPlayerFighter, errs []error) {
+		for _, err := range errs {
+			fail.When(err != nil, errs)
+		}
+
+		fighters := make([]*battle.Fighter, module.ALL_FIGHTER_POS_NUM)
+		var battlePlayerInfo *battle.BattlePlayerInfo
+		var battleTotemInfo [5]*battle.TotemInfo
+
+		for _, reply := range replys {
+			battlePlayerInfo = reply.BattlePlayerInfo
+			err := json.Unmarshal(reply.TotemInfo, &battleTotemInfo)
+			fail.When(err != nil, err)
+			battlePlayerInfo.Auto = true
+			for _, raw := range reply.Fighters {
+				fighter := new(battle.Fighter)
+				err := json.Unmarshal(raw, fighter)
+				fail.When(err != nil, err)
+				fighters[fighter.Position-1] = fighter
+				if fighter != nil {
+					fighter.MaxHealth *= 2
+					fighter.Health = fighter.MaxHealth
+				}
+			}
+		}
+
+		defendSide := &battle.SideInfo{
+			Groups:    [][]*battle.Fighter{fighters},
+			Fighters:  fighters,
+			Players:   []*battle.BattlePlayerInfo{battlePlayerInfo},
+			TotemInfo: battleTotemInfo,
+		}
+
+		mdb.GlobalExecute(func(globalDB *mdb.Database) {
+			globalDB.AgentExecute(state.PlayerId, func(db *mdb.Database) {
+				attackSide, _ := module.NewBattleSideWithPlayerDatabase(db, false, true, true)
+				for _, f := range attackSide.Fighters {
+					if f != nil {
+						f.MaxHealth *= 2
+						f.Health = f.MaxHealth
+					}
+				}
+				state.Battle = module.Battle.NewBattleForPVE(session, battle.BT_CLIQUE_WAR, attackSide, defendSide, true, false)
+				state.CliqueWarState = &module.PlayerCliqueWarState{
+					TargetPlayerId: targetPlayerId,
+				}
+			})
+		})
+	})
+}
+
+func (mod CliqueWarMod) BattleDoWin(session *net.Session) {
+	BattleEnd(session, true)
+}
+
+func (mod CliqueWarMod) BattleDoLose(session *net.Session) {
+	BattleEnd(session, false)
+}
+
+func BattleEnd(session *net.Session, isWin bool) {
+	state := module.State(session)
+	db := state.Database
+
+	pid := state.PlayerId
+	cliqueWarState := state.CliqueWarState
+
+	data := clique_war_common.CliqueWarBattleInfo{
+		Pid:       pid,
+		TargetPid: cliqueWarState.TargetPlayerId,
+	}
+	if isWin {
+		playerCliqueWarBattleTimes := GetPlayerCliqueWarBattleTimes(db, 0, 0)
+		if playerCliqueWarBattleTimes.FightPid1 != cliqueWarState.TargetPlayerId && playerCliqueWarBattleTimes.FightPid2 != cliqueWarState.TargetPlayerId && playerCliqueWarBattleTimes.FightPid3 != cliqueWarState.TargetPlayerId {
+			if playerCliqueWarBattleTimes.FightPid1 == 0 {
+				playerCliqueWarBattleTimes.FightPid1 = cliqueWarState.TargetPlayerId
+			} else if playerCliqueWarBattleTimes.FightPid2 == 0 {
+				playerCliqueWarBattleTimes.FightPid2 = cliqueWarState.TargetPlayerId
+			} else if playerCliqueWarBattleTimes.FightPid3 == 0 {
+				playerCliqueWarBattleTimes.FightPid3 = cliqueWarState.TargetPlayerId
+			}
+		} else {
+			isWin = false
+		}
+		db.Update.PlayerCliqueWarBattleTimes(playerCliqueWarBattleTimes)
+	}
+	rpc.RemoteUpdateCliqueWarBattleInfo(isWin, data)
+}
+
+func (mod CliqueWarMod) UpdateGlobal(db *mdb.Database, battleInfo clique_war_common.CliqueWarBattleInfo, isWin bool) {
+	var Point int16
+	PlayerInfo := db.Lookup.GlobalCliqueWarPlayerInfo(battleInfo.Pid)
+	TargetPlayerInfo := db.Lookup.GlobalCliqueWarPlayerInfo(battleInfo.TargetPid)
+	if PlayerInfo != nil && TargetPlayerInfo != nil {
+		PlayerInfo.HasBattled = 1
+		if isWin {
+			if PlayerInfo.FightPid1 == 0 {
+				PlayerInfo.FightPid1 = battleInfo.TargetPid
+			} else if PlayerInfo.FightPid2 == 0 {
+				PlayerInfo.FightPid2 = battleInfo.TargetPid
+			} else if PlayerInfo.FightPid3 == 0 {
+				PlayerInfo.FightPid3 = battleInfo.TargetPid
+			}
+			Point = getPoint(PlayerInfo.FightNum, TargetPlayerInfo.FightNum, 0)
+			db.Select.GlobalCliqueWarFightInfo(func(row *mdb.GlobalCliqueWarFightInfoRow) {
+				var data *mdb.GlobalCliqueWarFightInfo
+				if row.CliqueId1() == PlayerInfo.CliqueId && row.CliqueServerId1() == PlayerInfo.CliqueServerId {
+					data = row.GoObject()
+					data.CliquePoint1 += Point
+				}
+				if row.CliqueId2() == PlayerInfo.CliqueId && row.CliqueServerId2() == PlayerInfo.CliqueServerId {
+					data = row.GoObject()
+					data.CliquePoint2 += Point
+				}
+				if data != nil {
+					db.Update.GlobalCliqueWarFightInfo(data)
+					row.Break()
+				}
+			})
+			if PlayerInfo.FightPid1 != battleInfo.TargetPid && PlayerInfo.FightPid1 != battleInfo.TargetPid && PlayerInfo.FightPid1 != battleInfo.TargetPid {
+				if PlayerInfo.FightPid1 == 0 {
+					PlayerInfo.FightPid1 = battleInfo.TargetPid
+				} else if PlayerInfo.FightPid2 == 0 {
+					PlayerInfo.FightPid2 = battleInfo.TargetPid
+				} else if PlayerInfo.FightPid3 == 0 {
+					PlayerInfo.FightPid3 = battleInfo.TargetPid
+				}
+			}
+			globalPlayerPointTable.AddWithLock(clique_war_common.GlobalPlayerPointData{
+				Pid:      battleInfo.Pid,
+				Sid:      int(PlayerInfo.CliqueServerId),
+				Point:    Point,
+				CliqueId: PlayerInfo.CliqueId,
+			})
+		}
+	}
+	db.Update.GlobalCliqueWarPlayerInfo(PlayerInfo)
+}
+
+func (mod CliqueWarMod) GetGlobalCliqueWar(db *mdb.Database) *mdb.GlobalCliqueWar {
+	return GetGlobalCliqueWar(db)
+}
+
+func (mod CliqueWarMod) GetPlayerMembers(db *mdb.Database, cliqueId int64, cliqueServerId int, pid int64) (playerMembers []clique_war_api.WarInfo_Out_MemberList, fightNum int64) {
+	for i := int64(0); i <= 30000; i++ {
+		globalPlayerMemberData, ok := globalPlayerPointTable.GetByRank(i)
+		if !ok {
+			break
+		}
+
+		if globalPlayerMemberData.Pid == pid {
+			fightNum = globalPlayerMemberData.FightNum
+		}
+		if globalPlayerMemberData.CliqueId == cliqueId && globalPlayerMemberData.Sid == cliqueServerId {
+			globalCliqueWarPlayerInfo := db.Lookup.GlobalCliqueWarPlayerInfo(globalPlayerMemberData.Pid)
+			playerMembers = append(playerMembers, clique_war_api.WarInfo_Out_MemberList{
+				GotPoint:   globalPlayerMemberData.Point,
+				Pid:        globalPlayerMemberData.Pid,
+				Name:       []byte(globalPlayerMemberData.Name),
+				FightNum:   globalPlayerMemberData.FightNum,
+				ServerId:   int64(globalPlayerMemberData.Sid),
+				HasBattled: int32(globalCliqueWarPlayerInfo.HasBattled),
+				Level:      globalPlayerMemberData.Level,
+				RoleId:     globalPlayerMemberData.RoleId,
+			})
+		}
+	}
+	return playerMembers, fightNum
+}
+
+func (mod CliqueWarMod) GetBattlePlayerMembers(db *mdb.Database, cliqueId int64, cliqueServerId int, fightNum int64, pid int64) (playerBattleMembers []clique_war_api.WarInfo_Out_BattleMemerList) {
+	globalCliqueWarPlayerInfo := db.Lookup.GlobalCliqueWarPlayerInfo(pid)
+	for i := int64(0); i <= 30000; i++ {
+		var hasWin int32
+		globalBattlePlayerMemberData, ok := globalPlayerFightNumTable.GetByRank(i)
+		if !ok {
+			break
+		}
+		if globalBattlePlayerMemberData.CliqueId == cliqueId && globalBattlePlayerMemberData.Sid == cliqueServerId {
+			if globalCliqueWarPlayerInfo.FightPid1 == globalBattlePlayerMemberData.Pid || globalCliqueWarPlayerInfo.FightPid2 == globalBattlePlayerMemberData.Pid || globalCliqueWarPlayerInfo.FightPid3 == globalBattlePlayerMemberData.Pid {
+				hasWin = 1
+			}
+			point := getPoint(fightNum, globalBattlePlayerMemberData.FightNum, hasWin)
+			playerBattleMembers = append(playerBattleMembers, clique_war_api.WarInfo_Out_BattleMemerList{
+				Point:    point,
+				Pid:      globalBattlePlayerMemberData.Pid,
+				Name:     []byte(globalBattlePlayerMemberData.Name),
+				FightNum: globalBattlePlayerMemberData.FightNum,
+				ServerId: int64(globalBattlePlayerMemberData.Sid),
+				HasWin:   hasWin,
+				Level:    globalBattlePlayerMemberData.Level,
+				RoleId:   globalBattlePlayerMemberData.RoleId,
+			})
+		}
+	}
+	return playerBattleMembers
+}
+
+func GetCliqueInfo() (cliqueInfos []clique_war_common.GlobalCliqueFightNumData) {
+	for i := int64(0); i <= 30000; i++ {
+		globalCliqueData, ok := globalCliqueFightNumTable.GetByRank(i)
+		if !ok {
+			break
+		}
+		cliqueInfos = append(cliqueInfos, globalCliqueData)
+	}
+	return cliqueInfos
+}
+
+func GetSignUpCliqueWarInfo(session *net.Session, out *clique_war_api.SignUpCliqueWarInfo_Out) {
+	state := module.State(session)
+	db := state.Database
+	nowTime := gotime.Now()
+	nowUnix := nowTime.Unix()
+
+	var signUpStartTime, signUpEndTime int64
+	playerCliqueInfo := db.Lookup.PlayerGlobalCliqueInfo(state.PlayerId)
+	fail.When(playerCliqueInfo == nil, "player no clique")
+	cliqueInfo := db.Lookup.GlobalClique(playerCliqueInfo.CliqueId)
+	fail.When(cliqueInfo == nil, "clique not build")
+	if cliqueInfo != nil {
+
+		if config.ServerCfg.EnableCliqueWarDebugMode != true {
+			signUpStartTime = time.GetThisWeekdayPoint(clique_war_dat.SIGN_UP_START_TIME_DAY, clique_war_dat.SIGN_UP_START_TIME_HOUR, clique_war_dat.SIGN_UP_START_TIME_MINUTE, nowUnix)
+			signUpEndTime = time.GetThisWeekdayPoint(clique_war_dat.SIGN_UP_END_TIME_DAY, clique_war_dat.SIGN_UP_END_TIME_HOUR, clique_war_dat.SIGN_UP_END_TIME_MINUTE, nowUnix)
+		} else {
+			nowHour := time.GetNextHourTime(gotime.Now()) - 3600
+			nowHourSecond := nowUnix - nowHour
+			Minutes := nowHourSecond / 600
+			signUpStartTime = nowHour + Minutes*600
+			signUpEndTime = signUpStartTime + 240
+		}
+		if signUpStartTime <= cliqueInfo.SignUpTimestamp && cliqueInfo.SignUpTimestamp <= signUpEndTime {
+			out.Result = true
+		}
+		session.Send(out)
+	}
+}
+
+func getPoint(fightNum, targetFightNum int64, haswin int32) (point int16) {
+	if fightNum+fightNum/10 < targetFightNum {
+		point = 3
+	} else if targetFightNum < fightNum+fightNum/10 && fightNum-fightNum/10 < targetFightNum {
+		point = 2
+	} else {
+		point = 1
+	}
+	if haswin == 1 {
+		point = 0
+	}
+	return point
+}
+
+func GetCheckListUnix(checked bool) int64 {
+	var duration int64
+	nowTime := gotime.Now()
+	nowUnix := nowTime.Unix()
+	if config.ServerCfg.EnableCliqueWarDebugMode != true {
+		timeNeedCheckList := time.GetThisWeekdayPoint(clique_war_dat.SIGN_UP_END_TIME_DAY, clique_war_dat.SIGN_UP_END_TIME_HOUR, clique_war_dat.SIGN_UP_END_TIME_MINUTE, nowUnix)
+		timeNeedCheckListNext := timeNeedCheckList + 7*24*60*60
+		if checked {
+			duration = timeNeedCheckListNext - nowUnix
+		} else {
+			duration = timeNeedCheckList - nowUnix
+		}
+	} else {
+		//每整10分钟的4分钟，这里返回截止时间报名截止时间
+		nowHour := time.GetNextHourTime(gotime.Now()) - 3600
+		nowHourSecond := nowUnix - nowHour
+		duration = nowHourSecond % 600
+		//这个10分钟已经过了，下10分钟开启
+		if duration > 240 {
+			duration = 600 + 240 - duration
+		} else {
+			//没过，等这个10分钟
+			duration = 240 - duration
+		}
+	}
+	return duration
+}
+
+func GetReadyUnix() int64 {
+	var duration int64
+	nowTime := gotime.Now()
+	nowUnix := nowTime.Unix()
+	if config.ServerCfg.EnableCliqueWarDebugMode != true {
+		timeNeedReady := time.GetThisWeekdayPoint(clique_war_dat.CLIQUE_WAR_TIME_DAY, clique_war_dat.CLIQUE_WAR_TIME_HOUR, clique_war_dat.CLIQUE_WAR_TIME_MINUTE, nowUnix) - 10*60
+		timeNeedReadyNext := timeNeedReady + 7*24*60*60
+		if nowUnix < timeNeedReady {
+			duration = timeNeedReady - nowUnix
+		} else if nowUnix <= timeNeedReady+10*60 {
+			duration = 10
+		} else if nowUnix < timeNeedReadyNext {
+			duration = timeNeedReadyNext - nowUnix
+		} else {
+			duration = 9999999
+		}
+	} else {
+		//每10分钟的4分30秒，这里返回准备时间
+		nowHour := time.GetNextHourTime(gotime.Now()) - 3600
+		nowHourSecond := nowUnix - nowHour
+		duration = nowHourSecond % 600
+		if duration < 270 {
+			//如果不到4分，就等4分发送
+			duration = 270 - duration
+
+		} else if duration >= 270 && duration < 270-10 {
+			//如果在4~5之间，说明发送
+			duration = 10
+		} else {
+			//如果超过，则等下10分钟
+			duration = 600 + 270 - duration
+		}
+	}
+	return duration
+}
+
+func GetOpenUnix(openTime int64) int64 {
+	var duration int64 = 0
+	nowTime := gotime.Now()
+	nowUnix := nowTime.Unix()
+	if config.ServerCfg.EnableCliqueWarDebugMode != true {
+		timeNeedOpen := time.GetThisWeekdayPoint(clique_war_dat.CLIQUE_WAR_TIME_DAY, clique_war_dat.CLIQUE_WAR_TIME_HOUR, clique_war_dat.CLIQUE_WAR_TIME_MINUTE, nowUnix)
+		timeNeedOpenNext := timeNeedOpen + 7*34*60*60
+		if openTime < timeNeedOpen && nowUnix < timeNeedOpen+clique_war_dat.CLIQUE_WAR_DURATION {
+			duration = timeNeedOpen - nowUnix
+		} else if openTime < timeNeedOpenNext && nowUnix < timeNeedOpenNext+clique_war_dat.CLIQUE_WAR_DURATION {
+			duration = timeNeedOpenNext - nowUnix
+		} else {
+			duration = 9999999
+		}
+	} else {
+		//每10分的5分钟，开启帮派战
+		nowHour := time.GetNextHourTime(gotime.Now()) - 3600
+		nowHourSecond := nowUnix - nowHour
+		duration = nowHourSecond % 600
+		if duration < 300 {
+			//如果不到5，就等5分发送
+			duration = 300 - duration
+		} else {
+			//如果超过，则等下10分
+			duration = 600 + 300 - duration
+		}
+	}
+	return duration
+}
+
+func GetEndUnix(openTime int64) int64 {
+	var duration int64 = 0
+	nowTime := gotime.Now()
+	nowUnix := nowTime.Unix()
+	if config.ServerCfg.EnableCliqueWarDebugMode != true {
+		timeNeedOpen := time.GetThisWeekdayPoint(clique_war_dat.CLIQUE_WAR_TIME_DAY, clique_war_dat.CLIQUE_WAR_TIME_HOUR, clique_war_dat.CLIQUE_WAR_TIME_MINUTE, nowUnix)
+		timeNeedOpenNext := timeNeedOpen + 7*24*60*60
+		timeNeedClose := timeNeedOpen + clique_war_dat.SIGN_UP_START_TIME_MINUTE*60
+		if openTime < timeNeedOpen {
+			duration = timeNeedClose - nowUnix
+		} else if openTime >= timeNeedOpen && nowUnix <= timeNeedOpen+clique_war_dat.CLIQUE_WAR_DURATION {
+			duration = timeNeedOpen + clique_war_dat.CLIQUE_WAR_DURATION - nowUnix
+		} else if nowUnix <= timeNeedOpenNext+clique_war_dat.CLIQUE_WAR_DURATION {
+			duration = timeNeedOpenNext + clique_war_dat.CLIQUE_WAR_DURATION - nowUnix
+		} else {
+			duration = 9999999
+		}
+	} else {
+		//每10分钟的9分，结束帮派战
+		nowHour := time.GetNextHourTime(gotime.Now()) - 3600
+		nowHourSecond := nowUnix - nowHour
+		duration = nowHourSecond % 600
+		if duration < 540 {
+			//如果不到9，就等9分发送
+			duration = 540 - duration
+		} else {
+			//如果超过，则等下10分
+			duration = 600 + 540 - duration
+		}
+		//他不会有超过。。。
+	}
+	return duration
+}

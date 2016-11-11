@@ -1,0 +1,1 @@
+{"action_name":"clique_kongfu_donate","module_name":"clique_building","protocol":[{"name":"building","type":"int32"},{"name":"result","type":"enum8"},{"name":"total_donate_coins","type":"int32"},{"name":"player_donate_coins","type":"int64"},{"name":"level","type":"int16"}]}

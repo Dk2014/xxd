@@ -1,0 +1,281 @@
+package player_rpc
+
+import (
+	"core/mysql"
+	"game_server/api/protocol/player_api"
+	"game_server/config"
+	"game_server/dat/player_dat"
+	"game_server/module/player_common"
+)
+
+var (
+	playerFightNumRankTable         = player_common.NewPlayerRankTable()
+	playerLevelRankTable            = player_common.NewPlayerRankTable()
+	playerMainRoleFightNumRankTable = player_common.NewPlayerRankTable()
+	playerFameRankTable             = player_common.NewPlayerRankTable()
+	playerGhostFightNumRankTable    = player_common.NewPlayerRankTable()
+	playerSwordSoulNumRankTable     = player_common.NewPlayerRankTable()
+
+	playerBuddyFightNumRankTable = player_common.NewPlayerRankTableWithTwoKey()
+
+	//控制显示排行榜玩家数目
+	desplay_num                      = 0
+	rankTypeFlag player_api.RankType = player_api.RANK_TYPE_NULL
+)
+
+func LoadGlobal() {
+	db, err1 := mysql.Connect(config.GetDBConfig())
+	if err1 != nil {
+		panic(err1)
+	}
+	defer db.Close()
+
+	// fight num
+	loadLevelAndFightNum(db)
+	loadMainRoleFightNum(db)
+	loadFameNum(db)
+	loadBuddyFightNum(db)
+	loadGhostFightNum(db)
+	loadSwordSoulFightNum(db)
+}
+
+func loadLevelAndFightNum(db *mysql.Connection) {
+	res, err := db.ExecuteFetch([]byte(`SELECT A.id as pid, A.nick, B.level, B.timestamp, C.fight_num FROM player AS A
+		LEFT JOIN player_role AS B  ON A.id = B.pid and (B.role_id = 1 or B.role_id = 2)
+		LEFT JOIN player_fight_num AS C ON A.id = C.pid`), -1)
+	if err != nil {
+		panic(err)
+	}
+
+	iPid := res.Map("pid")
+	iNick := res.Map("nick")
+	iFightNum := res.Map("fight_num")
+	iLevel := res.Map("level")
+	iTimestamp := res.Map("timestamp")
+
+	datas1 := []*player_common.PlayerRankData{}
+	datas2 := []*player_common.PlayerRankData{}
+	for _, row := range res.Rows {
+		level := row.Int16(iLevel)
+		if level < player_dat.RANK_OPEN_MIN_LEVEL {
+			continue
+		}
+
+		timestamp := row.Int64(iTimestamp)
+		data1 := player_common.NewPlayerRankData()
+		data1.Timestamp = timestamp
+		data1.Pid = row.Int64(iPid)
+		data1.Nick = row.Str(iNick)
+		data1.Values = append(data1.Values, player_api.GetRanks_Out_Ranks_Values{
+			Flag:  player_api.RANK_TYPE_LEVEL,
+			Value: int64(row.Int16(iLevel)),
+		})
+		data1.Values = append(data1.Values, player_api.GetRanks_Out_Ranks_Values{
+			Flag:  player_api.RANK_TYPE_FIGHTNUM,
+			Value: int64(row.Int32(iFightNum)),
+		})
+		datas1 = append(datas1, data1)
+
+		data2 := player_common.NewPlayerRankData()
+		data2.Pid = row.Int64(iPid)
+		data2.Nick = row.Str(iNick)
+		data2.Values = append(data2.Values, player_api.GetRanks_Out_Ranks_Values{
+			Flag:  player_api.RANK_TYPE_FIGHTNUM,
+			Value: int64(row.Int32(iFightNum)),
+		})
+		data2.Values = append(data2.Values, player_api.GetRanks_Out_Ranks_Values{
+			Flag:  player_api.RANK_TYPE_LEVEL,
+			Value: int64(row.Int16(iLevel)),
+		})
+		datas2 = append(datas2, data2)
+	}
+	playerLevelRankTable.Update(datas1)
+	playerFightNumRankTable.Update(datas2)
+}
+
+func loadMainRoleFightNum(db *mysql.Connection) {
+	res, err := db.ExecuteFetch([]byte(`select A.id, A.nick,B.level,B.fight_num from player as A left join player_role as B on A.id=B.pid and (B.role_id=1 or B.role_id=2)`), -1)
+	if err != nil {
+		panic(err)
+	}
+
+	iPid := res.Map("id")
+	iNick := res.Map("nick")
+	iLevel := res.Map("level")
+	iFightNum := res.Map("fight_num")
+
+	datas := []*player_common.PlayerRankData{}
+	for _, row := range res.Rows {
+		level := row.Int16(iLevel)
+		if level < player_dat.RANK_OPEN_MIN_LEVEL {
+			continue
+		}
+
+		data := player_common.NewPlayerRankData()
+		data.Pid = row.Int64(iPid)
+		data.Nick = row.Str(iNick)
+		data.Values = append(data.Values, player_api.GetRanks_Out_Ranks_Values{
+			Flag:  player_api.RANK_TYPE_MAINROLE_FIGHTNUM,
+			Value: int64(row.Int64(iFightNum)),
+		})
+		datas = append(datas, data)
+	}
+	playerMainRoleFightNumRankTable.Update(datas)
+}
+
+func loadFameNum(db *mysql.Connection) {
+	res, err := db.ExecuteFetch([]byte(`select A.pid, A.fame, B.nick, C.level from player_fame as A left join player as B on A.pid=B.id left join player_role as C on A.pid=C.pid and (C.role_id=1 or C.role_id=2)`), -1)
+	if err != nil {
+		panic(err)
+	}
+
+	iPid := res.Map("pid")
+	iNick := res.Map("nick")
+	iFame := res.Map("fame")
+	iLevel := res.Map("level")
+
+	datas := []*player_common.PlayerRankData{}
+	for _, row := range res.Rows {
+		level := row.Int16(iLevel)
+		if level < player_dat.RANK_OPEN_MIN_LEVEL {
+			continue
+		}
+
+		data := player_common.NewPlayerRankData()
+		data.Pid = row.Int64(iPid)
+		data.Nick = row.Str(iNick)
+		data.Values = append(data.Values, player_api.GetRanks_Out_Ranks_Values{
+			Flag:  player_api.RANK_TYPE_FAME,
+			Value: int64(row.Int32(iFame)),
+		})
+		datas = append(datas, data)
+	}
+	playerFameRankTable.Update(datas)
+}
+
+func loadBuddyFightNum(db *mysql.Connection) {
+	res, err := db.ExecuteFetch([]byte(`select A.pid, A.level,A.role_id,A.fight_num,B.nick from player_role as A  left join player as B on A.pid=B.id where A.role_id!=1 and A.role_id!=2 and A.level>=15`), -1)
+	if err != nil {
+		panic(err)
+	}
+
+	iPid := res.Map("pid")
+	iNick := res.Map("nick")
+	iLevel := res.Map("level")
+	iRoleId := res.Map("role_id")
+	iFightNum := res.Map("fight_num")
+
+	datas := []*player_common.PlayerRankDataWithRoleId{}
+	for _, row := range res.Rows {
+		level := row.Int16(iLevel)
+		if level < player_dat.RANK_OPEN_MIN_LEVEL {
+			continue
+		}
+
+		data := player_common.NewPlayerRankDataWithRoleId()
+		data.Pid = row.Int64(iPid)
+		data.RoleId = row.Int8(iRoleId)
+		data.Nick = row.Str(iNick)
+		data.Values = append(data.Values, player_api.GetRanks_Out_Ranks_Values{
+			Flag:  player_api.RANK_TYPE_BUDDY_FIGHTNUM,
+			Value: int64(row.Int64(iFightNum)),
+		})
+		data.Values = append(data.Values, player_api.GetRanks_Out_Ranks_Values{
+			Flag:  player_dat.TYPE_BUDDY_ROLE_ID,
+			Value: int64(row.Int16(iRoleId)),
+		})
+		datas = append(datas, data)
+	}
+	playerBuddyFightNumRankTable.Update(datas)
+}
+
+func loadGhostFightNum(db *mysql.Connection) {
+	res, err := db.ExecuteFetch([]byte(`select A.id, A.nick,B.level,C.ghost_fight_num from player as A left join player_role as B on A.id=B.pid and (B.role_id=1 or B.role_id=2) left join player_ghost_state as C on A.id=C.pid`), -1)
+	if err != nil {
+		panic(err)
+	}
+
+	iPid := res.Map("id")
+	iNick := res.Map("nick")
+	iLevel := res.Map("level")
+	iGhostFightNum := res.Map("ghost_fight_num")
+
+	datas := []*player_common.PlayerRankData{}
+	for _, row := range res.Rows {
+		level := row.Int16(iLevel)
+		if level < player_dat.RANK_OPEN_MIN_LEVEL {
+			continue
+		}
+
+		data := player_common.NewPlayerRankData()
+		data.Pid = row.Int64(iPid)
+		data.Nick = row.Str(iNick)
+		data.Values = append(data.Values, player_api.GetRanks_Out_Ranks_Values{
+			Flag:  player_api.RANK_TYPE_GHOST_FIGHTNUM,
+			Value: int64(row.Int64(iGhostFightNum)),
+		})
+		datas = append(datas, data)
+	}
+	playerGhostFightNumRankTable.Update(datas)
+}
+
+func loadSwordSoulFightNum(db *mysql.Connection) {
+	res, err := db.ExecuteFetch([]byte(`select A.id, A.nick,B.level,C.sword_soul_num from player as A left join player_role as B on A.id=B.pid and (B.role_id=1 or B.role_id=2)  left join player_sword_soul_state as C on A.id=C.pid`), -1)
+	if err != nil {
+		panic(err)
+	}
+
+	iPid := res.Map("id")
+	iNick := res.Map("nick")
+	iLevel := res.Map("level")
+	iSwordSoulNum := res.Map("sword_soul_num")
+
+	datas := []*player_common.PlayerRankData{}
+	for _, row := range res.Rows {
+		level := row.Int16(iLevel)
+		if level < player_dat.RANK_OPEN_MIN_LEVEL {
+			continue
+		}
+
+		data := player_common.NewPlayerRankData()
+		data.Pid = row.Int64(iPid)
+		data.Nick = row.Str(iNick)
+		swordSoulNum := int64(row.Int32(iSwordSoulNum))
+		data.Values = append(data.Values, player_api.GetRanks_Out_Ranks_Values{
+			Flag:  player_api.RANK_TYPE_SWORD_SOUL_NUM,
+			Value: swordSoulNum,
+		})
+		datas = append(datas, data)
+	}
+	playerSwordSoulNumRankTable.Update(datas)
+}
+func UpdateGlobal(rankType player_api.RankType, datas []*player_common.PlayerRankData) {
+	switch rankType {
+
+	case player_api.RANK_TYPE_FIGHTNUM:
+		playerFightNumRankTable.Update(datas)
+
+	case player_api.RANK_TYPE_LEVEL:
+		playerLevelRankTable.Update(datas)
+
+	case player_api.RANK_TYPE_MAINROLE_FIGHTNUM:
+		playerMainRoleFightNumRankTable.Update(datas)
+
+	case player_api.RANK_TYPE_FAME:
+		playerFameRankTable.Update(datas)
+
+	case player_api.RANK_TYPE_GHOST_FIGHTNUM:
+		playerGhostFightNumRankTable.Update(datas)
+
+	case player_api.RANK_TYPE_SWORD_SOUL_NUM:
+		playerSwordSoulNumRankTable.Update(datas)
+	}
+}
+
+func UpdateGlobalForTwoKey(rankType player_api.RankType, datas []*player_common.PlayerRankDataWithRoleId) {
+	switch rankType {
+
+	case player_api.RANK_TYPE_BUDDY_FIGHTNUM:
+		playerBuddyFightNumRankTable.Update(datas)
+	}
+}

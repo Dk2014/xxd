@@ -1,0 +1,1 @@
+{"action_name":"create_clique","module_name":"clique","protocol":[{"name":"name","type":"text16"},{"name":"announce","type":"text16"}]}

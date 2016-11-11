@@ -1,0 +1,1 @@
+{"action_name":"clique_store_info","module_name":"clique_building","protocol":[{"name":"owner_pid","type":"int64"},{"name":"manager1_pid","type":"int64"},{"name":"manager2_pid","type":"int64"},{"name":"store_building_coins","type":"int32"},{"name":"send_times","type":"int16"}]}

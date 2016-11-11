@@ -1,0 +1,1 @@
+{"action_name":"despair_land_notify_pass","module_name":"despair_land","protocol":[{"name":"level_id","type":"int32"},{"name":"round","type":"int8"},{"name":"pid","type":"int64"},{"name":"name","type":"text16"}]}

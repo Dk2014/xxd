@@ -1,0 +1,1 @@
+{"action_name":"get_total","module_name":"vip","protocol":[{"name":"total","type":"int64"}]}

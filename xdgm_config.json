@@ -1,0 +1,26 @@
+{
+	"_doc_" : {
+		"Type_define": "0-ios, 1-android" 
+	},
+	"Cids": {
+		"3": {
+			"Name": "xxd_tw",
+			"Type": 0
+		},
+		"4": {
+			"Name": "xxd_tw",
+			"Type": 1
+		}
+	},
+	"Apps": {
+	},
+    "GiftCodeDB" : {
+            "Protocol" : "tcp",
+            "Name" : "gift_code",
+            "Address" : "127.0.0.1:3306",
+            "User" : "root",
+            "Password" : ""
+    },
+    "PlatformServerUrl" : "http://platform.xxd.io:8888",
+    "DefaultApp" : "xxd_tw"
+}

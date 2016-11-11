@@ -1,0 +1,1 @@
+{"action_name":"refine","module_name":"item","protocol":[{"name":"id","type":"int64"},{"name":"is_batch","type":"bool"}]}

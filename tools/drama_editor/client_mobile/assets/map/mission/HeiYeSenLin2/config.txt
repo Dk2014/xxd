@@ -1,0 +1,6 @@
+[size]
+1920,1080
+[start_point]
+284,709
+[paths]
+78daedd6,410a8030,c04c0bb,e05f36ff,ff9c07c1,5a2a3569,d622ba7b,c650869,e31e366,5d4ca2c4,9f8b00b8,221e118f,f0c57bdc,39c700ea,fa6b44cc,acd89abe,7de48bfd,2e6b35df,e37cf1ea,1110144b,5a369c5,bd06aa98,8b44891c,92249e4c,891f17a3,db13ba5d,86c5dedd,c3813ca2,a5c4575f,cd1bfb52,$,ae,fd

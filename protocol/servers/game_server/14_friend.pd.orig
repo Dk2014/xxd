@@ -1,0 +1,235 @@
+//
+// 好友接口(互动)
+//
+mod friend = 14
+{	
+	type friend_type enum {
+		GAME_FRIEND 		= 1 // 游戏好友
+		PLATFORM_FRIEND		= 2 // 平台好友
+	}
+
+	// 好友关系
+	type friend_mode enum {
+		STRANGE       = 0 //陌生人
+		LISTEN_ONLY   = 1 //仅关注
+		LISTENED_ONLY = 2 //仅被关注
+		FRIEND        = 3 //互相关注(好友)
+	}
+
+	// 关注好友成功与否
+	type add_result enum {
+		SUCCEED				 = 0 // 添加成功
+		FAILED_ADD_SELF		 = 1 // 添加自己而失败
+		FAILED_ADD_NOT_EXIST = 2 // 添加不存在的玩家而失败
+		FAILED_ADD_FOLLOW	 = 3 // 添加已经关注过的玩家而失败
+		FAILED_ADD_FULL      = 4 // 关注人数达到上限而失败		
+		FAILED_TARGET_FULL      = 5 // 对方好友达到上线
+	}
+
+	// 好友关系变化
+	type listend_state enum {
+		CANCEL = 1 		// 取消关注
+		LISTEND = 2 	// 被关注
+	}
+
+	// 消息与玩家的关系
+	type msg_mode enum {
+		SEND    = 1 // 消息由该玩家发送
+		RECEIVE = 2 // 消息被该玩家接收
+	}
+
+	//
+	// 获取好友列表
+	//
+	[tag("global")]
+	api get_friend_list = 0 {
+		in {}
+		out {
+			cancel_listen_count : int32         // 当天取消好友次数
+			platform_friend_num 	: int32		// 平台好友数
+			friends : list {
+				pid             : int64         // 玩家ID
+				role_id         : int8          // 玩家角色ID
+				nickname        : string        // 玩家昵称
+				level           : int16         // 玩家等级
+				fight_num       : int32         // 战斗力 
+				friend_mode     : friend_mode   // 好友关系
+				block_mode      : int8          // 是否屏蔽(0-否,1-是)
+				last_chat_time  : int64         // 最后联系时间
+				friend_time 	: int64			// 建立好友关系的时间
+			}
+		}
+	}
+
+	//
+	// 通过昵称添加好友
+	//
+	[tag("global")]
+	api listen_by_nick = 1 {
+		in {
+			nick : string
+		}
+		out {
+			result    : add_result
+			role_id   : int8          // 玩家角色ID
+			nickname  : string        // 玩家昵称
+			level     : int16         // 玩家等级
+			fight_num : int32         // 战斗力 
+		}
+	}
+
+	//
+	// 取消好友
+	//
+	[tag("global")]
+	api cancel_listen = 2 {
+		in {
+			pid : int64
+		}
+		out {
+			result : bool
+		}
+	}
+
+	//
+	// 送爱心（非互动接口）
+	//
+	api send_heart = 3 {
+		in {
+			nickname 	:	text  			//赠送人昵称
+			friend_type	:	friend_type		//好友类型
+			pid		: 	int64			//接受赠送爱心的好友PID
+		}
+		out {}
+	}
+
+	//
+	// 聊天
+	//
+	[tag("global")]
+	api chat = 4 {
+		in {
+			pid     : int64    // 对方ID
+			message : text // 内容
+		}
+		out{
+			banned: bool //已经被禁言
+		}
+	}
+
+	//
+	// 获取聊天历史记录
+	//
+	[tag("global")]
+	api get_chat_history = 5 {
+		in {
+			pid : int64    // 对方ID
+		}
+		out {
+			messages : list { // 与对方的聊天记录
+				mode      : msg_mode // 该玩家发送或者接收此条聊天内容
+				id        : int64    // 信息id
+				send_time : int64    // 发送时间
+				message   : text 
+			}
+		}
+	}
+
+	//
+	// 获取离线消息和被关注信息
+	//
+	[tag("global")]
+	api get_offline_messages = 6 {
+		out {
+			chats : list { // 离线聊天记录列表
+				pid      : int64  // 发送者ID
+				nickname : string // 发送者昵称
+				role_id  : int8
+				level    : int16
+			}
+			listener : list {
+				pid 	: int64 // 关注者
+				nick 	: string
+			}
+		}
+	}
+
+	//
+	// 拉黑名单
+	//
+	[tag("global")]
+	api block = 7 {
+		in {
+			pid : int64    // 对方ID
+		}
+		out{}
+	}
+
+	//
+	// 取消黑名单
+	//
+	[tag("global")]
+	api cancel_block = 8 {
+		in {
+			pid : int64    // 对方ID
+		}
+		out{}
+	}
+
+	//
+	// 清除聊天历史记录
+	//
+	[tag("global")]
+	api clean_chat_history = 9 {
+		in {
+			pid : int64    // 对方ID
+		}
+		out{}
+	}
+
+	// 通知关系变化
+	[tag("global")]
+	api notify_listened_state = 10 {
+		out {
+			pid 	: int64		// 对方ID
+			nick 	: string
+			state 	: listend_state
+		}
+	}
+
+	// 告诉服务器当前玩家平台好友数两
+	[tag("global")]
+	api current_platform_friend_num= 11 {
+		in {
+			num 	: int32		// 平台好友数
+		}
+		out {}
+	}
+
+	// 赠送爱心情况（非互动接口）
+	api get_send_heart_list = 12 {
+		in {}
+		out {
+			friends : list16 {
+				pid             : int64         // 好友ID
+				send_heart_time : int64         // 上一次送爱心时间
+			}
+		}
+}
+
+	//
+	// 送爱心
+	//
+	api send_heart_to_all_friends = 13 {
+		in {
+	    	friend_type	:	friend_type		//好友类型(平台好友需要传递friends，游戏好友不需要)
+            friends : list16{
+		    	nickname 	:	text  			//赠送人昵称
+		    	pid		    : 	int64			//接受赠送爱心的好友PID
+          }
+		}
+		out {}
+	}
+
+
+

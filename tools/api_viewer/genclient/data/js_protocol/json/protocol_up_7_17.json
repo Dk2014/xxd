@@ -1,0 +1,1 @@
+{"action_name":"get_sealedbooks","module_name":"item","protocol":[{"name":"item_type","type":"int8"}]}

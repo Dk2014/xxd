@@ -1,0 +1,1 @@
+{"action_name":"clique_kongfu_donate","module_name":"clique_building","protocol":[{"name":"building","type":"int32"},{"name":"money","type":"int64"}]}

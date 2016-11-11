@@ -1,0 +1,213 @@
+package multi_level
+
+import (
+	"core/i18l"
+	//"core/net"
+	"core/time"
+	//"game_server/battle"
+	"game_server/dat/mail_dat"
+	"game_server/dat/multi_level_dat"
+	"game_server/dat/player_dat"
+	"game_server/dat/quest_dat"
+	"game_server/mdb"
+	"game_server/module"
+	"game_server/module/rpc"
+	"game_server/tlog"
+	"game_server/xdlog"
+)
+
+/*
+func (room *MultiLevelRoom) OnNextRound(result []*battle.FightResult, status, nowRound int) {
+	if status != battle.ATK_WIN && status != battle.DEF_WIN {
+		return
+	}
+
+	if !room.OnFighting {
+		return
+	}
+
+	room.OnFighting = false
+	if status == battle.ATK_WIN {
+		var state *module.SessionState
+		var partner *Partner
+
+		// 奖励在线玩家
+		room.channel.Fetch(func(session *net.Session) {
+			state = module.State(session)
+			partner = room.Partners[state.PlayerId]
+			// 不是助阵才能获得奖励
+			if !partner.AssistOnly {
+				rpc.RemoteAwardMultiLevel(state.PlayerId, partner.BuddyRoleId, room.LevelInfo.Id, true)
+			}
+		})
+
+		// 离线玩家奖励
+		for pid, partner := range room.offlinePlayer {
+			if !partner.AssistOnly {
+				rpc.RemoteAwardMultiLevel(pid, partner.BuddyRoleId, room.LevelInfo.Id, false)
+			}
+		}
+	}
+
+	// 清理房间在线玩家
+	room.channel.Fetch(func(session *net.Session) {
+		state := module.State(session)
+		state.MultiLevelRoomId = 0
+		delete(room.Partners, state.PlayerId)
+
+		// NOTE: 网络延时可能导致玩家很长时间才收到最后一个战报，服务端不主动断开跨服连接，由客户端断开。
+		// // 断开跨服的连接
+		// if state.CrossInfo != nil {
+		// 	session.Close()
+		// }
+	})
+
+	for pid, _ := range room.offlinePlayer {
+		delete(room.offlinePlayer, pid)
+	}
+
+	multiDataTable.delRoom(room.Id)
+}
+*/
+
+func (mod ModMultiLevel) AwardWinner(db *mdb.Database, buddyRoleId int8, levelId int16, online bool) {
+	playerMultiLevelInfo := getPlayerMultiLevelInfo(db)
+	if playerMultiLevelInfo.DailyNum >= multi_level_dat.MULTI_LEVEL_DAILY_NUM_MAX {
+		return
+	}
+	levelInfo := multi_level_dat.GetMultiLevelById(levelId)
+	mainRoleId := module.Role.GetMainRole(db).RoleId
+	if online {
+		awardWinnerWithOnline(db, mainRoleId, buddyRoleId, levelInfo)
+		if session, ok := module.Player.GetPlayerOnline(db.PlayerId()); ok {
+			module.Quest.RefreshDailyQuest(module.State(session), quest_dat.DAILY_QUEST_CLASS_MULTI_LEVEL)
+		}
+	} else {
+		awardWinnerWithOffline(db, mainRoleId, buddyRoleId, levelInfo)
+	}
+}
+
+func updatePlayerMultiLevelInfo(db *mdb.Database, awardLock int32) {
+	playerMultiLevelInfo := db.Lookup.PlayerMultiLevelInfo(db.PlayerId())
+	playerMultiLevelInfo.BattleTime = time.GetNowTime()
+	playerMultiLevelInfo.DailyNum += 1
+	if playerMultiLevelInfo.Lock < awardLock {
+		playerMultiLevelInfo.Lock = awardLock
+	}
+	db.Update.PlayerMultiLevelInfo(playerMultiLevelInfo)
+	rpc.RemoteUpdatePlayerMultiLevelInfo(db.PlayerId(), playerMultiLevelInfo.Lock, playerMultiLevelInfo.DailyNum)
+}
+
+func awardWinnerWithOnline(db *mdb.Database, mainRoleId, buddyRoleId int8, levelInfo *multi_level_dat.MultiLevel) {
+	if levelInfo.AwardExp > 0 {
+		module.Role.AddRoleExp(db, mainRoleId, int64(levelInfo.AwardExp), mainRoleId, tlog.EFT_MULTI_LEVEL_AWARD)
+		if buddyRoleId > 0 {
+			module.Role.AddRoleExp(db, buddyRoleId, int64(levelInfo.AwardExp), mainRoleId, tlog.EFT_MULTI_LEVEL_AWARD)
+		}
+	}
+
+	if levelInfo.AwardCoin > 0 {
+		module.Player.IncMoney(db, nil, levelInfo.AwardCoin, player_dat.COINS, tlog.MFR_MULTI_LEVEL_AWARD, xdlog.ET_MULTI_LEVEL, "")
+	}
+
+	if levelInfo.AwardRelationship > 0 {
+		module.Team.IncRelationship(db, levelInfo.AwardRelationship)
+	}
+
+	if levelInfo.AwardFame > 0 {
+		module.Player.AddFame(db, levelInfo.AwardFame)
+	}
+
+	if levelInfo.AwardItem1Id > 0 && levelInfo.AwardItem1Num > 0 {
+		module.Item.AddItem(db, int16(levelInfo.AwardItem1Id), int16(levelInfo.AwardItem1Num), tlog.IFR_MULTI_LEVEL_AWARD, xdlog.ET_MULTI_LEVEL, "")
+	}
+
+	if levelInfo.AwardItem2Id > 0 && levelInfo.AwardItem2Num > 0 {
+		module.Item.AddItem(db, int16(levelInfo.AwardItem2Id), int16(levelInfo.AwardItem2Num), tlog.IFR_MULTI_LEVEL_AWARD, xdlog.ET_MULTI_LEVEL, "")
+	}
+
+	if levelInfo.AwardItem3Id > 0 && levelInfo.AwardItem3Num > 0 {
+		module.Item.AddItem(db, int16(levelInfo.AwardItem3Id), int16(levelInfo.AwardItem3Num), tlog.IFR_MULTI_LEVEL_AWARD, xdlog.ET_MULTI_LEVEL, "")
+	}
+
+	updatePlayerMultiLevelInfo(db, levelInfo.AwardLock)
+}
+
+func awardWinnerWithOffline(db *mdb.Database, mainRoleId, buddyRoleId int8, levelInfo *multi_level_dat.MultiLevel) {
+	mail := &mail_dat.MailMultiLevel{}
+	mail.Attachments = []*mail_dat.Attachment{}
+
+	if levelInfo.AwardFame > 0 {
+		mail.Attachments = append(mail.Attachments, &mail_dat.Attachment{
+			AttachmentType: mail_dat.ATTACHMENT_FAME,
+			ItemNum:        int64(levelInfo.AwardFame),
+		})
+	}
+
+	if levelInfo.AwardExp > 0 {
+		mail.Attachments = append(mail.Attachments, &mail_dat.Attachment{
+			AttachmentType: mail_dat.ATTACHMENT_SINGLE_ROLE_EXP,
+			ItemId:         int16(mainRoleId),
+			ItemNum:        int64(levelInfo.AwardExp),
+		})
+
+		if buddyRoleId > 0 {
+			mail.Attachments = append(mail.Attachments, &mail_dat.Attachment{
+				AttachmentType: mail_dat.ATTACHMENT_SINGLE_ROLE_EXP,
+				ItemId:         int16(buddyRoleId),
+				ItemNum:        int64(levelInfo.AwardExp),
+			})
+		}
+	}
+
+	if levelInfo.AwardCoin > 0 {
+		mail.Attachments = append(mail.Attachments, &mail_dat.Attachment{
+			AttachmentType: mail_dat.ATTACHMENT_COINS,
+			ItemNum:        levelInfo.AwardCoin,
+		})
+	}
+
+	if levelInfo.AwardRelationship > 0 {
+		mail.Attachments = append(mail.Attachments, &mail_dat.Attachment{
+			AttachmentType: mail_dat.ATTACHMENT_RELATIONSHIP,
+			ItemNum:        int64(levelInfo.AwardRelationship),
+		})
+	}
+
+	if levelInfo.AwardItem1Id > 0 && levelInfo.AwardItem1Num > 0 {
+		mail.Attachments = append(mail.Attachments, &mail_dat.Attachment{
+			AttachmentType: mail_dat.ATTACHMENT_ITEM,
+			ItemId:         int16(levelInfo.AwardItem1Id),
+			ItemNum:        int64(levelInfo.AwardItem1Num),
+		})
+	}
+
+	if levelInfo.AwardItem2Id > 0 && levelInfo.AwardItem2Num > 0 {
+		mail.Attachments = append(mail.Attachments, &mail_dat.Attachment{
+			AttachmentType: mail_dat.ATTACHMENT_ITEM,
+			ItemId:         int16(levelInfo.AwardItem2Id),
+			ItemNum:        int64(levelInfo.AwardItem2Num),
+		})
+	}
+
+	if levelInfo.AwardItem3Id > 0 && levelInfo.AwardItem3Num > 0 {
+		mail.Attachments = append(mail.Attachments, &mail_dat.Attachment{
+			AttachmentType: mail_dat.ATTACHMENT_ITEM,
+			ItemId:         int16(levelInfo.AwardItem3Id),
+			ItemNum:        int64(levelInfo.AwardItem3Num),
+		})
+	}
+
+	mail.Name = i18l.T.Tran(levelInfo.Name)
+	rpc.RemoteMailSend(db.PlayerId(), mail)
+	updatePlayerMultiLevelInfo(db, levelInfo.AwardLock)
+}
+
+func getPlayerMultiLevelInfo(db *mdb.Database) (playerMultiLevelInfo *mdb.PlayerMultiLevelInfo) {
+	playerMultiLevelInfo = db.Lookup.PlayerMultiLevelInfo(db.PlayerId())
+	if !time.IsInPointHour(player_dat.RESET_MULTI_LEVEL_TIMES_IN_HOUR, playerMultiLevelInfo.BattleTime) {
+		playerMultiLevelInfo.DailyNum = 0
+		db.Update.PlayerMultiLevelInfo(playerMultiLevelInfo)
+	}
+	return
+}

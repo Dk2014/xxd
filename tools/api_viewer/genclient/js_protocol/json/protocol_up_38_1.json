@@ -1,0 +1,1 @@
+{"action_name":"levelup_attr","module_name":"awaken","protocol":[{"name":"role_id","type":"int8"},{"name":"attr_impl","type":"int16"}]}

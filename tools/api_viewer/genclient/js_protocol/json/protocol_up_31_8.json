@@ -1,0 +1,1 @@
+{"action_name":"swap","module_name":"totem","protocol":[{"name":"equiped_id","type":"int64"},{"name":"inbag_id","type":"int64"}]}

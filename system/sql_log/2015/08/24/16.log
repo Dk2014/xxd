@@ -1,0 +1,40 @@
+-- ------------------------------------------------------
+-- 08/24/2015 16:40 插入或更新发生在表item IP:::1
+UPDATE `item` SET `name` = '帮派宝箱', `type_id` = '23', `quality` = '0', `sign` = 'bangpaibaoxiang', `price` = '0', `level` = '0', `open_times` = '1', `func_id` = '0', `use_ingot` = '0', `valid_hours` = '0', `renew_ingot` = '0', `desc` = '111', `can_batch` = '0' WHERE `id` = 855;INSERT INTO `item` SET `name` = '帮派宝箱2', `type_id` = '23', `quality` = '0', `sign` = 'bangpaibaoxiang2', `price` = '', `level` = '', `open_times` = '', `func_id` = '', `use_ingot` = '', `valid_hours` = '', `renew_ingot` = '', `desc` = '', `can_batch` = '0' ;
+
+-- ------------------------------------------------------
+-- 08/24/2015 16:41 插入或更新发生在表item IP:::1
+UPDATE `item` SET `name` = '帮派宝箱', `type_id` = '23', `quality` = '0', `sign` = 'bangpaibaoxiang', `price` = '0', `level` = '0', `open_times` = '1', `func_id` = '0', `use_ingot` = '0', `valid_hours` = '0', `renew_ingot` = '0', `desc` = '111', `can_batch` = '0' WHERE `id` = 855;INSERT INTO `item` SET `name` = 'bangpaibaoxiang2', `type_id` = '23', `quality` = '0', `sign` = 'bangpaibaoxiang2', `price` = '', `level` = '', `open_times` = '', `func_id` = '', `use_ingot` = '', `valid_hours` = '', `renew_ingot` = '', `desc` = '', `can_batch` = '0' ;
+
+-- ------------------------------------------------------
+-- 08/24/2015 16:41 插入或更新发生在表item IP:::1
+UPDATE `item` SET `name` = '帮派宝箱', `type_id` = '23', `quality` = '0', `sign` = 'bangpaibaoxiang', `price` = '0', `level` = '0', `open_times` = '1', `func_id` = '0', `use_ingot` = '0', `valid_hours` = '0', `renew_ingot` = '0', `desc` = '111', `can_batch` = '0' WHERE `id` = 855;INSERT INTO `item` SET `name` = 'fffff', `type_id` = '23', `quality` = '0', `sign` = '11111', `price` = '', `level` = '', `open_times` = '', `func_id` = '', `use_ingot` = '', `valid_hours` = '', `renew_ingot` = '', `desc` = '', `can_batch` = '0' ;
+
+-- ------------------------------------------------------
+-- 08/24/2015 16:41 插入或更新发生在表item IP:::1
+UPDATE `item` SET `name` = '帮派宝箱1', `type_id` = '23', `quality` = '0', `sign` = 'bangpaibaoxiang', `price` = '0', `level` = '0', `open_times` = '1', `func_id` = '0', `use_ingot` = '0', `valid_hours` = '0', `renew_ingot` = '0', `desc` = '111', `can_batch` = '0' WHERE `id` = 855;
+
+-- ------------------------------------------------------
+-- 08/24/2015 16:41 插入或更新发生在表item IP:::1
+UPDATE `item` SET `name` = '帮派宝箱1', `type_id` = '23', `quality` = '0', `sign` = 'bangpaibaoxiang', `price` = '0', `level` = '0', `open_times` = '1', `func_id` = '0', `use_ingot` = '0', `valid_hours` = '0', `renew_ingot` = '0', `desc` = '111', `can_batch` = '0' WHERE `id` = 855;INSERT INTO `item` SET `name` = '青·石印2', `type_id` = '23', `quality` = '0', `sign` = 'bangpaibaoxiang2', `price` = '1', `level` = '1', `open_times` = '', `func_id` = '0', `use_ingot` = '1', `valid_hours` = '1', `renew_ingot` = '1', `desc` = '1', `can_batch` = '0' ;
+
+-- ------------------------------------------------------
+-- 08/24/2015 16:42 插入或更新发生在表item IP:::1
+UPDATE `item` SET `name` = '帮派宝箱1', `type_id` = '23', `quality` = '0', `sign` = 'bangpaibaoxiang', `price` = '0', `level` = '0', `open_times` = '1', `func_id` = '0', `use_ingot` = '0', `valid_hours` = '0', `renew_ingot` = '0', `desc` = '111', `can_batch` = '0' WHERE `id` = 855;INSERT INTO `item` SET `name` = 'bangpaibaoxiang2', `type_id` = '23', `quality` = '0', `sign` = 'bangpaibaoxiang', `price` = '1', `level` = '1', `open_times` = '1', `func_id` = '', `use_ingot` = '1', `valid_hours` = '1', `renew_ingot` = '1', `desc` = '1', `can_batch` = '0' ;
+
+-- ------------------------------------------------------
+-- 08/24/2015 16:43 删除操作发生在表item IP:::1
+DELETE FROM `item` WHERE `id` = 855;
+
+-- ------------------------------------------------------
+-- 08/24/2015 16:44 插入或更新发生在表item IP:::1
+INSERT INTO `item` SET `name` = '帮派宝箱', `type_id` = '23', `quality` = '0', `sign` = 'bangpaibaoxiang', `price` = '5000', `level` = '0', `open_times` = '1', `func_id` = '0', `use_ingot` = '0', `valid_hours` = '0', `renew_ingot` = '0', `desc` = '111', `can_batch` = '0' ;
+
+-- ------------------------------------------------------
+-- 08/24/2015 16:45 插入或更新发生在表item IP:::1
+UPDATE `item` SET `name` = '帮派宝箱', `type_id` = '23', `quality` = '0', `sign` = 'bangpaibaoxiang', `price` = '5000', `level` = '0', `open_times` = '1', `func_id` = '0', `use_ingot` = '0', `valid_hours` = '0', `renew_ingot` = '0', `desc` = '111', `can_batch` = '0' WHERE `id` = 856;INSERT INTO `item` SET `name` = '帮派宝箱2', `type_id` = '23', `quality` = '0', `sign` = 'bangpaibaoxiang2', `price` = '5000', `level` = '0', `open_times` = '3', `func_id` = '0', `use_ingot` = '0', `valid_hours` = '0', `renew_ingot` = '0', `desc` = '222', `can_batch` = '0' ;
+
+-- ------------------------------------------------------
+-- 08/24/2015 16:47 插入或更新发生在表item_box_new_content IP:::1
+INSERT INTO `item_box_new_content` SET `item_id` = 857, `type` = '2', `min_num` = '1', `max_num` = '1', `probability` = '10', `get_item_id` = '31' ;INSERT INTO `item_box_new_content` SET `item_id` = 857, `type` = '2', `min_num` = '2', `max_num` = '2', `probability` = '50', `get_item_id` = '32' ;
+

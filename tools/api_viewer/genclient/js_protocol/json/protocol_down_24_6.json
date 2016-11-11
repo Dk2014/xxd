@@ -1,0 +1,1 @@
+{"action_name":"player_event_physical_cost","module_name":"event","protocol":[{"name":"value","type":"int32"}]}

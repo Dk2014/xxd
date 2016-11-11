@@ -1,0 +1,1 @@
+{"action_name":"get_fate_box_info","module_name":"draw","protocol":[{"name":"lock","type":"int32"},{"name":"next_free_star_box","type":"int32"},{"name":"next_free_moon_box","type":"int32"},{"name":"next_free_sun_box","type":"int32"},{"name":"next_free_hunyuan_box","type":"int32"}]}

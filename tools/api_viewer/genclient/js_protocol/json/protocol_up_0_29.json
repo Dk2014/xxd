@@ -1,0 +1,1 @@
+{"action_name":"get_ranks","module_name":"player","protocol":[{"name":"flag","type":"enum8"},{"name":"page_index","type":"int32"}]}

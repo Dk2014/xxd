@@ -1,0 +1,1 @@
+{"action_name":"list_garrisons","module_name":"driving_sword","protocol":[{"name":"garrisons","type":"list8","fields":[{"name":"role_id","type":"int8"},{"name":"garrison_time","type":"int64"},{"name":"awarded_time","type":"int64"},{"name":"cloud","type":"int16"},{"name":"event_id","type":"int8"},{"name":"status","type":"enum8"}]}]}

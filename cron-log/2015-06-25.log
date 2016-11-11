@@ -1,0 +1,43 @@
+2015/06/25 15:10:31 [I] - mem:1342416 goroutine:9 gc:3 pause:1ms
+2015/06/25 15:10:41 [I] - mem:1343136 goroutine:9 gc:0 pause:0ms
+2015/06/25 15:10:51 [I] - mem:1343328 goroutine:9 gc:0 pause:0ms
+2015/06/25 15:11:01 [I] - mem:1343424 goroutine:9 gc:0 pause:0ms
+2015/06/25 15:11:11 [I] - mem:1343520 goroutine:9 gc:0 pause:0ms
+2015/06/25 15:11:21 [I] - mem:1347728 goroutine:10 gc:0 pause:0ms
+2015/06/25 15:11:21 [E] - OnlineCount() error: Error 1064: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '%!s(int32=92) where floor(gsid/10) = %!d(string=global_tb_xxd_onlinecnt) order b' at line 1
+ Stack     at func.003() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:66]
+    at panic() [/usr/local/go/src/pkg/runtime/panic.c:248]
+    at FetchOnline() [/Users/tangweichen/xxd-server/server/src/cron_server/database/api.go:105]
+    at func.004() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:75]
+    at goexit() [/usr/local/go/src/pkg/runtime/proc.c:1445]
+ 
+2015/06/25 15:11:31 [I] - mem:1363480 goroutine:10 gc:0 pause:0ms
+2015/06/25 15:11:41 [I] - mem:1398072 goroutine:10 gc:0 pause:0ms
+2015/06/25 15:11:51 [I] - mem:1398168 goroutine:10 gc:0 pause:0ms
+2015/06/25 15:12:01 [I] - mem:1398264 goroutine:10 gc:0 pause:0ms
+2015/06/25 15:12:11 [I] - mem:1398360 goroutine:10 gc:0 pause:0ms
+2015/06/25 15:12:21 [I] - mem:1398456 goroutine:10 gc:0 pause:0ms
+2015/06/25 15:12:21 [E] - OnlineCount() error: dup init
+ Stack     at func.003() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:66]
+    at panic() [/usr/local/go/src/pkg/runtime/panic.c:248]
+    at Init() [/Users/tangweichen/xxd-server/server/src/cron_server/database/database.go:14]
+    at func.004() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:71]
+    at goexit() [/usr/local/go/src/pkg/runtime/proc.c:1445]
+ 
+2015/06/25 15:12:31 [I] - mem:1394712 goroutine:10 gc:1 pause:1ms
+2015/06/25 15:12:41 [I] - mem:1394904 goroutine:10 gc:0 pause:0ms
+2015/06/25 15:12:51 [I] - mem:1395048 goroutine:10 gc:0 pause:0ms
+2015/06/25 15:13:01 [I] - mem:1395144 goroutine:10 gc:0 pause:0ms
+2015/06/25 15:13:11 [I] - mem:1395240 goroutine:10 gc:0 pause:0ms
+2015/06/25 15:13:21 [I] - mem:1395336 goroutine:10 gc:0 pause:0ms
+2015/06/25 15:13:21 [E] - OnlineCount() error: dup init
+ Stack     at func.003() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:66]
+    at panic() [/usr/local/go/src/pkg/runtime/panic.c:248]
+    at Init() [/Users/tangweichen/xxd-server/server/src/cron_server/database/database.go:14]
+    at func.004() [/Users/tangweichen/xxd-server/server/src/cron_server/main.go:71]
+    at goexit() [/usr/local/go/src/pkg/runtime/proc.c:1445]
+ 
+2015/06/25 15:13:31 [I] - mem:1397848 goroutine:10 gc:0 pause:0ms
+2015/06/25 15:13:41 [I] - mem:1397944 goroutine:10 gc:0 pause:0ms
+2015/06/25 15:13:51 [I] - mem:1398040 goroutine:10 gc:0 pause:0ms
+2015/06/25 15:14:01 [I] - mem:1398136 goroutine:10 gc:0 pause:0ms

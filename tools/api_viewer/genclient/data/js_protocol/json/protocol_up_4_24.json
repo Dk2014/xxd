@@ -1,0 +1,1 @@
+{"action_name":"get_mission_total_star_awards","module_name":"mission","protocol":[{"name":"town_id","type":"int16"},{"name":"box_type","type":"int8"}]}

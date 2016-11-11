@@ -1,0 +1,54 @@
+{
+	"_doc_" : {
+		"cid_define": "0-ios, 1-android" 
+	},
+	"Cids": {
+		"0": {
+			"Name": "xxd_qq",
+			"Type": 1
+		},
+		"1": {
+			"Name": "xxd_vn",
+			"Type": 0
+		},
+		"2": {
+			"Name": "xxd_vn",
+			"Type": 1
+		},
+		"3": {
+                        "Name": "xxd_txwy",
+                        "Type": 0
+                },
+		"4": {
+                        "Name": "xxd_txwy",
+                        "Type": 1
+                }
+	},
+	"Apps": {
+		"xxd_qq": {
+			"Name": "xxd_qq",
+			"DBIndex": 0,
+			"Active": true,
+			"Cid": [0,0]
+		},
+		"xxd_vn": {
+			"DBIndex": 1,
+			"Active": true,
+			"Cid": [1,2]
+		},
+		"xxd_txwy": {
+            "DBIndex": 2,
+            "Active": true,
+            "Cid": [3,4]
+   	 	}
+	},
+    "GiftCodeDB" : {
+            "Protocol" : "tcp",
+            "Name" : "gift_code",
+            "Address" : "127.0.0.1:3306",
+            "User" : "root",
+            "Password" : ""
+    },
+    "PlatformServerUrl" : "http://platform.xxd.io:8888",
+    "DefaultApp" : "xxd_vn"
+}

@@ -1,0 +1,19 @@
+package coins_exchange_dat
+
+
+const( 
+	INGOT_TO_CONIS_CRIT_RATE = 30
+	DAILY_COINS_BUY_COUNT = 1
+)
+const( 
+	FIRST_TIME_BATCH_BUY_COINS_NUM = 3
+	BATCH_BUY_COINS_NUM = 5
+	COINS_BATCH_BUY_REQUIRED_LEVEL = 0
+)
+
+
+
+
+
+
+

@@ -1,0 +1,216 @@
+mdb.load (0) cost time: 64.438551ms
+mdb.load (2) cost time: 64.532952ms
+mdb.load (1) cost time: 64.621087ms
+mdb.load success.
+mdb.load (3) cost time: 64.970829ms
+2014/12/10 16:17:14 [I] - load global_announcement
+2014/12/10 16:17:14 [I] - load global_arena_rank
+2014/12/10 16:17:14 [I] - load global_group_buy_status
+2014/12/10 16:17:14 [I] - load global_mail
+2014/12/10 16:17:14 [I] - load global_mail_attachments
+2014/12/10 16:17:14 [I] - load global_tb_xxd_onlinecnt
+2014/12/10 16:17:14 [I] - load player_global_arena_rank
+2014/12/10 16:17:14 [I] - load player_global_arena_rank
+2014/12/10 16:17:14 [I] - load player_global_arena_rank
+2014/12/10 16:17:14 [I] - load player_global_arena_rank
+2014/12/10 16:17:14 [I] - load player_global_friend
+2014/12/10 16:17:14 [I] - load player_global_friend
+2014/12/10 16:17:14 [I] - load player_global_friend
+2014/12/10 16:17:14 [I] - load player_global_friend
+2014/12/10 16:17:14 [I] - load player_global_friend_chat
+2014/12/10 16:17:14 [I] - load player_global_friend_chat
+2014/12/10 16:17:14 [I] - load player_global_friend_chat
+2014/12/10 16:17:14 [I] - load player_global_friend_chat
+2014/12/10 16:17:14 [I] - load player_global_friend_state
+2014/12/10 16:17:14 [I] - load player_global_friend_state
+2014/12/10 16:17:14 [I] - load player_global_friend_state
+2014/12/10 16:17:14 [I] - load player_global_friend_state
+2014/12/10 16:17:14 [I] - load player_global_mail_state
+2014/12/10 16:17:14 [I] - load player_global_mail_state
+2014/12/10 16:17:14 [I] - load player_global_mail_state
+2014/12/10 16:17:14 [I] - load player_global_mail_state
+2014/12/10 16:17:14 [I] - load player_global_world_chat_state
+2014/12/10 16:17:14 [I] - load player_global_world_chat_state
+2014/12/10 16:17:14 [I] - load player_global_world_chat_state
+2014/12/10 16:17:14 [I] - load player_global_world_chat_state
+2014/12/10 16:17:24 [I] - mem:16653848 goroutine:22 gc:5 pause:6ms
+2014/12/10 16:17:34 [I] - mem:16656152 goroutine:22 gc:5 pause:6ms
+2014/12/10 16:17:44 [I] - mem:16657112 goroutine:22 gc:5 pause:6ms
+2014/12/10 16:17:54 [I] - mem:16657880 goroutine:22 gc:5 pause:6ms
+2014/12/10 16:18:04 [I] - mem:16658648 goroutine:22 gc:5 pause:6ms
+2014/12/10 16:18:14 [I] - mem:16659416 goroutine:22 gc:5 pause:6ms
+2014/12/10 16:18:14 [I] - Total Online: 0(ios), 0(android)
+2014/12/10 16:18:14 [E] - onlineCount connect mysql error: %!(EXTRA *mysql.SqlError=Can't connect to local MySQL server through socket 'tcp' (2) (errno 2002))
+2014/12/10 16:18:17 [E] - RPC-Call found error when excute client.Call
+Error   	= RPC::getClient can't connect rpc-server 928
+serviceAPI 	= RemoteServe.GetOnlineNumber
+Args    = &rpc.Args_GetOnlineNumber{
+    RPCArgTag: rpc.RPCArgTag{
+        ClientId: 0,
+    },
+}
+
+Result  = &rpc.Reply_GetOnlineNumber{
+    Count: 0,
+}
+2014/12/10 16:18:24 [I] - mem:16673240 goroutine:22 gc:5 pause:6ms
+2014/12/10 16:18:34 [I] - mem:16674008 goroutine:22 gc:5 pause:6ms
+2014/12/10 16:18:44 [I] - mem:16674776 goroutine:22 gc:5 pause:6ms
+2014/12/10 16:18:54 [I] - mem:16675544 goroutine:22 gc:5 pause:6ms
+2014/12/10 16:19:04 [I] - mem:16676312 goroutine:22 gc:5 pause:6ms
+2014/12/10 16:19:14 [I] - mem:16676952 goroutine:22 gc:5 pause:6ms
+2014/12/10 16:19:14 [I] - Total Online: 0(ios), 0(android)
+2014/12/10 16:19:14 [E] - onlineCount connect mysql error: %!(EXTRA *mysql.SqlError=Can't connect to local MySQL server through socket 'tcp' (2) (errno 2002))
+2014/12/10 16:19:17 [E] - RPC-Call found error when excute client.Call
+Error   	= RPC::getClient can't connect rpc-server 928
+serviceAPI 	= RemoteServe.GetOnlineNumber
+Args    = &rpc.Args_GetOnlineNumber{
+    RPCArgTag: rpc.RPCArgTag{
+        ClientId: 0,
+    },
+}
+
+Result  = &rpc.Reply_GetOnlineNumber{
+    Count: 0,
+}
+2014/12/10 16:19:24 [I] - mem:16693368 goroutine:22 gc:5 pause:6ms
+2014/12/10 16:19:34 [I] - mem:16694136 goroutine:22 gc:5 pause:6ms
+2014/12/10 16:19:44 [I] - mem:16694904 goroutine:22 gc:5 pause:6ms
+2014/12/10 16:19:54 [I] - mem:16695960 goroutine:22 gc:5 pause:6ms
+2014/12/10 16:20:04 [I] - mem:16696728 goroutine:22 gc:5 pause:6ms
+2014/12/10 16:20:14 [I] - mem:16697496 goroutine:22 gc:5 pause:6ms
+2014/12/10 16:20:14 [I] - Total Online: 0(ios), 0(android)
+2014/12/10 16:20:14 [E] - onlineCount connect mysql error: %!(EXTRA *mysql.SqlError=Can't connect to local MySQL server through socket 'tcp' (2) (errno 2002))
+2014/12/10 16:20:17 [E] - RPC-Call found error when excute client.Call
+Error   	= RPC::getClient can't connect rpc-server 928
+serviceAPI 	= RemoteServe.GetOnlineNumber
+Args    = &rpc.Args_GetOnlineNumber{
+    RPCArgTag: rpc.RPCArgTag{
+        ClientId: 0,
+    },
+}
+
+Result  = &rpc.Reply_GetOnlineNumber{
+    Count: 0,
+}
+2014/12/10 16:20:24 [I] - mem:11147024 goroutine:22 gc:6 pause:15ms
+2014/12/10 16:20:34 [I] - mem:11148912 goroutine:22 gc:6 pause:15ms
+2014/12/10 16:20:44 [I] - mem:11149680 goroutine:22 gc:6 pause:15ms
+2014/12/10 16:20:54 [I] - mem:11150448 goroutine:22 gc:6 pause:15ms
+2014/12/10 16:21:04 [I] - mem:11151216 goroutine:22 gc:6 pause:15ms
+2014/12/10 16:21:14 [I] - mem:11151984 goroutine:22 gc:6 pause:15ms
+2014/12/10 16:21:14 [I] - Total Online: 0(ios), 0(android)
+2014/12/10 16:21:14 [E] - onlineCount connect mysql error: %!(EXTRA *mysql.SqlError=Can't connect to local MySQL server through socket 'tcp' (2) (errno 2002))
+2014/12/10 16:21:17 [E] - RPC-Call found error when excute client.Call
+Error   	= RPC::getClient can't connect rpc-server 928
+serviceAPI 	= RemoteServe.GetOnlineNumber
+Args    = &rpc.Args_GetOnlineNumber{
+    RPCArgTag: rpc.RPCArgTag{
+        ClientId: 0,
+    },
+}
+
+Result  = &rpc.Reply_GetOnlineNumber{
+    Count: 0,
+}
+2014/12/10 16:21:24 [I] - mem:11163760 goroutine:22 gc:6 pause:15ms
+2014/12/10 16:21:34 [I] - mem:11164528 goroutine:22 gc:6 pause:15ms
+2014/12/10 16:21:44 [I] - mem:11165344 goroutine:22 gc:6 pause:15ms
+2014/12/10 16:21:54 [I] - mem:11166112 goroutine:22 gc:6 pause:15ms
+2014/12/10 16:22:04 [I] - mem:11166880 goroutine:22 gc:6 pause:15ms
+2014/12/10 16:22:14 [I] - mem:11167648 goroutine:22 gc:6 pause:15ms
+2014/12/10 16:22:14 [I] - Total Online: 0(ios), 0(android)
+2014/12/10 16:22:14 [E] - onlineCount connect mysql error: %!(EXTRA *mysql.SqlError=Can't connect to local MySQL server through socket 'tcp' (2) (errno 2002))
+2014/12/10 16:22:17 [E] - RPC-Call found error when excute client.Call
+Error   	= RPC::getClient can't connect rpc-server 928
+serviceAPI 	= RemoteServe.GetOnlineNumber
+Args    = &rpc.Args_GetOnlineNumber{
+    RPCArgTag: rpc.RPCArgTag{
+        ClientId: 0,
+    },
+}
+
+Result  = &rpc.Reply_GetOnlineNumber{
+    Count: 0,
+}
+2014/12/10 16:22:24 [I] - mem:10995704 goroutine:22 gc:7 pause:21ms
+2014/12/10 16:22:34 [I] - mem:10996520 goroutine:22 gc:7 pause:21ms
+2014/12/10 16:22:44 [I] - mem:10997576 goroutine:22 gc:7 pause:21ms
+2014/12/10 16:22:54 [I] - mem:10998344 goroutine:22 gc:7 pause:21ms
+2014/12/10 16:23:04 [I] - mem:10999112 goroutine:22 gc:7 pause:21ms
+2014/12/10 16:23:14 [I] - mem:11000168 goroutine:22 gc:7 pause:21ms
+2014/12/10 16:23:14 [I] - Total Online: 0(ios), 0(android)
+2014/12/10 16:23:14 [E] - onlineCount connect mysql error: %!(EXTRA *mysql.SqlError=Can't connect to local MySQL server through socket 'tcp' (2) (errno 2002))
+2014/12/10 16:23:17 [E] - RPC-Call found error when excute client.Call
+Error   	= RPC::getClient can't connect rpc-server 928
+serviceAPI 	= RemoteServe.GetOnlineNumber
+Args    = &rpc.Args_GetOnlineNumber{
+    RPCArgTag: rpc.RPCArgTag{
+        ClientId: 0,
+    },
+}
+
+Result  = &rpc.Reply_GetOnlineNumber{
+    Count: 0,
+}
+2014/12/10 16:23:24 [I] - mem:11009000 goroutine:22 gc:7 pause:21ms
+2014/12/10 16:23:34 [I] - mem:11009768 goroutine:22 gc:7 pause:21ms
+2014/12/10 16:23:44 [I] - mem:11010824 goroutine:22 gc:7 pause:21ms
+2014/12/10 16:23:54 [I] - mem:11011592 goroutine:22 gc:7 pause:21ms
+2014/12/10 16:24:04 [I] - mem:11012648 goroutine:22 gc:7 pause:21ms
+2014/12/10 16:24:14 [I] - mem:11013416 goroutine:22 gc:7 pause:21ms
+2014/12/10 16:24:14 [I] - Total Online: 0(ios), 0(android)
+2014/12/10 16:24:14 [E] - onlineCount connect mysql error: %!(EXTRA *mysql.SqlError=Can't connect to local MySQL server through socket 'tcp' (2) (errno 2002))
+2014/12/10 16:24:17 [E] - RPC-Call found error when excute client.Call
+Error   	= RPC::getClient can't connect rpc-server 928
+serviceAPI 	= RemoteServe.GetOnlineNumber
+Args    = &rpc.Args_GetOnlineNumber{
+    RPCArgTag: rpc.RPCArgTag{
+        ClientId: 0,
+    },
+}
+
+Result  = &rpc.Reply_GetOnlineNumber{
+    Count: 0,
+}
+2014/12/10 16:24:24 [I] - mem:10998104 goroutine:22 gc:8 pause:39ms
+2014/12/10 16:24:34 [I] - mem:10998920 goroutine:22 gc:8 pause:39ms
+2014/12/10 16:24:44 [I] - mem:10999688 goroutine:22 gc:8 pause:39ms
+2014/12/10 16:24:54 [I] - mem:11000504 goroutine:22 gc:8 pause:39ms
+2014/12/10 16:25:04 [I] - mem:11001272 goroutine:22 gc:8 pause:39ms
+2014/12/10 16:25:14 [I] - mem:11002040 goroutine:22 gc:8 pause:39ms
+2014/12/10 16:25:14 [I] - Total Online: 0(ios), 0(android)
+2014/12/10 16:25:14 [E] - onlineCount connect mysql error: %!(EXTRA *mysql.SqlError=Can't connect to local MySQL server through socket 'tcp' (2) (errno 2002))
+2014/12/10 16:25:17 [E] - RPC-Call found error when excute client.Call
+Error   	= RPC::getClient can't connect rpc-server 928
+serviceAPI 	= RemoteServe.GetOnlineNumber
+Args    = &rpc.Args_GetOnlineNumber{
+    RPCArgTag: rpc.RPCArgTag{
+        ClientId: 0,
+    },
+}
+
+Result  = &rpc.Reply_GetOnlineNumber{
+    Count: 0,
+}
+2014/12/10 16:25:24 [I] - mem:11008520 goroutine:22 gc:8 pause:39ms
+2014/12/10 16:25:34 [I] - mem:11009336 goroutine:22 gc:8 pause:39ms
+2014/12/10 16:25:44 [I] - mem:11010104 goroutine:22 gc:8 pause:39ms
+2014/12/10 16:25:54 [I] - mem:11010872 goroutine:22 gc:8 pause:39ms
+2014/12/10 16:26:04 [I] - mem:11011640 goroutine:22 gc:8 pause:39ms
+2014/12/10 16:26:14 [I] - mem:11012696 goroutine:22 gc:8 pause:39ms
+2014/12/10 16:26:14 [I] - Total Online: 0(ios), 0(android)
+2014/12/10 16:26:14 [E] - onlineCount connect mysql error: %!(EXTRA *mysql.SqlError=Can't connect to local MySQL server through socket 'tcp' (2) (errno 2002))
+2014/12/10 16:26:17 [E] - RPC-Call found error when excute client.Call
+Error   	= RPC::getClient can't connect rpc-server 928
+serviceAPI 	= RemoteServe.GetOnlineNumber
+Args    = &rpc.Args_GetOnlineNumber{
+    RPCArgTag: rpc.RPCArgTag{
+        ClientId: 0,
+    },
+}
+
+Result  = &rpc.Reply_GetOnlineNumber{
+    Count: 0,
+}
+2014/12/10 16:26:24 [I] - mem:10999656 goroutine:22 gc:9 pause:47ms

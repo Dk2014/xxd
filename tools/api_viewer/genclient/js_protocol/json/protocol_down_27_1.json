@@ -1,0 +1,1 @@
+{"action_name":"meditation_info","module_name":"meditation","protocol":[{"name":"exp_accumulate_time","type":"int32"},{"name":"key_accumulate_time","type":"int32"}]}

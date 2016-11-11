@@ -1,0 +1,1 @@
+{"action_name":"add_rune","module_name":"debug","protocol":[{"name":"jade_num","type":"int32"},{"name":"rock_num","type":"int32"}]}

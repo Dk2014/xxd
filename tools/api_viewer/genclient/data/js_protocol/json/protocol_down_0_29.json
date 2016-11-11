@@ -1,0 +1,1 @@
+{"action_name":"get_ranks","module_name":"player","protocol":[{"name":"ranks","type":"list8","fields":[{"name":"pid","type":"int64"},{"name":"nickname","type":"text16"},{"name":"rank","type":"int32"},{"name":"values","type":"list8","fields":[{"name":"flag","type":"enum8"},{"name":"value","type":"int64"}]}]},{"name":"has_next","type":"bool"}]}

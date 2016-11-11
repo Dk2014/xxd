@@ -1,0 +1,1 @@
+{"action_name":"list_apply","module_name":"clique","protocol":[{"name":"auto_audit","type":"bool"},{"name":"level","type":"int16"},{"name":"players","type":"list16","fields":[{"name":"pid","type":"int64"},{"name":"nick","type":"text16"},{"name":"level","type":"int16"},{"name":"arena_rank","type":"int64"},{"name":"timestamp","type":"int64"}]}]}

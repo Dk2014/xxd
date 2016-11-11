@@ -1,0 +1,1 @@
+{"action_name":"clique_store_donate","module_name":"clique_building","protocol":[{"name":"result","type":"enum8"},{"name":"store_building_coins","type":"int32"},{"name":"player_donate_coins","type":"int64"}]}

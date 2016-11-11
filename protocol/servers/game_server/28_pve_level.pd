@@ -1,0 +1,39 @@
+//
+// 灵宠幻境关卡 接口
+//
+mod pet_virtual_env = 28
+{
+	// 玩家PVE信息
+	api info = 1 {
+		in{}
+		out{
+			daily_num: int8 //今日进入次数
+			max_floor: int16 //最大通过层数
+			max_awarded_floor: int16 //已领取奖励的最大关卡
+			unpassed_floor_enemy_num: int16 //未通过的关卡
+		}
+	}
+
+	// 领取奖励
+	api take_award = 2 {
+		in {
+		}
+		out {
+		}
+	}
+
+	//扫荡
+	api auto_fight = 3  {
+		in{
+			floor: int16 //层数
+		}
+		out{}
+	}
+	
+	//战斗结束杀怪数量通知
+	api pve_kills = 4{
+		out{
+			num: int16 //杀怪数量
+		}
+	}
+}

@@ -1,0 +1,1 @@
+{"action_name":"clique_kongfu_info","module_name":"clique_building","protocol":[{"name":"kongfu_list","type":"list8","fields":[{"name":"kongfu_id","type":"int32"},{"name":"level","type":"int16"}]}]}

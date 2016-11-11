@@ -1,0 +1,191 @@
+//
+// 任务相关接口
+//
+mod quest = 13
+{
+
+	type guide_type enum {
+		GUIDE_ENTER_MISSION				=0 // 进入冒险关卡
+		GUIDE_SKILL_USE					=1 // 普通绝招使用
+		GUIDE_ADVANCED_SKILL_USE				=2 // 进阶群攻绝招使用
+		GUIDE_MAIN_ROLE_SKILL_EQUIP			=3 // 主角奥义绝招装备
+		GUIDE_MAIN_ROLE_SKILL_USE				=4 // 奥义绝招使用
+		GUIDE_EQUIP_REFINE					=5 // 装备穿戴和精炼
+		GUIDE_BATTLE_ITEM_ZHIXUECAO_USE		=6 // 战斗道具使用-止血草
+		GUIDE_BUDDY_ADVANCED_SKILL_EQUIP		=7 // 伙伴进阶绝招装备
+		GUIDE_BUDDY_ADVANCED_SKILL_USE			=8 // 伙伴进阶绝招使用
+		GUIDE_GHOST_EQUIP					=9 // 装备魂侍
+		GUIDE_GHOST_POWER_LOOK				=10 // 魂力查看
+		GUIDE_GHOST_BATTLE_USE				=11 // 魂侍战场中触发
+		GUIDE_PET_EQUIP					=12 // 装备灵宠
+		GUIDE_PET_BATTLE_USE				=13 // 灵宠战场中使用
+		GUIDE_PET_CATCH					=14 // 灵宠抓捕
+		GUIDE_HARD_LEVEL					=15 // 深渊引导
+		GUIDE_TIANJIE						=16 // 天界引导
+		GUIDE_GOTO_ZHUBAO				=17 // 前往烛堡引导
+		GUIDE_SWORD_SOUL					=18 // 剑山拔剑和剑心强化引导
+		GUIDE_FIRST_BATTLE					=19 // 第一场战斗引导使用绝招
+		GUIDE_MAIN_ROLE_SKILL_EQUIP_FAILE		=20 // 主角奥义绝招装备
+		GUIDE_ENTER_MISSION_SECOND			=21 // 第二次进入冒险关卡
+		GUIDE_BUDDY_EQUIP					=22 // 伙伴装备穿戴
+      		GUIDE_BUDDY_USE_SKILL_DAODUN			=23 // 刀盾绝招使用
+      		GUIDE_EQUIP_USE_SKILL_FENGJUANCANSHENG	=24 // 装备和使用风卷尘生
+      		GUIDE_FRIENDSHIP	=25 // 羁绊
+      		GUIDE_EQUIP_ROLE_3	=26 // 袁铭志上阵
+      		GUIDE_EQUIP_ROLE_4	=27 // 朱媛媛上阵
+	}
+
+	type guide_action enum {
+		GUIDE_ACCEPT						=0 //引导接受
+		GUIDE_FINISH						=1 //引导完成
+	}
+	//
+	// 更新任务状态 NPC对话任务的完成也是由客户端调用该接口做处理
+	//
+	api update_quest = 1 {
+		in {}
+		out{}
+	}
+
+	// 获取每日任务信息
+	api get_daily_info = 2 {
+		in {}
+		out {
+			quest : list {
+				id : int16	// 任务id
+				finish_count: int16 // 完成数
+				award_state: int8 // 奖励状态; 1 未奖励；2可领取; 3已奖励
+			}
+		}
+	}
+
+	// 每日任务领取奖励
+	api award_daily = 3 {
+		in {
+			id : int16 // 任务id
+		}
+
+		out {}
+	}
+
+	// 通知每日任务更新
+	api notify_daily_change = 4 {
+		out {
+			id : int16
+			finish_count: int16
+			award_state: int8 // 奖励状态; 1 未奖励；2可领取; 3已奖励
+		}
+	}
+
+	//
+	// 新手引导记录
+	//
+	api guide = 5 {
+		in {
+			guide_type : guide_type  // 新手引导ID 
+			action : guide_action // 完成情况 0:接受，1完成
+		}
+		out{}
+	}
+
+	//
+	// 获取扩展任务进度
+	//
+	api get_extend_quest_info_by_npc_id = 6 {
+		in {
+			npc_id : int32 //NPC ID 
+		}
+		out  {
+			quest : list {
+				id : int32 //任务ID
+				progress : int16 //进度
+				state : int8 //状态 0--未完成 1--完成 2--已领取奖励
+			}
+		}
+	}
+
+	//
+	// 领取任务奖励
+	//
+	api take_extend_quest_award = 7 {
+		in {
+			quest_id : int32 //任务ID
+		}
+		out {
+			quest_id : int32 //任务ID
+		}
+	}
+
+	//	
+	// 已经接受的支线任务和每日任务信息（任务面板需要展示的）
+	//
+	api get_pannel_quest_info = 8 {
+		in {}
+		out {
+			cur_stars : int32 // 当前星数
+			awarded : string // 已领取，用|分割
+			quest : list {	
+				quest_class : int8 //0-每日任务 1-支线任务
+				id : int32 //任务ID
+				progress : int16 //进度
+				state : int8 //状态 1--未完成 2--完成 3--已领取奖励
+			}
+		}
+	}
+
+	//放弃支线任务
+	api give_up_addition_quest = 10 {
+		in {
+			quest_id : int32 //支线任务ID
+		} 
+		out {}
+	}
+
+	//领取支线任务
+	api take_addition_quest = 11 { 
+		in {
+			quest_id : int32 //支线任务ID
+		} 
+		out {
+			success : bool //是否成功（因为任务达到上限而失败会则返回 false）
+		}
+	}
+
+	//领取支线任务奖励
+	api take_addition_quest_award = 12 {
+		in {
+			quest_id : int32 //支线任务ID
+		}
+		out {}
+	}
+
+	//获取支线任务信息
+	api get_addition_quest= 13 {
+		in {}
+		out {
+			quest : list {
+				quest_id : int32 //任务ID
+				progress : int16 //进度
+				state : int8 //状态 0--未领取 1--未完成 2--完成 3--已领取奖励
+			}
+		}
+	}
+
+	//刷新客户端驱动的任务
+	api refresh_addition_quest = 14 {
+		in {
+			quest_id : int32 //任务ID
+		}
+		out {}
+	}
+
+	//领取每日任务星数奖励
+	api take_quest_stars_awaded = 15 {
+		in{
+			stars_level : int32 // 奖励所需星数
+		}
+		out{
+			result : bool
+		}
+	}
+}

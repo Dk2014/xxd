@@ -1,0 +1,1 @@
+{"action_name":"start_battle_for_hijack_boat","module_name":"battle","protocol":[{"name":"pid","type":"int64"},{"name":"boat_id","type":"int64"}]}

@@ -1,0 +1,12 @@
+-- ------------------------------------------------------
+-- 11/26/2015 16:11 插入或更新发生在表enemy_deploy_form IP:::1
+UPDATE `enemy_deploy_form` SET `pos1` = '0', `pos2` = '0', `pos3` = '0', `pos4` = '0', `pos5` = '0', `pos6` = '0', `pos7` = '0', `pos8` = '1181', `pos9` = '0', `pos10` = '0', `pos11` = '0', `pos12` = '0', `pos13` = '0', `pos14` = '0', `pos15` = '0' WHERE `id` = 385;
+
+-- ------------------------------------------------------
+-- 11/26/2015 16:43 插入或更新发生在表mission_level IP:172.26.167.172
+UPDATE `mission_level` SET `name` = '兔帮踢馆', `type` = '0', `sign` = 'QingZhuLin2', `sign_war` = 'QingZhuLin2', `flip_horizontal` = '0', `music` = 'YouQu' WHERE `id` = 933;
+
+-- ------------------------------------------------------
+-- 11/26/2015 16:43 插入或更新发生在表mission_enemy IP:172.26.167.172
+UPDATE `mission_enemy` SET `order` = '1', `best_round` = '0', `monster_num` = '1', `enter_x` = '1', `enter_y` = '1', `monster1_id` = '0', `monster1_chance` = '0', `monster2_id` = '0', `monster2_chance` = '0', `monster3_id` = '0', `monster3_chance` = '0', `monster4_id` = '0', `monster4_chance` = '0', `monster5_id` = '0', `monster5_chance` = '0', `is_boss` = '0', `boss_dir` = '0' WHERE `id` = 2300;
+

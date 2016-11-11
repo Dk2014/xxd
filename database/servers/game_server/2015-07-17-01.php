@@ -1,0 +1,1 @@
+<?php $this->AddSQL("alter table global_tb_xxd_onlinecnt add column `cid`  bigint(20) NOT NULL DEFAULT 0 COMMENT '渠道ID';");?>

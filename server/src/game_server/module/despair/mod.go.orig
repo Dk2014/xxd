@@ -1,0 +1,667 @@
+package despair
+
+import (
+	"core/fail"
+	"core/net"
+	"core/time"
+	"fmt"
+	"game_server/api/protocol/battle_api"
+	"game_server/api/protocol/despair_land_api"
+	baseBattle "game_server/battle"
+	"game_server/dat/award_reason_type_dat"
+	"game_server/dat/despair_dat"
+	"game_server/dat/item_dat"
+	"game_server/dat/mail_dat"
+	"game_server/dat/mission_dat"
+	"game_server/dat/quest_dat"
+	"game_server/mdb"
+	"game_server/module"
+	"game_server/module/battle"
+	"game_server/module/despair_common"
+	"game_server/module/rpc"
+	"game_server/tlog"
+	"game_server/xdlog"
+)
+
+type DespairMod struct {
+}
+
+func init() {
+	module.Despair = DespairMod{}
+}
+
+func (mod DespairMod) StartDespairLevel(session *net.Session, levelId int32) {
+	state := module.State(session)
+	db := state.Database
+	pid := state.PlayerId
+
+	playerDespairLandState := GetPlayerDespairLandState(db, pid)
+
+	// 检查今日讨伐次数
+	battleNum := despair_dat.MAX_BATTLE_NUM + playerDespairLandState.DailyBoughtBattleNum - playerDespairLandState.DailyBattleNum
+	fail.When(battleNum <= 0, "Fail cause battle_num is not enough")
+
+	levelEnemyIds := mission_dat.GetEnemyIdByMissionLevelId(levelId)
+	levelEnemy := mission_dat.GetMissionLevelEnemyById(levelEnemyIds[0])
+	//levelId := levelEnemy.MissionLevelId
+	levelInfo := mission_dat.GetMissionLevelById(levelId)
+
+	// 进入关卡
+	module.Mission.DoEnterMissionLevel(session, levelInfo, int8(battle_api.BATTLE_TYPE_DESPAIR))
+
+	// 开始战斗
+	state.Battle = module.Battle.NewBattleForDespair(session, levelEnemy.Id)
+}
+
+func (mod DespairMod) BattleWinDebug(session *net.Session, star, campType int8) {
+	state := module.State(session)
+	db := state.Database
+	pid := db.PlayerId()
+	round := int8(9)
+	switch star {
+	case 1:
+		round = 21
+	case 2:
+		round = 11
+	default:
+	}
+	killNum := int64(3)
+	deadNum := int64(1)
+	passTime := time.GetNowTime()
+	despairLandLevels := despair_dat.GetAllDespairLevelInfoByCamp(campType)
+	for _, despairLandLevel := range despairLandLevels {
+		levelId := mission_dat.GetSpecialLevelId(mission_dat.LEVEL_TYPE_DESPAIR, int16(despairLandLevel.Id))
+
+		point := int64(despairLandLevel.Point)
+		player := db.Lookup.Player(pid)
+		playerFightNum := db.Lookup.PlayerFightNum(pid)
+
+		playerDespairLandState := GetPlayerDespairLandState(db, pid)
+		playerDespairLandState.KillNum += int64(killNum)
+		playerDespairLandState.DeadNum += int64(deadNum)
+		playerDespairLandState.Point += point
+		playerDespairLandState.DailyBattleNum++
+		playerDespairLandState.DailyBattleTimestamp = time.GetNowTime()
+		db.Update.PlayerDespairLandState(playerDespairLandState)
+
+		playerDespairLandCampState := GetPlayerDespairLandCampState(db, pid, campType)
+		playerDespairLandCampState.KillNum += killNum
+		playerDespairLandCampState.DeadNum += deadNum
+		playerDespairLandCampState.Point += point
+		db.Update.PlayerDespairLandCampState(playerDespairLandCampState)
+
+		playerDespairLandLevelRecord := GetPlayerDespairLandLevelRecord(db, pid, levelId, despair_land_api.DespairLandCamp(campType))
+		if playerDespairLandLevelRecord.Round == 0 || playerDespairLandLevelRecord.Round > round {
+			playerDespairLandLevelRecord.Round = round
+		}
+		playerDespairLandLevelRecord.PassedTimestamp = passTime
+		if playerDespairLandLevelRecord.FirstPassedTimestamp == 0 {
+			playerDespairLandLevelRecord.FirstPassedTimestamp = passTime
+			playerDespairLandLevelRecord.FirstPassedFightnum = playerFightNum.FightNum
+		}
+		playerDespairLandLevelRecord.CampType = campType
+		db.Update.PlayerDespairLandLevelRecord(playerDespairLandLevelRecord)
+		module.Item.CommonAward(state, award_reason_type_dat.PASS_AWARD, int32(levelId), tlog.IFR_DESPAIR_AWARD, tlog.EFT_DESPAIR_AWARD, tlog.MFR_DESPAIR_AWARD, xdlog.ET_DESPAIR_AWARD)
+		module.Quest.RefreshDailyQuest(state.Database, quest_dat.DAILY_QUEST_CLASS_DESPAIR)
+		updateData.AddBattleRecord(despair_common.DespairLevelBattleRecord{
+			Pid:       pid,
+			Name:      player.Nick,
+			CampType:  campType,
+			LevelId:   levelId,
+			Timestamp: passTime,
+			FightNum:  playerFightNum.FightNum,
+		})
+		updateData.AddLevelBattleInfo(despair_common.DespairLevelBattleInfo{
+			Pid:      pid,
+			Name:     player.Nick,
+			CampType: campType,
+			Dead:     deadNum,
+			Kill:     killNum,
+			Point:    point,
+		})
+	}
+}
+
+//FIXME 这段代码有各种问题 明天讨论
+func (mod DespairMod) BattleWin(session *net.Session, xdEventType int32) {
+	state := module.State(session)
+	db := state.Database
+
+	pid := state.PlayerId
+
+	// 战斗数据
+	bt := state.Battle.GetBattle()
+	round := int8(bt.GetRounds())
+	killNum := int64(bt.Defenders.GetDead())
+	deadNum := int64(bt.Attackers.GetDead())
+	passTime := time.GetNowTime()
+
+	// 关卡数据
+	levelId := state.MissionLevelState.LevelId
+	levelInfo := mission_dat.GetMissionLevelById(levelId)
+	despairLandLevel := despair_dat.GetDespairLandLevel(int32(levelInfo.ParentId))
+	campType := despairLandLevel.CampType
+	star := mission_dat.GetLevelStar(levelId, round)
+
+	// 奖励数据
+	point := int64(despairLandLevel.Point)
+
+	player := db.Lookup.Player(pid)
+	playerFightNum := db.Lookup.PlayerFightNum(pid)
+
+	playerDespairLandState := GetPlayerDespairLandState(db, pid)
+	playerDespairLandState.KillNum += killNum
+	playerDespairLandState.DeadNum += deadNum
+	playerDespairLandState.DailyBattleNum++
+	playerDespairLandState.DailyBattleTimestamp = time.GetNowTime()
+
+	playerDespairLandCampState := GetPlayerDespairLandCampState(db, pid, campType)
+	playerDespairLandCampState.KillNum += killNum
+	playerDespairLandCampState.DeadNum += deadNum
+
+	db.Update.PlayerDespairLandState(playerDespairLandState)
+	db.Update.PlayerDespairLandCampState(playerDespairLandCampState)
+
+	playerDespairLandLevelRecord := GetPlayerDespairLandLevelRecord(db, pid, levelId, despair_land_api.DespairLandCamp(campType))
+	playerDespairLandLevelRecord.CampType = campType
+	var old_star int8 = 0
+	if playerDespairLandLevelRecord.Round != 0 {
+		old_star = mission_dat.GetLevelStar(levelId, playerDespairLandLevelRecord.Round)
+	}
+	if playerDespairLandLevelRecord.Round == 0 || playerDespairLandLevelRecord.Round > round {
+		playerDespairLandLevelRecord.Round = round
+	}
+	isNew := false
+	playerDespairLandLevelRecord.PassedTimestamp = passTime
+	if playerDespairLandLevelRecord.FirstPassedTimestamp == 0 {
+		isNew = true
+		playerDespairLandLevelRecord.FirstPassedTimestamp = passTime
+		playerDespairLandLevelRecord.FirstPassedFightnum = playerFightNum.FightNum
+	}
+	playerDespairLandLevelRecord.CampType = campType
+	db.Update.PlayerDespairLandLevelRecord(playerDespairLandLevelRecord)
+
+	// 发放奖励
+	module.Item.CommonAward(state, award_reason_type_dat.PASS_AWARD, int32(levelId), tlog.IFR_DESPAIR_AWARD, tlog.EFT_DESPAIR_AWARD, tlog.MFR_DESPAIR_AWARD, xdlog.ET_DESPAIR_AWARD)
+
+	module.Quest.RefreshDailyQuest(state.Database, quest_dat.DAILY_QUEST_CLASS_DESPAIR)
+	// 三星奖励
+	// if star == mission_dat.THREE_STAR {
+	// 	module.Item.CommonAward(state, award_reason_type_dat.STAR_AWARD, int32(levelId), tlog.IFR_DESPAIR_AWARD, tlog.EFT_DESPAIR_AWARD, tlog.MFR_DESPAIR_AWARD, xdlog.ET_DESPAIR_AWARD)
+	// }
+
+	// notify
+	rpc.RemoteDespairNotifyPass(pid, player.Nick, levelId, star == mission_dat.THREE_STAR && old_star != mission_dat.THREE_STAR, isNew)
+
+	// 记录战报
+	updateBattleRecord(session)
+
+	rpc.RemoteDespairGetBossInfo(campType, func(reply *rpc.Reply_DespairGetBossInfo) {
+		mdb.GlobalExecute(func(globalDb *mdb.Database) {
+			globalDb.AgentExecute(pid, func(agentDB *mdb.Database) {
+				playerDespairLandState := GetPlayerDespairLandState(agentDB, pid)
+				playerDespairLandCampState := GetPlayerDespairLandCampState(agentDB, pid, campType)
+				if !reply.Success || (reply.Success && reply.Hp > 0) {
+					playerDespairLandState.Point += point
+					playerDespairLandCampState.Point += point
+				}
+				agentDB.Update.PlayerDespairLandState(playerDespairLandState)
+				agentDB.Update.PlayerDespairLandCampState(playerDespairLandCampState)
+			})
+		})
+	})
+	updateData.AddBattleRecord(despair_common.DespairLevelBattleRecord{
+		Pid:       pid,
+		Name:      player.Nick,
+		CampType:  campType,
+		LevelId:   levelId,
+		Timestamp: passTime,
+		FightNum:  playerFightNum.FightNum,
+	})
+	updateData.AddLevelBattleInfo(despair_common.DespairLevelBattleInfo{
+		Pid:      pid,
+		Name:     player.Nick,
+		CampType: campType,
+		Dead:     deadNum,
+		Kill:     killNum,
+		Point:    point,
+	})
+}
+
+func (mod DespairMod) BattleLose(session *net.Session) {
+	state := module.State(session)
+	db := state.Database
+
+	pid := state.PlayerId
+	player := db.Lookup.Player(pid)
+	bt := state.Battle.GetBattle()
+
+	deadNum := int64(bt.Attackers.GetDead())
+	killNum := int64(bt.Defenders.GetDead())
+	// 关卡ID
+	levelId := state.MissionLevelState.LevelId
+	levelInfo := mission_dat.GetMissionLevelById(levelId)
+
+	despairLandLevel := despair_dat.GetDespairLandLevel(int32(levelInfo.ParentId))
+	campType := despairLandLevel.CampType
+
+	playerDespairLandState := GetPlayerDespairLandState(db, pid)
+	playerDespairLandState.KillNum += killNum
+	playerDespairLandState.DeadNum += deadNum
+	db.Update.PlayerDespairLandState(playerDespairLandState)
+
+	playerDespairLandCampState := GetPlayerDespairLandCampState(db, pid, campType)
+	playerDespairLandCampState.KillNum += killNum
+	playerDespairLandCampState.DeadNum += deadNum
+	db.Update.PlayerDespairLandCampState(playerDespairLandCampState)
+
+	updateData.AddLevelBattleInfo(despair_common.DespairLevelBattleInfo{
+		Pid:      pid,
+		Name:     player.Nick,
+		CampType: campType,
+		Dead:     deadNum,
+		Kill:     killNum,
+		Point:    0,
+	})
+}
+
+func (mod DespairMod) StartDespairBossLevel(session *net.Session, levelId int32) {
+	state := module.State(session)
+	db := state.Database
+	pid := state.PlayerId
+
+	//levelEnemy := mission_dat.GetMissionLevelEnemyById(int32(enemyId))
+
+	levelEnemyIds := mission_dat.GetEnemyIdByMissionLevelId(levelId)
+	levelEnemy := mission_dat.GetMissionLevelEnemyById(levelEnemyIds[0])
+	levelInfo := mission_dat.GetMissionLevelById(levelId)
+
+	campType := levelInfo.SubType
+
+	playerDespairLandCampState := GetPlayerDespairLandCampState(db, pid, campType)
+	playerDespairLandState := GetPlayerDespairLandState(db, pid)
+
+	// 检查今日讨伐次数
+	var boughtNum int32
+	if campType == int8(despair_land_api.DESPAIR_LAND_CAMP_BEAST) {
+		boughtNum = int32(playerDespairLandState.DailyBossBeastBoughtBattleNum)
+	} else if campType == int8(despair_land_api.DESPAIR_LAND_CAMP_WALKING_DEAD) {
+		boughtNum = int32(playerDespairLandState.DailyBossWalkingDeadBoughtBattleNum)
+	} else if campType == int8(despair_land_api.DESPAIR_LAND_CAMP_DEVIL) {
+		boughtNum = int32(playerDespairLandState.DailyBossDevilBoughtBattleNum)
+
+	}
+	battleNum := despair_dat.MAX_BATTLE_NUM + boughtNum - playerDespairLandCampState.DailyBossBattleNum
+	fail.When(battleNum <= 0, "Fail cause battle_num is not enough")
+
+	rpc.RemoteDespairGetBossInfo(campType, func(reply *rpc.Reply_DespairGetBossInfo) {
+		fail.When(!reply.Success, "Fail cause boss maybe not open")
+		// 进入关卡
+		//FIXME DoEnterMissionLevel 里面用到 session 的db
+		module.Mission.DoEnterMissionLevel(session, levelInfo, int8(battle_api.BATTLE_TYPE_DESPAIR_BOSS))
+
+		// 战场boss属性修改
+		var boss *baseBattle.Fighter
+		defendSide := module.NewBattleSideWithEnemyDeployFormFilterByLevel(int8(battle_api.BATTLE_TYPE_DESPAIR_BOSS), int32(reply.Level), levelEnemy.Id, func(fighter *baseBattle.Fighter) bool {
+			fighter.Health = int(reply.Hp)
+			boss = fighter
+			return false
+		})
+
+		// 开始战斗
+		state.Battle = module.Battle.NewBattleForDespairBoss(session, defendSide)
+		state.Battle.(*battle.Battle_MissionLevel).Boss = boss
+		state.Battle.(*battle.Battle_MissionLevel).BossStartHp = int(reply.Hp)
+	})
+}
+
+func BattleBossEnd(session *net.Session) {
+	state := module.State(session)
+	db := state.Database
+
+	pid := state.PlayerId
+	player := db.Lookup.Player(pid)
+
+	bt := state.Battle.GetBattle()
+
+	dead_num := bt.Attackers.GetDead()
+
+	levelId := state.MissionLevelState.LevelId
+	levelInfo := mission_dat.GetMissionLevelById(levelId)
+	//despairLandLevel := despair_dat.GetDespairLandLevel(int32(levelInfo.ParentId))
+	//campType := despairLandLevel.CampType
+	campType := levelInfo.SubType
+
+	boss := state.Battle.(*battle.Battle_MissionLevel).Boss
+	bossLevel := boss.Level
+	awardPoint := 0
+	switch {
+	case bossLevel <= 20:
+		awardPoint = 2
+	case bossLevel <= 40:
+		awardPoint = 3
+	case bossLevel <= 60:
+		awardPoint = 4
+	case bossLevel <= 80:
+		awardPoint = 5
+	case bossLevel <= 99:
+		awardPoint = 6
+	}
+
+	//player := db.Lookup.Player(pid)
+	//playerFightNum := db.Lookup.PlayerFightNum(pid)
+
+	playerDespairLandState := GetPlayerDespairLandState(db, pid)
+	playerDespairLandCampState := GetPlayerDespairLandCampState(db, pid, campType)
+	playerDespairLandState.Point += int64(awardPoint)
+	playerDespairLandCampState.Hurt += int64(state.Battle.(*battle.Battle_MissionLevel).GetBossHpLoss())
+	playerDespairLandCampState.Point += int64(awardPoint)
+	// stillHealth := state.Battle.(*battle.Battle_MissionLevel).Boss.Health
+	if dead_num > 0 {
+		playerDespairLandState.DeadNum += int64(dead_num)
+		playerDespairLandCampState.DeadNumBoss += int64(dead_num)
+		playerDespairLandCampState.DeadNum += int64(dead_num)
+	}
+
+	//FIXME
+	playerDespairLandCampState.DailyBossBattleNum++
+	playerDespairLandCampState.BossBattleNum++
+	playerDespairLandCampState.BossBattleTimestamp = time.GetNowTime()
+
+	db.Update.PlayerDespairLandCampState(playerDespairLandCampState)
+	db.Update.PlayerDespairLandState(playerDespairLandState)
+
+	updateData.AddBossBattleInfo(despair_common.DespairLandBossBattleInfo{
+		Pid:       pid,
+		Name:      player.Nick,
+		CampType:  campType,
+		TimeStamp: time.GetNowTime(),
+		Dead:      int64(dead_num),
+		Point:     int64(awardPoint),
+		Hurt:      int64(state.Battle.(*battle.Battle_MissionLevel).GetBossHpLoss()),
+		BattleNum: 1,
+	})
+
+	// 更新boss数据
+	//rpc.RemoteDespairSetBossInfo(campType, int64(stillHealth))
+
+	out := &despair_land_api.DespairLandBattleBossAwardInfo_Out{}
+	out.Hurt = int64(state.Battle.(*battle.Battle_MissionLevel).GetBossHpLoss())
+	out.Point = int8(awardPoint)
+
+	session.Send(out)
+}
+
+func (mod DespairMod) BattleBossWin(session *net.Session, xdEventType int32) {
+	BattleBossEnd(session)
+}
+
+func (mod DespairMod) BattleBossLose(session *net.Session) {
+	BattleBossEnd(session)
+}
+
+// do something when login
+func (mod DespairMod) HandleLogin(session *net.Session) {
+	handleLogin(session, int8(despair_land_api.DESPAIR_LAND_CAMP_BEAST))
+	handleLogin(session, int8(despair_land_api.DESPAIR_LAND_CAMP_WALKING_DEAD))
+	handleLogin(session, int8(despair_land_api.DESPAIR_LAND_CAMP_DEVIL))
+}
+
+// after login,
+// 1. check whether should award
+func handleLogin(session *net.Session, campType int8) {
+	state := module.State(session)
+	db := state.Database
+	pid := state.PlayerId
+
+	// get player despair land camp state, if not exist
+	// then there is no need to check award
+	var playerDespairLandCampState *mdb.PlayerDespairLandCampState
+	db.Select.PlayerDespairLandCampState(func(row *mdb.PlayerDespairLandCampStateRow) {
+		if row.Pid() == pid && row.CampType() == campType {
+			playerDespairLandCampState = row.GoObject()
+		}
+	})
+
+	if playerDespairLandCampState == nil {
+		return
+	}
+
+	// return if got award already
+	if playerDespairLandCampState.Awarded == 1 {
+		return
+	}
+
+	// timestamp when this record generated
+	timestamp := playerDespairLandCampState.Timestamp
+	isCurWeek := despair_common.IsValid(timestamp)
+
+	// get boss history
+	rpc.RemoteDespairGetBossHistory(campType, playerDespairLandCampState.Timestamp, func(reply *rpc.Reply_DespairGetBossHistory) {
+		// boss is not opened
+		if reply.StartTimestamp == 0 {
+			return
+		}
+
+		// boss is not dead and still in this week
+		if reply.DeadTimestamp == 0 && isCurWeek {
+			return
+		}
+
+		//boss没被击败，奖励内容有：伤害奖励
+		//boss被击败，奖励内容有：伤害奖励，讨伐点兑换奖励，伤害排名奖励
+		//排名奖励 在boss死亡时 统一强制发送
+		mdb.GlobalExecute(func(globalDb *mdb.Database) {
+			globalDb.AgentExecute(pid, func(db *mdb.Database) {
+				db.Select.PlayerDespairLandCampState(func(row *mdb.PlayerDespairLandCampStateRow) {
+					if row.Pid() == pid && row.CampType() == campType {
+						playerDespairLandCampState = row.GoObject()
+					}
+				})
+				if playerDespairLandCampState.Awarded == 1 {
+					return
+				}
+				if reply.DeadTimestamp != 0 {
+					// boss dead
+					module.Despair.SendPointAward(db, playerDespairLandCampState)
+					module.Despair.SendHurtAward(db, playerDespairLandCampState)
+					playerDespairLandCampState.Awarded = 1
+					db.Update.PlayerDespairLandCampState(playerDespairLandCampState)
+				}
+			})
+		})
+	})
+}
+
+func getCampName(campType int8) string {
+	name, ok := despair_dat.CAMP_NAME_CONFIG[campType]
+	fail.When(!ok, fmt.Sprintf("Fail cause cant find campType:%d", campType))
+	return name
+}
+
+func getBossName(campType int8) string {
+	name, ok := despair_dat.BOSS_NAME_CONFIG[campType]
+	fail.When(!ok, fmt.Sprintf("Fail cause cant find campType:%d", campType))
+	return name
+}
+
+func (mod DespairMod) SendPointAward(db *mdb.Database, playerDespairLandCampState *mdb.PlayerDespairLandCampState) {
+	campType := playerDespairLandCampState.CampType
+	//point := playerDespairLandCampState.PointBoss TODO 需要和策划确认这蛋逻辑
+	point := playerDespairLandCampState.Point
+	if point == 0 {
+		return
+	}
+	perHopeLightNeedPoint := despair_dat.GetWarPointByPerHopeLight(despair_dat.WAR_POINT)
+	hope := int64(point / despair_dat.WAR_POINT * int64(perHopeLightNeedPoint))
+
+	// 你在此次对{0}的讨伐中表现英勇，累计获得{1}讨伐点，为击退敌人做出了杰出的贡献，特此奖励{2}希望之光，英雄请再接再厉！
+	// 讨伐点2兑换希望之光1
+	attachments := []*mail_dat.Attachment{}
+	if hope > 0 {
+		attachments = append(attachments, &mail_dat.Attachment{AttachmentType: mail_dat.ATTACHMENT_ITEM,
+			ItemId:  item_dat.ITEM_HOPE_ID,
+			ItemNum: hope,
+		})
+	}
+	mail := &mail_dat.MailTaoFaShengLi{}
+	mail.Attachments = attachments
+	mail.CampName = getCampName(campType)
+	mail.Hope = fmt.Sprint(hope)
+	mail.Point = fmt.Sprint(point)
+	module.Mail.SendMail(db, mail)
+}
+
+func (mod DespairMod) SendHurtAward(db *mdb.Database, playerDespairLandCampState *mdb.PlayerDespairLandCampState) {
+	campType := playerDespairLandCampState.CampType
+	hurt := playerDespairLandCampState.Hurt
+	if hurt == 0 {
+		return
+	}
+	exp := int64(hurt / 20)
+	coins := int64(hurt / 50)
+	fame := int64(hurt / 1000)
+	mainRoleId := module.Role.GetMainRole(db).RoleId
+
+	// 你在本次讨伐{0}作战中，累计造成{1}点伤害，获得{2}点经验，{3}点铜钱，{4}点声望，{5}讨伐点
+	// 1.每造成20点伤害，奖励1经验
+	// 2.每造成50点伤害，奖励1铜钱
+	// 3.每造成1000点伤害，奖励1声望
+	attachments := []*mail_dat.Attachment{}
+	if exp > 0 {
+		attachments = append(attachments, &mail_dat.Attachment{AttachmentType: mail_dat.ATTACHMENT_SINGLE_ROLE_EXP,
+			ItemId:  int16(mainRoleId),
+			ItemNum: exp})
+	}
+	if coins > 0 {
+		attachments = append(attachments, &mail_dat.Attachment{AttachmentType: mail_dat.ATTACHMENT_COINS,
+			ItemNum: coins})
+	}
+	if fame > 0 {
+		attachments = append(attachments, &mail_dat.Attachment{AttachmentType: mail_dat.ATTACHMENT_FAME,
+			ItemNum: fame})
+	}
+	mail := &mail_dat.MailBossTaoFa{}
+	mail.Attachments = attachments
+	mail.BossName = getBossName(campType)
+	mail.Hurt = fmt.Sprint(hurt)
+	mail.Exp = fmt.Sprint(exp)
+	mail.Coins = fmt.Sprint(coins)
+	mail.Fame = fmt.Sprint(fame)
+	module.Mail.SendMail(db, mail)
+}
+
+func (mod DespairMod) SendHurtTopAward(db *mdb.Database, playerDespairLandCampState *mdb.PlayerDespairLandCampState, rank int64) {
+	campType := playerDespairLandCampState.CampType
+	hurt := playerDespairLandCampState.Hurt
+	if hurt == 0 {
+		return
+	}
+	exp := int64(hurt / 20)
+	coins := int64(hurt / 50)
+	fame := int64(hurt / 1000)
+	mainRoleId := module.Role.GetMainRole(db).RoleId
+
+	// 你在本次讨伐{0}作战中，排名第{1}，对{0}累计造成{2}点伤害，获得{3}点经验，{4}点铜钱，{5}点声望，{6}讨伐点，额外获得一个希望宝箱
+	attachments := []*mail_dat.Attachment{}
+	if exp > 0 {
+		attachments = append(attachments, &mail_dat.Attachment{AttachmentType: mail_dat.ATTACHMENT_SINGLE_ROLE_EXP,
+			ItemId:  int16(mainRoleId),
+			ItemNum: exp})
+	}
+	if coins > 0 {
+		attachments = append(attachments, &mail_dat.Attachment{AttachmentType: mail_dat.ATTACHMENT_COINS,
+			ItemNum: coins})
+	}
+	if fame > 0 {
+		attachments = append(attachments, &mail_dat.Attachment{AttachmentType: mail_dat.ATTACHMENT_FAME,
+			ItemNum: fame})
+
+	}
+	attachments = append(attachments, &mail_dat.Attachment{AttachmentType: mail_dat.ATTACHMENT_ITEM,
+		ItemId:  item_dat.ITEM_HOPE_BOX_ID,
+		ItemNum: 1})
+	mail := &mail_dat.MailBossTaoFaJingYing{}
+	mail.Attachments = attachments
+	mail.BossName = getBossName(campType)
+	mail.Rank = fmt.Sprint(rank)
+	mail.Hurt = fmt.Sprint(hurt)
+	mail.Exp = fmt.Sprint(exp)
+	mail.Coins = fmt.Sprint(coins)
+	mail.Fame = fmt.Sprint(fame)
+	module.Mail.SendMail(db, mail)
+}
+
+func (mod DespairMod) GetPlayerDespairLandState(db *mdb.Database, pid int64) *mdb.PlayerDespairLandState {
+	return GetPlayerDespairLandState(db, pid)
+}
+
+func (mod DespairMod) GetPlayerDespairLandCampState(db *mdb.Database, pid int64, campType int8) *mdb.PlayerDespairLandCampState {
+	return GetPlayerDespairLandCampState(db, pid, campType)
+}
+
+func (mod DespairMod) AutoFightDespairBattle(session *net.Session, levelInfo *mission_dat.MissionLevel) {
+	state := module.State(session)
+	db := state.Database
+	pid := state.PlayerId
+	passTime := time.GetNowTime()
+
+	playerDespairLandLevelRecord := GetPlayerDespairLandLevelRecord(db, pid, levelInfo.Id, despair_land_api.DespairLandCamp(levelInfo.SubType))
+	levelStar := mission_dat.CalLevelStarByRound(levelInfo.Id, playerDespairLandLevelRecord.Round)
+	fail.When(levelStar != mission_dat.THREE_STAR, "关卡评价不满足")
+
+	player := db.Lookup.Player(pid)
+	playerFightNum := db.Lookup.PlayerFightNum(pid)
+
+	despairLandLevel := despair_dat.GetDespairLandLevel(int32(levelInfo.ParentId))
+	campType := despairLandLevel.CampType
+
+	point := int64(despairLandLevel.Point)
+	playerDespairLandState := GetPlayerDespairLandState(db, pid)
+
+	//FIXME
+	battleNum := despair_dat.MAX_BATTLE_NUM + playerDespairLandState.DailyBoughtBattleNum - playerDespairLandState.DailyBattleNum
+	fail.When(battleNum <= 0, "Fail cause battle_num is not enough")
+
+	playerDespairLandState.DailyBattleNum++
+	playerDespairLandState.DailyBattleTimestamp = time.GetNowTime()
+	db.Update.PlayerDespairLandState(playerDespairLandState)
+
+	//db.Update.PlayerDespairLandCampState(playerDespairLandCampState)
+
+	// 发放奖励
+	module.Quest.RefreshDailyQuest(state.Database, quest_dat.DAILY_QUEST_CLASS_DESPAIR)
+	module.Item.CommonAward(state, award_reason_type_dat.PASS_AWARD, int32(levelInfo.Id), tlog.IFR_DESPAIR_AWARD, tlog.EFT_DESPAIR_AWARD, tlog.MFR_DESPAIR_AWARD, xdlog.ET_DESPAIR_AWARD)
+
+	rpc.RemoteDespairGetBossInfo(campType, func(reply *rpc.Reply_DespairGetBossInfo) {
+		mdb.GlobalExecute(func(globalDb *mdb.Database) {
+			globalDb.AgentExecute(pid, func(db *mdb.Database) {
+				playerDespairLandState := GetPlayerDespairLandState(db, pid)
+				playerDespairLandCampState := GetPlayerDespairLandCampState(db, pid, levelInfo.SubType)
+				if !reply.Success || (reply.Success && reply.Hp > 0) {
+					playerDespairLandState.Point += point
+					playerDespairLandCampState.Point += point
+					//playerDespairLandCampState.PointTotal += point
+				}
+				db.Update.PlayerDespairLandState(playerDespairLandState)
+				db.Update.PlayerDespairLandCampState(playerDespairLandCampState)
+			})
+		})
+	})
+	updateData.AddBattleRecord(despair_common.DespairLevelBattleRecord{
+		Pid:       pid,
+		Name:      player.Nick,
+		CampType:  campType,
+		LevelId:   levelInfo.Id,
+		Timestamp: passTime,
+		FightNum:  playerFightNum.FightNum,
+	})
+	updateData.AddLevelBattleInfo(despair_common.DespairLevelBattleInfo{
+		Pid:      pid,
+		Name:     player.Nick,
+		CampType: campType,
+		Dead:     0,
+		Kill:     0,
+		Point:    point,
+	})
+}

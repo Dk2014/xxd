@@ -1,0 +1,30 @@
+[
+	{
+		"Id": 8,
+		"Type": 255,
+		"Name": "S1外网封测",
+		"Status": 1,
+		"StatusMsg": "",
+		"IsNew": true,
+		"IsHot": true,
+		"OpenTime": 1402531200,
+		"GServers": [
+			{
+				"GSId": 4,
+				"Ip": "s1.xxd.pinidea.co",
+				"Port": "8081",
+				"HD": false,
+				"RPCIp": "s1.xxd.pinidea.co",
+				"RPCPort": "8082"
+			},
+			{
+				"GSId": 7,
+				"Ip": "s1.xxd.pinidea.co",
+				"Port": "9080",
+				"HD": true,
+				"RPCIp": "s1.xxd.pinidea.co",
+				"RPCPort": "9081"
+			}
+		]
+	}
+]

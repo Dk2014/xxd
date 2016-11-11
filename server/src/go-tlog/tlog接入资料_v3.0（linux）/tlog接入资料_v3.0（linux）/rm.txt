@@ -1,0 +1,17 @@
+1.linux_api:tlog组件linux api接口
+	1）包括32位和64位的lib库
+	2）接口说明文档《log平台接口文档（linux版）.doc》
+	3）demo程序和配置文件
+
+2.tlogd_srv：tlog日志接受服务器
+  1）包括32位和64位程序
+  2）修改配置文件tlogd_bin_vec.xml中的<Url>标签【服务器监听地址】
+  3）<Pattern>【日志输出路径，可以不修改】
+  
+  一般只需修改服务器监听地址即可启动tlogd程序，即 sh start_tlogd_vec.sh
+  
+3.日志描述xml书写及检查工具
+   日志协议描述xml说明及相关
+
+4.   
+   

@@ -1,0 +1,67 @@
+//
+// 极限关卡-彩虹关卡 接口
+//
+mod rainbow = 23
+{
+	// 获得玩家当前彩虹关卡信息
+	api info = 1 {
+		in{}
+		out{
+			segment_num: int16 // 当前所在段
+			level_order: int8 // 段内第X个关卡
+			status: int8 // 当前关卡状态( 0--未通过 1--已通过未奖励 2--已奖励未进入下一关卡)
+			reset_num: int8 //今日可重置次数
+			max_segment_can_jump: int16 //可跳转的最大段数 [2, max_segment_can_junp]
+			max_pass_segment: int16 //已打通最后一关的最大段数
+			auto_fight_num: int8 //今日已扫荡次数
+			buy_times:	int16	//今日已购买次数
+		}
+	}
+
+	// 重置彩虹关卡
+	api reset = 2 {
+		in{}
+		out{}
+	}
+
+	// 领取彩虹关卡奖励
+	api award_info = 3 {
+		in{}
+		out{
+			award: list{
+				order: int8 //奖励index [1,x] rainbow_level_award.order 字段
+			}	
+		}
+	}
+
+	// 领取彩虹关卡奖励
+	api take_award = 4 {
+		in{
+			pos1: int8 // 奖励位置[1,5]
+			pos2: int8 // 奖励位置[1,5]
+		}
+		out{
+			next_level: bool //是否有下一个关卡
+		}
+	}
+	// 彩虹段跳转
+	api jump_to_segment = 5 {
+		in{
+			segment: int16 //跳转到指定层数的彩虹关卡，但不能往回跳
+		}
+		out{}
+	}
+
+	// 扫荡
+	api auto_fight = 6 {
+		in{
+			segment: int16 //扫荡指定层数的彩虹关卡，但不能往回跳
+		}
+		out{
+			awardCoin : int32
+			awardExp : int32
+			awardBoxPos1: int8
+			awardBoxPos2: int8
+		}
+	}
+}

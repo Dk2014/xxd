@@ -1,0 +1,1562 @@
+Binary files pages/.DS_Store and ../../../../admin/pages/.DS_Store differ
+diff -ruN pages/battle_item_const.php ../../../../admin/pages/battle_item_const.php
+--- pages/battle_item_const.php	2014-08-27 23:51:27.000000000 +0800
++++ ../../../../admin/pages/battle_item_const.php	2014-08-28 15:02:26.000000000 +0800
+@@ -33,6 +33,5 @@
+ 	'7'=>array('name'=>'清除负面状态', 'const_var'=>'BUFF_CLEAN_BAD'),
+ 	'13'=>array('name'=>'闪避等级','const_var'=>'BUFF_DODGE_LEVEL'),
+ 	'16'=>array('name'=>'伤害加成(%)','const_var'=>'BUFF_HURT_ADD'),
+-	'29'=>array('name'=>'伙伴技能','const_var'=>'BUFF_BUDDY_SKILL'),
+ );
+-?>
++?>
+\ No newline at end of file
+diff -ruN pages/battle_pet_extend.php ../../../../admin/pages/battle_pet_extend.php
+--- pages/battle_pet_extend.php	2014-08-27 23:51:27.000000000 +0800
++++ ../../../../admin/pages/battle_pet_extend.php	2014-08-25 17:44:16.000000000 +0800
+@@ -32,6 +32,7 @@
+ 		'editor' => array('params' => array()),
+ 		'render' => array('params' => array()),
+ 		'data' => array(),
++		'range' =>array(),
+ 	),
+ 
+ 	'item_battle_pet_id' => array(
+@@ -51,6 +52,13 @@
+ 
+ $all_items = get_all_item();
+ 
++function range_skill(){
++	global $skill;
++	$skill_temp = $skill;
++	$skill_temp[0] = '无';
++	return $skill_temp;
++}
++
+ function editor_item_battle_pet_id($column_name, $column_val, $row, $data){
+ 	global $all_items;
+ 
+diff -ruN pages/common_links.php ../../../../admin/pages/common_links.php
+--- pages/common_links.php	2014-08-27 23:51:27.000000000 +0800
++++ ../../../../admin/pages/common_links.php	2014-08-25 18:36:23.000000000 +0800
+@@ -74,4 +74,6 @@
+ 	array('text' => '角色境界等级', 'id' => 'role_realm_level',),
+     array('text' => '角色境界阶级', 'id' => 'role_realm_class',),	
+ );
++$display_params[1] = '黑幕';
++$display_params[2] = '震动';
+ ?>
+diff -ruN pages/daily_sign_in_award_extend.php ../../../../admin/pages/daily_sign_in_award_extend.php
+--- pages/daily_sign_in_award_extend.php	2014-08-27 23:51:27.000000000 +0800
++++ ../../../../admin/pages/daily_sign_in_award_extend.php	2014-08-26 15:10:16.000000000 +0800
+@@ -11,6 +11,7 @@
+ 		'editor' => array('params' => array()),
+ 		'render' => array('params' => array()),
+ 		'data' => array(),
++		'range' => array('params' => array()),
+ 	),
+ 	'vip_double' => array(
+ 		'editor' => array('params' => array()),
+@@ -19,6 +20,10 @@
+ 	),
+ );
+ 
++function range_award_type(){
++	global $all_real_type;
++	return $all_real_type;
++}
+ 
+ function location($params) {
+ 	global $db;
+@@ -27,7 +32,6 @@
+ 	return "一共{$num}条记录";
+ }
+ 
+-
+ function sql_where($params) {
+ 	return "where `type`={$params['m']}";
+ }
+diff -ruN pages/enemy_role.php ../../../../admin/pages/enemy_role.php
+--- pages/enemy_role.php	2014-08-27 23:51:27.000000000 +0800
++++ ../../../../admin/pages/enemy_role.php	2014-08-28 15:02:29.000000000 +0800
+@@ -126,14 +126,6 @@
+ 					}
+ 				}
+ 
+-
+-				$sql = "select pet_id from battle_pet;";
+-				$rows = db_query($db, $sql);
+-				foreach($rows as $row) {
+-					if($row['pet_id']) 
+-						array_push($enemyIds, $row['pet_id']);
+-				}
+-
+ 				array_unique($enemyIds);
+ 
+ 				if (count($enemyIds) >0){
+@@ -165,48 +157,6 @@
+ 			case 'tower_level':
+ 				///TODO
+ 				break;
+-			case 'hard_level':
+-				$have_params = true;
+-				$col_pattern = '/monster[1-9][0-9]*_id/';
+-				$enemyIds = array();
+-				$sql = "select m.id as id from mission_level as m join hard_level as r on m.parent_id = r.id where m.parent_type = {$params['m2']};";
+-				$rows = db_query($db, $sql);
+-				$resource_level_ids = array();
+-				foreach($rows as $row) {
+-					$resource_level_ids[] = $row['id'];
+-				}
+-				if (count($resource_level_ids) < 1) {
+-					break;
+-				}
+-				$sql = "select * from mission_enemy where `mission_level_id` in (".implode(',', $resource_level_ids).") ";
+-				$rows = db_query($db, $sql);
+-				foreach($rows as $enemy) {
+-					foreach($enemy as $k => $v) {
+-						if(!preg_match($col_pattern, $k) || $v == "0") {
+-							continue;
+-						}
+-						if(!in_array($v, $enemyIds)) {
+-							array_push($enemyIds, $v);
+-						}
+-					}
+-				}
+-
+-				$sql = "select * from enemy_deploy_form ef where ef.battle_type = {$params['m2']}";
+-				$rows = db_query($db, $sql);
+-				foreach($rows as $enemy) {
+-					foreach($enemy as $k => $v) {
+-						if(!preg_match('/pos[1-9]/', $k) || $v == "0") {
+-							continue;
+-						}
+-						if(!in_array($v, $enemyIds)) {
+-							array_push($enemyIds, $v);
+-						}
+-					}
+-				}
+-				if (count($enemyIds) >0){
+-					$where[] = " `id` in (".implode(',', $enemyIds).") ";
+-				}
+-				break;
+ 			case 'extend_level':
+ 				$have_params = true;
+ 				$col_pattern = '/monster[1-9][0-9]*_id/';
+@@ -297,9 +247,6 @@
+ $linksTown[++$i]['text'] = "未使用";
+ $linksTown[$i]['id'] = "enemy_role&type=notuse";
+ 
+-$linksTown[++$i]['text'] = "难度关卡";
+-$linksTown[$i]['id'] = "enemy_role&type=hard_level&m2=8";
+-
+ //多人关卡
+ $linksTown[++$i]['text'] = "多人关卡";
+ $linksTown[$i]['id'] = "enemy_role&type=multi_level";
+@@ -347,7 +294,6 @@
+ 	'columns' => array(
+ 		array('name' => 'name', 'text' => '角色名称', 'width' => '90px'),
+ 		array('name' => 'sign', 'text' => '资源标识', 'width' => '120px'),
+-		array('name' => 'prop', 'text' => '种族', 'width' => '120px'),
+ 		array('name' => 'is_boss', 'text' => 'Boss', 'width' => '40px'),
+ 		array('name' => 'show_shader', 'text' => '阴影附身', 'width' => '40px'),
+ 		array('name' => 'body_size', 'text' => '体型', 'width' => '40px'),
+@@ -359,11 +305,10 @@
+ 		array('name' => 'cultivation', 'text' => '内力', 'width' => '60px'),
+ 		array('name' => 'speed', 'text' => '速度', 'width' => '60px'),
+ 		array('name' => 'jump_attack', 'text' => '跳跃攻击', 'width' => '60px'),
+-		array('name' => 'sunder_max_value', 'text' => '护甲上限','width' => '60px', 'default' => '100'),
++		array('name' => 'sunder_max_value', 'text' => '护甲上限','width' => '60px', 'default' => '5'),
+ 		array('name' => 'sunder_min_hurt_rate', 'text' => '破甲前百分比','width' => '60px', 'default' => '100'),
+ 		array('name' => 'sunder_end_hurt_rate', 'text' => '破甲后百分比','width' => '60px', 'default' => '150'),
+-		array('name' => 'sunder_end_defend_rate', 'text' => '破甲后减防百分比','width' => '60px', 'default' => '20'),
+-		array('name' => 'sunder_attack', 'text' => '攻击破甲值','width' => '60px', 'default' => '5'),
++		array('name' => 'sunder_attack', 'text' => '攻击破甲值','width' => '60px', 'default' => '1'),
+ 
+ 		// array('name' => 'skill_id', 'text' => '绝招1种类','width' => '90px',
+ 		// 	'render' => "enemy_role_skill_id_render1",
+@@ -389,11 +334,7 @@
+ 		array('name' => 'critial_hurt', 'text' => '必杀%','width' => '60px'),
+ 		array('name' => 'toughness', 'text' => '韧性%','width' => '60px'),
+ 		array('name' => 'destroy', 'text' => '破击%','width' => '60px'),
+-		array('name' => 'sleep',  'text' => '睡眠抗性%', 'width' => '60px'),
+-	    array('name' => 'dizziness',  'text' => '眩晕抗性%', 'width' => '60px'),
+-	    array('name' => 'random',  'text' => '混乱抗性%', 'width' => '60px'),
+-	    array('name' => 'disable_skill',  'text' => '封魔抗性%', 'width' => '60px'),
+-	    array('name' => 'poisoning',  'text' => '中毒抗性%', 'width' => '60px'),
++		array('name' => 'will','text' => '意志%','width' => '60px'),		
+ 	),
+ 	'where'   => 'sql_where',
+ 	'addr'     => 'addr_extra',
+diff -ruN pages/enemy_role_extend.php ../../../../admin/pages/enemy_role_extend.php
+--- pages/enemy_role_extend.php	2014-08-27 23:51:27.000000000 +0800
++++ ../../../../admin/pages/enemy_role_extend.php	2014-08-22 20:00:00.000000000 +0800
+@@ -22,21 +22,8 @@
+ 		'render' 	=> array('params' => array()),
+ 		'data' => array("否","是"),
+ 	),
+-	'prop' => array(
+-		'editor' 	=> array('params' => array()),
+-		'render' 	=> array('params' => array()),
+-		'data' => array("仙","灵","人","兽","妖","魔"),
+-	),
+ );
+ 
+-function editor_prop($column_name, $column_val, $row, $data){
+-	return html_get_select($column_name, $data, $column_val);
+-}
+-
+-function render_prop($column_name, $column_val, $row, $data){
+-	return $data[$column_val];
+-}
+-
+ function render_is_boss($column_name, $column_val, $row, $data){
+ 	return $data[$column_val];
+ }
+diff -ruN pages/events_level_up.php ../../../../admin/pages/events_level_up.php
+--- pages/events_level_up.php	2014-08-27 23:51:27.000000000 +0800
++++ ../../../../admin/pages/events_level_up.php	1970-01-01 08:00:00.000000000 +0800
+@@ -1,21 +0,0 @@
+-<?php
+-
+-$pconfig = array(
+-	'title'   => '运营等级活动',
+-	'table'   => 'events_level_up',
+-	'links'   => array(),
+-	
+-	'columns' => array(
+-		array('name' => 'require_level', 'text' => '需要等级', 'width' => '80px'),
+-		array('name' => 'ingot', 'text' => '奖励元宝', 'width' => '80px'),
+-
+-	),	
+-
+-	'where' 		=> 'sql_where',
+-);
+-
+-function sql_where($params) {
+-	return " order by require_level asc";
+-}
+-
+-?>
+\ No newline at end of file
+diff -ruN pages/ghost_extend.php ../../../../admin/pages/ghost_extend.php
+--- pages/ghost_extend.php	2014-08-27 23:51:27.000000000 +0800
++++ ../../../../admin/pages/ghost_extend.php	2014-08-26 14:42:34.000000000 +0800
+@@ -8,9 +8,49 @@
+ 		'editor' => array('params' => array()),
+ 		'render' => array('params' => array()),
+ 		'data' => array(),
++		'range' => array('params' => array()),
++	),
++	'role_id' => array(
++		'editor' => array('params' => array()),
++		'render' => array('params' => array()),
++		'data' => array(),
++		'range' => array('params' => array()),
++	),
++	'fragment_id' => array(
++		'editor' => array('params' => array()),
++		'render' => array('params' => array()),
++		'data' => array(),
++		'range' => array('params' => array()),
++	),
++	'init_star' => array(
++		'editor' => array('params' => array()),
++		'render' => array('params' => array()),
++		'data' => array(),
++		'range' => array('params' => array()),
+ 	),
+ );
+ 
++function range_init_star(){
++	global $all_stars;
++	return $all_stars;
++}
++
++function range_fragment_id(){
++	global $all_ghost_fragments;
++	return $all_ghost_fragments;
++}
++
++function range_role_id(){
++	global $all_roles;
++	return $all_roles;
++}
++
++function range_town_id(){
++	global $all_towns;
++	$temp_towns = $all_towns;
++	$temp_towns[0] = '无';
++	return $temp_towns;
++}
+ 
+ function get_all_town() {
+ 	global $db;
+diff -ruN pages/ghost_umbra_extend.php ../../../../admin/pages/ghost_umbra_extend.php
+--- pages/ghost_umbra_extend.php	2014-08-27 23:51:27.000000000 +0800
++++ ../../../../admin/pages/ghost_umbra_extend.php	2014-08-26 14:15:45.000000000 +0800
+@@ -8,10 +8,12 @@
+ 		'editor' => array('params' => array()),
+ 		'render' => array('params' => array()),
+ 		'data' => array(),
++		'range' => array('params' => array()),
+ 	),
+ );
+ 
+ 
++
+ function get_all_town() {
+ 	global $db;
+ 	$all_towns = array();
+@@ -28,6 +30,11 @@
+ $all_towns = get_all_town();
+ $all_towns[0] = '无';
+ 
++function range_town_id(){
++	global $all_towns;
++	return $all_towns;
++}
++
+ function render_town_id($column_name, $column_val, $row, $data) {
+ 	global $all_towns;
+ 	return $all_towns[$column_val];
+diff -ruN pages/item_battle_extend.php ../../../../admin/pages/item_battle_extend.php
+--- pages/item_battle_extend.php	2014-08-27 23:51:27.000000000 +0800
++++ ../../../../admin/pages/item_battle_extend.php	2014-08-25 19:15:20.000000000 +0800
+@@ -8,10 +8,14 @@
+ 		'editor' => array('params' => array()),
+ 		'render' => array('params' => array()),
+ 		'data' => array(),
++		'range' => array('params' => array()),
+ 	),
+ );
+ 
+-
++function range_quality(){
++	global $all_quality;
++	return $all_quality;
++}
+ function render_quality($column_name, $column_val, $row, $data) {
+ 	global $all_quality;
+ 	return $all_quality[$column_val];
+diff -ruN pages/item_battle_pet_extend.php ../../../../admin/pages/item_battle_pet_extend.php
+--- pages/item_battle_pet_extend.php	2014-08-27 23:51:27.000000000 +0800
++++ ../../../../admin/pages/item_battle_pet_extend.php	2014-08-25 19:24:45.000000000 +0800
+@@ -7,18 +7,21 @@
+ 		'editor' => array('params' => array()),
+ 		'render' => array('params' => array()),
+ 		'data' => array(),
++		'range' => array('params' => array()),
+ 	),
+ 
+ 	'quality' => array(
+ 		'editor' => array('params' => array()),
+ 		'render' => array('params' => array()),
+ 		'data' => array(),
++		'range' => array(array('params' => array())),
+ 	),
+ 	
+ 	'panel' => array(
+ 		'editor' => array('params' => array()),
+ 		'render' => array('params' => array()),
+ 		'data' => array(),
++		'range' => array('params' => array()),
+ 	),
+ );
+ 
+@@ -42,6 +45,19 @@
+ 	$ids = $ids.')';
+ }
+ 
++function range_quality(){
++	global $all_quality;
++	return $all_quality;
++}
++
++function range_panel(){
++	global $panels;
++	return $panels;
++}
++function range_type_id(){
++	global $allType;
++	return $allType;
++}
+ function render_type_id($column_name, $column_val, $row, $data) {
+ 	global $allType;
+ 	return $allType[$column_val];
+diff -ruN pages/item_box_extend.php ../../../../admin/pages/item_box_extend.php
+--- pages/item_box_extend.php	2014-08-27 23:51:27.000000000 +0800
++++ ../../../../admin/pages/item_box_extend.php	2014-08-25 20:04:17.000000000 +0800
+@@ -7,18 +7,21 @@
+ 		'editor' => array('params' => array()),
+ 		'render' => array('params' => array()),
+ 		'data' => array(),
++		'range' => array('params' => array()),
+ 	),
+ 
+ 	'quality' => array(
+ 		'editor' => array('params' => array()),
+ 		'render' => array('params' => array()),
+ 		'data' => array(),
++		'range' => array('params' => array()),
+ 	),
+ 
+ 	'func_id' => array(
+ 		'editor' => array('params' => array()),
+ 		'render' => array('params' => array()),
+ 		'data' => array(),
++		//'range' => array('params' => array()),
+ 	),
+ );
+ 
+@@ -48,7 +51,20 @@
+ 	$ids = substr($ids, 0, strlen($ids)-1);
+ 	$ids = $ids.')';
+ }
++function range_quality(){
++	global $all_quality;
++	return $all_quality;
++}
++
++function range_type_id(){
++	global $allType;
++	return $allType;
++}
+ 
++// function range_func_id(){
++// 	global $all_funcs;
++// 	return $all_funcs;
++// }
+ function render_type_id($column_name, $column_val, $row, $data) {
+ 	global $allType;
+ 	return $allType[$column_val];
+diff -ruN pages/item_costprops_extend.php ../../../../admin/pages/item_costprops_extend.php
+--- pages/item_costprops_extend.php	2014-08-27 23:51:27.000000000 +0800
++++ ../../../../admin/pages/item_costprops_extend.php	2014-08-25 19:16:37.000000000 +0800
+@@ -8,9 +8,14 @@
+ 		'editor' => array('params' => array()),
+ 		'render' => array('params' => array()),
+ 		'data' => array(),
++		'range' => array('params' => array()),
+ 	),
+ );
+ 
++function range_quality(){
++	global $all_quality;
++	return $all_quality;
++}
+ 
+ function render_quality($column_name, $column_val, $row, $data) {
+ 	global $all_quality;
+diff -ruN pages/item_equipment_appendix_special_extend.php ../../../../admin/pages/item_equipment_appendix_special_extend.php
+--- pages/item_equipment_appendix_special_extend.php	2014-08-27 23:51:27.000000000 +0800
++++ ../../../../admin/pages/item_equipment_appendix_special_extend.php	2014-08-26 11:23:24.000000000 +0800
+@@ -7,6 +7,7 @@
+ 		'editor' => array('params' => array()),
+ 		'render' => array('params' => array()),
+ 		'data' => array(),
++		'range' => array('params' => array()),
+ 	),
+ );
+ 
+@@ -18,6 +19,11 @@
+ 	$allItem[-1*$value['id']] = $value['name'];
+ }
+ 
++function range_level(){
++	global $allItem;
++	return $allItem;
++}
++
+ function render_level($column_name, $column_val, $row, $data) {
+ 	global $allItem;
+ 	return $allItem[$column_val];
+diff -ruN pages/item_equipment_extend.php ../../../../admin/pages/item_equipment_extend.php
+--- pages/item_equipment_extend.php	2014-08-27 23:51:27.000000000 +0800
++++ ../../../../admin/pages/item_equipment_extend.php	2014-08-26 11:25:35.000000000 +0800
+@@ -7,30 +7,35 @@
+ 		'editor' => array('params' => array()),
+ 		'render' => array('params' => array()),
+ 		'data' => array(),
++		'range' => array('params' => array()),
+ 	),
+ 
+ 	'equip_type_id' => array(
+ 		'editor' => array('params' => array()),
+ 		'render' => array('params' => array()),
+ 		'data' => array(),
++		'range' => array('params' => array()),
+ 	),
+ 
+ 	'quality' => array(
+ 		'editor' => array('params' => array()),
+ 		'render' => array('params' => array()),
+ 		'data' => array(),
++		'range' => array('params' => array()),
+ 	),
+ 
+ 	'equip_role_id' => array(
+ 		'editor' => array('params' => array()),
+ 		'render' => array('params' => array()),
+ 		'data' => array(),
++		'range' => array('params' => array()),
+ 	),
+ 	
+ 	'appendix_level' => array(
+ 		'editor' => array('params' => array()),
+ 		'render' => array('params' => array()),
+ 		'data' => array(),
++		'range' => array('params' => array()),
+ 	),
+ );
+ 
+@@ -67,6 +72,30 @@
+ 	$appendixLevel[$value['level']] = $value['level'];
+ }
+ 
++function range_type_id(){
++	global $allType;
++	return $allType;
++}
++
++function range_quality(){
++	global $all_quality;
++	return $all_quality;
++}
++
++function range_equip_role_id(){
++	global $role;
++	return $role;
++}
++
++function range_equip_type_id(){
++	global $allType;
++	return $allType;
++}
++
++function range_appendix_level(){
++	global $appendixLevel;
++	return $appendixLevel;
++}
+ 
+ function render_type_id($column_name, $column_val, $row, $data) {
+ 	global $allType;
+diff -ruN pages/item_equipment_recast_extend.php ../../../../admin/pages/item_equipment_recast_extend.php
+--- pages/item_equipment_recast_extend.php	2014-08-27 23:51:27.000000000 +0800
++++ ../../../../admin/pages/item_equipment_recast_extend.php	2014-08-26 14:07:55.000000000 +0800
+@@ -7,9 +7,15 @@
+ 		'editor' => array('params' => array()),
+ 		'render' => array('params' => array()),
+ 		'data' => array(),
++		'range' => array('params' => array()),
+ 	),
+ );
+ 
++function range_quality(){
++	global $all_quality;
++	return $all_quality;
++}
++
+ function render_quality($column_name, $column_val, $row, $data) {
+ 	global $all_quality;
+ 	return $all_quality[$column_val];
+diff -ruN pages/item_equipment_refine_extend.php ../../../../admin/pages/item_equipment_refine_extend.php
+--- pages/item_equipment_refine_extend.php	2014-08-27 23:51:27.000000000 +0800
++++ ../../../../admin/pages/item_equipment_refine_extend.php	2014-08-26 14:08:38.000000000 +0800
+@@ -7,9 +7,15 @@
+ 		'editor' => array('params' => array()),
+ 		'render' => array('params' => array()),
+ 		'data' => array(),
++		'range' => array('params' => array()),
+ 	),
+ );
+ 
++function range_quality(){
++	global $all_quality;
++	return $all_quality;
++}
++
+ function render_quality($column_name, $column_val, $row, $data) {
+ 	global $all_quality;
+ 	return $all_quality[$column_val];
+diff -ruN pages/item_equipment_refine_level_extend.php ../../../../admin/pages/item_equipment_refine_level_extend.php
+--- pages/item_equipment_refine_level_extend.php	2014-08-27 23:51:27.000000000 +0800
++++ ../../../../admin/pages/item_equipment_refine_level_extend.php	2014-08-26 14:09:23.000000000 +0800
+@@ -7,9 +7,15 @@
+ 		'editor' => array('params' => array()),
+ 		'render' => array('params' => array()),
+ 		'data' => array(),
++		'range' => array('params' => array()),
+ 	),
+ );
+ 
++function range_quality(){
++	global $all_quality;
++	return $all_quality;
++}
++
+ function render_quality($column_name, $column_val, $row, $data) {
+ 	global $all_quality;
+ 	return $all_quality[$column_val];
+diff -ruN pages/item_exchange_extend.php ../../../../admin/pages/item_exchange_extend.php
+--- pages/item_exchange_extend.php	2014-08-27 23:51:27.000000000 +0800
++++ ../../../../admin/pages/item_exchange_extend.php	2014-08-25 20:07:01.000000000 +0800
+@@ -7,12 +7,14 @@
+ 		'editor' => array('params' => array()),
+ 		'render' => array('params' => array()),
+ 		'data' => array(),
++		'range' => array('params' => array()),
+ 	),
+ 
+ 	'item_id' => array(
+ 		'editor' => array('params' => array()),
+ 		'render' => array('params' => array()),
+ 		'data' => array(),
++		'range' => array('params' => array()),
+ 	),
+ );
+ 
+@@ -30,6 +32,15 @@
+ 	$useItem[$value['id']] = $value['name'];
+ }
+ 
++function range_target_item_id(){
++	global $allItem;
++	return $allItem;
++}
++
++function range_item_id(){
++	global $useItem;
++	return $useItem;
++}
+ function render_target_item_id($column_name, $column_val, $row, $data) {
+ 	global $allItem;
+ 	return $allItem[$column_val];
+diff -ruN pages/item_ghost_fragment_extend.php ../../../../admin/pages/item_ghost_fragment_extend.php
+--- pages/item_ghost_fragment_extend.php	2014-08-27 23:51:27.000000000 +0800
++++ ../../../../admin/pages/item_ghost_fragment_extend.php	2014-08-25 19:20:30.000000000 +0800
+@@ -8,16 +8,26 @@
+ 		'editor' => array('params' => array()),
+ 		'render' => array('params' => array()),
+ 		'data' => array(),
++		'data' => array('params' => array()),
+ 	),
+ 	
+ 	'panel' => array(
+ 		'editor' => array('params' => array()),
+ 		'render' => array('params' => array()),
+ 		'data' => array(),
++		'range' => array('params' => array()),
+ 	),
+ );
+ 
++function range_quality(){
++	global $all_quality;
++	return $all_quality;
++}
+ 
++function range_panel(){
++	global $panels;
++	return $panels;
++}
+ function render_quality($column_name, $column_val, $row, $data) {
+ 	global $all_quality;
+ 	return $all_quality[$column_val];
+diff -ruN pages/item_material_extend.php ../../../../admin/pages/item_material_extend.php
+--- pages/item_material_extend.php	2014-08-27 23:51:27.000000000 +0800
++++ ../../../../admin/pages/item_material_extend.php	2014-08-25 19:32:15.000000000 +0800
+@@ -7,12 +7,14 @@
+ 		'editor' => array('params' => array()),
+ 		'render' => array('params' => array()),
+ 		'data' => array(),
++		'range' => array('params' => array()),
+ 	),
+ 
+ 	'quality' => array(
+ 		'editor' => array('params' => array()),
+ 		'render' => array('params' => array()),
+ 		'data' => array(),
++		'range' => array('params' => array()),
+ 	),
+ 	'can_use' => array(
+ 		'editor' => array('params' => array()),
+@@ -24,6 +26,7 @@
+ 		'editor' => array('params' => array()),
+ 		'render' => array('params' => array()),
+ 		'data' => array(),
++		'range' => array('params' => array()),
+ 	),
+ );
+ 
+@@ -47,6 +50,19 @@
+ 	$ids = $ids.')';
+ }
+ 
++function range_type_id(){
++	global $allType;
++	return $allType;
++}
++function range_quality(){
++	global $all_quality;
++	return $all_quality;
++}
++
++function range_panel(){
++	global $panels;
++	return $panels;
++}
+ function render_type_id($column_name, $column_val, $row, $data) {
+ 	global $allType;
+ 	return $allType[$column_val];
+diff -ruN pages/item_props_extend.php ../../../../admin/pages/item_props_extend.php
+--- pages/item_props_extend.php	2014-08-27 23:51:27.000000000 +0800
++++ ../../../../admin/pages/item_props_extend.php	2014-08-25 19:18:06.000000000 +0800
+@@ -8,15 +8,26 @@
+ 		'editor' => array('params' => array()),
+ 		'render' => array('params' => array()),
+ 		'data' => array(),
++		'range' => array('params' => array()),
+ 	),
+ 
+ 	'panel' => array(
+ 		'editor' => array('params' => array()),
+ 		'render' => array('params' => array()),
+ 		'data' => array(),
++		'range' => array(),
+ 	),
+ );
+ 
++function range_quality(){
++	global $all_quality;
++	return $all_quality;
++}
++
++function range_panel(){
++	global $panels;
++	return $panels;
++}
+ 
+ function render_quality($column_name, $column_val, $row, $data) {
+ 	global $all_quality;
+diff -ruN pages/item_resource_extend.php ../../../../admin/pages/item_resource_extend.php
+--- pages/item_resource_extend.php	2014-08-27 23:51:27.000000000 +0800
++++ ../../../../admin/pages/item_resource_extend.php	2014-08-25 19:28:59.000000000 +0800
+@@ -7,12 +7,14 @@
+ 		'editor' => array('params' => array()),
+ 		'render' => array('params' => array()),
+ 		'data' => array(),
++		'range' => array('params' => array()),
+ 	),
+ 
+ 	'quality' => array(
+ 		'editor' => array('params' => array()),
+ 		'render' => array('params' => array()),
+ 		'data' => array(),
++		'range' => array('params' => array()),
+ 	),
+ );
+ 
+@@ -35,7 +37,15 @@
+ 	$ids = substr($ids, 0, strlen($ids)-1);
+ 	$ids = $ids.')';
+ }
++function range_quality(){
++	global $all_quality;
++	return $all_quality;
++}
+ 
++function range_type_id(){
++	global $allType;
++	return $allType;
++}
+ function render_type_id($column_name, $column_val, $row, $data) {
+ 	global $allType;
+ 	return $allType[$column_val];
+diff -ruN pages/item_stuff_extend.php ../../../../admin/pages/item_stuff_extend.php
+--- pages/item_stuff_extend.php	2014-08-27 23:51:27.000000000 +0800
++++ ../../../../admin/pages/item_stuff_extend.php	2014-08-25 19:19:06.000000000 +0800
+@@ -8,9 +8,14 @@
+ 		'editor' => array('params' => array()),
+ 		'render' => array('params' => array()),
+ 		'data' => array(),
++		'range' => array('params' => array()),
+ 	),
+ );
+ 
++function range_quality(){
++	global $all_quality;
++	return $all_quality;
++}
+ 
+ function render_quality($column_name, $column_val, $row, $data) {
+ 	global $all_quality;
+diff -ruN pages/item_sword_soul_fragment_extend.php ../../../../admin/pages/item_sword_soul_fragment_extend.php
+--- pages/item_sword_soul_fragment_extend.php	2014-08-27 23:51:27.000000000 +0800
++++ ../../../../admin/pages/item_sword_soul_fragment_extend.php	2014-08-25 19:21:43.000000000 +0800
+@@ -8,15 +8,25 @@
+ 		'editor' => array('params' => array()),
+ 		'render' => array('params' => array()),
+ 		'data' => array(),
++		'range' => array('params' => array()),
+ 	),
+ 	
+ 	'panel' => array(
+ 		'editor' => array('params' => array()),
+ 		'render' => array('params' => array()),
+ 		'data' => array(),
++		'range' => array('params' => array()),
+ 	),	
+ );
++function range_quality(){
++	global $all_quality;
++	return $all_quality;
++}
+ 
++function range_panel(){
++	global $panels;
++	return $panels;
++}
+ 
+ function render_quality($column_name, $column_val, $row, $data) {
+ 	global $all_quality;
+diff -ruN pages/main_role_level.php ../../../../admin/pages/main_role_level.php
+--- pages/main_role_level.php	2014-08-27 23:51:27.000000000 +0800
++++ ../../../../admin/pages/main_role_level.php	2014-08-22 20:00:00.000000000 +0800
+@@ -46,11 +46,7 @@
+     array('name' => 'hit',   'text' => '命中%', 'width' => '60px'),
+     array('name' => 'dodge',   'text' => '闪避%', 'width' => '60px'),
+     array('name' => 'critial_hurt',   'text' => '必杀%', 'width' => '60px'),
+-    array('name' => 'sleep',  'text' => '睡眠抗性%', 'width' => '60px'),
+-    array('name' => 'dizziness',  'text' => '眩晕抗性%', 'width' => '60px'),
+-    array('name' => 'random',  'text' => '混乱抗性%', 'width' => '60px'),
+-    array('name' => 'disable_skill',  'text' => '封魔抗性%', 'width' => '60px'),
+-    array('name' => 'poisoning',  'text' => '中毒抗性%', 'width' => '60px'),
++    array('name' => 'will',  'text' => '意志%', 'width' => '60px'),
+   ),
+   'where'   => 'sql_where',
+   'insert'  => 'sql_insert',
+@@ -68,7 +64,6 @@
+   array('name' => 'sunder_max_value', 'text' => '护甲上限','width' => '60px'),
+   array('name' => 'sunder_hurt_rate', 'text' => '破甲起始百分比','width' => '60px'),
+   array('name' => 'sunder_end_hurt_rate', 'text' => '破甲后百分比','width' => '60px'),
+-  array('name' => 'sunder_end_defend_rate', 'text' => '破甲后减防百分比','width' => '60px', 'default' => '150'),
+   array('name' => 'sunder_round_num', 'text' => '破甲持续回合','width' => '60px'),	
+   array('name' => 'sunder_dizziness', 'text' => '破甲眩晕回合','width' => '60px',),
+ ));
+diff -ruN pages/platform_friend_award_extend.php ../../../../admin/pages/platform_friend_award_extend.php
+--- pages/platform_friend_award_extend.php	2014-08-27 23:51:27.000000000 +0800
++++ ../../../../admin/pages/platform_friend_award_extend.php	2014-08-26 16:11:54.000000000 +0800
+@@ -10,6 +10,7 @@
+ 		'editor' => array('params' => array()),
+ 		'render' => array('params' => array()),
+ 		'data' => array(),
++		'range' => array('params' => array()),
+ 	),
+ 	//'name' => array(
+ 	//	'editor' => array('params' => array()),
+@@ -49,6 +50,11 @@
+ //	return $html;
+ //}
+ 
++function range_award_type(){
++	global $all_real_type;
++	return $all_real_type;
++}
++
+ function render_award_type($column_name, $column_val, $row, $data) {
+ 	global $all_real_type;
+ 	return $all_real_type[$column_val];
+diff -ruN pages/quest.php ../../../../admin/pages/quest.php
+--- pages/quest.php	2014-08-27 23:51:27.000000000 +0800
++++ ../../../../admin/pages/quest.php	2014-08-22 20:00:00.000000000 +0800
+@@ -61,7 +61,6 @@
+ 		array('name' => 'auto_fight', 'text' => '自动打怪', 'width' => '50px'),
+ 		array('name' => 'auto_mission_level_id', 'text' => '自动进入关卡', 'width' => '50px'),
+ 		array('name' => 'desc', 'text' => '简介', 'width' => '0px'),
+-		array('name' => 'mission_drama_talk', 'text' => '区域对话', 'width' => '0px'),
+ 	),
+ 	
+ 	'opera' => array(),
+diff -ruN pages/quest_extend.php ../../../../admin/pages/quest_extend.php
+--- pages/quest_extend.php	2014-08-27 23:51:27.000000000 +0800
++++ ../../../../admin/pages/quest_extend.php	2014-08-26 16:15:33.000000000 +0800
+@@ -19,11 +19,6 @@
+ 		'render' 	=> array('params' => array()),
+ 		'data' 		=> array(),
+ 	),
+-	'mission_drama_talk' => array(
+-		'editor' 	=> array('params' => array()),
+-		'render' 	=> array('params' => array()),
+-		'data' 		=> array(),
+-	),
+ 	'drama_mode' => array(
+ 		'editor' 	=> array('params' => array()),
+ 		'render' 	=> array('params' => array()),
+@@ -33,16 +28,19 @@
+ 		'editor' 	=> array('params' => array()),
+ 		'render' 	=> array('params' => array()),
+ 		'data' 		=> array(),
++		'range' =>array('params' => array()),
+ 	),
+ 	'town_npc_id' => array(
+ 		'editor' 	=> array('params' => array()),
+ 		'render' 	=> array('params' => array()),
+ 		'data' 		=> array(),
++		'range' => array('params' => array()),
+ 	),
+ 	'mission_level_id' => array(
+ 		'editor' 	=> array('params' => array()),
+ 		'render' 	=> array('params' => array()),
+ 		'data' 		=> array(),
++		'range' => array('params' => array()),
+ 	),
+ 	'auto_mission_level_id' => 'mission_level_id',
+ 	'enemy_id' => array(
+@@ -65,26 +63,31 @@
+ 		'editor' 	=> array('params' => array()),
+ 		'render' 	=> array('params' => array()),
+ 		'data' 		=> array(),
++		'range' => array('params' => array()),
+ 	),
+ 	'award_role_id' => array(
+ 		'editor' 	=> array('params' => array()),
+ 		'render' 	=> array('params' => array()),
+ 		'data' 		=> array(),
++		'range' => array('params' => array()),
+ 	),
+ 	'award_func_key' => array(
+ 		'editor' 	=> array('params' => array()),
+ 		'render' 	=> array('params' => array()),
+ 		'data' 		=> array(),
++		'range' => array('params' => array()),
+ 	),
+ 	'award_mission_level_lock' => array(
+ 		'editor' 	=> array('params' => array()),
+ 		'render' 	=> array('params' => array()),
+ 		'data' 		=> array(),
++		'range' => array('params' => array()),
+ 	),
+ 	'enemy_num' => array(
+ 		'editor' 	=> array('params' => array()),
+ 		'render' 	=> array('params' => array()),
+ 		'data' 		=> array(),
++		'range' => array('params' => array()),
+ 	),
+ 	'auto_fight' => array(
+ 		'editor' 	=> array('params' => array()),
+@@ -145,6 +148,46 @@
+ 	$allFuncKey[$value['lock']] = $value['name'];
+ }
+ 
++function range_award_role_id(){
++	global $allRole;
++	return $allRole;
++}
++
++function range_award_mission_level_lock(){
++	global $allMissionLevelLock;
++	return $allMissionLevelLock;
++}
++
++function range_award_town_key(){
++	global $allTownLock;
++	return $allTownLock;
++}
++
++function range_award_func_key(){
++	global $allFuncKey;
++	return $allFuncKey;
++}
++
++function range_enemy_num(){
++	global $allEnemyIds;
++	return $allEnemyIds;
++}
++
++function range_mission_level_id(){
++	global $allMissionLevel;
++	return $allMissionLevel;
++}
++
++function range_town_npc_id(){
++	global $allNpc;
++	return $allNpc;
++}
++
++function range_town_id(){
++	global $allTown;
++	return $allTown;
++}
++
+ function editor_auto_fight($column_name, $column_val, $row, $data){
+ 	return html_get_select($column_name, $data, $column_val);
+ }
+@@ -299,14 +342,6 @@
+ 	return html_get_textarea($column_name, $column_val, false, 4, 30);
+ }
+ 
+-function editor_mission_drama_talk($column_name, $column_val, $row, $data){
+-	return html_get_textarea($column_name, $column_val, true, 4, 30);
+-}
+-
+-function render_mission_drama_talk($column_name, $column_val, $row, $data){
+-	return html_get_textarea($column_name, $column_val, false, 4, 30);
+-}
+-
+ function sql_where($params) {
+ 	$where = "";
+ 	if (isset($params['m'])) {
+diff -ruN pages/role_extend.php ../../../../admin/pages/role_extend.php
+--- pages/role_extend.php	2014-08-27 23:51:27.000000000 +0800
++++ ../../../../admin/pages/role_extend.php	2014-08-25 19:05:17.000000000 +0800
+@@ -5,21 +5,25 @@
+ 		'editor' => array('params' => array()),
+ 		'render' => array('params' => array()),
+ 		'data' => array(),
++		'range' => array('params' => array()),
+ 	),
+ 	'type' => array(
+ 		'editor' => array('params' => array()),
+ 		'render' => array('params' => array()),
+ 		'data' => array(),
++		'range' => array('params' => array()),
+ 	),
+ 	'skill_id1' => array(
+ 		'editor' => array('params' => array()),
+ 		'render' => array('params' => array()),
+ 		'data' => array(),
++		'range' => array('params' => array()),
+ 	),
+ 	'skill_id2' =>  array(
+ 		'editor' => array('params' => array()),
+ 		'render' => array('params' => array()),
+ 		'data' => array(),
++		'range' => array('params' => array()),
+ 	),
+ );
+ 
+@@ -39,7 +43,27 @@
+ foreach ($skills as $value) {
+ 	$skill[$value['id']] = $value['name'];
+ }
++function range_type(){
++	global $roleTypes;
++	return $roleTypes;
++}
+ 
++function range_is_special(){
++	global $isSpecial;
++	return $isSpecial;
++}
++function range_skill_id1(){
++	global $skill;
++	$skill_temp = $skill;
++	$skill_temp[0] = '无';
++	return $skill_temp;
++}
++function range_skill_id2(){
++	global $skill;
++	$skill_temp = $skill;
++	$skill_temp[0] = '无';
++	return $skill_temp;
++}
+ function sql_where($params) {
+ 	return " order by `type` desc,`buddy_level`";
+ }
+diff -ruN pages/skill_buddy_extend.php ../../../../admin/pages/skill_buddy_extend.php
+--- pages/skill_buddy_extend.php	2014-08-27 23:51:27.000000000 +0800
++++ ../../../../admin/pages/skill_buddy_extend.php	2014-08-25 19:56:16.000000000 +0800
+@@ -12,24 +12,28 @@
+ 		'editor' => array('params' => array()),
+ 		'render' => array('params' => array()),
+ 		'data' => array(),
++		'range' => array('params' => array()),
+ 	),
+ 
+ 	'child_type' => array(
+ 		'editor' => array('params' => array()),
+ 		'render' => array('params' => array()),
+ 		'data' => array(),
++		'range' => array('params' => array()),
+ 	),
+ 
+ 	'child_kind' => array(
+ 		'editor' => array('params' => array()),
+ 		'render' => array('params' => array()),
+ 		'data' => array(),
++		'range' => array('params' => array()),
+ 	),
+ 
+ 	'quality' => array(
+ 		'editor' => array('params' => array()),
+ 		'render' => array('params' => array()),
+ 		'data' => array(),
++		'range' => array(array('params' => array())),
+ 	),
+ 	'can_add_level' => array(
+ 		'editor' => array('params' => array()),
+@@ -40,6 +44,7 @@
+ 		'editor' => array('params' => array()),
+ 		'render' => array('params' => array()),
+ 		'data' => array(),
++		'range' => array('params' => array()),
+ 	),
+ 	'target' => array(
+ 		'editor' => array('params' => array()),
+@@ -53,6 +58,47 @@
+ 	),
+ );
+ 
++$parentSkills = db_query($db, "select * from `skill` where `type` = 1 order by `role_id`;");
++foreach ($parentSkills as $value) {
++	$parentSkill[$value['id']] = $value['name'];
++}
++
++$sql = "select * from `role` where id <= 50";
++$roles = db_query($db,$sql);
++foreach ($roles as $value) {
++	$role[$value['id']] = $value['name'];
++}
++
++function range_role_id(){
++	global $role;
++	return $role;
++}
++
++function range_child_type(){
++	global $skillTypes;
++	return $skillTypes;
++}
++
++function range_child_kind(){
++	global $skillKind;
++	$kind_temp = $skillKind;
++	$king_temp[0] = '无';
++	return $skillKind;
++}
++
++function range_parent_skill_id(){
++	global $parentSkill;
++	$temp_skills = $parentSkill;
++	$temp_skills[0] = '无';
++	return $temp_skills;
++}
++
++function range_quality(){
++	global $qualityTypes;
++	return $qualityTypes;
++}
++
++
+ function render_jump_attack($column_name, $column_val, $row, $data){
+ 	return $data[$column_val];
+ }
+@@ -77,16 +123,7 @@
+ 	return html_get_select($column_name,$data,$column_val);
+ }
+ 
+-$parentSkills = db_query($db, "select * from `skill` where `type` = 1 order by `role_id`;");
+-foreach ($parentSkills as $value) {
+-	$parentSkill[$value['id']] = $value['name'];
+-}
+ 
+-$sql = "select * from `role` where id <= 50";
+-$roles = db_query($db,$sql);
+-foreach ($roles as $value) {
+-	$role[$value['id']] = $value['name'];
+-}
+ 
+ function render_role_id($column_name, $column_val, $row, $data) {
+ 	global $role;
+@@ -192,9 +229,6 @@
+ }
+ 
+ function sql_where($params) {
+-	if(isset($params['m'])) {
+-		return " where `type` =1 and `role_id` = {$params['m']} ORDER BY `role_id`,`required_level` ASC";
+-	}
+ 	return " where `type` =1 and `role_id` != -2 ORDER BY `role_id`,`required_level` ASC";
+ }
+ 
+diff -ruN pages/skill_editor.php ../../../../admin/pages/skill_editor.php
+--- pages/skill_editor.php	2014-08-27 23:51:27.000000000 +0800
++++ ../../../../admin/pages/skill_editor.php	2014-08-22 20:00:00.000000000 +0800
+@@ -27,7 +27,6 @@
+ 		url: "ajax.php?type=load_skill_config&id=" + id, 
+ 		dataType: "json"
+ 	}).done(function(data){ 
+-		console.log(data);
+ 		if (data == undefined)
+ 			data = {};
+ 
+@@ -113,18 +112,6 @@
+ 			data.AppendSpecialValue = 0;
+ 		}
+ 
+-		if (data.TriggerTargetBuff == undefined)
+-			data.TriggerTargetBuff = false;
+-
+-		if (data.EventTriggerTarget == undefined)
+-			data.TriggerTargetBuff = 0;
+-
+-		if (data.EventTriggerTarget == undefined)
+-			data.EventTriggerTarget = 0;
+-
+-		if (data.EventTriggerBuff == undefined)
+-			data.EventTriggerBuff = 6;
+-
+ 		$(".buff_table").remove();
+ 
+ 		if (editor_for_ghost) {
+@@ -162,11 +149,6 @@
+ 		document.getElementById('append_skill_special_type').selectedIndex = data.AppendSpecialType;
+ 		document.getElementById('append_skill_special_value').value = data.AppendSpecialValue;
+ 
+-		document.getElementById('event_trigger_type').selectedIndex = data.EventTriggerType;
+-		document.getElementById('event_trigger_target').value = data.EventTriggerTarget;
+-		document.getElementById('event_trigger_buff').value = data.EventTriggerBuff;
+-		document.getElementById('trigger_target_buff').checked = data.TriggerTargetBuff;
+-
+ 		display_buff_config('self_buffs', data.SelfBuffs, buff_template1);
+ 		display_buff_config('target_buffs', data.TargetBuffs, buff_template1);
+ 		display_buff_config('buddy_buffs', data.BuddyBuffs, buff_template2);
+@@ -237,13 +219,6 @@
+ 		if (configs[i].ValueCountRate == undefined)
+ 			configs[i].ValueCountRate = 0;
+ 
+-		if (configs[i].EventTriggerType == undefined)
+-			configs[i].EventTriggerType = 0;
+-		if (configs[i].EventTriggerTarget == undefined)
+-			configs[i].EventTriggerTarget = 0;
+-		if (configs[i].EventTriggerBuff == undefined)
+-			configs[i].EventTriggerBuff = 0;
+-
+ 		buff_type[i].selectedIndex     = configs[i].Type;
+ 		buff_keep[i].selectedIndex     = configs[i].Keep;
+ 		buff_override[i].selectedIndex = configs[i].Override;
+@@ -270,18 +245,7 @@
+ function buff_type_change(target) {
+ 	var buff_type = target.selectedIndex;
+ 
+-	if (buff_type != 0 &&  //精气
+-		buff_type != 4 &&  ///生命
+-		buff_type != 7 &&  //清除负面状态
+-		buff_type != 8 &&  //清除增益状态
+-		buff_type != 17 && //最大生命
+-		buff_type != 22 && //护甲
+-		buff_type != 27 && //魂力
+-		buff_type != 28 && //灵宠回合数
+-		buff_type != 29 && //伙伴进阶技能使用次数
+-		buff_type != 30 && //清除护盾伤害
+-		true
+-	) {
++	if (buff_type != 0 && buff_type != 4 && buff_type != 7 && buff_type != 8 && buff_type != 17) {
+ 		$("select[name=buff_keep], select[name=buff_override]", target.parentNode.parentNode.parentNode).removeAttr('disabled');
+ 	} else {
+ 		$("select[name=buff_keep], select[name=buff_override]", target.parentNode.parentNode.parentNode).attr('disabled', 'disabled');
+@@ -329,11 +293,7 @@
+ 	"	\"TargetBuffs\": " + get_buff_json('target_buffs') + ",\n" +
+ 	"	\"BuddyBuffs\": " + get_buff_json('buddy_buffs') + ",\n" +
+ 	"	\"AppendSpecialType\": " + document.getElementById('append_skill_special_type').selectedIndex + ",\n" +
+-	"	\"AppendSpecialValue\": " + document.getElementById('append_skill_special_value').value + ",\n" +
+-	"	\"EventTriggerType\": " + document.getElementById('event_trigger_type').value + ",\n" +
+-	"	\"EventTriggerTarget\": " + document.getElementById('event_trigger_target').value + ",\n" +
+-	"	\"EventTriggerBuff\": " + document.getElementById('event_trigger_buff').value + ",\n" +
+-	"	\"TriggerTargetBuff\": " + (document.getElementById('trigger_target_buff').checked ? 'true' : 'false')  + "\n" +
++	"	\"AppendSpecialValue\": " + document.getElementById('append_skill_special_value').value + "\n" +
+ 	"}";
+ }
+ 
+@@ -453,7 +413,6 @@
+ 	$('#attack').change(function(){ attack_mode_change(this); });
+ });
+ 
+-<?php /*自身buff或目标buff*/ ?>
+ var buff_template1 = '<?php echo str_replace("\n", "", str_replace("\t", "", <<<EOS
+ 	<table colspan="0" rowspan="0" cellpadding="0" cellspacing="0" style="margin-top:8px" id="buff_#id#" class="skill_table buff_table">
+ 	<tr>
+@@ -482,20 +441,8 @@
+ 			<option value="20">破击等级</option>
+ 			<option value="21">韧性等级</option>
+ 			<option value="22">---</option>
+-			<option value="23">睡眠</option>
++			<option value="23">意志</option>
+ 			<option value="24">禁用绝招</option>
+-			<option value="25">直接免伤</option>
+-			<option value="26">吸收伤害</option>
+-			<option value="27">魂力</option>
+-			<option value="28">灵宠存活回合</option>
+-			<option value="29">伙伴技能次数</option>
+-			<option value="30">清除伤害吸收</option>
+-			<option value="31">睡眠抗性等级</option>
+-			<option value="32">眩晕抗性等级</option>
+-			<option value="33">混乱抗性等级</option>
+-			<option value="34">封魔抗性等级</option>
+-			<option value="35">中毒抗性等级</option>
+-
+ 			</select>
+ 			<span class="buff_sign_box">
+ 			<select name="buff_sign">
+@@ -551,8 +498,6 @@
+ 	</table>
+ EOS
+ )); ?>';
+-
+-<?php /*队伍buff*/?>
+ var buff_template2 = '<?php echo str_replace("\n", "", str_replace("\t", "", <<<EOS
+ 	<table colspan="0" rowspan="0" cellpadding="0" cellspacing="0" style="margin-top:8px" id="buff_#id#" class="skill_table buff_table">
+ 	<tr>
+@@ -585,10 +530,6 @@
+ 			<option value="24">禁用绝招</option>
+ 			<option value="25">直接免伤</option>
+ 			<option value="26">吸收伤害</option>
+-			<option value="27">魂力</option>
+-			<option value="28">灵宠存活回合</option>
+-			<option value="29">伙伴技能次数</option>
+-			<option value="30">清除伤害吸收</option>
+ 			</select>
+ 			<select name="buff_sign">
+ 			<option>+</option>
+@@ -612,11 +553,9 @@
+ 		<td>
+ 			发生概率 <input name="buff_rate" type="text" style="width:32px" value="100" class="skill_input_text"> % - 生效次数 x <input name="buff_count_rate" type="text" style="width:32px" value="0" class="skill_input_text" /> %，
+ 			作用到 <select name="buff_target">
+-			<option>我方全体</option>
+-			<option>自己以外的一个伙伴</option>
++			<option>整个队伍</option>
++			<option>伙伴</option>
+ 			<option>血最少的伙伴</option>
+-			<option>我方灵宠</option>
+-			<option>全体伙伴</option>
+ 			</select>，
+ 			持续 <select name="buff_keep" disabled="disabled">
+ 			<option>∞</option>
+@@ -723,29 +662,6 @@
+ 			</select>，
+ 			属性值 <input type="text" style="width:50px" id="append_skill_special_value" value="0" class="skill_input_text" />，
+ 		</td>
+-	</tr>
+-	<tr class="event_trigger">
+-		<td width="72">事件触发</td>
+-		<td>
+-			事件 <select id="event_trigger_type">
+-			<option  selected = "selected"  value="0">无</option>
+-			<option value="1">闪避</option>
+-			<option value="2">暴击</option>
+-			<option value="3">格挡</option>
+-			<option value="4">反击（未支持）</option>
+-			</select>，
+-
+-			条件 <select id="event_trigger_target">
+-			<option  selected = "selected"  value="0">攻击方</option>
+-			<option value="1">防守方</option>
+-			</select> 有
+-			Buff <select id="event_trigger_buff">
+-			<option  selected = "selected"  value="6">中毒</option>
+-			<option value="26">吸收伤害</option>
+-			</select>，
+-			关联目标BUFF <input type="checkbox" id="trigger_target_buff" />
+-
+-		<td>
+ 	</tr>	
+ 	<tr style="background: #f0f0f0;" id="target_buff_tr1">
+ 		<td style="border-right:0;">目标BUFF</td>
+diff -ruN pages/skill_enemy_extend.php ../../../../admin/pages/skill_enemy_extend.php
+--- pages/skill_enemy_extend.php	2014-08-27 23:51:27.000000000 +0800
++++ ../../../../admin/pages/skill_enemy_extend.php	2014-08-25 19:58:55.000000000 +0800
+@@ -13,6 +13,7 @@
+ 		'editor' => array('params' => array()),
+ 		'render' => array('params' => array()),
+ 		'data' => array(),
++		'range' => array('params' => array()),
+ 	),
+ 	
+ 	'jump_attack' => array(
+@@ -35,6 +36,10 @@
+ $skillTypes[5] = '辅助';
+ $skillTypes[6] = '破甲';
+ 
++function range_child_type(){
++	global $skillTypes;
++	return $skillTypes;
++}
+ 
+ function render_child_type($column_name, $column_val, $row, $data){
+ 	global $skillTypes;
+diff -ruN pages/skill_extend.php ../../../../admin/pages/skill_extend.php
+--- pages/skill_extend.php	2014-08-27 23:51:27.000000000 +0800
++++ ../../../../admin/pages/skill_extend.php	2014-08-26 12:33:43.000000000 +0800
+@@ -7,17 +7,20 @@
+ 		'editor' => array('params' => array()),
+ 		'render' => array('params' => array()),
+ 		'data' => array(),
++		'range' =>array('params' => array()),
+ 	),
+ 	'child_kind' => array(
+ 		'editor' => array('params' => array()),
+ 		'render' => array('params' => array()),
+ 		'data' => array(),
++		'range' => array('params' => array()),
+ 	),
+ 
+ 	'quality' => array(
+ 		'editor' => array('params' => array()),
+ 		'render' => array('params' => array()),
+ 		'data' => array(),
++		'range' => array('params' => array()),
+ 	),
+ 	'jump_attack' => array(
+ 		'editor' => array('params' => array()),
+@@ -33,11 +36,14 @@
+ 		'editor' => array('params' => array()),
+ 		'render' => array('params' => array()),
+ 		'data' => array(),
++		'range' => array(),
+ 	),
+ 	'display_param' => array(
+ 		'editor' => array('params' => array()),
+ 		'render' => array('params' => array()),
+ 		'data' => array(),
++		'range' => array('params' => array()),
++		'handle' => true,
+ 	),
+ 	'target' => array(
+ 		'editor' => array('params' => array()),
+@@ -51,6 +57,45 @@
+ 	$parentSkill[$value['id']] = $value['name'];
+ }
+ 
++function handle_display_param($content){
++	global $display_params;
++	$items = explode(',', $content);
++	$result = 0;
++	//print_r($items);exit;
++	foreach ($items as $value) {
++		$search = array_search($value, $display_params);
++		if ($search === false) {
++			return false;
++		}
++		$result += $search;
++	}
++	return $result;
++}
++
++function range_child_kind(){
++	global $skillKind;
++	return $skillKind;
++}
++function range_display_param(){
++	global $display_params;
++	$param_temp = $display_params;
++	$param_temp[0] = '无';
++	return $param_temp;
++}
++function range_child_type(){
++	global $skillTypes;
++	return $skillTypes;
++}
++function range_quality(){
++	global $qualityTypes;
++	return $qualityTypes;
++}
++function range_parent_skill_id(){
++	global $parentSkill;
++	$parent_temp = $parentSkill;
++	$parent_temp[0] = '无';
++	return $parent_temp;
++}
+ function render_child_type($column_name, $column_val, $row, $data){
+ 	global $skillTypes;
+ 	return $skillTypes[$row['child_type']];
+@@ -137,32 +182,36 @@
+ }
+ 
+ function render_display_param($column_name, $column_val, $row, $data){
++	global $display_params;
+ 	$code  = '';
+-	if (($row['display_param']&1)==1) {$code .= '黑幕<br>';}
+-	if (($row['display_param']&2)==2) {$code .= '震动<br>';}
++	foreach ($display_params as $key => $value) {
++		if (($row['display_param']&$key) == $key) {
++			$code .= $value.'<br>';
++		}
++	}
+ 	return $code;
+ }
+ 
+ function editor_display_param($column_name, $column_val, $row, $data){
++	global $display_params;
++	$code  = '';
+ 	if ($row != null) {
+-		$code  = '';
++		
+ 		$drama_mode = 0;
+-		if (($row['display_param']&1)==1) {
+-			$code .= '<input type="checkbox" name="display_param_editor" value="1" checked="true">黑幕<br>';
+-			$drama_mode += 1;
+-		} else {
+-			$code .= '<input type="checkbox" name="display_param_editor" value="1" >黑幕<br>';
+-		}		
+-		if (($row['display_param']&2)==2) {
+-			$code .= '<input type="checkbox" name="display_param_editor" value="2" checked="true">震动<br>';
+-			$drama_mode += 2;
+-		} else {
+-			$code .= '<input type="checkbox" name="display_param_editor" value="2" >震动<br>';
++		foreach ($display_params as $key => $value) {
++			if (($row['display_param']&$key)==$key) {
++				$code .= '<input type="checkbox" name="display_param_editor" value="'.$key.'" checked="true">'.$value.'<br>';
++			$drama_mode += $key;
++			}else{
++				$code .= '<input type="checkbox" name="display_param_editor" value="'.$key.'">'.$value.'<br>';
++			}
+ 		}
+ 		$code .= '<input type="hidden" name="display_param[]" value="'.$drama_mode.'" />';
+ 	} else {
+-		$code  = '<input type="checkbox" name="display_param_editor" value="1">黑幕<br>';
+-		$code .= '<input type="checkbox" name="display_param_editor" value="2">震动<br>';
++		foreach ($display_params as $key => $value) {
++			$code  .= '<input type="checkbox" name="display_param_editor" value="'.$key.'">'.$value.'<br>';
++		}
++		
+ 		$code .= '<input type="hidden" name="display_param[]" value="0" />';
+ 	}
+ 	return $code;
+diff -ruN pages/skill_links.php ../../../../admin/pages/skill_links.php
+--- pages/skill_links.php	2014-08-27 23:51:27.000000000 +0800
++++ ../../../../admin/pages/skill_links.php	2014-08-22 20:00:00.000000000 +0800
+@@ -2,11 +2,7 @@
+ $links = array(
+ 	array('text' => '主角招式', 'id' => 'skill'),
+ 	array('text' => '伙伴招式', 'id' => 'skill_buddy'),
+-	array('text' => '朱媛媛', 'id' => 'skill_buddy&m=4'),
+-	array('text' => '袁铭志', 'id' => 'skill_buddy&m=3'),
+-	array('text' => '车晓芸', 'id' => 'skill_buddy&m=5'),
+-	array('text' => '燕无名', 'id' => 'skill_buddy&m=6'),
+ 	array('text' => '敌人招式', 'id' => 'skill_enemy'),
+ );
+ 
+-?>
++?>
+\ No newline at end of file
+diff -ruN pages/town_extend.php ../../../../admin/pages/town_extend.php
+--- pages/town_extend.php	2014-08-27 23:51:27.000000000 +0800
++++ ../../../../admin/pages/town_extend.php	2014-08-27 17:05:08.000000000 +0800
+@@ -6,6 +6,9 @@
+ 		'editor' => array('params' => array()),
+ 		'render' => array('params' => array()),
+ 		'data' => array(),
++		'regexp' => array("reg"=>"/\d{6}/i",
++											"text" =>"应为6位数字",
++											),
+ 	),
+ );
+ 
+@@ -44,7 +47,7 @@
+ 			}
+ 			$(this).val( $(this).val().replace(/,/g, '') )
+ 		})
+-		if (!isOk) {
++		if (!isOk && $("#sign_form").val()==0) {
+ 			alert("权值位数应该设为6位")
+ 			return false;
+ 		} 

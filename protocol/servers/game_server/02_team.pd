@@ -1,0 +1,82 @@
+//
+// 队伍相关接口
+//
+mod team = 2
+{
+
+	//
+	// 获取布阵信息
+	// 
+	api get_formation_info = 0 {
+		in {}
+		out {
+			pos0_role        : int8 // 位置0 角色, -1 为没有伙伴
+			pos1_role        : int8
+			pos2_role        : int8
+			pos3_role        : int8
+			pos4_role        : int8
+			pos5_role        : int8
+			pos6_role        : int8
+			pos7_role        : int8
+			pos8_role        : int8
+
+			relationship     : int32 // 友情值
+			health_lv        : int16 // 生命训练等级
+			attack_lv        : int16 // 攻击训练等级
+			defence_lv       : int16 // 防御训练等级
+		}
+	}
+
+	//
+	// 选择战术(废弃)
+	//
+	//api choose_tactical	 = 1 {
+	//	in {
+	//		tactical_grid : int8 // 位置0,1,2,3
+	//	}
+	//	out {}
+	//}
+
+  // 角色上阵
+  api up_formation = 2 {
+    in {
+      role_id : int8
+      pos     : int8 
+    }
+    out {}
+  }
+
+  // 角色下阵
+  api down_formation = 3 {
+    in {
+      pos     : int8 
+    }
+    out {}
+  }
+
+  // 交换两个角色布阵位置,注意：在阵上有角色的两个格子交换
+  api swap_formation = 4 {
+    in {
+      pos_from : int8
+      pos_to  : int8
+    }
+    out {}
+  }
+
+  //在阵上和不在阵上的两个角色交换
+  api replace_formation = 5 {
+    in {
+      role_id : int8
+      pos     : int8
+    }
+    out {}
+  }
+
+	//伙伴配合训练
+ 	api training_teamship = 6 {
+		in {
+			attr_ind : int8 // 属性索引(0 - health, 1 - attack, 2 - defence)
+		}
+		out {}
+	}
+}

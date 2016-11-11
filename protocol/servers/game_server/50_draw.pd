@@ -1,0 +1,144 @@
+//
+// 抽奖
+//
+mod draw = 50
+{
+
+	//兑换码兑换结果
+	type exchange_gift_result enum {
+		SUCCESS = 0 //兑换成功
+		EXPIRE = 1 //礼品卡过期
+		DUP_EXCHANGE = 2 // 重复兑换
+	}
+
+	//神龙宝箱类型
+	type chest_type enum {
+        COIN       = 0  //青铜宝箱一次
+        COIN_FREE  = 1  //青铜宝箱免费一次
+        COIN_TEN   = 2  //青铜宝箱十连抽
+        INGOT      = 3  //神龙宝箱一次
+        INGOT_FREE = 4  //神龙宝箱免费一次
+        INGOT_TEN  = 5  //神龙宝箱十连抽
+        PET      = 6  //灵兽宝箱一次
+        PET_FREE = 7  //灵兽宝箱免费一次
+        PET_TEN  = 8  //灵兽宝箱十连抽
+	}
+	
+	//神龙宝箱奖励类型
+	type item_type enum {
+		COIN           = 1 //铜钱
+		INGOT          = 2 //元宝
+		ITEM           = 3 //物品
+		GHOST          = 4 //魂侍
+		SWORD_SOUL     = 5 //剑心
+		PET	       = 6 //灵宠契约球
+		GHOST_FRAGMENT = 7 //魂侍碎片
+		PREFERENCE     = 8 //喜好品
+		EQUIPMENT      = 9 //装备
+	}
+
+	type awardInfo struct {
+		award_type	: int8  // 奖品类型（1-铜钱；2-元宝；3-道具）
+		award_num	: int16 // 奖品数量
+		item_id		: int16 // 道具奖品
+		draw_time	: int64 // 抽奖时间
+		award_index : int16 // 抽奖索引
+	}
+
+	// 玩家爱心抽奖信息
+	api get_heart_draw_info = 1 {
+		in {
+			draw_type : int8 	// 抽奖类型(1-大转盘；2-刮刮卡)
+			award_record : bool	// 获取历史抽奖奖品(true or false)
+		}
+		
+		out {
+			hearts  	:  int16 	// 玩家拥有爱心数
+			daily_num 	:  int8		// 今日已抽次数
+			award_record	:	list {  // 已抽到的奖品记录
+				award : awardInfo
+			}
+		}
+	}
+
+	// 爱心抽奖
+	api heart_draw = 2 {
+		in {
+			draw_type 			: int8 	// 抽奖类型(1-大转盘；2-刮刮卡)
+		}
+
+		out {
+			award : awardInfo
+		}
+	}
+	
+	// 获取神龙宝箱信息 
+	api get_chest_info = 3 {
+		in {}
+		out {
+			free_coin_num        : int32  // 今日免费青铜宝箱次数
+			next_free_coin_left  : int64  // 离下次免费青铜宝箱时间（秒）
+			next_free_ingot_left : int64  // 离下次免费神龙宝箱时间（秒）
+			next_free_pet_left : int64  // 离下次免费灵兽宝箱时间（秒）
+		}
+	}
+	
+	// 抽神龙宝箱
+	api draw_chest = 4 {
+		in {
+			chest_type : chest_type  // 抽宝箱类型
+		}
+		out {
+			items : list {
+				item_type : item_type //获得物品类型
+				item_id   : int16     //获得物品id
+				num       : int32     //数量
+			}
+		}
+	}
+	// 爱心信息
+	api heart_info= 5 {
+		in {}
+		out {
+	    		recover_today : int16 //今日时间恢复爱心数
+            		timestamp : 	int64 // 下次恢复一次时间
+		}
+	}
+
+	// 获取命锁宝箱信息 
+	api get_fate_box_info = 6 {
+		in {}
+		out {
+			lock : int32 //宝箱权值
+			next_free_star_box  : int32  // 免费星辉宝箱CD时间（秒）
+			next_free_moon_box : int32  // 免费月影宝箱CD时间（秒）
+			next_free_sun_box : int32  // 免费日耀宝箱CD时间（秒）
+			next_free_hunyuan_box : int32  // 免费混元宝箱CD时间（秒）
+		}
+	}
+
+	//开启命锁宝箱
+	api open_fate_box =  7 {
+		in {
+			box_type : int32  //宝箱ID
+			times : int8 //次数
+		}
+		out {
+			items : list {
+				item_type : item_type //获得物品类型
+				item_id   : int16     //获得物品id
+				num       : int32     //数量
+			}
+		}
+	}
+
+	//使用兑换码（互动）
+	api exchange_gift_code = 8 {
+		in {
+			code : string //兑换码
+		}
+		out {
+			result : exchange_gift_result //兑换结果
+		}
+	}
+}

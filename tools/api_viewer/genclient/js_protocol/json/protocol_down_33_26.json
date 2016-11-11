@@ -1,0 +1,1 @@
+{"action_name":"clique_recruitment","module_name":"clique","protocol":[{"name":"result","type":"enum8"},{"name":"timestamp","type":"int64"}]}

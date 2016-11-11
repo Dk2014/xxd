@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+# php database.php upgrade local_game
+
+CUR=$(cd `dirname $0`; pwd)
+
+php gamedb_upgrade.php local_game "./servers/game_server"
+php phpimport.php local_game $CUR/database-game_server-upgrade.php
+
+#php sql.php game_server 0 9999999999 database-game_server-upgrade.sql | tr -d "\n"
+#php sqlimport.php local_game $CUR/database-game_server-upgrade.sql

@@ -1,0 +1,140 @@
+//
+// 城镇相关通讯接口
+//
+mod town = 1
+{
+
+	type townPlayer struct {
+		player_id            		: int64  // 玩家ID
+		nickname             		: string // 昵称
+		role_id              		: int8	  // 玩家角色ID
+		at_x                 		: int16  // X轴位置
+		at_y                 		: int16  // Y轴位置
+		fashion_id	     		: int16 //时装ID 0则没有时装
+		in_meditation_state		: bool  //处于打坐状态
+		level				: int16  //等级
+	}
+
+	//
+	// 进入城镇
+	//
+	api enter = 0 {
+		in {
+			town_id : int16	// 城镇ID
+		}
+
+		// 下行数据会被作为其他玩家进入城镇的消息
+		out {
+			player: townPlayer
+		}
+	}
+
+	//
+	// 离开城镇
+	//
+	api leave = 1 {
+		in {
+		}
+		// 下行数据为其他玩家离开城镇的消息
+		out {
+			player_id : int64  // 玩家ID
+		}
+	}
+
+	//
+	// 移动
+	//
+	api move = 2 {
+		in {
+			to_x   : int16	// X轴目标位置
+			to_y   : int16	// Y轴目标位置
+		}
+
+		// 下行数据为其他玩家移动的消息
+		out {
+			player_id : int64	// 玩家ID
+			to_x      : int16	// X轴目标位置
+			to_y      : int16	// Y轴目标位置
+		}
+	}
+
+	//
+	// 城镇NPC对话已奖励NPC列表
+	//
+	api talked_npc_list = 3 {
+		in {
+			town_id : int16	// 城镇ID
+		}
+		out {
+			npc_list : list {
+				npc_id 			: int32 //NPC ID
+				quest_id : int16 //上次对话奖励的任务ID -1即首次对话
+			}
+		}
+	}
+	
+	//
+	// NPC对话奖励
+	//
+	api npc_talk = 4 {
+		in {
+			npc_id : int32 //NPC ID	
+		}
+		out {
+		}
+	}
+
+	//
+	// 进入城镇时通知玩家城镇中其他的玩家（当前玩家所在频道）
+	//
+	api notify_town_players = 5 {
+		out {
+			players : list {
+				player: townPlayer
+			}
+		}
+	}
+
+	//
+	// 更新玩家时装状态
+	//
+	api update_town_player = 6 {
+		out {
+			player_id            		: int64  // 玩家ID
+			fashion_id	     		: int16 //时装ID 0则没有时装
+			}
+	}
+	//
+	// 更新玩家时装状态
+	//
+	api update_town_player_meditation_state = 7 {
+		out {
+			player_id            		: int64  // 玩家ID
+			meditation_state		: bool //打坐状态
+			}
+	}
+
+	//
+	// 获取已领奖城镇列表
+	//
+	api list_opened_town_treasures = 8 {
+		in {
+		}
+		out {
+			treasures : list16 {
+				town_id : int16 // 已领奖城镇ID
+			}
+		}
+	}
+
+	//
+	// 领取城镇奖励
+	//
+	api take_town_treasures = 9 {
+		in {
+			town_id : int16 // 城镇ID
+		}
+		out {
+		}
+	}
+}

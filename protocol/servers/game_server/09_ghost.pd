@@ -1,0 +1,165 @@
+//
+// 魂侍相关接口
+//
+mod ghost = 9
+{
+
+    // 角色魂侍装备位    
+    type equip_pos enum {
+        POS1 = 0
+        POS2 = 1
+        POS3 = 2
+        POS4 = 3
+    }
+	
+	// 开启影界结果类型
+	type result_type enum {
+		GHOST    = 0 // 魂侍
+		FRAGMENT = 1 // 魂侍碎片
+		FRUIT    = 2 // 影界果实
+	}
+
+    // 获取所有魂侍和玩家魂侍装备信息
+    api info = 0 {
+        in {}
+        out {
+	    train_times : int32 //今日元宝培养次数
+		flush_time : int64 //上次洗点时间
+            ghosts : list {
+                id       : int64 // 魂侍主键id
+                ghost_id : int16 // 魂侍模板id
+                star     : int8  // 星级
+                level    : int16 // 魂侍等级
+                skill_level    : int16 // 技能等级
+                exp      : int64 // 经验
+                pos      : int16 // 魂侍位置 -1表示已经装
+
+                health   : int32 // 生命
+                attack   : int32 // 攻击
+                defence  : int32 // 防御
+                speed    : int32 // 速度
+                add_growth   : int16 // 洗炼增加的成长值
+                relation_id : int64 // 连锁魂侍id
+
+                used    : bool // 魂侍技能是否已使用 仅在部分关卡有效
+            }
+
+            role_equip : list {
+                role_id     : int8  // 角色id
+		already_use_ghost: bool //在一场战役中是否已使用魂侍技能 仅在部分关卡内有效
+                ghost_power : int32 // 魂力
+                pos1_id     : int64 // 装备位置1的魂侍id
+                pos2_id     : int64 // 装备位置1的魂侍id
+                pos3_id     : int64 // 装备位置1的魂侍id
+                pos4_id     : int64 // 装备位置1的魂侍id
+            }
+        }
+    }
+
+    // 装备魂侍
+    api equip = 1 {
+        in {
+            from_id : int64     // 操作的魂侍主键id
+            role_id : int8      // 角色id
+            to_pos  : equip_pos // 要装备位置
+        }
+        out{}
+    }
+
+    // 卸载一个魂侍
+    api unequip = 2 {
+        in {
+            role_id : int8  // 角色id
+            from_id : int64 // 操作的魂侍主键id
+        }
+        out {}
+    }
+
+    // 装备魂侍和背包魂侍替换位置
+    api swap = 3 {
+        in {
+            role_id  : int8  // 角色id
+            id_bag   : int64 // 背包中的魂侍主键id
+            id_equip : int64 // 装备中的魂侍主键id
+        }
+        out {}
+    }
+
+
+    // 装备的魂侍位置改变
+    api equip_pos_change = 5 {
+        in {
+            role_id : int8 
+            from_id : int64     // 要移动的魂侍
+            to_pos  : equip_pos // 目的位置
+        }
+        out{}
+    }
+
+    // 魂侍培养
+    api train = 6 {
+        in {
+            id      : int64 // 魂侍主键id
+        }
+        out {
+            add_exp : int64 // 增加的经验
+        }
+    }
+
+    // 魂侍升星
+    api upgrade = 7 {
+        in {
+            id : int64 // 魂侍升星魂侍id
+        }
+        out {}
+    }
+
+    // 魂侍洗练
+    api baptize = 8 {
+        in {
+            id : int64 // 魂侍洗练魂侍id
+        }
+        out {
+            add_growth : int8 // 洗练后添加的成长值
+        }            
+    } 
+
+
+    // 合成
+    api compose = 11 {
+        in {
+            ghost_id : int16 // 魂侍模板id
+        }
+        out {
+            id       : int64 // 生成用户魂侍主键id
+            ghost_id : int16 // 魂侍模板id
+        }
+    }
+
+    // 魂侍技能训练
+    api train_skill = 12 {
+        in {
+            id : int64 // 魂侍升星魂侍id
+        }
+        out {}
+    }
+
+	// 魂侍洗点
+	api flush_attr = 13 {
+		in {
+			id : int64 // 魂侍id
+		}
+		out {
+			flush_time : int64 // 最后洗点时间
+		}
+	}
+
+    // 魂侍连锁
+    api relation_ghost = 14 {
+        in {
+            master : int64 // 主魂侍
+            slave : int64 // 从魂侍
+        }
+        out {}
+    }
+}

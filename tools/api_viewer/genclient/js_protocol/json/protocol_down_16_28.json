@@ -1,0 +1,1 @@
+{"action_name":"get_match_info","module_name":"multi_level","protocol":[{"name":"match_status","type":"list8","fields":[{"name":"level_id","type":"int32"},{"name":"pos_num","type":"int32"},{"name":"player_num","type":"int32"}]}]}

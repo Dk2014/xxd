@@ -1,0 +1,1 @@
+{"action_name":"get_event_award","module_name":"event","protocol":[{"name":"event_id","type":"int16"},{"name":"page","type":"int32"},{"name":"param1","type":"int32"},{"name":"param2","type":"int32"},{"name":"param3","type":"int32"}]}

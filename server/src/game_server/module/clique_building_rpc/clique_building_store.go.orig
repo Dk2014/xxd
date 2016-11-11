@@ -1,0 +1,248 @@
+package clique_building_rpc
+
+import (
+	"core/fail"
+	"core/i18l"
+	"core/net"
+	"core/time"
+	"game_server/api/protocol/clique_building_api"
+	"game_server/dat/channel_dat"
+	"game_server/dat/clique_dat"
+	"game_server/dat/mail_dat"
+	"game_server/dat/player_dat"
+	"game_server/mdb"
+	"game_server/module"
+	"game_server/module/clique_rpc"
+	"game_server/module/rpc"
+	"game_server/tlog"
+	"game_server/xdlog"
+)
+
+func cliqueStoreDonate(session *net.Session, in *clique_building_api.CliqueStoreDonate_In) {
+	state := module.State(session)
+	out := &clique_building_api.CliqueStoreDonate_Out{
+		Result: clique_building_api.CLIQUE_BUILDING_DONATE_RESULT_FAILED,
+	}
+	if in.Money <= 0 {
+		fail.When(true, "cliqueTempleDonate  find in.money <= 0 ")
+	}
+
+	playerCliqueInfo := state.Database.Lookup.PlayerGlobalCliqueInfo(state.PlayerId)
+	if playerCliqueInfo == nil || playerCliqueInfo.CliqueId <= 0 {
+		session.Send(out)
+		return
+	}
+
+	cliqueInfo := module.CliqueRPC.CliqueInfoLookUp(state.Database, playerCliqueInfo.CliqueId)
+	if cliqueInfo == nil {
+		session.Send(out)
+		return
+	}
+
+	baseInfo := clique_dat.GetCenterBuildingLevelInfo(cliqueInfo.CenterBuildingLevel)
+	// 验证玩家今日捐钱是否超过上限，然后rpc扣钱，回调函数更新捐钱 判断是否升级
+	donatedCoins := playerCliqueInfo.DailyDonateCoins
+	if !time.IsInPointHour(player_dat.RESET_CLIQUE_BUILD_DONATE_TIMES_IN_HOUR, playerCliqueInfo.DonateCoinsTime) {
+		donatedCoins = 0
+	}
+	if donatedCoins+in.Money > baseInfo.DailyMaxCoins {
+		out.Result = clique_building_api.CLIQUE_BUILDING_DONATE_RESULT_FAILED
+		session.Send(out)
+		return
+	}
+	// 帮派战备仓库信息
+
+	rpc.RemoteDecMoney(state.PlayerId, in.Money, player_dat.COINS, tlog.MFR_CLIQUE_DONATE_STORE, xdlog.ET_CLIQUE_DONATE, func() {
+		mdb.GlobalExecute(func(globalDB *mdb.Database) {
+			globalDB.AgentExecute(state.PlayerId, func(agentDB *mdb.Database) {
+				playerCliq := agentDB.Lookup.PlayerGlobalCliqueInfo(state.PlayerId)
+				if playerCliq == nil || playerCliq.CliqueId <= 0 || playerCliq.CliqueId != cliqueInfo.Id {
+					session.Send(out)
+					return
+				}
+				cliqueInfo := module.CliqueRPC.CliqueInfoLookUp(state.Database, playerCliq.CliqueId)
+				if cliqueInfo == nil {
+					session.Send(out)
+					return
+				}
+
+				cliqueInfo.StoreBuildingCoins += in.Money
+				contrib := in.Money / clique_dat.CLIQUE_CONTRIB_RATE
+				cliqueInfo.Contrib += contrib
+				cliqueInfo.TotalDonateCoins += in.Money
+				agentDB.Update.GlobalClique(cliqueInfo)
+
+				playerCliqueBuilding := agentDB.Lookup.PlayerGlobalCliqueBuilding(state.PlayerId)
+				playerCliqueBuilding.DonateCoinsStoreBuilding += in.Money
+				agentDB.Update.PlayerGlobalCliqueBuilding(playerCliqueBuilding)
+
+				out.PlayerDonateCoins = donateBuilding(agentDB, in.Money, tlog.MFR_CLIQUE_DONATE_STORE)
+
+				out.StoreBuildingCoins = int32(cliqueInfo.StoreBuildingCoins)
+
+				out.Result = clique_building_api.CLIQUE_BUILDING_DONATE_RESULT_SUCCESS
+
+				//更新帮派每日任务 ，铜钱捐赠
+				module.CliqueQuestRPC.UpDatePlayerCliqueDailyQuest(agentDB, clique_dat.CLIQUE_DAYLY_QUEST_DONATE)
+				session.Send(out)
+
+			})
+		})
+	})
+
+	return
+}
+
+func cliqueStoreInfo(session *net.Session) {
+	state := module.State(session)
+	playerCliqueInfo := state.Database.Lookup.PlayerGlobalCliqueInfo(state.PlayerId)
+	out := &clique_building_api.CliqueStoreInfo_Out{}
+
+	if playerCliqueInfo == nil || playerCliqueInfo.CliqueId <= 0 {
+		session.Send(out)
+		return
+	}
+
+	cliqueInfo := module.CliqueRPC.CliqueInfoLookUp(state.Database, playerCliqueInfo.CliqueId)
+
+	if cliqueInfo == nil {
+		session.Send(out)
+		return
+	}
+
+	if !time.IsInPointHour(player_dat.RESET_CLIQUE_STORE_SEND_TIMES_IN_HOUR, cliqueInfo.StoreSendTime) {
+		cliqueInfo.StoreSendCnt = 0
+	}
+
+	out.StoreBuildingCoins = int32(cliqueInfo.StoreBuildingCoins)
+	out.SendTimes = int16(cliqueInfo.StoreSendCnt)
+	out.OwnerPid = cliqueInfo.OwnerPid
+	out.Manager1Pid = cliqueInfo.MangerPid1
+	out.Manager2Pid = cliqueInfo.MangerPid2
+
+	state.Database.Update.GlobalClique(cliqueInfo)
+
+	session.Send(out)
+
+	return
+}
+
+func cliqueStoreSendChest(session *net.Session, in *clique_building_api.CliqueStoreSendChest_In) {
+	state := module.State(session)
+	out := &clique_building_api.CliqueStoreSendChest_Out{}
+	out.Result = clique_building_api.CLIQUE_STORE_SEND_RESULT_SUCCESS
+
+	var job, itemname string
+	var itemid int16
+	playerCliqueInfo := state.Database.Lookup.PlayerGlobalCliqueInfo(state.PlayerId)
+	if playerCliqueInfo == nil || playerCliqueInfo.CliqueId <= 0 {
+		out.Result = clique_building_api.CLIQUE_STORE_SEND_RESULT_NO_CLIQUE
+		session.Send(out)
+		return
+	}
+	cliqueInfo := module.CliqueRPC.CliqueInfoLookUp(state.Database, playerCliqueInfo.CliqueId)
+
+	if cliqueInfo == nil {
+		out.Result = clique_building_api.CLIQUE_STORE_SEND_RESULT_CLIQUE_NOT_FOUND
+		session.Send(out)
+		return
+	}
+
+	if cliqueInfo.StoreSendCnt > 3 {
+		out.Result = clique_building_api.CLIQUE_STORE_SEND_RESULT_TIMES_NOT_ENOUGH
+		session.Send(out)
+		return
+	}
+
+	if cliqueInfo.OwnerPid != state.PlayerId && cliqueInfo.MangerPid1 != state.PlayerId && cliqueInfo.MangerPid2 != state.PlayerId {
+		out.Result = clique_building_api.CLIQUE_STORE_SEND_RESULT_NOT_MANAGER
+		session.Send(out)
+		return
+	}
+
+	if in.StoreChestType == clique_building_api.CLIQUE_STORE_CHEST_BAOXIANG {
+		if cliqueInfo.StoreBuildingCoins < clique_dat.CLIQUE_STORE_SEND_COST_BAOXIANG {
+			out.Result = clique_building_api.CLIQUE_STORE_SEND_RESULT_LACK_COINS
+			session.Send(out)
+			return
+		}
+		itemid = clique_dat.CLIQUE_STORE_BAOXIANG_ITEMID
+		itemname = i18l.T.Tran("帮派宝箱")
+		cliqueInfo.StoreBuildingCoins -= clique_dat.CLIQUE_STORE_SEND_COST_BAOXIANG
+	} else if in.StoreChestType == clique_building_api.CLIQUE_STORE_CHEST_JUNLIANG {
+		if cliqueInfo.StoreBuildingCoins < clique_dat.CLIQUE_STORE_SEND_COST_JUNLIANG {
+			out.Result = clique_building_api.CLIQUE_STORE_SEND_RESULT_LACK_COINS
+			session.Send(out)
+			return
+		}
+		itemid = clique_dat.CLIQUE_STORE_JUNLIANG_ITEMID
+		itemname = i18l.T.Tran("帮派军粮")
+		cliqueInfo.StoreBuildingCoins -= clique_dat.CLIQUE_STORE_SEND_COST_JUNLIANG
+	} else {
+		out.Result = clique_building_api.CLIQUE_STORE_SEND_RESULT_CLIQUE_CHEST_NOT_FOUND
+		session.Send(out)
+		return
+	}
+
+	var attachments []*mail_dat.Attachment
+	attachments = append(attachments, &mail_dat.Attachment{
+		AttachmentType: mail_dat.ATTACHMENT_ITEM,
+		ItemId:         itemid,
+		ItemNum:        1,
+	})
+
+	if state.PlayerId == cliqueInfo.OwnerPid {
+		job = i18l.T.Tran("帮主")
+	} else if state.PlayerId == cliqueInfo.MangerPid1 || state.PlayerId == cliqueInfo.MangerPid2 {
+		job = i18l.T.Tran("副帮主")
+	}
+	cliqueInfoAll := clique_rpc.CacheGetCliqueInfo(cliqueInfo.Id)
+
+	if itemid == clique_dat.CLIQUE_STORE_JUNLIANG_ITEMID {
+		for _, v := range cliqueInfoAll.Members {
+			if v == nil {
+				continue
+			}
+			if v.Pid > 0 {
+				module.MailRPC.SendStoreChestMail(v.Pid, &mail_dat.MailCliqueBangPaiJunLiang{
+					Attachments: attachments,
+				})
+			}
+		}
+	} else if itemid == clique_dat.CLIQUE_STORE_BAOXIANG_ITEMID {
+		for _, v := range cliqueInfoAll.Members {
+			if v == nil {
+				continue
+			}
+			if v.Pid > 0 {
+				module.MailRPC.SendStoreChestMail(v.Pid, &mail_dat.MailCliqueBangPaiBaoXiang{
+					Attachments: attachments,
+				})
+			}
+		}
+	}
+	StoreSendNotice(session, cliqueInfo.Id, job, itemname)
+	cliqueInfo.StoreSendCnt++
+	cliqueInfo.StoreSendTime = time.GetNowTime()
+	state.Database.Update.GlobalClique(cliqueInfo)
+	session.Send(out)
+}
+
+func StoreSendNotice(session *net.Session, cliqueid int64, job, itemname string) {
+	state := module.State(session)
+	module.CliqueRPC.AddCliqueNews(cliqueid,
+		channel_dat.MessageCliqueStoreSend{
+			Job: channel_dat.ParamString{
+				Content: i18l.T.Tran(job),
+			},
+			Name: channel_dat.ParamPlayer{
+				Nick: state.PlayerNick,
+				Pid:  state.PlayerId,
+			},
+			ItemName: channel_dat.ParamString{
+				Content: i18l.T.Tran(itemname),
+			},
+		},
+	)
+	return
+}

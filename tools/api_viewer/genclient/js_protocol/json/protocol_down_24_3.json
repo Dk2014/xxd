@@ -1,0 +1,1 @@
+{"action_name":"get_events","module_name":"event","protocol":[{"name":"events","type":"list8","fields":[{"name":"event_id","type":"int16"},{"name":"process","type":"int32"},{"name":"player_process","type":"int32"},{"name":"page","type":"int32"},{"name":"is_award","type":"bool"}]}]}

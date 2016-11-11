@@ -1,0 +1,1 @@
+{"action_name":"quest_info","module_name":"taoyuan","protocol":[{"name":"quset","type":"list8","fields":[{"name":"quest_id","type":"int16"},{"name":"item_id","type":"int16"},{"name":"item_num","type":"int16"},{"name":"exp","type":"int64"},{"name":"coins","type":"int64"},{"name":"finish_time","type":"int64"}]}]}

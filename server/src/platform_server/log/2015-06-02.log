@@ -1,0 +1,228 @@
+2015/06/02 11:41:21 [I] - [access]127.0.0.1 - - [2015-06-02 11:41:21.223985779 +0800 CST] "/user/gsinfo 
+  {
+    "OpenId": "_test_id2515657325741895560",
+    "Type": 1,
+    "Sid": 1,
+		"Token": "_SANDBOX_"
+  }"
+2015/06/02 11:41:21 [I] - send user _test_id2515657325741895560 of 1 to 1, svn.vvv.io:8080
+2015/06/02 11:41:21 [I] - [access]127.0.0.1 - - /user/gsinfo used time: 135ms
+2015/06/02 11:41:21 [I] - [access]127.0.0.1 - - [2015-06-02 11:41:21.359487778 +0800 CST] "/user/gsinfo 
+  {
+    "OpenId": "_test_id2515657325741895560",
+    "Type": 1,
+    "Sid": 1,
+		"Token": "_SANDBOX_"
+  }"
+2015/06/02 11:41:21 [I] - [access]127.0.0.1 - - /user/gsinfo used time: 68ms
+2015/06/02 11:41:21 [I] - [access]127.0.0.1 - - [2015-06-02 11:41:21.428146592 +0800 CST] "/user/gsinfo 
+  {
+    "OpenId": "_test_id2515657325741895560",
+    "Type": 1,
+    "Sid": 1,
+		"Token": "_SANDBOX_"
+  }"
+2015/06/02 11:41:21 [I] - [access]127.0.0.1 - - /user/gsinfo used time: 69ms
+2015/06/02 11:41:21 [I] - [access]127.0.0.1 - - [2015-06-02 11:41:21.497613317 +0800 CST] "/user/gsinfo 
+  {
+    "OpenId": "_test_id2515657325741895560",
+    "Type": 1,
+    "Sid": 1,
+		"Token": "_SANDBOX_"
+  }"
+2015/06/02 11:41:21 [I] - [access]127.0.0.1 - - /user/gsinfo used time: 70ms
+2015/06/02 11:41:21 [I] - [access]127.0.0.1 - - [2015-06-02 11:41:21.568136949 +0800 CST] "/user/gsinfo 
+  {
+    "OpenId": "_test_id2515657325741895560",
+    "Type": 1,
+    "Sid": 1,
+		"Token": "_SANDBOX_"
+  }"
+2015/06/02 11:41:21 [I] - [access]127.0.0.1 - - /user/gsinfo used time: 72ms
+2015/06/02 11:41:21 [I] - [access]127.0.0.1 - - [2015-06-02 11:41:21.640799523 +0800 CST] "/user/gsinfo 
+  {
+    "OpenId": "_test_id2515657325741895560",
+    "Type": 1,
+    "Sid": 1,
+		"Token": "_SANDBOX_"
+  }"
+2015/06/02 11:41:21 [I] - [access]127.0.0.1 - - /user/gsinfo used time: 70ms
+2015/06/02 11:41:21 [I] - [access]127.0.0.1 - - [2015-06-02 11:41:21.711801612 +0800 CST] "/user/gsinfo 
+  {
+    "OpenId": "_test_id2515657325741895560",
+    "Type": 1,
+    "Sid": 1,
+		"Token": "_SANDBOX_"
+  }"
+2015/06/02 11:41:21 [I] - [access]127.0.0.1 - - /user/gsinfo used time: 71ms
+2015/06/02 11:41:21 [I] - [access]127.0.0.1 - - [2015-06-02 11:41:21.783284789 +0800 CST] "/user/gsinfo 
+  {
+    "OpenId": "_test_id2515657325741895560",
+    "Type": 1,
+    "Sid": 1,
+		"Token": "_SANDBOX_"
+  }"
+2015/06/02 11:41:21 [I] - [access]127.0.0.1 - - /user/gsinfo used time: 67ms
+2015/06/02 11:41:21 [I] - [access]127.0.0.1 - - [2015-06-02 11:41:21.850905944 +0800 CST] "/user/gsinfo 
+  {
+    "OpenId": "_test_id2515657325741895560",
+    "Type": 1,
+    "Sid": 1,
+		"Token": "_SANDBOX_"
+  }"
+2015/06/02 11:41:21 [I] - [access]127.0.0.1 - - /user/gsinfo used time: 66ms
+2015/06/02 11:41:21 [I] - [access]127.0.0.1 - - [2015-06-02 11:41:21.917898555 +0800 CST] "/user/gsinfo 
+  {
+    "OpenId": "_test_id2515657325741895560",
+    "Type": 1,
+    "Sid": 1,
+		"Token": "_SANDBOX_"
+  }"
+2015/06/02 11:41:21 [I] - [access]127.0.0.1 - - /user/gsinfo used time: 67ms
+2015/06/02 11:41:21 [I] - [access]127.0.0.1 - - [2015-06-02 11:41:21.985767549 +0800 CST] "/user/create 
+  {
+    "OpenId": "_test_id2515657325741895560",
+    "Type": 1,
+    "Sid": 1,
+    "RoleId": 1,
+    "Nick": "_test_nick2515657325741895560",
+		"Token": "_SANDBOX_"
+  }"
+2015/06/02 11:41:21 [E] - Process error nick name too long: _test_nick2515657325741895560
+2015/06/02 11:41:21 [I] - [access]127.0.0.1 - - /user/create used time: 0ms
+2015/06/02 11:41:21 [I] - [access]127.0.0.1 - - [2015-06-02 11:41:21.986108388 +0800 CST] "/user/logon 
+  {
+    "OpenId": "_test_id2515657325741895560",
+    "Type": 1,
+    "Sid": 1,
+		"Token": "_SANDBOX_"
+  }"
+2015/06/02 11:47:28 [I] - [access]127.0.0.1 - - [2015-06-02 11:47:28.707982874 +0800 CST] "/user/gsinfo 
+  {
+    "OpenId": "_test_id1761823868755429569",
+    "Type": 1,
+    "Sid": 1,
+		"Token": "_SANDBOX_"
+  }"
+2015/06/02 11:47:28 [I] - send user _test_id1761823868755429569 of 1 to 1, svn.vvv.io:8080
+2015/06/02 11:47:28 [I] - [access]127.0.0.1 - - /user/gsinfo used time: 181ms
+2015/06/02 11:47:28 [I] - [access]127.0.0.1 - - [2015-06-02 11:47:28.889829044 +0800 CST] "/user/gsinfo 
+  {
+    "OpenId": "_test_id1761823868755429569",
+    "Type": 1,
+    "Sid": 1,
+		"Token": "_SANDBOX_"
+  }"
+2015/06/02 11:47:28 [I] - [access]127.0.0.1 - - /user/gsinfo used time: 73ms
+2015/06/02 11:47:28 [I] - [access]127.0.0.1 - - [2015-06-02 11:47:28.96321378 +0800 CST] "/user/gsinfo 
+  {
+    "OpenId": "_test_id1761823868755429569",
+    "Type": 1,
+    "Sid": 1,
+		"Token": "_SANDBOX_"
+  }"
+2015/06/02 11:47:29 [I] - [access]127.0.0.1 - - /user/gsinfo used time: 81ms
+2015/06/02 11:47:29 [I] - [access]127.0.0.1 - - [2015-06-02 11:47:29.045135114 +0800 CST] "/user/gsinfo 
+  {
+    "OpenId": "_test_id1761823868755429569",
+    "Type": 1,
+    "Sid": 1,
+		"Token": "_SANDBOX_"
+  }"
+2015/06/02 11:47:29 [I] - [access]127.0.0.1 - - /user/gsinfo used time: 66ms
+2015/06/02 11:47:29 [I] - [access]127.0.0.1 - - [2015-06-02 11:47:29.111717618 +0800 CST] "/user/gsinfo 
+  {
+    "OpenId": "_test_id1761823868755429569",
+    "Type": 1,
+    "Sid": 1,
+		"Token": "_SANDBOX_"
+  }"
+2015/06/02 11:47:29 [I] - [access]127.0.0.1 - - /user/gsinfo used time: 89ms
+2015/06/02 11:47:29 [I] - [access]127.0.0.1 - - [2015-06-02 11:47:29.201667224 +0800 CST] "/user/gsinfo 
+  {
+    "OpenId": "_test_id1761823868755429569",
+    "Type": 1,
+    "Sid": 1,
+		"Token": "_SANDBOX_"
+  }"
+2015/06/02 11:47:29 [I] - [access]127.0.0.1 - - /user/gsinfo used time: 90ms
+2015/06/02 11:47:29 [I] - [access]127.0.0.1 - - [2015-06-02 11:47:29.292413378 +0800 CST] "/user/gsinfo 
+  {
+    "OpenId": "_test_id1761823868755429569",
+    "Type": 1,
+    "Sid": 1,
+		"Token": "_SANDBOX_"
+  }"
+2015/06/02 11:47:29 [I] - [access]127.0.0.1 - - /user/gsinfo used time: 72ms
+2015/06/02 11:47:29 [I] - [access]127.0.0.1 - - [2015-06-02 11:47:29.36544108 +0800 CST] "/user/gsinfo 
+  {
+    "OpenId": "_test_id1761823868755429569",
+    "Type": 1,
+    "Sid": 1,
+		"Token": "_SANDBOX_"
+  }"
+2015/06/02 11:47:29 [I] - [access]127.0.0.1 - - /user/gsinfo used time: 89ms
+2015/06/02 11:47:29 [I] - [access]127.0.0.1 - - [2015-06-02 11:47:29.455119828 +0800 CST] "/user/gsinfo 
+  {
+    "OpenId": "_test_id1761823868755429569",
+    "Type": 1,
+    "Sid": 1,
+		"Token": "_SANDBOX_"
+  }"
+2015/06/02 11:47:29 [I] - [access]127.0.0.1 - - /user/gsinfo used time: 84ms
+2015/06/02 11:47:29 [I] - [access]127.0.0.1 - - [2015-06-02 11:47:29.540084933 +0800 CST] "/user/gsinfo 
+  {
+    "OpenId": "_test_id1761823868755429569",
+    "Type": 1,
+    "Sid": 1,
+		"Token": "_SANDBOX_"
+  }"
+2015/06/02 11:47:29 [I] - [access]127.0.0.1 - - /user/gsinfo used time: 96ms
+2015/06/02 11:47:29 [I] - [access]127.0.0.1 - - [2015-06-02 11:47:29.636628876 +0800 CST] "/user/create 
+  {
+    "OpenId": "_test_id1761823868755429569",
+    "Type": 1,
+    "Sid": 1,
+    "RoleId": 1,
+    "Nick": "_test_nick1761823868755429569",
+		"Token": "_SANDBOX_"
+  }"
+2015/06/02 11:47:29 [E] - Process error nick name too long: _test_nick1761823868755429569
+2015/06/02 11:47:29 [I] - [access]127.0.0.1 - - /user/create used time: 0ms
+2015/06/02 11:47:29 [I] - [access]127.0.0.1 - - [2015-06-02 11:47:29.636866988 +0800 CST] "/user/logon 
+  {
+    "OpenId": "_test_id1761823868755429569",
+    "Type": 1,
+    "Sid": 1,
+		"Token": "_SANDBOX_"
+  }"
+2015/06/02 11:47:29 [E] - user nick not found, openid:_test_id1761823868755429569, itype:1, sid:1
+2015/06/02 11:47:29 [I] - [access]127.0.0.1 - - /user/logon used time: 87ms
+2015/06/02 11:47:29 [I] - [access]127.0.0.1 - - [2015-06-02 11:47:29.724784922 +0800 CST] "/user/list 
+  {
+    "OpenId": "_test_id1761823868755429569",
+    "Type": 1
+  }"
+2015/06/02 11:47:30 [I] - [access]127.0.0.1 - - /user/list used time: 406ms
+2015/06/02 11:47:30 [I] - [access]127.0.0.1 - - [2015-06-02 11:47:30.131691354 +0800 CST] "/user/update 
+  {
+    "OpenId": "_test_id1761823868755429569",
+    "Type": 1,
+    "Sid": 1,
+    "RoleLevel": 3,
+		"Token": "_SANDBOX_"
+  }"
+2015/06/02 11:47:30 [I] - [access]127.0.0.1 - - /user/update used time: 110ms
+2015/06/02 11:47:30 [I] - [access]127.0.0.1 - - [2015-06-02 11:47:30.242033758 +0800 CST] "/user/list 
+  {
+    "OpenId": "_test_id1761823868755429569",
+    "Type": 1
+  }"
+2015/06/02 11:47:30 [I] - [access]127.0.0.1 - - /user/list used time: 368ms
+2015/06/02 11:47:30 [I] - [access]127.0.0.1 - - [2015-06-02 11:47:30.610975926 +0800 CST] "/user/logon 
+  {
+    "OpenId": "_test_id_not_exist",
+    "Type": 1,
+    "Sid": 1,
+		"Token": "_SANDBOX_"
+  }"

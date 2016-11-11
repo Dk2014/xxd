@@ -1,0 +1,1 @@
+{"action_name":"change_role_status","module_name":"role","protocol":[{"name":"role_id","type":"int8"},{"name":"status","type":"int8"}]}

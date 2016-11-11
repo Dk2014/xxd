@@ -1,0 +1,337 @@
+{
+    "version": 12,
+    "Config": {
+        "MonthCardIngot": 300
+    },
+    "DailySignIn": [],
+    "LevelUp": {
+        "StartUnixTime": -1,
+        "EndUnixTime": -1,
+        "DisposeUnixTime": -1,
+        "IsRelative": -1,
+        "Weight": -1,
+        "Tag": -1,
+        "LTitle": "",
+        "RTitle": "",
+        "Content": "",
+        "List": []
+    },
+    "FightPower": {
+        "StartUnixTime": -1,
+        "EndUnixTime": -1,
+        "DisposeUnixTime": -1,
+        "IsRelative": -1,
+        "Weight": -1,
+        "Tag": -1,
+        "LTitle": "",
+        "RTitle": "",
+        "Content": "",
+        "List": []
+    },
+    "LoginIn": {
+        "StartUnixTime": -1,
+        "EndUnixTime": -1,
+        "DisposeUnixTime": -1,
+        "IsRelative": -1,
+        "Weight": -1,
+        "Tag": -1,
+        "LTitle": "",
+        "RTitle": "",
+        "Content": "",
+        "List": []
+    },
+    "Recharge": {
+        "StartUnixTime": -1,
+        "EndUnixTime": -1,
+        "DisposeUnixTime": -1,
+        "IsRelative": -1,
+        "Weight": -1,
+        "Tag": -1,
+        "LTitle": "",
+        "RTitle": "",
+        "Content": ""
+    },
+    "TotalRecharge": {
+        "StartUnixTime": -1,
+        "EndUnixTime": -1,
+        "DisposeUnixTime": -1,
+        "IsRelative": -1,
+        "Weight": -1,
+        "Tag": -1,
+        "LTitle": "",
+        "RTitle": "",
+        "Content": "",
+        "List":[]
+    },
+    "Richman": {
+        "StartUnixTime": -1,
+        "EndUnixTime": -1,
+        "DisposeUnixTime": -1,
+        "IsRelative": -1,
+        "Weight": -1,
+        "Tag": -1,
+        "LTitle": "",
+        "RTitle": "",
+        "Content": ""
+    },
+    "LevelRecharge": {
+        "StartUnixTime": -1,
+        "EndUnixTime": -1,
+        "DisposeUnixTime": -1,
+        "IsRelative": -1,
+        "Weight": -1,
+        "Tag": -1,
+        "LTitle": "",
+        "RTitle": "",
+        "Content": ""
+    },
+    "FirstRecharge": {
+        "StartUnixTime": -1,
+        "EndUnixTime": -1,
+        "DisposeUnixTime": -1,
+        "IsRelative": -1,
+        "Weight": -1,
+        "Tag": -1,
+        "LTitle": "",
+        "RTitle": "",
+        "Content": ""
+    },
+    "GroupBuy": {
+        "StartUnixTime": -1,
+        "EndUnixTime": -1,
+        "DisposeUnixTime": -1,
+        "IsRelative": -1,
+        "Weight": -1,
+        "Tag": -1,
+        "LTitle": "",
+        "RTitle": "",
+        "Content": ""
+    },
+    "SevenDay": {
+        "StartUnixTime": -1,
+        "EndUnixTime": -1,
+        "DisposeUnixTime": -1,
+        "IsRelative": -1,
+        "Weight": -1,
+        "Tag": -1,
+        "LTitle": "",
+        "RTitle": "",
+        "Content": "",
+        "List": []
+    },
+    "Share":{
+        "StartUnixTime": -1,
+        "EndUnixTime": -1,
+        "DisposeUnixTime": -1,
+        "IsRelative": -1,
+        "Weight": -1,
+        "Tag": -1,
+        "LTitle": "",
+        "RTitle": "",
+        "Content": "",
+        "List":[]
+    },
+    "Multipy":{
+        "StartUnixTime": -1,
+        "EndUnixTime": -1,
+        "DisposeUnixTime": -1,
+        "IsRelative": -1,
+        "Weight": -1,
+        "Tag": -1,
+        "LTitle": "",
+        "RTitle": "",
+        "Content": "",
+        "List": {
+            "MISSION_COINS": 0,
+            "MISSION_EXPS": 0
+        }
+    },
+    "OperaAnnouncement": [
+        {
+            "title": "",
+            "content": "ccc",
+            "effect_time": 1411915786,
+            "expire_time": 1412915786
+        }
+    ],
+    "VipClub": {
+        "StartUnixTime": -1,
+        "EndUnixTime": -1,
+        "DisposeUnixTime": -1,
+        "IsRelative": -1,
+        "Weight": -1,
+        "Tag": -1,
+        "LTitle": "",
+        "RTitle": "",
+        "Content": "",
+        "List": []
+    },
+    "ArenaRank": {
+        "StartUnixTime": -1,
+        "EndUnixTime": -1,
+        "DisposeUnixTime": -1,
+        "IsRelative": -1,
+        "Weight": -1,
+        "Tag": -1,
+        "LTitle": "",
+        "RTitle": "",
+        "Content": "",
+        "List": []
+    },
+    "Physical": {
+        "StartUnixTime": -1,
+        "EndUnixTime": -1,
+        "DisposeUnixTime": -1,
+        "IsRelative": -1,
+        "Weight": -1,
+        "Tag": -1,
+        "LTitle": "",
+        "RTitle": "",
+        "Content": "",
+        "List": []
+    },
+    "QQVIPGift": {
+        "StartUnixTime": -1,
+        "EndUnixTime": -1,
+        "DisposeUnixTime": -1,
+        "IsRelative": -1,
+        "Weight": -1,
+        "Tag": -1,
+        "LTitle": "",
+        "RTitle": "",
+        "Content": "",
+        "List": [],
+        "Addition": {
+            "QQVIP_COINS": 0,
+            "QQVIP_EXPS": 0
+        }
+    },
+    "TotalLogin": {
+        "StartUnixTime": -1,
+        "EndUnixTime": -1,
+        "DisposeUnixTime": -1,
+        "IsRelative": -1,
+        "Weight": -1,
+        "Tag": -1,
+        "LTitle": "",
+        "RTitle": "",
+        "Content": "",
+        "List": []
+    },
+    "Dinner": {
+        "StartUnixTime": -1,
+        "EndUnixTime": -1,
+        "DisposeUnixTime": -1,
+        "IsRelative": -1,
+        "Weight": -1,
+        "Tag": -1,
+        "LTitle": "",
+        "RTitle": "",
+        "Content": "",
+        "List": []
+    },
+    "Supper": {
+        "StartUnixTime": -1,
+        "EndUnixTime": -1,
+        "DisposeUnixTime": -1,
+        "IsRelative": -1,
+        "Weight": -1,
+        "Tag": -1,
+        "LTitle": "",
+        "RTitle": "",
+        "Content": "",
+        "List": []
+    },
+    "PushNotify": [],
+    "MonthCard": {
+        "StartUnixTime": -1,
+        "EndUnixTime": -1,
+        "DisposeUnixTime": -1,
+        "IsRelative": -1,
+        "Weight": -1,
+        "Tag": -1,
+        "LTitle": "",
+        "RTitle": "",
+        "Content": "",
+        "List": []
+    },
+    "BuyPartner": {
+        "StartUnixTime": -1,
+        "EndUnixTime": -1,
+        "DisposeUnixTime": -1,
+        "IsRelative": -1,
+        "Weight": -1,
+        "Tag": -1,
+        "LTitle": "",
+        "RTitle": "",
+        "Content": "初始等级[level]级，东瀛女忍者，性情阴晴不定，花费[ingot]即可邀请胧月加入队伍(赠送专属紫色武器及魂侍将通过邮件发放）",
+        "List": []
+    },
+    "TenDraw": {
+        "StartUnixTime": 1417622400,
+        "EndUnixTime": 1417708800,
+        "DisposeUnixTime": 1417708800,
+        "IsRelative": 0,
+        "Weight": -1,
+        "Type":0,
+        "Tag": -1,
+        "LTitle": "",
+        "RTitle": "",
+        "Content": "",
+        "List": []
+    },
+    "TotalConsume": {
+        "StartUnixTime": -1,
+        "EndUnixTime": -1,
+        "DisposeUnixTime": -1,
+        "IsRelative": -1,
+        "Weight": -1,
+        "Tag": -1,
+        "LTitle": "",
+        "RTitle": "",
+        "Content": "",
+        "List": []
+    },
+    "FirstRechargeDaily": {
+        "StartUnixTime": -1,
+        "EndUnixTime": -1,
+        "DisposeUnixTime": -1,
+        "IsRelative": -1,
+        "Weight": -1,
+        "Tag": -1,
+        "LTitle": "",
+        "RTitle": "",
+        "Content": "",
+        "List": []
+    },
+    "InGotRank": {
+        "StartUnixTime": 0,
+        "EndUnixTime": 0,
+        "DisposeUnixTime": 0,
+        "IsRelative": 0,
+        "Weight": -1,
+        "Type":0,
+        "Tag": -1,
+        "LTitle": "",
+        "RTitle": "",
+        "Content": "",
+        "List": []                                                                                             
+    },
+
+    "JsonEvents":[
+        {
+            "Type":0,
+            "Page":0,
+            "StartUnixTime": -1,
+            "EndUnixTime": -1,
+            "DisposeUnixTime": -1,
+            "IsRelative":false, 
+            "Weight": -1,
+            "Tag": -1,
+            "LTitle": "",
+            "RTitle": "",
+            "Content": "",
+            "List": [] 
+        }
+    ]
+}

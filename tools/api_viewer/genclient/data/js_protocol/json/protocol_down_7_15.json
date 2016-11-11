@@ -1,0 +1,1 @@
+{"action_name":"dragon_ball_exchange_notify","module_name":"item","protocol":[{"name":"item_id","type":"int16"},{"name":"item_num","type":"int16"}]}

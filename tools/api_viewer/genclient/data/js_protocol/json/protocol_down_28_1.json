@@ -1,0 +1,1 @@
+{"action_name":"info","module_name":"pet_virtual_env","protocol":[{"name":"daily_num","type":"int8"},{"name":"max_floor","type":"int16"},{"name":"max_awarded_floor","type":"int16"},{"name":"unpassed_floor_enemy_num","type":"int16"}]}

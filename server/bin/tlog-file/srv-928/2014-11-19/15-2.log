@@ -1,0 +1,16 @@
+PlayerLogin|928|2014-11-19 15:52:21|game_1_app_id|1|test2|80|0|7901||HTML5||WiFi|0|0|0|0||0|||
+PlayerLogout|928|2014-11-19 15:52:21|game_1_app_id|1|test2|0|80|0|7901||HTML5||WiFi|0|0|0|0||0||||6
+PlayerLogin|928|2014-11-19 15:52:59|game_1_app_id|1|test2|80|0|7901||HTML5||WiFi|0|0|0|0||0|||
+PlayerFightNumFlow|928|2014-11-19 15:53:00|game_1_app_id|1|test2|80|6|12535
+GameSvrState|2014-11-19 15:53:20|192.168.10.35
+PlayerSystemModuleFlow|928|2014-11-19 15:53:22|game_1_app_id|1|test2|80|0|6
+ItemFlow|928|2014-11-19 15:53:45|0|game_1_app_id|1|test2|12|263|34|1|1|0|0|6
+PlayerPvpFlow|928|2014-11-19 15:53:45|game_1_app_id|1|test2|80|1|1|6|2
+PlayerPvpFlow|928|2014-11-19 15:53:45|game_1_app_id|1|test|80|2|2|0|3
+MoneyFlow|928|2014-11-19 15:54:00|0|game_1_app_id|1|test2|80|10000|0|40|0|1|1|6
+GameSvrState|2014-11-19 15:54:20|192.168.10.35
+GameSvrState|2014-11-19 15:55:20|192.168.10.35
+GameSvrState|2014-11-19 15:56:20|192.168.10.35
+GameSvrState|2014-11-19 15:57:20|192.168.10.35
+GameSvrState|2014-11-19 15:58:20|192.168.10.35
+GameSvrState|2014-11-19 15:59:20|192.168.10.35

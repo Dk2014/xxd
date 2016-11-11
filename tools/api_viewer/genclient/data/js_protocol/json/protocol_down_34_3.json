@@ -1,0 +1,1 @@
+{"action_name":"clique_bank_donate","module_name":"clique_building","protocol":[{"name":"result","type":"enum8"},{"name":"clique_building_bank_level","type":"int16"},{"name":"clique_building_bank_donate_coins","type":"int32"},{"name":"player_donate_coins","type":"int64"}]}

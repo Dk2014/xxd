@@ -1,0 +1,57 @@
+//
+// 帮派建筑物任务接口(互动)
+//
+mod clique_quest = 35
+{
+   // 获取每日帮派任务
+    api get_clique_daily_Quest = 1 {
+        in {}
+        out {
+            quest : list {
+                id : int16  // 任务id
+                finish_count: int16 // 完成数
+                award_state: int8 // 奖励状态; 0 无奖励；1可领取; 2已奖励
+            }
+        }
+    }
+
+   // 每日任务领取奖励
+    api award_clique_daily_Quest = 2 {
+        in {
+            id : int16 // 任务id
+        }
+        out {
+         result : int8  //0领取成功，1,失败
+        }
+    }
+
+    // 通知每日帮派任务更新
+    api notify_clique_daily_change = 3 {
+        out {
+            id : int16
+            finish_count: int16
+            award_state: int8 // 奖励状态; 0 未奖励；1可领取; 2已奖励
+        }
+    }
+    // 获取帮派建设任务
+    api get_clique_building_quest = 4 {
+        in {}
+       out {
+             quest : list {
+                id : int16  // 任务id
+                award_state: int8 //奖励状态; 0 未奖励；1可领取; 2已奖励
+                donateCoins: int64 //已经捐赠铜钱
+            }
+            
+        }
+    }
+    // 帮派建筑任务领取奖励
+    api award_clique_building_Quest = 5 {
+        in {
+            id : int16 // 任务id
+        }
+        out {
+            result : int8  //0领取成功，1可以继续领取,2,不能领取
+        }
+    }
+}

@@ -1,0 +1,48 @@
+
+
+var TableConfigFight_num = 
+{
+
+	// =====================================================================
+	//
+	// $config[0]
+	//
+	// =====================================================================
+	
+	LEVEL_RATE : 5,
+	MAX_HEALTH_RATE : 0.25,
+	CULTIVATION_RATE : 1,
+	SPEED_RATE : 0.1,
+	ATTACK_RATE : 1,
+	DEFEND_RATE : 1,
+	SUNDER_RATE : 5,
+	CRITIAL_LEVEL_RATE : 1,
+	TENACITY_LEVEL_RATE : 1,
+	HIT_LEVEL_RATE : 1,
+	DODGE_LEVEL_RATE : 1,
+	DESTROY_LEVEL_RATE : 1,
+	BLOCK_LEVEL_RATE : 1,
+	SLEEP_LEVEL_RATE : 1,
+	DIZZINESS_LEVEL_RATE : 1,
+	RANDOM_LEVEL_RATE : 1,
+	DISABLE_SKILL_LEVEL_RATE : 1,
+	POISONING_LEVEL_RATE : 1,
+	CRITIAL_HURT_LEVEL_RATE : 1,
+	CRITIAL_RATE : 10,
+	TENACITY_RATE : 10,
+	HIT_RATE : 10,
+	DODGE_RATE : 10,
+	DESTROY_RATE : 10,
+	BLOCK_RATE : 10,
+	SLEEP_RATE : 10,
+	DIZZINESS_RATE : 10,
+	RANDOM_RATE : 10,
+	DISABLE_SKILL_RATE : 10,
+	POISONING_RATE : 10,
+	CRITIAL_HURT_RATE : 10,
+	SPIRIT_HURT_RATE : 1,
+	HUMAN_HURT_RATE : 1,
+	DEVIL_HURT_RATE : 1,
+	
+
+};

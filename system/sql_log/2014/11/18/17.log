@@ -1,0 +1,8 @@
+-- ------------------------------------------------------
+-- 11/18/2014 17:59 插入或更新发生在表rainbow_buy_cost_config
+INSERT INTO `rainbow_buy_cost_config` SET `times` = '1', `cost` = '100' ;
+
+-- ------------------------------------------------------
+-- 11/18/2014 17:59 插入或更新发生在表rainbow_buy_cost_config
+UPDATE `rainbow_buy_cost_config` SET `times` = '1', `cost` = '100' WHERE `id` = 1;INSERT INTO `rainbow_buy_cost_config` SET `times` = '2', `cost` = '200' ;
+

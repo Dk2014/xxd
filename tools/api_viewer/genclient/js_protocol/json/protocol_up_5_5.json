@@ -1,0 +1,1 @@
+{"action_name":"train_skill","module_name":"skill","protocol":[{"name":"role_id","type":"int8"},{"name":"skill_id","type":"int16"}]}

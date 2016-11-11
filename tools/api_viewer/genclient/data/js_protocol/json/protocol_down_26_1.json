@@ -1,0 +1,1 @@
+{"action_name":"push_info","module_name":"push_notify","protocol":[{"name":"effect_notification","type":"list8","fields":[{"name":"notification_id","type":"int32"}]}]}

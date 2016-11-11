@@ -1,0 +1,399 @@
+# HG changeset patch
+# User Dai Huize <daihuize@xindong.com>
+# Date 1425468537 -28800
+#      Wed Mar 04 19:28:57 2015 +0800
+# Node ID dee4d107cb99d47fb8f8ee6846acdc02b6d3f336
+# Parent  4fd0fb5563d9b0becb80e0c8a0ccf4a9f3434eb9
+Add concept Response, every *_Out can LinkRequest to a Request, for the client side to identify
+
+diff -r 4fd0fb5563d9 -r dee4d107cb99 protocol/plugins/client_test/main.php
+--- a/protocol/plugins/client_test/main.php	Wed Mar 04 19:07:59 2015 +0800
++++ b/protocol/plugins/client_test/main.php	Wed Mar 04 19:28:57 2015 +0800
+@@ -180,7 +180,7 @@
+ }()
+ s := &net.Session{State: c}\n
+ for {\n
+-	raw, err := c.conn.Read()\n
++	raw, _, err := c.conn.Read()\n
+ 	if err != nil {
+ 		if c.closed {
+ 			return
+diff -r 4fd0fb5563d9 -r dee4d107cb99 protocol/plugins/server_code/main.php
+--- a/protocol/plugins/server_code/main.php	Wed Mar 04 19:07:59 2015 +0800
++++ b/protocol/plugins/server_code/main.php	Wed Mar 04 19:28:57 2015 +0800
+@@ -93,13 +93,7 @@
+ 
+ CODE;
+ 
+-	$code .= "type Request interface {\n";
+-	$code .= "	Process(*net.Session)\n";
+-	$code .= "	TypeName() string\n";
+-	$code .= "	GetModuleIdAndActionId() (int8, int8)\n";
+-	$code .= "}\n\n";
+-
+-	$code .= "func DecodeIn(message []byte) Request {\n";
++	$code .= "func DecodeIn(message []byte) net.Request {\n";
+ 	$code .= $recoverCode;
+ 	$code .= "	var moduleId = message[0]\n";
+ 	$code .= "	switch moduleId {\n";
+@@ -114,7 +108,7 @@
+ 	$code .= "	panic(\"unsupported protocol\")\n";
+ 	$code .= "}\n\n";
+ 
+-	$code .= "func DecodeOut(message []byte) Request {\n";
++	$code .= "func DecodeOut(message []byte) net.Request {\n";
+ 	$code .= $recoverCode;
+ 	$code .= "	var moduleId = message[0]\n";
+ 	$code .= "	switch moduleId {\n";
+@@ -140,12 +134,6 @@
+ 
+ 	$code .= "import \"core/net\"\n";
+ 
+-	$code .= "type Request interface {\n";
+-	$code .= "	Process(*net.Session)\n";
+-	$code .= "	TypeName() string\n";
+-	$code .= "	GetModuleIdAndActionId() (int8, int8)\n";	
+-	$code .= "}\n\n";
+-	
+ 	$code .= "var (\n";
+ 	$code .= "	g_InHandler  InHandler\n";
+ 	$code .= "	g_OutHandler OutHandler\n";
+@@ -180,7 +168,7 @@
+ 	$code .= "}\n\n";
+ 
+ 	// Decode in
+-	$code .= "func DecodeIn(message []byte) Request {\n";
++	$code .= "func DecodeIn(message []byte) net.Request {\n";
+ 	$code .= "	var actionId = message[0]\n";
+ 	$code .= "	var buffer = net.NewBuffer(message[1:])\n";
+ 	$code .= "	switch actionId {\n";
+@@ -199,7 +187,7 @@
+ 	$code .= "}\n\n";
+ 
+ 	// Decode out
+-	$code .= "func DecodeOut(message []byte) Request {\n";
++	$code .= "func DecodeOut(message []byte) net.Request {\n";
+ 	$code .= "	var actionId = message[0]\n";
+ 	$code .= "	var buffer = net.NewBuffer(message[1:])\n";
+ 	$code .= "	switch actionId {\n";
+@@ -374,6 +362,8 @@
+ 		}
+ 		$code .= "\n";
+ 	}
++	$code .= "	net.RequestAbstract\n";
++	$code .= "	net.ResponseAbstract\n";
+ 	$code .= "}\n\n";
+ 	$code .= $last;
+ 	return $code;
+diff -r 4fd0fb5563d9 -r dee4d107cb99 server/src/core/net/conn.go
+--- a/server/src/core/net/conn.go	Wed Mar 04 19:07:59 2015 +0800
++++ b/server/src/core/net/conn.go	Wed Mar 04 19:28:57 2015 +0800
+@@ -86,7 +86,7 @@
+ }
+ 
+ // Read a packet.
+-func (c *Conn) Read() ([]byte, error) {
++func (c *Conn) Read() ([]byte, uint32, error) {
+ 	c.rMutext.Lock()
+ 	defer c.rMutext.Unlock()
+ 
+@@ -101,10 +101,11 @@
+ 		size, recvBytes = c.decodePacketHead(c.rHeadBuff)
+ 
+ 		if c.rMaxSize > 0 && size > c.rMaxSize {
+-			return nil, errors.New("size big then max read size")
++			return nil, 0, errors.New("size big then max read size")
+ 		}
++		// FIXME when range back
+ 		if recvBytes <= c.recvBytes {
+-			return nil, errors.New("[Conn::Read] Replay request")
++			return nil, 0, errors.New("[Conn::Read] Replay request")
+ 		}
+ 		c.recvBytes = recvBytes
+ 		data := c.alloc(size)
+@@ -112,9 +113,9 @@
+ 		if err == nil {
+ 			c.decodePacket(data)
+ 		}
+-		return data, err
++		return data, recvBytes, err
+ 	} else {
+-		return nil, err
++		return nil, 0, err
+ 	}
+ }
+ 
+diff -r 4fd0fb5563d9 -r dee4d107cb99 server/src/core/net/protocol.go
+--- a/server/src/core/net/protocol.go	Wed Mar 04 19:07:59 2015 +0800
++++ b/server/src/core/net/protocol.go	Wed Mar 04 19:28:57 2015 +0800
+@@ -5,6 +5,7 @@
+ import "errors"
+ 
+ type PacketProtocol interface {
++	GetByteOrder() ByteOrder
+ 	HeadSize() int
+ 	ReadHead(net.Conn, []byte) (uint, error)
+ 	WriteHead(net.Conn, []byte, uint) error
+@@ -31,6 +32,10 @@
+ 	bo ByteOrder
+ }
+ 
++func (p PacketNProtocol) GetByteOrder() ByteOrder {
++	return p.bo
++}
++
+ func (p PacketNProtocol) HeadSize() int {
+ 	return p.n
+ }
+diff -r 4fd0fb5563d9 -r dee4d107cb99 server/src/core/net/session.go
+--- a/server/src/core/net/session.go	Wed Mar 04 19:07:59 2015 +0800
++++ b/server/src/core/net/session.go	Wed Mar 04 19:28:57 2015 +0800
+@@ -14,7 +14,7 @@
+ // Request handler.
+ type RequestHandler interface {
+ 	// Handle a request from session.
+-	Handle(*Session, []byte)
++	Handle(*Session, uint32, []byte)
+ }
+ 
+ type SessionStateHandler interface {
+@@ -22,11 +22,33 @@
+ }
+ 
+ type requestHandlerFunc struct {
+-	callback func(*Session, []byte)
++	callback func(*Session, uint32, []byte)
+ }
+ 
+-func (handler requestHandlerFunc) Handle(session *Session, request []byte) {
+-	handler.callback(session, request)
++func (handler requestHandlerFunc) Handle(session *Session, reqId uint32, request []byte) {
++	handler.callback(session, reqId, request)
++}
++
++// Request
++type Request interface {
++	Process(*Session)
++	TypeName() string
++	GetModuleIdAndActionId() (int8, int8)
++
++	SetRequestId(uint32)
++	GetRequestId() uint32
++}
++
++type RequestAbstract struct {
++	id uint32
++}
++
++func (this *RequestAbstract) SetRequestId(id uint32) {
++	this.id = id
++}
++
++func (this *RequestAbstract) GetRequestId() uint32 {
++	return this.id
+ }
+ 
+ // Response.
+@@ -38,6 +60,21 @@
+ 	Encode(*Buffer)
+ 
+ 	GetModuleIdAndActionId() (int8, int8)
++
++	LinkRequest(Request)
++	GetRequest() Request
++}
++
++type ResponseAbstract struct {
++	req Request
++}
++
++func (this *ResponseAbstract) LinkRequest(req Request) {
++	this.req = req
++}
++
++func (this *ResponseAbstract) GetRequest() Request {
++	return this.req
+ }
+ 
+ // Session.
+@@ -99,11 +136,11 @@
+ 		session.Close()
+ 	}()
+ 	for {
+-		msg, err := session.conn.Read()
++		msg, reqId, err := session.conn.Read()
+ 		if err != nil {
+ 			break
+ 		}
+-		session.handler.Handle(session, msg)
++		session.handler.Handle(session, reqId, msg)
+ 	}
+ }
+ 
+@@ -164,6 +201,13 @@
+ 	data := buffer.Get()
+ 	protocol.EncodeHead(data, uint(len(data)-headSize))
+ 
++	// FIXME DIRTY CODE, depending the protocol.EncodeHead is little endian, so the 4th to 8th bytes is meaningless, use it now
++	req := response.GetRequest()
++	if req != nil {
++		reqId := req.GetRequestId()
++		protocol.GetByteOrder().PutUint32(data[4:8], reqId)
++	}
++
+ 	return session.conn.WriteRaw(data)
+ }
+ 
+@@ -197,7 +241,7 @@
+ 	session.handler = handler
+ }
+ 
+-func (session *Session) SetRequestHandlerFunc(callback func(*Session, []byte)) {
++func (session *Session) SetRequestHandlerFunc(callback func(*Session, uint32, []byte)) {
+ 	session.handler = requestHandlerFunc{callback}
+ }
+ 
+diff -r 4fd0fb5563d9 -r dee4d107cb99 server/src/game_server/api/server.go
+--- a/server/src/game_server/api/server.go	Wed Mar 04 19:07:59 2015 +0800
++++ b/server/src/game_server/api/server.go	Wed Mar 04 19:28:57 2015 +0800
+@@ -80,8 +80,8 @@
+ 	module.DeleteSessionState(session)
+ }
+ 
+-func requestHandler(session *net.Session, msg []byte) {
+-	var request protocol.Request
++func requestHandler(session *net.Session, reqId uint32, msg []byte) {
++	var request net.Request
+ 
+ 	defer func() {
+ 		if err := recover(); err != nil {
+@@ -127,6 +127,7 @@
+ 	}()
+ 
+ 	request = protocol.DecodeIn(msg)
++	request.SetRequestId(reqId)
+ 
+ 	var (
+ 		tProcBegin time.Time
+diff -r 4fd0fb5563d9 -r dee4d107cb99 server/src/game_server/module/friend_rpc/api.go
+--- a/server/src/game_server/module/friend_rpc/api.go	Wed Mar 04 19:07:59 2015 +0800
++++ b/server/src/game_server/module/friend_rpc/api.go	Wed Mar 04 19:28:57 2015 +0800
+@@ -29,7 +29,9 @@
+ 
+ func (this FriendAPI) CancelListen(session *net.Session, in *friend_api.CancelListen_In) {
+ 	result := CancelListen(module.State(session), in.Pid)
+-	session.Send(&friend_api.CancelListen_Out{result})
++	session.Send(&friend_api.CancelListen_Out{
++		Result: result,
++	})
+ }
+ 
+ func (this FriendAPI) SendHeart(session *net.Session, in *friend_api.SendHeart_In) {
+diff -r 4fd0fb5563d9 -r dee4d107cb99 server/src/game_server/module/item/api.go
+--- a/server/src/game_server/module/item/api.go	Wed Mar 04 19:07:59 2015 +0800
++++ b/server/src/game_server/module/item/api.go	Wed Mar 04 19:28:57 2015 +0800
+@@ -25,7 +25,9 @@
+ 
+ func (this ItemAPI) BuyItem(session *net.Session, in *item_api.BuyItem_In) {
+ 	id := BuyItem(session, in)
+-	session.Send(&item_api.BuyItem_Out{id})
++	session.Send(&item_api.BuyItem_Out{
++		Id: id,
++	})
+ }
+ 
+ func (this ItemAPI) SellItem(session *net.Session, in *item_api.SellItem_In) {
+@@ -50,7 +52,9 @@
+ }
+ 
+ func (this ItemAPI) IsBagFull(session *net.Session, in *item_api.IsBagFull_In) {
+-	session.Send(&item_api.IsBagFull_Out{isBagFull(module.State(session).Database)})
++	session.Send(&item_api.IsBagFull_Out{
++		IsFull: isBagFull(module.State(session).Database),
++	})
+ }
+ 
+ func (this ItemAPI) Decompose(session *net.Session, in *item_api.Decompose_In) {
+diff -r 4fd0fb5563d9 -r dee4d107cb99 server/src/game_server/module/mission/api.go
+--- a/server/src/game_server/module/mission/api.go	Wed Mar 04 19:07:59 2015 +0800
++++ b/server/src/game_server/module/mission/api.go	Wed Mar 04 19:28:57 2015 +0800
+@@ -52,7 +52,9 @@
+ 	state := module.State(session)
+ 	fail.When(state.MissionLevelState.ReliveState != module.LEVEL_RELIVE_STATE_CAN_RELIVE, "can't relive")
+ 	state.Battle.Relive(session)
+-	session.Send(&mission_api.UseIngotRelive_Out{state.MissionLevelState.NextReliveCostIngot})
++	session.Send(&mission_api.UseIngotRelive_Out{
++		Ingot: state.MissionLevelState.NextReliveCostIngot,
++	})
+ }
+ 
+ func (api PlayerMissionAPI) UseItem(session *net.Session, in *mission_api.UseItem_In) {
+diff -r 4fd0fb5563d9 -r dee4d107cb99 server/src/game_server/module/mission/auto_fight_level.go
+--- a/server/src/game_server/module/mission/auto_fight_level.go	Wed Mar 04 19:07:59 2015 +0800
++++ b/server/src/game_server/module/mission/auto_fight_level.go	Wed Mar 04 19:28:57 2015 +0800
+@@ -126,7 +126,9 @@
+ 					case mission_dat.LEVEL_BOX_AWARD_ITEM:
+ 						module.Item.AddItem(state.Database, int16(item.ItemId), int16(item.ItemNumber), tlog.IFR_MISSION_LEVEL_SMALL_BOX)
+ 					}
+-					out_result.SmallBox = append(out_result.SmallBox, mission_api.AutoFightLevel_Out_Result_SmallBox{item.BoxItemId})
++					out_result.SmallBox = append(out_result.SmallBox, mission_api.AutoFightLevel_Out_Result_SmallBox{
++						BoxItemId: item.BoxItemId,
++					})
+ 				}
+ 				chance += item.Probability
+ 			}
+@@ -154,7 +156,9 @@
+ 		boxState.AwardCoin, boxState.AwardMultExp, boxState.AwardMultCoin)
+ 
+ 	for _, id := range boxState.AwardedList {
+-		out_result.LevelBox = append(out_result.LevelBox, mission_api.AutoFightLevel_Out_Result_LevelBox{id})
++		out_result.LevelBox = append(out_result.LevelBox, mission_api.AutoFightLevel_Out_Result_LevelBox{
++			BoxId: id,
++		})
+ 	}
+ 	playerMission := state.Database.Lookup.PlayerMission(state.PlayerId)
+ 	module.Notify.SendPlayerKeyChanged(session, 0, playerMission.MaxOrder)
+@@ -194,6 +198,8 @@
+ 	}
+ 
+ 	if id := getRandomAwardBox(state, levelInfo.Id, randomBoxState); id > 0 {
+-		out_result.RandomAwardBox = append(out_result.RandomAwardBox, mission_api.AutoFightLevel_Out_Result_RandomAwardBox{id})
++		out_result.RandomAwardBox = append(out_result.RandomAwardBox, mission_api.AutoFightLevel_Out_Result_RandomAwardBox{
++			BoxId: id,
++		})
+ 	}
+ }
+diff -r 4fd0fb5563d9 -r dee4d107cb99 server/src/game_server/module/player/api.go
+--- a/server/src/game_server/module/player/api.go	Wed Mar 04 19:07:59 2015 +0800
++++ b/server/src/game_server/module/player/api.go	Wed Mar 04 19:28:57 2015 +0800
+@@ -74,7 +74,9 @@
+ }
+ 
+ func (api PlayerAPI) GetTime(session *net.Session, in *player_api.GetTime_In) {
+-	session.Send(&player_api.GetTime_Out{time.GetNowTime()})
++	session.Send(&player_api.GetTime_Out{
++		UnixTime: time.GetNowTime(),
++	})
+ }
+ 
+ func (api PlayerAPI) FromPlatformLogin(session *net.Session, in *player_api.FromPlatformLogin_In) {
+diff -r 4fd0fb5563d9 -r dee4d107cb99 server/src/game_server/module/session.go
+--- a/server/src/game_server/module/session.go	Wed Mar 04 19:07:59 2015 +0800
++++ b/server/src/game_server/module/session.go	Wed Mar 04 19:28:57 2015 +0800
+@@ -4,7 +4,6 @@
+ 	"core/debug"
+ 	"core/log"
+ 	"core/net"
+-	"game_server/api/protocol"
+ 	"game_server/config"
+ 	"game_server/mdb"
+ 	"sync/atomic"
+@@ -147,7 +146,7 @@
+ 	s.RspQ.addRsp(rsp)
+ }
+ 
+-func (s *SessionState) CountAPIRequest(request protocol.Request) {
++func (s *SessionState) CountAPIRequest(request net.Request) {
+ 	mid, aid := request.GetModuleIdAndActionId()
+ 	if mid == traceUpModule && (aid == traceUpAPI || traceUpAPI == -1) {
+ 		log.Debugf("[Trace Up] pid %d, protocol %s \n %s\n", s.PlayerId, request.TypeName(),

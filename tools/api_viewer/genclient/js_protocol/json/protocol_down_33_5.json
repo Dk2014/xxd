@@ -1,0 +1,1 @@
+{"action_name":"mange_member","module_name":"clique","protocol":[{"name":"action","type":"enum8"},{"name":"pid","type":"int64"},{"name":"result","type":"enum8"}]}

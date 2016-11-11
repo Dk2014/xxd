@@ -1,0 +1,1 @@
+{"action_name":"notify_rune_change","module_name":"notify","protocol":[{"name":"rock_rune_num","type":"int32"},{"name":"jade_rune_num","type":"int32"}]}

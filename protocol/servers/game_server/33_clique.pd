@@ -1,0 +1,507 @@
+//
+// 帮派接口(互动)
+//
+mod clique = 33
+{
+
+	type  create_clique_result enum {
+		SUCCESS = 0 //创建成功
+		DUP_NAME = 1 //名字重复
+		HAVE_CLIQUE = 2 //已加入帮派
+	}
+
+
+	type apply_clique_result enum {
+		SUCCESS = 0 //创建成功
+		ALREADY_JOIN = 1 //已加入帮派
+		NOT_EXIST= 2 //帮派不存在
+		REFUSE = 3 //帮派申请人数过多
+                TOO_MUCH_APPLY = 4 //申请的帮派超过上限
+	}
+
+	type cancel_apply_clique_result enum {
+		SUCCESS = 0 //创建成功
+		EXPIRED = 1 //已被处理
+		NOT_EXIST= 2 //帮派不存在
+	}
+
+	type process_join_apply_result enum {
+		SUCCESS = 0 //创建成功
+		EXPIRED= 1 //已被处理(其他管理者处理了，或者玩家取消了)
+		NO_ROOM= 2 //成员已满
+		NO_PERMISSION = 3 //已无权限
+		CANCEL_APPLY= 4 //已取消申请
+	}
+
+	type mange_member_action enum {
+		SET_OWNER = 0 //设置为帮主
+		SET_MANGER = 1 //设置为副帮主
+		SET_MEMBER = 2 //设置为成员
+		KICKOFF= 3 //请出帮派
+	}
+
+	type mange_member_result enum {
+		SUCCESS = 0 //创建成功
+		NOT_EXIST= 1 //成员不存在
+		NO_PERMISSION= 2 //权限不够
+	}
+
+	type clique_opera_error enum {
+		SUCCESS = 0 //没有错误
+		CLIQUE_NOT_EXIST = 1 //帮派不存在
+		NO_PERMISSION = 2 //权限不足
+		MEMBER_NOT_EXIST= 3 //成员不存在
+		ALREADY_JOIN= 4 //已假如某个帮派
+	}
+
+
+	type notify_leave_clique_reason enum {
+		KICKOFF = 0 //管理员踢出帮派
+		COLLAPSE = 1 //帮派解散
+		LEAVE = 2 //主动退出
+	}
+
+	type notify_joinclique_failed_reason enum {
+		REFUSE = 0 //管理员拒绝
+		EXPIRED = 1 //已加帮派
+		NOROOM = 2 //帮派成员已满
+	}
+
+	type clique_recuitment_result enum {
+		SUCCESS = 0 //成功
+		NO_PERMISSION = 1 //没有加入帮派或者没有权限
+		CD = 2 //CD中
+	}
+
+	type player struct {
+		player_id            		: int64  // 玩家ID
+		nickname             		: string // 昵称
+		role_id              		: int8	  // 玩家角色ID
+		at_x                 		: int16  // X轴位置
+		at_y                 		: int16  // Y轴位置
+		fashion_id	     		: int16 //时装ID 0则没有时装
+		in_meditation_state		: bool  //处于打坐状态
+		level				: int16  //等级
+	}
+	
+	// 申请创建帮派(互动服)
+	[tag("global")]
+	api create_clique = 0 {
+		in{
+			name : text //帮派名称
+			announce : text16 //帮派公告(可选)
+		}
+		out {
+			result : create_clique_result //结果
+		}
+	}
+
+	//申请加入帮派(互动服)
+	[tag("global")]
+	api apply_join_clique = 1 {
+		in {
+			clique_id : int64 //帮派ID
+		} 
+		out {
+			clique_id : int64 //帮派ID
+			result : apply_clique_result //申请结果
+		}
+	}
+
+	//取消申请加入帮派(互动服)
+	[tag("global")]
+	api cancel_apply_clique = 2 {
+		in {
+			clique_id : int64 //帮派ID
+		} 
+		out {
+			result : cancel_apply_clique_result //取消申请结果
+			clique_id : int64 //帮派ID
+		}
+	}
+
+
+	//处理加入申请
+    [tag("global")]
+    api process_join_apply = 3 {
+        in {
+            //pid : int64 //操作玩家
+            agree : bool //同意或拒绝
+            pidlist: list {
+                pid : int64 //操作玩家
+            }
+        }
+        out {
+            //id : int64 //操作玩家
+            //result : process_join_apply_result //结果
+            applylist : list {
+                pid     : int64 //操作玩家
+                result  : process_join_apply_result // 操作结果
+            }
+        }
+    }
+
+
+
+	//申请成为帮主(弹劾帮主) TODO 申请会有失败各种
+	[tag("global")]
+	api elect_owner = 4 {
+		in {}
+		out {
+			success : bool //成功
+		}
+	}
+
+	//成员管理操作
+	[tag("global")]
+	api mange_member = 5 {
+		in {
+			pid : int64 //操作玩家ID
+			action : mange_member_action //操作
+		}
+		out {
+			action : mange_member_action //操作
+			pid : int64 //操作玩家ID
+			result : mange_member_result //操作结果
+		}
+	}
+
+	//解散帮派
+	[tag("global")]
+	api destory_clique = 6 {
+		in {}
+		out {}
+	}
+
+	//更新帮派公告
+	[tag("global")]
+	api update_announce = 7 {
+		in {
+			content : text16 //公告内容
+		}
+		out {}
+	}
+
+	//退出帮派
+	[tag("global")]
+	api leave_clique = 8 {
+		in {}
+		out {
+			success : bool //被转让帮主可能造成失败
+		}
+	}
+
+
+	// 获取帮派列表
+	[tag("global")]
+	api list_clique = 9 {
+		in {
+			offset : int16 //跳过前X个结果
+			limit : int16 //结果大小上限
+		}
+		out {
+			applied_cliques : list {
+				clique_id : int64 //已申请帮派ID
+			}
+			total : int16 //帮派总数量
+			cliques : list16 {
+				id : int64 //ID
+				name : string //帮派名
+				level : int16 //等级
+				member_num : int16 //帮派人数
+				owner_nick : string //帮主昵称
+				owner_pid : int64 //帮主pid
+				announce : text16 //公告
+			}
+		}
+	}
+
+	// 帮派信息(帮外玩家申请加入时用)
+	[tag("global")]
+	api clique_public_info = 10 {
+		in {
+			clique_id : int64 //帮派ID
+		}
+		out {
+			clique_id : int64  //帮派ID
+			exist : bool  //帮派存在
+			name : string //名称
+			owner_nick : string //帮主昵称
+			owner_pid : int64 //帮主pid
+			member_num : int16 //成员数量
+			level : int16 //等级
+			announce : text16 //公告
+			center_building_level : int16 //总舵当前等级
+			temple_building_level : int16 //宗祠当前等级
+			bank_building_level : int16 //钱庄当前等级
+			health_building_level : int16 //回春堂当前等级
+			attack_building_level : int16 //神兵堂当前等级
+			defense_building_level : int16 //金刚堂当前等级
+			applied_cliques : list {
+				clique_id : int64 //已申请帮派ID
+			}
+		}
+	}
+
+	// 玩家本人帮派信息
+	[tag("global")]
+	api clique_info = 11 {
+		in {}
+		out {
+			clique_id : int64 //帮派ID
+			name : string //名称
+			announce : text16 //公告
+			total_donate_coins : int64 //总财富
+			contrib : int64 //贡献
+			owner_login_time : int64 //帮主登录时间
+			owner_pid : int64 //帮主pid
+			manger_pid1 : int64 //副帮主1pid
+			manger_pid2 : int64 //副帮主2pid
+
+			center_building_coins : int64 //总舵当前财富
+			temple_building_coins : int64 //宗祠当前财富
+			bank_building_coins : int64 //钱庄当前财富
+			health_building_coins : int64 //回春堂当前财富
+			attack_building_coins : int64 //神兵堂当前财富
+			defense_building_coins : int64 //金刚堂当前财富
+
+			center_building_level : int16 //总舵当前等级
+			temple_building_level : int16 //宗祠当前等级
+			bank_building_level : int16 //钱庄当前等级
+			health_building_level : int16 //回春堂当前等级
+			attack_building_level : int16 //神兵堂当前等级
+			defense_building_level : int16 //金刚堂当前等级
+
+			recruit_timestamp  : int64 //最近一次发送招募时间戳
+
+			members : list16 {
+				pid : int64 //玩家ID
+				role_id : int8 // 玩家角色ID
+				level : int16 //等级
+				nick : string //玩家昵称
+				contrib : int64 //贡献
+			}
+		}
+	}
+
+	// 获取帮派申请列表
+	[tag("global")]
+	api list_apply = 12 {
+		in {
+			offset : int16 //跳过前X个结果
+			limit : int16 //结果大小上限
+		}
+		out {
+			auto_audit : bool //开启自动审核
+			level : int16 //自动通过最低等级
+			players : list16 {
+				pid : int64 //ID
+				nick : string //玩家昵称
+				level : int16 //等级
+				arena_rank : int64 //比武场排名
+				timestamp : int64 //申请时间戳
+			}
+		}
+	}
+
+	// 获取帮派申请列表
+	[tag("global")]
+	api opera_error_notify = 13 {
+		out {
+			resutl : clique_opera_error  //帮派操作错误通知
+		}
+	}
+
+	// 进入帮派集会场所
+	[tag("global")]
+	api enter_clubhouse = 14 {
+		in {}
+		out {
+			ok : bool //是否进入成功	
+			player: player
+		}
+	}
+
+	// 离开帮派集会场所
+	[tag("global")]
+	api leave_clubhouse = 15 {
+		in {}
+		// 下行数据为其他玩家离开的消息
+		out {
+			player_id : int64  // 玩家ID
+		}
+	}
+
+	// 移动
+	[tag("global")]
+	api club_move = 16 {
+		in {
+			to_x   : int16	// X轴目标位置
+			to_y   : int16	// Y轴目标位置
+		}
+
+		// 下行数据为其他玩家移动的消息
+		out {
+			player_id : int64	// 玩家ID
+			to_x      : int16	// X轴目标位置
+			to_y      : int16	// Y轴目标位置
+		}
+	}
+
+	//集会场所玩家信息
+	api notify_clubhouse_players = 17 {
+		out {
+			players : list {
+				player: player
+			}
+		}
+	}
+
+	//新玩家进入
+	api notify_new_player = 18 {
+		out {
+			player: player
+		}
+	}
+
+	//更新集会场所内玩家状态
+	api notify_update_player = 19 {
+		out {
+			player_id : int64 //玩家ID
+			fashion_id	     		: int16 //时装ID 0则没有时装
+			in_meditation_state		: bool  //处于打坐状态
+		}
+	}
+	// 帮派基本信息(搜索接口用)
+	[tag("global")]
+	api clique_public_info_summary = 20 {
+		in {
+			clique_id : int64 //帮派ID
+		}
+		out {
+			CliqueId 	: int64 //ID
+			name 		: string //帮派名
+			level 		: int16 //等级
+			member_num 	: int16 //帮派人数
+			owner_nick 	: string //帮主昵称
+			owner_pid 	: int64 //帮主pid
+			announce 	: text16 //公告
+			cliques 	: list16 {
+				clique_id	: int64 //ID
+			}
+		}
+	}
+
+	//自动审核
+	[tag("global")]
+	api clique_auto_audit = 21 {
+		in {
+			level : int16 //自加入等级下限
+			enable : bool //开关自动审批
+		}
+		out {}
+	}
+
+	//总舵捐献 作废，建筑物部分单独分开到clique_building
+	[tag("global")]
+	api clique_base_donate = 22 {
+		in  {
+		}
+		out {
+		}
+	}
+
+	//离开帮派通知
+	[tag("global")]
+	api notify_leave_clique = 23 {
+		out {
+			pid : int64 //玩家ID
+			reason : notify_leave_clique_reason //退出帮派的原因
+		}
+	}
+
+	//加入帮派成功通知
+	[tag("global")]
+	api notify_joinclique_success = 24 {
+		out {
+			pidlist : list {
+				pid 	: int64  //玩家id
+				role_id : int8 //玩家角色id
+				level   : int16 //等级
+				nick    : text16 //玩家昵称
+			}
+		}
+	}
+
+	//通知帮派 帮主传位等信息
+	[tag("global")]
+	api notify_clique_manger_action  = 25 {
+	out {
+			actiontype : mange_member_action        // 0：老帮主传位给副版主 1：设置副版主 2：取消副版主
+			pid : int64  //相关玩家ID
+		}
+	}
+
+	//世界频道招募
+	[tag("global")]
+	api clique_recruitment = 26 {
+		in {}
+		out {
+			result : clique_recuitment_result //招募公告结果
+			timestamp  : int64 //最近一次发送招募时间戳
+		}
+	}
+	//通知帮派群公告更新
+	[tag("global")]
+	api notify_clique_announce  = 27 {
+	out {
+			announce : text16 //帮派公告
+		}
+	}
+
+	//通知帮派群帮主被弹劾
+	[tag("global")]
+	api notify_clique_electowner = 28 {
+	out {
+			ownerid : int64 //新帮主ID
+		}
+	}
+
+	//快速申请
+	[tag("global")]
+	api quick_apply = 29 {
+		in {}
+		out {
+			success : bool //是否申请成功
+		}
+	}
+
+	//贡献变化
+	[tag("global")]
+	api notify_contrib_change = 30 {
+		out {
+			value : int64 //贡献
+		}
+	}
+
+	//其他帮派
+	[tag("global")]
+	api other_clique = 31 {
+		in{
+			page : int16 // 页数
+		}
+		out{
+			total_num : int16 // 总条目
+			clique_list : list{
+				rank : int16 // 帮派排名
+				name : text16 // 帮派名称
+				clique_id : int64 // 帮派id
+				clique_level : int16 // 帮派等级
+				owner_name : text16 // 帮主昵称
+				owner_pid : int64 // 帮主ID
+				clique_member_num : int16 // 帮派人数
+			}
+		}
+	}
+
+}

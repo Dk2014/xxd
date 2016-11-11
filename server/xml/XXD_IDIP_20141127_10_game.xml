@@ -1,0 +1,740 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<!--修订记录 
+ 2014-11-27 17:00:56 建立 
+ 版本：XXD_IDIP_20141127_10 
+
+-->
+<metalib name="XXD" version="10" urlencode="false" encoding="utf-8" encryption="false" proto="json" content_type="text/html" open_platform="false">
+  <command name="cmd" desc="IDIP前端协议">
+    <entry cmd="10088001" req="IDIP_DO_BAN_USR_REQ" rsp="IDIP_DO_BAN_USR_RSP" req_value="area=AreaId#partition=Partition#platid=PlatId#openid=OpenId#ban_time=BanTime#source=Source#serial=Serial" rsp_value="result=Result#error_info=RetMsg" desc="封号"/>
+    <entry cmd="10088002" req="IDIP_DO_UNBAN_USR_REQ" rsp="IDIP_DO_UNBAN_USR_RSP" req_value="area=AreaId#partition=Partition#platid=PlatId#openid=OpenId#source=Source#serial=Serial" rsp_value="result=Result#error_info=RetMsg" desc="解封"/>
+    <entry cmd="10088003" req="IDIP_DO_DEL_ITEM_REQ" rsp="IDIP_DO_DEL_ITEM_RSP" req_value="area=AreaId#partition=Partition#platid=PlatId#openid=OpenId#item_id=ItemId#item_num=ItemNum#source=Source#serial=Serial" rsp_value="result=Result#error_info=RetMsg" desc="删除道具"/>
+    <entry cmd="10088004" req="IDIP_DO_UPDATE_ROLE_EXP_REQ" rsp="IDIP_DO_UPDATE_ROLE_EXP_RSP" req_value="area=AreaId#partition=Partition#platid=PlatId#openid=OpenId#charac_no=RoleId#value=Value#source=Source#serial=Serial" rsp_value="result=Result#error_info=RetMsg" desc="修改角色经验"/>
+    <entry cmd="10088005" req="IDIP_DO_UPDATE_ROLE_GOLD_REQ" rsp="IDIP_DO_UPDATE_ROLE_GOLD_RSP" req_value="area=AreaId#partition=Partition#platid=PlatId#openid=OpenId#charac_no=RoleId#value=Value#source=Source#serial=Serial" rsp_value="result=Result#error_info=RetMsg" desc="修改用户元宝"/>
+    <entry cmd="10088006" req="IDIP_DO_UPDATE_ROLE_PHYSICAL_REQ" rsp="IDIP_DO_UPDATE_ROLE_PHYSICAL_RSP" req_value="area=AreaId#partition=Partition#platid=PlatId#openid=OpenId#charac_no=RoleId#value=Value#source=Source#serial=Serial" rsp_value="result=Result#error_info=RetMsg" desc="修改用户体力"/>
+    <entry cmd="10088007" req="IDIP_DO_UPDATE_ROLE_COIN_REQ" rsp="IDIP_DO_UPDATE_ROLE_COIN_RSP" req_value="area=AreaId#partition=Partition#platid=PlatId#openid=OpenId#charac_no=RoleId#value=Value#source=Source#serial=Serial" rsp_value="result=Result#error_info=RetMsg" desc="修改角色铜钱"/>
+    <entry cmd="10088009" req="IDIP_DO_UPDATE_ROLE_HEART_REQ" rsp="IDIP_DO_UPDATE_ROLE_HEART_RSP" req_value="area=AreaId#partition=Partition#platid=PlatId#openid=OpenId#charac_no=RoleId#value=Value#source=Source#serial=Serial" rsp_value="result=Result#error_info=RetMsg" desc="修改角色爱心"/>
+    <entry cmd="10088011" req="IDIP_DO_SEND_ITEM_REQ" rsp="IDIP_DO_SEND_ITEM_RSP" req_value="area=AreaId#partition=Partition#platid=PlatId#openid=OpenId#charac_no=RoleId#item_id=ItemId#item_num=ItemNum#source=Source#serial=Serial" rsp_value="result=Result#error_info=RetMsg" desc="发放道具"/>
+    <entry cmd="10088012" req="IDIP_QUERY_USR_INFO_REQ" rsp="IDIP_QUERY_USR_INFO_RSP" req_value="area=AreaId#partition=Partition#platid=PlatId#openid=OpenId" rsp_value="level=Level#vip=Vip#exp=Exp#coin=Coin#gold=Gold#physical=Physical#max_physical=MaxPhysical#max_bag=MaxBag#register_time=RegisterTime#is_online=IsOnline#acc_status=AccStatus#ban_end_time=BanEndTime#army_id=ArmyId#rank_in_army=RankInArmy#army_rank=ArmyRank#pass_progress=PassProgress#pvp_rank=PvpRank#pvp_score=PvpScore#last_login=LastLoginTime#charac_name=RoleName" desc="查询当前个人信息"/>
+    <entry cmd="10088014" req="IDIP_QUERY_ROLE_EQUIP_REQ" rsp="IDIP_QUERY_ROLE_EQUIP_RSP" req_value="area=AreaId#partition=Partition#platid=PlatId#openid=OpenId#charac_no=RoleId" rsp_value="list=EquipList_count|EquipList|" desc="查询角色装备信息"/>
+    <entry cmd="10088016" req="IDIP_QUERY_ROLE_PET_INFO_REQ" rsp="IDIP_QUERY_ROLE_PET_INFO_RSP" req_value="area=AreaId#partition=Partition#platid=PlatId#openid=OpenId#charac_no=RoleId" rsp_value="list=RolePetList_count|RolePetList|" desc="查询角色灵宠信息"/>
+    <entry cmd="10088017" req="IDIP_QUERY_SWORD_INFO_REQ" rsp="IDIP_QUERY_SWORD_INFO_RSP" req_value="area=AreaId#partition=Partition#platid=PlatId#openid=OpenId#charac_no=RoleId" rsp_value="list=SwordList_count|SwordList|" desc="查询剑心信息"/>
+    <entry cmd="10088018" req="IDIP_QUERY_SOUL_INFO_REQ" rsp="IDIP_QUERY_SOUL_INFO_RSP" req_value="area=AreaId#partition=Partition#platid=PlatId#openid=OpenId#charac_no=RoleId" rsp_value="list=SoulList_count|SoulList|" desc="查询魂侍信息"/>
+    <entry cmd="10088019" req="IDIP_QUERY_TASK_INFO_REQ" rsp="IDIP_QUERY_TASK_INFO_RSP" req_value="area=AreaId#partition=Partition#platid=PlatId#openid=OpenId#begin_time=BeginTime#end_time=EndTime" rsp_value="list=TaskProgressList_count|TaskProgressList|" desc="查询任务进度"/>
+    <entry cmd="10088020" req="IDIP_QUERY_BAG_INFO_REQ" rsp="IDIP_QUERY_BAG_INFO_RSP" req_value="area=AreaId#partition=Partition#platid=PlatId#openid=OpenId#begin_time=BeginTime#end_time=EndTime" rsp_value="list=BagList_count|BagList|" desc="查询背包存量信息"/>
+    <entry cmd="10088021" req="IDIP_DO_SEND_MAIL_REQ" rsp="IDIP_DO_SEND_MAIL_RSP" req_value="area=AreaId#partition=Partition#platid=PlatId#openid=OpenId#mail_title=MailTitle#mail_content=MailContent#send_time=SendTime#end_time=EndTime#item_id1=ItemId1#item_num1=ItemNum1#item_id2=ItemId2#item_num2=ItemNum2#item_id3=ItemId3#item_num3=ItemNum3#item_id4=ItemId4#item_num4=ItemNum4#source=Source#serial=Serial" rsp_value="result=Result#error_info=RetMsg" desc="发放邮件"/>
+    <entry cmd="10088022" req="IDIP_DO_UPDATE_NOTICE_REQ" rsp="IDIP_DO_UPDATE_NOTICE_RSP" req_value="area=AreaId#partition=Partition#platid=PlatId#title=Title#content=Content#time=Time#source=Source#serial=Serial" rsp_value="result=Result#error_info=RetMsg" desc="更新新闻公告"/>
+    <entry cmd="10088023" req="IDIP_DO_UPDATE_GAME_LAMP_REQ" rsp="IDIP_DO_UPDATE_GAME_LAMP_RSP" req_value="area=AreaId#partition=Partition#platid=PlatId#content=LampContent#begin_time=BeginTime#end_time=EndTime#source=Source#serial=Serial#freq=Freq" rsp_value="result=Result#error_info=RetMsg" desc="更新游戏内走马灯"/>
+    <entry cmd="10088024" req="IDIP_QUERY_COMPETE_INFO_REQ" rsp="IDIP_QUERY_COMPETE_INFO_RSP" req_value="area=AreaId#partition=Partition#platid=PlatId#openid=OpenId" rsp_value="rank=Rank#charac_no=RoleId" desc="查询比武场"/>
+    <entry cmd="10088025" req="IDIP_DO_CLEAR_DATA_REQ" rsp="IDIP_DO_CLEAR_DATA_RSP" req_value="area=AreaId#partition=Partition#platid=PlatId#openid=OpenId#clear_coin=ClearCoin#clear_physical=ClearPhysical#clear_heart=ClearHeart#type=Type#reason=Reason#source=Source#serial=Serial" rsp_value="result=Result#error_info=RetMsg" desc="清零数据"/>
+    <entry cmd="10088026" req="IDIP_DO_SET_SOUL_LEVEL_REQ" rsp="IDIP_DO_SET_SOUL_LEVEL_RSP" req_value="area=AreaId#partition=Partition#platid=PlatId#openid=OpenId#soul_id=SoulId#value=Value#source=Source#serial=Serial" rsp_value="result=Result#error_info=RetMsg" desc="设置魂侍等级"/>
+    <entry cmd="10088027" req="IDIP_DO_SET_SWORD_LEVEL_REQ" rsp="IDIP_DO_SET_SWORD_LEVEL_RSP" req_value="area=AreaId#partition=Partition#platid=PlatId#openid=OpenId#charac_no=RoleId#pos=Pos#value=Value#source=Source#serial=Serial" rsp_value="result=Result#error_info=RetMsg" desc="设置剑心等级"/>
+    <entry cmd="10088028" req="IDIP_DO_SET_PET_ACTIVE_REQ" rsp="IDIP_DO_SET_PET_ACTIVE_RSP" req_value="area=AreaId#partition=Partition#platid=PlatId#openid=OpenId#pet_id=PetId#source=Source#serial=Serial" rsp_value="result=Result#error_info=RetMsg" desc="设置宠物激活"/>
+    <entry cmd="10088029" req="IDIP_DO_SEND_MAIL_ALL_REQ" rsp="IDIP_DO_SEND_MAIL_ALL_RSP" req_value="area=AreaId#partition=Partition#platid=PlatId#mail_title=MailTitle#mail_content=MailContent#send_time=SendTime#end_time=EndTime#item_id1=ItemId1#item_num1=ItemNum1#item_id2=ItemId2#item_num2=ItemNum2#item_id3=ItemId3#item_num3=ItemNum3#item_id4=ItemId4#item_num4=ItemNum4#source=Source#serial=Serial" rsp_value="result=Result#error_info=RetMsg" desc="发放全区全服邮件"/>
+    <entry cmd="10088030" req="IDIP_QUERY_GAME_LAMP_NOTICE_REQ" rsp="IDIP_QUERY_GAME_LAMP_NOTICE_RSP" req_value="area=AreaId#partition=Partition#platid=PlatId" rsp_value="list=GameLampNoticeList_count|GameLampNoticeList|" desc="查询走马灯公告"/>
+    <entry cmd="10088031" req="IDIP_DO_DEL_NOTICE_REQ" rsp="IDIP_DO_DEL_NOTICE_RSP" req_value="area=AreaId#partition=Partition#platid=PlatId#notice_id=NoticeId#source=Source#serial=Serial" rsp_value="result=Result#error_info=RetMsg" desc="删除公告"/>
+    <entry cmd="10088032" req="IDIP_DO_UPDATE_VIP_REQ" rsp="IDIP_DO_UPDATE_VIP_RSP" req_value="area=AreaId#partition=Partition#platid=PlatId#openid=OpenId#value=Value#source=Source#serial=Serial" rsp_value="result=Result#error_info=RetMsg" desc="修改vip等级"/>
+    <entry cmd="10088033" req="IDIP_QUERY_ABYSSPASS_STATE_REQ" rsp="IDIP_QUERY_ABYSSPASS_STATE_RSP" req_value="area=AreaId#partition=Partition#platid=PlatId#openid=OpenId" rsp_value="status=Status" desc="查询深渊挂关卡进度"/>
+    <entry cmd="10088034" req="IDIP_QUERY_FIGHT_REQ" rsp="IDIP_QUERY_FIGHT_RSP" req_value="area=AreaId#partition=Partition#platid=PlatId#openid=OpenId" rsp_value="fight=Fight" desc="查询战力"/>
+    <entry cmd="10088811" req="IDIP_AQ_DO_SEND_MAIL_REQ" rsp="IDIP_AQ_DO_SEND_MAIL_RSP" req_value="area=AreaId#partition=Partition#platid=PlatId#openid=OpenId#mail_content=MailContent#reason=Reason#source=Source#serial=Serial" rsp_value="result=Result#error_info=RetMsg" desc="发送邮件（AQ）"/>
+    <entry cmd="10088820" req="IDIP_AQ_DO_BAN_USR_REQ" rsp="IDIP_AQ_DO_BAN_USR_RSP" req_value="area=AreaId#partition=Partition#platid=PlatId#openid=OpenId#time=Time#reason=Reason#source=Source#serial=Serial" rsp_value="result=Result#error_info=RetMsg" desc="封号（AQ）"/>
+    <entry cmd="10088821" req="IDIP_AQ_DO_RELIEVE_PUNISH_REQ" rsp="IDIP_AQ_DO_RELIEVE_PUNISH_RSP" req_value="area=AreaId#partition=Partition#platid=PlatId#openid=OpenId#relieve_ban=RelieveBan#reason=Reason#source=Source#serial=Serial" rsp_value="result=Result#error_info=RetMsg" desc="解除处罚（AQ）"/>
+  </command>
+  <macrosgroup name="NET_CMD_ID" desc="IDIP命令编码">
+    <macro name="IDIP_DO_BAN_USR_REQ" value="0x1003" desc="封号请求"/>
+    <macro name="IDIP_DO_BAN_USR_RSP" value="0x1004" desc="封号应答"/>
+    <macro name="IDIP_DO_UNBAN_USR_REQ" value="0x1005" desc="解封请求"/>
+    <macro name="IDIP_DO_UNBAN_USR_RSP" value="0x1006" desc="解封应答"/>
+    <macro name="IDIP_DO_DEL_ITEM_REQ" value="0x1007" desc="删除道具请求"/>
+    <macro name="IDIP_DO_DEL_ITEM_RSP" value="0x1008" desc="删除道具应答"/>
+    <macro name="IDIP_DO_UPDATE_ROLE_EXP_REQ" value="0x1009" desc="修改角色经验请求"/>
+    <macro name="IDIP_DO_UPDATE_ROLE_EXP_RSP" value="0x100a" desc="修改角色经验应答"/>
+    <macro name="IDIP_DO_UPDATE_ROLE_GOLD_REQ" value="0x100b" desc="修改用户元宝请求"/>
+    <macro name="IDIP_DO_UPDATE_ROLE_GOLD_RSP" value="0x100c" desc="修改用户元宝应答"/>
+    <macro name="IDIP_DO_UPDATE_ROLE_PHYSICAL_REQ" value="0x100d" desc="修改用户体力请求"/>
+    <macro name="IDIP_DO_UPDATE_ROLE_PHYSICAL_RSP" value="0x100e" desc="修改用户体力应答"/>
+    <macro name="IDIP_DO_UPDATE_ROLE_COIN_REQ" value="0x100f" desc="修改角色铜钱请求"/>
+    <macro name="IDIP_DO_UPDATE_ROLE_COIN_RSP" value="0x1010" desc="修改角色铜钱应答"/>
+    <macro name="IDIP_DO_UPDATE_ROLE_HEART_REQ" value="0x1013" desc="修改角色爱心请求"/>
+    <macro name="IDIP_DO_UPDATE_ROLE_HEART_RSP" value="0x1014" desc="修改角色爱心应答"/>
+    <macro name="IDIP_DO_SEND_ITEM_REQ" value="0x1017" desc="发放道具请求"/>
+    <macro name="IDIP_DO_SEND_ITEM_RSP" value="0x1018" desc="发放道具应答"/>
+    <macro name="IDIP_QUERY_USR_INFO_REQ" value="0x1019" desc="查询当前个人信息请求"/>
+    <macro name="IDIP_QUERY_USR_INFO_RSP" value="0x101a" desc="查询当前个人信息应答"/>
+    <macro name="IDIP_QUERY_ROLE_EQUIP_REQ" value="0x101d" desc="查询角色装备信息请求"/>
+    <macro name="IDIP_QUERY_ROLE_EQUIP_RSP" value="0x101e" desc="查询角色装备信息应答"/>
+    <macro name="IDIP_QUERY_ROLE_PET_INFO_REQ" value="0x1021" desc="查询角色灵宠信息请求"/>
+    <macro name="IDIP_QUERY_ROLE_PET_INFO_RSP" value="0x1022" desc="查询角色灵宠信息应答"/>
+    <macro name="IDIP_QUERY_SWORD_INFO_REQ" value="0x1023" desc="查询剑心信息请求"/>
+    <macro name="IDIP_QUERY_SWORD_INFO_RSP" value="0x1024" desc="查询剑心信息应答"/>
+    <macro name="IDIP_QUERY_SOUL_INFO_REQ" value="0x1025" desc="查询魂侍信息请求"/>
+    <macro name="IDIP_QUERY_SOUL_INFO_RSP" value="0x1026" desc="查询魂侍信息应答"/>
+    <macro name="IDIP_QUERY_TASK_INFO_REQ" value="0x1027" desc="查询任务进度请求"/>
+    <macro name="IDIP_QUERY_TASK_INFO_RSP" value="0x1028" desc="查询任务进度应答"/>
+    <macro name="IDIP_QUERY_BAG_INFO_REQ" value="0x1029" desc="查询背包存量信息请求"/>
+    <macro name="IDIP_QUERY_BAG_INFO_RSP" value="0x102a" desc="查询背包存量信息应答"/>
+    <macro name="IDIP_DO_SEND_MAIL_REQ" value="0x102b" desc="发放邮件请求"/>
+    <macro name="IDIP_DO_SEND_MAIL_RSP" value="0x102c" desc="发放邮件应答"/>
+    <macro name="IDIP_DO_UPDATE_NOTICE_REQ" value="0x102d" desc="更新新闻公告请求"/>
+    <macro name="IDIP_DO_UPDATE_NOTICE_RSP" value="0x102e" desc="更新新闻公告应答"/>
+    <macro name="IDIP_DO_UPDATE_GAME_LAMP_REQ" value="0x102f" desc="更新游戏内走马灯请求"/>
+    <macro name="IDIP_DO_UPDATE_GAME_LAMP_RSP" value="0x1030" desc="更新游戏内走马灯应答"/>
+    <macro name="IDIP_QUERY_COMPETE_INFO_REQ" value="0x1037" desc="查询比武场请求"/>
+    <macro name="IDIP_QUERY_COMPETE_INFO_RSP" value="0x1038" desc="查询比武场应答"/>
+    <macro name="IDIP_DO_CLEAR_DATA_REQ" value="0x103f" desc="清零数据请求"/>
+    <macro name="IDIP_DO_CLEAR_DATA_RSP" value="0x1040" desc="清零数据应答"/>
+    <macro name="IDIP_DO_SET_SOUL_LEVEL_REQ" value="0x1039" desc="设置魂侍等级请求"/>
+    <macro name="IDIP_DO_SET_SOUL_LEVEL_RSP" value="0x103a" desc="设置魂侍等级应答"/>
+    <macro name="IDIP_DO_SET_SWORD_LEVEL_REQ" value="0x103b" desc="设置剑心等级请求"/>
+    <macro name="IDIP_DO_SET_SWORD_LEVEL_RSP" value="0x103c" desc="设置剑心等级应答"/>
+    <macro name="IDIP_DO_SET_PET_ACTIVE_REQ" value="0x103d" desc="设置宠物激活请求"/>
+    <macro name="IDIP_DO_SET_PET_ACTIVE_RSP" value="0x103e" desc="设置宠物激活应答"/>
+    <macro name="IDIP_DO_SEND_MAIL_ALL_REQ" value="0x1041" desc="发放全区全服邮件请求"/>
+    <macro name="IDIP_DO_SEND_MAIL_ALL_RSP" value="0x1042" desc="发放全区全服邮件应答"/>
+    <macro name="IDIP_QUERY_GAME_LAMP_NOTICE_REQ" value="0x1043" desc="查询走马灯公告请求"/>
+    <macro name="IDIP_QUERY_GAME_LAMP_NOTICE_RSP" value="0x1044" desc="查询走马灯公告应答"/>
+    <macro name="IDIP_DO_DEL_NOTICE_REQ" value="0x1045" desc="删除公告请求"/>
+    <macro name="IDIP_DO_DEL_NOTICE_RSP" value="0x1046" desc="删除公告应答"/>
+    <macro name="IDIP_DO_UPDATE_VIP_REQ" value="0x1047" desc="修改vip等级请求"/>
+    <macro name="IDIP_DO_UPDATE_VIP_RSP" value="0x1048" desc="修改vip等级应答"/>
+    <macro name="IDIP_QUERY_ABYSSPASS_STATE_REQ" value="0x1049" desc="查询深渊挂关卡进度请求"/>
+    <macro name="IDIP_QUERY_ABYSSPASS_STATE_RSP" value="0x104a" desc="查询深渊挂关卡进度应答"/>
+    <macro name="IDIP_QUERY_FIGHT_REQ" value="0x104b" desc="查询战力请求"/>
+    <macro name="IDIP_QUERY_FIGHT_RSP" value="0x104c" desc="查询战力应答"/>
+    <macro name="IDIP_AQ_DO_SEND_MAIL_REQ" value="0x1031" desc="发送邮件（AQ）请求"/>
+    <macro name="IDIP_AQ_DO_SEND_MAIL_RSP" value="0x1032" desc="发送邮件（AQ）应答"/>
+    <macro name="IDIP_AQ_DO_BAN_USR_REQ" value="0x1033" desc="封号（AQ）请求"/>
+    <macro name="IDIP_AQ_DO_BAN_USR_RSP" value="0x1034" desc="封号（AQ）应答"/>
+    <macro name="IDIP_AQ_DO_RELIEVE_PUNISH_REQ" value="0x1035" desc="解除处罚（AQ）请求"/>
+    <macro name="IDIP_AQ_DO_RELIEVE_PUNISH_RSP" value="0x1036" desc="解除处罚（AQ）应答"/>
+  </macrosgroup>
+  <macrosgroup name="NET_MACRO" desc="系统宏">
+    <macro name="IDIP_BODY_LENGTH" value="24000" desc="封装包包体的最大值, 基本的数据包的大小在15K以下，只有查询邮件列表这个数据量比较大，在23K左右"/>
+    <macro name="SERVICE_NAME_LENGTH" value="16" desc="SERVICENAME的最大长度"/>
+    <macro name="AUTHENTICATE_LENGTH" value="32" desc="加密串的最大长度"/>
+    <macro name="ERROR_MSG_LENGTH" value="100" desc="错误码"/>
+    <macro name="MAX_ROLEID_LEN" value="15" desc="用户ID的长度"/>
+    <macro name="MAX_REASON_LEN" value="64" desc="操作原因的长度"/>
+    <macro name="MAX_OPENID_LEN" value="64" desc="openid的长度"/>
+    <macro name="MAX_SERIAL_LEN" value="64" desc="流水号，由前端生成，不需要填写的长度"/>
+    <macro name="MAX_RETMSG_LEN" value="100" desc="返回消息的长度"/>
+    <macro name="MAX_MAILCONTENT_LEN" value="1024" desc="邮件内容的长度"/>
+    <macro name="MAX_EQUIPLIST_NUM" value="50" desc="角色装备信息列表的数组长度"/>
+    <macro name="MAX_PETNAME_LEN" value="64" desc="灵宠名称的长度"/>
+    <macro name="MAX_MAILTITLE_LEN" value="256" desc="邮件标题的长度"/>
+    <macro name="MAX_ROLEPETLIST_NUM" value="50" desc="角色灵宠信息列表的数组长度"/>
+    <macro name="MAX_SWORDNAME_LEN" value="64" desc="剑心名的长度"/>
+    <macro name="MAX_SWORDLIST_NUM" value="50" desc="剑心信息列表的数组长度"/>
+    <macro name="MAX_SOULLIST_NUM" value="50" desc="魂侍信息列表的数组长度"/>
+    <macro name="MAX_TASKNAME_LEN" value="64" desc="任务名称的长度"/>
+    <macro name="MAX_TASKPROGRESSLIST_NUM" value="200" desc="任务进度信息列表的数组长度"/>
+    <macro name="MAX_ITEMNAME_LEN" value="64" desc="道具名称的长度"/>
+    <macro name="MAX_BAGLIST_NUM" value="200" desc="背包存量信息列表的数组长度"/>
+    <macro name="MAX_EQUIPNAME_LEN" value="64" desc="装备名称的长度"/>
+    <macro name="MAX_TITLE_LEN" value="256" desc="新闻标题的长度"/>
+    <macro name="MAX_CONTENT_LEN" value="1024" desc="新闻内容的长度"/>
+    <macro name="MAX_LAMPCONTENT_LEN" value="1024" desc="走马灯内容的长度"/>
+    <macro name="MAX_ROLENAME_LEN" value="64" desc="角色名称的长度"/>
+    <macro name="MAX_BEGINTIME_LEN" value="15" desc="公告生效时间的长度"/>
+    <macro name="MAX_ENDTIME_LEN" value="15" desc="公告结束时间的长度"/>
+    <macro name="MAX_NOTICEID_LEN" value="32" desc="公告ID的长度"/>
+    <macro name="MAX_NOTICECONTENT_LEN" value="1024" desc="公告内容的长度"/>
+    <macro name="MAX_GAMELAMPNOTICELIST_NUM" value="25" desc="走马灯公告信息列表的数组长度"/>
+    <macro name="MAX_LASTLOGINTIME_LEN" value="15" desc="玩家最后登录时间的长度"/>
+  </macrosgroup>
+  <struct name="IdipHeader" desc="IDIP消息头">
+    <entry name="PacketLen" type="uint32" desc="包长"/>
+    <entry name="Cmdid" type="uint32" desc="命令ID"/>
+    <entry name="Seqid" type="uint32" desc="流水号"/>
+    <entry name="ServiceName" type="string" size="SERVICE_NAME_LENGTH" desc="服务名"/>
+    <entry name="SendTime" type="uint32" desc="发送时间YYYYMMDD对应的整数"/>
+    <entry name="Version" type="uint32" desc="版本号"/>
+    <entry name="Authenticate" type="string" size="AUTHENTICATE_LENGTH" desc="加密串"/>
+    <entry name="Result" type="int32" desc="错误码,返回码类型：0：处理成功，需要解开包体获得详细信息,1：处理成功，但包体返回为空，不需要处理包体（eg：查询用户角色，用户角色不存在等），-1: 网络通信异常,-2：超时,-3：数据库操作异常,-4：API返回异常,-5：服务器忙,-6：其他错误,小于-100 ：用户自定义错误，需要填写szRetErrMsg"/>
+    <entry name="RetErrMsg" type="string" size="ERROR_MSG_LENGTH" desc="错误信息"/>
+  </struct>
+  <struct name="IdipDataPaket" desc="IDIP数据包">
+    <entry name="IdipHead" type="IdipHeader" desc="包头信息"/>
+    <entry name="IdipBody" type="string" size="IDIP_BODY_LENGTH" desc="包体信息"/>
+  </struct>
+  <!--角色装备信息对象-->
+  <struct name="SEquipInfo" desc="角色装备信息对象">
+    <entry name="EquipId" type="uint64" desc="装备ID" test="2" isverify="false" isnull="true"/>
+    <entry name="EquipName" type="string" size="MAX_EQUIPNAME_LEN" desc="装备名称" test="test" isverify="false" isnull="true"/>
+    <entry name="Level" type="uint32" desc="装备精炼等级" test="1" isverify="false" isnull="true"/>
+    <entry name="IsBattle" type="uint8" desc="上阵1/未上阵0" test="0" isverify="false" isnull="true"/>
+  </struct>
+  <!--角色灵宠信息对象-->
+  <struct name="SRolePetInfo" desc="角色灵宠信息对象">
+    <entry name="PetId" type="uint64" desc="灵宠ID" test="1" isverify="false" isnull="true"/>
+    <entry name="PetName" type="string" size="MAX_PETNAME_LEN" desc="灵宠名称" test="test" isverify="false" isnull="true"/>
+    <entry name="Level" type="uint32" desc="灵宠等级" test="2" isverify="false" isnull="true"/>
+    <entry name="IsBattle" type="uint8" desc="上阵1/未上阵0" test="0" isverify="false" isnull="true"/>
+  </struct>
+  <!--剑心信息对象-->
+  <struct name="SSwordInfo" desc="剑心信息对象">
+    <entry name="Slot" type="uint32" desc="开启槽数" test="1" isverify="false" isnull="true"/>
+    <entry name="SwordName" type="string" size="MAX_SWORDNAME_LEN" desc="剑心名" test="test" isverify="false" isnull="true"/>
+    <entry name="Level" type="uint32" desc="剑心等级" test="2" isverify="false" isnull="true"/>
+    <entry name="IsBattle" type="uint8" desc="上阵1/未上阵0" test="0" isverify="false" isnull="true"/>
+  </struct>
+  <!--魂侍信息对象-->
+  <struct name="SSoulInfo" desc="魂侍信息对象">
+    <entry name="Slot" type="uint32" desc="开启槽数" test="1" isverify="false" isnull="true"/>
+    <entry name="RoleName" type="string" size="MAX_ROLENAME_LEN" desc="角色名称" test="viken" isverify="false" isnull="true"/>
+    <entry name="MajorSoul" type="uint32" desc="主魂侍" test="2" isverify="false" isnull="true"/>
+    <entry name="MajorSoulLevel" type="uint32" desc="魂侍等级" test="3" isverify="false" isnull="true"/>
+    <entry name="Minor1Soul" type="uint32" desc="辅魂侍1" test="4" isverify="false" isnull="true"/>
+    <entry name="MinorSoul1Level" type="uint32" desc="辅魂侍1等级" test="5" isverify="false" isnull="true"/>
+    <entry name="Minor2Soul" type="uint32" desc="辅魂侍2" test="6" isverify="false" isnull="true"/>
+    <entry name="MinorSoul2Level" type="uint32" desc="辅魂侍2等级" test="7" isverify="false" isnull="true"/>
+    <entry name="Minor3Soul" type="uint32" desc="辅魂侍3" test="8" isverify="false" isnull="true"/>
+    <entry name="MinorSoul3Level" type="uint32" desc="辅魂侍3等级" test="9" isverify="false" isnull="true"/>
+    <entry name="IsBattle" type="uint8" desc="上阵1/未上阵0" test="0" isverify="false" isnull="true"/>
+  </struct>
+  <!--任务进度信息对象-->
+  <struct name="STaskProgressInfo" desc="任务进度信息对象">
+    <entry name="TaskName" type="string" size="MAX_TASKNAME_LEN" desc="任务名称" test="test" isverify="false" isnull="true"/>
+    <entry name="Type" type="uint8" desc="任务类型（1：主线任务 2：每日任务）" test="1" isverify="false" isnull="true"/>
+    <entry name="Status" type="uint8" desc="任务状态（1:正在进行中,2:完成未领取奖励,3:完成已领取奖励）" test="2" isverify="false" isnull="true"/>
+  </struct>
+  <!--背包存量信息对象-->
+  <struct name="SBagInfo" desc="背包存量信息对象">
+    <entry name="ItemName" type="string" size="MAX_ITEMNAME_LEN" desc="道具名称" test="test" isverify="false" isnull="true"/>
+    <entry name="ItemId" type="uint64" desc="道具ID（包括灵宠、魂侍、剑心、消耗品道具等）" test="1" isverify="false" isnull="true"/>
+    <entry name="ItemNum" type="uint32" desc="道具存量" test="2" isverify="false" isnull="true"/>
+  </struct>
+  <!--走马灯公告信息对象-->
+  <struct name="SGameLampNoticeInfo" desc="走马灯公告信息对象">
+    <entry name="BeginTime" type="string" size="MAX_BEGINTIME_LEN" desc="公告生效时间" test="1413878845" isverify="false" isnull="true"/>
+    <entry name="EndTime" type="string" size="MAX_ENDTIME_LEN" desc="公告结束时间" test="1413878845" isverify="false" isnull="true"/>
+    <entry name="Freq" type="int32" desc="滚动频率" test="1" isverify="false" isnull="true"/>
+    <entry name="NoticeId" type="string" size="MAX_NOTICEID_LEN" desc="公告ID" test="2" isverify="false" isnull="true"/>
+    <entry name="NoticeContent" type="string" size="MAX_NOTICECONTENT_LEN" desc="公告内容" test="test" isverify="false" isnull="true"/>
+  </struct>
+  <!--封号请求-->
+  <struct name="DoBanUsrReq" id="IDIP_DO_BAN_USR_REQ" desc="封号请求">
+    <entry name="AreaId" type="uint32" desc="大区（1微信，2手Q）" test="1" isverify="false" isnull="true"/>
+    <entry name="Partition" type="uint32" desc="小区ID" test="2" isverify="false" isnull="true"/>
+    <entry name="PlatId" type="uint8" desc="平台（0ios，1安卓）" test="0" isverify="false" isnull="true"/>
+    <entry name="OpenId" type="string" size="MAX_OPENID_LEN" desc="openid" test="732945400" isverify="false" isnull="true"/>
+    <entry name="BanTime" type="uint32" desc="封号时长0 永久，**秒）" test="3" isverify="false" isnull="true"/>
+    <entry name="Source" type="uint32" desc="渠道号，由前端生成，不需要填写" isverify="false" isnull="true"/>
+    <entry name="Serial" type="string" size="MAX_SERIAL_LEN" desc="流水号，由前端生成，不需要填写" isverify="false" isnull="true"/>
+  </struct>
+  <!--封号应答-->
+  <struct name="DoBanUsrRsp" id="IDIP_DO_BAN_USR_RSP" desc="封号应答">
+    <entry name="Result" type="int32" desc="结果：（0）成功，（其他）失败" test="0" isverify="false" isnull="true"/>
+    <entry name="RetMsg" type="string" size="MAX_RETMSG_LEN" desc="返回消息" test="success" isverify="false" isnull="true"/>
+  </struct>
+  <!--解封请求-->
+  <struct name="DoUnbanUsrReq" id="IDIP_DO_UNBAN_USR_REQ" desc="解封请求">
+    <entry name="AreaId" type="uint32" desc="大区（1微信，2手Q）" test="1" isverify="false" isnull="true"/>
+    <entry name="Partition" type="uint32" desc="小区ID" test="3" isverify="false" isnull="true"/>
+    <entry name="PlatId" type="uint8" desc="平台（0ios，1安卓）" test="0" isverify="false" isnull="true"/>
+    <entry name="OpenId" type="string" size="MAX_OPENID_LEN" desc="openid" test="732945400" isverify="false" isnull="true"/>
+    <entry name="Source" type="uint32" desc="渠道号，由前端生成，不需要填写" isverify="false" isnull="true"/>
+    <entry name="Serial" type="string" size="MAX_SERIAL_LEN" desc="流水号，由前端生成，不需要填写" isverify="false" isnull="true"/>
+  </struct>
+  <!--解封应答-->
+  <struct name="DoUnbanUsrRsp" id="IDIP_DO_UNBAN_USR_RSP" desc="解封应答">
+    <entry name="Result" type="int32" desc="结果：（0）成功，（其他）失败" test="0" isverify="false" isnull="true"/>
+    <entry name="RetMsg" type="string" size="MAX_RETMSG_LEN" desc="返回消息" test="success" isverify="false" isnull="true"/>
+  </struct>
+  <!--删除道具请求-->
+  <struct name="DoDelItemReq" id="IDIP_DO_DEL_ITEM_REQ" desc="删除道具请求">
+    <entry name="AreaId" type="uint32" desc="大区（1微信，2手Q）" test="1" isverify="false" isnull="true"/>
+    <entry name="Partition" type="uint32" desc="小区ID" test="3" isverify="false" isnull="true"/>
+    <entry name="PlatId" type="uint8" desc="平台（0ios，1安卓）" test="0" isverify="false" isnull="true"/>
+    <entry name="OpenId" type="string" size="MAX_OPENID_LEN" desc="openid" test="732945400" isverify="false" isnull="true"/>
+    <entry name="ItemId" type="uint64" desc="道具ID" test="2" isverify="false" isnull="true"/>
+    <entry name="ItemNum" type="uint32" desc="删除数量" test="4" isverify="false" isnull="true"/>
+    <entry name="Source" type="uint32" desc="渠道号，由前端生成，不需要填写" isverify="false" isnull="true"/>
+    <entry name="Serial" type="string" size="MAX_SERIAL_LEN" desc="流水号，由前端生成，不需要填写" isverify="false" isnull="true"/>
+  </struct>
+  <!--删除道具应答-->
+  <struct name="DoDelItemRsp" id="IDIP_DO_DEL_ITEM_RSP" desc="删除道具应答">
+    <entry name="Result" type="int32" desc="结果：（0）成功，（其他）失败" test="0" isverify="false" isnull="true"/>
+    <entry name="RetMsg" type="string" size="MAX_RETMSG_LEN" desc="返回消息" test="success" isverify="false" isnull="true"/>
+  </struct>
+  <!--修改角色经验请求-->
+  <struct name="DoUpdateRoleExpReq" id="IDIP_DO_UPDATE_ROLE_EXP_REQ" desc="修改角色经验请求">
+    <entry name="AreaId" type="uint32" desc="大区（1微信，2手Q）" test="1" isverify="false" isnull="true"/>
+    <entry name="Partition" type="uint32" desc="小区ID" test="2" isverify="false" isnull="true"/>
+    <entry name="PlatId" type="uint8" desc="平台（0ios，1安卓）" test="0" isverify="false" isnull="true"/>
+    <entry name="OpenId" type="string" size="MAX_OPENID_LEN" desc="openid" test="732945400" isverify="false" isnull="true"/>
+    <entry name="RoleId" type="uint64" desc="角色ID" test="3" isverify="false" isnull="true"/>
+    <entry name="Value" type="int32" desc="修改值（正加负减）" test="4" isverify="false" isnull="true"/>
+    <entry name="Source" type="uint32" desc="渠道号，由前端生成，不需要填写" isverify="false" isnull="true"/>
+    <entry name="Serial" type="string" size="MAX_SERIAL_LEN" desc="流水号，由前端生成，不需要填写" isverify="false" isnull="true"/>
+  </struct>
+  <!--修改角色经验应答-->
+  <struct name="DoUpdateRoleExpRsp" id="IDIP_DO_UPDATE_ROLE_EXP_RSP" desc="修改角色经验应答">
+    <entry name="Result" type="int32" desc="结果：（0）成功，（其他）失败" test="0" isverify="false" isnull="true"/>
+    <entry name="RetMsg" type="string" size="MAX_RETMSG_LEN" desc="返回消息" test="success" isverify="false" isnull="true"/>
+  </struct>
+  <!--修改用户元宝请求-->
+  <struct name="DoUpdateRoleGoldReq" id="IDIP_DO_UPDATE_ROLE_GOLD_REQ" desc="修改用户元宝请求">
+    <entry name="AreaId" type="uint32" desc="大区（1微信，2手Q）" test="1" isverify="false" isnull="true"/>
+    <entry name="Partition" type="uint32" desc="小区ID" test="2" isverify="false" isnull="true"/>
+    <entry name="PlatId" type="uint8" desc="平台（0ios，1安卓）" test="0" isverify="false" isnull="true"/>
+    <entry name="OpenId" type="string" size="MAX_OPENID_LEN" desc="openid" test="732945400" isverify="false" isnull="true"/>
+    <entry name="RoleId" type="uint64" desc="角色ID" test="3" isverify="false" isnull="true"/>
+    <entry name="Value" type="int32" desc="数量（正加负减）" test="4" isverify="false" isnull="true"/>
+    <entry name="Source" type="uint32" desc="渠道号，由前端生成，不需要填写" isverify="false" isnull="true"/>
+    <entry name="Serial" type="string" size="MAX_SERIAL_LEN" desc="流水号，由前端生成，不需要填写" isverify="false" isnull="true"/>
+  </struct>
+  <!--修改用户元宝应答-->
+  <struct name="DoUpdateRoleGoldRsp" id="IDIP_DO_UPDATE_ROLE_GOLD_RSP" desc="修改用户元宝应答">
+    <entry name="Result" type="int32" desc="结果：（0）成功，（其他）失败" test="0" isverify="false" isnull="true"/>
+    <entry name="RetMsg" type="string" size="MAX_RETMSG_LEN" desc="返回消息" test="success" isverify="false" isnull="true"/>
+  </struct>
+  <!--修改用户体力请求-->
+  <struct name="DoUpdateRolePhysicalReq" id="IDIP_DO_UPDATE_ROLE_PHYSICAL_REQ" desc="修改用户体力请求">
+    <entry name="AreaId" type="uint32" desc="大区（1微信，2手Q）" test="1" isverify="false" isnull="true"/>
+    <entry name="Partition" type="uint32" desc="小区ID" test="2" isverify="false" isnull="true"/>
+    <entry name="PlatId" type="uint8" desc="平台（0ios，1安卓）" test="0" isverify="false" isnull="true"/>
+    <entry name="OpenId" type="string" size="MAX_OPENID_LEN" desc="openid" test="732945400" isverify="false" isnull="true"/>
+    <entry name="RoleId" type="uint64" desc="角色ID" test="3" isverify="false" isnull="true"/>
+    <entry name="Value" type="int32" desc="数量（正加负减）" test="4" isverify="false" isnull="true"/>
+    <entry name="Source" type="uint32" desc="渠道号，由前端生成，不需要填写" isverify="false" isnull="true"/>
+    <entry name="Serial" type="string" size="MAX_SERIAL_LEN" desc="流水号，由前端生成，不需要填写" isverify="false" isnull="true"/>
+  </struct>
+  <!--修改用户体力应答-->
+  <struct name="DoUpdateRolePhysicalRsp" id="IDIP_DO_UPDATE_ROLE_PHYSICAL_RSP" desc="修改用户体力应答">
+    <entry name="Result" type="int32" desc="结果：（0）成功，（其他）失败" test="0" isverify="false" isnull="true"/>
+    <entry name="RetMsg" type="string" size="MAX_RETMSG_LEN" desc="返回消息" test="success" isverify="false" isnull="true"/>
+  </struct>
+  <!--修改角色铜钱请求-->
+  <struct name="DoUpdateRoleCoinReq" id="IDIP_DO_UPDATE_ROLE_COIN_REQ" desc="修改角色铜钱请求">
+    <entry name="AreaId" type="uint32" desc="大区（1微信，2手Q）" test="1" isverify="false" isnull="true"/>
+    <entry name="Partition" type="uint32" desc="小区ID" test="2" isverify="false" isnull="true"/>
+    <entry name="PlatId" type="uint8" desc="平台（0ios，1安卓）" test="0" isverify="false" isnull="true"/>
+    <entry name="OpenId" type="string" size="MAX_OPENID_LEN" desc="openid" test="732945400" isverify="false" isnull="true"/>
+    <entry name="RoleId" type="uint64" desc="角色ID" test="3" isverify="false" isnull="true"/>
+    <entry name="Value" type="int32" desc="数量（正加负减）" test="4" isverify="false" isnull="true"/>
+    <entry name="Source" type="uint32" desc="渠道号，由前端生成，不需要填写" isverify="false" isnull="true"/>
+    <entry name="Serial" type="string" size="MAX_SERIAL_LEN" desc="流水号，由前端生成，不需要填写" isverify="false" isnull="true"/>
+  </struct>
+  <!--修改角色铜钱应答-->
+  <struct name="DoUpdateRoleCoinRsp" id="IDIP_DO_UPDATE_ROLE_COIN_RSP" desc="修改角色铜钱应答">
+    <entry name="Result" type="int32" desc="结果：（0）成功，（其他）失败" test="0" isverify="false" isnull="true"/>
+    <entry name="RetMsg" type="string" size="MAX_RETMSG_LEN" desc="返回消息" test="success" isverify="false" isnull="true"/>
+  </struct>
+  <!--修改角色爱心请求-->
+  <struct name="DoUpdateRoleHeartReq" id="IDIP_DO_UPDATE_ROLE_HEART_REQ" desc="修改角色爱心请求">
+    <entry name="AreaId" type="uint32" desc="大区（1微信，2手Q）" test="1" isverify="false" isnull="true"/>
+    <entry name="Partition" type="uint32" desc="小区ID" test="2" isverify="false" isnull="true"/>
+    <entry name="PlatId" type="uint8" desc="平台（0ios，1安卓）" test="0" isverify="false" isnull="true"/>
+    <entry name="OpenId" type="string" size="MAX_OPENID_LEN" desc="openid" test="732945400" isverify="false" isnull="true"/>
+    <entry name="RoleId" type="uint64" desc="角色ID" test="3" isverify="false" isnull="true"/>
+    <entry name="Value" type="int32" desc="数量（正加负减）" test="4" isverify="false" isnull="true"/>
+    <entry name="Source" type="uint32" desc="渠道号，由前端生成，不需要填写" isverify="false" isnull="true"/>
+    <entry name="Serial" type="string" size="MAX_SERIAL_LEN" desc="流水号，由前端生成，不需要填写" isverify="false" isnull="true"/>
+  </struct>
+  <!--修改角色爱心应答-->
+  <struct name="DoUpdateRoleHeartRsp" id="IDIP_DO_UPDATE_ROLE_HEART_RSP" desc="修改角色爱心应答">
+    <entry name="Result" type="int32" desc="结果：（0）成功，（其他）失败" test="0" isverify="false" isnull="true"/>
+    <entry name="RetMsg" type="string" size="MAX_RETMSG_LEN" desc="返回消息" test="success" isverify="false" isnull="true"/>
+  </struct>
+  <!--发放道具请求-->
+  <struct name="DoSendItemReq" id="IDIP_DO_SEND_ITEM_REQ" desc="发放道具请求">
+    <entry name="AreaId" type="uint32" desc="大区（1微信，2手Q）" test="1" isverify="false" isnull="true"/>
+    <entry name="Partition" type="uint32" desc="小区ID" test="3" isverify="false" isnull="true"/>
+    <entry name="PlatId" type="uint8" desc="平台（0ios，1安卓）" test="0" isverify="false" isnull="true"/>
+    <entry name="OpenId" type="string" size="MAX_OPENID_LEN" desc="openid" test="732945400" isverify="false" isnull="true"/>
+    <entry name="RoleId" type="uint64" desc="角色ID" test="3" isverify="false" isnull="true"/>
+    <entry name="ItemId" type="uint64" desc="道具ID" test="2" isverify="false" isnull="true"/>
+    <entry name="ItemNum" type="uint32" desc="数量" test="4" isverify="false" isnull="true"/>
+    <entry name="Source" type="uint32" desc="渠道号，由前端生成，不需要填写" isverify="false" isnull="true"/>
+    <entry name="Serial" type="string" size="MAX_SERIAL_LEN" desc="流水号，由前端生成，不需要填写" isverify="false" isnull="true"/>
+  </struct>
+  <!--发放道具应答-->
+  <struct name="DoSendItemRsp" id="IDIP_DO_SEND_ITEM_RSP" desc="发放道具应答">
+    <entry name="Result" type="int32" desc="结果：（0）成功，（其他）失败" test="0" isverify="false" isnull="true"/>
+    <entry name="RetMsg" type="string" size="MAX_RETMSG_LEN" desc="返回消息" test="success" isverify="false" isnull="true"/>
+  </struct>
+  <!--查询当前个人信息请求-->
+  <struct name="QueryUsrInfoReq" id="IDIP_QUERY_USR_INFO_REQ" desc="查询当前个人信息请求">
+    <entry name="AreaId" type="uint32" desc="大区（1微信，2手Q）" test="1" isverify="false" isnull="true"/>
+    <entry name="Partition" type="uint32" desc="小区ID" test="2" isverify="false" isnull="true"/>
+    <entry name="PlatId" type="uint8" desc="平台（0ios，1安卓）" test="0" isverify="false" isnull="true"/>
+    <entry name="OpenId" type="string" size="MAX_OPENID_LEN" desc="openid" test="732945400" isverify="false" isnull="true"/>
+  </struct>
+  <!--查询当前个人信息应答-->
+  <struct name="QueryUsrInfoRsp" id="IDIP_QUERY_USR_INFO_RSP" desc="查询当前个人信息应答">
+    <entry name="Level" type="uint32" desc="当前等级" test="2" isverify="false" isnull="true"/>
+    <entry name="Vip" type="uint32" desc="当前VIP等级" test="3" isverify="false" isnull="true"/>
+    <entry name="Exp" type="uint32" desc="当前经验" test="4" isverify="false" isnull="true"/>
+    <entry name="Coin" type="uint32" desc="当前铜钱" test="5" isverify="false" isnull="true"/>
+    <entry name="Gold" type="uint32" desc="当前元宝数量" test="6" isverify="false" isnull="true"/>
+    <entry name="Physical" type="uint32" desc="当前体力值" test="7" isverify="false" isnull="true"/>
+    <entry name="MaxPhysical" type="uint32" desc="体力值上限" test="8" isverify="false" isnull="true"/>
+    <entry name="MaxBag" type="uint32" desc="背包上限值" test="9" isverify="false" isnull="true"/>
+    <entry name="RegisterTime" type="uint64" desc="注册时间" test="1406021871" isverify="false" isnull="true"/>
+    <entry name="IsOnline" type="uint8" desc="是否在线（0在线，1离线）" test="0" isverify="false" isnull="true"/>
+    <entry name="AccStatus" type="uint8" desc="帐号状态（0 正常，1封号）" test="1" isverify="false" isnull="true"/>
+    <entry name="BanEndTime" type="uint64" desc="封号截至时间" test="1406021901" isverify="false" isnull="true"/>
+    <entry name="ArmyId" type="uint64" desc="所在公会" test="3" isverify="false" isnull="true"/>
+    <entry name="RankInArmy" type="uint32" desc="在公会中的排名" test="4" isverify="false" isnull="true"/>
+    <entry name="ArmyRank" type="uint32" desc="公会排名" test="2" isverify="false" isnull="true"/>
+    <entry name="PassProgress" type="uint32" desc="当前关卡进度" test="3" isverify="false" isnull="true"/>
+    <entry name="PvpRank" type="uint32" desc="个人PVP排名" test="5" isverify="false" isnull="true"/>
+    <entry name="PvpScore" type="uint32" desc="PVP积分数量" test="7" isverify="false" isnull="true"/>
+    <entry name="LastLoginTime" type="string" size="MAX_LASTLOGINTIME_LEN" desc="玩家最后登录时间" test="1416990914" isverify="false" isnull="true"/>
+    <entry name="RoleName" type="string" size="MAX_ROLENAME_LEN" desc="角色名称" test="test" isverify="false" isnull="true"/>
+  </struct>
+  <!--查询角色装备信息请求-->
+  <struct name="QueryRoleEquipReq" id="IDIP_QUERY_ROLE_EQUIP_REQ" desc="查询角色装备信息请求">
+    <entry name="AreaId" type="uint32" desc="大区（1微信，2手Q）" test="1" isverify="false" isnull="true"/>
+    <entry name="Partition" type="uint32" desc="小区ID" test="2" isverify="false" isnull="true"/>
+    <entry name="PlatId" type="uint8" desc="平台（0ios，1安卓）" test="0" isverify="false" isnull="true"/>
+    <entry name="OpenId" type="string" size="MAX_OPENID_LEN" desc="openid" test="732945400" isverify="false" isnull="true"/>
+    <entry name="RoleId" type="uint64" desc="角色ID" test="3" isverify="false" isnull="true"/>
+  </struct>
+  <!--查询角色装备信息应答-->
+  <struct name="QueryRoleEquipRsp" id="IDIP_QUERY_ROLE_EQUIP_RSP" desc="查询角色装备信息应答">
+    <entry name="EquipList_count" type="uint32" desc="角色装备信息列表的最大数量" test="1" isverify="false" isnull="true"/>
+    <entry name="EquipList" type="SEquipInfo" size="MAX_EQUIPLIST_NUM" param="vector,struct,EquipList_count,1,|, " desc="角色装备信息列表" test="0" isverify="false" isnull="true"/>
+  </struct>
+  <!--查询角色灵宠信息请求-->
+  <struct name="QueryRolePetInfoReq" id="IDIP_QUERY_ROLE_PET_INFO_REQ" desc="查询角色灵宠信息请求">
+    <entry name="AreaId" type="uint32" desc="大区（1微信，2手Q）" test="1" isverify="false" isnull="true"/>
+    <entry name="Partition" type="uint32" desc="小区ID" test="2" isverify="false" isnull="true"/>
+    <entry name="PlatId" type="uint8" desc="平台（0ios，1安卓）" test="0" isverify="false" isnull="true"/>
+    <entry name="OpenId" type="string" size="MAX_OPENID_LEN" desc="openid" test="732945400" isverify="false" isnull="true"/>
+    <entry name="RoleId" type="uint64" desc="角色ID" test="3" isverify="false" isnull="true"/>
+  </struct>
+  <!--查询角色灵宠信息应答-->
+  <struct name="QueryRolePetInfoRsp" id="IDIP_QUERY_ROLE_PET_INFO_RSP" desc="查询角色灵宠信息应答">
+    <entry name="RolePetList_count" type="uint32" desc="角色灵宠信息列表的最大数量" test="1" isverify="false" isnull="true"/>
+    <entry name="RolePetList" type="SRolePetInfo" size="MAX_ROLEPETLIST_NUM" param="vector,struct,RolePetList_count,1,|, " desc="角色灵宠信息列表" test="0" isverify="false" isnull="true"/>
+  </struct>
+  <!--查询剑心信息请求-->
+  <struct name="QuerySwordInfoReq" id="IDIP_QUERY_SWORD_INFO_REQ" desc="查询剑心信息请求">
+    <entry name="AreaId" type="uint32" desc="大区（1微信，2手Q）" test="1" isverify="false" isnull="true"/>
+    <entry name="Partition" type="uint32" desc="小区ID" test="2" isverify="false" isnull="true"/>
+    <entry name="PlatId" type="uint8" desc="平台（0ios，1安卓）" test="0" isverify="false" isnull="true"/>
+    <entry name="OpenId" type="string" size="MAX_OPENID_LEN" desc="openid" test="732945400" isverify="false" isnull="true"/>
+    <entry name="RoleId" type="uint64" desc="角色ID" test="3" isverify="false" isnull="true"/>
+  </struct>
+  <!--查询剑心信息应答-->
+  <struct name="QuerySwordInfoRsp" id="IDIP_QUERY_SWORD_INFO_RSP" desc="查询剑心信息应答">
+    <entry name="SwordList_count" type="uint32" desc="剑心信息列表的最大数量" test="1" isverify="false" isnull="true"/>
+    <entry name="SwordList" type="SSwordInfo" size="MAX_SWORDLIST_NUM" param="vector,struct,SwordList_count,1,|, " desc="剑心信息列表" test="0" isverify="false" isnull="true"/>
+  </struct>
+  <!--查询魂侍信息请求-->
+  <struct name="QuerySoulInfoReq" id="IDIP_QUERY_SOUL_INFO_REQ" desc="查询魂侍信息请求">
+    <entry name="AreaId" type="uint32" desc="大区（1微信，2手Q）" test="1" isverify="false" isnull="true"/>
+    <entry name="Partition" type="uint32" desc="小区ID" test="2" isverify="false" isnull="true"/>
+    <entry name="PlatId" type="uint8" desc="平台（0ios，1安卓）" test="0" isverify="false" isnull="true"/>
+    <entry name="OpenId" type="string" size="MAX_OPENID_LEN" desc="openid" test="732945400" isverify="false" isnull="true"/>
+    <entry name="RoleId" type="uint64" desc="角色ID" test="3" isverify="false" isnull="true"/>
+  </struct>
+  <!--查询魂侍信息应答-->
+  <struct name="QuerySoulInfoRsp" id="IDIP_QUERY_SOUL_INFO_RSP" desc="查询魂侍信息应答">
+    <entry name="SoulList_count" type="uint32" desc="魂侍信息列表的最大数量" test="1" isverify="false" isnull="true"/>
+    <entry name="SoulList" type="SSoulInfo" size="MAX_SOULLIST_NUM" param="vector,struct,SoulList_count,1,|, " desc="魂侍信息列表" test="0" isverify="false" isnull="true"/>
+  </struct>
+  <!--查询任务进度请求-->
+  <struct name="QueryTaskInfoReq" id="IDIP_QUERY_TASK_INFO_REQ" desc="查询任务进度请求">
+    <entry name="AreaId" type="uint32" desc="大区（1微信，2手Q）" test="1" isverify="false" isnull="true"/>
+    <entry name="Partition" type="uint32" desc="小区ID" test="2" isverify="false" isnull="true"/>
+    <entry name="PlatId" type="uint8" desc="平台（0ios，1安卓）" test="0" isverify="false" isnull="true"/>
+    <entry name="OpenId" type="string" size="MAX_OPENID_LEN" desc="openid" test="732945400" isverify="false" isnull="true"/>
+    <entry name="BeginTime" type="uint64" desc="开始时间" test="1406081524" isverify="false" isnull="true"/>
+    <entry name="EndTime" type="uint64" desc="结束时间" test="1406081535" isverify="false" isnull="true"/>
+  </struct>
+  <!--查询任务进度应答-->
+  <struct name="QueryTaskInfoRsp" id="IDIP_QUERY_TASK_INFO_RSP" desc="查询任务进度应答">
+    <entry name="TaskProgressList_count" type="uint32" desc="任务进度信息列表的最大数量" test="1" isverify="false" isnull="true"/>
+    <entry name="TaskProgressList" type="STaskProgressInfo" size="MAX_TASKPROGRESSLIST_NUM" param="vector,struct,TaskProgressList_count,1,|, " desc="任务进度信息列表" test="0" isverify="false" isnull="true"/>
+  </struct>
+  <!--查询背包存量信息请求-->
+  <struct name="QueryBagInfoReq" id="IDIP_QUERY_BAG_INFO_REQ" desc="查询背包存量信息请求">
+    <entry name="AreaId" type="uint32" desc="大区（1微信，2手Q）" test="1" isverify="false" isnull="true"/>
+    <entry name="Partition" type="uint32" desc="小区ID" test="2" isverify="false" isnull="true"/>
+    <entry name="PlatId" type="uint8" desc="平台（0ios，1安卓）" test="0" isverify="false" isnull="true"/>
+    <entry name="OpenId" type="string" size="MAX_OPENID_LEN" desc="openid" test="732945400" isverify="false" isnull="true"/>
+    <entry name="BeginTime" type="uint64" desc="开始时间" test="1406081787" isverify="false" isnull="true"/>
+    <entry name="EndTime" type="uint64" desc="结束时间" test="1406081797" isverify="false" isnull="true"/>
+  </struct>
+  <!--查询背包存量信息应答-->
+  <struct name="QueryBagInfoRsp" id="IDIP_QUERY_BAG_INFO_RSP" desc="查询背包存量信息应答">
+    <entry name="BagList_count" type="uint32" desc="背包存量信息列表的最大数量" test="1" isverify="false" isnull="true"/>
+    <entry name="BagList" type="SBagInfo" size="MAX_BAGLIST_NUM" param="vector,struct,BagList_count,1,|, " desc="背包存量信息列表" isverify="false" isnull="true"/>
+  </struct>
+  <!--发放邮件请求-->
+  <struct name="DoSendMailReq" id="IDIP_DO_SEND_MAIL_REQ" desc="发放邮件请求">
+    <entry name="AreaId" type="uint32" desc="大区（1微信，2手Q）" test="1" isverify="false" isnull="true"/>
+    <entry name="Partition" type="uint32" desc="小区ID" test="3" isverify="false" isnull="true"/>
+    <entry name="PlatId" type="uint8" desc="平台（0ios，1安卓）" test="0" isverify="false" isnull="true"/>
+    <entry name="OpenId" type="string" size="MAX_OPENID_LEN" desc="openid" test="732945400" isverify="false" isnull="true"/>
+    <entry name="MailTitle" type="string" size="MAX_MAILTITLE_LEN" desc="邮件标题" test="test2" isverify="false" isnull="true"/>
+    <entry name="MailContent" type="string" size="MAX_MAILCONTENT_LEN" desc="邮件内容" test="test3" isverify="false" isnull="true"/>
+    <entry name="SendTime" type="uint64" desc="邮件发送时间" test="1408066963" isverify="false" isnull="true"/>
+    <entry name="EndTime" type="uint64" desc="邮件自动删除时间" test="1408067021" isverify="false" isnull="true"/>
+    <entry name="ItemId1" type="uint64" desc="邮件赠送道具1ID" test="2" isverify="false" isnull="true"/>
+    <entry name="ItemNum1" type="uint32" desc="邮件赠送道具1数量" test="1" isverify="false" isnull="true"/>
+    <entry name="ItemId2" type="uint64" desc="邮件赠送道具2ID" test="3" isverify="false" isnull="true"/>
+    <entry name="ItemNum2" type="uint32" desc="邮件赠送道具2数量" test="2" isverify="false" isnull="true"/>
+    <entry name="ItemId3" type="uint64" desc="邮件赠送道具3ID" test="4" isverify="false" isnull="true"/>
+    <entry name="ItemNum3" type="uint32" desc="邮件赠送道具3数量" test="3" isverify="false" isnull="true"/>
+    <entry name="ItemId4" type="uint64" desc="邮件赠送道具4ID" test="5" isverify="false" isnull="true"/>
+    <entry name="ItemNum4" type="uint32" desc="邮件赠送道具4数量" test="4" isverify="false" isnull="true"/>
+    <entry name="Source" type="uint32" desc="渠道号，由前端生成，不需要填写" isverify="false" isnull="true"/>
+    <entry name="Serial" type="string" size="MAX_SERIAL_LEN" desc="流水号，由前端生成，不需要填写" isverify="false" isnull="true"/>
+  </struct>
+  <!--发放邮件应答-->
+  <struct name="DoSendMailRsp" id="IDIP_DO_SEND_MAIL_RSP" desc="发放邮件应答">
+    <entry name="Result" type="int32" desc="结果：（0）成功，（其他）失败" test="0" isverify="false" isnull="true"/>
+    <entry name="RetMsg" type="string" size="MAX_RETMSG_LEN" desc="返回消息" test="success" isverify="false" isnull="true"/>
+  </struct>
+  <!--更新新闻公告请求-->
+  <struct name="DoUpdateNoticeReq" id="IDIP_DO_UPDATE_NOTICE_REQ" desc="更新新闻公告请求">
+    <entry name="AreaId" type="uint32" desc="大区（1微信，2手Q）" test="1" isverify="false" isnull="true"/>
+    <entry name="Partition" type="uint32" desc="小区ID" test="2" isverify="false" isnull="true"/>
+    <entry name="PlatId" type="uint8" desc="平台（0ios，1安卓）" test="0" isverify="false" isnull="true"/>
+    <entry name="Title" type="string" size="MAX_TITLE_LEN" desc="新闻标题" test="test" isverify="false" isnull="true"/>
+    <entry name="Content" type="string" size="MAX_CONTENT_LEN" desc="新闻内容" test="test2" isverify="false" isnull="true"/>
+    <entry name="Time" type="uint64" desc="更新时间" test="1408067477" isverify="false" isnull="true"/>
+    <entry name="Source" type="uint32" desc="渠道号，由前端生成，不需要填写" isverify="false" isnull="true"/>
+    <entry name="Serial" type="string" size="MAX_SERIAL_LEN" desc="流水号，由前端生成，不需要填写" isverify="false" isnull="true"/>
+  </struct>
+  <!--更新新闻公告应答-->
+  <struct name="DoUpdateNoticeRsp" id="IDIP_DO_UPDATE_NOTICE_RSP" desc="更新新闻公告应答">
+    <entry name="Result" type="int32" desc="结果：（0）成功，（其他）失败" test="0" isverify="false" isnull="true"/>
+    <entry name="RetMsg" type="string" size="MAX_RETMSG_LEN" desc="返回消息" test="success" isverify="false" isnull="true"/>
+  </struct>
+  <!--更新游戏内走马灯请求-->
+  <struct name="DoUpdateGameLampReq" id="IDIP_DO_UPDATE_GAME_LAMP_REQ" desc="更新游戏内走马灯请求">
+    <entry name="AreaId" type="uint32" desc="大区（1微信，2手Q）" test="1" isverify="false" isnull="true"/>
+    <entry name="Partition" type="uint32" desc="小区ID" test="2" isverify="false" isnull="true"/>
+    <entry name="PlatId" type="uint8" desc="平台（0ios，1安卓）" test="0" isverify="false" isnull="true"/>
+    <entry name="Freq" type="uint32" desc="滚动频率：**秒" test="3" isverify="false" isnull="true"/>
+    <entry name="LampContent" type="string" size="MAX_LAMPCONTENT_LEN" desc="走马灯内容" test="test" isverify="false" isnull="true"/>
+    <entry name="BeginTime" type="uint64" desc="开始时间" test="1408067714" isverify="false" isnull="true"/>
+    <entry name="EndTime" type="uint64" desc="结束时间:不配置，则表示不限制结束时间" test="1408067724" isverify="false" isnull="true"/>
+    <entry name="Source" type="uint32" desc="渠道号，由前端生成，不需要填写" isverify="false" isnull="true"/>
+    <entry name="Serial" type="string" size="MAX_SERIAL_LEN" desc="流水号，由前端生成，不需要填写" isverify="false" isnull="true"/>
+  </struct>
+  <!--更新游戏内走马灯应答-->
+  <struct name="DoUpdateGameLampRsp" id="IDIP_DO_UPDATE_GAME_LAMP_RSP" desc="更新游戏内走马灯应答">
+    <entry name="Result" type="int32" desc="结果：（0）成功，（其他）失败" test="0" isverify="false" isnull="true"/>
+    <entry name="RetMsg" type="string" size="MAX_RETMSG_LEN" desc="返回消息" test="success" isverify="false" isnull="true"/>
+  </struct>
+  <!--发送邮件（AQ）请求-->
+  <struct name="AqDoSendMailReq" id="IDIP_AQ_DO_SEND_MAIL_REQ" desc="发送邮件（AQ）请求">
+    <entry name="AreaId" type="uint32" desc="大区（1微信，2手Q）" test="1" isverify="false" isnull="true"/>
+    <entry name="Partition" type="uint32" desc="小区ID" test="2" isverify="false" isnull="true"/>
+    <entry name="PlatId" type="uint8" desc="平台（0ios，1安卓）" test="0" isverify="false" isnull="true"/>
+    <entry name="OpenId" type="string" size="MAX_OPENID_LEN" desc="openid" test="732945400" isverify="false" isnull="true"/>
+    <entry name="MailContent" type="string" size="MAX_MAILCONTENT_LEN" desc="邮件内容" test="test2" isverify="false" isnull="true"/>
+    <entry name="Reason" type="string" size="MAX_REASON_LEN" desc="操作原因" test="test" isverify="false" isnull="true"/>
+    <entry name="Source" type="uint32" desc="渠道号，由前端生成，不需填写" isverify="false" isnull="true"/>
+    <entry name="Serial" type="string" size="MAX_SERIAL_LEN" desc="流水号，由前端生成，不需要填写" isverify="false" isnull="true"/>
+  </struct>
+  <!--发送邮件（AQ）应答-->
+  <struct name="AqDoSendMailRsp" id="IDIP_AQ_DO_SEND_MAIL_RSP" desc="发送邮件（AQ）应答">
+    <entry name="Result" type="int32" desc="结果：0 成功，其它失败" test="0" isverify="false" isnull="true"/>
+    <entry name="RetMsg" type="string" size="MAX_RETMSG_LEN" desc="返回消息" test="success" isverify="false" isnull="true"/>
+  </struct>
+  <!--封号（AQ）请求-->
+  <struct name="AqDoBanUsrReq" id="IDIP_AQ_DO_BAN_USR_REQ" desc="封号（AQ）请求">
+    <entry name="AreaId" type="uint32" desc="大区（1微信，2手Q）" test="1" isverify="false" isnull="true"/>
+    <entry name="Partition" type="uint32" desc="小区ID" test="2" isverify="false" isnull="true"/>
+    <entry name="PlatId" type="uint8" desc="平台（0ios，1安卓）" test="0" isverify="false" isnull="true"/>
+    <entry name="OpenId" type="string" size="MAX_OPENID_LEN" desc="openid" test="732945400" isverify="false" isnull="true"/>
+    <entry name="Time" type="uint32" desc="封停时长（秒）" test="2" isverify="false" isnull="true"/>
+    <entry name="Reason" type="string" size="MAX_REASON_LEN" desc="操作原因" test="test" isverify="false" isnull="true"/>
+    <entry name="Source" type="uint32" desc="渠道号，由前端生成，不需要填写" isverify="false" isnull="true"/>
+    <entry name="Serial" type="string" size="MAX_SERIAL_LEN" desc="流水号，由前端生成，不需要填写" isverify="false" isnull="true"/>
+  </struct>
+  <!--封号（AQ）应答-->
+  <struct name="AqDoBanUsrRsp" id="IDIP_AQ_DO_BAN_USR_RSP" desc="封号（AQ）应答">
+    <entry name="Result" type="int32" desc="操作结果" test="0" isverify="false" isnull="true"/>
+    <entry name="RetMsg" type="string" size="MAX_RETMSG_LEN" desc="返回消息" test="success" isverify="false" isnull="true"/>
+  </struct>
+  <!--解除处罚（AQ）请求-->
+  <struct name="AqDoRelievePunishReq" id="IDIP_AQ_DO_RELIEVE_PUNISH_REQ" desc="解除处罚（AQ）请求">
+    <entry name="AreaId" type="uint32" desc="大区（1微信，2手Q）" test="1" isverify="false" isnull="true"/>
+    <entry name="Partition" type="uint32" desc="小区ID" test="2" isverify="false" isnull="true"/>
+    <entry name="PlatId" type="uint8" desc="平台（0ios，1安卓）" test="0" isverify="false" isnull="true"/>
+    <entry name="OpenId" type="string" size="MAX_OPENID_LEN" desc="openid" test="732945400" isverify="false" isnull="true"/>
+    <entry name="RelieveBan" type="uint8" desc="解除封号（0 否，1 是）" test="0" isverify="false" isnull="true"/>
+    <entry name="Reason" type="string" size="MAX_REASON_LEN" desc="操作原因" test="test" isverify="false" isnull="true"/>
+    <entry name="Source" type="uint32" desc="渠道号，由前端生成，不需要填写" isverify="false" isnull="true"/>
+    <entry name="Serial" type="string" size="MAX_SERIAL_LEN" desc="流水号，由前端生成，不需要填写" isverify="false" isnull="true"/>
+  </struct>
+  <!--解除处罚（AQ）应答-->
+  <struct name="AqDoRelievePunishRsp" id="IDIP_AQ_DO_RELIEVE_PUNISH_RSP" desc="解除处罚（AQ）应答">
+    <entry name="Result" type="int32" desc="操作结果" test="0" isverify="false" isnull="true"/>
+    <entry name="RetMsg" type="string" size="MAX_RETMSG_LEN" desc="返回消息" test="success" isverify="false" isnull="true"/>
+  </struct>
+  <!--查询比武场请求-->
+  <struct name="QueryCompeteInfoReq" id="IDIP_QUERY_COMPETE_INFO_REQ" desc="查询比武场请求">
+    <entry name="AreaId" type="uint32" desc="服务器：微信（1），手Q（2）" test="1" isverify="false" isnull="true"/>
+    <entry name="Partition" type="uint32" desc="小区ID" test="2" isverify="false" isnull="true"/>
+    <entry name="PlatId" type="uint8" desc="平台：IOS（0），安卓（1）" test="0" isverify="false" isnull="true"/>
+    <entry name="OpenId" type="string" size="MAX_OPENID_LEN" desc="openid" test="732945400" isverify="false" isnull="true"/>
+  </struct>
+  <!--查询比武场应答-->
+  <struct name="QueryCompeteInfoRsp" id="IDIP_QUERY_COMPETE_INFO_RSP" desc="查询比武场应答">
+    <entry name="RoleId" type="string" size="MAX_ROLEID_LEN" desc="用户ID" test="2" isverify="false" isnull="true"/>
+    <entry name="Rank" type="int32" desc="当前排名" test="1" isverify="false" isnull="true"/>
+  </struct>
+  <!--设置魂侍等级请求-->
+  <struct name="DoSetSoulLevelReq" id="IDIP_DO_SET_SOUL_LEVEL_REQ" desc="设置魂侍等级请求">
+    <entry name="AreaId" type="uint32" desc="服务器：微信（1），手Q（2）" test="1" isverify="false" isnull="true"/>
+    <entry name="Partition" type="uint32" desc="小区ID" test="2" isverify="false" isnull="true"/>
+    <entry name="PlatId" type="uint8" desc="平台：IOS（0），安卓（1）" test="0" isverify="false" isnull="true"/>
+    <entry name="OpenId" type="string" size="MAX_OPENID_LEN" desc="openid" test="732945400" isverify="false" isnull="true"/>
+    <entry name="SoulId" type="uint64" desc="魂侍ID" test="3" isverify="false" isnull="true"/>
+    <entry name="Value" type="int32" desc="等级设置：填1则表示1级，2则表示2级" test="4" isverify="false" isnull="true"/>
+    <entry name="Source" type="uint32" desc="渠道号，由前端生成，不需要填写" isverify="false" isnull="true"/>
+    <entry name="Serial" type="string" size="MAX_SERIAL_LEN" desc="流水号，由前端生成，不需要填写" isverify="false" isnull="true"/>
+  </struct>
+  <!--设置魂侍等级应答-->
+  <struct name="DoSetSoulLevelRsp" id="IDIP_DO_SET_SOUL_LEVEL_RSP" desc="设置魂侍等级应答">
+    <entry name="Result" type="int32" desc="结果：（0）成功，（其他）失败" test="0" isverify="false" isnull="true"/>
+    <entry name="RetMsg" type="string" size="MAX_RETMSG_LEN" desc="返回消息" test="success" isverify="false" isnull="true"/>
+  </struct>
+  <!--设置剑心等级请求-->
+  <struct name="DoSetSwordLevelReq" id="IDIP_DO_SET_SWORD_LEVEL_REQ" desc="设置剑心等级请求">
+    <entry name="AreaId" type="uint32" desc="服务器：微信（1），手Q（2）" test="1" isverify="false" isnull="true"/>
+    <entry name="Partition" type="uint32" desc="小区ID" test="2" isverify="false" isnull="true"/>
+    <entry name="PlatId" type="uint8" desc="平台：IOS（0），安卓（1）" test="0" isverify="false" isnull="true"/>
+    <entry name="OpenId" type="string" size="MAX_OPENID_LEN" desc="openid" test="732945400" isverify="false" isnull="true"/>
+    <entry name="RoleId" type="uint64" desc="人物ID" test="3" isverify="false" isnull="true"/>
+    <entry name="Pos" type="uint32" desc="剑心位置ID" test="4" isverify="false" isnull="true"/>
+    <entry name="Value" type="int32" desc="等级设置：填1则表示1级，2则表示2级" test="5" isverify="false" isnull="true"/>
+    <entry name="Source" type="uint32" desc="渠道号，由前端生成，不需要填写" isverify="false" isnull="true"/>
+    <entry name="Serial" type="string" size="MAX_SERIAL_LEN" desc="流水号，由前端生成，不需要填写" isverify="false" isnull="true"/>
+  </struct>
+  <!--设置剑心等级应答-->
+  <struct name="DoSetSwordLevelRsp" id="IDIP_DO_SET_SWORD_LEVEL_RSP" desc="设置剑心等级应答">
+    <entry name="Result" type="int32" desc="结果：（0）成功，（其他）失败" test="0" isverify="false" isnull="true"/>
+    <entry name="RetMsg" type="string" size="MAX_RETMSG_LEN" desc="返回消息" test="success" isverify="false" isnull="true"/>
+  </struct>
+  <!--设置宠物激活请求-->
+  <struct name="DoSetPetActiveReq" id="IDIP_DO_SET_PET_ACTIVE_REQ" desc="设置宠物激活请求">
+    <entry name="AreaId" type="uint32" desc="服务器：微信（1），手Q（2）" test="1" isverify="false" isnull="true"/>
+    <entry name="Partition" type="uint32" desc="小区ID" test="2" isverify="false" isnull="true"/>
+    <entry name="PlatId" type="uint8" desc="平台：IOS（0），安卓（1）" test="0" isverify="false" isnull="true"/>
+    <entry name="OpenId" type="string" size="MAX_OPENID_LEN" desc="openid" test="732945400" isverify="false" isnull="true"/>
+    <entry name="PetId" type="uint64" desc="宠物ID" test="3" isverify="false" isnull="true"/>
+    <entry name="Source" type="uint32" desc="渠道号，由前端生成，不需要填写" isverify="false" isnull="true"/>
+    <entry name="Serial" type="string" size="MAX_SERIAL_LEN" desc="流水号，由前端生成，不需要填写" isverify="false" isnull="true"/>
+  </struct>
+  <!--设置宠物激活应答-->
+  <struct name="DoSetPetActiveRsp" id="IDIP_DO_SET_PET_ACTIVE_RSP" desc="设置宠物激活应答">
+    <entry name="Result" type="int32" desc="结果：（0）成功，（其他）失败" test="0" isverify="false" isnull="true"/>
+    <entry name="RetMsg" type="string" size="MAX_RETMSG_LEN" desc="返回消息" test="success" isverify="false" isnull="true"/>
+  </struct>
+  <!--清零数据请求-->
+  <struct name="DoClearDataReq" id="IDIP_DO_CLEAR_DATA_REQ" desc="清零数据请求">
+    <entry name="AreaId" type="uint32" desc="服务器：微信（1），手Q（2）" test="1" isverify="false" isnull="true"/>
+    <entry name="Partition" type="uint32" desc="小区ID" test="2" isverify="false" isnull="true"/>
+    <entry name="PlatId" type="uint8" desc="平台：IOS（0），安卓（1）" test="0" isverify="false" isnull="true"/>
+    <entry name="OpenId" type="string" size="MAX_OPENID_LEN" desc="openid" test="732945400" isverify="false" isnull="true"/>
+    <entry name="ClearCoin" type="uint8" desc="铜钱清零：否（0），是（1）" test="1" isverify="false" isnull="true"/>
+    <entry name="ClearPhysical" type="uint8" desc="体力清零：否（0），是（1）" test="0" isverify="false" isnull="true"/>
+    <entry name="ClearHeart" type="uint8" desc="爱心清零：否（0），是（1） " test="1" isverify="false" isnull="true"/>
+    <entry name="Type" type="uint32" desc="需求类型" test="2" isverify="false" isnull="true"/>
+    <entry name="Reason" type="string" size="MAX_REASON_LEN" desc="操作原因" test="test" isverify="false" isnull="true"/>
+    <entry name="Source" type="uint32" desc="渠道号，由前端生成，不需填写" isverify="false" isnull="true"/>
+    <entry name="Serial" type="string" size="MAX_SERIAL_LEN" desc="流水号，由前端生成，不需填写" isverify="false" isnull="true"/>
+  </struct>
+  <!--清零数据应答-->
+  <struct name="DoClearDataRsp" id="IDIP_DO_CLEAR_DATA_RSP" desc="清零数据应答">
+    <entry name="Result" type="int32" desc="结果：0 成功，其它失败" test="0" isverify="false" isnull="true"/>
+    <entry name="RetMsg" type="string" size="MAX_RETMSG_LEN" desc="返回消息" test="success" isverify="false" isnull="true"/>
+  </struct>
+  <!--发放全区全服邮件请求-->
+  <struct name="DoSendMailAllReq" id="IDIP_DO_SEND_MAIL_ALL_REQ" desc="发放全区全服邮件请求">
+    <entry name="AreaId" type="uint32" desc="服务器：微信（1），手Q（2）" test="1" isverify="false" isnull="true"/>
+    <entry name="Partition" type="uint32" desc="小区ID" test="3" isverify="false" isnull="true"/>
+    <entry name="PlatId" type="uint8" desc="平台：IOS（0），安卓（1）" test="0" isverify="false" isnull="true"/>
+    <entry name="MailTitle" type="string" size="MAX_MAILTITLE_LEN" desc="邮件标题" test="test2" isverify="false" isnull="true"/>
+    <entry name="MailContent" type="string" size="MAX_MAILCONTENT_LEN" desc="邮件内容" test="test3" isverify="false" isnull="true"/>
+    <entry name="SendTime" type="uint64" desc="邮件发送时间" test="1408066963" isverify="false" isnull="true"/>
+    <entry name="EndTime" type="uint64" desc="邮件自动删除时间" test="1408066963" isverify="false" isnull="true"/>
+    <entry name="ItemId1" type="uint64" desc=" 邮件赠送道具1ID" test="1" isverify="false" isnull="true"/>
+    <entry name="ItemNum1" type="uint32" desc="邮件赠送道具1数量" test="1" isverify="false" isnull="true"/>
+    <entry name="ItemId2" type="uint64" desc=" 邮件赠送道具2ID" test="2" isverify="false" isnull="true"/>
+    <entry name="ItemNum2" type="uint32" desc="邮件赠送道具2数量" test="2" isverify="false" isnull="true"/>
+    <entry name="ItemId3" type="uint64" desc=" 邮件赠送道具3ID" test="3" isverify="false" isnull="true"/>
+    <entry name="ItemNum3" type="uint32" desc="邮件赠送道具3数量" test="3" isverify="false" isnull="true"/>
+    <entry name="ItemId4" type="uint64" desc=" 邮件赠送道具4ID" test="4" isverify="false" isnull="true"/>
+    <entry name="ItemNum4" type="uint32" desc="邮件赠送道具4数量" test="4" isverify="false" isnull="true"/>
+    <entry name="Source" type="uint32" desc="渠道号，由前端生成，不需要填写" isverify="false" isnull="true"/>
+    <entry name="Serial" type="string" size="MAX_SERIAL_LEN" desc="流水号，由前端生成，不需要填写" isverify="false" isnull="true"/>
+  </struct>
+  <!--发放全区全服邮件应答-->
+  <struct name="DoSendMailAllRsp" id="IDIP_DO_SEND_MAIL_ALL_RSP" desc="发放全区全服邮件应答">
+    <entry name="Result" type="int32" desc="结果（0）成功" test="0" isverify="false" isnull="true"/>
+    <entry name="RetMsg" type="string" size="MAX_RETMSG_LEN" desc="返回消息" test="success" isverify="false" isnull="true"/>
+  </struct>
+  <!--查询走马灯公告请求-->
+  <struct name="QueryGameLampNoticeReq" id="IDIP_QUERY_GAME_LAMP_NOTICE_REQ" desc="查询走马灯公告请求">
+    <entry name="AreaId" type="uint32" desc="服务器：微信（1），手Q（2）" test="1" isverify="false" isnull="true"/>
+    <entry name="Partition" type="uint32" desc="小区ID" test="2" isverify="false" isnull="true"/>
+    <entry name="PlatId" type="uint8" desc="平台：IOS（0），安卓（1）" test="0" isverify="false" isnull="true"/>
+  </struct>
+  <!--查询走马灯公告应答-->
+  <struct name="QueryGameLampNoticeRsp" id="IDIP_QUERY_GAME_LAMP_NOTICE_RSP" desc="查询走马灯公告应答">
+    <entry name="GameLampNoticeList_count" type="uint32" desc="走马灯公告信息列表的最大数量" test="1" isverify="false" isnull="true"/>
+    <entry name="GameLampNoticeList" type="SGameLampNoticeInfo" size="MAX_GAMELAMPNOTICELIST_NUM" param="vector,struct,GameLampNoticeList_count,1,|, " desc="走马灯公告信息列表" isverify="false" isnull="true"/>
+  </struct>
+  <!--删除公告请求-->
+  <struct name="DoDelNoticeReq" id="IDIP_DO_DEL_NOTICE_REQ" desc="删除公告请求">
+    <entry name="AreaId" type="uint32" desc="服务器：微信（1），手Q（2）" test="1" isverify="false" isnull="true"/>
+    <entry name="Partition" type="uint32" desc="小区ID" test="2" isverify="false" isnull="true"/>
+    <entry name="PlatId" type="uint8" desc="平台：IOS（0），安卓（1）" test="0" isverify="false" isnull="true"/>
+    <entry name="NoticeId" type="uint64" desc="公告ID" test="3" isverify="false" isnull="true"/>
+    <entry name="Source" type="uint32" desc="渠道号，由前端生成，不需要填写" isverify="false" isnull="true"/>
+    <entry name="Serial" type="string" size="MAX_SERIAL_LEN" desc="流水号，由前端生成，不需要填写" isverify="false" isnull="true"/>
+  </struct>
+  <!--删除公告应答-->
+  <struct name="DoDelNoticeRsp" id="IDIP_DO_DEL_NOTICE_RSP" desc="删除公告应答">
+    <entry name="Result" type="int32" desc="结果" test="0" isverify="false" isnull="true"/>
+    <entry name="RetMsg" type="string" size="MAX_RETMSG_LEN" desc="返回消息" test="success" isverify="false" isnull="true"/>
+  </struct>
+  <!--修改vip等级请求-->
+  <struct name="DoUpdateVipReq" id="IDIP_DO_UPDATE_VIP_REQ" desc="修改vip等级请求">
+    <entry name="AreaId" type="uint32" desc="服务器：微信（1），手Q（2），游客（5）" test="1" isverify="false" isnull="true"/>
+    <entry name="Partition" type="uint32" desc="小区ID" test="2" isverify="false" isnull="true"/>
+    <entry name="PlatId" type="uint8" desc="平台：IOS（0），安卓（1）" test="0" isverify="false" isnull="true"/>
+    <entry name="OpenId" type="string" size="MAX_OPENID_LEN" desc="openid" test="732945400" isverify="false" isnull="true"/>
+    <entry name="Value" type="uint32" desc="修改数量" test="4" isverify="false" isnull="true"/>
+    <entry name="Source" type="uint32" desc="渠道号，由前端生成，不需要填写" isverify="false" isnull="true"/>
+    <entry name="Serial" type="string" size="MAX_SERIAL_LEN" desc="流水号，由前端生成，不需要填写" isverify="false" isnull="true"/>
+  </struct>
+  <!--修改vip等级应答-->
+  <struct name="DoUpdateVipRsp" id="IDIP_DO_UPDATE_VIP_RSP" desc="修改vip等级应答">
+    <entry name="Result" type="int32" desc="结果：（0）成功，（其他）失败" test="0" isverify="false" isnull="true"/>
+    <entry name="RetMsg" type="string" size="MAX_RETMSG_LEN" desc="返回消息" test="success" isverify="false" isnull="true"/>
+  </struct>
+  <!--查询深渊挂关卡进度请求-->
+  <struct name="QueryAbysspassStateReq" id="IDIP_QUERY_ABYSSPASS_STATE_REQ" desc="查询深渊挂关卡进度请求">
+    <entry name="AreaId" type="uint32" desc="服务器：微信（1），手Q（2），游客（5）" test="1" isverify="false" isnull="true"/>
+    <entry name="Partition" type="uint32" desc="小区ID" test="2" isverify="false" isnull="true"/>
+    <entry name="PlatId" type="uint8" desc="平台：IOS（0），安卓（1）" test="0" isverify="false" isnull="true"/>
+    <entry name="OpenId" type="string" size="MAX_OPENID_LEN" desc="openid" test="732945400" isverify="false" isnull="true"/>
+  </struct>
+  <!--查询深渊挂关卡进度应答-->
+  <struct name="QueryAbysspassStateRsp" id="IDIP_QUERY_ABYSSPASS_STATE_RSP" desc="查询深渊挂关卡进度应答">
+    <entry name="Status" type="int32" desc="深渊关卡进度" test="1" isverify="false" isnull="true"/>
+  </struct>
+  <!--查询战力请求-->
+  <struct name="QueryFightReq" id="IDIP_QUERY_FIGHT_REQ" desc="查询战力请求">
+    <entry name="AreaId" type="uint32" desc="服务器：微信（1），手Q（2），游客（5）" test="1" isverify="false" isnull="true"/>
+    <entry name="Partition" type="uint32" desc="小区ID" test="2" isverify="false" isnull="true"/>
+    <entry name="PlatId" type="uint8" desc="平台：IOS（0），安卓（1）" test="0" isverify="false" isnull="true"/>
+    <entry name="OpenId" type="string" size="MAX_OPENID_LEN" desc="openid" test="732945400" isverify="false" isnull="true"/>
+  </struct>
+  <!--查询战力应答-->
+  <struct name="QueryFightRsp" id="IDIP_QUERY_FIGHT_RSP" desc="查询战力应答">
+    <entry name="Fight" type="int32" desc="玩家战力" test="1" isverify="false" isnull="true"/>
+  </struct>
+</metalib>

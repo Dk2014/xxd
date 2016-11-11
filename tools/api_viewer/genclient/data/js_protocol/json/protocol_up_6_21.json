@@ -1,0 +1,1 @@
+{"action_name":"use_ghost","module_name":"battle","protocol":[{"name":"is_attacker","type":"bool"},{"name":"position","type":"int8"}]}

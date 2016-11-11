@@ -1,0 +1,1 @@
+{"action_name":"get_event_arena_rank","module_name":"event","protocol":[{"name":"rank","type":"int32"}]}

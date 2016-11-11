@@ -1,0 +1,1 @@
+{"action_name":"get_mission_total_star_info","module_name":"mission","protocol":[{"name":"town_id","type":"int16"},{"name":"total_star","type":"int16"},{"name":"box_type_list","type":"list8","fields":[{"name":"box_type","type":"int8"}]},{"name":"missionstars","type":"list8","fields":[{"name":"missionid","type":"int16"},{"name":"stars","type":"int16"}]}]}

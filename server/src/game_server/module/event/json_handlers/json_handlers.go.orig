@@ -1,0 +1,108 @@
+package json_handlers
+
+import (
+	"core/net"
+	"core/time"
+	"encoding/json"
+	"game_server/api/protocol/event_api"
+	. "game_server/config"
+	"game_server/dat/event_dat"
+	"game_server/dat/mail_dat"
+	"game_server/dat/player_dat"
+	"game_server/module"
+	"game_server/module/rpc"
+	"game_server/tlog"
+)
+
+type JsonEventHandler interface {
+	GetJsonEventStatus(session *net.Session, page int32) event_api.GetEvents_Out_Events
+	GetJsonEventAward(session *net.Session, page int32, params *event_api.GetEventAward_In)
+}
+
+var JsonEventHandlers map[int16]JsonEventHandler = make(map[int16]JsonEventHandler)
+
+func HandleJsonEventsStatus(session *net.Session, out *event_api.GetEvents_Out) {
+	for kind, eventItemByKind := range event_dat.JsonEvents {
+		for page, eventItem := range eventItemByKind {
+			if eventItem.CheckStatus(event_dat.NOT_DISPOSE) {
+				handler := JsonEventHandlers[kind]
+				if handle_result := handler.GetJsonEventStatus(session, page); handle_result.EventId > 0 {
+					out.Events = append(out.Events, handle_result)
+				}
+			} else {
+				// 活动过期的特殊处理的地方写在这里
+				switch kind {
+				case event_dat.JSON_EVENT_NEW_YEAR:
+					if eventinfo, exists := event_dat.GetJsonEventInfoById(event_dat.JSON_EVENT_NEW_YEAR, event_dat.EVENT_NEW_YEAR_INVAILD_PAGE); exists {
+						disposeTime := eventinfo.DisposeUnixTime
+						if eventinfo.IsRelative {
+							disposeTime += ServerCfg.ServerOpenTime
+						}
+						duration := time.GetNowTime() - disposeTime
+						if duration > 0 && duration < event_dat.EVENT_NEW_YEAR_EMAIL_LIMIT_TIME*30*3600*24 {
+							state := module.State(session)
+							jsonEventRecord, exists := state.JsonEventsState.GetStatus(event_dat.JSON_EVENT_NEW_YEAR, event_dat.EVENT_NEW_YEAR_INVAILD_PAGE)
+							var awarded int32
+							if exists {
+								awarded = jsonEventRecord.Awarded
+							}
+							if record := state.Database.Lookup.PlayerNewYearConsumeRecord(state.PlayerId); record != nil {
+								recordArr := make(map[string]int)
+								json.Unmarshal([]byte(record.ConsumeRecord), &recordArr)
+								if attachments, existss := _is_over(eventinfo, recordArr, awarded); existss {
+									//执行发送邮件逻辑
+									mail := new(mail_dat.MailRedPaper)
+									mail.Attachments = attachments
+									rpc.RemoteMailSend(state.PlayerId, mail)
+								}
+							}
+							// 邮件发送完之后更新记录，明天开启新得新年活动 别忘记修改新年活动page
+							days := time.GetNowDayFromUnix(eventinfo.EndUnixTime) - time.GetNowDayFromUnix(eventinfo.StartUnixTime) + 1
+							awarded = 1<<uint(days) - 1
+							state.JsonEventsState.ChangeStatus(event_dat.JSON_EVENT_NEW_YEAR, event_dat.EVENT_NEW_YEAR_INVAILD_PAGE, 0, awarded)
+							state.JsonEventsState.Save(state.Database)
+						}
+
+					}
+				}
+			}
+		}
+	}
+}
+
+func HandleJsonEventAward(session *net.Session, params *event_api.GetEventAward_In) {
+	kind := params.EventId
+	page := params.Page
+	if jsonEventInfosByKind, ok := event_dat.JsonEvents[kind]; ok {
+		if jsonEventInfo, ok2 := jsonEventInfosByKind[page]; ok2 {
+			if jsonEventInfo.CheckStatus(event_dat.NOT_DISPOSE) {
+				handler := JsonEventHandlers[kind]
+				handler.GetJsonEventAward(session, page, params)
+			}
+		}
+	}
+}
+
+func addAwardContents(state *module.SessionState, award *event_dat.EventDefaultAward, xdEventType int32, xdEventParam string) {
+	if award.Ingot > 0 {
+		module.Player.IncMoney(state.Database, state.MoneyState, int64(award.Ingot), player_dat.INGOT, tlog.MFR_EVENT_CENTER, xdEventType, xdEventParam)
+	}
+	if award.Coin > 0 {
+		module.Player.IncMoney(state.Database, state.MoneyState, int64(award.Coin), player_dat.COINS, tlog.MFR_EVENT_CENTER, xdEventType, xdEventParam)
+	}
+	if award.Heart > 0 {
+		module.Heart.IncHeart(state, award.Heart)
+	}
+	table := map[int16]int16{
+		award.Item1Id: award.Item1Num,
+		award.Item2Id: award.Item2Num,
+		award.Item3Id: award.Item3Num,
+		award.Item4Id: award.Item4Num,
+		award.Item5Id: award.Item5Num,
+	}
+	for id, n := range table {
+		if id > 0 && n > 0 {
+			module.Item.AddItem(state.Database, id, int16(n), tlog.IFR_EVENT_CENTER, xdEventType, xdEventParam)
+		}
+	}
+}

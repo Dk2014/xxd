@@ -1,0 +1,531 @@
+package event
+
+import (
+	"core/net"
+	"core/time"
+	"encoding/json"
+	"fmt"
+	"game_server/api/protocol/mission_api"
+	"game_server/api/protocol/notify_api"
+	. "game_server/config"
+	"game_server/dat/event_dat"
+	"game_server/dat/mail_dat"
+	"game_server/mdb"
+	"game_server/module"
+	"game_server/module/rpc"
+	"math/rand"
+	gotime "time"
+)
+
+func init() {
+	module.Event = EventMod{}
+}
+
+type EventMod struct {
+}
+
+func (mod EventMod) LevelUp(db *mdb.Database, level, newLevel int16) {
+	var max int16
+	eventInfo, _ := event_dat.GetEventInfoById(event_dat.EVENT_LEVEL_AWARD)
+	if event_dat.CheckEventTime(eventInfo, event_dat.NOT_END) {
+		for i := level + 1; i <= newLevel; i++ {
+			_, ok := event_dat.GetEventLevelUpAward(i)
+			if ok {
+				max = i
+			}
+		}
+		//更新等级活动状态记录
+		if max > 0 {
+			if session, ok := module.Player.GetPlayerOnline(db.PlayerId()); ok {
+				session.Send(&notify_api.SendEventCenterChange_Out{}) //发送活动中心通知
+				state := module.State(session)
+				state.EventsState.UpdateMax(state.Database, event_dat.EVENT_LEVEL_AWARD, int32(max))
+			}
+		}
+	}
+}
+
+func (mod EventMod) UpdatePlayerLoginAwardInfo(db *mdb.Database) {
+	//屏蔽七天累计登录奖励
+	return
+	updateLoginAwardInfo(db)
+}
+
+func (mod EventMod) UpdateEventActivityStatus(session *net.Session, decreVal int16) {
+	state := module.State(session)
+	activit, isRefresh := module.AddPlayerActivity(state.Database, int32(decreVal)) //添加活跃度
+
+	eventInfo, _ := event_dat.GetEventInfoById(event_dat.EVENT_PHYSICAL_AWARDS)
+	if event_dat.CheckEventTime(eventInfo, event_dat.NOT_END) {
+		state := module.State(session)
+		if isRefresh {
+			state.EventsState.ClearState(state.Database, event_dat.EVENT_PHYSICAL_AWARDS)
+		}
+		eventInfo := state.EventsState.GetPlayerEventInfoById(event_dat.EVENT_PHYSICAL_AWARDS)
+		nextLevel := event_dat.GetNextPhysical(eventInfo.MaxAward)
+		if nextLevel <= activit && nextLevel > 0 { //nextLevel在超过活跃度最大限制时返回始终为0
+			state.EventsState.UpdateMax(state.Database, event_dat.EVENT_PHYSICAL_AWARDS, nextLevel)
+			session.Send(&notify_api.SendEventCenterChange_Out{})
+		}
+	}
+}
+
+func (mod EventMod) GetVersion() int32 {
+	return eventExt.Version
+}
+
+func (mod EventMod) GetMonthCardPresentIngot() int64 {
+	return int64(eventExt.Config.MonthCardIngot)
+}
+
+func (mod EventMod) UpdateEventsIngot(db *mdb.Database, val int64, isIn bool) {
+	event_ingot_change(db, val, isIn)
+}
+
+func (mod EventMod) GetEventsIngot(db *mdb.Database, isIn bool) int64 {
+	return get_event_ingot(db, isIn)
+}
+
+func (mod EventMod) UpdateFirstRecharge(db *mdb.Database) {
+
+	eventInfo, _ := event_dat.GetEventInfoById(event_dat.EVENT_FIRST_RECHARGE_DAILY)
+	//活动是否过期
+	if event_dat.CheckEventTime(eventInfo, event_dat.NOT_END) {
+
+		if session, ok := module.Player.GetPlayerOnline(db.PlayerId()); ok {
+			state := module.State(session)
+			eventRecord := state.EventsState.GetPlayerEventInfoById(event_dat.EVENT_FIRST_RECHARGE_DAILY)
+			//如果今天没有更新过
+			if !time.IsToday(eventRecord.LastUpdated) {
+				state.EventsState.UpdateAwardedTime(state.Database, event_dat.EVENT_FIRST_RECHARGE_DAILY)
+				session.Send(&notify_api.SendEventCenterChange_Out{})
+			}
+		}
+	}
+}
+
+func (mod EventMod) UpdateJsonEventTenDraw(session *net.Session) {
+	state := module.State(session)
+	isChanged := false
+	if events, ok := event_dat.JsonEvents[event_dat.JSON_EVENT_TEN_DRAW]; ok && len(events) > 0 {
+		for page, eventInfo := range events {
+			if eventInfo.CheckStatus(event_dat.NOT_END) {
+				status, exists := state.JsonEventsState.GetStatus(event_dat.JSON_EVENT_TEN_DRAW, page)
+				if exists {
+					state.JsonEventsState.ChangeStatus(event_dat.JSON_EVENT_TEN_DRAW, page, status.Process+1, status.Awarded)
+				} else {
+					state.JsonEventsState.ChangeStatus(event_dat.JSON_EVENT_TEN_DRAW, page, 1, 0)
+				}
+				isChanged = true
+			}
+		}
+	}
+	if isChanged {
+		state.JsonEventsState.Save(state.Database)
+		session.Send(&notify_api.SendEventCenterChange_Out{})
+	}
+}
+
+func (mod EventMod) UpdateJsonEventTotalRecharge(db *mdb.Database, val int32) {
+	if session, ok := module.Player.GetPlayerOnline(db.PlayerId()); ok {
+		state := module.State(session)
+		isChanged := false
+		if events, ok := event_dat.JsonEvents[event_dat.JSON_EVENT_TOTAL_RECHARGE]; ok && len(events) > 0 {
+			for page, eventInfo := range events {
+				if eventInfo.CheckStatus(event_dat.NOT_END) {
+					status, exists := state.JsonEventsState.GetStatus(event_dat.JSON_EVENT_TOTAL_RECHARGE, page)
+					if exists {
+						state.JsonEventsState.ChangeStatus(event_dat.JSON_EVENT_TOTAL_RECHARGE, page, status.Process+val, status.Awarded)
+					} else {
+						state.JsonEventsState.ChangeStatus(event_dat.JSON_EVENT_TOTAL_RECHARGE, page, val, 0)
+					}
+					isChanged = true
+				}
+			}
+		}
+		if isChanged {
+			state.JsonEventsState.Save(state.Database)
+			if session, ok := module.Player.GetPlayerOnline(db.PlayerId()); ok {
+				session.Send(&notify_api.SendEventCenterChange_Out{})
+			}
+		}
+	}
+}
+
+func (mod EventMod) UpdateJsonEventTotalConsume(db *mdb.Database, val int32) {
+	if session, ok := module.Player.GetPlayerOnline(db.PlayerId()); ok {
+		state := module.State(session)
+		isChanged := false
+		if events, ok := event_dat.JsonEvents[event_dat.JSON_EVENT_TOTAL_CONSUME]; ok && len(events) > 0 {
+			for page, eventInfo := range events {
+				if eventInfo.CheckStatus(event_dat.NOT_END) {
+					status, exists := state.JsonEventsState.GetStatus(event_dat.JSON_EVENT_TOTAL_CONSUME, page)
+					if exists {
+						state.JsonEventsState.ChangeStatus(event_dat.JSON_EVENT_TOTAL_CONSUME, page, status.Process+val, status.Awarded)
+					} else {
+						state.JsonEventsState.ChangeStatus(event_dat.JSON_EVENT_TOTAL_CONSUME, page, val, 0)
+					}
+					isChanged = true
+				}
+			}
+		}
+		// /*if isChanged {
+		// 	state.JsonEventsState.Save(state.Database)
+		// }
+		// */
+		// //累计单挑消费
+		// if events, ok := event_dat.JsonEvents[event_dat.JSON_EVENT_SINGLE_CONSUME]; ok && len(events) > 0 {
+		// 	for page, eventInfo := range events {
+		// 		if eventInfo.CheckStatus(event_dat.NOT_END) {
+		// 			status, _ := state.JsonEventsState.GetStatus(event_dat.JSON_EVENT_SINGLE_CONSUME, page)
+		// 			state.JsonEventsState.ChangeStatus(event_dat.JSON_EVENT_SINGLE_CONSUME, page, status.Process+val, status.Awarded)
+		// 			isChanged = true
+		// 		}
+		// 	}
+		// }
+
+		if isChanged {
+			if session, ok := module.Player.GetPlayerOnline(db.PlayerId()); ok {
+				session.Send(&notify_api.SendEventCenterChange_Out{})
+			}
+			state.JsonEventsState.Save(state.Database)
+		}
+
+	}
+}
+
+func (mod EventMod) UpdateJsonEventSingleConsume(db *mdb.Database, val int32) {
+	//累计单挑消费
+	if session, ok := module.Player.GetPlayerOnline(db.PlayerId()); ok {
+		state := module.State(session)
+		isChanged := false
+		if events, ok := event_dat.JsonEvents[event_dat.JSON_EVENT_SINGLE_CONSUME]; ok && len(events) > 0 {
+			for page, eventInfo := range events {
+				if eventInfo.CheckStatus(event_dat.NOT_END) {
+					status, exists := state.JsonEventsState.GetStatus(event_dat.JSON_EVENT_SINGLE_CONSUME, page)
+					if !exists {
+						status = &module.JsonEventRecordItem{
+							Type: int16(event_dat.JSON_EVENT_SINGLE_CONSUME),
+							Page: page,
+						}
+					}
+
+					state.JsonEventsState.ChangeStatus(event_dat.JSON_EVENT_SINGLE_CONSUME, page, status.Process+val, status.Awarded)
+					isChanged = true
+				}
+			}
+		}
+
+		if isChanged {
+			if session, ok := module.Player.GetPlayerOnline(db.PlayerId()); ok {
+				session.Send(&notify_api.SendEventCenterChange_Out{})
+			}
+			state.JsonEventsState.Save(state.Database)
+		}
+	}
+}
+
+func (mod EventMod) UpdateJsonFirstRecharge(db *mdb.Database) {
+
+	if session, ok := module.Player.GetPlayerOnline(db.PlayerId()); ok {
+		state := module.State(session)
+		isChanged := false
+		if events, ok := event_dat.JsonEvents[event_dat.JSON_EVENT_FIRST_RECHAGE_DAILY]; ok && len(events) > 0 {
+			for page, eventInfo := range events {
+				if eventInfo.CheckStatus(event_dat.NOT_END) {
+					status, exists := state.JsonEventsState.GetStatus(event_dat.JSON_EVENT_FIRST_RECHAGE_DAILY, page)
+					if !exists {
+						status = &module.JsonEventRecordItem{
+							Type: int16(event_dat.JSON_EVENT_FIRST_RECHAGE_DAILY),
+							Page: page,
+						}
+					}
+
+					if !time.IsToday(status.LastUpdated) { //今天没有更新过才算首冲
+						state.JsonEventsState.ChangeStatus(event_dat.JSON_EVENT_FIRST_RECHAGE_DAILY, page, status.Process, status.Awarded)
+						isChanged = true
+					}
+				}
+			}
+		}
+		if isChanged {
+			state.JsonEventsState.Save(state.Database)
+		}
+	}
+}
+
+func (mod EventMod) UpdateJsonEventArenaRank(db *mdb.Database, rank int32) {
+	if events, ok := event_dat.JsonEvents[event_dat.JSON_EVENT_ARENA_RANK]; ok && len(events) > 0 {
+		for page, eventInfo := range events {
+			if eventInfo.CheckStatus(event_dat.NOT_END) {
+				if session, ok := module.Player.GetPlayerOnline(db.PlayerId()); ok {
+					isChanged := false
+					state := module.State(session)
+					status, exists := state.JsonEventsState.GetStatus(event_dat.JSON_EVENT_ARENA_RANK, page)
+					if !exists {
+						status = &module.JsonEventRecordItem{
+							Type: int16(event_dat.JSON_EVENT_ARENA_RANK),
+							Page: page,
+						}
+					}
+					if rank != status.Process {
+						state.JsonEventsState.ChangeStatus(event_dat.JSON_EVENT_ARENA_RANK, page, rank, status.Awarded)
+						isChanged = true
+					}
+					if isChanged {
+						mdb.GlobalExecute(func(globalDB *mdb.Database) {
+							globalDB.AgentExecute(state.PlayerId, func(agentDB *mdb.Database) {
+								state.JsonEventsState.Save(agentDB)
+							})
+						})
+					}
+				} else { //不在线的情况
+					if events, ok := event_dat.JsonEvents[event_dat.JSON_EVENT_ARENA_RANK]; ok && len(events) > 0 {
+						newEvent := &module.JsonEventRecord{}
+						newEvent.Load(db)
+						newEvent.ChangeStatus(event_dat.JSON_EVENT_ARENA_RANK, page, rank, 0)
+						mdb.GlobalExecute(func(globalDB *mdb.Database) {
+							globalDB.AgentExecute(db.PlayerId(), func(agentDB *mdb.Database) {
+								newEvent.Save(agentDB)
+							})
+						})
+					}
+				}
+			}
+		}
+	}
+}
+
+func (mod EventMod) GetDragonBallForEvent(session *net.Session, isAuto bool) (ballId int16) {
+	state := module.State(session)
+	if !isAuto {
+		if state.MissionLevelState != nil {
+			if (state.MissionLevelState.LevelType != int8(mission_api.BATTLE_TYPE_MISSION) && state.MissionLevelState.LevelType != int8(mission_api.BATTLE_TYPE_HARD)) || !state.MissionLevelState.HasKilledThoseMustDie() {
+				return
+			}
+		}
+	}
+
+	now := time.GetNowTime()
+	info := event_dat.GetEventDragonBallConfig()
+	//log.Infof("enter here %d", info.Ball1)
+	if info != nil && info.StartUnixTime <= now && info.DropUnixTime >= now {
+		var result int16
+		// 活动期间
+		//if info.DropUnixTime <= time.GetNowTime() {
+		// TODO 掉落MOBI龙珠
+		chance := rand.Intn(100) + 1
+		ballArr := [4]int8{info.Ball1, info.Ball2, info.Ball3, info.Ball4}
+		ballIdArr := [4]int16{info.Ball1Id, info.Ball2Id, info.Ball3Id, info.Ball4Id}
+		for key, val := range ballArr {
+			chance -= int(val)
+			if chance <= 0 {
+				result = ballIdArr[key]
+				break
+			}
+		}
+		ballId = result
+		//}
+	}
+	return
+}
+
+func (mod EventMod) ChangeNewYearConsumeStatus(db *mdb.Database, ingot int32) {
+	// TODO 根据活动时间来确定第几天的消费
+	event_info, exists := event_dat.GetJsonEventInfoById(event_dat.JSON_EVENT_NEW_YEAR, event_dat.EVENT_NEW_YEAR_INVAILD_PAGE)
+	if exists && event_info.CheckStatus(event_dat.NOT_END) {
+		// 春节活动期间的消费
+		startTime := event_info.StartUnixTime
+		if event_info.IsRelative {
+			startTime += ServerCfg.ServerOpenTime
+		}
+		day_order := time.GetNowDay() - time.GetNowDayFromUnix(startTime) + 1
+		key := fmt.Sprintf("%d-%d", gotime.Now().Year(), day_order)
+		record := db.Lookup.PlayerNewYearConsumeRecord(db.PlayerId())
+		if record != nil {
+			//执行更新
+			eventRecord := make(map[string]int)
+			json.Unmarshal([]byte(record.ConsumeRecord), &eventRecord)
+			if _, ok := eventRecord[key]; ok {
+				eventRecord[key] += int(ingot)
+			} else {
+				eventRecord[key] = int(ingot)
+			}
+			bytes, _ := json.Marshal(eventRecord)
+			record.ConsumeRecord = string(bytes)
+			db.Update.PlayerNewYearConsumeRecord(record)
+		} else {
+			//执行插入
+			eventRecord := make(map[string]int)
+			eventRecord[key] = int(ingot)
+			bytes, _ := json.Marshal(eventRecord)
+			record = &mdb.PlayerNewYearConsumeRecord{
+				Pid: db.PlayerId(),
+			}
+			record.ConsumeRecord = string(bytes)
+			db.Insert.PlayerNewYearConsumeRecord(record)
+		}
+	}
+}
+
+func (mod EventMod) UpdateTotalSigninStatus(state *module.SessionState, lastLoginTime int64) {
+	if events, ok := event_dat.JsonEvents[event_dat.JSON_EVENT_TOTAL_SIGNIN]; ok && len(events) > 0 {
+		for page, eventInfo := range events {
+			if eventInfo.CheckStatus(event_dat.NOT_END) {
+				//if session, ok := module.Player.GetPlayerOnline(db.PlayerId()); ok {
+				isChanged := false
+				status, exists := state.JsonEventsState.GetStatus(event_dat.JSON_EVENT_TOTAL_SIGNIN, page)
+				if !exists {
+					status = &module.JsonEventRecordItem{
+						Type: int16(event_dat.JSON_EVENT_TOTAL_SIGNIN),
+						Page: page,
+					}
+				}
+				if !time.IsToday(lastLoginTime) {
+					state.JsonEventsState.ChangeStatus(event_dat.JSON_EVENT_TOTAL_SIGNIN, page, status.Process+1, status.Awarded)
+					isChanged = true
+				}
+				if isChanged {
+					//mdb.GlobalExecute(func(globalDB *mdb.Database) {
+					//	globalDB.AgentExecute(state.PlayerId, func(agentDB *mdb.Database) {
+					state.JsonEventsState.Save(state.Database)
+					//	})
+					//})
+				}
+			}
+		}
+	}
+}
+
+func (mod EventMod) CheckQQVIPGift(db *mdb.Database, status int16) {
+	eventInfo, _ := event_dat.GetEventInfoById(event_dat.EVENT_QQVIP_ADDITION)
+	if !event_dat.CheckEventTime(eventInfo, event_dat.NOT_END) {
+		return
+	}
+	record := db.Lookup.PlayerQqVipGift(db.PlayerId())
+	var mail_qqvip, mail_sqqvip bool
+	if status > 0 {
+		if record != nil {
+			//执行检查
+			if (status&(1<<event_dat.SUPER_QQ_VIP)) > 0 && record.Surper == 0 {
+				record.Surper = 1
+				mail_sqqvip = true
+			}
+			if (status&(1<<event_dat.QQ_VIP)) > 0 && record.Qqvip == 0 && record.Surper == 0 {
+				record.Qqvip = 1
+				mail_qqvip = true
+			}
+			db.Update.PlayerQqVipGift(record)
+		} else {
+			//需要发放
+			record = new(mdb.PlayerQqVipGift)
+			record.Pid = db.PlayerId()
+			if (status&(1<<event_dat.SUPER_QQ_VIP)) > 0 && record.Surper == 0 {
+				record.Surper = 1
+				mail_sqqvip = true
+			}
+			if (status&(1<<event_dat.QQ_VIP)) > 0 && record.Qqvip == 0 {
+				record.Qqvip = 1
+				mail_qqvip = true
+			}
+			db.Insert.PlayerQqVipGift(record)
+		}
+
+		if mail_sqqvip {
+			rpc.RemoteMailSend(db.PlayerId(), mail_dat.MailQQSvip{})
+		} else if mail_qqvip {
+			rpc.RemoteMailSend(db.PlayerId(), mail_dat.MailQQVip{})
+		}
+	}
+}
+
+func (mod EventMod) TencentCheckLoginAward(state *module.SessionState) {
+	db := state.Database
+	if events, ok := event_dat.JsonEvents[event_dat.JSON_EVENT_LOGIN_AWARD]; ok && len(events) > 0 {
+		for page, eventInfo := range events {
+			if eventInfo.CheckStatus(event_dat.NOT_END) {
+				var releative int64 = 0
+				if eventInfo.IsRelative {
+					releative = ServerCfg.ServerOpenTime
+				}
+				order_day := time.GetNowDay() - time.GetNowDayFromUnix(eventInfo.StartUnixTime+releative)
+				status, exists := state.JsonEventsState.GetStatus(event_dat.JSON_EVENT_LOGIN_AWARD, page)
+				need := false
+				if !exists {
+					// status = &module.JsonEventRecordItem{
+					// 	Type:        int16(event_dat.JSON_EVENT_LOGIN_AWARD),
+					// 	Page:        page,
+					// 	LastUpdated: time.GetNowTime(),
+					// }
+					need = true
+				} else {
+					if time.GetTodayZero() > status.LastUpdated && !time.IsToday(status.LastUpdated) {
+						need = true
+					}
+				}
+				if need {
+					_, award := eventInfo.GetGradeByIndex(int32(order_day))
+					if award != nil {
+						// 更新数据库
+						mdb.GlobalExecute(func(globalDB *mdb.Database) {
+							globalDB.AgentExecute(state.PlayerId, func(agentDB *mdb.Database) {
+								state.JsonEventsState.ChangeStatus(int16(event_dat.JSON_EVENT_LOGIN_AWARD), page, 0, 0)
+								state.JsonEventsState.Save(agentDB)
+							})
+						})
+
+						//邮件发奖励
+						rel_award := award.Award
+						attachments := makeAttachment(int64(rel_award.Coin), rel_award.Ingot, rel_award.Item1Id, rel_award.Item1Num, rel_award.Item2Id, rel_award.Item2Num, rel_award.Item3Id, rel_award.Item3Num, rel_award.Item4Id, rel_award.Item4Num, rel_award.Item5Id, rel_award.Item5Num)
+
+						module.Mail.SendMail(db, &mail_dat.EmptyMail{
+							MailId:      0,
+							Title:       eventInfo.LTitle,
+							Content:     eventInfo.Content,
+							Parameters:  "",
+							Attachments: attachments,
+							ExpireTime:  1,
+							Priority:    0,
+						})
+					}
+				}
+			}
+		}
+	}
+}
+
+func makeAttachment(Coin int64, Ingot, Item1Id, Item1Num, Item2Id, Item2Num, Item3Id, Item3Num, Item4Id, Item4Num, Item5Id, Item5Num int16) (attachs []*mail_dat.Attachment) {
+	if Ingot > 0 {
+		attachs = append(attachs, &mail_dat.Attachment{
+			AttachmentType: mail_dat.ATTACHMENT_INGOT,
+			ItemNum:        int64(Ingot),
+		})
+	}
+
+	if Coin > 0 {
+		attachs = append(attachs, &mail_dat.Attachment{
+			AttachmentType: mail_dat.ATTACHMENT_COINS,
+			ItemNum:        Coin,
+		})
+	}
+
+	table := map[int16]int16{
+		Item1Id: Item1Num,
+		Item2Id: Item2Num,
+		Item3Id: Item3Num,
+		Item4Id: Item4Num,
+		Item5Id: Item5Num,
+	}
+
+	for id, n := range table {
+		if id > 0 && n > 0 {
+			attachs = append(attachs, &mail_dat.Attachment{
+				AttachmentType: mail_dat.ATTACHMENT_ITEM,
+				ItemId:         id,
+				ItemNum:        int64(n),
+			})
+		}
+	}
+
+	return
+}

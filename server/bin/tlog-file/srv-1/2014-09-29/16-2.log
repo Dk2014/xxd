@@ -1,0 +1,21 @@
+PlayerLogin|1|2014-09-29 16:40:49|game_1_app_id|1|_test_id1003022414061086775|17|0|6343||HTML5||WiFi|0|0|0|0||0|||
+PlayerPhysicalFlow|1|2014-09-29 16:40:50|game_1_app_id|1|_test_id1003022414061086775|17|53|0|0|1|0
+PlayerLogin|1|2014-09-29 16:40:50|game_1_app_id|1|_test_id1003022414061086775|17|0|0.98|macos|intel|xxx|wifi|0|0|0.999999111|0|intel 001|1024|opengl 0.1|4.3|mac 10.94
+PlayerPhysicalFlow|1|2014-09-29 16:40:59|game_1_app_id|1|_test_id1003022414061086775|17|50|3|0|11|1
+PlayerMissionFlow|1|2014-09-29 16:40:59|game_1_app_id|1|_test_id1003022414061086775|17|0|25|140100|140100|0|0
+GameSvrState|2014-09-29 16:41:23|127.0.0.1
+PlayerLogout|1|2014-09-29 16:42:09|game_1_app_id|1|_test_id1003022414061086775|80|17|0|6343||HTML5||WiFi|0|0|0|0||0|||
+GameSvrState|2014-09-29 16:42:23|127.0.0.1
+PlayerLogin|1|2014-09-29 16:42:26|game_1_app_id|1|_test_id1003022414061086775|17|0|6343||HTML5||WiFi|0|0|0|0||0|||
+PlayerPhysicalFlow|1|2014-09-29 16:42:26|game_1_app_id|1|_test_id1003022414061086775|17|50|0|0|1|0
+PlayerLogin|1|2014-09-29 16:42:26|game_1_app_id|1|_test_id1003022414061086775|17|0|0.98|macos|intel|xxx|wifi|0|0|0.999999111|0|intel 001|1024|opengl 0.1|4.3|mac 10.94
+PlayerPhysicalFlow|1|2014-09-29 16:42:35|game_1_app_id|1|_test_id1003022414061086775|17|47|3|0|11|1
+PlayerMissionFlow|1|2014-09-29 16:42:35|game_1_app_id|1|_test_id1003022414061086775|17|0|25|140100|140100|0|0
+GameSvrState|2014-09-29 16:43:23|127.0.0.1
+GameSvrState|2014-09-29 16:44:23|127.0.0.1
+GameSvrState|2014-09-29 16:45:23|127.0.0.1
+PlayerLogout|1|2014-09-29 16:45:35|game_1_app_id|1|_test_id1003022414061086775|189|17|0|6343||HTML5||WiFi|0|0|0|0||0|||
+PlayerLogin|1|2014-09-29 16:45:47|game_1_app_id|1|_test_id1003022414061086775|17|0|6344||HTML5||WiFi|0|0|0|0||0|||
+PlayerPhysicalFlow|1|2014-09-29 16:45:47|game_1_app_id|1|_test_id1003022414061086775|17|47|0|0|1|0
+PlayerLogin|1|2014-09-29 16:45:47|game_1_app_id|1|_test_id1003022414061086775|17|0|0.98|macos|intel|xxx|wifi|0|0|0.999999111|0|intel 001|1024|opengl 0.1|4.3|mac 10.94
+GameSvrState|2014-09-29 16:46:23|127.0.0.1

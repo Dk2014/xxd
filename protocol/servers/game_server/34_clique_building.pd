@@ -1,0 +1,229 @@
+//
+// 帮派建筑物接口(互动)
+//
+mod clique_building = 34
+{
+
+	type clique_kongfu_train_result enum {
+		SUCCESS = 0 // 训练成功
+		LACK_CONTRIB = 1 // 贡献不足
+		NO_CLIQUE = 2 // 没有加入帮派
+		MAX_LEVEL = 3 // 帮派建筑等级不足技能已满级
+	}
+
+	type clique_bank_sold_result enum {
+		SUCCESS = 0 // 成功
+		CD = 1 // 未达到回购时间
+		NO_CLIQUE = 2 // 没有加入帮派
+		MAX_LEVEL = 3 //  
+	}
+
+	type clique_building_donate_result enum {
+		SUCCESS = 0 // 捐钱成功
+		FAILED = 1 // 捐钱失败
+	}
+
+	// 帮派建筑物 -- 总舵状态结构体
+	type clique_building_status_base struct {
+		level : int16 // 总舵等级
+		donate_coins : int64 // 总舵贡献铜钱总额
+	}
+
+	type clique_building_status_bank struct {
+		level : int16 //钱庄等级
+		donate_coins : int64 // 钱庄贡献铜钱总额
+		silver_coupon_num : int16 // 银劵数量
+		silver_coupon_timespan : int64 // 银劵购买时间戳
+		gold_coupon_num : int16 // 金卷数量
+		gold_coupon_timespan : int64 //金卷购买时间戳
+	}
+
+	type clique_building_status_bank struct {
+		level : int16 //钱庄等级
+		donate_coins : int32 // 钱庄贡献铜钱总额
+		silver_coupon_num : int16 // 银劵数量
+		silver_coupon_timespan : int64 // 银劵购买时间戳
+		gold_coupon_num : int16 // 金卷数量
+		gold_coupon_timespan : int64 //金卷购买时间戳
+	}
+
+	// 帮派建筑物 -- 神兵堂态结构体
+	type clique_building_status_attack struct {
+		level : int16 // 等级
+		donate_coins : int32 // 贡献铜钱总额
+	}
+
+	// 帮派建筑物 -- 回春堂态结构体
+	type clique_building_status_health struct {
+		level : int16 // 等级
+		donate_coins : int32 // 贡献铜钱总额
+	}
+
+	// 帮派建筑物 -- 金刚堂态结构体
+	type clique_building_status_defence struct {
+		level : int16 // 等级
+		donate_coins : int32 // 贡献铜钱总额
+	}
+
+	//帮派建筑物 -- 宗祠状态结构体
+	type clique_building_status_temple  struct {
+		level : int16 //等级
+		donate_coins : int32 //贡献铜钱总额
+	}
+
+	type  ancestral_hall_worship enum {
+		WHITESANDALWOOD = 1 //白檀香
+		STORAX			= 2 //苏合香
+		DAYS			= 3 //天木香
+	}
+	//总舵捐献
+	[tag("global")]
+	api clique_base_donate = 1 {
+		in  {
+			money : int64 // 捐献的金额
+		}
+		out {
+			result : clique_building_donate_result // 捐献结果
+			clique_building_base_level:int16 // 帮派建筑物总舵等级
+			clique_building_base_donate_coins:int32 // 帮派建筑物总舵贡献铜钱总额
+			player_donate_coins : int64 // 玩家当日贡献铜钱总额
+		}
+	}
+
+	// 帮派所有建筑的状态接口
+	[tag("global")]
+	api clique_building_status = 2 {
+		in{
+		}
+		out{
+			success : bool // 查询是否成功
+			daily_total_donated_coins : int64 // 每日捐钱总额
+			base : clique_building_status_base // 帮派建筑物 总舵状态
+			bank : clique_building_status_bank // 帮派建筑物 钱庄状态
+			attack_building : clique_building_status_attack // 帮派建筑物 神兵堂状态
+			health_building : clique_building_status_health // 帮派建筑物 回春堂状态
+			defence_building : clique_building_status_defence // 帮派建筑物 金刚堂状态
+			temple_building  : clique_building_status_temple  //帮派建筑物  宗祠状态
+		}
+	}
+
+	// 钱庄捐钱
+	[tag("global")]
+	api clique_bank_donate = 3 {
+		in  {
+			money : int64 // 捐献的金额
+		}
+		out {
+			result: clique_building_donate_result // 捐钱结果
+			clique_building_bank_level:int16 // 帮派建筑物钱庄等级
+			clique_building_bank_donate_coins: int32 // 帮派建筑物钱庄贡献铜钱总额
+			player_donate_coins: int64 // 玩家当日贡献铜钱总额
+		}
+	}
+
+	// 钱庄买劵
+	[tag("global")]
+	api clique_bank_buy = 4 {
+		in{
+			kind : int8 // 0代表银劵 1代表金卷
+			num : int8
+		}
+		out {
+			success : bool // 购买是否成功
+		}
+	}
+
+	// 钱庄卖劵
+	[tag("global")]
+	api clique_bank_sold = 5 {
+		in{
+			kind : int8 // 0代表银劵 1代表金卷
+		}
+		out {
+			result : clique_bank_sold_result // 操作结果
+		}
+	}
+
+	//帮派武学建筑
+	[tag("global")]
+	api clique_kongfu_donate = 6 {
+		in {
+			building : int32 //建筑ID
+			money : int64 //捐献金额
+		}
+		out {
+			building : int32 //建筑ID
+			result: clique_building_donate_result // 捐钱结果
+			total_donate_coins : int32 //帮派总捐献
+			player_donate_coins : int64 //玩家总捐献
+			level : int16 //建筑等级
+		}
+	}
+
+	//帮派武学信息
+	[tag("global")]
+	api clique_kongfu_info = 7 {
+		in {
+			building : int32 //建筑ID
+		}
+		out {
+			kongfu_list : list {
+				kongfu_id : int32 //武功ID
+				level: int16 //等级
+			}
+		}
+	}
+
+	//帮派武学训练
+	[tag("global")]
+	api clique_kongfu_train = 8 {
+		in {
+			kongfu_id : int32 //武功ID
+		}
+		out {
+			kongfu_id : int32 //武功ID
+			result: clique_kongfu_train_result // 结果
+			level: int16 //等级
+		}
+	}
+	//宗祠上香
+	[tag("global")]
+	api clique_temple_worship = 9 {
+		in {
+			worship_type : ancestral_hall_worship //上香类型
+		}
+		out {
+			success : bool //上香是否成功
+		}
+	}
+
+	// 宗祠捐赠
+	[tag("global")]
+	api clique_temple_donate = 10 {
+		in  {
+			money : int64 // 捐献的金额
+		}
+		out {
+			result: clique_building_donate_result 	// 捐钱结果
+			temple_building_level:int16 			// 帮派宗祠等级
+			temple_building_coins: int32 			// 帮派宗祠贡献铜钱总额
+			totaldonatecoins     : int64            //总捐赠(FIXME 用 player_donate 之类的名字)
+		}
+	}
+	
+	//玩家获取宗祠信息
+	[tag("global")]
+	api clique_temple_info = 11 {
+		in {
+		}
+		out {
+			totaldonatecoins        : int64 //总捐赠
+			isworship 				: bool 	//当天是否已经上香
+			worship_type            : int8  //上香类型
+			worshipcnt 				: int8 	//已经点了几个灯
+			temple_building_level	: int16 // 帮派宗祠等级
+			temple_building_coins	: int32 // 帮派宗祠贡献铜钱总额
+		}
+	}
+
+}

@@ -1,0 +1,1 @@
+{"action_name":"visit_mountain","module_name":"driving_sword","protocol":[{"name":"status","type":"enum8"},{"name":"pid","type":"int64"},{"name":"nick","type":"text16"},{"name":"role_id","type":"int8"},{"name":"level","type":"int16"},{"name":"fight_num","type":"int32"},{"name":"fashion_id","type":"int16"},{"name":"friendship_level","type":"int16"}]}

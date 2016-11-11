@@ -1,0 +1,1 @@
+{"action_name":"get_tree_status","module_name":"money_tree","protocol":[{"name":"times","type":"int8"},{"name":"money","type":"int32"},{"name":"last_time","type":"int64"},{"name":"remind","type":"int8"},{"name":"status","type":"int8"}]}

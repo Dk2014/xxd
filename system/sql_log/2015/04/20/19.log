@@ -1,0 +1,4 @@
+-- ------------------------------------------------------
+-- 04/20/2015 19:35 插入或更新发生在表fate_box IP:::1
+UPDATE `fate_box` SET `name` = '星辉宝箱', `sign` = 'StarBox', `level` = '10', `require_lock` = '0', `award_lock` = '1000' WHERE `id` = 1;UPDATE `fate_box` SET `name` = '月影宝箱', `sign` = 'MoonBox', `level` = '40', `require_lock` = '1000', `award_lock` = '2000' WHERE `id` = 2;UPDATE `fate_box` SET `name` = '日耀宝箱', `sign` = 'SunBox', `level` = '80', `require_lock` = '2000', `award_lock` = '3000' WHERE `id` = 3;INSERT INTO `fate_box` SET `name` = '混元宝箱', `sign` = 'HunyuanBox', `level` = '120', `require_lock` = '3000', `award_lock` = '4000' ;
+

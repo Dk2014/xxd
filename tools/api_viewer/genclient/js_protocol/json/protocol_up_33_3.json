@@ -1,0 +1,1 @@
+{"action_name":"process_join_apply","module_name":"clique","protocol":[{"name":"agree","type":"bool"},{"name":"pidlist","type":"list8","fields":[{"name":"pid","type":"int64"}]}]}

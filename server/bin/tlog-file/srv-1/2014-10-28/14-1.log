@@ -1,0 +1,16 @@
+PlayerLogin|1|2014-10-28 14:17:24|game_1_app_id|1|test|4|0|90000||HTML5||WiFi|0|0|0|0||0|||
+PlayerLogout|1|2014-10-28 14:17:24|game_1_app_id|1|test|0|4|0|90000||HTML5||WiFi|0|0|0|0||0|||
+PlayerLogin|1|2014-10-28 14:17:32|game_1_app_id|1|test|4|0|90000||HTML5||WiFi|0|0|0|0||0|||
+PlayerLogin|1|2014-10-28 14:17:32|game_1_app_id|1|test|4|0|0.98|macos|intel|xxx|wifi|0|0|0.999999111|0|intel 001|1024|opengl 0.1|4.3|mac 10.94
+PlayerSystemModuleFlow|1|2014-10-28 14:17:39|game_1_app_id|1|test|4|5|0
+MoneyFlow|1|2014-10-28 14:17:39|0|game_1_app_id|1|test|4|983270|10000|28|0|1|0|0
+ItemFlow|1|2014-10-28 14:17:39|0|game_1_app_id|1|test|12|263|5|5|37|0|0|0
+PlayerChestDrawFlow|1|2014-10-28 14:17:39|game_1_app_id|1|test|4|0|10000|0||1
+GameSvrState|2014-10-28 14:18:22|172.26.166.37
+PlayerLogin|1|2014-10-28 14:18:50|game_1_app_id|1|_test_id1003022414061086776|1|0|90000||HTML5||WiFi|0|0|0|0||0|||
+PlayerLogin|1|2014-10-28 14:18:51|game_1_app_id|1|_test_id1003022414061086776|1|0|0.98|macos|intel|xxx|wifi|0|0|0.999999111|0|intel 001|1024|opengl 0.1|4.3|mac 10.94
+PlayerLogout|1|2014-10-28 14:19:20|game_1_app_id|1|_test_id1003022414061086776|30|1|0|90000||HTML5||WiFi|0|0|0|0||0|||
+GameSvrState|2014-10-28 14:19:22|172.26.166.37
+PlayerLogin|1|2014-10-28 14:19:36|game_1_app_id|1|_test_id1003022414061086776|1|0|90000||HTML5||WiFi|0|0|0|0||0|||
+PlayerLogin|1|2014-10-28 14:19:36|game_1_app_id|1|_test_id1003022414061086776|1|0|0.98|macos|intel|xxx|wifi|0|0|0.999999111|0|intel 001|1024|opengl 0.1|4.3|mac 10.94
+GameSvrState|2014-10-28 14:20:22|172.26.166.37

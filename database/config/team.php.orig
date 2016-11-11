@@ -1,0 +1,17 @@
+<?php
+$config = array(
+	array( 'const',
+	"POS0"        => 0, // 位置索引
+	"POS1"        => 1,
+	"POS2"        => 2,
+	"POS3"        => 3,
+	"POS4"        => 4,
+	"POS5"        => 5,
+	"POS6"        => 6,
+	"POS7"        => 7,
+	"POS8"        => 8,
+	"POS_NO_ROLE" => -1, // -1 表示布阵没有角色
+	"MAX_IN_FORM_NUM" => 5, // 最大上阵人数
+	),
+); 
+?>

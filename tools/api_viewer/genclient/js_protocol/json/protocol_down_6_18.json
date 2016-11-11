@@ -1,0 +1,1 @@
+{"action_name":"cancel_auto","module_name":"battle","protocol":[{"name":"round","type":"int16"}]}

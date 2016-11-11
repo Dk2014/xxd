@@ -1,0 +1,53 @@
+// VIP模块
+mod vip = 20
+{
+	//VIP可购买功能类型
+	type buy_times_type enum {
+		BIWUCHANGCISHU = 0 //比武场次数
+		RAINBOWSAODANG = 1 //彩虹关卡扫荡次数
+	}
+	//
+	// 玩家VIP相关信息
+	//
+	api info = 1 {
+		in {
+			player_id 	:int64		//玩家ID
+		}
+		out {
+			level		: int16		// VIP等级
+			ingot      	: int64		// 累计充值元宝
+			card_id      	: text		// VIP卡ID
+		}
+	}
+	
+	//去互动服获取VIP玩家总数
+	[tag("global")]
+	api get_total = 2 {
+		in{}
+		out{
+			total : int64 //VIP总数
+		}
+	}
+	
+	//去互动服获取各个阶级VIP玩家数目
+	[tag("global")]
+	api vip_level_total = 3 {
+		in{}
+		out{
+			vip_level_arr : list{
+				vip_level : int16
+				total : int32
+			}
+		}
+	}
+
+	//玩家购买vip对应功能次数
+	api buy_times = 4 {
+		in {
+			buytype 	:	buy_times_type
+		}
+		out {
+			result 	:	bool //true成功 false失败
+		}
+	}
+}

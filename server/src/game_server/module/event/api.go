@@ -1,0 +1,285 @@
+package event
+
+import (
+	"core/net"
+	"core/time"
+	"encoding/json"
+	"fmt"
+	"game_server/api/protocol/event_api"
+	"game_server/api/protocol/notify_api"
+	. "game_server/config"
+	"game_server/dat/event_dat"
+	"game_server/dat/mail_dat"
+	"game_server/dat/which_branch_dat"
+	"game_server/mdb"
+	"game_server/module"
+	"game_server/module/event/json_handlers"
+	"game_server/module/rpc"
+	"game_server/tencent"
+	gotime "time"
+)
+
+func init() {
+	event_api.SetInHandler(EventAPI{})
+}
+
+type EventAPI struct {
+}
+
+func (this EventAPI) LoginAwardInfo(session *net.Session, in *event_api.LoginAwardInfo_In) {
+	//屏蔽七天登录奖励
+	return
+	out := new(event_api.LoginAwardInfo_Out)
+	login_award_info(session, out)
+	session.Send(out)
+}
+
+func (this EventAPI) TakeLoginAward(session *net.Session, in *event_api.TakeLoginAward_In) {
+	//屏蔽七天登录奖励
+	return
+	out := &event_api.TakeLoginAward_Out{}
+	takeLoginAward(session, in.Day)
+	session.Send(out)
+}
+
+func (this EventAPI) GetEvents(session *net.Session, in *event_api.GetEvents_In) {
+	getEvents(session)
+}
+
+func (this EventAPI) GetEventAward(session *net.Session, in *event_api.GetEventAward_In) {
+	if in.Page > 0 {
+		// json配置的活动
+		json_handlers.HandleJsonEventAward(session, in)
+	} else {
+		getEventAward(session, in.EventId, in.Param1, in.Param2, in.Param3)
+	}
+}
+
+func (this EventAPI) PlayerEventPhysicalCost(session *net.Session, in *event_api.PlayerEventPhysicalCost_In) {
+	state := module.State(session)
+	val, _ := module.GetPlayerActivity(state.Database)
+	session.Send(&event_api.PlayerEventPhysicalCost_Out{
+		Value: val,
+	})
+}
+
+func (this EventAPI) PlayerMonthCardInfo(session *net.Session, in *event_api.PlayerMonthCardInfo_In) {
+	state := module.State(session)
+	// if config.ServerCfg.MoneySdk.MoneySdkAddr == "" {
+	// 	session.Send(&event_api.PlayerMonthCardInfo_Out{})
+	// } else {
+	// 	info := monthCardInfo(state.MoneyState)
+	// 	session.Send(&event_api.PlayerMonthCardInfo_Out{
+	// 		MonthCard: info,
+	// 	})
+	// }
+	out := &event_api.PlayerMonthCardInfo_Out{}
+	if which_branch_dat.WHICH_BRANCH == which_branch_dat.TW {
+		playerMonthCard := state.Database.Lookup.PlayerMonthCard(state.PlayerId)
+		if playerMonthCard != nil {
+			out.EndTime = playerMonthCard.ExpireTimestamp
+		}
+	} else {
+		playerMonthCard := state.Database.Lookup.PlayerMonthCardInfo(state.PlayerId)
+		if playerMonthCard != nil {
+			out.BeginTime = playerMonthCard.Starttime
+			out.EndTime = playerMonthCard.Endtime
+		}
+	}
+
+	session.Send(out)
+}
+
+func (this EventAPI) GetSevenInfo(session *net.Session, in *event_api.GetSevenInfo_In) {
+	getSevenInfo(session)
+}
+
+func (this EventAPI) GetSevenAward(session *net.Session, in *event_api.GetSevenAward_In) {
+	getSevenAward(session)
+}
+
+func (this EventAPI) GetRichmanClubInfo(session *net.Session, in *event_api.GetRichmanClubInfo_In) {
+	getEventRichmanClubStatus(session)
+}
+
+func (this EventAPI) GetRichmanClubAward(session *net.Session, in *event_api.GetRichmanClubAward_In) {
+	getEventRichmanClubAward(session, in.Column, in.Sequence)
+}
+
+func (this EventAPI) InfoShare(session *net.Session, in *event_api.InfoShare_In) {
+	state := module.State(session)
+	eventId := int16(event_dat.EVENT_SHARE_AWARDS)
+
+	eventRecord := state.EventsState.GetPlayerEventInfoById(eventId)
+	nextLevel := event_dat.GetNextShare(eventRecord.MaxAward)
+	if in.IsShare == true {
+		if eventRecord.MaxAward == 0 {
+			eventRecord = state.EventsState.AddEventAwardState(state.Database, eventId, 1, 0)
+		} else {
+			if eventRecord.MaxAward < event_dat.MAX_SHARE_TIMES {
+				state.EventsState.UpdateMax(state.Database, eventId, eventRecord.MaxAward+1)
+			}
+		}
+		if nextLevel == eventRecord.MaxAward {
+			session.Send(&notify_api.SendEventCenterChange_Out{})
+		}
+	}
+	out := &event_api.InfoShare_Out{}
+	out.Count = int16(eventRecord.MaxAward)
+	session.Send(out)
+}
+
+func (this EventAPI) InfoGroupBuy(session *net.Session, in *event_api.InfoGroupBuy_In) {
+	getGroupBuyInfo(session)
+}
+
+func (this EventAPI) GetIngotChangeTotal(session *net.Session, in *event_api.GetIngotChangeTotal_In) {
+	state := module.State(session)
+	out := &event_api.GetIngotChangeTotal_Out{}
+	out.Count = module.Event.GetEventsIngot(state.Database, in.IsIn)
+	session.Send(out)
+}
+
+func (this EventAPI) GetEventTotalAward(session *net.Session, in *event_api.GetEventTotalAward_In) {
+	getEventTotalRechargeAward(session, in.Order)
+}
+
+func (this EventAPI) GetEventArenaRank(session *net.Session, in *event_api.GetEventArenaRank_In) {
+	state := module.State(session)
+	arenaState := state.EventsState.GetPlayerEventInfoById(event_dat.EVENT_ARENA_RANK_AWARDS)
+	session.Send(&event_api.GetEventArenaRank_Out{
+		Rank: arenaState.MaxAward,
+	})
+}
+
+func (this EventAPI) GetEventTenDrawTimes(session *net.Session, in *event_api.GetEventTenDrawTimes_In) {
+	getTenDrawTimes(session)
+}
+
+func (this EventAPI) GetEventRechargeAward(session *net.Session, in *event_api.GetEventRechargeAward_In) {
+	GetRechargeAward(session, int32(in.Page), int(in.Requireid))
+}
+
+func (this EventAPI) GetEventNewYear(session *net.Session, in *event_api.GetEventNewYear_In) {
+	state := module.State(session)
+	out := &event_api.GetEventNewYear_Out{}
+	if eventInfo, exists := event_dat.GetJsonEventInfoById(event_dat.JSON_EVENT_NEW_YEAR, 1); exists && eventInfo.CheckStatus(event_dat.NOT_DISPOSE) {
+		// 红包活动进行中
+		process := make(map[string]int)
+		startTime := eventInfo.StartUnixTime
+		if eventInfo.IsRelative {
+			startTime += ServerCfg.ServerOpenTime
+		}
+		can_award := !eventInfo.CheckStatus(event_dat.NOT_END)
+		day_order := time.GetNowDay() - time.GetNowDayFromUnix(startTime) + 1
+		record := state.Database.Lookup.PlayerNewYearConsumeRecord(state.PlayerId)
+		var process_str string
+		if record != nil {
+			process_str = record.ConsumeRecord
+		}
+		json.Unmarshal([]byte(process_str), &process)
+		jsonEventRecord, existss := state.JsonEventsState.GetStatus(event_dat.JSON_EVENT_NEW_YEAR, 1)
+		for index := 1; index < day_order; index++ {
+			key := fmt.Sprintf("%d-%d", gotime.Now().Year(), index)
+			is_awarded := false
+			if can_award && existss && (jsonEventRecord.Awarded&(1<<uint(index-1)) > 0) {
+				is_awarded = true
+			}
+			if process[key] > 0 && process[key] < 10 {
+				process[key] = 10 // 提防少于10个元宝的情况
+			}
+			out.Processes = append(out.Processes, event_api.GetEventNewYear_Out_Processes{
+				Day:       int8(index),
+				Ingot:     int32(process[key]),
+				IsAwarded: is_awarded,
+			})
+		}
+
+	}
+	session.Send(out)
+}
+
+func (this EventAPI) QqVipContinue(session *net.Session, in *event_api.QqVipContinue_In) {
+	state := module.State(session)
+	out := new(event_api.QqVipContinue_Out)
+
+	eventsInfo := event_dat.GetEventsInfo()
+	if event_dat.CheckEventTime(eventsInfo[event_dat.EVENT_QQVIP_ADDITION], event_dat.NOT_END) {
+		// 验证
+		status := tencent.QQVipStatus(state.MoneyState)
+		out.Status = status
+		switch in.Kind {
+		case event_dat.QQ_VIP:
+			if (status & 1) == 0 {
+				session.Send(out)
+				return
+			}
+		case event_dat.SUPER_QQ_VIP:
+			if (status & 2) == 0 {
+				session.Send(out)
+				return
+			}
+		}
+		var mail_qqvip, mail_surper_qqvip, mail_xf_qqvip, mail_xf_surper_qqvip bool
+		playerQQGiftRecord := state.Database.Lookup.PlayerQqVipGift(state.PlayerId)
+		if playerQQGiftRecord != nil {
+			// 记录已存在 没发续费礼包的话 则发续费礼包
+			switch in.Kind {
+			case event_dat.QQ_VIP:
+				status := playerQQGiftRecord.Qqvip
+				if status == 0 {
+					mail_qqvip = true
+					mail_xf_qqvip = true
+					playerQQGiftRecord.Qqvip = 2 // 发送完毕
+				} else if status == 1 {
+					mail_xf_qqvip = true
+					playerQQGiftRecord.Qqvip = 2 // 发送完毕
+				}
+			case event_dat.SUPER_QQ_VIP:
+				status := playerQQGiftRecord.Surper
+				if status == 0 {
+					mail_surper_qqvip = true
+					mail_xf_surper_qqvip = true
+					playerQQGiftRecord.Surper = 2 // 发送完毕
+
+				} else if status == 1 {
+					mail_xf_surper_qqvip = true
+					playerQQGiftRecord.Surper = 2 // 发送完毕
+				}
+			}
+			state.Database.Update.PlayerQqVipGift(playerQQGiftRecord)
+		} else {
+			// 新记录 要发开通礼包和续费礼包一起
+			record := new(mdb.PlayerQqVipGift)
+			record.Pid = state.PlayerId
+			switch in.Kind {
+			case event_dat.QQ_VIP:
+				mail_qqvip = true
+				mail_xf_qqvip = true
+				record.Qqvip = 2
+			case event_dat.SUPER_QQ_VIP:
+				mail_surper_qqvip = true
+				mail_xf_surper_qqvip = true
+				record.Surper = 2
+			}
+			// 更新记录
+			state.Database.Insert.PlayerQqVipGift(record)
+		}
+		state.TencentState.QqVipStatus = status
+
+		// 发放奖励邮件
+		if mail_qqvip {
+			rpc.RemoteMailSend(state.PlayerId, mail_dat.MailQQVip{})
+		}
+		if mail_surper_qqvip {
+			rpc.RemoteMailSend(state.PlayerId, mail_dat.MailQQSvip{})
+		}
+		if mail_xf_qqvip {
+			rpc.RemoteMailSend(state.PlayerId, mail_dat.MailQQvipXuFei{})
+		}
+		if mail_xf_surper_qqvip {
+			rpc.RemoteMailSend(state.PlayerId, mail_dat.MailQQSvipXuFei{})
+		}
+	}
+	session.Send(out)
+}

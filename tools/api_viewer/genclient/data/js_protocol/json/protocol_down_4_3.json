@@ -1,0 +1,1 @@
+{"action_name":"open_level_box","module_name":"mission","protocol":[{"name":"all_box_id","type":"list8","fields":[{"name":"box_id","type":"int64"}]}]}

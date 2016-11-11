@@ -1,0 +1,1 @@
+{"action_name":"notify_match_player_success","module_name":"multi_level","protocol":[{"name":"server_id","type":"int32"},{"name":"room_id","type":"int64"},{"name":"player_match_token","type":"uint64"},{"name":"room_match_token","type":"uint64"}]}

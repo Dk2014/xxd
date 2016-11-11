@@ -1,0 +1,1 @@
+{"action_name":"despair_land_boss_open_info","module_name":"despair_land","protocol":[{"name":"info","type":"list8","fields":[{"name":"camp_type","type":"enum8"},{"name":"boss_open_stamp","type":"int64"},{"name":"status","type":"int8"}]}]}

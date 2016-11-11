@@ -1,0 +1,186 @@
+package item
+
+import (
+	"core/fail"
+	"core/net"
+	"fmt"
+	"game_server/api/protocol/item_api"
+	"game_server/dat/item_dat"
+	"game_server/dat/player_dat"
+	"game_server/mdb"
+	"game_server/module"
+	"game_server/tlog"
+	"game_server/xdlog"
+)
+
+func init() {
+	item_api.SetInHandler(ItemAPI{})
+}
+
+type ItemAPI struct {
+}
+
+func (this ItemAPI) GetAllItems(session *net.Session, in *item_api.GetAllItems_In) {
+	out := &item_api.GetAllItems_Out{}
+	GetAllItems(session, out)
+	session.Send(out)
+}
+
+func (this ItemAPI) DropItem(session *net.Session, in *item_api.DropItem_In) {
+
+}
+
+func (this ItemAPI) BuyItem(session *net.Session, in *item_api.BuyItem_In) {
+	id := BuyItem(session, in)
+	session.Send(&item_api.BuyItem_Out{id})
+}
+
+func (this ItemAPI) SellItem(session *net.Session, in *item_api.SellItem_In) {
+	SellItem(session, in)
+	session.Send(&item_api.SellItem_Out{})
+}
+
+func (this ItemAPI) Dress(session *net.Session, in *item_api.Dress_In) {
+	Dress(session, in)
+	session.Send(&item_api.Dress_Out{})
+}
+
+func (this ItemAPI) Undress(session *net.Session, in *item_api.Undress_In) {
+	Undress(session, in)
+	session.Send(&item_api.Undress_Out{})
+}
+
+func (this ItemAPI) BuyItemBack(session *net.Session, in *item_api.BuyItemBack_In) {
+	out := &item_api.BuyItemBack_Out{}
+	BuyItemBack(session, in, out)
+	session.Send(out)
+}
+
+func (this ItemAPI) IsBagFull(session *net.Session, in *item_api.IsBagFull_In) {
+	session.Send(&item_api.IsBagFull_Out{isBagFull(module.State(session).Database)})
+}
+
+func (this ItemAPI) Decompose(session *net.Session, in *item_api.Decompose_In) {
+	state := module.State(session)
+	decompose(state, in.Id)
+	session.Send(&item_api.Decompose_Out{})
+}
+
+func (this ItemAPI) Refine(session *net.Session, in *item_api.Refine_In) {
+	out := &item_api.Refine_Out{}
+	Refine(session, in, out)
+	session.Send(out)
+}
+
+func (this ItemAPI) GetRecastInfo(session *net.Session, in *item_api.GetRecastInfo_In) {
+	out := &item_api.GetRecastInfo_Out{}
+	GetRecastInfo(session, in, out)
+	session.Send(out)
+}
+
+func (this ItemAPI) Recast(session *net.Session, in *item_api.Recast_In) {
+	out := &item_api.Recast_Out{}
+	Recast(session, in)
+	session.Send(out)
+}
+
+func (this ItemAPI) UseItem(session *net.Session, in *item_api.UseItem_In) {
+	out := &item_api.UseItem_Out{}
+	useItem(session, in.Id, 0, false)
+	session.Send(out)
+}
+
+func (this ItemAPI) RoleUseCostItem(session *net.Session, in *item_api.RoleUseCostItem_In) {
+	roleUseItem(module.State(session), in.RoleId, in.ItemId, false)
+}
+
+func (this ItemAPI) BatchUseItem(session *net.Session, in *item_api.BatchUseItem_In) {
+	out := &item_api.BatchUseItem_Out{
+		Id: in.Id,
+	}
+	BatchUseItem(session, in)
+	session.Send(out)
+}
+
+func (this ItemAPI) OpenCornucopia(session *net.Session, in *item_api.OpenCornucopia_In) {
+	out := &item_api.OpenCornucopia_Out{
+		Coins: awardCornucopia(module.State(session), in.Id),
+	}
+	session.Send(out)
+}
+
+func (this ItemAPI) GetSealedbooks(session *net.Session, in *item_api.GetSealedbooks_In) {
+	state := module.State(session)
+	out := state.GetSealedBookRecord().GetRecordsByType(in.ItemType)
+
+	switch in.ItemType {
+	case item_dat.STEALDBOOK_TYPE_ROLES:
+		state.Database.Select.PlayerRole(func(row *mdb.PlayerRoleRow) {
+			addSealedBook(in.ItemType, int16(row.RoleId()), out, state)
+		})
+	case item_dat.STEALDBOOK_TYPE_GHOSTS:
+		state.Database.Select.PlayerGhost(func(row *mdb.PlayerGhostRow) {
+			addSealedBook(in.ItemType, row.GhostId(), out, state)
+		})
+	case item_dat.STEALDBOOK_TYPE_SWORDSOULS:
+		state.Database.Select.PlayerSwordSoul(func(row *mdb.PlayerSwordSoulRow) {
+			addSealedBook(in.ItemType, row.SwordSoulId(), out, state)
+		})
+	case item_dat.STEALDBOOK_TYPE_PETS:
+		state.Database.Select.PlayerBattlePet(func(row *mdb.PlayerBattlePetRow) {
+			addSealedBook(in.ItemType, int16(row.BattlePetId()), out, state)
+		})
+	case item_dat.STEALDBOOK_TYPE_WEAPON, item_dat.STEALDBOOK_TYPE_CLOTHES, item_dat.STEALDBOOK_TYPE_ACCESSORIES, item_dat.STEALDBOOK_TYPE_SHOE, item_dat.STEALDBOOK_TYPE_NOEQUIPMENTS, item_dat.STEALDBOOK_TYPE_BATTLETOOLS:
+		state.Database.Select.PlayerItem(func(row *mdb.PlayerItemRow) {
+			addSealedBook(in.ItemType, int16(row.ItemId()), out, state)
+		})
+	case item_dat.STEALDBOOK_TYPE_TOTEMS:
+		state.Database.Select.PlayerTotem(func(row *mdb.PlayerTotemRow) {
+			addSealedBook(in.ItemType, row.TotemId(), out, state)
+		})
+
+	default:
+		fail.When(true, "wrong item type or item id ")
+	}
+
+	session.Send(out)
+}
+
+func (this ItemAPI) ActivationSealedbook(session *net.Session, in *item_api.ActivationSealedbook_In) {
+	state := module.State(session)
+	out := &item_api.ActivationSealedbook_Out{}
+	if status, ok := state.GetSealedBookRecord().FindRecord(in.ItemType, int16(in.ItemId)); ok {
+		if status != item_dat.STEALDBOOK_ACTIVATION {
+			//激活
+			sealbook := item_dat.GetSealedBookInfo(in.ItemType, int16(in.ItemId))
+			if sealbook != nil {
+				module.Player.DecMoney(state.Database, state.MoneyState, int64(sealbook.Coins), player_dat.COINS, 1, xdlog.ET_SEALEDBOOK)
+				state.GetSealedBookRecord().ChangeStatus(in.ItemType, int16(in.ItemId), item_dat.STEALDBOOK_ACTIVATION, state.Database)
+				out.Result = true
+			}
+		}
+	}
+
+	session.Send(out)
+}
+
+func (this ItemAPI) ExchangeGhostCrystal(session *net.Session, in *item_api.ExchangeGhostCrystal_In) {
+	state := module.State(session)
+	db := state.Database
+
+	itemData := item_dat.GetItem(in.ItemId)
+	fail.When(itemData.TypeId != item_dat.TYPE_GHOST_FRAGMENT, "Cant exchange cause not ghost fragment")
+
+	var exchangeNum int16
+	switch in.ExchangeType {
+	case EXCHANGE_GHOST_CRYSTAL_ONE:
+		exchangeNum = 1
+	case EXCHANGE_GHOST_CRYSTAL_ALL:
+		exchangeNum = module.Item.GetItemNum(db, in.ItemId)
+	default:
+		panic(fmt.Sprintf("Cant exchange cause exchange_type error %s", string(in.ExchangeType)))
+	}
+
+	module.Item.DelItemByItemId(db, in.ItemId, exchangeNum, tlog.IFR_EXCHANGE_GHOST_CRYSTAL, xdlog.ET_EXCHANGE_GHOST_CRYSTAL)
+	module.Item.AddItem(db, item_dat.ITEM_GHOST_CRYSTAL_ID, exchangeNum, tlog.IFR_EXCHANGE_GHOST_CRYSTAL, xdlog.ET_EXCHANGE_GHOST_CRYSTAL, "")
+}

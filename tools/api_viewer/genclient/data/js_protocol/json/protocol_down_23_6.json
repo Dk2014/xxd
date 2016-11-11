@@ -1,0 +1,1 @@
+{"action_name":"auto_fight","module_name":"rainbow","protocol":[{"name":"awardCoin","type":"int32"},{"name":"awardExp","type":"int32"},{"name":"awardBoxPos1","type":"int8"},{"name":"awardBoxPos2","type":"int8"}]}

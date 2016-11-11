@@ -1,0 +1,1 @@
+{"action_name":"battle_pvp_req","module_name":"notify","protocol":[{"name":"inviter_pid","type":"int64"},{"name":"inviter_nick","type":"text16"},{"name":"inviter_sid","type":"int64"}]}

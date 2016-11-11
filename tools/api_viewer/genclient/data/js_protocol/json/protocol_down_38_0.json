@@ -1,0 +1,1 @@
+{"action_name":"awaken_info","module_name":"awaken","protocol":[{"name":"role_id","type":"int8"},{"name":"attrs","type":"list8","fields":[{"name":"attr_impl","type":"int16"},{"name":"level","type":"int8"}]}]}

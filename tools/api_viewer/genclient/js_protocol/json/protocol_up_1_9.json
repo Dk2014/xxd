@@ -1,0 +1,1 @@
+{"action_name":"take_town_treasures","module_name":"town","protocol":[{"name":"town_id","type":"int16"}]}

@@ -1,0 +1,5 @@
+检查日志格式
+./checklog -skipflag 0 -logpath /data/logplat/log/tlogd_1/test.log -charflag \| -xml novachina-log_20110511.xml -exportdir ./badlog_20110511
+
+
+

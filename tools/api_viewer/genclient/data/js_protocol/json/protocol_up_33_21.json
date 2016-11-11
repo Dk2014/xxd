@@ -1,0 +1,1 @@
+{"action_name":"clique_auto_audit","module_name":"clique","protocol":[{"name":"level","type":"int16"},{"name":"enable","type":"bool"}]}

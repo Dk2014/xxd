@@ -1,0 +1,24 @@
+PlayerRegister|1|2014-10-28 17:27:31|game_1_app_id|1|jjy|90000||HTML5||WiFi|0|0|0|0||0|||
+PlayerLogin|1|2014-10-28 17:27:31|game_1_app_id|1|jjy|1|0|90000||HTML5||WiFi|0|0|0|0||0|||
+PlayerGuideFlow|1|2014-10-28 17:27:32|game_1_app_id|1|jjy|1|19|0|0
+PlayerLogout|1|2014-10-28 17:27:37|game_1_app_id|1|jjy|6|1|0|90000||HTML5||WiFi|0|0|0|0||0|||
+PlayerLogin|1|2014-10-28 17:27:46|game_1_app_id|1|jjy|1|0|90000||HTML5||WiFi|0|0|0|0||0|||
+PlayerLogin|1|2014-10-28 17:27:46|game_1_app_id|1|jjy|1|0|0.98|macos|intel|xxx|wifi|0|0|0.999999111|0|intel 001|1024|opengl 0.1|4.3|mac 10.94
+PlayerLogout|1|2014-10-28 17:27:53|game_1_app_id|1|jjy|7|1|0|90000||HTML5||WiFi|0|0|0|0||0|||
+PlayerLogin|1|2014-10-28 17:28:03|game_1_app_id|1|jjy|1|0|90000||HTML5||WiFi|0|0|0|0||0|||
+PlayerLogin|1|2014-10-28 17:28:03|game_1_app_id|1|jjy|1|0|0.98|macos|intel|xxx|wifi|0|0|0.999999111|0|intel 001|1024|opengl 0.1|4.3|mac 10.94
+GameSvrState|2014-10-28 17:28:04|172.26.166.37
+MoneyFlow|1|2014-10-28 17:28:09|0|game_1_app_id|1|jjy|1|10|10|26|0|0|0|0
+GameSvrState|2014-10-28 17:29:04|172.26.166.37
+GameSvrState|2014-10-28 17:30:04|172.26.166.37
+GameSvrState|2014-10-28 17:31:04|172.26.166.37
+GameSvrState|2014-10-28 17:32:04|172.26.166.37
+PlayerLogout|1|2014-10-28 17:32:39|game_1_app_id|1|jjy|276|1|0|90000||HTML5||WiFi|0|0|0|0||0|||
+PlayerLogin|1|2014-10-28 17:32:51|game_1_app_id|1|jjy|1|0|90000||HTML5||WiFi|0|0|0|0||0|||
+PlayerLogin|1|2014-10-28 17:32:51|game_1_app_id|1|jjy|1|0|0.98|macos|intel|xxx|wifi|0|0|0.999999111|0|intel 001|1024|opengl 0.1|4.3|mac 10.94
+GameSvrState|2014-10-28 17:33:04|172.26.166.37
+GameSvrState|2014-10-28 17:34:04|172.26.166.37
+PlayerLogout|1|2014-10-28 17:34:42|game_1_app_id|1|jjy|111|1|0|90000||HTML5||WiFi|0|0|0|0||0|||
+PlayerLogin|1|2014-10-28 17:34:54|game_1_app_id|1|jjy|1|0|90000||HTML5||WiFi|0|0|0|0||0|||
+PlayerLogin|1|2014-10-28 17:34:54|game_1_app_id|1|jjy|1|0|0.98|macos|intel|xxx|wifi|0|0|0.999999111|0|intel 001|1024|opengl 0.1|4.3|mac 10.94
+GameSvrState|2014-10-28 17:35:04|172.26.166.37

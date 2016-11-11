@@ -1,0 +1,16 @@
+-- ------------------------------------------------------
+-- 04/21/2015 10:44 插入或更新发生在表mission_enemy IP:::1
+INSERT INTO `mission_enemy` SET `mission_level_id` = 735, `shaded_mission_id`=0, `order` = '1', `best_round` = '0', `monster_num` = '5', `enter_x` = '0', `enter_y` = '0', `monster1_id` = '0', `monster1_chance` = '0', `monster2_id` = '0', `monster2_chance` = '0', `monster3_id` = '0', `monster3_chance` = '0', `monster4_id` = '0', `monster4_chance` = '0', `monster5_id` = '0', `monster5_chance` = '0', `is_boss` = '0', `boss_dir` = '0' ;
+
+-- ------------------------------------------------------
+-- 04/21/2015 10:45 插入或更新发生在表enemy_deploy_form IP:::1
+INSERT INTO `enemy_deploy_form` SET `parent_id` = 1966,`battle_type`=14;
+
+-- ------------------------------------------------------
+-- 04/21/2015 10:46 插入或更新发生在表enemy_deploy_form IP:::1
+UPDATE `enemy_deploy_form` SET `pos1` = '0', `pos2` = '0', `pos3` = '0', `pos4` = '0', `pos5` = '0', `pos6` = '0', `pos7` = '0', `pos8` = '0', `pos9` = '0', `pos10` = '0', `pos11` = '0', `pos12` = '0', `pos13` = '0', `pos14` = '0', `pos15` = '0' WHERE `id` = 245;
+
+-- ------------------------------------------------------
+-- 04/21/2015 10:48 插入或更新发生在表chest IP:::1
+INSERT INTO `chest` SET  `type` = 4, `quality` = '1', `probability` = '50' ;INSERT INTO `chest` SET  `type` = 4, `quality` = '2', `probability` = '10' ;INSERT INTO `chest` SET  `type` = 4, `quality` = '3', `probability` = '30' ;INSERT INTO `chest` SET  `type` = 4, `quality` = '4', `probability` = '4' ;INSERT INTO `chest` SET  `type` = 4, `quality` = '5', `probability` = '6' ;
+

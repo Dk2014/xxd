@@ -1,0 +1,18 @@
+PlayerLogin|1|2014-10-25 21:00:01|game_1_app_id|1|_test_id1003022414061086775|1|0|90000||HTML5||WiFi|0|0|0|0||0|||
+PlayerLogin|1|2014-10-25 21:00:01|game_1_app_id|1|_test_id1003022414061086775|1|0|0.98|macos|intel|xxx|wifi|0|0|0.999999111|0|intel 001|1024|opengl 0.1|4.3|mac 10.94
+GameSvrState|2014-10-25 21:00:54|172.26.166.37
+GameSvrState|2014-10-25 21:01:54|172.26.166.37
+GameSvrState|2014-10-25 21:02:54|172.26.166.37
+GameSvrState|2014-10-25 21:03:54|172.26.166.37
+GameSvrState|2014-10-25 21:04:54|172.26.166.37
+GameSvrState|2014-10-25 21:05:54|172.26.166.37
+GameSvrState|2014-10-25 21:06:54|172.26.166.37
+PlayerLogout|1|2014-10-25 21:07:31|game_1_app_id|1|_test_id1003022414061086775|450|1|0|90000||HTML5||WiFi|0|0|0|0||0|||
+PlayerLogin|1|2014-10-25 21:07:41|game_1_app_id|1|_test_id1003022414061086775|1|0|90000||HTML5||WiFi|0|0|0|0||0|||
+PlayerLogin|1|2014-10-25 21:07:41|game_1_app_id|1|_test_id1003022414061086775|1|0|0.98|macos|intel|xxx|wifi|0|0|0.999999111|0|intel 001|1024|opengl 0.1|4.3|mac 10.94
+GameSvrState|2014-10-25 21:07:54|172.26.166.37
+PlayerLogout|1|2014-10-25 21:08:52|game_1_app_id|1|_test_id1003022414061086775|71|1|0|90000||HTML5||WiFi|0|0|0|0||0|||
+GameSvrState|2014-10-25 21:08:54|172.26.166.37
+PlayerLogin|1|2014-10-25 21:09:02|game_1_app_id|1|_test_id1003022414061086775|1|0|90000||HTML5||WiFi|0|0|0|0||0|||
+PlayerLogin|1|2014-10-25 21:09:02|game_1_app_id|1|_test_id1003022414061086775|1|0|0.98|macos|intel|xxx|wifi|0|0|0.999999111|0|intel 001|1024|opengl 0.1|4.3|mac 10.94
+GameSvrState|2014-10-25 21:09:54|172.26.166.37

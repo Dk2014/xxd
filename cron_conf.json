@@ -1,0 +1,26 @@
+{
+    "LogDir" : "./cron-log",
+    "XdlogFileDir": "./xdlog-file",
+    "OnlineDB": {
+            "Protocol" : "tcp",
+            "DBName": "mobile_xxd",
+            "TableName":"global_tb_xxd_onlinecnt",
+            "Host": "127.0.0.1",
+            "Port": 3306,
+            "User": "root",
+            "Password": ""
+    }, 
+    "ServerInfo":[
+        {
+            "Sid" : 92,
+            "Database" : {
+                    "Protocol" : "tcp",
+                    "DBName" : "mobile_xxd",
+                    "Host" : "127.0.0.1",
+                    "Port" : 3306,
+                    "User" : "root",
+                    "Password" : ""
+            }
+        }
+    ]      
+}

@@ -1,0 +1,1 @@
+{"action_name":"patch_info","module_name":"server_info","protocol":[{"name":"town_lock","type":"int32"},{"name":"version","type":"text16"}]}

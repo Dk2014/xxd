@@ -1,0 +1,37 @@
+package clique_boss_common
+
+import (
+	"game_server/config"
+	"game_server/dat/which_branch_dat"
+)
+
+func HttpGetMainHd() int {
+	if config.ServerCfg.CliqueBossServerId > 0 {
+		return config.ServerCfg.CliqueBossServerId
+	}
+	if which_branch_dat.WHICH_BRANCH != which_branch_dat.TENCENT {
+		return 0
+	}
+	if config.ServerCfg.ServerId/100000 == 1 {
+		return 110011
+	}
+	if config.ServerCfg.ServerId/100000 == 2 {
+		return 210011
+	}
+	if config.ServerCfg.ServerId/100000 == 3 {
+		return 310011
+	}
+	if config.ServerCfg.ServerId/100000 == 4 {
+		return 410011
+	}
+	if config.ServerCfg.ServerId == 910301 || config.ServerCfg.ServerId == 900301 {
+		return 910301
+	}
+	if config.ServerCfg.ServerId == 910101 || config.ServerCfg.ServerId == 900101 {
+		return 910101
+	}
+	if config.ServerCfg.ServerId == 910201 || config.ServerCfg.ServerId == 900201 {
+		return 910201
+	}
+	return 0
+}

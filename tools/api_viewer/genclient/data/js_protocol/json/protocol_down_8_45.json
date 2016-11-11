@@ -1,0 +1,1 @@
+{"action_name":"battle_pvp_req_refuse","module_name":"notify","protocol":[{"name":"reply_pid","type":"int64"},{"name":"reply_nick","type":"text16"}]}

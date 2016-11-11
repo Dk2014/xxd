@@ -1,0 +1,592 @@
+// 战斗相关接口
+mod battle = 6
+{
+	// 参与战斗者的类型
+	type fighter_type enum {
+		ATK = 0   // 攻方
+		DEF = 1   // 守方
+	}
+
+	// 参战者角色类型
+	type fighter_kind enum {
+		PLAYER = 0 // 玩家
+		BUDDY  = 1 // 伙伴
+		ENEMY  = 2 // 敌人
+	}
+
+	// 回合中的事件
+	type round_event enum {
+		NONE    = 0  // 无
+		DODGE   = 1  // 闪避
+		CRIT    = 2  // 暴击
+		BLOCK   = 3  // 格挡
+		SQUELCH = 4  // 反击
+	}
+
+	// 回合中的战斗结果
+	type round_status enum {
+		NOT_END  = 0 // 还没结束
+		ATK_WIN  = 1 // 攻击方胜利
+		DEF_WIN  = 2 // 守方胜利
+		ATK_NEXT = 3 // 攻击方切换下一组
+		DEF_NEXT = 4 // 防守方切换下一组
+		TRIGGER_CALL_ENEMYS = 5 //触发怪物召唤技能
+		WAITING = 6 //等待玩家操作中
+	}
+
+	// buff类型
+	type buff_mode enum {
+		POWER              = 0  // 精气
+		SPEED              = 1  // 速度
+		ATTACK             = 2  // 攻击
+		DEFEND             = 3  // 防御
+		HEALTH             = 4  // 生命
+		DIZZINESS          = 5  // 眩晕
+		POISONING          = 6  // 中毒
+		CLEAN_BAD          = 7  // 清除负面buff
+		CLEAN_GOOD         = 8  // 清除增益buff
+		REDUCE_HURT        = 9  // 伤害减免%
+		RANDOM             = 10 // 混乱
+		BLOCK              = 11 // 格挡概率
+		BLOCK_LEVEL        = 12 // 格挡概率等级
+		DODGE_LEVEL        = 13 // 闪避概率等级
+		CRITIAL_LEVEL      = 14 // 暴击等级
+		HIT_LEVEL          = 15 // 命中等级
+		HURT_ADD           = 16 // 伤害加值（百分数）
+		MAX_HEALTH         = 17 // 最大生命
+		KEEPER_REDUCE_HURT = 18 // 守卫者免伤
+		ATTRACT_FIRE       = 19 // 吸引火力
+		DESTROY_LEVEL      = 20 // 破击
+		TENACITY_LEVEL     = 21 // 韧性
+		SUNDER             = 22 // 护甲
+		SLEEP              = 23 // 睡眠
+		DISABLE_SKILL      = 24 // 禁用绝招
+		BUFF_DIRECT_REDUCE_HURT = 25  // 直接免伤
+		BUFF_ABSORB_HURT   = 26  // 伤害吸收
+		BUFF_GHOST_POWER   = 27  // 魂力
+		BUFF_PET_LIVE_ROUND= 28  // 灵宠回合数
+		BUFF_BUDDY_SKILL   = 29  // 伙伴技能
+		BUFF_CLEAR_ABSORB_HURT = 30 //清除伤害吸收
+
+		BUFF_SLEEP_LEVEL         = 31 //睡眠抗性等级
+		BUFF_DIZZINESS_LEVEL     = 32 //眩晕抗性等级
+		BUFF_RANDOM_LEVEL        = 33 //混乱抗性等级
+		BUFF_DISABLE_SKILL_LEVEL = 34 //封魔抗性等级
+		BUFF_POISONING_LEVEL     = 35 //中毒抗性等级
+		BUFF_RECOVER_BUDDY_SKILL = 36  //回复伙伴进阶技能使用次数
+		BUFF_MAKE_POWER_FULL     = 37  //精力恢复至满
+
+		BUFF_DOGE= 38  //闪避
+		BUFF_HIT= 39  //命中
+		BUFF_CRITIAL= 40  //暴击
+		BUFF_TENACITY= 41  //韧性
+		BUFF_TAKE_SUNSER= 42  //破甲
+		BUFF_DEFEND_PERSENT = 43 //防御百分比
+		BUFF_SUNDER_STATE = 44 //破甲状态
+		BUFF_HEALTH_PERCENT = 45 //生命百分比
+		BUFF_ALL_RESIST = 46 //所有抗性等级(睡眠，眩晕，混乱，封魔，中毒等)
+		BUFF_REBOTH_HEALTH = 47 //复活并指定血量
+		BUFF_REBOTH_HEALTH_PERCENT = 48 //复活并指定血量百分比
+	}
+
+	// 战斗类型
+	type battle_type enum {
+		MISSION            = 0 // 区域关卡
+		RESOURCE           = 1 // 资源关卡
+		TOWER			   = 2 // 通天塔
+		MultiLevel		   = 3 // 多人关卡
+		ARENA           = 4 // 比武场
+		HARD		   	   = 8 // 难度关卡
+		BUDDY		   	   = 9 // 伙伴关卡
+		PET		   	   	   = 10 // 灵宠关卡
+		GHOST		   	   = 11 // 魂侍关卡
+		RAINBOW		   	   = 12 // 彩虹关卡
+		PVE		   	   = 13 // PVE关卡
+		FATE_BOX		   = 14 // 命锁宝箱关卡
+		DRIVING_EXPLORING				= 15 //仙山探险
+		DRIVING_SWORD_BF_LEVEL = 16 //云海拜访
+		HIJACK_BOAT  = 17 //劫持镖船
+		RECOVER_BOAT = 18 //夺回镖船
+		DESPAIR      = 19 //绝望之地关卡
+		DESPAIR_BOSS = 20 //绝望之地boss
+		PVP = 21 //玩家切磋
+	}
+
+	// 职业类型
+	type job_type enum {
+		NONE       = 0
+		ATTACKER   = 1
+		DESTROYER  = 2
+		DEFENDER   = 3
+		TREATER    = 4
+		SUPPORTER  = 5
+		OBSTRUCTOR = 6
+	}
+
+	// 战斗角色信息
+	type battle_role struct {
+		kind                 : fighter_kind // 角色类型
+		player_id            : int64        // 玩家ID
+		role_id              : int          // 角色ID
+		role_level           : int16        // 角色等级
+		position             : int          // 站位
+		fashion_id           : int16        // 时装ID
+		friendship_level     : int16        // 羁绊等级
+		health               : int          // 生命
+		max_health           : int          // 最大生命
+		power                : int16        // 精气
+		max_power            : int16        // 精气上限
+		sunder_value         : int16        // 破甲值
+		sunder_max_value     : int16        // 破甲值上限
+		sunder_min_hurt_rate : int16        // 破甲前起始伤害转换（百分比）
+		sunder_end_hurt_rate : int16        // 破甲后伤害转换（百分比）
+		sunder_end_defend_rate: int16		// 破甲后减防(百分比)
+		
+		speed                : int   // 速度属性
+
+		ghost_shield_value   : int32 // 魂侍护盾值
+
+		ghost_power  : int    // 魂力
+		can_use_ghost: bool //是否可以释放魂侍
+		ghosts : list {
+			ghost_id : int16  // 魂侍模板id
+			ghost_star : int8 // 魂侍星级
+			ghost_level : int16 // 魂侍等级
+			ghost_skill_id : int  // 魂侍技能id
+			related_ghost : int16 // 连锁魂侍的模板魂侍id
+			used : bool// 魂侍已使用过
+		}
+		auras : list {
+			aura_id : int16 //光环ID
+			value : int //光环数值
+		}
+
+		could_use_sword_soul : bool  // 是否可以使用剑心
+	}
+
+	// buffer信息
+	type buffer_info struct {
+		mode         : buff_mode // buff类型
+		keep         : int8      // 持续会合，等于0时整场战斗有效
+		value        : int32     // buff效果
+		skill_id     : int16     // buff产生buff的绝招id
+		max_override : int8      // 最大叠加数量
+		override_num : int8      // 当前已叠加数量
+		uncleanable  : bool      // 不可清除
+	}
+
+	// 绝招信息
+	type skill_info struct {
+		skill_id  : int16       // 绝招ID
+		inc_power : int8        // 恢复精气
+		dec_power : int8        // 消耗精气
+	}
+
+	// 开始一场战斗
+	api start_battle = 0 {
+		in {
+			battle_type : battle_type // 战斗类型
+			battle_id   : int64       // 标识ID(如mission_enemy表的怪物ID等)
+		}
+
+		out {
+			total_group : int8 //多组战斗中中组数（灵宠幻境）
+			attacker_player_ids : list {
+				player_id : int64
+			} // 攻击方玩家ID组
+
+			is_main_role_first : bool   // 是否是任意一方的主角先出手
+			is_attacker_first  : bool   // 是否是攻方先出手
+
+			all_attackers : list {
+				player_id : int64
+            			ghost_skill_index: int8 //（废弃）当前可用魂侍技能索引 [0,x) 。 值等于0时可使用第一档魂侍技能
+			}
+
+			all_defenders: list {
+				player_id : int64
+            			ghost_skill_index: int8 //（废弃）当前可用魂侍技能索引 [0,x) 。 值等于0时可使用第一档魂侍技能
+			}
+
+			attacker_totems : list {
+				round : int16 //回合数
+				totem_id : int16 //阵印ID
+			}
+
+			defender_totems : list {
+				round : int16 //回合数
+				totem_id : int16 //阵印ID
+			}
+
+			// 攻方小组，用于支持多组参与战斗，打完一组再上下一组
+			attacker_groups : list {
+				// 攻方
+				attackers : list {
+					role : battle_role
+					skills : list {             // 绝招列表
+						skill : skill_info
+						rest_release_num    	: int16         // 伙伴技能剩余释放次数，无次数限制返回-1
+					}					
+				}
+
+				// 自身作用的buff
+				self_buffs : list {
+					buffer 		 : buffer_info
+				}
+
+				// 伙伴的buff
+				buddy_buffs : list {
+					pos          : int8      // 伙伴站位
+					buffer 		 : buffer_info
+				}
+			}
+
+			// 守方小组，用于支持多组参与战斗，打完一组再上下一组
+			defender_groups : list {
+				// 守方
+				defenders : list {
+					role : battle_role
+					skills : list {             // 绝招列表
+						skill 		: skill_info
+						skill_id2 	: int16     // 绝招2 ID (boss用到一次放两绝招)
+
+						rest_release_num    	: int16         // 伙伴技能剩余释放次数，无次数限制返回-1
+					}					
+				}
+			}
+		}
+	}
+
+	// 获取战斗会合数据
+	api next_round = 1 {
+		in {
+			use_skill       : int8  // 主角使用技能 0 ~ 3
+			use_item        : int16 // 使用战斗道具（道具ID）
+			auto_fight      : bool  // 主角是否自动战斗（持续性的）
+			is_attacker     : bool  // 是否是攻击方（优化效率用）
+			position        : int8  // 主角位置（优化效率用）
+			job_index       : int8  // 职业策略选择
+			send_num        : int16 // 对应next round的下发次数
+			use_sword_soul  : bool  // 召唤剑心
+			use_ghost_skill_position : int8  // 魂侍绝招使用角色位置
+			use_ghost_skill_id : int
+			use_totem       : bool  // 出发阵印
+		}
+
+		out {
+			// 战斗状态返回
+			status    : round_status
+
+			// 当前回合数
+			now_round : int16
+
+			// 攻方玩家
+			all_attackers: list {
+				player_id : int64
+			}
+
+			// 守方玩家
+			all_defenders: list {
+				player_id : int64
+			}
+
+			// 回合出手信息
+			results   : list {
+				ftype       : fighter_type  // 出手方类型
+				event       : round_event   // 出手方发生的事件
+				position    : int8          // 出手方站位
+				power       : int16         // 出手后剩余精气
+				health      : int           // 出手后剩余生命
+				sunder_value : int16        // 剩余护甲值
+
+				use_ghost_skill : bool // 是否触发魂侍绝招
+				totem_id : int16 // 阵印ID
+				
+				ghost_id : int16 // 出手魂侍模板id
+
+				ghost_shield_on : bool // 是否自身触发魂侍护盾
+
+				shield_ghost_id : int16 // 魂侍模板id
+
+				ghost_power : int   // 魂力
+
+				add_power : int   // 主角技能增加的精气
+
+				// 所用绝招信息
+				attacks : list {
+					skill_id    		: int32         // 所使用的绝招索引
+					rest_release_num    	: int16         // 伙伴技能剩余释放次数，无次数限制返回-1
+
+					// 被攻击者的列表
+					targets : list {
+						ftype       : fighter_type  // 被攻击方类型
+						hurt        : int           // 被攻击方受到的伤害
+						event       : round_event   // 被攻击方发生的事件
+						position    : int8          // 被攻击方站位
+						take_sunder : int16         // 产生破甲值
+
+						take_ghost_shield : int     // 消耗魂侍护盾
+						direct_reduct_hurt : int     //直接免伤值
+						ghost_shield_on : bool      // 是否触发魂侍护盾
+
+						shield_ghost_id : int16 // 魂侍模板id
+						
+						ghost_power : int32 // 魂力
+
+						// 被攻击者的buff
+						buffs : list {
+							buffer 		 : buffer_info
+						}
+
+						// 被攻击者的反击
+						passive_attack : list {
+							skill_id    		: int32         // 技能ID
+							targets_buffs : list {
+								pos    : int8          // 被反击者站位
+								buffer 		 : buffer_info // 被反击攻击者的buff
+							}
+							// 给队友的buff
+							team_buffs : list {
+								pos          : int8      // 队友站位
+								buffer 		 : buffer_info //
+							}
+						}
+					}
+					
+					// 自身作用的buff
+					self_buffs : list {
+						buffer 		 : buffer_info
+					}
+
+					// 伙伴的buff
+					buddy_buffs : list {
+						pos          : int8      // 伙伴站位
+						buffer 		 : buffer_info
+					}
+				}
+
+				// 使用战斗道具信息
+				item : list{
+					item_id :int32 // 战斗道具ID
+					targets : list { // 影响目标
+						ftype       : fighter_type  // 类型
+						health   	: int     // 剩余生命值
+						power    	: int16     // 剩余精气值						
+						hurt        : int // 受到的伤害
+						position    : int8// 站位
+						buffs : list {	// 产生的buff
+							buffer 		 : buffer_info
+						}			
+					}
+				}
+			}
+
+			autos : list {
+				player_id : int64
+			}
+		}
+	}
+
+	// 战斗结束
+	api end = 2 {
+		out {
+			status : round_status // 战斗状态返回
+		}
+	}
+
+	// 逃跑
+	api escape = 3 {
+		in {}
+		out {}
+	}
+
+	// 通知战力
+	api fightnum = 4 {
+		out {
+			attacker : int32
+			defender : int32 
+		}
+	}
+
+	// 准备超时
+	api start_ready_timeout = 5 {
+		out {
+		}
+	}
+
+	// PVP战场玩家战斗准备，start_battle加载完毕后发送确认
+	// 收到对方ready时开始发送next_round
+	api start_ready = 6 {
+		in {
+			ok : bool
+		}
+		
+		// 通知战场其他玩家，已准备好的玩家pid
+		out {
+			ready_pid : int64
+		}
+	}
+
+	// 通知战场中玩家状态的变化
+	api state_change = 7 {
+		out {
+			player_id : int64
+			auto      : bool
+			desc      : string
+		}
+	}
+
+	api call_battle_pet = 8 {
+		in {
+			grid_num : int8 // 所装备的灵宠格子
+		}
+
+		out {
+			success: bool //召唤灵宠成功
+			player_power	: int16 // 玩家剩余精气
+			role 			: battle_role
+			skills 			: list {     // 绝招列表
+				skill : skill_info
+			}
+		}
+	}
+
+	//为伙伴选择技能
+	api use_buddy_skill = 9 {
+		in {
+			pos		: 	int8 // 伙伴位置索引
+			use_skill	: 	int8 // 伙伴技能索引
+		}
+		out{
+			pos: int8 // 伙伴位置索引(from request)
+			use_skill: int8 // 伙伴技能索引(from request)
+		}
+	}
+	
+	//
+    //通知战场召唤新的怪物
+    //
+	api call_new_enemys = 10 {
+		out{
+			call_info: list{
+				ftype : int8
+				position : int8
+				attack_index : int8 //0为第一次攻击，1为第二次攻击
+				enemys : list{
+					role : battle_role
+					skills : list {             // 绝招列表
+						skill 		: skill_info
+						skill_id2 	: int16     // 绝招2 ID (boss用到一次放两绝招)
+
+						rest_release_num    	: int16         // 伙伴技能剩余释放次数，无次数限制返回-1
+				}
+			}
+		}
+		}
+	}
+	//动态增加战斗小组
+	api new_fighter_group = 11 {
+		out {
+			ftype: int8 //TODO什么来的
+			player_id : int64 //玩家ID
+            		ghost_skill_index: int8 //当前可用魂侍技能索引 [0,x) 。 值等于0时可使用第一档魂侍技能
+			fighters : list {
+				role : battle_role 
+				skills : list {	 //绝招列表
+					skill : skill_info 
+					rest_release_num : int16 
+				}
+			}
+		}
+	}
+
+	//劫持镖船战斗 返回是通用的 start_battle.out
+	api start_battle_for_hijack_boat = 12 {
+		in{
+			pid :int64 //船只护送玩家PID
+			boat_id :int64 //劫持船只ID
+		}
+		out{}
+	}
+
+	//夺回镖船战斗 返回是通用的 start_battle.out
+	api start_battle_for_recover_boat = 13 {
+		in{
+			pid :int64 //船只劫持玩家PID
+			boat_id :int64 //夺回船只ID
+		}
+		out{}
+	}
+
+	//一个玩家的操作结束
+	api round_ready = 14 {
+		in{
+			is_auto : bool //是否自动	
+		}
+		out {}
+	}
+
+	//请求阵印战报 返回为一个 nextrount.out
+	api init_round = 15 {
+		in{}
+		out {}
+	}
+
+	//设置自动战斗
+	api set_auto = 17 {
+		in {}
+		out {}
+	}
+	//取消自动战斗
+	api cancel_auto = 18 {
+		in {}
+		out {
+			round : int16 //参与进来的回合
+		}
+	}
+
+	// 设置角色技能
+	api set_skill = 19 {
+		in {
+			is_attacker : bool //攻击方
+			pos_idx		: 	int8 // 角色位置索引
+			skill_idx	: 	int8 // 角色技能索引
+		}
+		out{
+			pos_idx: int8 // 角色位置索引(from request)
+			skill_idx	: 	int8 // 角色技能索引
+		}
+	}
+
+	//使用战斗道具
+	api use_item = 20 {
+		in {
+			is_attacker : bool //攻击方
+			position        : int8  // 角色位置
+			item_id : int16 //道具ID
+		}
+		out {}
+	}
+
+	//使用魂侍
+	api use_ghost = 21 {
+		in {
+			is_attacker : bool //攻击方
+			position        : int8  // 使用魂侍角色位置
+		}
+		out {}
+	}
+
+	//通知玩家开始
+	api notify_ready = 22 {
+		out {
+			Pid : int64 //通知玩家进入操作阶段
+		}
+	}
+
+	//多人战场重连(占坑)
+	api battle_reconnect = 23 {
+		in{}
+		out{}
+	}
+}

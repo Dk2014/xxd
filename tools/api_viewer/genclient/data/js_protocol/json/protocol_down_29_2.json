@@ -1,0 +1,1 @@
+{"action_name":"world_channel_info","module_name":"channel","protocol":[{"name":"timestamp","type":"int64"},{"name":"daily_num","type":"int16"}]}

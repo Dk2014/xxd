@@ -1,0 +1,75 @@
+//
+// 邮件接口
+//
+mod mail = 12
+{	
+	//
+	// 获取列表(前端使用unread接口后可以去掉总数)
+	//
+	api get_list = 0 {
+		in {}
+		out {
+			get_heart_num : int32 //今日从好友处获取的爱心数量
+			mails : list16 {
+				id         			: int64  	// 邮件主键id
+				mail_id    			: int32  	// 邮件模板数据id
+				state      			: int8   	// 0未读，1已读
+				priority      			: int8   	// 优先级 0最低
+				send_time  			: int64  	// 发送时间戳
+				expire_time  			: int64  	// 过期时机 0-过期自动删除 1-领取附件后删除 其他-指定删除时间
+				parameters 			: string 	// 模板参数值
+				title 				: string 	// 邮件标题
+				content 			: string 	// 内容
+				attachments : list {
+					id 		  		: int64  // 附件主键id
+					attachment_type : int8 
+					item_id	  		: int16
+					item_num  		: int64
+				}
+			}
+		}
+	}
+
+	//
+	// 阅读
+	//
+	api read = 1 {
+		in {
+			id : int64 // 玩家邮件ID
+		}
+		out {
+		}
+	}
+
+	// 
+	// 拾取物品
+	// 
+	api take_attachment = 2 {
+		in {
+			attachment_id : int64 // 附件主键id
+		}
+		out {}
+	}
+
+	//
+	// 获取未读邮件列表及邮件总条数
+	//
+	api get_infos = 3 {
+		in {
+		}
+		out {
+			new_mail_num : int16  // 新邮件数
+			unread_num 	 : int16  // 未读邮件总数
+			total        : int16  // 邮件总条数
+		}
+	}
+
+	// 
+	// 请求全局邮件物品（互动）
+	// 
+	[tag("global")]
+	api request_global_mail = 4 {
+		in {}
+		out {}
+	}
+}

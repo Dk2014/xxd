@@ -1,0 +1,293 @@
+// 玩家模块
+mod player = 0
+{
+	type login_status enum {
+		FAILED     = 0  // 失败
+		SUCCEED    = 1  // 成功
+		FIRST_TIME = 2  // 初次登陆
+		WAIT_CLOSE = 3  // 等待之前的连接关闭（服务端会主动发送relogin消息）
+		RESTORE_SUCCEED = 4 // 链接恢复成功
+		BAN = 5 // 账户被冻结
+		RELOGIN = 6 // 通知客户端重新登陆（登陆时重连参数为false）
+		INVALID_PAYTOKEN = 7 // 支付token失效
+	}
+
+	type platform_type enum {
+		MOBILE_IOS_WEIXIN = 1 // IOS微信
+		MOBILE_IOS_QQ = 2 // IOS手Q
+		MOBILE_IOS_GUEST = 5 // IOS游客
+		MOBILE_ANDROID_WEIXIN = 17 // 安卓微信
+		MOBILE_ANDROID_QQ = 18 	// 安卓手Q
+		MOBILE_ANDROID_GUEST = 21 	// 安卓游客
+	}
+
+	type channel_id enum {
+		MOBILE = 0 // 不需要该参数的统一传0
+		MOBILE_IOS_VN = 1 //越南IOS
+		MOBILE_ANDROID_VN = 2 //越南安卓
+		MOBILE_IOS_TW = 3 //台湾IOS
+		MOBILE_ANDROID_TW = 4 //台湾安卓
+	}
+
+	type rank_type enum {
+		FIGHTNUM          = 0 // 战力排行榜
+		LEVEL             = 1 // 等级
+		MAINROLE_FIGHTNUM = 2 // 主角战力排行榜
+        INGOT             = 3 // 玩家充值排行榜
+        NULL              = 8 //为了控制显示排行榜数目
+	}
+
+	//
+	// 玩家登录成功后获取信息
+	//
+	api info = 3 {
+		in {
+		}
+		out {
+			nickname   : text16			// 主角昵称
+			town_id    : int16  		// 主角当前城镇
+			role_id    : int8         	// 主角模板
+			role_lv	   : int16			// 主角等级
+			role_exp   : int64			// 主角经验
+			vip_level  : int16		//VIP等级
+			fame  	   : int		//累计总声望
+
+			ingot      : int64    // 元宝
+			coins      : int64    // 铜钱
+			fragments  : int64    // 剑心碎片数
+			heart_num  : int16    // 玩家爱心数
+			physical   : int16	  // 玩家体力值
+			physical_buy_count : int16 // 今日体力已购次数
+			coins_buy_count: int16 //今日铜钱购买次数
+			batch_bought_coins: int16 //今日批量购买铜钱次数
+			cornucopia_count: int16 //今日聚宝盆使用次数(是否已使用)
+
+			func_key 	: int16	// 玩家当前的功能权值
+			played_key	: int16 // 玩家当前已播放开启功能的权值
+
+			town_lock  				: int32	// 当前的城镇权值
+			mission_key				: int32	// 拥有的区域钥匙数
+			mission_max_order		: int8	// 已开启区域的最大序号
+			mission_level_max_lock  : int32	// 已开启的关卡最大权值
+			mission_level_award_lock  : int32	// 已奖励的关卡权值
+
+			hard_level_lock: int32 //已开启的难度关卡最大权值
+			quest_id : int16  // 任务ID
+			quest_state :    int8   // 任务状态
+
+			arena_report_num : int16 // 离线产生的比武场战报数
+			next_free_star_box_timestamp: int64 //  星辉宝箱下一次免费可开时间
+			next_free_moon_box_timestamp: int64 //  月影宝箱下一次免费可开时间
+			next_free_sun_box_timestamp: int64 //  日耀箱下一次免费可开时间
+			next_free_hunyuan_box_timestamp: int64 //  混元箱下一次免费可开时间
+			qq_vip_status: int16 // qq服务状态,比特位表示，从低开始依次是QQ会员，QQ超级会员
+			server_open_time: int64 //游戏服开服时间
+			month_card_expire_timestamp: int64 //过期
+			never_recharge : bool //从未充值
+		}
+	}
+
+	// 当login收到WAIT_CLOSE状态后，需要等待该通知才进行登陆请求
+	api relogin = 4 {
+		in {
+		}
+		out {
+		}
+	}
+
+	// 购买体力
+	api buy_physical = 5 {
+		in {
+		}
+		out {
+			physical_buy_count : int16 // 今日体力已购买次数
+		}
+	}
+
+	// 标记功能开启效果已播放
+	api set_play_key = 6 {
+		in {
+			lock: int16 // 当前播放的功能权值
+		}
+		out {
+		}
+	}
+
+	// 获取服务器时间
+	api get_time = 7 {
+		in{}
+		out {
+		   unix_time: int64
+		}
+	}
+
+	// 从平台登陆
+	api from_platform_login = 8 {
+		in {
+			platform_type    : platform_type
+			channel_id		 : channel_id
+			username         : text  	// 平台帐号，可能是ID、Email、用户名，可以唯一标识玩家的即可，最大长度100字符
+			nickname 		 : string   // 昵称
+			role_id  		 : int8     // 角色模板表ID			
+			hashcode         : text  	// 登录效验码
+			unixtime         : int64 	// 登录请求的UNIX时间戳
+			restore			 : bool		// 恢复连接(true -- 针对网络不稳定，客户端挂起，但依然留在游戏场景中; 否则false)
+			recvCount		 : int64    // 客户端接收到的下行数据次数（该参数重连时设置）
+			gsid			 : int    // gsid
+
+			openkey 		 : string // 从手Q登录态中获取的access_token的值
+			pay_token 		 : string // 从手Q登录态中获取的pay_token的值
+			pfkey    		 : string // 跟平台来源和openkey根据规则生成的一个密钥串
+			zoneid   		 : int    // 区服ID，sid
+			pf       		 : string // 平台来源，平台-注册渠道-系统运行平台-安装渠道-业务自定义。从MSDK的getpf接口获取。例如： qq_m_qq-2001-android-2011-xxxx
+
+			channel			 : int 		// 登陆渠道
+			telecom_oper	 : string   // 运营商
+			client_version   : string   // 客户端版本
+			system_hardware  : string   // 移动终端机型
+			network			 : string   // 网络（3G/WIFI/2G）
+			wegames_platform_uid : string //wegames 平台ID(仅当游客账号绑定wegames平台账号是需要传次参数)
+		}
+		out {
+			status    : login_status  	// 登录返回结果
+			player_id : int64         	// 玩家在游戏中的ID
+			ban_time  : int64 			// 账号冻结结束时间（-1 无; 0 永久）
+		}
+	}
+
+	// 元宝兑换铜钱
+	api buy_coins = 9 {
+		in {
+			number		:int16		//兑换次数
+		}
+		out {
+			result : list {
+				ingot		: int64 //消耗元宝数
+				coins		: int64 //获得铜币数
+				crit		: bool	//是否暴击
+			}
+		}
+	}
+
+	// 获取跨服/互动 登陆信息
+	api get_login_info = 10 {
+		in {}
+		out {
+			hash : string
+			time : int64
+		}
+	}
+
+	// 跨服登陆游戏服
+	[tag("cross")]
+	api cross_login_game_server = 20 {
+		in {
+			pid  		: int64 	// 玩家ID
+			openid      : string 
+			nick 		: string	// 玩家昵称
+			role_id 	: int8 		// 主角模板ID
+			role_level  : int16		// 主角等级
+
+			time : int64 // 服务器时间，timeout机制(从player::get_login_info中获取)
+			hash : text  // 登陆hash(从player::get_login_info中获取)
+			wegames_platform_uid : string //wegames 平台ID(仅当游客账号绑定wegames平台账号是需要传次参数)
+		}
+		out {
+			result  	:  bool 	// true成功，false失败
+		}
+	}
+
+	// 新玩家在互动服务器初始化成功后通知游戏服，游戏服再通知客户端
+	api notify_global_server_info = 25 {
+		out {
+			gsid    : int  // gsid
+			addr	: string // ip:port 如127.0.0.1:8080
+		}
+	}
+
+	// 登陆互动服务器（互动服）
+	[tag("global")]
+	api global_login = 26 {
+		in {
+			pid  		: int64 	// 玩家ID
+			openid      : string 
+			nick 		: string	// 玩家昵称
+			role_id 	: int8 		// 主角模板ID
+			role_level  : int16		// 主角等级
+			fight_num	: int32		// 总战力
+			time		: int64 	// 登陆时间(从player::get_login_info中获取)
+			hash		: text		// 登陆hash(从player::get_login_info中获取)
+			gsid	    : int     // gsid
+
+			platform_type    : platform_type
+			channel_id		 : channel_id
+			username         : text  	// 平台帐号，可能是ID、Email、用户名，可以唯一标识玩家的即可，最大长度100字符
+			openkey 		 : string // 从手Q登录态中获取的access_token的值
+			pay_token 		 : string // 从手Q登录态中获取的pay_token的值
+			pfkey    		 : string // 跟平台来源和openkey根据规则生成的一个密钥串
+			zoneid   		 : int    // 区服ID，sid
+			pf       		 : string // 平台来源，平台-注册渠道-系统运行平台-安装渠道-业务自定义。从MSDK的getpf接口获取。例如： qq_m_qq-2001-android-2011-xxxx
+			wegames_platform_uid : string //wegames 平台ID(仅当游客账号绑定wegames平台账号是需要传次参数)
+		}
+		
+		out {
+			paytoken    :  bool     // false 支付token失效
+			result  	:  bool 	// true成功，false失败
+		}
+	}
+
+	// 查询玩家元宝
+	api get_ingot = 27 {
+		in {}
+
+		out {
+			ingot :int64 //玩家现有元宝
+		}
+	}
+	
+	// 查询各系统声望获得(废弃)
+	api system_fame = 28 {
+		in {	
+			system:  int16 //游戏系统类型（常量见 fame_system表）
+		}
+		out {
+			fame: int32 //累计获得声望
+			system:  int16 //游戏系统类型（常量见 fame_system表）
+		}
+	}
+
+	// 玩家排行榜(互动)
+	[tag("global")]
+	api get_ranks = 29 {
+		in {	
+			flag : rank_type         // 排行榜类型
+			page_index : int64       // 查询的页数从0开始
+		}
+		out {
+			ranks : list {	
+			    pid        : int64 	
+			    nickname   : text16
+			    rank       : int64   // 排名
+			    values : list {
+				flag      : rank_type   
+				value     : int64   
+			    }
+			} 
+			has_next       : bool    // 下页是否有数据
+		}
+	}
+    
+    //是否开放充值排行榜功能
+    api open_ingot_rank = 30{
+        out{
+            IsOpenIngotRank : bool 
+        }
+   } 
+
+   //是否关闭充值排行榜面板
+    api close_ingot_rank_panel=31{
+        out{
+            IsCloseIngotRankPanel : bool
+        }    
+    }
+}

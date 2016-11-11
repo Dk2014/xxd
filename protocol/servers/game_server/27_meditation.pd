@@ -1,0 +1,34 @@
+//
+// 打坐 接口
+//
+mod meditation= 27
+{
+	// 打坐信息
+	api meditation_info= 1 {
+		in{ }
+		out {
+			exp_accumulate_time: int //累积打坐时间（秒）
+			key_accumulate_time: int //光明钥匙累积时间（秒)
+		}
+	}
+
+	// 开始打坐
+	api start_meditation= 2{
+		in {
+			in_clubhouse : bool //在帮派集会所
+		}
+		out{
+			exp_accumulate_time: int //累积打坐时间（秒）
+			key_accumulate_time: int //光明钥匙累积时间（秒)
+		}
+	}
+
+	// 停止打坐
+	api stop_meditation= 3 {
+		in {
+			in_clubhouse : bool //在帮派集会所
+		}
+		out{
+		}
+	}
+}

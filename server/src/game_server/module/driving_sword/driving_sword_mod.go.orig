@@ -1,0 +1,219 @@
+package driving_sword
+
+import (
+	"core/fail"
+	"core/log"
+	"core/net"
+	"core/time"
+	"game_server/api/protocol/driving_sword_api"
+	"game_server/battle"
+	"game_server/dat/driving_sword_dat"
+	"game_server/dat/mission_dat"
+	"game_server/dat/player_dat"
+	"game_server/mdb"
+	"game_server/module"
+)
+
+func init() {
+	module.DrivingSword = DrivingSwordMod{}
+}
+
+type DrivingSwordMod struct{}
+
+func (mod DrivingSwordMod) OpenFunc(db *mdb.Database) {
+
+	//initialize the player global table
+	cloud := driving_sword_dat.GetCloudLevel(1)
+	now := time.GetNowTime()
+	db.Insert.PlayerDrivingSwordInfo(&mdb.PlayerDrivingSwordInfo{
+		Pid:               db.PlayerId(),
+		CurrentCloud:      1,
+		HighestCloud:      1,
+		CurrentX:          cloud.BornX,
+		CurrentY:          cloud.BornY,
+		AllowedAction:     driving_sword_dat.DAILY_ADDITIONAL_ACTION_COUNT,
+		ActionRefreshTime: now,
+		ActionBuyTime:     now,
+		DailyActionBought: 0,
+	})
+
+	//get SessionState
+	sess, _ := module.Player.GetPlayerOnline(db.PlayerId())
+
+	//open up the first cloud
+	punchTheShadow(module.State(sess), uint8(cloud.BornX), uint8(cloud.BornY))
+}
+
+func (mod DrivingSwordMod) IncActionPoint(db *mdb.Database, point int16) {
+	info := db.Lookup.PlayerDrivingSwordInfo(db.PlayerId())
+	info.AllowedAction += point
+	db.Update.PlayerDrivingSwordInfo(info)
+}
+
+func (mod DrivingSwordMod) ResetCloudData(state *module.SessionState, cloud int16) {
+	db := state.Database
+	db.Select.PlayerDrivingSwordEvent(func(row *mdb.PlayerDrivingSwordEventRow) {
+		if row.CloudId() == cloud {
+			db.Delete.PlayerDrivingSwordEvent(row.GoObject())
+		}
+	})
+	db.Select.PlayerDrivingSwordEventExploring(func(row *mdb.PlayerDrivingSwordEventExploringRow) {
+		if row.CloudId() == cloud {
+			db.Delete.PlayerDrivingSwordEventExploring(row.GoObject())
+		}
+	})
+	db.Select.PlayerDrivingSwordEventVisiting(func(row *mdb.PlayerDrivingSwordEventVisitingRow) {
+		if row.CloudId() == cloud {
+			db.Delete.PlayerDrivingSwordEventVisiting(row.GoObject())
+		}
+	})
+	db.Select.PlayerDrivingSwordEventTreasure(func(row *mdb.PlayerDrivingSwordEventTreasureRow) {
+		if row.CloudId() == cloud {
+			db.Delete.PlayerDrivingSwordEventTreasure(row.GoObject())
+		}
+	})
+	db.Select.PlayerDrivingSwordMap(func(row *mdb.PlayerDrivingSwordMapRow) {
+		if row.CloudId() == cloud {
+			db.Delete.PlayerDrivingSwordMap(row.GoObject())
+			row.Break()
+		}
+	})
+	info := db.Lookup.PlayerDrivingSwordInfo(db.PlayerId())
+	if info.CurrentCloud == cloud {
+		cloudData := driving_sword_dat.GetCloudLevel(cloud)
+		info.CurrentX = cloudData.BornX
+		info.CurrentY = cloudData.BornY
+		db.Update.PlayerDrivingSwordInfo(info)
+		punchTheShadow(state, uint8(info.CurrentX), uint8(info.CurrentY))
+	}
+}
+
+func (mod DrivingSwordMod) PunchCloudData(state *module.SessionState) {
+	db := state.Database
+
+	drivingInfo := db.Lookup.PlayerDrivingSwordInfo(db.PlayerId())
+	cloudInfo := driving_sword_dat.GetCloudLevel(drivingInfo.CurrentCloud)
+
+	for x := 0; x < int(cloudInfo.Width); x++ {
+		for y := 0; y < int(cloudInfo.Height); y++ {
+			punchTheShadow(state, uint8(x), uint8(y))
+		}
+	}
+}
+
+func (mod DrivingSwordMod) BattleWin(session *net.Session, xdEventType int32) {
+	state := module.State(session)
+
+	drivingInfo := state.Database.Lookup.PlayerDrivingSwordInfo(state.Database.PlayerId())
+	pExplorer := lookupPlayerDrivingExploringEvent(state.Database, int16(drivingInfo.CurrentCloud), uint8(drivingInfo.CurrentX), uint8(drivingInfo.CurrentY))
+
+	awardList := driving_sword_dat.GetDrivingSwordExploring(pExplorer.CloudId, pExplorer.DataId)
+
+	table := map[int16]int16{
+		awardList.AwardItem1: int16(awardList.AwardNum1),
+		awardList.AwardItem2: int16(awardList.AwardNum2),
+		awardList.AwardItem3: int16(awardList.AwardNum3),
+	}
+	for id, n := range table {
+		if id > 0 && n > 0 {
+			module.Item.AddItem(state.Database, id, int16(n), 1, xdEventType, "")
+		}
+	}
+	if awardList.AwardCoinNum > 0 {
+		module.Player.IncMoney(state.Database, state.MoneyState, int64(awardList.AwardCoinNum), player_dat.COINS, 1, xdEventType, "")
+	}
+
+	state.DrivingSwordState = nil
+
+	pExplorer.Status = int8(driving_sword_api.EXPLORING_MOUNTAIN_STATUS_TREASURE_EMPTY)
+
+	state.Database.Update.PlayerDrivingSwordEventExploring(pExplorer)
+}
+
+func (mod DrivingSwordMod) StartExploreLevel(session *net.Session) {
+	state := module.State(session)
+
+	drivingInfo := state.Database.Lookup.PlayerDrivingSwordInfo(state.Database.PlayerId())
+	playerExplorer := lookupPlayerDrivingExploringEvent(state.Database, int16(drivingInfo.CurrentCloud), uint8(drivingInfo.CurrentX), uint8(drivingInfo.CurrentY))
+	fail.When(playerExplorer == nil || playerExplorer.Status != int8(driving_sword_api.EXPLORING_MOUNTAIN_STATUS_UNEXPLORED), "PlayerDrivingSwordEventExploring no record or just done")
+
+	awardList := driving_sword_dat.GetDrivingSwordExploring(playerExplorer.CloudId, playerExplorer.DataId)
+	missionID := mission_dat.GetSpecialLevelId(battle.BT_DRIVING_LEVEL, int16(awardList.Id))
+	log.Debugf("[StartExploreLevel] pid %d, cloud_id %d, data_id %d, award_list_id %d, missionID %d", state.PlayerId, playerExplorer.CloudId, playerExplorer.DataId, awardList.Id, missionID)
+
+	enemyIds := mission_dat.GetEnemyIdByMissionLevelId(missionID)
+
+	state.DrivingSwordState = &module.DrivingSwordState{
+		EnemyIds: enemyIds,
+	}
+
+	if len(enemyIds) > mission_dat.PVE_LEVEL_INIT_ENEMY_GROUP_NUM {
+		state.DrivingSwordState.MaxLoadedIndex = mission_dat.PVE_LEVEL_INIT_ENEMY_GROUP_NUM - 1
+	} else {
+		state.DrivingSwordState.MaxLoadedIndex = len(enemyIds) - 1
+	}
+
+	//构造 mission level state
+	state.MissionLevelState = module.NewMissionLevelState(battle.BT_DRIVING_LEVEL, 0) //会有关卡ID吗
+	state.MissionLevelState.LoadBuddySkill(state)
+	state.MissionLevelState.LoadFighterAttribute(state)
+	state.MissionLevelState.EnemyId = enemyIds[0]
+	//构造战场
+	state.Battle = module.Battle.NewBattleForDriving(session, missionID)
+}
+
+func (mod DrivingSwordMod) BattleLose(session *net.Session) {
+	state := module.State(session)
+	state.DrivingSwordState = nil
+}
+
+func (mod DrivingSwordMod) WarnupNextEnemyGroup(state *module.SessionState, battleState *battle.BattleState) (fighters []*battle.Fighter) {
+	currendIndex := battleState.Defenders.CurrentGroupIndex()
+	if currendIndex < state.DrivingSwordState.MaxLoadedIndex ||
+		state.DrivingSwordState.MaxLoadedIndex == len(state.DrivingSwordState.EnemyIds)-1 {
+		return nil
+	}
+	//战场中的怪物组已是最后一组时，检查是否有更多
+	state.DrivingSwordState.MaxLoadedIndex += 1
+	enemyId := state.DrivingSwordState.EnemyIds[state.DrivingSwordState.MaxLoadedIndex]
+	return module.NewEnemyFighterGroup(enemyId)
+}
+
+func (mod DrivingSwordMod) VisitingAward(session *net.Session, xdEventType int32) {
+	state := module.State(session)
+	currentInfo := state.Database.Lookup.PlayerDrivingSwordInfo(state.PlayerId)
+	fail.When(currentInfo == nil, "can not find visiting info")
+	state.Database.Select.PlayerDrivingSwordEventVisiting(func(row *mdb.PlayerDrivingSwordEventVisitingRow) {
+		if row.CloudId() == currentInfo.CurrentCloud && row.X() == currentInfo.CurrentX && row.Y() == currentInfo.CurrentY && row.Status() == 0 {
+			record := row.GoObject()
+			record.Status = 2
+			record.TargetSideState = nil
+			state.Database.Update.PlayerDrivingSwordEventVisiting(record)
+			award := driving_sword_dat.GetDrivingSwordVistingAward(int32(row.CloudId()), int8(row.DataId()))
+			if award != nil {
+				getDrivingSwordAward(session, award, xdEventType)
+			}
+		}
+	})
+}
+
+/*
+func (mod DrivingSwordMod) IsRoleInGarrison(db *mdb.Database, roleId int8) bool {
+	if !module.Player.IsOpenFunc(db, player_dat.FUNC_DRIVING_SWORD) {
+		//功能未开启
+		return false
+	}
+	find := false
+	db.Select.PlayerDrivingSwordEventExploring(func(row *mdb.PlayerDrivingSwordEventExploringRow) {
+		if row.RoleId() == roleId {
+			find = true
+			row.Break()
+		}
+	})
+	return find
+}
+
+func (mod DrivingSwordMod) EndGarrisonByRole(db *mdb.Database, roleId int8) {
+	doEndGarrison(db, roleId)
+}
+*/

@@ -1,0 +1,4 @@
+-- ------------------------------------------------------
+-- 11/02/2015 16:24 插入或更新发生在表product_info IP:::1
+INSERT INTO `product_info` SET `product_id` = 'xxd', `price` = '1', `ingot` = '11', `unit` = 'dd', `is_month_card` = '1', `first_presentation` = '11', `regular_presentation` = '11' ;
+

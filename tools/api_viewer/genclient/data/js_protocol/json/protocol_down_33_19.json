@@ -1,0 +1,1 @@
+{"action_name":"notify_update_player","module_name":"clique","protocol":[{"name":"player_id","type":"int64"},{"name":"fashion_id","type":"int16"},{"name":"in_meditation_state","type":"bool"}]}

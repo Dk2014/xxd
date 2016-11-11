@@ -1,0 +1,1 @@
+{"action_name":"take_product","module_name":"taoyuan","protocol":[{"name":"product_type","type":"int8"},{"name":"is_ingot","type":"bool"}]}

@@ -1,0 +1,66 @@
+//
+// 灵宠
+//
+mod battle_pet = 17
+{
+	// 获取玩家灵宠信息
+	api get_pet_info = 1 {
+		in {}
+		out {
+			pet : list {
+				pet_id 		: int32 // 灵宠ID
+				level       : int16 // 灵宠等级
+				exp         : int64 // 灵宠当前经验
+				skill_level : int16 // 灵宠技能等级
+				called	: bool  // 是否已召唤（仅部分关卡有效）
+			}
+
+			set : list {
+				grid_num	: int8  // 格子[1~5]
+				pet_id		: int32 // 灵宠ID(-1表示格子未开启)
+			}
+		}
+	}
+
+
+
+	// 装配灵宠
+	api set_pet = 3 {
+		in {
+			grid_num	: int8  // 格子[1~5]
+			pet_id		: int32 // 灵宠ID(不装配设置为0)
+		}
+		out {
+		}
+	}
+
+	// 灵宠装配交换
+	api set_pet_swap = 4 {
+		in {
+			from_grid_num	: int8  // 格子[1~5]
+			to_grid_num		: int8  // 格子[1~5]
+		}
+		out {
+		}
+	}
+
+	// 升级灵宠
+	api upgrade_pet = 6 {
+		in {
+			pet_id : int32 // 灵宠ID
+		}
+		out {
+			exp   : int64 // 经验零头
+			level : int16 // 灵宠等级
+		}
+	}
+
+	// 训练灵宠技能
+	api training_pet_skill = 7 {
+		in {
+			pet_id : int32 // 灵宠ID
+		}
+		out {
+		}
+	}
+}

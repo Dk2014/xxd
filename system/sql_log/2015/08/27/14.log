@@ -1,0 +1,8 @@
+-- ------------------------------------------------------
+-- 08/27/2015 14:49 插入或更新发生在表clique_building IP:::1
+UPDATE `clique_building` SET `name` = '总舵', `biaoshi` = 'ZongDuo', `order` = '0' WHERE `id` = 5;UPDATE `clique_building` SET `name` = '宗祠', `biaoshi` = 'ZongCi', `order` = '1' WHERE `id` = 1;UPDATE `clique_building` SET `name` = '钱庄', `biaoshi` = 'QianZhuang', `order` = '2' WHERE `id` = 6;UPDATE `clique_building` SET `name` = '回春堂', `biaoshi` = 'HuiChunTang', `order` = '3' WHERE `id` = 2;UPDATE `clique_building` SET `name` = '神兵堂', `biaoshi` = 'ShenBingTang', `order` = '4' WHERE `id` = 3;UPDATE `clique_building` SET `name` = '金刚堂', `biaoshi` = 'JinGangTang', `order` = '5' WHERE `id` = 4;INSERT INTO `clique_building` SET `name` = '战备仓库', `biaoshi` = 'ZhanBeiCangKu', `order` = '6' ;
+
+-- ------------------------------------------------------
+-- 08/27/2015 14:59 插入或更新发生在表clique_building IP:::1
+UPDATE `clique_building` SET `name` = '总舵', `biaoshi` = 'ZongDuo', `order` = '0' WHERE `id` = 5;UPDATE `clique_building` SET `name` = '宗祠', `biaoshi` = 'ZongCi', `order` = '1' WHERE `id` = 1;UPDATE `clique_building` SET `name` = '钱庄', `biaoshi` = 'QianZhuang', `order` = '3' WHERE `id` = 6;UPDATE `clique_building` SET `name` = '回春堂', `biaoshi` = 'HuiChunTang', `order` = '4' WHERE `id` = 2;UPDATE `clique_building` SET `name` = '神兵堂', `biaoshi` = 'ShenBingTang', `order` = '5' WHERE `id` = 3;UPDATE `clique_building` SET `name` = '金刚堂', `biaoshi` = 'JinGangTang', `order` = '6' WHERE `id` = 4;UPDATE `clique_building` SET `name` = '战备仓库', `biaoshi` = 'ZhanBeiCangKu', `order` = '2' WHERE `id` = 7;
+

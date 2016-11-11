@@ -1,0 +1,834 @@
+2015/09/14 15:18:15 [I] - mem:1442776 goroutine:10 gc:4 pause:13ms
+2015/09/14 15:18:25 [I] - mem:1443384 goroutine:10 gc:0 pause:0ms
+2015/09/14 15:18:35 [I] - mem:1443480 goroutine:10 gc:0 pause:0ms
+2015/09/14 15:18:45 [I] - mem:1443576 goroutine:10 gc:0 pause:0ms
+2015/09/14 15:18:55 [I] - mem:1443720 goroutine:10 gc:0 pause:0ms
+2015/09/14 15:19:05 [I] - mem:1444888 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:19:15 [I] - mem:1544104 goroutine:10 gc:0 pause:0ms
+2015/09/14 15:19:25 [I] - mem:1544248 goroutine:10 gc:0 pause:0ms
+2015/09/14 15:19:35 [I] - mem:1544344 goroutine:10 gc:0 pause:0ms
+2015/09/14 15:19:45 [I] - mem:1544440 goroutine:10 gc:0 pause:0ms
+2015/09/14 15:19:55 [I] - mem:1544536 goroutine:10 gc:0 pause:0ms
+2015/09/14 15:20:05 [I] - mem:1544632 goroutine:10 gc:0 pause:0ms
+2015/09/14 15:20:15 [I] - mem:1590560 goroutine:10 gc:0 pause:0ms
+2015/09/14 15:20:25 [I] - mem:1590656 goroutine:10 gc:0 pause:0ms
+2015/09/14 15:20:35 [I] - mem:1590752 goroutine:10 gc:0 pause:0ms
+2015/09/14 15:20:45 [I] - mem:1590848 goroutine:10 gc:0 pause:0ms
+2015/09/14 15:20:55 [I] - mem:1590944 goroutine:10 gc:0 pause:0ms
+2015/09/14 15:21:05 [I] - mem:1502592 goroutine:10 gc:1 pause:0ms
+2015/09/14 15:21:15 [I] - mem:1553464 goroutine:10 gc:0 pause:0ms
+2015/09/14 15:21:36 [I] - mem:1441592 goroutine:10 gc:4 pause:8ms
+2015/09/14 15:21:36 [E] - RPC error
+Error   	= RPC server 929 not exists
+serviceAPI 	= RemoteServe.CronGetOnlineCount
+Args    = &rpc.Args_CronGetOnlineCount{
+    RPCArgTag: rpc.RPCArgTag{
+        ClientId: 0,
+    },
+}
+
+
+
+Result  = &rpc.Reply_CronGetOnlineCount{
+    IosCount: 0,
+    AndroidCount: 0,
+}
+2015/09/14 15:21:46 [I] - mem:1454320 goroutine:10 gc:0 pause:0ms
+2015/09/14 15:21:46 [E] - RPC error
+Error   	= RPC server 929 not exists
+serviceAPI 	= RemoteServe.CronGetOnlineCount
+Args    = &rpc.Args_CronGetOnlineCount{
+    RPCArgTag: rpc.RPCArgTag{
+        ClientId: 0,
+    },
+}
+
+
+
+Result  = &rpc.Reply_CronGetOnlineCount{
+    IosCount: 0,
+    AndroidCount: 0,
+}
+2015/09/14 15:21:56 [I] - mem:1458816 goroutine:10 gc:0 pause:0ms
+2015/09/14 15:21:56 [E] - RPC error
+Error   	= RPC server 929 not exists
+serviceAPI 	= RemoteServe.CronGetOnlineCount
+Args    = &rpc.Args_CronGetOnlineCount{
+    RPCArgTag: rpc.RPCArgTag{
+        ClientId: 0,
+    },
+}
+
+
+
+Result  = &rpc.Reply_CronGetOnlineCount{
+    IosCount: 0,
+    AndroidCount: 0,
+}
+2015/09/14 15:22:06 [I] - mem:1463056 goroutine:10 gc:0 pause:0ms
+2015/09/14 15:22:06 [E] - RPC error
+Error   	= RPC server 929 not exists
+serviceAPI 	= RemoteServe.CronGetOnlineCount
+Args    = &rpc.Args_CronGetOnlineCount{
+    RPCArgTag: rpc.RPCArgTag{
+        ClientId: 0,
+    },
+}
+
+
+
+Result  = &rpc.Reply_CronGetOnlineCount{
+    IosCount: 0,
+    AndroidCount: 0,
+}
+2015/09/14 15:22:16 [I] - mem:1468848 goroutine:10 gc:0 pause:0ms
+2015/09/14 15:22:16 [E] - RPC error
+Error   	= RPC server 929 not exists
+serviceAPI 	= RemoteServe.CronGetOnlineCount
+Args    = &rpc.Args_CronGetOnlineCount{
+    RPCArgTag: rpc.RPCArgTag{
+        ClientId: 0,
+    },
+}
+
+
+
+Result  = &rpc.Reply_CronGetOnlineCount{
+    IosCount: 0,
+    AndroidCount: 0,
+}
+2015/09/14 15:22:26 [I] - mem:1474528 goroutine:10 gc:0 pause:0ms
+2015/09/14 15:22:26 [E] - RPC error
+Error   	= RPC server 929 not exists
+serviceAPI 	= RemoteServe.CronGetOnlineCount
+Args    = &rpc.Args_CronGetOnlineCount{
+    RPCArgTag: rpc.RPCArgTag{
+        ClientId: 0,
+    },
+}
+
+
+
+Result  = &rpc.Reply_CronGetOnlineCount{
+    IosCount: 0,
+    AndroidCount: 0,
+}
+2015/09/14 15:22:36 [I] - mem:1580048 goroutine:10 gc:0 pause:0ms
+2015/09/14 15:22:46 [I] - mem:1640192 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:22:56 [I] - mem:1642192 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:23:06 [I] - mem:1644160 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:23:16 [I] - mem:1645680 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:23:26 [I] - mem:1647488 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:23:36 [I] - mem:1683352 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:23:46 [I] - mem:1685320 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:23:56 [I] - mem:1686840 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:24:06 [I] - mem:1688648 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:24:16 [I] - mem:1690600 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:24:26 [I] - mem:1543080 goroutine:11 gc:3 pause:1ms
+2015/09/14 15:24:36 [I] - mem:1594416 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:24:46 [I] - mem:1596224 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:24:56 [I] - mem:1598176 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:25:06 [I] - mem:1599696 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:25:16 [I] - mem:1601216 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:25:26 [I] - mem:1602736 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:25:36 [I] - mem:1641336 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:25:46 [I] - mem:1642920 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:25:56 [I] - mem:1644440 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:26:06 [I] - mem:1646120 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:26:16 [I] - mem:1647704 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:26:26 [I] - mem:1570616 goroutine:11 gc:3 pause:0ms
+2015/09/14 15:26:36 [I] - mem:1615760 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:26:46 [I] - mem:1625616 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:26:56 [I] - mem:1627136 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:27:06 [I] - mem:1628656 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:27:16 [I] - mem:1630384 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:27:51 [I] - mem:1439944 goroutine:11 gc:4 pause:9ms
+2015/09/14 15:27:51 [E] - RPC error
+Error   	= RPC server 929 not exists
+serviceAPI 	= RemoteServe.CronGetOnlineCount
+Args    = &rpc.Args_CronGetOnlineCount{
+    RPCArgTag: rpc.RPCArgTag{
+        ClientId: 0,
+    },
+}
+
+
+
+Result  = &rpc.Reply_CronGetOnlineCount{
+    IosCount: 0,
+    AndroidCount: 0,
+}
+2015/09/14 15:28:01 [I] - mem:1451088 goroutine:10 gc:0 pause:0ms
+2015/09/14 15:28:01 [E] - RPC error
+Error   	= RPC server 929 not exists
+serviceAPI 	= RemoteServe.CronGetOnlineCount
+Args    = &rpc.Args_CronGetOnlineCount{
+    RPCArgTag: rpc.RPCArgTag{
+        ClientId: 0,
+    },
+}
+
+
+
+Result  = &rpc.Reply_CronGetOnlineCount{
+    IosCount: 0,
+    AndroidCount: 0,
+}
+2015/09/14 15:28:11 [I] - mem:1457088 goroutine:10 gc:0 pause:0ms
+2015/09/14 15:28:11 [E] - RPC error
+Error   	= RPC server 929 not exists
+serviceAPI 	= RemoteServe.CronGetOnlineCount
+Args    = &rpc.Args_CronGetOnlineCount{
+    RPCArgTag: rpc.RPCArgTag{
+        ClientId: 0,
+    },
+}
+
+
+
+Result  = &rpc.Reply_CronGetOnlineCount{
+    IosCount: 0,
+    AndroidCount: 0,
+}
+2015/09/14 15:28:21 [I] - mem:1461360 goroutine:10 gc:0 pause:0ms
+2015/09/14 15:28:21 [E] - RPC error
+Error   	= RPC server 929 not exists
+serviceAPI 	= RemoteServe.CronGetOnlineCount
+Args    = &rpc.Args_CronGetOnlineCount{
+    RPCArgTag: rpc.RPCArgTag{
+        ClientId: 0,
+    },
+}
+
+
+
+Result  = &rpc.Reply_CronGetOnlineCount{
+    IosCount: 0,
+    AndroidCount: 0,
+}
+2015/09/14 15:28:31 [I] - mem:1465872 goroutine:10 gc:0 pause:0ms
+2015/09/14 15:28:31 [E] - RPC error
+Error   	= RPC server 929 not exists
+serviceAPI 	= RemoteServe.CronGetOnlineCount
+Args    = &rpc.Args_CronGetOnlineCount{
+    RPCArgTag: rpc.RPCArgTag{
+        ClientId: 0,
+    },
+}
+
+
+
+Result  = &rpc.Reply_CronGetOnlineCount{
+    IosCount: 0,
+    AndroidCount: 0,
+}
+2015/09/14 15:28:41 [I] - mem:1470144 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:28:41 [E] - RPC error
+Error   	= RPC server 929 not exists
+serviceAPI 	= RemoteServe.CronGetOnlineCount
+Args    = &rpc.Args_CronGetOnlineCount{
+    RPCArgTag: rpc.RPCArgTag{
+        ClientId: 0,
+    },
+}
+
+
+
+Result  = &rpc.Reply_CronGetOnlineCount{
+    IosCount: 0,
+    AndroidCount: 0,
+}
+2015/09/14 15:28:51 [I] - mem:1582000 goroutine:10 gc:0 pause:0ms
+2015/09/14 15:29:01 [I] - mem:1632160 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:29:11 [I] - mem:1634288 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:29:21 [I] - mem:1635824 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:29:31 [I] - mem:1637360 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:29:41 [I] - mem:1639184 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:29:51 [I] - mem:1686200 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:30:01 [I] - mem:1687736 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:30:11 [I] - mem:1689560 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:30:21 [I] - mem:1691096 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:30:31 [I] - mem:1693432 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:30:41 [I] - mem:1538104 goroutine:11 gc:3 pause:2ms
+2015/09/14 15:30:51 [I] - mem:1582704 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:31:01 [I] - mem:1584240 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:31:11 [I] - mem:1585936 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:31:21 [I] - mem:1587776 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:31:31 [I] - mem:1589312 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:31:41 [I] - mem:1591200 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:31:51 [I] - mem:1635944 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:32:01 [I] - mem:1637480 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:32:11 [I] - mem:1639112 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:32:21 [I] - mem:1640648 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:32:31 [I] - mem:1642184 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:32:41 [I] - mem:1643720 goroutine:12 gc:0 pause:0ms
+2015/09/14 15:32:51 [I] - mem:1661680 goroutine:11 gc:2 pause:0ms
+2015/09/14 15:33:01 [I] - mem:1663264 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:33:11 [I] - mem:1665328 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:33:21 [I] - mem:1667296 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:33:31 [I] - mem:1668992 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:33:41 [I] - mem:1670528 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:33:51 [I] - mem:1710376 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:34:01 [I] - mem:1711976 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:34:11 [I] - mem:1713512 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:34:21 [I] - mem:1715048 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:34:31 [I] - mem:1716584 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:34:41 [I] - mem:1718120 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:34:51 [I] - mem:1674256 goroutine:11 gc:3 pause:0ms
+2015/09/14 15:35:01 [I] - mem:1675936 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:35:11 [I] - mem:1677472 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:35:21 [I] - mem:1679248 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:35:31 [I] - mem:1680784 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:35:41 [I] - mem:1682320 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:35:51 [I] - mem:1717176 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:36:01 [I] - mem:1718712 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:36:11 [I] - mem:1720296 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:36:21 [I] - mem:1721832 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:36:31 [I] - mem:1723368 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:36:41 [I] - mem:1724904 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:36:51 [I] - mem:1674400 goroutine:11 gc:3 pause:1ms
+2015/09/14 15:37:01 [I] - mem:1676000 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:37:11 [I] - mem:1677728 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:37:21 [I] - mem:1679264 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:37:31 [I] - mem:1681152 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:37:41 [I] - mem:1682688 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:37:51 [I] - mem:1719752 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:38:01 [I] - mem:1721576 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:38:11 [I] - mem:1723112 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:38:21 [I] - mem:1724648 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:38:31 [I] - mem:1726376 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:38:41 [I] - mem:1727912 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:38:51 [I] - mem:1686816 goroutine:11 gc:3 pause:0ms
+2015/09/14 15:39:01 [I] - mem:1688752 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:39:11 [I] - mem:1690288 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:39:21 [I] - mem:1691968 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:39:31 [I] - mem:1693792 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:39:41 [I] - mem:1695424 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:39:51 [I] - mem:1731544 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:40:01 [I] - mem:1741368 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:40:11 [I] - mem:1743192 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:40:21 [I] - mem:1745320 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:40:31 [I] - mem:1747144 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:40:41 [I] - mem:1749128 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:40:51 [I] - mem:1686032 goroutine:11 gc:3 pause:0ms
+2015/09/14 15:41:01 [I] - mem:1687856 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:41:11 [I] - mem:1689552 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:41:21 [I] - mem:1691136 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:41:31 [I] - mem:1692816 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:41:41 [I] - mem:1694800 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:41:51 [I] - mem:1729736 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:42:01 [I] - mem:1731560 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:42:11 [I] - mem:1733544 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:42:21 [I] - mem:1735080 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:42:31 [I] - mem:1736760 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:42:41 [I] - mem:1738584 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:42:51 [I] - mem:1688128 goroutine:11 gc:3 pause:0ms
+2015/09/14 15:43:01 [I] - mem:1689856 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:43:11 [I] - mem:1691600 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:43:21 [I] - mem:1693424 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:43:31 [I] - mem:1695152 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:43:41 [I] - mem:1696688 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:43:51 [I] - mem:1732200 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:44:01 [I] - mem:1733848 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:44:11 [I] - mem:1735432 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:44:21 [I] - mem:1736968 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:44:31 [I] - mem:1738504 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:44:41 [I] - mem:1740040 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:44:51 [I] - mem:1683312 goroutine:11 gc:3 pause:0ms
+2015/09/14 15:45:01 [I] - mem:1684896 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:45:11 [I] - mem:1686736 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:45:21 [I] - mem:1688272 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:45:31 [I] - mem:1689808 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:45:41 [I] - mem:1691648 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:45:51 [I] - mem:1729912 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:46:01 [I] - mem:1731464 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:46:11 [I] - mem:1733000 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:46:21 [I] - mem:1734536 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:46:31 [I] - mem:1736072 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:46:41 [I] - mem:1737608 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:46:51 [I] - mem:1694824 goroutine:11 gc:3 pause:0ms
+2015/09/14 15:47:01 [I] - mem:1696712 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:47:11 [I] - mem:1698552 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:47:21 [I] - mem:1700376 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:47:31 [I] - mem:1701912 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:47:41 [I] - mem:1703896 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:47:51 [I] - mem:1740736 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:48:01 [I] - mem:1742368 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:48:11 [I] - mem:1743904 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:48:21 [I] - mem:1745440 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:48:31 [I] - mem:1746976 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:48:41 [I] - mem:1748512 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:48:51 [I] - mem:1685856 goroutine:11 gc:3 pause:0ms
+2015/09/14 15:49:01 [I] - mem:1687392 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:49:11 [I] - mem:1689232 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:49:21 [I] - mem:1690768 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:49:31 [I] - mem:1692656 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:49:41 [I] - mem:1694192 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:49:51 [I] - mem:1728856 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:50:01 [I] - mem:1730392 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:50:11 [I] - mem:1731928 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:50:21 [I] - mem:1733480 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:50:31 [I] - mem:1735016 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:50:41 [I] - mem:1736744 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:50:51 [I] - mem:1695928 goroutine:11 gc:3 pause:0ms
+2015/09/14 15:51:01 [I] - mem:1697768 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:51:11 [I] - mem:1699304 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:51:21 [I] - mem:1700840 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:51:31 [I] - mem:1702376 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:51:41 [I] - mem:1704504 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:51:51 [I] - mem:1740096 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:52:01 [I] - mem:1741728 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:52:11 [I] - mem:1743264 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:52:21 [I] - mem:1744960 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:52:31 [I] - mem:1746496 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:52:41 [I] - mem:1748384 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:52:51 [I] - mem:1690656 goroutine:11 gc:3 pause:0ms
+2015/09/14 15:53:01 [I] - mem:1692608 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:53:11 [I] - mem:1694144 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:53:21 [I] - mem:1695744 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:53:31 [I] - mem:1697424 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:53:41 [I] - mem:1699248 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:53:51 [I] - mem:1734088 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:54:01 [I] - mem:1735624 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:54:11 [I] - mem:1737160 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:54:21 [I] - mem:1738696 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:54:31 [I] - mem:1740232 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:54:41 [I] - mem:1741832 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:54:51 [I] - mem:1687104 goroutine:11 gc:3 pause:0ms
+2015/09/14 15:55:01 [I] - mem:1688928 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:55:11 [I] - mem:1690752 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:55:21 [I] - mem:1692288 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:55:31 [I] - mem:1694112 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:55:41 [I] - mem:1695648 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:55:51 [I] - mem:1730568 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:56:01 [I] - mem:1732248 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:56:11 [I] - mem:1734024 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:56:21 [I] - mem:1735560 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:56:31 [I] - mem:1737096 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:56:41 [I] - mem:1738936 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:56:51 [I] - mem:1699416 goroutine:11 gc:3 pause:0ms
+2015/09/14 15:57:01 [I] - mem:1701048 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:57:11 [I] - mem:1702776 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:57:21 [I] - mem:1704568 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:57:31 [I] - mem:1706104 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:57:41 [I] - mem:1707640 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:57:51 [I] - mem:1742784 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:58:01 [I] - mem:1744336 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:58:11 [I] - mem:1745872 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:58:21 [I] - mem:1747408 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:58:31 [I] - mem:1748944 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:58:41 [I] - mem:1750480 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:58:51 [I] - mem:1688272 goroutine:11 gc:3 pause:0ms
+2015/09/14 15:59:01 [I] - mem:1689808 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:59:11 [I] - mem:1691344 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:59:21 [I] - mem:1693168 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:59:31 [I] - mem:1694704 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:59:41 [I] - mem:1696240 goroutine:11 gc:0 pause:0ms
+2015/09/14 15:59:51 [I] - mem:1741736 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:00:01 [I] - mem:1743272 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:00:11 [I] - mem:1744808 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:00:21 [I] - mem:1746504 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:00:50 [I] - mem:1440968 goroutine:11 gc:4 pause:0ms
+2015/09/14 16:00:50 [E] - RPC error
+Error   	= RPC server 929 not exists
+serviceAPI 	= RemoteServe.CronGetOnlineCount
+Args    = &rpc.Args_CronGetOnlineCount{
+    RPCArgTag: rpc.RPCArgTag{
+        ClientId: 0,
+    },
+}
+
+
+
+Result  = &rpc.Reply_CronGetOnlineCount{
+    IosCount: 0,
+    AndroidCount: 0,
+}
+2015/09/14 16:01:00 [I] - mem:1452320 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:01:00 [E] - RPC error
+Error   	= RPC server 929 not exists
+serviceAPI 	= RemoteServe.CronGetOnlineCount
+Args    = &rpc.Args_CronGetOnlineCount{
+    RPCArgTag: rpc.RPCArgTag{
+        ClientId: 0,
+    },
+}
+
+
+
+Result  = &rpc.Reply_CronGetOnlineCount{
+    IosCount: 0,
+    AndroidCount: 0,
+}
+2015/09/14 16:01:10 [I] - mem:1459616 goroutine:10 gc:0 pause:0ms
+2015/09/14 16:01:10 [E] - RPC error
+Error   	= RPC server 929 not exists
+serviceAPI 	= RemoteServe.CronGetOnlineCount
+Args    = &rpc.Args_CronGetOnlineCount{
+    RPCArgTag: rpc.RPCArgTag{
+        ClientId: 0,
+    },
+}
+
+
+
+Result  = &rpc.Reply_CronGetOnlineCount{
+    IosCount: 0,
+    AndroidCount: 0,
+}
+2015/09/14 16:01:20 [I] - mem:1463888 goroutine:10 gc:0 pause:0ms
+2015/09/14 16:01:20 [E] - RPC error
+Error   	= RPC server 929 not exists
+serviceAPI 	= RemoteServe.CronGetOnlineCount
+Args    = &rpc.Args_CronGetOnlineCount{
+    RPCArgTag: rpc.RPCArgTag{
+        ClientId: 0,
+    },
+}
+
+
+
+Result  = &rpc.Reply_CronGetOnlineCount{
+    IosCount: 0,
+    AndroidCount: 0,
+}
+2015/09/14 16:01:30 [I] - mem:1469648 goroutine:10 gc:0 pause:0ms
+2015/09/14 16:01:30 [E] - RPC error
+Error   	= RPC server 929 not exists
+serviceAPI 	= RemoteServe.CronGetOnlineCount
+Args    = &rpc.Args_CronGetOnlineCount{
+    RPCArgTag: rpc.RPCArgTag{
+        ClientId: 0,
+    },
+}
+
+
+
+Result  = &rpc.Reply_CronGetOnlineCount{
+    IosCount: 0,
+    AndroidCount: 0,
+}
+2015/09/14 16:01:40 [I] - mem:1474656 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:01:40 [E] - RPC error
+Error   	= RPC server 929 not exists
+serviceAPI 	= RemoteServe.CronGetOnlineCount
+Args    = &rpc.Args_CronGetOnlineCount{
+    RPCArgTag: rpc.RPCArgTag{
+        ClientId: 0,
+    },
+}
+
+
+
+Result  = &rpc.Reply_CronGetOnlineCount{
+    IosCount: 0,
+    AndroidCount: 0,
+}
+2015/09/14 16:01:50 [I] - mem:1579664 goroutine:10 gc:0 pause:0ms
+2015/09/14 16:02:00 [I] - mem:1640896 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:02:10 [I] - mem:1642720 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:02:20 [I] - mem:1644544 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:02:30 [I] - mem:1646368 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:02:40 [I] - mem:1647904 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:02:50 [I] - mem:1583584 goroutine:11 gc:3 pause:1ms
+2015/09/14 16:03:00 [I] - mem:1586160 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:03:10 [I] - mem:1587888 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:03:20 [I] - mem:1589872 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:03:30 [I] - mem:1591408 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:03:40 [I] - mem:1593232 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:03:50 [I] - mem:1637064 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:04:00 [I] - mem:1638936 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:04:10 [I] - mem:1640488 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:04:20 [I] - mem:1642312 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:04:30 [I] - mem:1644152 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:04:40 [I] - mem:1645688 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:04:50 [I] - mem:1601248 goroutine:11 gc:3 pause:0ms
+2015/09/14 16:05:00 [I] - mem:1603072 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:05:10 [I] - mem:1604960 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:05:20 [I] - mem:1606976 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:05:30 [I] - mem:1608800 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:05:40 [I] - mem:1610336 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:05:50 [I] - mem:1656120 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:06:00 [I] - mem:1657656 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:06:10 [I] - mem:1659192 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:06:20 [I] - mem:1660728 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:06:30 [I] - mem:1662312 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:06:40 [I] - mem:1664136 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:06:50 [I] - mem:1611872 goroutine:11 gc:3 pause:0ms
+2015/09/14 16:07:00 [I] - mem:1614000 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:07:10 [I] - mem:1615968 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:07:20 [I] - mem:1617504 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:07:30 [I] - mem:1619184 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:07:40 [I] - mem:1620720 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:07:50 [I] - mem:1657256 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:08:00 [I] - mem:1658968 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:08:10 [I] - mem:1660504 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:08:20 [I] - mem:1662056 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:08:30 [I] - mem:1663592 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:08:40 [I] - mem:1665144 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:08:50 [I] - mem:1625104 goroutine:11 gc:3 pause:2ms
+2015/09/14 16:09:00 [I] - mem:1626752 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:09:10 [I] - mem:1628608 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:09:20 [I] - mem:1630144 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:09:30 [I] - mem:1631840 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:09:40 [I] - mem:1633664 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:09:50 [I] - mem:1686376 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:10:00 [I] - mem:1687912 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:10:10 [I] - mem:1689736 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:10:20 [I] - mem:1691720 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:10:30 [I] - mem:1693256 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:10:40 [I] - mem:1694792 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:10:50 [I] - mem:1622576 goroutine:11 gc:3 pause:0ms
+2015/09/14 16:11:00 [I] - mem:1624304 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:11:10 [I] - mem:1626128 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:11:20 [I] - mem:1627664 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:11:30 [I] - mem:1629200 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:11:40 [I] - mem:1630736 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:11:50 [I] - mem:1666136 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:12:00 [I] - mem:1667784 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:12:10 [I] - mem:1669320 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:12:20 [I] - mem:1670856 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:12:30 [I] - mem:1672680 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:12:40 [I] - mem:1674216 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:12:50 [I] - mem:1617024 goroutine:11 gc:3 pause:0ms
+2015/09/14 16:13:00 [I] - mem:1618928 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:13:10 [I] - mem:1620464 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:13:20 [I] - mem:1622160 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:13:30 [I] - mem:1623696 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:13:40 [I] - mem:1625232 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:13:50 [I] - mem:1669016 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:14:00 [I] - mem:1670552 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:14:10 [I] - mem:1672184 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:14:20 [I] - mem:1674168 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:14:30 [I] - mem:1675992 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:14:40 [I] - mem:1677528 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:14:50 [I] - mem:1611632 goroutine:11 gc:3 pause:0ms
+2015/09/14 16:15:00 [I] - mem:1613280 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:15:10 [I] - mem:1615072 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:15:20 [I] - mem:1616752 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:15:30 [I] - mem:1618288 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:15:40 [I] - mem:1619872 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:15:50 [I] - mem:1665304 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:16:00 [I] - mem:1670952 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:16:10 [I] - mem:1672488 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:16:20 [I] - mem:1674472 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:16:30 [I] - mem:1676008 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:16:40 [I] - mem:1677544 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:16:50 [I] - mem:1624352 goroutine:11 gc:3 pause:0ms
+2015/09/14 16:17:00 [I] - mem:1626176 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:17:10 [I] - mem:1627872 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:17:20 [I] - mem:1629408 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:17:30 [I] - mem:1630944 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:17:40 [I] - mem:1632480 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:17:50 [I] - mem:1669160 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:18:00 [I] - mem:1670856 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:18:10 [I] - mem:1672440 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:18:20 [I] - mem:1673976 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:18:30 [I] - mem:1675512 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:18:40 [I] - mem:1677352 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:18:50 [I] - mem:1617776 goroutine:11 gc:3 pause:0ms
+2015/09/14 16:19:00 [I] - mem:1619712 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:19:10 [I] - mem:1621504 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:19:20 [I] - mem:1623040 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:19:30 [I] - mem:1624880 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:19:40 [I] - mem:1626416 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:19:50 [I] - mem:1662584 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:20:00 [I] - mem:1664184 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:20:10 [I] - mem:1665720 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:20:20 [I] - mem:1667256 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:20:30 [I] - mem:1669240 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:20:40 [I] - mem:1670776 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:20:50 [I] - mem:1629504 goroutine:11 gc:3 pause:0ms
+2015/09/14 16:21:00 [I] - mem:1631440 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:21:10 [I] - mem:1633040 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:21:20 [I] - mem:1634672 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:21:30 [I] - mem:1636208 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:21:40 [I] - mem:1638032 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:21:50 [I] - mem:1673448 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:22:00 [I] - mem:1675096 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:22:10 [I] - mem:1676728 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:22:20 [I] - mem:1678264 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:22:30 [I] - mem:1679960 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:22:40 [I] - mem:1681496 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:22:50 [I] - mem:1649496 goroutine:11 gc:3 pause:0ms
+2015/09/14 16:23:00 [I] - mem:1651576 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:23:10 [I] - mem:1653288 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:23:20 [I] - mem:1655272 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:23:30 [I] - mem:1656808 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:23:40 [I] - mem:1658344 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:23:50 [I] - mem:1693392 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:24:00 [I] - mem:1694944 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:24:10 [I] - mem:1696480 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:24:20 [I] - mem:1698176 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:24:30 [I] - mem:1699712 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:24:40 [I] - mem:1701248 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:24:50 [I] - mem:1620512 goroutine:11 gc:3 pause:0ms
+2015/09/14 16:25:00 [I] - mem:1622400 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:25:10 [I] - mem:1623936 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:25:20 [I] - mem:1625472 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:25:30 [I] - mem:1627008 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:25:40 [I] - mem:1628848 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:25:50 [I] - mem:1663720 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:26:00 [I] - mem:1665256 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:26:10 [I] - mem:1666792 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:26:20 [I] - mem:1668328 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:26:30 [I] - mem:1670168 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:26:40 [I] - mem:1672152 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:26:50 [I] - mem:1622576 goroutine:11 gc:3 pause:2ms
+2015/09/14 16:27:00 [I] - mem:1632448 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:27:10 [I] - mem:1634192 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:27:20 [I] - mem:1635728 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:27:30 [I] - mem:1637264 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:27:40 [I] - mem:1638976 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:27:50 [I] - mem:1674920 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:28:00 [I] - mem:1676504 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:28:10 [I] - mem:1678024 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:28:20 [I] - mem:1679576 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:28:30 [I] - mem:1681112 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:28:40 [I] - mem:1682936 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:28:50 [I] - mem:1643304 goroutine:11 gc:3 pause:0ms
+2015/09/14 16:29:00 [I] - mem:1645080 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:29:10 [I] - mem:1646776 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:29:20 [I] - mem:1648744 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:29:30 [I] - mem:1650280 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:29:40 [I] - mem:1651816 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:29:50 [I] - mem:1686480 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:30:00 [I] - mem:1688160 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:30:10 [I] - mem:1689696 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:30:20 [I] - mem:1691232 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:30:30 [I] - mem:1692928 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:30:40 [I] - mem:1694464 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:30:50 [I] - mem:1632064 goroutine:11 gc:3 pause:0ms
+2015/09/14 16:31:00 [I] - mem:1633744 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:31:10 [I] - mem:1635280 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:31:20 [I] - mem:1636816 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:31:30 [I] - mem:1638352 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:31:40 [I] - mem:1639888 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:31:50 [I] - mem:1674472 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:32:00 [I] - mem:1676008 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:32:10 [I] - mem:1677896 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:32:20 [I] - mem:1679432 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:32:30 [I] - mem:1681256 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:32:40 [I] - mem:1682792 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:32:50 [I] - mem:1624912 goroutine:11 gc:3 pause:0ms
+2015/09/14 16:33:00 [I] - mem:1626736 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:33:10 [I] - mem:1628272 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:33:20 [I] - mem:1629968 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:33:30 [I] - mem:1631504 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:33:40 [I] - mem:1633136 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:33:50 [I] - mem:1668440 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:34:00 [I] - mem:1670328 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:34:10 [I] - mem:1671864 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:34:20 [I] - mem:1673400 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:34:30 [I] - mem:1674936 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:34:40 [I] - mem:1676472 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:34:50 [I] - mem:1624400 goroutine:11 gc:3 pause:0ms
+2015/09/14 16:35:00 [I] - mem:1626128 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:35:10 [I] - mem:1627824 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:35:20 [I] - mem:1629360 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:35:30 [I] - mem:1630896 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:35:40 [I] - mem:1632432 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:35:50 [I] - mem:1669128 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:36:00 [I] - mem:1670904 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:36:10 [I] - mem:1706936 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:36:20 [I] - mem:1708808 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:36:30 [I] - mem:1710344 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:36:40 [I] - mem:1711880 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:36:50 [I] - mem:1659680 goroutine:11 gc:3 pause:0ms
+2015/09/14 16:37:00 [I] - mem:1669408 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:37:10 [I] - mem:1671248 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:37:20 [I] - mem:1672784 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:37:30 [I] - mem:1674320 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:37:40 [I] - mem:1676304 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:37:50 [I] - mem:1719416 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:38:00 [I] - mem:1721064 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:38:10 [I] - mem:1722744 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:38:20 [I] - mem:1724280 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:38:30 [I] - mem:1725816 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:38:40 [I] - mem:1727512 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:38:50 [I] - mem:1662944 goroutine:11 gc:3 pause:1ms
+2015/09/14 16:39:00 [I] - mem:1664624 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:39:10 [I] - mem:1666432 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:39:20 [I] - mem:1667968 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:39:30 [I] - mem:1669520 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:39:40 [I] - mem:1671056 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:39:50 [I] - mem:1706312 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:40:00 [I] - mem:1708040 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:40:10 [I] - mem:1709576 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:40:20 [I] - mem:1711112 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:40:30 [I] - mem:1712648 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:40:40 [I] - mem:1714184 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:40:50 [I] - mem:1664160 goroutine:11 gc:3 pause:1ms
+2015/09/14 16:41:17 [I] - mem:1544136 goroutine:10 gc:4 pause:8ms
+2015/09/14 16:41:27 [I] - mem:1607216 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:41:37 [I] - mem:1608752 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:41:47 [I] - mem:1610288 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:41:57 [I] - mem:1612336 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:42:07 [I] - mem:1613872 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:42:17 [I] - mem:1659512 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:42:27 [I] - mem:1669256 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:42:37 [I] - mem:1670792 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:42:47 [I] - mem:1672328 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:42:57 [I] - mem:1673864 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:43:07 [I] - mem:1675400 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:43:17 [I] - mem:1728096 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:43:45 [I] - mem:1505128 goroutine:10 gc:4 pause:7ms
+2015/09/14 16:43:55 [I] - mem:1591920 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:44:05 [I] - mem:1594032 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:44:15 [I] - mem:1595584 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:44:25 [I] - mem:1597232 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:44:35 [I] - mem:1598784 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:44:45 [I] - mem:1639528 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:44:55 [I] - mem:1641080 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:45:05 [I] - mem:1642744 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:45:15 [I] - mem:1644296 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:45:25 [I] - mem:1645848 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:45:35 [I] - mem:1647400 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:45:45 [I] - mem:1698704 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:45:55 [I] - mem:1709536 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:46:05 [I] - mem:1711392 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:46:31 [I] - mem:1499824 goroutine:10 gc:4 pause:0ms
+2015/09/14 16:46:41 [I] - mem:1593032 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:46:51 [I] - mem:1594888 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:47:01 [I] - mem:1596440 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:47:11 [I] - mem:1598328 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:47:21 [I] - mem:1599880 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:47:31 [I] - mem:1661056 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:47:41 [I] - mem:1662672 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:47:51 [I] - mem:1664224 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:48:01 [I] - mem:1666288 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:48:11 [I] - mem:1668128 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:48:21 [I] - mem:1670256 goroutine:12 gc:0 pause:0ms
+2015/09/14 16:48:31 [I] - mem:1584240 goroutine:11 gc:3 pause:0ms
+2015/09/14 16:48:41 [I] - mem:1586080 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:48:51 [I] - mem:1587632 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:49:01 [I] - mem:1589184 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:49:11 [I] - mem:1590784 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:49:21 [I] - mem:1592336 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:49:31 [I] - mem:1645416 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:49:41 [I] - mem:1648008 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:49:51 [I] - mem:1649656 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:50:17 [I] - mem:1504344 goroutine:10 gc:4 pause:8ms
+2015/09/14 16:50:27 [I] - mem:1604560 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:50:37 [I] - mem:1607616 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:50:47 [I] - mem:1609264 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:50:57 [I] - mem:1612000 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:51:07 [I] - mem:1615168 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:51:17 [I] - mem:1663320 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:51:27 [I] - mem:1674056 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:51:37 [I] - mem:1675720 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:51:47 [I] - mem:1677656 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:52:02 [I] - mem:1503872 goroutine:10 gc:4 pause:0ms
+2015/09/14 16:52:12 [I] - mem:1606568 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:52:22 [I] - mem:1609576 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:52:32 [I] - mem:1612120 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:52:42 [I] - mem:1613928 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:53:00 [I] - mem:1536624 goroutine:10 gc:4 pause:9ms
+2015/09/14 16:53:10 [I] - mem:1603832 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:53:20 [I] - mem:1607752 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:53:30 [I] - mem:1610616 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:53:40 [I] - mem:1613784 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:53:50 [I] - mem:1615720 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:54:00 [I] - mem:1653264 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:54:10 [I] - mem:1655632 goroutine:11 gc:0 pause:0ms
+2015/09/14 16:54:20 [I] - mem:1657280 goroutine:11 gc:0 pause:0ms

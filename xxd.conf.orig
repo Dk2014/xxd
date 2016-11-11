@@ -1,0 +1,96 @@
+{
+    "ServerId": 111,
+
+    "EnableDebugAPI": true,
+
+    "GamePort": 8080,
+    "GameAppID": "game_1_app_id",
+    "GameAppKey": "",
+
+    "EnableGlobalServer": false,
+    "GlobalServerId": 112,
+    "DebugWebServerAddr": "0.0.0.0", 
+
+    "TssServerId" : 0,
+
+    "XGSdk" : {
+        "Enable": false,
+        "AccessId": "2100045263",
+        "SecretKey": "d594313e93c8b301f4976ca11c5f5b4e",
+        "Timeout": 10,
+        "PlatformType": 0
+    },
+
+    "MoneySdk" : {
+        "MoneySdkAddr": "",
+        "MoneySdkAppId": "1450001140",
+        "MoneySdkAppKey": "w9bTA7zPNwSJLV1TN6jhnbJp36bK27AI",
+        "MoneySdkTimeOutSec": 10
+    },
+    "MSDKApiAddr" : "",
+    "GlobalServerAddr": "172.26.165.215:9080",
+    "TlogServerAddr": "",
+
+    "LogDir": "./gslog",
+    "DBFileDir": "./sync-file",
+    "TlogFileDir": "./tlog-file",
+    "TlogPlatformId": 1,
+
+    "LocalConf": "./language.conf",
+    "CurrLocal": "vn",
+
+    "EnableXDlog": true,
+    "XdlogFileDir": "/data/xxd_game/xdlog",
+
+    "GiftCodeConf" : "./gift_code.conf",
+    
+    "ServerOpenTime": 1432742400,
+
+    "GameDB": {
+        "Host": "127.0.0.1",
+        "Port": 3306,
+        "Username": "root",
+        "Password": "root",
+        "DBName": "mobile_xxd"
+    },
+
+    "OnlineDB": {
+        "Host": "127.0.0.1",
+        "Port": 3306,
+        "Username": "root",
+        "Password": "root",
+        "DBName": "mobile_xxd",
+        "TableName":"global_tb_xxd_onlinecnt"
+    },
+
+    "RPCServerList": [
+    {
+        "id": 111,
+        "name": "xxd",
+        "addr": "127.0.0.1:8081"
+    },
+
+    {
+        "id": 112,
+        "name": "hd",
+        "addr": "127.0.0.1:9081"
+    }
+    ],
+
+    "RPCServerConfEnable":true,
+    "RPCServerConfHttp": {
+        "TimeOutSec": 10,
+        "Url": "http://platform.xxd.io:8888/gserverall",
+        "App": "xxd_vn"
+    },
+    EnableGiftCode: false,
+    "GiftCodeDB": {
+        "Host": "127.0.0.1",
+        "Port": 3306,
+        "Username": "root",
+        "Password": "root",
+        "DBName": "mobile_xxd",
+        "TableName":"global_tb_xxd_onlinecnt"
+    },
+
+}

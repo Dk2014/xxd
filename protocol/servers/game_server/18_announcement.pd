@@ -1,0 +1,24 @@
+//
+// 公告接口(互动）
+//
+mod announcement = 18
+{	
+	//
+	// 获取列表(前端使用unread接口后可以去掉总数)
+	//
+	[tag("global")]
+	api get_list = 0 {
+		in {
+		}
+		out {
+			announcements : list {
+				id                  : int64     // 公告id
+				tpl_id    			: int32  	// 公告模板数据id
+				expire_time  		: int64  	// 公告过期时间戳
+				parameters 			: string 	// 模板参数值
+            	content 			: string 	// 模板内容
+            	spacing_time        : int32     // 间隔时间
+			}
+		}
+	}
+}

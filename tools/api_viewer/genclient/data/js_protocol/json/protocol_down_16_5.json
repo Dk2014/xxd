@@ -1,0 +1,1 @@
+{"action_name":"leave_room","module_name":"multi_level","protocol":[{"name":"pid","type":"int64"},{"name":"leader_pid","type":"int64"},{"name":"tokens","type":"list8","fields":[{"name":"pos","type":"int8"},{"name":"token","type":"uint64"}]}]}

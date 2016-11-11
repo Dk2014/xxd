@@ -1,0 +1,187 @@
+2014/11/07 00:00:02 [I] - mem:8899168 goroutine:18 gc:242 pause:209ms
+2014/11/07 00:00:12 [I] - mem:8899776 goroutine:18 gc:242 pause:209ms
+2014/11/07 00:00:22 [I] - mem:8900432 goroutine:18 gc:242 pause:209ms
+2014/11/07 00:00:32 [I] - mem:8901088 goroutine:18 gc:242 pause:209ms
+2014/11/07 00:00:42 [I] - mem:8902320 goroutine:18 gc:242 pause:209ms
+2014/11/07 00:00:52 [I] - mem:8902688 goroutine:18 gc:242 pause:209ms
+2014/11/07 00:01:02 [I] - mem:8903056 goroutine:18 gc:242 pause:209ms
+2014/11/07 00:01:12 [I] - mem:8903424 goroutine:18 gc:242 pause:209ms
+2014/11/07 00:01:22 [I] - mem:8903792 goroutine:18 gc:242 pause:209ms
+2014/11/07 00:01:32 [I] - mem:8904160 goroutine:18 gc:242 pause:209ms
+2014/11/07 00:01:32 [E] - [tlog] GameSvrState error. write udp4 172.26.166.37:6667: connection refused
+ info: &{2014-11-07 00:01:32.500317317 +0800 CST 172.26.166.37}
+2014/11/07 00:01:42 [I] - mem:8914384 goroutine:18 gc:242 pause:209ms
+2014/11/07 00:01:52 [I] - mem:8914752 goroutine:18 gc:242 pause:209ms
+2014/11/07 00:02:02 [I] - mem:8915120 goroutine:18 gc:242 pause:209ms
+2014/11/07 00:02:12 [I] - mem:8915488 goroutine:18 gc:242 pause:209ms
+2014/11/07 00:02:22 [I] - mem:8915856 goroutine:18 gc:242 pause:209ms
+2014/11/07 00:02:32 [I] - mem:8916224 goroutine:18 gc:242 pause:209ms
+2014/11/07 00:02:42 [I] - mem:6777120 goroutine:18 gc:243 pause:210ms
+2014/11/07 00:02:52 [I] - mem:6777632 goroutine:18 gc:243 pause:210ms
+2014/11/07 00:03:02 [I] - mem:6778288 goroutine:18 gc:243 pause:210ms
+2014/11/07 00:03:12 [I] - mem:6778656 goroutine:18 gc:243 pause:210ms
+2014/11/07 00:03:22 [I] - mem:6779024 goroutine:18 gc:243 pause:210ms
+2014/11/07 00:03:32 [I] - mem:6779392 goroutine:18 gc:243 pause:210ms
+2014/11/07 00:03:32 [E] - [tlog] GameSvrState error. write udp4 172.26.166.37:6667: connection refused
+ info: &{2014-11-07 00:03:32.500792405 +0800 CST 172.26.166.37}
+2014/11/07 00:03:42 [I] - mem:6789184 goroutine:18 gc:243 pause:210ms
+2014/11/07 00:03:52 [I] - mem:6789552 goroutine:18 gc:243 pause:210ms
+2014/11/07 00:04:02 [I] - mem:6789920 goroutine:18 gc:243 pause:210ms
+2014/11/07 00:04:12 [I] - mem:6790288 goroutine:18 gc:243 pause:210ms
+2014/11/07 00:04:22 [I] - mem:6790944 goroutine:18 gc:243 pause:210ms
+2014/11/07 00:04:32 [I] - mem:6791312 goroutine:18 gc:243 pause:210ms
+2014/11/07 00:04:42 [I] - mem:6777664 goroutine:18 gc:244 pause:210ms
+2014/11/07 00:04:52 [I] - mem:6778368 goroutine:18 gc:244 pause:210ms
+2014/11/07 00:05:02 [I] - mem:6778736 goroutine:18 gc:244 pause:210ms
+2014/11/07 00:05:12 [I] - mem:6779104 goroutine:18 gc:244 pause:210ms
+2014/11/07 00:05:22 [I] - mem:6779472 goroutine:18 gc:244 pause:210ms
+2014/11/07 00:05:32 [I] - mem:6779840 goroutine:18 gc:244 pause:210ms
+2014/11/07 00:05:32 [E] - [tlog] GameSvrState error. write udp4 172.26.166.37:6667: connection refused
+ info: &{2014-11-07 00:05:32.501458124 +0800 CST 172.26.166.37}
+2014/11/07 00:05:42 [I] - mem:6789920 goroutine:18 gc:244 pause:210ms
+2014/11/07 00:05:52 [I] - mem:6790576 goroutine:18 gc:244 pause:210ms
+2014/11/07 00:06:02 [I] - mem:6790944 goroutine:18 gc:244 pause:210ms
+2014/11/07 00:06:12 [I] - mem:6791312 goroutine:18 gc:244 pause:210ms
+2014/11/07 00:06:22 [I] - mem:6791680 goroutine:18 gc:244 pause:210ms
+2014/11/07 00:06:32 [I] - mem:6792048 goroutine:18 gc:244 pause:210ms
+2014/11/07 00:06:42 [I] - mem:6778704 goroutine:18 gc:245 pause:211ms
+2014/11/07 00:06:52 [I] - mem:6779168 goroutine:18 gc:245 pause:211ms
+2014/11/07 00:07:02 [I] - mem:6779632 goroutine:18 gc:245 pause:211ms
+2014/11/07 00:07:12 [I] - mem:6780288 goroutine:18 gc:245 pause:211ms
+2014/11/07 00:07:22 [I] - mem:6780656 goroutine:18 gc:245 pause:211ms
+2014/11/07 00:07:32 [I] - mem:6781312 goroutine:18 gc:245 pause:211ms
+2014/11/07 00:07:32 [E] - [tlog] GameSvrState error. write udp4 172.26.166.37:6667: connection refused
+ info: &{2014-11-07 00:07:32.502043072 +0800 CST 172.26.166.37}
+2014/11/07 00:07:42 [I] - mem:6791104 goroutine:18 gc:245 pause:211ms
+2014/11/07 00:07:52 [I] - mem:6791472 goroutine:18 gc:245 pause:211ms
+2014/11/07 00:08:02 [I] - mem:6792128 goroutine:18 gc:245 pause:211ms
+2014/11/07 00:08:12 [I] - mem:6792496 goroutine:18 gc:245 pause:211ms
+2014/11/07 00:08:22 [I] - mem:6793152 goroutine:18 gc:245 pause:211ms
+2014/11/07 00:08:32 [I] - mem:6793808 goroutine:18 gc:245 pause:211ms
+2014/11/07 00:08:42 [I] - mem:6780704 goroutine:18 gc:246 pause:212ms
+2014/11/07 00:08:52 [I] - mem:6781264 goroutine:18 gc:246 pause:212ms
+2014/11/07 00:09:02 [I] - mem:6781632 goroutine:18 gc:246 pause:212ms
+2014/11/07 00:09:12 [I] - mem:6782000 goroutine:18 gc:246 pause:212ms
+2014/11/07 00:09:22 [I] - mem:6782656 goroutine:18 gc:246 pause:212ms
+2014/11/07 00:09:32 [I] - mem:6783072 goroutine:18 gc:246 pause:212ms
+2014/11/07 00:09:32 [E] - [tlog] GameSvrState error. write udp4 172.26.166.37:6667: connection refused
+ info: &{2014-11-07 00:09:32.502929736 +0800 CST 172.26.166.37}
+2014/11/07 00:09:42 [I] - mem:6792816 goroutine:18 gc:246 pause:212ms
+2014/11/07 00:09:52 [I] - mem:6793472 goroutine:18 gc:246 pause:212ms
+2014/11/07 00:10:02 [I] - mem:6793840 goroutine:18 gc:246 pause:212ms
+2014/11/07 00:10:12 [I] - mem:6794496 goroutine:18 gc:246 pause:212ms
+2014/11/07 00:10:22 [I] - mem:6794864 goroutine:18 gc:246 pause:212ms
+2014/11/07 00:10:32 [I] - mem:6795232 goroutine:18 gc:246 pause:212ms
+2014/11/07 00:10:42 [I] - mem:6781808 goroutine:18 gc:247 pause:213ms
+2014/11/07 00:10:52 [I] - mem:6782512 goroutine:18 gc:247 pause:213ms
+2014/11/07 00:11:02 [I] - mem:6783168 goroutine:18 gc:247 pause:213ms
+2014/11/07 00:11:12 [I] - mem:6783536 goroutine:18 gc:247 pause:213ms
+2014/11/07 00:11:22 [I] - mem:6784192 goroutine:18 gc:247 pause:213ms
+2014/11/07 00:11:32 [I] - mem:6784944 goroutine:18 gc:247 pause:213ms
+2014/11/07 00:11:32 [E] - [tlog] GameSvrState error. write udp4 172.26.166.37:6667: connection refused
+ info: &{2014-11-07 00:11:32.503603426 +0800 CST 172.26.166.37}
+2014/11/07 00:11:42 [I] - mem:6795120 goroutine:18 gc:247 pause:213ms
+2014/11/07 00:11:52 [I] - mem:6795488 goroutine:18 gc:247 pause:213ms
+2014/11/07 00:12:02 [I] - mem:6795856 goroutine:18 gc:247 pause:213ms
+2014/11/07 00:12:12 [I] - mem:6796224 goroutine:18 gc:247 pause:213ms
+2014/11/07 00:12:22 [I] - mem:6796592 goroutine:18 gc:247 pause:213ms
+2014/11/07 00:12:32 [I] - mem:6796960 goroutine:18 gc:247 pause:213ms
+2014/11/07 00:12:42 [I] - mem:6783168 goroutine:18 gc:248 pause:214ms
+2014/11/07 00:12:52 [I] - mem:6783536 goroutine:18 gc:248 pause:214ms
+2014/11/07 00:13:02 [I] - mem:6783904 goroutine:18 gc:248 pause:214ms
+2014/11/07 00:13:12 [I] - mem:6784272 goroutine:18 gc:248 pause:214ms
+2014/11/07 00:13:22 [I] - mem:6784640 goroutine:18 gc:248 pause:214ms
+2014/11/07 00:13:32 [I] - mem:6785008 goroutine:18 gc:248 pause:214ms
+2014/11/07 00:13:32 [E] - [tlog] GameSvrState error. write udp4 172.26.166.37:6667: connection refused
+ info: &{2014-11-07 00:13:32.504500914 +0800 CST 172.26.166.37}
+2014/11/07 00:13:42 [I] - mem:6795088 goroutine:18 gc:248 pause:214ms
+2014/11/07 00:13:52 [I] - mem:6795456 goroutine:18 gc:248 pause:214ms
+2014/11/07 00:14:02 [I] - mem:6795872 goroutine:18 gc:248 pause:214ms
+2014/11/07 00:14:12 [I] - mem:6796240 goroutine:18 gc:248 pause:214ms
+2014/11/07 00:14:22 [I] - mem:6796608 goroutine:18 gc:248 pause:214ms
+2014/11/07 00:14:32 [I] - mem:6796976 goroutine:18 gc:248 pause:214ms
+2014/11/07 00:14:42 [I] - mem:6783520 goroutine:18 gc:249 pause:215ms
+2014/11/07 00:14:52 [I] - mem:6783888 goroutine:18 gc:249 pause:215ms
+2014/11/07 00:15:02 [I] - mem:6784544 goroutine:18 gc:249 pause:215ms
+2014/11/07 00:15:12 [I] - mem:6784960 goroutine:18 gc:249 pause:215ms
+2014/11/07 00:15:22 [I] - mem:6785328 goroutine:18 gc:249 pause:215ms
+2014/11/07 00:15:32 [I] - mem:6786272 goroutine:18 gc:249 pause:215ms
+2014/11/07 00:15:32 [E] - [tlog] GameSvrState error. write udp4 172.26.166.37:6667: connection refused
+ info: &{2014-11-07 00:15:32.50514667 +0800 CST 172.26.166.37}
+2014/11/07 00:15:42 [I] - mem:6796352 goroutine:18 gc:249 pause:215ms
+2014/11/07 00:15:52 [I] - mem:6796720 goroutine:18 gc:249 pause:215ms
+2014/11/07 00:16:02 [I] - mem:6797088 goroutine:18 gc:249 pause:215ms
+2014/11/07 00:16:12 [I] - mem:6797456 goroutine:18 gc:249 pause:215ms
+2014/11/07 00:16:22 [I] - mem:6798112 goroutine:18 gc:249 pause:215ms
+2014/11/07 00:16:32 [I] - mem:6798528 goroutine:18 gc:249 pause:215ms
+2014/11/07 00:16:42 [I] - mem:6785056 goroutine:18 gc:250 pause:216ms
+2014/11/07 00:16:52 [I] - mem:6785472 goroutine:18 gc:250 pause:216ms
+2014/11/07 00:17:02 [I] - mem:6785840 goroutine:18 gc:250 pause:216ms
+2014/11/07 00:17:12 [I] - mem:6786496 goroutine:18 gc:250 pause:216ms
+2014/11/07 00:17:22 [I] - mem:6786864 goroutine:18 gc:250 pause:216ms
+2014/11/07 00:17:32 [I] - mem:6787232 goroutine:18 gc:250 pause:216ms
+2014/11/07 00:17:32 [E] - [tlog] GameSvrState error. write udp4 172.26.166.37:6667: connection refused
+ info: &{2014-11-07 00:17:32.506467365 +0800 CST 172.26.166.37}
+2014/11/07 00:17:42 [I] - mem:6797024 goroutine:18 gc:250 pause:216ms
+2014/11/07 00:17:52 [I] - mem:6797392 goroutine:18 gc:250 pause:216ms
+2014/11/07 00:18:02 [I] - mem:6797760 goroutine:18 gc:250 pause:216ms
+2014/11/07 00:18:12 [I] - mem:6798128 goroutine:18 gc:250 pause:216ms
+2014/11/07 00:18:22 [I] - mem:6798496 goroutine:18 gc:250 pause:216ms
+2014/11/07 00:18:32 [I] - mem:6798864 goroutine:18 gc:250 pause:216ms
+2014/11/07 00:18:42 [I] - mem:6785472 goroutine:18 gc:251 pause:216ms
+2014/11/07 00:18:52 [I] - mem:6785936 goroutine:18 gc:251 pause:216ms
+2014/11/07 00:19:02 [I] - mem:6786304 goroutine:18 gc:251 pause:216ms
+2014/11/07 00:19:12 [I] - mem:6786672 goroutine:18 gc:251 pause:216ms
+2014/11/07 00:19:22 [I] - mem:6787040 goroutine:18 gc:251 pause:216ms
+2014/11/07 00:19:32 [I] - mem:6787696 goroutine:18 gc:251 pause:216ms
+2014/11/07 00:19:32 [E] - [tlog] GameSvrState error. write udp4 172.26.166.37:6667: connection refused
+ info: &{2014-11-07 00:19:32.507958625 +0800 CST 172.26.166.37}
+2014/11/07 00:19:42 [I] - mem:6797488 goroutine:18 gc:251 pause:216ms
+2014/11/07 00:19:52 [I] - mem:6797856 goroutine:18 gc:251 pause:216ms
+2014/11/07 00:20:02 [I] - mem:6798224 goroutine:18 gc:251 pause:216ms
+2014/11/07 00:20:12 [I] - mem:6798880 goroutine:18 gc:251 pause:216ms
+2014/11/07 00:20:22 [I] - mem:6799248 goroutine:18 gc:251 pause:216ms
+2014/11/07 00:20:32 [I] - mem:6799616 goroutine:18 gc:251 pause:216ms
+2014/11/07 00:20:42 [I] - mem:6786000 goroutine:18 gc:252 pause:217ms
+2014/11/07 00:20:52 [I] - mem:6786416 goroutine:18 gc:252 pause:217ms
+2014/11/07 00:21:02 [I] - mem:6786832 goroutine:18 gc:252 pause:217ms
+2014/11/07 00:21:12 [I] - mem:6787488 goroutine:18 gc:252 pause:217ms
+2014/11/07 00:21:22 [I] - mem:6787952 goroutine:18 gc:252 pause:217ms
+2014/11/07 00:21:32 [I] - mem:6788608 goroutine:18 gc:252 pause:217ms
+2014/11/07 00:21:32 [E] - [tlog] GameSvrState error. write udp4 172.26.166.37:6667: connection refused
+ info: &{2014-11-07 00:21:32.509958723 +0800 CST 172.26.166.37}
+2014/11/07 00:21:42 [I] - mem:6798400 goroutine:18 gc:252 pause:217ms
+2014/11/07 00:21:52 [I] - mem:6798768 goroutine:18 gc:252 pause:217ms
+2014/11/07 00:22:02 [I] - mem:6799136 goroutine:18 gc:252 pause:217ms
+2014/11/07 00:22:12 [I] - mem:6799504 goroutine:18 gc:252 pause:217ms
+2014/11/07 00:22:22 [I] - mem:6800160 goroutine:18 gc:252 pause:217ms
+2014/11/07 00:22:32 [I] - mem:6800528 goroutine:18 gc:252 pause:217ms
+2014/11/07 00:22:42 [I] - mem:6786912 goroutine:18 gc:253 pause:218ms
+2014/11/07 00:22:52 [I] - mem:6787424 goroutine:18 gc:253 pause:218ms
+2014/11/07 00:23:02 [I] - mem:6787792 goroutine:18 gc:253 pause:218ms
+2014/11/07 00:23:12 [I] - mem:6788160 goroutine:18 gc:253 pause:218ms
+2014/11/07 00:23:22 [I] - mem:6788528 goroutine:18 gc:253 pause:218ms
+2014/11/07 00:23:32 [I] - mem:6788896 goroutine:18 gc:253 pause:218ms
+2014/11/07 00:23:32 [E] - [tlog] GameSvrState error. write udp4 172.26.166.37:6667: connection refused
+ info: &{2014-11-07 00:23:32.511081533 +0800 CST 172.26.166.37}
+2014/11/07 00:23:42 [I] - mem:6798976 goroutine:18 gc:253 pause:218ms
+2014/11/07 00:23:52 [I] - mem:6799344 goroutine:18 gc:253 pause:218ms
+2014/11/07 00:24:02 [I] - mem:6799712 goroutine:18 gc:253 pause:218ms
+2014/11/07 00:24:12 [I] - mem:6800080 goroutine:18 gc:253 pause:218ms
+2014/11/07 00:24:22 [I] - mem:6800448 goroutine:18 gc:253 pause:218ms
+2014/11/07 00:24:32 [I] - mem:6800816 goroutine:18 gc:253 pause:218ms
+2014/11/07 00:24:42 [I] - mem:6787600 goroutine:18 gc:254 pause:220ms
+2014/11/07 00:24:52 [I] - mem:6788400 goroutine:18 gc:254 pause:220ms
+2014/11/07 00:25:02 [I] - mem:6789104 goroutine:18 gc:254 pause:220ms
+2014/11/07 00:25:12 [I] - mem:6789760 goroutine:18 gc:254 pause:220ms
+2014/11/07 00:25:22 [I] - mem:6790128 goroutine:18 gc:254 pause:220ms
+2014/11/07 00:25:32 [I] - mem:6790496 goroutine:18 gc:254 pause:220ms
+2014/11/07 00:25:32 [E] - [tlog] GameSvrState error. write udp4 172.26.166.37:6667: connection refused
+ info: &{2014-11-07 00:25:32.513320907 +0800 CST 172.26.166.37}
+2014/11/07 00:25:42 [I] - mem:6800576 goroutine:18 gc:254 pause:220ms
+2014/11/07 00:25:52 [I] - mem:6800944 goroutine:18 gc:254 pause:220ms
+2014/11/07 00:26:02 [I] - mem:6801312 goroutine:18 gc:254 pause:220ms
+2014/11/07 00:26:12 [I] - mem:6801680 goroutine:18 gc:254 pause:220ms
+2014/11/07 00:26:22 [I] - mem:6802048 goroutine:18 gc:254 pause:220ms
+2014/11/07 00:26:32 [I] - mem:6802704 goroutine:18 gc:254 pause:220ms
+2014/11/07 00:26:42 [I] - mem:6789216 goroutine:18 gc:255 pause:221ms

@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<metalib name="Log" >
+	<struct name="RoleLogin" oldname="" id="" desc="角色登陆">
+		<entry name="iEventId"     oldname=""    type="biguint"   size=""      desc="游戏事件ID" /> 
+		<entry name="vZoneId"          type="string"    size="25"    desc="登录的zone（频道）编号" />
+		<entry name="dtEventTime"      type="datetime"  size=""      desc="游戏事件的时间, 格式 YYYY-MM-DD HH:MM:SS" />
+		<entry name="iUin"             type="uint"      size=""      desc="用户QQ号" />
+		<entry name="vClientIp"        type="string"    size="25"    desc="用户登录时客户端所在ip" />
+		<entry name="vClientMac"       type="string"    size="30"    desc="客户端Mac地址" />
+		<entry name="iRoleId"          type="biguint"   size=""      desc="角色编号" />
+		<entry name="vRoleName"        type="string"    size="64"    desc="角色名" />
+		<entry name="iRoleLevel"       type="int"       size=""      desc="角色等级" />
+	</struct>
+	<struct name="RoleLogout" id="" desc="角色登出">
+		<entry name="iEventId"         type="biguint"   size=""      desc="游戏事件ID" /> 
+		<entry name="vZoneId"          type="string"    size="25"    desc="登录的zone（频道）编号" />
+		<entry name="dtEventTime"      type="datetime"  size=""      desc="游戏事件的时间, 格式 YYYY-MM-DD HH:MM:SS" />
+		<entry name="iUin"             type="uint"      size=""      desc="用户QQ号" />
+		<entry name="iRoleId"          type="biguint"   size=""      desc="角色编号" />
+		<entry name="vRoleName"        type="string"    size="64"    desc="角色名" />
+		<entry name="iOnlineTime"      type="int"       size=""      desc="本次登录在线时间" />
+	</struct>
+</metalib>
+
+

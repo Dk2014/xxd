@@ -1,0 +1,1 @@
+{"action_name":"get_mission_level_by_item_id","module_name":"mission","protocol":[{"name":"levels","type":"list8","fields":[{"name":"level_id","type":"int32"},{"name":"round_num","type":"int8"},{"name":"daily_num","type":"int8"}]}]}

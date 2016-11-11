@@ -1,0 +1,1 @@
+{"action_name":"escort_info","module_name":"clique_escort","protocol":[{"name":"daily_escort_num","type":"int16"},{"name":"daily_hijack_num","type":"int16"},{"name":"bought_hijack_num","type":"int16"},{"name":"escort_status","type":"enum8"},{"name":"hijack_status","type":"enum8"},{"name":"boat_type","type":"int16"}]}

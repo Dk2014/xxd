@@ -1,0 +1,1 @@
+{"action_name":"set_clique_building_level","module_name":"debug","protocol":[{"name":"building","type":"int32"},{"name":"level","type":"int16"}]}

@@ -1,0 +1,62 @@
+mod server_info = 88
+{
+    // 
+    //  获取服务端版本号
+    // 
+    api get_version = 0 {
+      in {}
+      out {
+      	version : string
+      }
+    }
+
+   // 获取服务端上行接收、下行发送次数(88号模块和player::get_time不统计上下行)
+   api get_api_count = 1 {
+   	  in {}
+   	  out {
+   	  	count_in  : int64
+   	  	count_out : int64
+   	  }
+   }
+
+   // 查询玩家是否存在角色
+   api search_player_role = 2 {
+      in {
+        openid : string
+      }
+      out {
+        result : bool // true存在， 反之false
+      }
+   }
+
+   // 更新客户端access token
+   api update_access_token = 3 {
+    in {
+      token : string
+      pfkey : string
+    }
+    out {}
+   }
+
+   // 通知运营配置数据有更新
+   api update_event_data = 4 {
+      in {
+		version:int32  //json文件版本号
+	}
+      out {
+        json : string
+      }
+   }
+
+
+   // 客户端安全数据
+   api tss_data = 5 {
+      in {
+        data : string
+      }
+
+      out {
+        data : string
+      }
+   }
+}

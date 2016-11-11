@@ -1,0 +1,138 @@
+package event_dat
+
+import (
+	"core/mysql"
+	"game_server/dat/daily_sign_in_dat"
+	"game_server/dat/mail_dat"
+)
+
+func Load(db *mysql.Connection) {
+	loadEventCenter(db)
+	loadEventsLevelUp(db)
+	loadLoginAward(db)
+	loadEventsFightPower(db)
+	loadEventsArenaRank(db)
+	loadEventMultiplyConfig(db)
+	loadEventsPhysical(db)
+	loadEventsDinner(db)
+	loadEventsMonthCard(db)
+	loadEventsSupper(db)
+	loadEventsQQVIPGift(db)
+	loadEventsVipClub(db)
+	loadEventsSevenDay(db)
+	loadEventsRichmanClubAwards(db)
+	loadEventsShare(db)
+	loadEventsGroupBuy(db)
+	loadEventsBuyPartner(db)
+	loadEventsTotalRechargeAwards(db)
+	loadEventsTenDrawAwards(db)
+	loadEventsTotalConsume(db)
+	loadEventsFirstRechargeDaily(db)
+	loadEventsTotalLoginAward(db)
+}
+
+func LoadSpecialEvent(eventConfig *EventConfigExtend) {
+	// special event here
+	loadSpecialEventsFashionSell(eventConfig.FashionSell)
+	loadEventDragonBall(eventConfig.DragonBall) // 龙珠掉落活动
+}
+
+// ps: 通常活动的奖励这个结构已满足使用
+type EventDefaultAward struct {
+	Ingot    int16 // 奖励元宝
+	Coin     int32 // 奖励铜钱
+	Heart    int16 // 奖励爱心
+	Item1Id  int16 // 物品1
+	Item1Num int16 // 物品1数量
+	Item2Id  int16 // 物品2
+	Item2Num int16 // 物品2数量
+	Item3Id  int16 // 物品3
+	Item3Num int16 // 物品3数量
+	Item4Id  int16 // 物品4
+	Item4Num int16 // 物品4数量
+	Item5Id  int16 // 物品5
+	Item5Num int16 // 物品5数量
+}
+
+type EventConfigExtend struct {
+	Version     int32
+	Config      EventConfig                         //动态加载配置文件
+	DailySignIn []*daily_sign_in_dat.EventDailySign // 每日签到
+	LevelUp     *EventsLevelUpExt                   // 升级活动
+	LoginIn     *EventsLoginExt                     //累计登录活动
+	// TotalPhysicalCost *TotalPhysicalCost        // 累计体力消耗(TODO)
+	FightPower         *EventFightPower    // 战力
+	Recharge           *EventRecharge      //充值返利
+	ArenaRank          *EventsArenaRankExt //比武场排行奖励活动
+	Multipy            *EventMultipy       //翻倍奖励活动
+	Physical           *EventsPhysicalExt  //活跃度活动
+	Dinner             *EventsDinnerExt    //午餐活动
+	MonthCard          *EventsMonthCardExt //月卡活动
+	Supper             *EventsSupperExt    //晚餐活动
+	QQVIPGift          *EventsQQVIPGiftExt //QQ会员赠送物品活动
+	VipClub            *EventsVipClubExt
+	LevelRecharge      *EventLevelRecharge           //冲级返利
+	FirstRecharge      *EventFirstRecharge           //首充返利
+	SevenDay           *EventsSevenDayExt            //新手七天乐
+	Richman            *EventsRichmanExt             //土豪俱乐部活动
+	Share              *EventsShareExt               //分享活动
+	GroupBuy           *EventGroupBuyExt             //团购活动
+	BuyPartner         *EventsBuyPartnerpExt         //伙伴买卖活动
+	TotalRecharge      *EventTotalRechargeExt        //累计充值活动
+	TenDraw            *EventsTenDrawExt             //神龙宝箱十连抽活动
+	TotalConsume       *EventsTotalConsumeExt        //累计消费活动
+	FirstRechargeDaily *EventsFirstRechargeDailyExt  //每日首冲奖励
+	TotalLogin         *EventsTotalLoginExt          //连续登陆奖励
+	FashionSell        *EventsSpecialFaionSellStruct //时装购买活动
+	// 越南版龙珠活动
+	DragonBall *EventsDragonBallConfigStruct
+
+	// JSON格式的活动数据
+	JsonEvents []*JsonEventStructInJsonFile
+
+	EventAnnounce []*EventAnnounce
+}
+
+type EventConfig struct {
+	MonthCardIngot int32
+}
+
+func IsVaildEventDefaultAward(award *EventDefaultAward) bool {
+	return award.Ingot > 0 || award.Coin > 0 || award.Heart > 0 || award.Item1Num > 0 || award.Item2Num > 0 || award.Item3Num > 0 || award.Item4Num > 0 || award.Item5Num > 0
+}
+
+func makeAttachment(Coin int64, Ingot, Item1Id, Item1Num, Item2Id, Item2Num, Item3Id, Item3Num, Item4Id, Item4Num, Item5Id, Item5Num int16) (attachs []*mail_dat.Attachment) {
+	if Ingot > 0 {
+		attachs = append(attachs, &mail_dat.Attachment{
+			AttachmentType: mail_dat.ATTACHMENT_INGOT,
+			ItemNum:        int64(Ingot),
+		})
+	}
+
+	if Coin > 0 {
+		attachs = append(attachs, &mail_dat.Attachment{
+			AttachmentType: mail_dat.ATTACHMENT_COINS,
+			ItemNum:        Coin,
+		})
+	}
+
+	table := map[int16]int16{
+		Item1Id: Item1Num,
+		Item2Id: Item2Num,
+		Item3Id: Item3Num,
+		Item4Id: Item4Num,
+		Item5Id: Item5Num,
+	}
+
+	for id, n := range table {
+		if id > 0 && n > 0 {
+			attachs = append(attachs, &mail_dat.Attachment{
+				AttachmentType: mail_dat.ATTACHMENT_ITEM,
+				ItemId:         id,
+				ItemNum:        int64(n),
+			})
+		}
+	}
+
+	return
+}

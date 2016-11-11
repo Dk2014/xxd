@@ -1,0 +1,1 @@
+{"action_name":"shop_buy","module_name":"taoyuan","protocol":[{"name":"item_id","type":"int16"},{"name":"num","type":"int16"}]}

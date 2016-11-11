@@ -1,0 +1,1200 @@
+mdb.load (0) cost time: 116.437996ms
+mdb.load (1) cost time: 116.543864ms
+mdb.load (3) cost time: 116.451825ms
+mdb.load (2) cost time: 116.504489ms
+mdb.load success.
+2014/11/06 23:27:35 [I] - load player
+2014/11/06 23:27:35 [I] - load player
+2014/11/06 23:27:35 [I] - load player
+2014/11/06 23:27:35 [I] - load player
+2014/11/06 23:27:35 [I] - load player_activity
+2014/11/06 23:27:35 [I] - load player_activity
+2014/11/06 23:27:35 [I] - load player_activity
+2014/11/06 23:27:35 [I] - load player_activity
+2014/11/06 23:27:35 [I] - load player_arena
+2014/11/06 23:27:35 [I] - load player_arena
+2014/11/06 23:27:35 [I] - load player_arena
+2014/11/06 23:27:35 [I] - load player_arena
+2014/11/06 23:27:35 [I] - load player_arena_record
+2014/11/06 23:27:35 [I] - load player_arena_record
+2014/11/06 23:27:35 [I] - load player_arena_record
+2014/11/06 23:27:35 [I] - load player_arena_record
+2014/11/06 23:27:35 [I] - load player_battle_pet
+2014/11/06 23:27:35 [I] - load player_battle_pet
+2014/11/06 23:27:35 [I] - load player_battle_pet
+2014/11/06 23:27:35 [I] - load player_battle_pet
+2014/11/06 23:27:35 [I] - load player_battle_pet_grid
+2014/11/06 23:27:35 [I] - load player_battle_pet_grid
+2014/11/06 23:27:35 [I] - load player_battle_pet_grid
+2014/11/06 23:27:35 [I] - load player_battle_pet_grid
+2014/11/06 23:27:35 [I] - load player_chest_state
+2014/11/06 23:27:35 [I] - load player_chest_state
+2014/11/06 23:27:35 [I] - load player_chest_state
+2014/11/06 23:27:35 [I] - load player_chest_state
+2014/11/06 23:27:35 [I] - load player_coins
+2014/11/06 23:27:35 [I] - load player_coins
+2014/11/06 23:27:35 [I] - load player_coins
+2014/11/06 23:27:35 [I] - load player_coins
+2014/11/06 23:27:35 [I] - load player_daily_quest
+2014/11/06 23:27:35 [I] - load player_daily_quest
+2014/11/06 23:27:35 [I] - load player_daily_quest
+2014/11/06 23:27:35 [I] - load player_daily_quest
+2014/11/06 23:27:35 [I] - load player_daily_sign_in_record
+2014/11/06 23:27:35 [I] - load player_daily_sign_in_record
+2014/11/06 23:27:35 [I] - load player_daily_sign_in_record
+2014/11/06 23:27:35 [I] - load player_daily_sign_in_record
+2014/11/06 23:27:35 [I] - load player_daily_sign_in_state
+2014/11/06 23:27:35 [I] - load player_daily_sign_in_state
+2014/11/06 23:27:35 [I] - load player_daily_sign_in_state
+2014/11/06 23:27:35 [I] - load player_daily_sign_in_state
+2014/11/06 23:27:35 [I] - load player_equipment
+2014/11/06 23:27:35 [I] - load player_equipment
+2014/11/06 23:27:35 [I] - load player_equipment
+2014/11/06 23:27:35 [I] - load player_equipment
+2014/11/06 23:27:35 [I] - load player_event_award_record
+2014/11/06 23:27:35 [I] - load player_event_award_record
+2014/11/06 23:27:35 [I] - load player_event_award_record
+2014/11/06 23:27:35 [I] - load player_event_award_record
+2014/11/06 23:27:35 [I] - load player_events_fight_power
+2014/11/06 23:27:35 [I] - load player_events_fight_power
+2014/11/06 23:27:35 [I] - load player_events_fight_power
+2014/11/06 23:27:35 [I] - load player_events_fight_power
+2014/11/06 23:27:35 [I] - load player_extend_level
+2014/11/06 23:27:35 [I] - load player_extend_level
+2014/11/06 23:27:35 [I] - load player_extend_level
+2014/11/06 23:27:35 [I] - load player_extend_level
+2014/11/06 23:27:35 [I] - load player_fashion
+2014/11/06 23:27:35 [I] - load player_fashion
+2014/11/06 23:27:35 [I] - load player_fashion
+2014/11/06 23:27:35 [I] - load player_fashion
+2014/11/06 23:27:35 [I] - load player_fashion_state
+2014/11/06 23:27:35 [I] - load player_fashion_state
+2014/11/06 23:27:35 [I] - load player_fashion_state
+2014/11/06 23:27:35 [I] - load player_fashion_state
+2014/11/06 23:27:35 [I] - load player_fight_num
+2014/11/06 23:27:35 [I] - load player_fight_num
+2014/11/06 23:27:35 [I] - load player_fight_num
+2014/11/06 23:27:35 [I] - load player_fight_num
+2014/11/06 23:27:35 [I] - load player_formation
+2014/11/06 23:27:35 [I] - load player_formation
+2014/11/06 23:27:35 [I] - load player_formation
+2014/11/06 23:27:35 [I] - load player_formation
+2014/11/06 23:27:35 [I] - load player_func_key
+2014/11/06 23:27:35 [I] - load player_func_key
+2014/11/06 23:27:35 [I] - load player_func_key
+2014/11/06 23:27:35 [I] - load player_func_key
+2014/11/06 23:27:35 [I] - load player_ghost
+2014/11/06 23:27:35 [I] - load player_ghost
+2014/11/06 23:27:35 [I] - load player_ghost
+2014/11/06 23:27:35 [I] - load player_ghost
+2014/11/06 23:27:35 [I] - load player_ghost_equipment
+2014/11/06 23:27:35 [I] - load player_ghost_equipment
+2014/11/06 23:27:35 [I] - load player_ghost_equipment
+2014/11/06 23:27:35 [I] - load player_ghost_equipment
+2014/11/06 23:27:35 [I] - load player_ghost_state
+2014/11/06 23:27:35 [I] - load player_ghost_state
+2014/11/06 23:27:35 [I] - load player_ghost_state
+2014/11/06 23:27:35 [I] - load player_ghost_state
+2014/11/06 23:27:35 [I] - load player_ghost_umbra
+2014/11/06 23:27:35 [I] - load player_ghost_umbra
+2014/11/06 23:27:35 [I] - load player_ghost_umbra
+2014/11/06 23:27:35 [I] - load player_ghost_umbra
+2014/11/06 23:27:35 [I] - load player_hard_level
+2014/11/06 23:27:35 [I] - load player_hard_level
+2014/11/06 23:27:35 [I] - load player_hard_level
+2014/11/06 23:27:35 [I] - load player_hard_level
+2014/11/06 23:27:35 [I] - load player_hard_level_record
+2014/11/06 23:27:35 [I] - load player_hard_level_record
+2014/11/06 23:27:35 [I] - load player_hard_level_record
+2014/11/06 23:27:35 [I] - load player_hard_level_record
+2014/11/06 23:27:35 [I] - load player_hard_level_state
+2014/11/06 23:27:35 [I] - load player_hard_level_state
+2014/11/06 23:27:35 [I] - load player_hard_level_state
+2014/11/06 23:27:35 [I] - load player_hard_level_state
+2014/11/06 23:27:35 [I] - load player_heart
+2014/11/06 23:27:35 [I] - load player_heart
+2014/11/06 23:27:35 [I] - load player_heart
+2014/11/06 23:27:35 [I] - load player_heart
+2014/11/06 23:27:35 [I] - load player_heart_draw
+2014/11/06 23:27:35 [I] - load player_heart_draw
+2014/11/06 23:27:35 [I] - load player_heart_draw
+2014/11/06 23:27:35 [I] - load player_heart_draw
+2014/11/06 23:27:35 [I] - load player_heart_draw_card_record
+2014/11/06 23:27:35 [I] - load player_heart_draw_card_record
+2014/11/06 23:27:35 [I] - load player_heart_draw_card_record
+2014/11/06 23:27:35 [I] - load player_heart_draw_card_record
+2014/11/06 23:27:35 [I] - load player_heart_draw_wheel_record
+2014/11/06 23:27:35 [I] - load player_heart_draw_wheel_record
+2014/11/06 23:27:35 [I] - load player_heart_draw_wheel_record
+2014/11/06 23:27:35 [I] - load player_heart_draw_wheel_record
+2014/11/06 23:27:35 [I] - load player_info
+2014/11/06 23:27:35 [I] - load player_info
+2014/11/06 23:27:35 [I] - load player_info
+2014/11/06 23:27:35 [I] - load player_info
+2014/11/06 23:27:35 [I] - load player_is_operated
+2014/11/06 23:27:35 [I] - load player_is_operated
+2014/11/06 23:27:35 [I] - load player_is_operated
+2014/11/06 23:27:35 [I] - load player_is_operated
+2014/11/06 23:27:35 [I] - load player_item
+2014/11/06 23:27:35 [I] - load player_item
+2014/11/06 23:27:35 [I] - load player_item
+2014/11/06 23:27:35 [I] - load player_item
+2014/11/06 23:27:35 [I] - load player_item_appendix
+2014/11/06 23:27:35 [I] - load player_item_appendix
+2014/11/06 23:27:35 [I] - load player_item_appendix
+2014/11/06 23:27:35 [I] - load player_item_appendix
+2014/11/06 23:27:35 [I] - load player_item_buyback
+2014/11/06 23:27:35 [I] - load player_item_buyback
+2014/11/06 23:27:35 [I] - load player_item_buyback
+2014/11/06 23:27:35 [I] - load player_item_buyback
+2014/11/06 23:27:35 [I] - load player_item_recast_state
+2014/11/06 23:27:35 [I] - load player_item_recast_state
+2014/11/06 23:27:35 [I] - load player_item_recast_state
+2014/11/06 23:27:35 [I] - load player_item_recast_state
+2014/11/06 23:27:35 [I] - load player_login_award_record
+2014/11/06 23:27:35 [I] - load player_login_award_record
+2014/11/06 23:27:35 [I] - load player_login_award_record
+2014/11/06 23:27:35 [I] - load player_login_award_record
+2014/11/06 23:27:35 [I] - load player_mail
+2014/11/06 23:27:35 [I] - load player_mail
+2014/11/06 23:27:35 [I] - load player_mail
+2014/11/06 23:27:35 [I] - load player_mail
+2014/11/06 23:27:35 [I] - load player_mail_attachment
+2014/11/06 23:27:35 [I] - load player_mail_attachment
+2014/11/06 23:27:35 [I] - load player_mail_attachment
+2014/11/06 23:27:35 [I] - load player_mail_attachment
+2014/11/06 23:27:35 [I] - load player_meditation_state
+2014/11/06 23:27:35 [I] - load player_meditation_state
+2014/11/06 23:27:35 [I] - load player_meditation_state
+2014/11/06 23:27:35 [I] - load player_meditation_state
+2014/11/06 23:27:35 [I] - load player_mission
+2014/11/06 23:27:35 [I] - load player_mission
+2014/11/06 23:27:35 [I] - load player_mission
+2014/11/06 23:27:35 [I] - load player_mission
+2014/11/06 23:27:35 [I] - load player_mission_level
+2014/11/06 23:27:35 [I] - load player_mission_level
+2014/11/06 23:27:35 [I] - load player_mission_level
+2014/11/06 23:27:35 [I] - load player_mission_level
+2014/11/06 23:27:35 [I] - load player_mission_level_record
+2014/11/06 23:27:35 [I] - load player_mission_level_record
+2014/11/06 23:27:35 [I] - load player_mission_level_record
+2014/11/06 23:27:35 [I] - load player_mission_level_record
+2014/11/06 23:27:35 [I] - load player_mission_level_state_bin
+2014/11/06 23:27:35 [I] - load player_mission_level_state_bin
+2014/11/06 23:27:35 [I] - load player_mission_level_state_bin
+2014/11/06 23:27:35 [I] - load player_mission_level_state_bin
+2014/11/06 23:27:35 [I] - load player_mission_record
+2014/11/06 23:27:35 [I] - load player_mission_record
+2014/11/06 23:27:35 [I] - load player_mission_record
+2014/11/06 23:27:35 [I] - load player_mission_record
+2014/11/06 23:27:35 [I] - load player_month_card_award_record
+2014/11/06 23:27:35 [I] - load player_month_card_award_record
+2014/11/06 23:27:35 [I] - load player_month_card_award_record
+2014/11/06 23:27:35 [I] - load player_month_card_award_record
+2014/11/06 23:27:35 [I] - load player_month_card_info
+2014/11/06 23:27:35 [I] - load player_month_card_info
+2014/11/06 23:27:35 [I] - load player_month_card_info
+2014/11/06 23:27:35 [I] - load player_month_card_info
+2014/11/06 23:27:35 [I] - load player_multi_level_info
+2014/11/06 23:27:35 [I] - load player_multi_level_info
+2014/11/06 23:27:35 [I] - load player_multi_level_info
+2014/11/06 23:27:35 [I] - load player_multi_level_info
+2014/11/06 23:27:35 [I] - load player_npc_talk_record
+2014/11/06 23:27:35 [I] - load player_npc_talk_record
+2014/11/06 23:27:35 [I] - load player_npc_talk_record
+2014/11/06 23:27:35 [I] - load player_npc_talk_record
+2014/11/06 23:27:35 [I] - load player_physical
+2014/11/06 23:27:35 [I] - load player_physical
+2014/11/06 23:27:35 [I] - load player_physical
+2014/11/06 23:27:35 [I] - load player_physical
+2014/11/06 23:27:35 [I] - load player_purchase_record
+2014/11/06 23:27:35 [I] - load player_purchase_record
+2014/11/06 23:27:35 [I] - load player_purchase_record
+2014/11/06 23:27:35 [I] - load player_purchase_record
+2014/11/06 23:27:35 [I] - load player_push_notify_switch
+2014/11/06 23:27:35 [I] - load player_push_notify_switch
+2014/11/06 23:27:35 [I] - load player_push_notify_switch
+2014/11/06 23:27:35 [I] - load player_push_notify_switch
+2014/11/06 23:27:35 [I] - load player_pve_state
+2014/11/06 23:27:35 [I] - load player_pve_state
+2014/11/06 23:27:35 [I] - load player_pve_state
+2014/11/06 23:27:35 [I] - load player_pve_state
+2014/11/06 23:27:35 [I] - load player_quest
+2014/11/06 23:27:35 [I] - load player_quest
+2014/11/06 23:27:35 [I] - load player_quest
+2014/11/06 23:27:35 [I] - load player_quest
+2014/11/06 23:27:35 [I] - load player_rainbow_level
+2014/11/06 23:27:35 [I] - load player_rainbow_level
+2014/11/06 23:27:35 [I] - load player_rainbow_level
+2014/11/06 23:27:35 [I] - load player_rainbow_level
+2014/11/06 23:27:35 [I] - load player_rainbow_level_state_bin
+2014/11/06 23:27:35 [I] - load player_rainbow_level_state_bin
+2014/11/06 23:27:35 [I] - load player_rainbow_level_state_bin
+2014/11/06 23:27:35 [I] - load player_rainbow_level_state_bin
+2014/11/06 23:27:35 [I] - load player_role
+2014/11/06 23:27:35 [I] - load player_role
+2014/11/06 23:27:35 [I] - load player_role
+2014/11/06 23:27:35 [I] - load player_role
+2014/11/06 23:27:35 [I] - load player_send_heart_record
+2014/11/06 23:27:35 [I] - load player_send_heart_record
+2014/11/06 23:27:35 [I] - load player_send_heart_record
+2014/11/06 23:27:35 [I] - load player_send_heart_record
+2014/11/06 23:27:35 [I] - load player_skill
+2014/11/06 23:27:35 [I] - load player_skill
+2014/11/06 23:27:35 [I] - load player_skill
+2014/11/06 23:27:35 [I] - load player_skill
+2014/11/06 23:27:35 [I] - load player_state
+2014/11/06 23:27:35 [I] - load player_state
+2014/11/06 23:27:35 [I] - load player_state
+2014/11/06 23:27:35 [I] - load player_state
+2014/11/06 23:27:35 [I] - load player_sword_soul
+2014/11/06 23:27:35 [I] - load player_sword_soul
+2014/11/06 23:27:35 [I] - load player_sword_soul
+2014/11/06 23:27:35 [I] - load player_sword_soul
+2014/11/06 23:27:35 [I] - load player_sword_soul_equipment
+2014/11/06 23:27:35 [I] - load player_sword_soul_equipment
+2014/11/06 23:27:35 [I] - load player_sword_soul_equipment
+2014/11/06 23:27:35 [I] - load player_sword_soul_equipment
+2014/11/06 23:27:35 [I] - load player_sword_soul_state
+2014/11/06 23:27:35 [I] - load player_sword_soul_state
+2014/11/06 23:27:35 [I] - load player_sword_soul_state
+2014/11/06 23:27:35 [I] - load player_sword_soul_state
+2014/11/06 23:27:35 [I] - load player_tb_xxd_roleinfo
+2014/11/06 23:27:35 [I] - load player_tb_xxd_roleinfo
+2014/11/06 23:27:35 [I] - load player_tb_xxd_roleinfo
+2014/11/06 23:27:35 [I] - load player_tb_xxd_roleinfo
+2014/11/06 23:27:35 [I] - load player_tower_level
+2014/11/06 23:27:35 [I] - load player_tower_level
+2014/11/06 23:27:35 [I] - load player_tower_level
+2014/11/06 23:27:35 [I] - load player_tower_level
+2014/11/06 23:27:35 [I] - load player_town
+2014/11/06 23:27:35 [I] - load player_town
+2014/11/06 23:27:35 [I] - load player_town
+2014/11/06 23:27:35 [I] - load player_town
+2014/11/06 23:27:35 [I] - load player_trader_refresh_state
+2014/11/06 23:27:35 [I] - load player_trader_refresh_state
+2014/11/06 23:27:35 [I] - load player_trader_refresh_state
+2014/11/06 23:27:35 [I] - load player_trader_refresh_state
+2014/11/06 23:27:35 [I] - load player_trader_store_state
+2014/11/06 23:27:35 [I] - load player_trader_store_state
+2014/11/06 23:27:35 [I] - load player_trader_store_state
+2014/11/06 23:27:35 [I] - load player_trader_store_state
+2014/11/06 23:27:35 [I] - load player_use_skill
+2014/11/06 23:27:35 [I] - load player_use_skill
+2014/11/06 23:27:35 [I] - load player_use_skill
+2014/11/06 23:27:35 [I] - load player_use_skill
+2014/11/06 23:27:35 [I] - load player_vip
+2014/11/06 23:27:35 [I] - load player_vip
+2014/11/06 23:27:35 [I] - load player_vip
+2014/11/06 23:27:35 [I] - load player_vip
+2014/11/06 23:27:45 [I] - mem:10631496 goroutine:18 gc:6 pause:3ms
+2014/11/06 23:27:55 [I] - mem:10632264 goroutine:18 gc:6 pause:3ms
+2014/11/06 23:28:05 [I] - mem:10632712 goroutine:18 gc:6 pause:3ms
+2014/11/06 23:28:15 [I] - mem:10633064 goroutine:18 gc:6 pause:3ms
+2014/11/06 23:28:25 [I] - mem:10633416 goroutine:18 gc:6 pause:3ms
+2014/11/06 23:28:35 [I] - mem:10633768 goroutine:19 gc:6 pause:3ms
+2014/11/06 23:28:45 [I] - mem:10634984 goroutine:18 gc:6 pause:3ms
+2014/11/06 23:28:55 [I] - mem:10635336 goroutine:18 gc:6 pause:3ms
+2014/11/06 23:29:05 [I] - mem:10635688 goroutine:18 gc:6 pause:3ms
+2014/11/06 23:29:15 [I] - mem:10636040 goroutine:18 gc:6 pause:3ms
+2014/11/06 23:29:25 [I] - mem:10636392 goroutine:18 gc:6 pause:3ms
+2014/11/06 23:29:35 [I] - mem:10636744 goroutine:18 gc:6 pause:3ms
+2014/11/06 23:29:35 [E] - [tlog] GameSvrState error. write udp4 172.26.166.37:6667: connection refused
+ info: &{2014-11-06 23:29:35.265993508 +0800 CST 172.26.166.37}
+2014/11/06 23:29:45 [I] - mem:10655640 goroutine:18 gc:6 pause:3ms
+2014/11/06 23:29:55 [I] - mem:10655992 goroutine:18 gc:6 pause:3ms
+2014/11/06 23:30:05 [I] - mem:10656216 goroutine:18 gc:6 pause:3ms
+2014/11/06 23:30:15 [I] - mem:10656568 goroutine:18 gc:6 pause:3ms
+2014/11/06 23:30:25 [I] - mem:10656920 goroutine:18 gc:6 pause:3ms
+2014/11/06 23:30:35 [I] - mem:6821608 goroutine:19 gc:7 pause:4ms
+2014/11/06 23:30:45 [I] - mem:6822680 goroutine:18 gc:7 pause:4ms
+2014/11/06 23:30:55 [I] - mem:6823368 goroutine:18 gc:7 pause:4ms
+2014/11/06 23:31:05 [I] - mem:6823720 goroutine:18 gc:7 pause:4ms
+300
+2014/11/06 23:31:13 [E] - readAndExecuteCmdFromFile
+Error = {更新的运营数据版本不正确. (<当前版本)}
+Stack = 
+    at func.005() [/Users/tangweichen/xxd-server/server/src/game_server/main.go:179]
+    at panic() [/usr/local/go/src/pkg/runtime/panic.c:248]
+    at func.005() [/Users/tangweichen/xxd-server/server/src/game_server/mdb/transaction.go:65]
+    at panic() [/usr/local/go/src/pkg/runtime/panic.c:248]
+    at When() [/Users/tangweichen/xxd-server/server/src/core/fail/fail.go:5]
+    at LoadEventExtend() [/Users/tangweichen/xxd-server/server/src/game_server/module/event/event_config.go:75]
+    at func.008() [/Users/tangweichen/xxd-server/server/src/game_server/main.go:293]
+    at (*transController).Transaction() [/Users/tangweichen/xxd-server/server/src/game_server/mdb/transaction.go:69]
+    at (*Database).Transaction() [/Users/tangweichen/xxd-server/server/src/game_server/mdb/zd_tables.go:74]
+    at Transaction() [/Users/tangweichen/xxd-server/server/src/game_server/mdb/database.go:110]
+    at func.009() [/Users/tangweichen/xxd-server/server/src/game_server/main.go:298]
+    at parseCmd() [/Users/tangweichen/xxd-server/server/src/game_server/main.go:309]
+    at readAndExecuteCmdFromFile() [/Users/tangweichen/xxd-server/server/src/game_server/main.go:299]
+    at goexit() [/usr/local/go/src/pkg/runtime/proc.c:1445]
+2014/11/06 23:31:15 [I] - mem:6960376 goroutine:18 gc:7 pause:4ms
+2014/11/06 23:31:25 [I] - mem:6961304 goroutine:18 gc:7 pause:4ms
+2014/11/06 23:31:35 [I] - mem:6961656 goroutine:18 gc:7 pause:4ms
+2014/11/06 23:31:35 [E] - [tlog] GameSvrState error. write udp4 172.26.166.37:6667: connection refused
+ info: &{2014-11-06 23:31:35.26641645 +0800 CST 172.26.166.37}
+300
+2014/11/06 23:31:44 [I] - execute cmd: loadevent /Users/tangweichen/xxd-server/event.json
+2014/11/06 23:31:45 [I] - mem:7044640 goroutine:18 gc:7 pause:4ms
+2014/11/06 23:31:55 [I] - mem:7044992 goroutine:18 gc:7 pause:4ms
+2014/11/06 23:32:05 [I] - mem:7045632 goroutine:18 gc:7 pause:4ms
+2014/11/06 23:32:15 [I] - mem:7045984 goroutine:18 gc:7 pause:4ms
+2014/11/06 23:32:25 [I] - mem:7046336 goroutine:18 gc:7 pause:4ms
+2014/11/06 23:32:35 [I] - mem:7037088 goroutine:19 gc:8 pause:5ms
+2014/11/06 23:32:45 [I] - mem:6784768 goroutine:18 gc:8 pause:5ms
+2014/11/06 23:32:55 [I] - mem:6785456 goroutine:18 gc:8 pause:5ms
+2014/11/06 23:33:05 [I] - mem:6785808 goroutine:18 gc:8 pause:5ms
+2014/11/06 23:33:15 [I] - mem:6786160 goroutine:18 gc:8 pause:5ms
+2014/11/06 23:33:25 [I] - mem:6786512 goroutine:18 gc:8 pause:5ms
+2014/11/06 23:33:35 [I] - mem:6786864 goroutine:18 gc:8 pause:5ms
+2014/11/06 23:33:35 [E] - [tlog] GameSvrState error. write udp4 172.26.166.37:6667: connection refused
+ info: &{2014-11-06 23:33:35.267364772 +0800 CST 172.26.166.37}
+2014/11/06 23:33:45 [I] - mem:6796640 goroutine:18 gc:8 pause:5ms
+2014/11/06 23:33:55 [I] - mem:6796992 goroutine:18 gc:8 pause:5ms
+2014/11/06 23:34:05 [I] - mem:6797344 goroutine:18 gc:8 pause:5ms
+2014/11/06 23:34:15 [I] - mem:6797696 goroutine:18 gc:8 pause:5ms
+2014/11/06 23:34:25 [I] - mem:6798048 goroutine:18 gc:8 pause:5ms
+2014/11/06 23:34:35 [I] - mem:6798688 goroutine:18 gc:8 pause:5ms
+2014/11/06 23:34:45 [I] - mem:6783872 goroutine:18 gc:9 pause:6ms
+2014/11/06 23:34:55 [I] - mem:6784224 goroutine:18 gc:9 pause:6ms
+2014/11/06 23:35:05 [I] - mem:6784624 goroutine:18 gc:9 pause:6ms
+2014/11/06 23:35:15 [I] - mem:6784976 goroutine:18 gc:9 pause:6ms
+2014/11/06 23:35:25 [I] - mem:6785328 goroutine:18 gc:9 pause:6ms
+2014/11/06 23:35:35 [I] - mem:6785968 goroutine:18 gc:9 pause:6ms
+2014/11/06 23:35:35 [E] - [tlog] GameSvrState error. write udp4 172.26.166.37:6667: connection refused
+ info: &{2014-11-06 23:35:35.267814765 +0800 CST 172.26.166.37}
+2014/11/06 23:35:45 [I] - mem:6795952 goroutine:18 gc:9 pause:6ms
+2014/11/06 23:35:55 [I] - mem:6796304 goroutine:18 gc:9 pause:6ms
+2014/11/06 23:36:05 [I] - mem:6796656 goroutine:18 gc:9 pause:6ms
+2014/11/06 23:36:15 [I] - mem:6797008 goroutine:18 gc:9 pause:6ms
+2014/11/06 23:36:25 [I] - mem:6797408 goroutine:18 gc:9 pause:6ms
+2014/11/06 23:36:35 [I] - mem:6797760 goroutine:18 gc:9 pause:6ms
+2014/11/06 23:36:45 [I] - mem:6784512 goroutine:18 gc:10 pause:7ms
+2014/11/06 23:36:55 [I] - mem:6784960 goroutine:18 gc:10 pause:7ms
+2014/11/06 23:37:05 [I] - mem:6785312 goroutine:18 gc:10 pause:7ms
+2014/11/06 23:37:15 [I] - mem:6786000 goroutine:18 gc:10 pause:7ms
+2014/11/06 23:37:25 [I] - mem:6786352 goroutine:18 gc:10 pause:7ms
+2014/11/06 23:37:35 [I] - mem:6786992 goroutine:18 gc:10 pause:7ms
+2014/11/06 23:37:35 [E] - [tlog] GameSvrState error. write udp4 172.26.166.37:6667: connection refused
+ info: &{2014-11-06 23:37:35.268670307 +0800 CST 172.26.166.37}
+2014/11/06 23:37:45 [I] - mem:6797056 goroutine:18 gc:10 pause:7ms
+2014/11/06 23:37:55 [I] - mem:6797696 goroutine:18 gc:10 pause:7ms
+2014/11/06 23:38:05 [I] - mem:6798336 goroutine:18 gc:10 pause:7ms
+2014/11/06 23:38:15 [I] - mem:6798688 goroutine:18 gc:10 pause:7ms
+2014/11/06 23:38:25 [I] - mem:6799328 goroutine:18 gc:10 pause:7ms
+2014/11/06 23:38:35 [I] - mem:6799968 goroutine:18 gc:10 pause:7ms
+2014/11/06 23:38:45 [I] - mem:6786832 goroutine:18 gc:11 pause:8ms
+2014/11/06 23:38:55 [I] - mem:6787520 goroutine:18 gc:11 pause:8ms
+2014/11/06 23:39:05 [I] - mem:6787872 goroutine:18 gc:11 pause:8ms
+2014/11/06 23:39:15 [I] - mem:6788224 goroutine:18 gc:11 pause:8ms
+2014/11/06 23:39:25 [I] - mem:6788576 goroutine:18 gc:11 pause:8ms
+2014/11/06 23:39:35 [I] - mem:6788928 goroutine:18 gc:11 pause:8ms
+2014/11/06 23:39:35 [E] - [tlog] GameSvrState error. write udp4 172.26.166.37:6667: connection refused
+ info: &{2014-11-06 23:39:35.269114478 +0800 CST 172.26.166.37}
+2014/11/06 23:39:45 [I] - mem:6798752 goroutine:18 gc:11 pause:8ms
+2014/11/06 23:39:55 [I] - mem:6799104 goroutine:18 gc:11 pause:8ms
+2014/11/06 23:40:05 [I] - mem:6799456 goroutine:18 gc:11 pause:8ms
+2014/11/06 23:40:15 [I] - mem:6799808 goroutine:18 gc:11 pause:8ms
+2014/11/06 23:40:25 [I] - mem:6800160 goroutine:18 gc:11 pause:8ms
+2014/11/06 23:40:35 [I] - mem:6800512 goroutine:18 gc:11 pause:8ms
+2014/11/06 23:40:45 [I] - mem:6787168 goroutine:18 gc:12 pause:9ms
+2014/11/06 23:40:55 [I] - mem:6787616 goroutine:18 gc:12 pause:9ms
+2014/11/06 23:41:05 [I] - mem:6788256 goroutine:18 gc:12 pause:9ms
+2014/11/06 23:41:15 [I] - mem:6788608 goroutine:18 gc:12 pause:9ms
+2014/11/06 23:41:25 [I] - mem:6789248 goroutine:18 gc:12 pause:9ms
+2014/11/06 23:41:35 [I] - mem:6789600 goroutine:18 gc:12 pause:9ms
+2014/11/06 23:41:35 [E] - [tlog] GameSvrState error. write udp4 172.26.166.37:6667: connection refused
+ info: &{2014-11-06 23:41:35.270403279 +0800 CST 172.26.166.37}
+2014/11/06 23:41:45 [I] - mem:6799664 goroutine:18 gc:12 pause:9ms
+2014/11/06 23:41:55 [I] - mem:6800016 goroutine:18 gc:12 pause:9ms
+2014/11/06 23:42:05 [I] - mem:6800368 goroutine:18 gc:12 pause:9ms
+2014/11/06 23:42:15 [I] - mem:6801008 goroutine:18 gc:12 pause:9ms
+2014/11/06 23:42:25 [I] - mem:6801648 goroutine:18 gc:12 pause:9ms
+2014/11/06 23:42:35 [I] - mem:6802000 goroutine:18 gc:12 pause:9ms
+2014/11/06 23:42:45 [I] - mem:6789120 goroutine:18 gc:13 pause:10ms
+2014/11/06 23:42:55 [I] - mem:6789520 goroutine:18 gc:13 pause:10ms
+2014/11/06 23:43:05 [I] - mem:6789872 goroutine:18 gc:13 pause:10ms
+2014/11/06 23:43:15 [I] - mem:6790512 goroutine:18 gc:13 pause:10ms
+mdb.load (1) cost time: 14.886655ms
+mdb.load (2) cost time: 17.37003ms
+mdb.load (3) cost time: 17.79292ms
+mdb.load (0) cost time: 22.900854ms
+mdb.load success.
+2014/11/06 23:43:27 [I] - load player
+2014/11/06 23:43:27 [I] - load player
+2014/11/06 23:43:27 [I] - load player
+2014/11/06 23:43:27 [I] - load player_activity
+2014/11/06 23:43:27 [I] - load player_activity
+2014/11/06 23:43:27 [I] - load player_arena
+2014/11/06 23:43:27 [I] - load player_activity
+2014/11/06 23:43:27 [I] - load player_arena
+2014/11/06 23:43:27 [I] - load player_arena
+2014/11/06 23:43:27 [I] - load player_arena_record
+2014/11/06 23:43:27 [I] - load player_arena_record
+2014/11/06 23:43:27 [I] - load player_arena_record
+2014/11/06 23:43:27 [I] - load player_battle_pet
+2014/11/06 23:43:27 [I] - load player_battle_pet
+2014/11/06 23:43:27 [I] - load player_battle_pet
+2014/11/06 23:43:27 [I] - load player_battle_pet_grid
+2014/11/06 23:43:27 [I] - load player_battle_pet_grid
+2014/11/06 23:43:27 [I] - load player_battle_pet_grid
+2014/11/06 23:43:27 [I] - load player_chest_state
+2014/11/06 23:43:27 [I] - load player_chest_state
+2014/11/06 23:43:27 [I] - load player_chest_state
+2014/11/06 23:43:27 [I] - load player_coins
+2014/11/06 23:43:27 [I] - load player_coins
+2014/11/06 23:43:27 [I] - load player_coins
+2014/11/06 23:43:27 [I] - load player_daily_quest
+2014/11/06 23:43:27 [I] - load player_daily_quest
+2014/11/06 23:43:27 [I] - load player_daily_quest
+2014/11/06 23:43:27 [I] - load player_daily_sign_in_record
+2014/11/06 23:43:27 [I] - load player_daily_sign_in_record
+2014/11/06 23:43:27 [I] - load player_daily_sign_in_record
+2014/11/06 23:43:27 [I] - load player_daily_sign_in_state
+2014/11/06 23:43:27 [I] - load player_daily_sign_in_state
+2014/11/06 23:43:27 [I] - load player_daily_sign_in_state
+2014/11/06 23:43:27 [I] - load player_equipment
+2014/11/06 23:43:27 [I] - load player_equipment
+2014/11/06 23:43:27 [I] - load player_equipment
+2014/11/06 23:43:27 [I] - load player_event_award_record
+2014/11/06 23:43:27 [I] - load player_event_award_record
+2014/11/06 23:43:27 [I] - load player_event_award_record
+2014/11/06 23:43:27 [I] - load player_events_fight_power
+2014/11/06 23:43:27 [I] - load player_events_fight_power
+2014/11/06 23:43:27 [I] - load player_events_fight_power
+2014/11/06 23:43:27 [I] - load player_extend_level
+2014/11/06 23:43:27 [I] - load player_extend_level
+2014/11/06 23:43:27 [I] - load player_extend_level
+2014/11/06 23:43:27 [I] - load player_fashion
+2014/11/06 23:43:27 [I] - load player_fashion
+2014/11/06 23:43:27 [I] - load player_fashion
+2014/11/06 23:43:27 [I] - load player_fashion_state
+2014/11/06 23:43:27 [I] - load player_fashion_state
+2014/11/06 23:43:27 [I] - load player_fashion_state
+2014/11/06 23:43:27 [I] - load player_fight_num
+2014/11/06 23:43:27 [I] - load player_fight_num
+2014/11/06 23:43:27 [I] - load player_fight_num
+2014/11/06 23:43:27 [I] - load player_formation
+2014/11/06 23:43:27 [I] - load player_formation
+2014/11/06 23:43:27 [I] - load player_formation
+2014/11/06 23:43:27 [I] - load player_func_key
+2014/11/06 23:43:27 [I] - load player_func_key
+2014/11/06 23:43:27 [I] - load player_func_key
+2014/11/06 23:43:27 [I] - load player_ghost
+2014/11/06 23:43:27 [I] - load player_ghost
+2014/11/06 23:43:27 [I] - load player_ghost
+2014/11/06 23:43:27 [I] - load player_ghost_equipment
+2014/11/06 23:43:27 [I] - load player_ghost_equipment
+2014/11/06 23:43:27 [I] - load player_ghost_equipment
+2014/11/06 23:43:27 [I] - load player_ghost_state
+2014/11/06 23:43:27 [I] - load player_ghost_state
+2014/11/06 23:43:27 [I] - load player_ghost_state
+2014/11/06 23:43:27 [I] - load player_ghost_umbra
+2014/11/06 23:43:27 [I] - load player_ghost_umbra
+2014/11/06 23:43:27 [I] - load player_ghost_umbra
+2014/11/06 23:43:27 [I] - load player_hard_level
+2014/11/06 23:43:27 [I] - load player_hard_level
+2014/11/06 23:43:27 [I] - load player_hard_level
+2014/11/06 23:43:27 [I] - load player_hard_level_record
+2014/11/06 23:43:27 [I] - load player_hard_level_record
+2014/11/06 23:43:27 [I] - load player_hard_level_record
+2014/11/06 23:43:27 [I] - load player_hard_level_state
+2014/11/06 23:43:27 [I] - load player_hard_level_state
+2014/11/06 23:43:27 [I] - load player_hard_level_state
+2014/11/06 23:43:27 [I] - load player_heart
+2014/11/06 23:43:27 [I] - load player_heart
+2014/11/06 23:43:27 [I] - load player_heart
+2014/11/06 23:43:27 [I] - load player_heart_draw
+2014/11/06 23:43:27 [I] - load player_heart_draw
+2014/11/06 23:43:27 [I] - load player_heart_draw
+2014/11/06 23:43:27 [I] - load player_heart_draw_card_record
+2014/11/06 23:43:27 [I] - load player_heart_draw_card_record
+2014/11/06 23:43:27 [I] - load player_heart_draw_card_record
+2014/11/06 23:43:27 [I] - load player_heart_draw_wheel_record
+2014/11/06 23:43:27 [I] - load player_heart_draw_wheel_record
+2014/11/06 23:43:27 [I] - load player_heart_draw_wheel_record
+2014/11/06 23:43:27 [I] - load player_info
+2014/11/06 23:43:27 [I] - load player_info
+2014/11/06 23:43:27 [I] - load player_info
+2014/11/06 23:43:27 [I] - load player_is_operated
+2014/11/06 23:43:27 [I] - load player_is_operated
+2014/11/06 23:43:27 [I] - load player_is_operated
+2014/11/06 23:43:27 [I] - load player_item
+2014/11/06 23:43:27 [I] - load player_item
+2014/11/06 23:43:27 [I] - load player_item
+2014/11/06 23:43:27 [I] - load player_item_appendix
+2014/11/06 23:43:27 [I] - load player_item_appendix
+2014/11/06 23:43:27 [I] - load player_item_appendix
+2014/11/06 23:43:27 [I] - load player_item_buyback
+2014/11/06 23:43:27 [I] - load player_item_buyback
+2014/11/06 23:43:27 [I] - load player_item_buyback
+2014/11/06 23:43:27 [I] - load player_item_recast_state
+2014/11/06 23:43:27 [I] - load player_item_recast_state
+2014/11/06 23:43:27 [I] - load player
+2014/11/06 23:43:27 [I] - load player_login_award_record
+2014/11/06 23:43:27 [I] - load player_login_award_record
+2014/11/06 23:43:27 [I] - load player_activity
+2014/11/06 23:43:27 [I] - load player_mail
+2014/11/06 23:43:27 [I] - load player_mail
+2014/11/06 23:43:27 [I] - load player_arena
+2014/11/06 23:43:27 [I] - load player_mail_attachment
+2014/11/06 23:43:27 [I] - load player_arena_record
+2014/11/06 23:43:27 [I] - load player_mail_attachment
+2014/11/06 23:43:27 [I] - load player_meditation_state
+2014/11/06 23:43:27 [I] - load player_meditation_state
+2014/11/06 23:43:27 [I] - load player_item_recast_state
+2014/11/06 23:43:27 [I] - load player_battle_pet
+2014/11/06 23:43:27 [I] - load player_mission
+2014/11/06 23:43:27 [I] - load player_mission
+2014/11/06 23:43:27 [I] - load player_battle_pet_grid
+2014/11/06 23:43:27 [I] - load player_mission_level
+2014/11/06 23:43:27 [I] - load player_mission_level
+2014/11/06 23:43:27 [I] - load player_mission_level_record
+2014/11/06 23:43:27 [I] - load player_chest_state
+2014/11/06 23:43:27 [I] - load player_mission_level_record
+2014/11/06 23:43:27 [I] - load player_mission_level_state_bin
+2014/11/06 23:43:27 [I] - load player_login_award_record
+2014/11/06 23:43:27 [I] - load player_coins
+2014/11/06 23:43:27 [I] - load player_mission_record
+2014/11/06 23:43:27 [I] - load player_mission_level_state_bin
+2014/11/06 23:43:27 [I] - load player_mission_record
+2014/11/06 23:43:27 [I] - load player_month_card_award_record
+2014/11/06 23:43:27 [I] - load player_daily_quest
+2014/11/06 23:43:27 [I] - load player_mail
+2014/11/06 23:43:27 [I] - load player_daily_sign_in_record
+2014/11/06 23:43:27 [I] - load player_month_card_award_record
+2014/11/06 23:43:27 [I] - load player_month_card_info
+2014/11/06 23:43:27 [I] - load player_daily_sign_in_state
+2014/11/06 23:43:27 [I] - load player_month_card_info
+2014/11/06 23:43:27 [I] - load player_multi_level_info
+2014/11/06 23:43:27 [I] - load player_mail_attachment
+2014/11/06 23:43:27 [I] - load player_equipment
+2014/11/06 23:43:27 [I] - load player_multi_level_info
+2014/11/06 23:43:27 [I] - load player_npc_talk_record
+2014/11/06 23:43:27 [I] - load player_event_award_record
+2014/11/06 23:43:27 [I] - load player_meditation_state
+2014/11/06 23:43:27 [I] - load player_physical
+2014/11/06 23:43:27 [I] - load player_npc_talk_record
+2014/11/06 23:43:27 [I] - load player_events_fight_power
+2014/11/06 23:43:27 [I] - load player_mission
+2014/11/06 23:43:27 [I] - load player_physical
+2014/11/06 23:43:27 [I] - load player_purchase_record
+2014/11/06 23:43:27 [I] - load player_extend_level
+2014/11/06 23:43:27 [I] - load player_purchase_record
+2014/11/06 23:43:27 [I] - load player_push_notify_switch
+2014/11/06 23:43:27 [I] - load player_mission_level
+2014/11/06 23:43:27 [I] - load player_fashion
+2014/11/06 23:43:27 [I] - load player_push_notify_switch
+2014/11/06 23:43:27 [I] - load player_pve_state
+2014/11/06 23:43:27 [I] - load player_fashion_state
+2014/11/06 23:43:27 [I] - load player_pve_state
+2014/11/06 23:43:27 [I] - load player_fight_num
+2014/11/06 23:43:27 [I] - load player_quest
+2014/11/06 23:43:27 [I] - load player_quest
+2014/11/06 23:43:27 [I] - load player_formation
+2014/11/06 23:43:27 [I] - load player_rainbow_level
+2014/11/06 23:43:27 [I] - load player_mission_level_record
+2014/11/06 23:43:27 [I] - load player_rainbow_level
+2014/11/06 23:43:27 [I] - load player_mission_level_state_bin
+2014/11/06 23:43:27 [I] - load player_func_key
+2014/11/06 23:43:27 [I] - load player_rainbow_level_state_bin
+2014/11/06 23:43:27 [I] - load player_mission_record
+2014/11/06 23:43:27 [I] - load player_ghost
+2014/11/06 23:43:27 [I] - load player_role
+2014/11/06 23:43:27 [I] - load player_rainbow_level_state_bin
+2014/11/06 23:43:27 [I] - load player_month_card_award_record
+2014/11/06 23:43:27 [I] - load player_send_heart_record
+2014/11/06 23:43:27 [I] - load player_ghost_equipment
+2014/11/06 23:43:27 [I] - load player_month_card_info
+2014/11/06 23:43:27 [I] - load player_skill
+2014/11/06 23:43:27 [I] - load player_ghost_state
+2014/11/06 23:43:27 [I] - load player_role
+2014/11/06 23:43:27 [I] - load player_state
+2014/11/06 23:43:27 [I] - load player_multi_level_info
+2014/11/06 23:43:27 [I] - load player_ghost_umbra
+2014/11/06 23:43:27 [I] - load player_sword_soul
+2014/11/06 23:43:27 [I] - load player_npc_talk_record
+2014/11/06 23:43:27 [I] - load player_hard_level
+2014/11/06 23:43:27 [I] - load player_sword_soul_equipment
+2014/11/06 23:43:27 [I] - load player_physical
+2014/11/06 23:43:27 [I] - load player_hard_level_record
+2014/11/06 23:43:27 [I] - load player_sword_soul_state
+2014/11/06 23:43:27 [I] - load player_purchase_record
+2014/11/06 23:43:27 [I] - load player_hard_level_state
+2014/11/06 23:43:27 [I] - load player_tb_xxd_roleinfo
+2014/11/06 23:43:27 [I] - load player_push_notify_switch
+2014/11/06 23:43:27 [I] - load player_heart
+2014/11/06 23:43:27 [I] - load player_send_heart_record
+2014/11/06 23:43:27 [I] - load player_pve_state
+2014/11/06 23:43:27 [I] - load player_tower_level
+2014/11/06 23:43:27 [I] - load player_heart_draw
+2014/11/06 23:43:27 [I] - load player_skill
+2014/11/06 23:43:27 [I] - load player_quest
+2014/11/06 23:43:27 [I] - load player_heart_draw_card_record
+2014/11/06 23:43:27 [I] - load player_town
+2014/11/06 23:43:27 [I] - load player_state
+2014/11/06 23:43:27 [I] - load player_rainbow_level
+2014/11/06 23:43:27 [I] - load player_heart_draw_wheel_record
+2014/11/06 23:43:27 [I] - load player_sword_soul
+2014/11/06 23:43:27 [I] - load player_trader_refresh_state
+2014/11/06 23:43:27 [I] - load player_rainbow_level_state_bin
+2014/11/06 23:43:27 [I] - load player_info
+2014/11/06 23:43:27 [I] - load player_sword_soul_equipment
+2014/11/06 23:43:27 [I] - load player_trader_store_state
+2014/11/06 23:43:27 [I] - load player_role
+2014/11/06 23:43:27 [I] - load player_is_operated
+2014/11/06 23:43:27 [I] - load player_use_skill
+2014/11/06 23:43:27 [I] - load player_sword_soul_state
+2014/11/06 23:43:27 [I] - load player_send_heart_record
+2014/11/06 23:43:27 [I] - load player_item
+2014/11/06 23:43:27 [I] - load player_vip
+2014/11/06 23:43:27 [I] - load player_tb_xxd_roleinfo
+2014/11/06 23:43:27 [I] - load player_item_appendix
+2014/11/06 23:43:27 [I] - load player_skill
+2014/11/06 23:43:27 [I] - load player_state
+2014/11/06 23:43:27 [I] - load player_item_buyback
+2014/11/06 23:43:27 [I] - load player_tower_level
+2014/11/06 23:43:27 [I] - load player_sword_soul
+2014/11/06 23:43:27 [I] - load player_item_recast_state
+2014/11/06 23:43:27 [I] - load player_town
+2014/11/06 23:43:27 [I] - load player_sword_soul_equipment
+2014/11/06 23:43:27 [I] - load player_login_award_record
+2014/11/06 23:43:27 [I] - load player_trader_refresh_state
+2014/11/06 23:43:27 [I] - load player_sword_soul_state
+2014/11/06 23:43:27 [I] - load player_mail
+2014/11/06 23:43:27 [I] - load player_tb_xxd_roleinfo
+2014/11/06 23:43:27 [I] - load player_mail_attachment
+2014/11/06 23:43:27 [I] - load player_tower_level
+2014/11/06 23:43:27 [I] - load player_trader_store_state
+2014/11/06 23:43:27 [I] - load player_meditation_state
+2014/11/06 23:43:27 [I] - load player_use_skill
+2014/11/06 23:43:27 [I] - load player_town
+2014/11/06 23:43:27 [I] - load player_mission
+2014/11/06 23:43:27 [I] - load player_mission_level
+2014/11/06 23:43:27 [I] - load player_trader_refresh_state
+2014/11/06 23:43:27 [I] - load player_vip
+2014/11/06 23:43:27 [I] - load player_mission_level_record
+2014/11/06 23:43:27 [I] - load player_trader_store_state
+2014/11/06 23:43:27 [I] - load player_mission_level_state_bin
+2014/11/06 23:43:27 [I] - load player_use_skill
+2014/11/06 23:43:27 [I] - load player_mission_record
+2014/11/06 23:43:27 [I] - load player_vip
+2014/11/06 23:43:27 [I] - load player_month_card_award_record
+2014/11/06 23:43:27 [I] - load player_month_card_info
+2014/11/06 23:43:27 [I] - load player_multi_level_info
+2014/11/06 23:43:27 [I] - load player_npc_talk_record
+2014/11/06 23:43:27 [I] - load player_physical
+2014/11/06 23:43:27 [I] - load player_purchase_record
+2014/11/06 23:43:27 [I] - load player_push_notify_switch
+2014/11/06 23:43:27 [I] - load player_pve_state
+2014/11/06 23:43:27 [I] - load player_quest
+2014/11/06 23:43:27 [I] - load player_rainbow_level
+2014/11/06 23:43:27 [I] - load player_rainbow_level_state_bin
+2014/11/06 23:43:27 [I] - load player_role
+2014/11/06 23:43:27 [I] - load player_send_heart_record
+2014/11/06 23:43:27 [I] - load player_skill
+2014/11/06 23:43:27 [I] - load player_state
+2014/11/06 23:43:27 [I] - load player_sword_soul
+2014/11/06 23:43:27 [I] - load player_sword_soul_equipment
+2014/11/06 23:43:27 [I] - load player_sword_soul_state
+2014/11/06 23:43:27 [I] - load player_tb_xxd_roleinfo
+2014/11/06 23:43:27 [I] - load player_tower_level
+2014/11/06 23:43:27 [I] - load player_town
+2014/11/06 23:43:27 [I] - load player_trader_refresh_state
+2014/11/06 23:43:27 [I] - load player_trader_store_state
+2014/11/06 23:43:27 [I] - load player_use_skill
+2014/11/06 23:43:27 [I] - load player_vip
+mdb.load (1) cost time: 16.526402ms
+mdb.load (3) cost time: 16.501957ms
+mdb.load (0) cost time: 16.66531ms
+mdb.load (2) cost time: 16.850508ms
+mdb.load success.
+panic: listen tcp4 0.0.0.0:8080: bind: address already in use
+
+goroutine 16 [running]:
+runtime.panic(0x48e2ec0, 0x20ea21000)
+	/usr/local/go/src/pkg/runtime/panic.c:279 +0xf5
+game_server/api.Start(0x4a06d50, 0x4, 0x20ea69934, 0xc)
+	/Users/tangweichen/xxd-server/server/src/game_server/api/server.go:38 +0x158
+main.main()
+	/Users/tangweichen/xxd-server/server/src/game_server/main.go:113 +0x35e
+
+goroutine 19 [finalizer wait]:
+runtime.park(0x401a280, 0x500eb20, 0x4ff1f69)
+	/usr/local/go/src/pkg/runtime/proc.c:1369 +0x89
+runtime.parkunlock(0x500eb20, 0x4ff1f69)
+	/usr/local/go/src/pkg/runtime/proc.c:1385 +0x3b
+runfinq()
+	/usr/local/go/src/pkg/runtime/mgc0.c:2644 +0xcf
+runtime.goexit()
+	/usr/local/go/src/pkg/runtime/proc.c:1445
+
+goroutine 17 [syscall]:
+runtime.goexit()
+	/usr/local/go/src/pkg/runtime/proc.c:1445
+
+goroutine 22 [syscall]:
+os/signal.loop()
+	/usr/local/go/src/pkg/os/signal/signal_unix.go:21 +0x1e
+created by os/signal.init·1
+	/usr/local/go/src/pkg/os/signal/signal_unix.go:27 +0x32
+
+goroutine 23 [sleep]:
+time.Sleep(0xe609639800)
+	/private/var/folders/00/0sdwh000h01000cxqpysvccm0035qk/T/makerelease003761064/go/src/pkg/runtime/time.goc:39 +0x31
+core/log.func·001()
+	/Users/tangweichen/xxd-server/server/src/core/log/log.go:35 +0x213
+created by core/log.Setup
+	/Users/tangweichen/xxd-server/server/src/core/log/log.go:37 +0x9d
+
+goroutine 33 [chan receive]:
+core/log.func·003()
+	/Users/tangweichen/xxd-server/server/src/core/log/log.go:48 +0x80
+created by core/log.Setup
+	/Users/tangweichen/xxd-server/server/src/core/log/log.go:51 +0xb1
+
+goroutine 34 [chan receive]:
+core/log.func·005()
+	/Users/tangweichen/xxd-server/server/src/core/log/log.go:60 +0xb9
+created by core/log.Setup
+	/Users/tangweichen/xxd-server/server/src/core/log/log.go:64 +0xc0
+
+goroutine 24 [chan receive]:
+game_server/mdb.(*mysqlCommitter).commitLoop(0x20e1c6120)
+	/Users/tangweichen/xxd-server/server/src/game_server/mdb/mysql_commit.go:65 +0xc2
+created by game_server/mdb.newMySqlCommitter
+	/Users/tangweichen/xxd-server/server/src/game_server/mdb/mysql_commit.go:35 +0x116
+
+goroutine 25 [sleep]:
+time.Sleep(0xe63c55cfd0)
+	/private/var/folders/00/0sdwh000h01000cxqpysvccm0035qk/T/makerelease003761064/go/src/pkg/runtime/time.goc:39 +0x31
+game_server/mdb.func·003()
+	/Users/tangweichen/xxd-server/server/src/game_server/mdb/tlog_commit.go:102 +0x20b
+created by game_server/mdb.(*tlogCommitter).startFileTimer
+	/Users/tangweichen/xxd-server/server/src/game_server/mdb/tlog_commit.go:106 +0x63
+
+goroutine 26 [select]:
+game_server/mdb.(*tlogCommitter).commitLoop(0x20e1c6b10, 0x20e00e820, 0x12)
+	/Users/tangweichen/xxd-server/server/src/game_server/mdb/tlog_commit.go:41 +0x2f0
+created by game_server/mdb.newTlogCommitter
+	/Users/tangweichen/xxd-server/server/src/game_server/mdb/tlog_commit.go:26 +0xe5
+
+goroutine 27 [sleep]:
+time.Sleep(0xe63c4cf283)
+	/private/var/folders/00/0sdwh000h01000cxqpysvccm0035qk/T/makerelease003761064/go/src/pkg/runtime/time.goc:39 +0x31
+game_server/mdb.func·001()
+	/Users/tangweichen/xxd-server/server/src/game_server/mdb/file_commit.go:134 +0x20b
+created by game_server/mdb.(*fileCommitter).startFileTimer
+	/Users/tangweichen/xxd-server/server/src/game_server/mdb/file_commit.go:138 +0x63
+
+goroutine 28 [select]:
+game_server/mdb.(*fileCommitter).commitLoop(0x20e1c8040, 0x20e00e6c0, 0x12)
+	/Users/tangweichen/xxd-server/server/src/game_server/mdb/file_commit.go:78 +0x51b
+created by game_server/mdb.newFileCommitter
+	/Users/tangweichen/xxd-server/server/src/game_server/mdb/file_commit.go:66 +0x119
+2014/11/06 23:43:37 [I] - mem:10596040 goroutine:18 gc:6 pause:8ms
+2014/11/06 23:43:47 [I] - mem:10596904 goroutine:18 gc:6 pause:8ms
+300
+2014/11/06 23:43:50 [I] - execute cmd: loadevent /Users/tangweichen/xxd-server/event.json
+2014/11/06 23:43:57 [I] - mem:10755072 goroutine:18 gc:6 pause:8ms
+2014/11/06 23:44:07 [I] - mem:10755424 goroutine:18 gc:6 pause:8ms
+2014/11/06 23:44:17 [I] - mem:10756064 goroutine:18 gc:6 pause:8ms
+2014/11/06 23:44:27 [I] - mem:10756416 goroutine:18 gc:6 pause:8ms
+2014/11/06 23:44:37 [I] - mem:10757296 goroutine:18 gc:6 pause:8ms
+2014/11/06 23:44:47 [I] - mem:10757648 goroutine:18 gc:6 pause:8ms
+2014/11/06 23:44:57 [I] - mem:10758000 goroutine:18 gc:6 pause:8ms
+2014/11/06 23:45:07 [I] - mem:10758352 goroutine:18 gc:6 pause:8ms
+2014/11/06 23:45:17 [I] - mem:10758704 goroutine:18 gc:6 pause:8ms
+2014/11/06 23:45:27 [I] - mem:10759056 goroutine:19 gc:6 pause:8ms
+2014/11/06 23:45:27 [E] - [tlog] GameSvrState error. write udp4 172.26.166.37:6667: connection refused
+ info: &{2014-11-06 23:45:27.28031203 +0800 CST 172.26.166.37}
+2014/11/06 23:45:37 [I] - mem:10778144 goroutine:18 gc:6 pause:8ms
+2014/11/06 23:45:47 [I] - mem:10778784 goroutine:18 gc:6 pause:8ms
+2014/11/06 23:45:57 [I] - mem:10779424 goroutine:18 gc:6 pause:8ms
+2014/11/06 23:46:07 [I] - mem:10779776 goroutine:18 gc:6 pause:8ms
+2014/11/06 23:46:17 [I] - mem:10780128 goroutine:18 gc:6 pause:8ms
+2014/11/06 23:46:27 [I] - mem:6846768 goroutine:18 gc:7 pause:10ms
+2014/11/06 23:46:37 [I] - mem:6848128 goroutine:18 gc:7 pause:10ms
+2014/11/06 23:46:47 [I] - mem:6848352 goroutine:18 gc:7 pause:10ms
+2014/11/06 23:46:57 [I] - mem:6848704 goroutine:18 gc:7 pause:10ms
+2014/11/06 23:47:07 [I] - mem:6849056 goroutine:18 gc:7 pause:10ms
+2014/11/06 23:47:17 [I] - mem:6849408 goroutine:18 gc:7 pause:10ms
+2014/11/06 23:47:27 [I] - mem:6849760 goroutine:19 gc:7 pause:10ms
+2014/11/06 23:47:27 [E] - [tlog] GameSvrState error. write udp4 172.26.166.37:6667: connection refused
+ info: &{2014-11-06 23:47:27.281119397 +0800 CST 172.26.166.37}
+2014/11/06 23:47:37 [I] - mem:6860560 goroutine:18 gc:7 pause:10ms
+2014/11/06 23:47:47 [I] - mem:6860912 goroutine:18 gc:7 pause:10ms
+2014/11/06 23:47:57 [I] - mem:6861264 goroutine:18 gc:7 pause:10ms
+2014/11/06 23:48:07 [I] - mem:6861616 goroutine:18 gc:7 pause:10ms
+2014/11/06 23:48:17 [I] - mem:6861968 goroutine:18 gc:7 pause:10ms
+2014/11/06 23:48:27 [I] - mem:6862320 goroutine:18 gc:7 pause:10ms
+2014/11/06 23:48:37 [I] - mem:6741936 goroutine:18 gc:8 pause:11ms
+2014/11/06 23:48:47 [I] - mem:6742384 goroutine:18 gc:8 pause:11ms
+2014/11/06 23:48:57 [I] - mem:6742736 goroutine:18 gc:8 pause:11ms
+2014/11/06 23:49:07 [I] - mem:6743376 goroutine:18 gc:8 pause:11ms
+2014/11/06 23:49:17 [I] - mem:6743728 goroutine:18 gc:8 pause:11ms
+2014/11/06 23:49:27 [I] - mem:6744080 goroutine:18 gc:8 pause:11ms
+2014/11/06 23:49:27 [E] - [tlog] GameSvrState error. write udp4 172.26.166.37:6667: connection refused
+ info: &{2014-11-06 23:49:27.282849974 +0800 CST 172.26.166.37}
+2014/11/06 23:49:37 [I] - mem:6753904 goroutine:18 gc:8 pause:11ms
+2014/11/06 23:49:47 [I] - mem:6754256 goroutine:18 gc:8 pause:11ms
+2014/11/06 23:49:57 [I] - mem:6754608 goroutine:18 gc:8 pause:11ms
+2014/11/06 23:50:07 [I] - mem:6754960 goroutine:18 gc:8 pause:11ms
+2014/11/06 23:50:17 [I] - mem:6755312 goroutine:18 gc:8 pause:11ms
+2014/11/06 23:50:27 [I] - mem:6755664 goroutine:18 gc:8 pause:11ms
+2014/11/06 23:50:37 [I] - mem:6740256 goroutine:18 gc:9 pause:12ms
+2014/11/06 23:50:47 [I] - mem:6740704 goroutine:18 gc:9 pause:12ms
+2014/11/06 23:50:57 [I] - mem:6741056 goroutine:18 gc:9 pause:12ms
+2014/11/06 23:51:07 [I] - mem:6741408 goroutine:18 gc:9 pause:12ms
+2014/11/06 23:51:17 [I] - mem:6742336 goroutine:18 gc:9 pause:12ms
+2014/11/06 23:51:27 [I] - mem:6742976 goroutine:18 gc:9 pause:12ms
+2014/11/06 23:51:27 [E] - [tlog] GameSvrState error. write udp4 172.26.166.37:6667: connection refused
+ info: &{2014-11-06 23:51:27.283499088 +0800 CST 172.26.166.37}
+2014/11/06 23:51:37 [I] - mem:6753424 goroutine:18 gc:9 pause:12ms
+2014/11/06 23:51:47 [I] - mem:6754064 goroutine:18 gc:9 pause:12ms
+2014/11/06 23:51:57 [I] - mem:6754416 goroutine:18 gc:9 pause:12ms
+2014/11/06 23:52:07 [I] - mem:6755056 goroutine:18 gc:9 pause:12ms
+2014/11/06 23:52:17 [I] - mem:6755696 goroutine:18 gc:9 pause:12ms
+2014/11/06 23:52:27 [I] - mem:6756336 goroutine:18 gc:9 pause:12ms
+2014/11/06 23:52:37 [I] - mem:6743152 goroutine:18 gc:10 pause:13ms
+2014/11/06 23:52:47 [I] - mem:6743552 goroutine:18 gc:10 pause:13ms
+2014/11/06 23:52:57 [I] - mem:6744192 goroutine:18 gc:10 pause:13ms
+2014/11/06 23:53:07 [I] - mem:6744544 goroutine:18 gc:10 pause:13ms
+2014/11/06 23:53:17 [I] - mem:6745184 goroutine:18 gc:10 pause:13ms
+2014/11/06 23:53:27 [I] - mem:6745824 goroutine:18 gc:10 pause:13ms
+2014/11/06 23:53:27 [E] - [tlog] GameSvrState error. write udp4 172.26.166.37:6667: connection refused
+ info: &{2014-11-06 23:53:27.28378172 +0800 CST 172.26.166.37}
+2014/11/06 23:53:37 [I] - mem:6756272 goroutine:18 gc:10 pause:13ms
+2014/11/06 23:53:47 [I] - mem:6756624 goroutine:18 gc:10 pause:13ms
+2014/11/06 23:53:57 [I] - mem:6757264 goroutine:18 gc:10 pause:13ms
+2014/11/06 23:54:07 [I] - mem:6757616 goroutine:18 gc:10 pause:13ms
+2014/11/06 23:54:17 [I] - mem:6757968 goroutine:18 gc:10 pause:13ms
+2014/11/06 23:54:27 [I] - mem:6758320 goroutine:18 gc:10 pause:13ms
+300
+2014/11/06 23:54:36 [I] - execute cmd: loadevent /Users/tangweichen/xxd-server/event.json
+2014/11/06 23:54:37 [I] - mem:6814664 goroutine:18 gc:11 pause:14ms
+2014/11/06 23:54:47 [I] - mem:6815112 goroutine:18 gc:11 pause:14ms
+2014/11/06 23:54:57 [I] - mem:6815800 goroutine:18 gc:11 pause:14ms
+2014/11/06 23:55:07 [I] - mem:6816440 goroutine:18 gc:11 pause:14ms
+2014/11/06 23:55:17 [I] - mem:6816792 goroutine:18 gc:11 pause:14ms
+mdb.load (1) cost time: 11.885204ms
+mdb.load (2) cost time: 11.886149ms
+mdb.load (3) cost time: 13.319826ms
+mdb.load (0) cost time: 13.825631ms
+mdb.load success.
+2014/11/06 23:55:32 [I] - load player
+2014/11/06 23:55:32 [I] - load player
+2014/11/06 23:55:32 [I] - load player
+2014/11/06 23:55:32 [I] - load player
+2014/11/06 23:55:32 [I] - load player_activity
+2014/11/06 23:55:32 [I] - load player_activity
+2014/11/06 23:55:32 [I] - load player_activity
+2014/11/06 23:55:32 [I] - load player_activity
+2014/11/06 23:55:32 [I] - load player_arena
+2014/11/06 23:55:32 [I] - load player_arena
+2014/11/06 23:55:32 [I] - load player_arena
+2014/11/06 23:55:32 [I] - load player_arena
+2014/11/06 23:55:32 [I] - load player_arena_record
+2014/11/06 23:55:32 [I] - load player_arena_record
+2014/11/06 23:55:32 [I] - load player_arena_record
+2014/11/06 23:55:32 [I] - load player_battle_pet
+2014/11/06 23:55:32 [I] - load player_battle_pet
+2014/11/06 23:55:32 [I] - load player_battle_pet
+2014/11/06 23:55:32 [I] - load player_battle_pet_grid
+2014/11/06 23:55:32 [I] - load player_battle_pet_grid
+2014/11/06 23:55:32 [I] - load player_battle_pet_grid
+2014/11/06 23:55:32 [I] - load player_arena_record
+2014/11/06 23:55:32 [I] - load player_chest_state
+2014/11/06 23:55:32 [I] - load player_chest_state
+2014/11/06 23:55:32 [I] - load player_chest_state
+2014/11/06 23:55:32 [I] - load player_battle_pet
+2014/11/06 23:55:32 [I] - load player_coins
+2014/11/06 23:55:32 [I] - load player_coins
+2014/11/06 23:55:32 [I] - load player_coins
+2014/11/06 23:55:32 [I] - load player_daily_quest
+2014/11/06 23:55:32 [I] - load player_daily_quest
+2014/11/06 23:55:32 [I] - load player_battle_pet_grid
+2014/11/06 23:55:32 [I] - load player_daily_sign_in_record
+2014/11/06 23:55:32 [I] - load player_daily_quest
+2014/11/06 23:55:32 [I] - load player_daily_sign_in_record
+2014/11/06 23:55:32 [I] - load player_chest_state
+2014/11/06 23:55:32 [I] - load player_daily_sign_in_state
+2014/11/06 23:55:32 [I] - load player_daily_sign_in_record
+2014/11/06 23:55:32 [I] - load player_daily_sign_in_state
+2014/11/06 23:55:32 [I] - load player_equipment
+2014/11/06 23:55:32 [I] - load player_daily_sign_in_state
+2014/11/06 23:55:32 [I] - load player_equipment
+2014/11/06 23:55:32 [I] - load player_coins
+2014/11/06 23:55:32 [I] - load player_event_award_record
+2014/11/06 23:55:32 [I] - load player_event_award_record
+2014/11/06 23:55:32 [I] - load player_equipment
+2014/11/06 23:55:32 [I] - load player_daily_quest
+2014/11/06 23:55:32 [I] - load player_events_fight_power
+2014/11/06 23:55:32 [I] - load player_events_fight_power
+2014/11/06 23:55:32 [I] - load player_event_award_record
+2014/11/06 23:55:32 [I] - load player_daily_sign_in_record
+2014/11/06 23:55:32 [I] - load player_events_fight_power
+2014/11/06 23:55:32 [I] - load player_extend_level
+2014/11/06 23:55:32 [I] - load player_extend_level
+2014/11/06 23:55:32 [I] - load player_daily_sign_in_state
+2014/11/06 23:55:32 [I] - load player_extend_level
+2014/11/06 23:55:32 [I] - load player_fashion
+2014/11/06 23:55:32 [I] - load player_fashion
+2014/11/06 23:55:32 [I] - load player_equipment
+2014/11/06 23:55:32 [I] - load player_fashion
+2014/11/06 23:55:32 [I] - load player_fashion_state
+2014/11/06 23:55:32 [I] - load player_fashion_state
+2014/11/06 23:55:32 [I] - load player_event_award_record
+2014/11/06 23:55:32 [I] - load player_fashion_state
+2014/11/06 23:55:32 [I] - load player_fight_num
+2014/11/06 23:55:32 [I] - load player_fight_num
+2014/11/06 23:55:32 [I] - load player_events_fight_power
+2014/11/06 23:55:32 [I] - load player_fight_num
+2014/11/06 23:55:32 [I] - load player_formation
+2014/11/06 23:55:32 [I] - load player_formation
+2014/11/06 23:55:32 [I] - load player_extend_level
+2014/11/06 23:55:32 [I] - load player_formation
+2014/11/06 23:55:32 [I] - load player_func_key
+2014/11/06 23:55:32 [I] - load player_func_key
+2014/11/06 23:55:32 [I] - load player_func_key
+2014/11/06 23:55:32 [I] - load player_fashion
+2014/11/06 23:55:32 [I] - load player_ghost
+2014/11/06 23:55:32 [I] - load player_ghost
+2014/11/06 23:55:32 [I] - load player_fashion_state
+2014/11/06 23:55:32 [I] - load player_ghost
+2014/11/06 23:55:32 [I] - load player_ghost_equipment
+2014/11/06 23:55:32 [I] - load player_ghost_equipment
+2014/11/06 23:55:32 [I] - load player_ghost_equipment
+2014/11/06 23:55:32 [I] - load player_ghost_state
+2014/11/06 23:55:32 [I] - load player_ghost_state
+2014/11/06 23:55:32 [I] - load player_fight_num
+2014/11/06 23:55:32 [I] - load player_ghost_state
+2014/11/06 23:55:32 [I] - load player_ghost_umbra
+2014/11/06 23:55:32 [I] - load player_ghost_umbra
+2014/11/06 23:55:32 [I] - load player_formation
+2014/11/06 23:55:32 [I] - load player_ghost_umbra
+2014/11/06 23:55:32 [I] - load player_hard_level
+2014/11/06 23:55:32 [I] - load player_hard_level
+2014/11/06 23:55:32 [I] - load player_hard_level
+2014/11/06 23:55:32 [I] - load player_func_key
+2014/11/06 23:55:32 [I] - load player_hard_level_record
+2014/11/06 23:55:32 [I] - load player_hard_level_record
+2014/11/06 23:55:32 [I] - load player_hard_level_record
+2014/11/06 23:55:32 [I] - load player_hard_level_state
+2014/11/06 23:55:32 [I] - load player_ghost
+2014/11/06 23:55:32 [I] - load player_hard_level_state
+2014/11/06 23:55:32 [I] - load player_hard_level_state
+2014/11/06 23:55:32 [I] - load player_heart
+2014/11/06 23:55:32 [I] - load player_ghost_equipment
+2014/11/06 23:55:32 [I] - load player_heart
+2014/11/06 23:55:32 [I] - load player_heart
+2014/11/06 23:55:32 [I] - load player_heart_draw
+2014/11/06 23:55:32 [I] - load player_ghost_state
+2014/11/06 23:55:32 [I] - load player_heart_draw
+2014/11/06 23:55:32 [I] - load player_heart_draw_card_record
+2014/11/06 23:55:32 [I] - load player_heart_draw
+2014/11/06 23:55:32 [I] - load player_heart_draw_card_record
+2014/11/06 23:55:32 [I] - load player_heart_draw_card_record
+2014/11/06 23:55:32 [I] - load player_ghost_umbra
+2014/11/06 23:55:32 [I] - load player_heart_draw_wheel_record
+2014/11/06 23:55:32 [I] - load player_heart_draw_wheel_record
+2014/11/06 23:55:32 [I] - load player_heart_draw_wheel_record
+2014/11/06 23:55:32 [I] - load player_info
+2014/11/06 23:55:32 [I] - load player_hard_level
+2014/11/06 23:55:32 [I] - load player_info
+2014/11/06 23:55:32 [I] - load player_info
+2014/11/06 23:55:32 [I] - load player_is_operated
+2014/11/06 23:55:32 [I] - load player_is_operated
+2014/11/06 23:55:32 [I] - load player_hard_level_record
+2014/11/06 23:55:32 [I] - load player_is_operated
+2014/11/06 23:55:32 [I] - load player_item
+2014/11/06 23:55:32 [I] - load player_item
+2014/11/06 23:55:32 [I] - load player_hard_level_state
+2014/11/06 23:55:32 [I] - load player_item
+2014/11/06 23:55:32 [I] - load player_item_appendix
+2014/11/06 23:55:32 [I] - load player_item_appendix
+2014/11/06 23:55:32 [I] - load player_item_appendix
+2014/11/06 23:55:32 [I] - load player_heart
+2014/11/06 23:55:32 [I] - load player_item_buyback
+2014/11/06 23:55:32 [I] - load player_item_buyback
+2014/11/06 23:55:32 [I] - load player_item_buyback
+2014/11/06 23:55:32 [I] - load player_item_recast_state
+2014/11/06 23:55:32 [I] - load player_item_recast_state
+2014/11/06 23:55:32 [I] - load player_item_recast_state
+2014/11/06 23:55:32 [I] - load player_heart_draw
+2014/11/06 23:55:32 [I] - load player_login_award_record
+2014/11/06 23:55:32 [I] - load player_login_award_record
+2014/11/06 23:55:32 [I] - load player_heart_draw_card_record
+2014/11/06 23:55:32 [I] - load player_login_award_record
+2014/11/06 23:55:32 [I] - load player_mail
+2014/11/06 23:55:32 [I] - load player_mail
+2014/11/06 23:55:32 [I] - load player_heart_draw_wheel_record
+2014/11/06 23:55:32 [I] - load player_mail
+2014/11/06 23:55:32 [I] - load player_mail_attachment
+2014/11/06 23:55:32 [I] - load player_mail_attachment
+2014/11/06 23:55:32 [I] - load player_mail_attachment
+2014/11/06 23:55:32 [I] - load player_info
+2014/11/06 23:55:32 [I] - load player_meditation_state
+2014/11/06 23:55:32 [I] - load player_meditation_state
+2014/11/06 23:55:32 [I] - load player_meditation_state
+2014/11/06 23:55:32 [I] - load player_mission
+2014/11/06 23:55:32 [I] - load player_mission
+2014/11/06 23:55:32 [I] - load player_mission
+2014/11/06 23:55:32 [I] - load player_is_operated
+2014/11/06 23:55:32 [I] - load player_mission_level
+2014/11/06 23:55:32 [I] - load player_mission_level
+2014/11/06 23:55:32 [I] - load player_mission_level
+2014/11/06 23:55:32 [I] - load player_mission_level_record
+2014/11/06 23:55:32 [I] - load player_mission_level_record
+2014/11/06 23:55:32 [I] - load player_item
+2014/11/06 23:55:32 [I] - load player_mission_level_state_bin
+2014/11/06 23:55:32 [I] - load player_item_appendix
+2014/11/06 23:55:32 [I] - load player_mission_level_record
+2014/11/06 23:55:32 [I] - load player_mission_level_state_bin
+2014/11/06 23:55:32 [I] - load player_mission_record
+2014/11/06 23:55:32 [I] - load player_mission_level_state_bin
+2014/11/06 23:55:32 [I] - load player_mission_record
+2014/11/06 23:55:32 [I] - load player_item_buyback
+2014/11/06 23:55:32 [I] - load player_month_card_award_record
+2014/11/06 23:55:32 [I] - load player_mission_record
+2014/11/06 23:55:32 [I] - load player_month_card_award_record
+2014/11/06 23:55:32 [I] - load player_month_card_info
+2014/11/06 23:55:32 [I] - load player_month_card_award_record
+2014/11/06 23:55:32 [I] - load player_item_recast_state
+2014/11/06 23:55:32 [I] - load player_month_card_info
+2014/11/06 23:55:32 [I] - load player_multi_level_info
+2014/11/06 23:55:32 [I] - load player_month_card_info
+2014/11/06 23:55:32 [I] - load player_multi_level_info
+2014/11/06 23:55:32 [I] - load player_login_award_record
+2014/11/06 23:55:32 [I] - load player_npc_talk_record
+2014/11/06 23:55:32 [I] - load player_multi_level_info
+2014/11/06 23:55:32 [I] - load player_npc_talk_record
+2014/11/06 23:55:32 [I] - load player_physical
+2014/11/06 23:55:32 [I] - load player_mail
+2014/11/06 23:55:32 [I] - load player_npc_talk_record
+2014/11/06 23:55:32 [I] - load player_physical
+2014/11/06 23:55:32 [I] - load player_mail_attachment
+2014/11/06 23:55:32 [I] - load player_purchase_record
+2014/11/06 23:55:32 [I] - load player_physical
+2014/11/06 23:55:32 [I] - load player_purchase_record
+2014/11/06 23:55:32 [I] - load player_meditation_state
+2014/11/06 23:55:32 [I] - load player_push_notify_switch
+2014/11/06 23:55:32 [I] - load player_purchase_record
+2014/11/06 23:55:32 [I] - load player_push_notify_switch
+2014/11/06 23:55:32 [I] - load player_mission
+2014/11/06 23:55:32 [I] - load player_pve_state
+2014/11/06 23:55:32 [I] - load player_push_notify_switch
+2014/11/06 23:55:32 [I] - load player_pve_state
+2014/11/06 23:55:32 [I] - load player_pve_state
+2014/11/06 23:55:32 [I] - load player_mission_level
+2014/11/06 23:55:32 [I] - load player_quest
+2014/11/06 23:55:32 [I] - load player_quest
+2014/11/06 23:55:32 [I] - load player_quest
+2014/11/06 23:55:32 [I] - load player_rainbow_level
+2014/11/06 23:55:32 [I] - load player_mission_level_record
+2014/11/06 23:55:32 [I] - load player_rainbow_level
+2014/11/06 23:55:32 [I] - load player_mission_level_state_bin
+2014/11/06 23:55:32 [I] - load player_rainbow_level
+2014/11/06 23:55:32 [I] - load player_rainbow_level_state_bin
+2014/11/06 23:55:32 [I] - load player_rainbow_level_state_bin
+2014/11/06 23:55:32 [I] - load player_mission_record
+2014/11/06 23:55:32 [I] - load player_role
+2014/11/06 23:55:32 [I] - load player_rainbow_level_state_bin
+2014/11/06 23:55:32 [I] - load player_role
+2014/11/06 23:55:32 [I] - load player_month_card_award_record
+2014/11/06 23:55:32 [I] - load player_send_heart_record
+2014/11/06 23:55:32 [I] - load player_role
+2014/11/06 23:55:32 [I] - load player_month_card_info
+2014/11/06 23:55:32 [I] - load player_skill
+2014/11/06 23:55:32 [I] - load player_send_heart_record
+2014/11/06 23:55:32 [I] - load player_multi_level_info
+2014/11/06 23:55:32 [I] - load player_state
+2014/11/06 23:55:32 [I] - load player_skill
+2014/11/06 23:55:32 [I] - load player_send_heart_record
+2014/11/06 23:55:32 [I] - load player_npc_talk_record
+2014/11/06 23:55:32 [I] - load player_state
+2014/11/06 23:55:32 [I] - load player_sword_soul
+2014/11/06 23:55:32 [I] - load player_skill
+2014/11/06 23:55:32 [I] - load player_physical
+2014/11/06 23:55:32 [I] - load player_sword_soul_equipment
+2014/11/06 23:55:32 [I] - load player_sword_soul
+2014/11/06 23:55:32 [I] - load player_state
+2014/11/06 23:55:32 [I] - load player_sword_soul_equipment
+2014/11/06 23:55:32 [I] - load player_purchase_record
+2014/11/06 23:55:32 [I] - load player_sword_soul_state
+2014/11/06 23:55:32 [I] - load player_push_notify_switch
+2014/11/06 23:55:32 [I] - load player_sword_soul_state
+2014/11/06 23:55:32 [I] - load player_sword_soul
+2014/11/06 23:55:32 [I] - load player_tb_xxd_roleinfo
+2014/11/06 23:55:32 [I] - load player_tb_xxd_roleinfo
+2014/11/06 23:55:32 [I] - load player_pve_state
+2014/11/06 23:55:32 [I] - load player_tower_level
+2014/11/06 23:55:32 [I] - load player_sword_soul_equipment
+2014/11/06 23:55:32 [I] - load player_quest
+2014/11/06 23:55:32 [I] - load player_tower_level
+2014/11/06 23:55:32 [I] - load player_town
+2014/11/06 23:55:32 [I] - load player_sword_soul_state
+2014/11/06 23:55:32 [I] - load player_rainbow_level
+2014/11/06 23:55:32 [I] - load player_town
+2014/11/06 23:55:32 [I] - load player_trader_refresh_state
+2014/11/06 23:55:32 [I] - load player_trader_refresh_state
+2014/11/06 23:55:32 [I] - load player_rainbow_level_state_bin
+2014/11/06 23:55:32 [I] - load player_trader_store_state
+2014/11/06 23:55:32 [I] - load player_tb_xxd_roleinfo
+2014/11/06 23:55:32 [I] - load player_trader_store_state
+2014/11/06 23:55:32 [I] - load player_role
+2014/11/06 23:55:32 [I] - load player_use_skill
+2014/11/06 23:55:32 [I] - load player_tower_level
+2014/11/06 23:55:32 [I] - load player_use_skill
+2014/11/06 23:55:32 [I] - load player_send_heart_record
+2014/11/06 23:55:32 [I] - load player_vip
+2014/11/06 23:55:32 [I] - load player_vip
+2014/11/06 23:55:32 [I] - load player_town
+2014/11/06 23:55:32 [I] - load player_skill
+2014/11/06 23:55:32 [I] - load player_state
+2014/11/06 23:55:32 [I] - load player_sword_soul
+2014/11/06 23:55:32 [I] - load player_sword_soul_equipment
+2014/11/06 23:55:32 [I] - load player_sword_soul_state
+2014/11/06 23:55:32 [I] - load player_trader_refresh_state
+2014/11/06 23:55:32 [I] - load player_tb_xxd_roleinfo
+2014/11/06 23:55:32 [I] - load player_trader_store_state
+2014/11/06 23:55:32 [I] - load player_tower_level
+2014/11/06 23:55:32 [I] - load player_use_skill
+2014/11/06 23:55:32 [I] - load player_town
+2014/11/06 23:55:32 [I] - load player_vip
+2014/11/06 23:55:32 [I] - load player_trader_refresh_state
+2014/11/06 23:55:32 [I] - load player_trader_store_state
+2014/11/06 23:55:32 [I] - load player_use_skill
+2014/11/06 23:55:32 [I] - load player_vip
+2014/11/06 23:55:42 [I] - mem:10631896 goroutine:18 gc:6 pause:3ms
+2014/11/06 23:55:52 [I] - mem:10632424 goroutine:18 gc:6 pause:3ms
+2014/11/06 23:56:02 [I] - mem:10633016 goroutine:18 gc:6 pause:3ms
+300
+2014/11/06 23:56:02 [I] - execute cmd: loadevent /Users/tangweichen/xxd-server/event.json
+2014/11/06 23:56:12 [I] - mem:10788432 goroutine:18 gc:6 pause:3ms
+2014/11/06 23:56:22 [I] - mem:10788784 goroutine:18 gc:6 pause:3ms
+2014/11/06 23:56:32 [I] - mem:10789136 goroutine:18 gc:6 pause:3ms
+2014/11/06 23:56:42 [I] - mem:10790304 goroutine:18 gc:6 pause:3ms
+2014/11/06 23:56:52 [I] - mem:10790656 goroutine:18 gc:6 pause:3ms
+2014/11/06 23:57:02 [I] - mem:10791008 goroutine:18 gc:6 pause:3ms
+2014/11/06 23:57:12 [I] - mem:10791232 goroutine:19 gc:6 pause:3ms
+2014/11/06 23:57:22 [I] - mem:10791584 goroutine:18 gc:6 pause:3ms
+2014/11/06 23:57:32 [I] - mem:10792336 goroutine:19 gc:6 pause:3ms
+2014/11/06 23:57:32 [E] - [tlog] GameSvrState error. write udp4 172.26.166.37:6667: connection refused
+ info: &{2014-11-06 23:57:32.499653091 +0800 CST 172.26.166.37}
+2014/11/06 23:57:42 [I] - mem:10813696 goroutine:18 gc:6 pause:3ms
+2014/11/06 23:57:52 [I] - mem:10814336 goroutine:18 gc:6 pause:3ms
+2014/11/06 23:58:02 [I] - mem:10814688 goroutine:18 gc:6 pause:3ms
+2014/11/06 23:58:12 [I] - mem:10815040 goroutine:18 gc:6 pause:3ms
+2014/11/06 23:58:22 [I] - mem:10815392 goroutine:18 gc:6 pause:3ms
+2014/11/06 23:58:32 [I] - mem:6878816 goroutine:18 gc:7 pause:4ms
+2014/11/06 23:58:42 [I] - mem:6879840 goroutine:18 gc:7 pause:4ms
+2014/11/06 23:58:52 [I] - mem:6881696 goroutine:18 gc:7 pause:4ms
+2014/11/06 23:59:02 [I] - mem:6882048 goroutine:18 gc:7 pause:4ms
+2014/11/06 23:59:12 [I] - mem:6882400 goroutine:18 gc:7 pause:4ms
+2014/11/06 23:59:22 [I] - mem:6882752 goroutine:18 gc:7 pause:4ms
+2014/11/06 23:59:32 [I] - mem:6883104 goroutine:19 gc:7 pause:4ms
+2014/11/06 23:59:32 [E] - [tlog] GameSvrState error. write udp4 172.26.166.37:6667: connection refused
+ info: &{2014-11-06 23:59:32.500087174 +0800 CST 172.26.166.37}
+2014/11/06 23:59:42 [I] - mem:6894288 goroutine:18 gc:7 pause:4ms
+2014/11/06 23:59:52 [I] - mem:6894640 goroutine:18 gc:7 pause:4ms

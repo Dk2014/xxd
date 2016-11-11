@@ -1,0 +1,36 @@
+//
+// 时装 接口
+//
+mod fashion = 25
+{
+	// 时装信息
+	api fashion_info= 1 {
+		in{ }
+		out {
+			//total_num : int16
+			//attack    : int32 //增加攻击力
+			//defence   : int32 //增加防御
+			//health    : int32 //增加生命
+			//speed    : int32 // 增加速度
+			//cultivation    : int32 //增加内力
+
+			dress_cd_time : int64 //换装冷却结束时间，小于当前时间则可以换装
+			dressed_fashion_id : int16 //装备的时装ID 0则无装备
+			fashions : list {
+				fashion_id : int16 //时装模版ID
+				expire_time : int64 //过期时间戳
+			}
+		}
+	}
+
+	// 装备卸载时装
+	api dress_fashion = 2 {
+		in {
+			fashion_id : int16 // 时装模版ID 0则卸载
+			in_clubhouse : bool //是否在帮派集会所
+		}
+		out{
+			dress_cd_time : int64 //换装冷却结束时间，小于当前时间则可以换装
+		}
+	}
+}

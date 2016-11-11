@@ -1,0 +1,1 @@
+{"action_name":"fileds_info","module_name":"taoyuan","protocol":[{"name":"fileds","type":"list8","fields":[{"name":"filed_id","type":"int16"},{"name":"filed_status","type":"int16"},{"name":"plant_id","type":"int16"},{"name":"grow_time","type":"int64"},{"name":"can_take","type":"bool"}]}]}

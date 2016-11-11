@@ -1,0 +1,5 @@
+#!/bin/sh
+
+php database.php invoke local_game server_code
+php database.php invoke local_game client_data
+php database.php invoke local_game server_data

@@ -1,0 +1,1 @@
+{"action_name":"get_inn_role_list","module_name":"role","protocol":[{"name":"role_list","type":"list8","fields":[{"name":"role_id","type":"int8"},{"name":"friendship_level","type":"int16"},{"name":"fight_num","type":"int32"},{"name":"role_level","type":"int16"},{"name":"operate","type":"int8"}]}]}

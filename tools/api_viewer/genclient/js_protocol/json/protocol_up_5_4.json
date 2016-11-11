@@ -1,0 +1,1 @@
+{"action_name":"study_skill_by_cheat","module_name":"skill","protocol":[{"name":"role_id","type":"int8"},{"name":"item_id","type":"int16"}]}

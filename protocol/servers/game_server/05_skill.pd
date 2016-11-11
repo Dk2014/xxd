@@ -1,0 +1,100 @@
+//
+// 绝招相关接口
+//
+mod skill = 5
+{	
+
+	// 属性类型
+    type cheat_result enum {
+    	SUCCESS				=	0 	//学习成功
+    	NO_DEPAND_SKILL		=	1 	//没有对应绝招
+    	ALREADY_STUDY		=	2	//已经学习过该绝招
+    	CAN_NOT_STUDY_BEFORE	=	3	//不能学习已学技能之前的技能
+    	NOT_ROLE_SKILL		=	4	//不是该角色可学习的绝招
+    	NOT_CHEAT_TYPE		=	5	//不是武功秘籍
+    	ROLE_DOES_NOT_EXISTS	=	6	//角色不存在
+    	SKILL_NOT_MATCH_ROLE	=	7	//角色不能学习该绝招
+    	LEVEL_NOT_REACHED		=	8	//角色未到到学习等级
+    }
+
+	//
+	// 取角色当前使用的绝招
+	//
+	// 绝招栏状态说明 0为空
+	api get_all_skills_info = 1 {
+		in {}
+		out {
+			flush_time : int64 // 绝招上次洗点时间
+			roles : list {
+				role_id     : int8
+				status      : int8 //伙伴状态，0表示正常，1表示离队
+				skill_id1   : int16 //技能槽1的技能（基础绝招）（可替换可卸载）
+				skill_id2   : int16 //技能槽2的技能（体术绝招）（主角独有）
+				skill_id3   : int16 //技能槽3的技能（咒术绝招）（主角独有）
+				skill_id4   : int16 //技能槽4的技能（奥义绝招）（可替换可卸载）
+			}
+			skills : list {
+				role_id        : int8
+				skill_id       : int16 // 绝招ID
+				training_level : int16 // 绝招训练等级
+			}
+		}
+	}
+	
+	//
+	// 装备绝招
+	//
+	api equip_skill = 2 {
+		in {
+			role_id      : int8
+			order_number  : int8  // 技能槽 主角[1,4] 伙伴{1, 4}
+			skill_id     : int16 // 绝招ID
+		}
+		out {}
+	}
+
+	//
+	//卸载绝招
+	//
+	api unequip_skill = 3 {
+		in {
+			role_id      : int8
+			order_number : int8  // 技能槽 主角[1,4] 伙伴{1, 4}
+		}
+		out {}
+	}
+
+	//
+	//学习秘籍
+	//
+	api study_skill_by_cheat = 4{
+		in {
+			role_id		:	int8
+			item_id		:	int16
+		}
+		out {
+			result 		:	cheat_result
+		}
+	}
+
+	//
+	//训练绝招
+	//
+	api train_skill = 5 {
+		in {
+			role_id     : int8 // 角色id
+			skill_id    : int16 // 绝招id
+		}
+		out {}
+	}
+
+	// 绝招洗点
+	api flush_skill = 6 {
+		in {
+			role_id : int8 // 角色id
+		}
+		out {
+			flush_time : int64 // 最后洗点时间
+		}
+	}
+} 

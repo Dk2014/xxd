@@ -1,0 +1,1 @@
+{"action_name":"relation_ghost","module_name":"ghost","protocol":[{"name":"master","type":"int64"},{"name":"slave","type":"int64"}]}

@@ -1,0 +1,1 @@
+{"action_name":"wave_tree","module_name":"money_tree","protocol":[{"name":"status","type":"int8"},{"name":"money","type":"int32"},{"name":"remaind","type":"int8"}]}

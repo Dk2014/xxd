@@ -1,0 +1,1 @@
+{"action_name":"take_quest_stars_awaded","module_name":"quest","protocol":[{"name":"stars_level","type":"int32"}]}

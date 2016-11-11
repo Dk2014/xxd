@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="GBK" standalone="yes" ?>
+<config>
+	<comm_config_>
+		<use_ipc_> 1 </use_ipc_>
+		<use_socket_> 0 </use_socket_>
+		
+		<server_num_> 1 </server_num_>
+		<server_addrs_info_>
+			<plugin_id_> 6 </plugin_id_>
+			<ip_> 10.12.16.81 </ip_>
+			<port_> 3585 </port_>
+		</server_addrs_info_>
+	</comm_config_>
+	
+	<log_config_>
+		<log_level_> 1 </log_level_>
+	</log_config_>
+	
+	<anti_config_>
+		<enable_check_> 1 </enable_check_>
+		<echo_nodecrypt_> 1 </echo_nodecrypt_>
+	</anti_config_>
+		
+	<usercontrol_config_>
+		<use_idx_> 1 </use_idx_>
+		<max_client_obj_count_> 20000 </max_client_obj_count_>
+	</usercontrol_config_>
+	
+</config>

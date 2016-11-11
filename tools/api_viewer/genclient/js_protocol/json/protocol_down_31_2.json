@@ -1,0 +1,1 @@
+{"action_name":"upgrade","module_name":"totem","protocol":[{"name":"ok","type":"bool"},{"name":"id","type":"int64"},{"name":"skill","type":"int16"},{"name":"level","type":"int8"}]}

@@ -1,0 +1,1 @@
+{"action_name":"get_clique_building_quest","module_name":"clique_quest","protocol":[{"name":"quest","type":"list8","fields":[{"name":"id","type":"int16"},{"name":"award_state","type":"int8"},{"name":"donateCoins","type":"int64"}]}]}

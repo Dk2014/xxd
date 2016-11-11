@@ -1,0 +1,886 @@
+mdb.load (0) cost time: 11.079423ms
+mdb.load (1) cost time: 11.4168ms
+mdb.load (2) cost time: 12.97043ms
+mdb.load (3) cost time: 14.754544ms
+mdb.load success.
+2014/09/26 20:09:25 [I] - load player
+2014/09/26 20:09:25 [I] - load player
+2014/09/26 20:09:25 [I] - load player
+2014/09/26 20:09:25 [I] - load player_arena
+2014/09/26 20:09:25 [I] - load player
+2014/09/26 20:09:25 [I] - load player_arena
+2014/09/26 20:09:25 [I] - load player_arena_record
+2014/09/26 20:09:25 [I] - load player_arena_record
+2014/09/26 20:09:25 [I] - load player_arena
+2014/09/26 20:09:25 [I] - load player_battle_pet
+2014/09/26 20:09:25 [I] - load player_battle_pet
+2014/09/26 20:09:25 [I] - load player_arena_record
+2014/09/26 20:09:25 [I] - load player_battle_pet_config
+2014/09/26 20:09:25 [I] - load player_battle_pet
+2014/09/26 20:09:25 [I] - load player_battle_pet_config
+2014/09/26 20:09:25 [I] - load player_battle_pet_config
+2014/09/26 20:09:25 [I] - load player_chest_state
+2014/09/26 20:09:25 [I] - load player_chest_state
+2014/09/26 20:09:25 [I] - load player_chest_state
+2014/09/26 20:09:25 [I] - load player_coins
+2014/09/26 20:09:25 [I] - load player_coins
+2014/09/26 20:09:25 [I] - load player_coins
+2014/09/26 20:09:25 [I] - load player_daily_quest
+2014/09/26 20:09:25 [I] - load player_daily_quest
+2014/09/26 20:09:25 [I] - load player_daily_quest
+2014/09/26 20:09:25 [I] - load player_daily_sign_in_record
+2014/09/26 20:09:25 [I] - load player_daily_sign_in_record
+2014/09/26 20:09:25 [I] - load player_arena
+2014/09/26 20:09:25 [I] - load player_daily_sign_in_state
+2014/09/26 20:09:25 [I] - load player_daily_sign_in_state
+2014/09/26 20:09:25 [I] - load player_arena_record
+2014/09/26 20:09:25 [I] - load player_equipment
+2014/09/26 20:09:25 [I] - load player_equipment
+2014/09/26 20:09:25 [I] - load player_battle_pet
+2014/09/26 20:09:25 [I] - load player_events_fight_power
+2014/09/26 20:09:25 [I] - load player_events_fight_power
+2014/09/26 20:09:25 [I] - load player_battle_pet_config
+2014/09/26 20:09:25 [I] - load player_extend_level
+2014/09/26 20:09:25 [I] - load player_extend_level
+2014/09/26 20:09:25 [I] - load player_fashion
+2014/09/26 20:09:25 [I] - load player_fashion
+2014/09/26 20:09:25 [I] - load player_chest_state
+2014/09/26 20:09:25 [I] - load player_fashion_state
+2014/09/26 20:09:25 [I] - load player_fashion_state
+2014/09/26 20:09:25 [I] - load player_coins
+2014/09/26 20:09:25 [I] - load player_fight_num
+2014/09/26 20:09:25 [I] - load player_fight_num
+2014/09/26 20:09:25 [I] - load player_daily_quest
+2014/09/26 20:09:25 [I] - load player_formation
+2014/09/26 20:09:25 [I] - load player_formation
+2014/09/26 20:09:25 [I] - load player_daily_sign_in_record
+2014/09/26 20:09:25 [I] - load player_func_key
+2014/09/26 20:09:25 [I] - load player_func_key
+2014/09/26 20:09:25 [I] - load player_daily_sign_in_record
+2014/09/26 20:09:25 [I] - load player_ghost
+2014/09/26 20:09:25 [I] - load player_daily_sign_in_state
+2014/09/26 20:09:25 [I] - load player_ghost
+2014/09/26 20:09:25 [I] - load player_equipment
+2014/09/26 20:09:25 [I] - load player_ghost_equipment
+2014/09/26 20:09:25 [I] - load player_ghost_equipment
+2014/09/26 20:09:25 [I] - load player_events_fight_power
+2014/09/26 20:09:25 [I] - load player_ghost_state
+2014/09/26 20:09:25 [I] - load player_extend_level
+2014/09/26 20:09:25 [I] - load player_ghost_umbra
+2014/09/26 20:09:25 [I] - load player_daily_sign_in_state
+2014/09/26 20:09:25 [I] - load player_fashion
+2014/09/26 20:09:25 [I] - load player_hard_level
+2014/09/26 20:09:25 [I] - load player_fashion_state
+2014/09/26 20:09:25 [I] - load player_hard_level_record
+2014/09/26 20:09:25 [I] - load player_fight_num
+2014/09/26 20:09:25 [I] - load player_equipment
+2014/09/26 20:09:25 [I] - load player_formation
+2014/09/26 20:09:25 [I] - load player_hard_level_state
+2014/09/26 20:09:25 [I] - load player_func_key
+2014/09/26 20:09:25 [I] - load player_ghost
+2014/09/26 20:09:25 [I] - load player_ghost_state
+2014/09/26 20:09:25 [I] - load player_heart
+2014/09/26 20:09:25 [I] - load player_ghost_equipment
+2014/09/26 20:09:25 [I] - load player_heart_draw
+2014/09/26 20:09:25 [I] - load player_ghost_umbra
+2014/09/26 20:09:25 [I] - load player_ghost_state
+2014/09/26 20:09:25 [I] - load player_hard_level
+2014/09/26 20:09:25 [I] - load player_heart_draw_card_record
+2014/09/26 20:09:25 [I] - load player_ghost_umbra
+2014/09/26 20:09:25 [I] - load player_hard_level_record
+2014/09/26 20:09:25 [I] - load player_hard_level
+2014/09/26 20:09:25 [I] - load player_heart_draw_wheel_record
+2014/09/26 20:09:25 [I] - load player_hard_level_state
+2014/09/26 20:09:25 [I] - load player_hard_level_record
+2014/09/26 20:09:25 [I] - load player_info
+2014/09/26 20:09:25 [I] - load player_heart
+2014/09/26 20:09:25 [I] - load player_hard_level_state
+2014/09/26 20:09:25 [I] - load player_is_operated
+2014/09/26 20:09:25 [I] - load player_heart
+2014/09/26 20:09:25 [I] - load player_heart_draw
+2014/09/26 20:09:25 [I] - load player_item
+2014/09/26 20:09:25 [I] - load player_heart_draw
+2014/09/26 20:09:25 [I] - load player_heart_draw_card_record
+2014/09/26 20:09:25 [I] - load player_item_appendix
+2014/09/26 20:09:25 [I] - load player_heart_draw_card_record
+2014/09/26 20:09:25 [I] - load player_heart_draw_wheel_record
+2014/09/26 20:09:25 [I] - load player_item_buyback
+2014/09/26 20:09:25 [I] - load player_heart_draw_wheel_record
+2014/09/26 20:09:25 [I] - load player_info
+2014/09/26 20:09:25 [I] - load player_info
+2014/09/26 20:09:25 [I] - load player_item_recast_state
+2014/09/26 20:09:25 [I] - load player_is_operated
+2014/09/26 20:09:25 [I] - load player_events_fight_power
+2014/09/26 20:09:25 [I] - load player_login_award_record
+2014/09/26 20:09:25 [I] - load player_is_operated
+2014/09/26 20:09:25 [I] - load player_item
+2014/09/26 20:09:25 [I] - load player_item
+2014/09/26 20:09:25 [I] - load player_mail
+2014/09/26 20:09:25 [I] - load player_item_appendix
+2014/09/26 20:09:25 [I] - load player_item_appendix
+2014/09/26 20:09:25 [I] - load player_item_buyback
+2014/09/26 20:09:25 [I] - load player_mail_attachment
+2014/09/26 20:09:25 [I] - load player_item_buyback
+2014/09/26 20:09:25 [I] - load player_item_recast_state
+2014/09/26 20:09:25 [I] - load player_mission
+2014/09/26 20:09:25 [I] - load player_mission_level
+2014/09/26 20:09:25 [I] - load player_item_recast_state
+2014/09/26 20:09:25 [I] - load player_login_award_record
+2014/09/26 20:09:25 [I] - load player_mail
+2014/09/26 20:09:25 [I] - load player_login_award_record
+2014/09/26 20:09:25 [I] - load player_mission_level_record
+2014/09/26 20:09:25 [I] - load player_mail_attachment
+2014/09/26 20:09:25 [I] - load player_mail
+2014/09/26 20:09:25 [I] - load player_mission_level_state_bin
+2014/09/26 20:09:25 [I] - load player_mission
+2014/09/26 20:09:25 [I] - load player_mail_attachment
+2014/09/26 20:09:25 [I] - load player_mission_level
+2014/09/26 20:09:25 [I] - load player_mission_record
+2014/09/26 20:09:25 [I] - load player_extend_level
+2014/09/26 20:09:25 [I] - load player_mission
+2014/09/26 20:09:25 [I] - load player_mission_level_record
+2014/09/26 20:09:25 [I] - load player_multi_level_info
+2014/09/26 20:09:25 [I] - load player_fashion
+2014/09/26 20:09:25 [I] - load player_mission_level_state_bin
+2014/09/26 20:09:25 [I] - load player_fashion_state
+2014/09/26 20:09:25 [I] - load player_npc_talk_record
+2014/09/26 20:09:25 [I] - load player_mission_record
+2014/09/26 20:09:25 [I] - load player_fight_num
+2014/09/26 20:09:25 [I] - load player_physical
+2014/09/26 20:09:25 [I] - load player_formation
+2014/09/26 20:09:25 [I] - load player_multi_level_info
+2014/09/26 20:09:25 [I] - load player_purchase_record
+2014/09/26 20:09:25 [I] - load player_npc_talk_record
+2014/09/26 20:09:25 [I] - load player_quest
+2014/09/26 20:09:25 [I] - load player_func_key
+2014/09/26 20:09:25 [I] - load player_physical
+2014/09/26 20:09:25 [I] - load player_rainbow_level
+2014/09/26 20:09:25 [I] - load player_ghost
+2014/09/26 20:09:25 [I] - load player_purchase_record
+2014/09/26 20:09:25 [I] - load player_ghost_equipment
+2014/09/26 20:09:25 [I] - load player_rainbow_level_state_bin
+2014/09/26 20:09:25 [I] - load player_quest
+2014/09/26 20:09:25 [I] - load player_ghost_state
+2014/09/26 20:09:25 [I] - load player_role
+2014/09/26 20:09:25 [I] - load player_rainbow_level
+2014/09/26 20:09:25 [I] - load player_ghost_umbra
+2014/09/26 20:09:25 [I] - load player_send_heart_record
+2014/09/26 20:09:25 [I] - load player_hard_level
+2014/09/26 20:09:25 [I] - load player_rainbow_level_state_bin
+2014/09/26 20:09:25 [I] - load player_skill
+2014/09/26 20:09:25 [I] - load player_hard_level_record
+2014/09/26 20:09:25 [I] - load player_mission_level
+2014/09/26 20:09:25 [I] - load player_role
+2014/09/26 20:09:25 [I] - load player_state
+2014/09/26 20:09:25 [I] - load player_hard_level_state
+2014/09/26 20:09:25 [I] - load player_mission_level_record
+2014/09/26 20:09:25 [I] - load player_send_heart_record
+2014/09/26 20:09:25 [I] - load player_sword_soul
+2014/09/26 20:09:25 [I] - load player_heart
+2014/09/26 20:09:25 [I] - load player_skill
+2014/09/26 20:09:25 [I] - load player_mission_level_state_bin
+2014/09/26 20:09:25 [I] - load player_sword_soul_equipment
+2014/09/26 20:09:25 [I] - load player_heart_draw
+2014/09/26 20:09:25 [I] - load player_state
+2014/09/26 20:09:25 [I] - load player_mission_record
+2014/09/26 20:09:25 [I] - load player_heart_draw_card_record
+2014/09/26 20:09:25 [I] - load player_sword_soul
+2014/09/26 20:09:25 [I] - load player_sword_soul_state
+2014/09/26 20:09:25 [I] - load player_multi_level_info
+2014/09/26 20:09:25 [I] - load player_heart_draw_wheel_record
+2014/09/26 20:09:25 [I] - load player_sword_soul_equipment
+2014/09/26 20:09:25 [I] - load player_tb_xxd_roleinfo
+2014/09/26 20:09:25 [I] - load player_info
+2014/09/26 20:09:25 [I] - load player_npc_talk_record
+2014/09/26 20:09:25 [I] - load player_sword_soul_state
+2014/09/26 20:09:25 [I] - load player_tower_level
+2014/09/26 20:09:25 [I] - load player_tb_xxd_roleinfo
+2014/09/26 20:09:25 [I] - load player_town
+2014/09/26 20:09:25 [I] - load player_is_operated
+2014/09/26 20:09:25 [I] - load player_physical
+2014/09/26 20:09:25 [I] - load player_tower_level
+2014/09/26 20:09:25 [I] - load player_trader_refresh_state
+2014/09/26 20:09:25 [I] - load player_item
+2014/09/26 20:09:25 [I] - load player_purchase_record
+2014/09/26 20:09:25 [I] - load player_trader_store_state
+2014/09/26 20:09:25 [I] - load player_town
+2014/09/26 20:09:25 [I] - load player_item_appendix
+2014/09/26 20:09:25 [I] - load player_quest
+2014/09/26 20:09:25 [I] - load player_trader_refresh_state
+2014/09/26 20:09:25 [I] - load player_use_skill
+2014/09/26 20:09:25 [I] - load player_item_buyback
+2014/09/26 20:09:25 [I] - load player_rainbow_level
+2014/09/26 20:09:25 [I] - load player_trader_store_state
+2014/09/26 20:09:25 [I] - load player_vip
+2014/09/26 20:09:25 [I] - load player_item_recast_state
+2014/09/26 20:09:25 [I] - load player_use_skill
+2014/09/26 20:09:25 [I] - load player_rainbow_level_state_bin
+2014/09/26 20:09:25 [I] - load player_vip
+2014/09/26 20:09:25 [I] - load player_login_award_record
+2014/09/26 20:09:25 [I] - load player_role
+2014/09/26 20:09:25 [I] - load player_mail
+2014/09/26 20:09:25 [I] - load player_send_heart_record
+2014/09/26 20:09:25 [I] - load player_mail_attachment
+2014/09/26 20:09:25 [I] - load player_skill
+2014/09/26 20:09:25 [I] - load player_mission
+2014/09/26 20:09:25 [I] - load player_state
+2014/09/26 20:09:25 [I] - load player_mission_level
+2014/09/26 20:09:25 [I] - load player_sword_soul
+2014/09/26 20:09:25 [I] - load player_mission_level_record
+2014/09/26 20:09:25 [I] - load player_sword_soul_equipment
+2014/09/26 20:09:25 [I] - load player_mission_level_state_bin
+2014/09/26 20:09:25 [I] - load player_sword_soul_state
+2014/09/26 20:09:25 [I] - load player_mission_record
+2014/09/26 20:09:25 [I] - load player_tb_xxd_roleinfo
+2014/09/26 20:09:25 [I] - load player_multi_level_info
+2014/09/26 20:09:25 [I] - load player_tower_level
+2014/09/26 20:09:25 [I] - load player_town
+2014/09/26 20:09:25 [I] - load player_npc_talk_record
+2014/09/26 20:09:25 [I] - load player_physical
+2014/09/26 20:09:25 [I] - load player_trader_refresh_state
+2014/09/26 20:09:25 [I] - load player_trader_store_state
+2014/09/26 20:09:25 [I] - load player_purchase_record
+2014/09/26 20:09:25 [I] - load player_use_skill
+2014/09/26 20:09:25 [I] - load player_quest
+2014/09/26 20:09:25 [I] - load player_vip
+2014/09/26 20:09:25 [I] - load player_rainbow_level
+2014/09/26 20:09:25 [I] - load player_rainbow_level_state_bin
+2014/09/26 20:09:25 [I] - load player_role
+2014/09/26 20:09:25 [I] - load player_send_heart_record
+2014/09/26 20:09:25 [I] - load player_skill
+2014/09/26 20:09:25 [I] - load player_state
+2014/09/26 20:09:25 [I] - load player_sword_soul
+2014/09/26 20:09:25 [I] - load player_sword_soul_equipment
+2014/09/26 20:09:25 [I] - load player_sword_soul_state
+2014/09/26 20:09:25 [I] - load player_tb_xxd_roleinfo
+2014/09/26 20:09:25 [I] - load player_tower_level
+2014/09/26 20:09:25 [I] - load player_town
+2014/09/26 20:09:25 [I] - load player_trader_refresh_state
+2014/09/26 20:09:25 [I] - load player_trader_store_state
+2014/09/26 20:09:25 [I] - load player_use_skill
+2014/09/26 20:09:25 [I] - load player_vip
+mdb.load (0) cost time: 2.949953ms
+mdb.load (1) cost time: 3.084145ms
+mdb.load (2) cost time: 3.173846ms
+mdb.load (3) cost time: 3.425887ms
+mdb.load success.
+2014/09/26 20:09:29 [I] - load global_announcement
+2014/09/26 20:09:29 [I] - load global_arena_rank
+2014/09/26 20:09:29 [I] - load global_mail
+2014/09/26 20:09:29 [I] - load global_mail_attachments
+2014/09/26 20:09:29 [I] - load global_tb_xxd_onlinecnt
+2014/09/26 20:09:29 [I] - load player_global_arena_rank
+2014/09/26 20:09:29 [I] - load player_global_arena_rank
+2014/09/26 20:09:29 [I] - load player_global_arena_rank
+2014/09/26 20:09:29 [I] - load player_global_friend
+2014/09/26 20:09:29 [I] - load player_global_friend
+2014/09/26 20:09:29 [I] - load player_global_arena_rank
+2014/09/26 20:09:29 [I] - load player_global_friend
+2014/09/26 20:09:29 [I] - load player_global_friend_chat
+2014/09/26 20:09:29 [I] - load player_global_friend_chat
+2014/09/26 20:09:29 [I] - load player_global_friend_chat
+2014/09/26 20:09:29 [I] - load player_global_friend_state
+2014/09/26 20:09:29 [I] - load player_global_friend
+2014/09/26 20:09:29 [I] - load player_global_friend_state
+2014/09/26 20:09:29 [I] - load player_global_friend_state
+2014/09/26 20:09:29 [I] - load player_global_mail_state
+2014/09/26 20:09:29 [I] - load player_global_friend_chat
+2014/09/26 20:09:29 [I] - load player_global_mail_state
+2014/09/26 20:09:29 [I] - load player_global_mail_state
+2014/09/26 20:09:29 [I] - load player_global_friend_state
+2014/09/26 20:09:29 [I] - load player_global_mail_state
+2014/09/26 20:10:22 [E] - [tlog] PlayerLogin error. write udp4 127.0.0.1:6667: connection refused
+ info: &{1 2014-09-26 20:10:22.559484539 +0800 CST game_1_app_id 1 _test_id1003022414061086775 1 0 6295  HTML5  WiFi 0 0 0 0  0   }
+2014/09/26 20:10:25 [E] - [tlog] GameSvrState error. write udp4 127.0.0.1:6667: connection refused
+ info: &{2014-09-26 20:10:25.85085148 +0800 CST 127.0.0.1}
+2014/09/26 20:11:12 [E] - [tlog] PlayerGuideFlow error. write udp4 127.0.0.1:6667: connection refused
+ info: &{1 2014-09-26 20:11:12.774601363 +0800 CST game_1_app_id 1 _test_id1003022414061086775 1 0 0 0}
+2014/09/26 20:11:25 [E] - [tlog] GameSvrState error. write udp4 127.0.0.1:6667: connection refused
+ info: &{2014-09-26 20:11:25.852318021 +0800 CST 127.0.0.1}
+2014/09/26 20:11:29 [E] - [tlog] GameSvrState error. write udp4 127.0.0.1:6667: connection refused
+ info: &{2014-09-26 20:11:29.932309791 +0800 CST 127.0.0.1}
+2014/09/26 20:11:46 [E] - [tlog] PlayerMissionFlow error. write udp4 127.0.0.1:6667: connection refused
+ info: &{1 2014-09-26 20:11:46.349293501 +0800 CST game_1_app_id 1 _test_id1003022414061086775 1 0 4 100100 100100 0 0}
+2014/09/26 20:11:57 [E] - [tlog] PlayerGuideFlow error. write udp4 127.0.0.1:6667: connection refused
+ info: &{1 2014-09-26 20:11:57.05428674 +0800 CST game_1_app_id 1 _test_id1003022414061086775 1 1 0 0}
+2014/09/26 20:12:25 [E] - [tlog] GameSvrState error. write udp4 127.0.0.1:6667: connection refused
+ info: &{2014-09-26 20:12:25.86010869 +0800 CST 127.0.0.1}
+2014/09/26 20:12:44 [E] - [tlog] PlayerExpFlow error. write udp4 127.0.0.1:6667: connection refused
+ info: &{1 2014-09-26 20:12:44.177796336 +0800 CST game_1_app_id 1 _test_id1003022414061086775 10 1 2 0 4 0 0}
+2014/09/26 20:12:44 [E] - [tlog] PlayerGuideFlow error. write udp4 127.0.0.1:6667: connection refused
+ info: &{1 2014-09-26 20:12:44.26217628 +0800 CST game_1_app_id 1 _test_id1003022414061086775 2 4 0 0}
+2014/09/26 20:13:04 [E] - [tlog] PlayerGuideFlow error. write udp4 127.0.0.1:6667: connection refused
+ info: &{1 2014-09-26 20:13:04.329368273 +0800 CST game_1_app_id 1 _test_id1003022414061086775 2 21 0 0}
+2014/09/26 20:13:14 [E] - [tlog] MoneyFlow error. write udp4 127.0.0.1:6667: connection refused
+ info: &{1 2014-09-26 20:13:14.418601284 +0800 CST 0 game_1_app_id 1 _test_id1003022414061086775 2 450 20 26 0 0 0 0}
+2014/09/26 20:13:29 [E] - [tlog] GameSvrState error. write udp4 127.0.0.1:6667: connection refused
+ info: &{2014-09-26 20:13:29.933995358 +0800 CST 127.0.0.1}
+2014/09/26 20:13:36 [E] - [tlog] PlayerGuideFlow error. write udp4 127.0.0.1:6667: connection refused
+ info: &{1 2014-09-26 20:13:36.304260984 +0800 CST game_1_app_id 1 _test_id1003022414061086775 2 4 0 0}
+2014/09/26 20:13:46 [E] - [tlog] MoneyFlow error. write udp4 127.0.0.1:6667: connection refused
+ info: &{1 2014-09-26 20:13:46.660700285 +0800 CST 0 game_1_app_id 1 _test_id1003022414061086775 3 2450 2000 26 0 0 0 0}
+2014/09/26 20:13:46 [E] - [tlog] ItemFlow error. write udp4 127.0.0.1:6667: connection refused
+ info: &{1 2014-09-26 20:13:46.660838548 +0800 CST 0 game_1_app_id 1 _test_id1003022414061086775 12 262 1 1 14 0 0 0}
+2014/09/26 20:13:51 [E] - [tlog] ItemFlow error. write udp4 127.0.0.1:6667: connection refused
+ info: &{1 2014-09-26 20:13:51.534979773 +0800 CST 0 game_1_app_id 1 _test_id1003022414061086775 3 33 1 1 10 0 0 0}
+2014/09/26 20:13:51 [E] - [tlog] PlayerPhysicalFlow error. write udp4 127.0.0.1:6667: connection refused
+ info: &{1 2014-09-26 20:13:51.5353012 +0800 CST game_1_app_id 1 _test_id1003022414061086775 4 94 17 0 11 1}
+2014/09/26 20:13:51 [E] - [tlog] PlayerMissionFlow error. write udp4 127.0.0.1:6667: connection refused
+ info: &{1 2014-09-26 20:13:51.535336087 +0800 CST game_1_app_id 1 _test_id1003022414061086775 4 0 3 100110 110100 0 1}
+2014/09/26 20:13:56 [E] - [tlog] MoneyFlow error. write udp4 127.0.0.1:6667: connection refused
+ info: &{1 2014-09-26 20:13:56.132361617 +0800 CST 0 game_1_app_id 1 _test_id1003022414061086775 4 4770 2000 26 0 0 0 0}
+2014/09/26 20:14:02 [E] - [tlog] PlayerGuideFlow error. write udp4 127.0.0.1:6667: connection refused
+ info: &{1 2014-09-26 20:14:02.962335904 +0800 CST game_1_app_id 1 _test_id1003022414061086775 4 5 0 0}
+2014/09/26 20:14:21 [E] - [tlog] MoneyFlow error. write udp4 127.0.0.1:6667: connection refused
+ info: &{1 2014-09-26 20:14:21.295201548 +0800 CST 0 game_1_app_id 1 _test_id1003022414061086775 4 4270 500 3 0 1 0 0}
+2014/09/26 20:14:25 [E] - [tlog] GameSvrState error. write udp4 127.0.0.1:6667: connection refused
+ info: &{2014-09-26 20:14:25.861274659 +0800 CST 127.0.0.1}
+2014/09/26 20:15:29 [E] - [tlog] GameSvrState error. write udp4 127.0.0.1:6667: connection refused
+ info: &{2014-09-26 20:15:29.935091621 +0800 CST 127.0.0.1}
+2014/09/26 20:16:25 [E] - [tlog] GameSvrState error. write udp4 127.0.0.1:6667: connection refused
+ info: &{2014-09-26 20:16:25.862600784 +0800 CST 127.0.0.1}
+2014/09/26 20:17:29 [E] - [tlog] GameSvrState error. write udp4 127.0.0.1:6667: connection refused
+ info: &{2014-09-26 20:17:29.936749344 +0800 CST 127.0.0.1}
+2014/09/26 20:18:25 [E] - [tlog] GameSvrState error. write udp4 127.0.0.1:6667: connection refused
+ info: &{2014-09-26 20:18:25.864131962 +0800 CST 127.0.0.1}
+2014/09/26 20:19:25 [E] - [tlog] GameSvrState error. write udp4 127.0.0.1:6667: connection refused
+ info: &{2014-09-26 20:19:25.86606073 +0800 CST 127.0.0.1}
+2014/09/26 20:19:29 [E] - [tlog] GameSvrState error. write udp4 127.0.0.1:6667: connection refused
+ info: &{2014-09-26 20:19:29.938112451 +0800 CST 127.0.0.1}
+2014/09/26 20:21:25 [E] - [tlog] GameSvrState error. write udp4 127.0.0.1:6667: connection refused
+ info: &{2014-09-26 20:21:25.86758869 +0800 CST 127.0.0.1}
+2014/09/26 20:21:29 [E] - [tlog] GameSvrState error. write udp4 127.0.0.1:6667: connection refused
+ info: &{2014-09-26 20:21:29.940301897 +0800 CST 127.0.0.1}
+2014/09/26 20:23:25 [E] - [tlog] GameSvrState error. write udp4 127.0.0.1:6667: connection refused
+ info: &{2014-09-26 20:23:25.868996788 +0800 CST 127.0.0.1}
+2014/09/26 20:23:29 [E] - [tlog] GameSvrState error. write udp4 127.0.0.1:6667: connection refused
+ info: &{2014-09-26 20:23:29.94214089 +0800 CST 127.0.0.1}
+2014/09/26 20:24:25 [E] - [tlog] GameSvrState error. write udp4 127.0.0.1:6667: connection refused
+ info: &{2014-09-26 20:24:25.869449274 +0800 CST 127.0.0.1}
+2014/09/26 20:25:29 [E] - [tlog] GameSvrState error. write udp4 127.0.0.1:6667: connection refused
+ info: &{2014-09-26 20:25:29.943553432 +0800 CST 127.0.0.1}
+2014/09/26 20:26:25 [E] - [tlog] GameSvrState error. write udp4 127.0.0.1:6667: connection refused
+ info: &{2014-09-26 20:26:25.871716451 +0800 CST 127.0.0.1}
+2014/09/26 20:27:29 [E] - [tlog] GameSvrState error. write udp4 127.0.0.1:6667: connection refused
+ info: &{2014-09-26 20:27:29.945023205 +0800 CST 127.0.0.1}
+2014/09/26 20:28:25 [E] - [tlog] GameSvrState error. write udp4 127.0.0.1:6667: connection refused
+ info: &{2014-09-26 20:28:25.872268598 +0800 CST 127.0.0.1}
+2014/09/26 20:29:25 [E] - [tlog] GameSvrState error. write udp4 127.0.0.1:6667: connection refused
+ info: &{2014-09-26 20:29:25.873536348 +0800 CST 127.0.0.1}
+2014/09/26 20:29:29 [E] - [tlog] GameSvrState error. write udp4 127.0.0.1:6667: connection refused
+ info: &{2014-09-26 20:29:29.947092137 +0800 CST 127.0.0.1}
+mdb.load (2) cost time: 36.375883ms
+mdb.load (1) cost time: 39.857761ms
+mdb.load (0) cost time: 40.922134ms
+mdb.load (3) cost time: 86.853373ms
+mdb.load success.
+mdb.load (2) cost time: 3.056168ms
+mdb.load (1) cost time: 3.209351ms
+mdb.load (0) cost time: 3.392335ms
+mdb.load (3) cost time: 3.539544ms
+mdb.load success.
+2014/09/26 20:32:07 [I] - load player
+2014/09/26 20:32:07 [I] - load player
+2014/09/26 20:32:07 [I] - load player
+2014/09/26 20:32:07 [I] - load player_arena
+2014/09/26 20:32:07 [I] - load player_arena
+2014/09/26 20:32:07 [I] - load player_arena
+2014/09/26 20:32:07 [I] - load player_arena_record
+2014/09/26 20:32:07 [I] - load player_arena_record
+2014/09/26 20:32:07 [I] - load player_battle_pet
+2014/09/26 20:32:07 [I] - load player_battle_pet
+2014/09/26 20:32:07 [I] - load player_battle_pet_config
+2014/09/26 20:32:07 [I] - load player_battle_pet_config
+2014/09/26 20:32:07 [I] - load player_chest_state
+2014/09/26 20:32:07 [I] - load player_chest_state
+2014/09/26 20:32:07 [I] - load player_coins
+2014/09/26 20:32:07 [I] - load player_coins
+2014/09/26 20:32:07 [I] - load player_daily_quest
+2014/09/26 20:32:07 [I] - load player_daily_quest
+2014/09/26 20:32:07 [I] - load player_daily_sign_in_record
+2014/09/26 20:32:07 [I] - load player_daily_sign_in_record
+2014/09/26 20:32:07 [I] - load player_daily_sign_in_state
+2014/09/26 20:32:07 [I] - load player_equipment
+2014/09/26 20:32:07 [I] - load player_events_fight_power
+2014/09/26 20:32:07 [I] - load player_extend_level
+2014/09/26 20:32:07 [I] - load player_fashion
+2014/09/26 20:32:07 [I] - load player_fashion_state
+2014/09/26 20:32:07 [I] - load player_fight_num
+2014/09/26 20:32:07 [I] - load player
+2014/09/26 20:32:07 [I] - load player_formation
+2014/09/26 20:32:07 [I] - load player_func_key
+2014/09/26 20:32:07 [I] - load player_ghost
+2014/09/26 20:32:07 [I] - load player_ghost_equipment
+2014/09/26 20:32:07 [I] - load player_ghost_state
+2014/09/26 20:32:07 [I] - load player_ghost_umbra
+2014/09/26 20:32:07 [I] - load player_arena_record
+2014/09/26 20:32:07 [I] - load player_hard_level
+2014/09/26 20:32:07 [I] - load player_battle_pet
+2014/09/26 20:32:07 [I] - load player_battle_pet_config
+2014/09/26 20:32:07 [I] - load player_hard_level_record
+2014/09/26 20:32:07 [I] - load player_hard_level_state
+2014/09/26 20:32:07 [I] - load player_chest_state
+2014/09/26 20:32:07 [I] - load player_heart
+2014/09/26 20:32:07 [I] - load player_coins
+2014/09/26 20:32:07 [I] - load player_daily_quest
+2014/09/26 20:32:07 [I] - load player_heart_draw
+2014/09/26 20:32:07 [I] - load player_daily_sign_in_record
+2014/09/26 20:32:07 [I] - load player_daily_sign_in_state
+2014/09/26 20:32:07 [I] - load player_heart_draw_card_record
+2014/09/26 20:32:07 [I] - load player_equipment
+2014/09/26 20:32:07 [I] - load player_heart_draw_wheel_record
+2014/09/26 20:32:07 [I] - load player_daily_sign_in_state
+2014/09/26 20:32:07 [I] - load player_info
+2014/09/26 20:32:07 [I] - load player_events_fight_power
+2014/09/26 20:32:07 [I] - load player_equipment
+2014/09/26 20:32:07 [I] - load player_is_operated
+2014/09/26 20:32:07 [I] - load player_extend_level
+2014/09/26 20:32:07 [I] - load player_fashion
+2014/09/26 20:32:07 [I] - load player_item
+2014/09/26 20:32:07 [I] - load player_events_fight_power
+2014/09/26 20:32:07 [I] - load player_fashion_state
+2014/09/26 20:32:07 [I] - load player_extend_level
+2014/09/26 20:32:07 [I] - load player_fight_num
+2014/09/26 20:32:07 [I] - load player_fashion
+2014/09/26 20:32:07 [I] - load player_item_appendix
+2014/09/26 20:32:07 [I] - load player_formation
+2014/09/26 20:32:07 [I] - load player_fashion_state
+2014/09/26 20:32:07 [I] - load player_func_key
+2014/09/26 20:32:07 [I] - load player_item_buyback
+2014/09/26 20:32:07 [I] - load player_fight_num
+2014/09/26 20:32:07 [I] - load player_ghost
+2014/09/26 20:32:07 [I] - load player_item_recast_state
+2014/09/26 20:32:07 [I] - load player_formation
+2014/09/26 20:32:07 [I] - load player_ghost_equipment
+2014/09/26 20:32:07 [I] - load player_login_award_record
+2014/09/26 20:32:07 [I] - load player_func_key
+2014/09/26 20:32:07 [I] - load player_ghost_state
+2014/09/26 20:32:07 [I] - load player_mail
+2014/09/26 20:32:07 [I] - load player_ghost_umbra
+2014/09/26 20:32:07 [I] - load player_hard_level
+2014/09/26 20:32:07 [I] - load player_hard_level_record
+2014/09/26 20:32:07 [I] - load player_mail_attachment
+2014/09/26 20:32:07 [I] - load player_hard_level_state
+2014/09/26 20:32:07 [I] - load player_heart
+2014/09/26 20:32:07 [I] - load player_ghost
+2014/09/26 20:32:07 [I] - load player_heart_draw
+2014/09/26 20:32:07 [I] - load player_ghost_equipment
+2014/09/26 20:32:07 [I] - load player_mission
+2014/09/26 20:32:07 [I] - load player_ghost_state
+2014/09/26 20:32:07 [I] - load player_heart_draw_card_record
+2014/09/26 20:32:07 [I] - load player_ghost_umbra
+2014/09/26 20:32:07 [I] - load player_mission_level
+2014/09/26 20:32:07 [I] - load player_hard_level
+2014/09/26 20:32:07 [I] - load player_mission_level_record
+2014/09/26 20:32:07 [I] - load player_hard_level_record
+2014/09/26 20:32:07 [I] - load player_hard_level_state
+2014/09/26 20:32:07 [I] - load player_heart
+2014/09/26 20:32:07 [I] - load player_mission_level_state_bin
+2014/09/26 20:32:07 [I] - load player_heart_draw
+2014/09/26 20:32:07 [I] - load player_mission_record
+2014/09/26 20:32:07 [I] - load player_heart_draw_card_record
+2014/09/26 20:32:07 [I] - load player_heart_draw_wheel_record
+2014/09/26 20:32:07 [I] - load player_multi_level_info
+2014/09/26 20:32:07 [I] - load player_arena
+2014/09/26 20:32:07 [I] - load player_info
+2014/09/26 20:32:07 [I] - load player_npc_talk_record
+2014/09/26 20:32:07 [I] - load player_arena_record
+2014/09/26 20:32:07 [I] - load player_is_operated
+2014/09/26 20:32:07 [I] - load player_physical
+2014/09/26 20:32:07 [I] - load player_item
+2014/09/26 20:32:07 [I] - load player_battle_pet
+2014/09/26 20:32:07 [I] - load player_purchase_record
+2014/09/26 20:32:07 [I] - load player_quest
+2014/09/26 20:32:07 [I] - load player_item_appendix
+2014/09/26 20:32:07 [I] - load player_heart_draw_wheel_record
+2014/09/26 20:32:07 [I] - load player_rainbow_level
+2014/09/26 20:32:07 [I] - load player_info
+2014/09/26 20:32:07 [I] - load player_item_buyback
+2014/09/26 20:32:07 [I] - load player_rainbow_level_state_bin
+2014/09/26 20:32:07 [I] - load player_is_operated
+2014/09/26 20:32:07 [I] - load player_item_recast_state
+2014/09/26 20:32:07 [I] - load player_role
+2014/09/26 20:32:07 [I] - load player_item
+2014/09/26 20:32:07 [I] - load player_login_award_record
+2014/09/26 20:32:07 [I] - load player_mail
+2014/09/26 20:32:07 [I] - load player_send_heart_record
+2014/09/26 20:32:07 [I] - load player_item_appendix
+2014/09/26 20:32:07 [I] - load player_item_buyback
+2014/09/26 20:32:07 [I] - load player_mail_attachment
+2014/09/26 20:32:07 [I] - load player_skill
+2014/09/26 20:32:07 [I] - load player_mission
+2014/09/26 20:32:07 [I] - load player_item_recast_state
+2014/09/26 20:32:07 [I] - load player_login_award_record
+2014/09/26 20:32:07 [I] - load player_mission_level
+2014/09/26 20:32:07 [I] - load player_state
+2014/09/26 20:32:07 [I] - load player_mail
+2014/09/26 20:32:07 [I] - load player_mission_level_record
+2014/09/26 20:32:07 [I] - load player_sword_soul
+2014/09/26 20:32:07 [I] - load player_sword_soul_equipment
+2014/09/26 20:32:07 [I] - load player_mail_attachment
+2014/09/26 20:32:07 [I] - load player_mission_level_state_bin
+2014/09/26 20:32:07 [I] - load player_mission
+2014/09/26 20:32:07 [I] - load player_sword_soul_state
+2014/09/26 20:32:07 [I] - load player_mission_record
+2014/09/26 20:32:07 [I] - load player_mission_level
+2014/09/26 20:32:07 [I] - load player_tb_xxd_roleinfo
+2014/09/26 20:32:07 [I] - load player_mission_level_record
+2014/09/26 20:32:07 [I] - load player_multi_level_info
+2014/09/26 20:32:07 [I] - load player_npc_talk_record
+2014/09/26 20:32:07 [I] - load player_tower_level
+2014/09/26 20:32:07 [I] - load player_mission_level_state_bin
+2014/09/26 20:32:07 [I] - load player_physical
+2014/09/26 20:32:07 [I] - load player_town
+2014/09/26 20:32:07 [I] - load player_mission_record
+2014/09/26 20:32:07 [I] - load player_purchase_record
+2014/09/26 20:32:07 [I] - load player_trader_refresh_state
+2014/09/26 20:32:07 [I] - load player_quest
+2014/09/26 20:32:07 [I] - load player_battle_pet_config
+2014/09/26 20:32:07 [I] - load player_trader_store_state
+2014/09/26 20:32:07 [I] - load player_rainbow_level
+2014/09/26 20:32:07 [I] - load player_multi_level_info
+2014/09/26 20:32:07 [I] - load player_use_skill
+2014/09/26 20:32:07 [I] - load player_rainbow_level_state_bin
+2014/09/26 20:32:07 [I] - load player_npc_talk_record
+2014/09/26 20:32:07 [I] - load player_role
+2014/09/26 20:32:07 [I] - load player_physical
+2014/09/26 20:32:07 [I] - load player_vip
+2014/09/26 20:32:07 [I] - load player_purchase_record
+2014/09/26 20:32:07 [I] - load player_quest
+2014/09/26 20:32:07 [I] - load player_send_heart_record
+2014/09/26 20:32:07 [I] - load player_rainbow_level
+2014/09/26 20:32:07 [I] - load player_skill
+2014/09/26 20:32:07 [I] - load player_rainbow_level_state_bin
+2014/09/26 20:32:07 [I] - load player_state
+2014/09/26 20:32:07 [I] - load player_role
+2014/09/26 20:32:07 [I] - load player_sword_soul
+2014/09/26 20:32:07 [I] - load player_sword_soul_equipment
+2014/09/26 20:32:07 [I] - load player_send_heart_record
+2014/09/26 20:32:07 [I] - load player_sword_soul_state
+2014/09/26 20:32:07 [I] - load player_skill
+2014/09/26 20:32:07 [I] - load player_chest_state
+2014/09/26 20:32:07 [I] - load player_tb_xxd_roleinfo
+2014/09/26 20:32:07 [I] - load player_tower_level
+2014/09/26 20:32:07 [I] - load player_state
+2014/09/26 20:32:07 [I] - load player_town
+2014/09/26 20:32:07 [I] - load player_sword_soul
+2014/09/26 20:32:07 [I] - load player_coins
+2014/09/26 20:32:07 [I] - load player_sword_soul_equipment
+2014/09/26 20:32:07 [I] - load player_trader_refresh_state
+2014/09/26 20:32:07 [I] - load player_trader_store_state
+2014/09/26 20:32:07 [I] - load player_sword_soul_state
+2014/09/26 20:32:07 [I] - load player_daily_quest
+2014/09/26 20:32:07 [I] - load player_use_skill
+2014/09/26 20:32:07 [I] - load player_tb_xxd_roleinfo
+2014/09/26 20:32:07 [I] - load player_tower_level
+2014/09/26 20:32:07 [I] - load player_vip
+2014/09/26 20:32:07 [I] - load player_town
+2014/09/26 20:32:07 [I] - load player_trader_refresh_state
+2014/09/26 20:32:07 [I] - load player_daily_sign_in_record
+2014/09/26 20:32:07 [I] - load player_trader_store_state
+2014/09/26 20:32:07 [I] - load player_use_skill
+2014/09/26 20:32:07 [I] - load player_vip
+2014/09/26 20:32:07 [I] - load player_daily_sign_in_state
+2014/09/26 20:32:07 [I] - load player_equipment
+2014/09/26 20:32:07 [I] - load player_events_fight_power
+2014/09/26 20:32:07 [I] - load player_extend_level
+2014/09/26 20:32:07 [I] - load player_fashion
+2014/09/26 20:32:07 [I] - load player_fashion_state
+2014/09/26 20:32:07 [I] - load player_fight_num
+2014/09/26 20:32:07 [I] - load player_formation
+2014/09/26 20:32:07 [I] - load player_func_key
+2014/09/26 20:32:07 [I] - load player_ghost
+2014/09/26 20:32:07 [I] - load player_ghost_equipment
+2014/09/26 20:32:07 [I] - load player_ghost_state
+2014/09/26 20:32:07 [I] - load player_ghost_umbra
+2014/09/26 20:32:07 [I] - load player_hard_level
+2014/09/26 20:32:07 [I] - load player_hard_level_record
+2014/09/26 20:32:07 [I] - load player_hard_level_state
+2014/09/26 20:32:07 [I] - load player_heart
+2014/09/26 20:32:07 [I] - load player_heart_draw
+2014/09/26 20:32:07 [I] - load player_heart_draw_card_record
+2014/09/26 20:32:07 [I] - load player_heart_draw_wheel_record
+2014/09/26 20:32:07 [I] - load player_info
+2014/09/26 20:32:07 [I] - load player_is_operated
+2014/09/26 20:32:07 [I] - load player_item
+2014/09/26 20:32:07 [I] - load player_item_appendix
+2014/09/26 20:32:07 [I] - load player_item_buyback
+2014/09/26 20:32:07 [I] - load player_item_recast_state
+2014/09/26 20:32:07 [I] - load player_login_award_record
+2014/09/26 20:32:07 [I] - load player_mail
+2014/09/26 20:32:07 [I] - load player_mail_attachment
+2014/09/26 20:32:07 [I] - load player_mission
+2014/09/26 20:32:07 [I] - load player_mission_level
+2014/09/26 20:32:07 [I] - load player_mission_level_record
+2014/09/26 20:32:07 [I] - load player_mission_level_state_bin
+2014/09/26 20:32:07 [I] - load player_mission_record
+2014/09/26 20:32:07 [I] - load player_multi_level_info
+2014/09/26 20:32:07 [I] - load player_npc_talk_record
+2014/09/26 20:32:07 [I] - load player_physical
+2014/09/26 20:32:07 [I] - load player_purchase_record
+2014/09/26 20:32:07 [I] - load player_quest
+2014/09/26 20:32:07 [I] - load player_rainbow_level
+2014/09/26 20:32:07 [I] - load player_rainbow_level_state_bin
+2014/09/26 20:32:07 [I] - load player_role
+2014/09/26 20:32:07 [I] - load player_send_heart_record
+2014/09/26 20:32:07 [I] - load player_skill
+2014/09/26 20:32:07 [I] - load player_state
+2014/09/26 20:32:07 [I] - load player_sword_soul
+2014/09/26 20:32:07 [I] - load player_sword_soul_equipment
+2014/09/26 20:32:07 [I] - load player_sword_soul_state
+2014/09/26 20:32:07 [I] - load player_tb_xxd_roleinfo
+2014/09/26 20:32:07 [I] - load player_tower_level
+2014/09/26 20:32:07 [I] - load player_town
+2014/09/26 20:32:07 [I] - load player_trader_refresh_state
+2014/09/26 20:32:07 [I] - load player_trader_store_state
+2014/09/26 20:32:07 [I] - load player_use_skill
+2014/09/26 20:32:07 [I] - load player_vip
+2014/09/26 20:32:09 [I] - load global_announcement
+2014/09/26 20:32:09 [I] - load global_arena_rank
+2014/09/26 20:32:09 [I] - load global_mail
+2014/09/26 20:32:09 [I] - load global_mail_attachments
+2014/09/26 20:32:09 [I] - load global_tb_xxd_onlinecnt
+2014/09/26 20:32:09 [I] - load player_global_arena_rank
+2014/09/26 20:32:09 [I] - load player_global_arena_rank
+2014/09/26 20:32:09 [I] - load player_global_friend
+2014/09/26 20:32:09 [I] - load player_global_arena_rank
+2014/09/26 20:32:09 [I] - load player_global_friend
+2014/09/26 20:32:09 [I] - load player_global_arena_rank
+2014/09/26 20:32:09 [I] - load player_global_friend_chat
+2014/09/26 20:32:09 [I] - load player_global_friend_chat
+2014/09/26 20:32:09 [I] - load player_global_friend
+2014/09/26 20:32:09 [I] - load player_global_friend
+2014/09/26 20:32:09 [I] - load player_global_friend_state
+2014/09/26 20:32:09 [I] - load player_global_friend_state
+2014/09/26 20:32:09 [I] - load player_global_friend_chat
+2014/09/26 20:32:09 [I] - load player_global_friend_chat
+2014/09/26 20:32:09 [I] - load player_global_mail_state
+2014/09/26 20:32:09 [I] - load player_global_mail_state
+2014/09/26 20:32:09 [I] - load player_global_friend_state
+2014/09/26 20:32:09 [I] - load player_global_friend_state
+2014/09/26 20:32:09 [I] - load player_global_mail_state
+2014/09/26 20:32:09 [I] - load player_global_mail_state
+2014/09/26 20:33:07 [E] - [tlog] GameSvrState error. write udp4 127.0.0.1:6667: connection refused
+ info: &{2014-09-26 20:33:07.412232487 +0800 CST 127.0.0.1}
+2014/09/26 20:33:36 [E] - [tlog] PlayerLogin error. write udp4 127.0.0.1:6667: connection refused
+ info: &{1 2014-09-26 20:33:36.103147683 +0800 CST game_1_app_id 1 _test_id1003022414061086775 4 0 6295  HTML5  WiFi 0 0 0 0  0   }
+2014/09/26 20:33:36 [E] - [tlog] PlayerLogin error. write udp4 127.0.0.1:6667: connection refused
+ info: &{1 2014-09-26 20:33:36.168065019 +0800 CST game_1_app_id 1 _test_id1003022414061086775 4 0 0.98 macos intel xxx wifi 0 0 0.999999111 0 intel 001 1024 opengl 0.1 4.3 mac 10.94}
+2014/09/26 20:33:59 [E] - [tlog] PlayerLogout error. write udp4 127.0.0.1:6667: connection refused
+ info: &{1 2014-09-26 20:33:59.511173749 +0800 CST game_1_app_id 1 _test_id1003022414061086775 23 4 0 6295  HTML5  WiFi 0 0 0 0  0   }
+2014/09/26 20:34:07 [E] - [tlog] GameSvrState error. write udp4 127.0.0.1:6667: connection refused
+ info: &{2014-09-26 20:34:07.413369231 +0800 CST 127.0.0.1}
+2014/09/26 20:34:08 [E] - [tlog] GameSvrState error. write udp4 127.0.0.1:6667: connection refused
+ info: &{2014-09-26 20:34:08.996274428 +0800 CST 127.0.0.1}
+2014/09/26 20:36:07 [E] - [tlog] GameSvrState error. write udp4 127.0.0.1:6667: connection refused
+ info: &{2014-09-26 20:36:07.414746583 +0800 CST 127.0.0.1}
+2014/09/26 20:36:08 [E] - [tlog] GameSvrState error. write udp4 127.0.0.1:6667: connection refused
+ info: &{2014-09-26 20:36:08.996975196 +0800 CST 127.0.0.1}
+2014/09/26 20:38:07 [E] - [tlog] GameSvrState error. write udp4 127.0.0.1:6667: connection refused
+ info: &{2014-09-26 20:38:07.416895196 +0800 CST 127.0.0.1}
+2014/09/26 20:38:08 [E] - [tlog] GameSvrState error. write udp4 127.0.0.1:6667: connection refused
+ info: &{2014-09-26 20:38:08.998692183 +0800 CST 127.0.0.1}
+2014/09/26 20:40:07 [E] - [tlog] GameSvrState error. write udp4 127.0.0.1:6667: connection refused
+ info: &{2014-09-26 20:40:07.418676012 +0800 CST 127.0.0.1}
+2014/09/26 20:40:09 [E] - [tlog] GameSvrState error. write udp4 127.0.0.1:6667: connection refused
+ info: &{2014-09-26 20:40:09.000612248 +0800 CST 127.0.0.1}
+2014/09/26 20:42:07 [E] - [tlog] GameSvrState error. write udp4 127.0.0.1:6667: connection refused
+ info: &{2014-09-26 20:42:07.420421949 +0800 CST 127.0.0.1}
+2014/09/26 20:42:09 [E] - [tlog] GameSvrState error. write udp4 127.0.0.1:6667: connection refused
+ info: &{2014-09-26 20:42:09.001913547 +0800 CST 127.0.0.1}
+2014/09/26 20:44:07 [E] - [tlog] GameSvrState error. write udp4 127.0.0.1:6667: connection refused
+ info: &{2014-09-26 20:44:07.421975004 +0800 CST 127.0.0.1}
+2014/09/26 20:44:09 [E] - [tlog] GameSvrState error. write udp4 127.0.0.1:6667: connection refused
+ info: &{2014-09-26 20:44:09.003334742 +0800 CST 127.0.0.1}
+2014/09/26 20:46:07 [E] - [tlog] GameSvrState error. write udp4 127.0.0.1:6667: connection refused
+ info: &{2014-09-26 20:46:07.423874726 +0800 CST 127.0.0.1}
+2014/09/26 20:46:09 [E] - [tlog] GameSvrState error. write udp4 127.0.0.1:6667: connection refused
+ info: &{2014-09-26 20:46:09.003950584 +0800 CST 127.0.0.1}
+2014/09/26 20:48:07 [E] - [tlog] GameSvrState error. write udp4 127.0.0.1:6667: connection refused
+ info: &{2014-09-26 20:48:07.425083646 +0800 CST 127.0.0.1}
+2014/09/26 20:48:09 [E] - [tlog] GameSvrState error. write udp4 127.0.0.1:6667: connection refused
+ info: &{2014-09-26 20:48:09.005033569 +0800 CST 127.0.0.1}
+2014/09/26 20:50:07 [E] - [tlog] GameSvrState error. write udp4 127.0.0.1:6667: connection refused
+ info: &{2014-09-26 20:50:07.426627431 +0800 CST 127.0.0.1}
+2014/09/26 20:50:09 [E] - [tlog] GameSvrState error. write udp4 127.0.0.1:6667: connection refused
+ info: &{2014-09-26 20:50:09.006038469 +0800 CST 127.0.0.1}
+2014/09/26 20:52:07 [E] - [tlog] GameSvrState error. write udp4 127.0.0.1:6667: connection refused
+ info: &{2014-09-26 20:52:07.428253652 +0800 CST 127.0.0.1}
+2014/09/26 20:52:09 [E] - [tlog] GameSvrState error. write udp4 127.0.0.1:6667: connection refused
+ info: &{2014-09-26 20:52:09.007230415 +0800 CST 127.0.0.1}
+2014/09/26 20:54:07 [E] - [tlog] GameSvrState error. write udp4 127.0.0.1:6667: connection refused
+ info: &{2014-09-26 20:54:07.429659661 +0800 CST 127.0.0.1}
+2014/09/26 20:54:09 [E] - [tlog] GameSvrState error. write udp4 127.0.0.1:6667: connection refused
+ info: &{2014-09-26 20:54:09.008547654 +0800 CST 127.0.0.1}
+2014/09/26 20:56:07 [E] - [tlog] GameSvrState error. write udp4 127.0.0.1:6667: connection refused
+ info: &{2014-09-26 20:56:07.431741181 +0800 CST 127.0.0.1}
+2014/09/26 20:56:09 [E] - [tlog] GameSvrState error. write udp4 127.0.0.1:6667: connection refused
+ info: &{2014-09-26 20:56:09.009138221 +0800 CST 127.0.0.1}
+2014/09/26 20:58:07 [E] - [tlog] GameSvrState error. write udp4 127.0.0.1:6667: connection refused
+ info: &{2014-09-26 20:58:07.433952509 +0800 CST 127.0.0.1}
+2014/09/26 20:58:09 [E] - [tlog] GameSvrState error. write udp4 127.0.0.1:6667: connection refused
+ info: &{2014-09-26 20:58:09.010597797 +0800 CST 127.0.0.1}
+2014/09/26 20:58:44 [E] - [tlog] PlayerLogin error. write udp4 127.0.0.1:6667: connection refused
+ info: &{1 2014-09-26 20:58:44.108449296 +0800 CST game_1_app_id 1 _test_id1003022414061086775 4 0 6295  HTML5  WiFi 0 0 0 0  0   }
+2014/09/26 20:58:44 [E] - [tlog] PlayerLogin error. write udp4 127.0.0.1:6667: connection refused
+ info: &{1 2014-09-26 20:58:44.181398665 +0800 CST game_1_app_id 1 _test_id1003022414061086775 4 0 0.98 macos intel xxx wifi 0 0 0.999999111 0 intel 001 1024 opengl 0.1 4.3 mac 10.94}
+2014/09/26 21:00:07 [E] - [tlog] GameSvrState error. write udp4 127.0.0.1:6667: connection refused
+ info: &{2014-09-26 21:00:07.435683106 +0800 CST 127.0.0.1}
+2014/09/26 21:00:09 [E] - [tlog] GameSvrState error. write udp4 127.0.0.1:6667: connection refused
+ info: &{2014-09-26 21:00:09.011519193 +0800 CST 127.0.0.1}
+2014/09/26 21:02:07 [E] - [tlog] GameSvrState error. write udp4 127.0.0.1:6667: connection refused
+ info: &{2014-09-26 21:02:07.437413667 +0800 CST 127.0.0.1}
+2014/09/26 21:02:09 [E] - [tlog] GameSvrState error. write udp4 127.0.0.1:6667: connection refused
+ info: &{2014-09-26 21:02:09.012632416 +0800 CST 127.0.0.1}
+2014/09/26 21:04:07 [E] - [tlog] GameSvrState error. write udp4 127.0.0.1:6667: connection refused
+ info: &{2014-09-26 21:04:07.439172902 +0800 CST 127.0.0.1}
+2014/09/26 21:04:09 [E] - [tlog] GameSvrState error. write udp4 127.0.0.1:6667: connection refused
+ info: &{2014-09-26 21:04:09.014158934 +0800 CST 127.0.0.1}
+2014/09/26 21:06:07 [E] - [tlog] GameSvrState error. write udp4 127.0.0.1:6667: connection refused
+ info: &{2014-09-26 21:06:07.440439161 +0800 CST 127.0.0.1}
+2014/09/26 21:06:09 [E] - [tlog] GameSvrState error. write udp4 127.0.0.1:6667: connection refused
+ info: &{2014-09-26 21:06:09.016344062 +0800 CST 127.0.0.1}
+2014/09/26 21:08:07 [E] - [tlog] GameSvrState error. write udp4 127.0.0.1:6667: connection refused
+ info: &{2014-09-26 21:08:07.441860507 +0800 CST 127.0.0.1}
+2014/09/26 21:08:09 [E] - [tlog] GameSvrState error. write udp4 127.0.0.1:6667: connection refused
+ info: &{2014-09-26 21:08:09.018195668 +0800 CST 127.0.0.1}
+2014/09/26 21:10:07 [E] - [tlog] GameSvrState error. write udp4 127.0.0.1:6667: connection refused
+ info: &{2014-09-26 21:10:07.443422149 +0800 CST 127.0.0.1}
+2014/09/26 21:10:09 [E] - [tlog] GameSvrState error. write udp4 127.0.0.1:6667: connection refused
+ info: &{2014-09-26 21:10:09.020610371 +0800 CST 127.0.0.1}
+2014/09/26 21:12:07 [E] - [tlog] GameSvrState error. write udp4 127.0.0.1:6667: connection refused
+ info: &{2014-09-26 21:12:07.445402147 +0800 CST 127.0.0.1}
+2014/09/26 21:12:09 [E] - [tlog] GameSvrState error. write udp4 127.0.0.1:6667: connection refused
+ info: &{2014-09-26 21:12:09.022262871 +0800 CST 127.0.0.1}
+2014/09/26 21:14:07 [E] - [tlog] GameSvrState error. write udp4 127.0.0.1:6667: connection refused
+ info: &{2014-09-26 21:14:07.447042839 +0800 CST 127.0.0.1}
+2014/09/26 21:14:09 [E] - [tlog] GameSvrState error. write udp4 127.0.0.1:6667: connection refused
+ info: &{2014-09-26 21:14:09.022796638 +0800 CST 127.0.0.1}
+2014/09/26 21:16:07 [E] - [tlog] GameSvrState error. write udp4 127.0.0.1:6667: connection refused
+ info: &{2014-09-26 21:16:07.448149768 +0800 CST 127.0.0.1}
+2014/09/26 21:16:09 [E] - [tlog] GameSvrState error. write udp4 127.0.0.1:6667: connection refused
+ info: &{2014-09-26 21:16:09.024210232 +0800 CST 127.0.0.1}
+2014/09/26 21:18:07 [E] - [tlog] GameSvrState error. write udp4 127.0.0.1:6667: connection refused
+ info: &{2014-09-26 21:18:07.44887808 +0800 CST 127.0.0.1}
+2014/09/26 21:18:09 [E] - [tlog] GameSvrState error. write udp4 127.0.0.1:6667: connection refused
+ info: &{2014-09-26 21:18:09.02661188 +0800 CST 127.0.0.1}
+2014/09/26 21:19:41 [E] - [tlog] PlayerLogout error. write udp4 127.0.0.1:6667: connection refused
+ info: &{1 2014-09-26 21:19:41.882212756 +0800 CST game_1_app_id 1 _test_id1003022414061086775 1257 4 0 6295  HTML5  WiFi 0 0 0 0  0   }
+2014/09/26 21:20:09 [E] - [tlog] GameSvrState error. write udp4 127.0.0.1:6667: connection refused
+ info: &{2014-09-26 21:20:09.029006665 +0800 CST 127.0.0.1}
+2014/09/26 21:21:07 [E] - [tlog] GameSvrState error. write udp4 127.0.0.1:6667: connection refused
+ info: &{2014-09-26 21:21:07.453220003 +0800 CST 127.0.0.1}
+2014/09/26 21:22:09 [E] - [tlog] GameSvrState error. write udp4 127.0.0.1:6667: connection refused
+ info: &{2014-09-26 21:22:09.03121417 +0800 CST 127.0.0.1}
+2014/09/26 21:23:07 [E] - [tlog] GameSvrState error. write udp4 127.0.0.1:6667: connection refused
+ info: &{2014-09-26 21:23:07.45591346 +0800 CST 127.0.0.1}
+2014/09/26 21:24:09 [E] - [tlog] GameSvrState error. write udp4 127.0.0.1:6667: connection refused
+ info: &{2014-09-26 21:24:09.032856751 +0800 CST 127.0.0.1}
+2014/09/26 21:25:07 [E] - [tlog] GameSvrState error. write udp4 127.0.0.1:6667: connection refused
+ info: &{2014-09-26 21:25:07.458942678 +0800 CST 127.0.0.1}
+2014/09/26 21:26:09 [E] - [tlog] GameSvrState error. write udp4 127.0.0.1:6667: connection refused
+ info: &{2014-09-26 21:26:09.033692159 +0800 CST 127.0.0.1}
+2014/09/26 21:27:07 [E] - [tlog] GameSvrState error. write udp4 127.0.0.1:6667: connection refused
+ info: &{2014-09-26 21:27:07.461337942 +0800 CST 127.0.0.1}
+2014/09/26 21:28:09 [E] - [tlog] GameSvrState error. write udp4 127.0.0.1:6667: connection refused
+ info: &{2014-09-26 21:28:09.036861839 +0800 CST 127.0.0.1}
+2014/09/26 21:29:07 [E] - [tlog] GameSvrState error. write udp4 127.0.0.1:6667: connection refused
+ info: &{2014-09-26 21:29:07.46508957 +0800 CST 127.0.0.1}
+2014/09/26 21:30:09 [E] - [tlog] GameSvrState error. write udp4 127.0.0.1:6667: connection refused
+ info: &{2014-09-26 21:30:09.039784519 +0800 CST 127.0.0.1}
+2014/09/26 21:31:07 [E] - [tlog] GameSvrState error. write udp4 127.0.0.1:6667: connection refused
+ info: &{2014-09-26 21:31:07.468054469 +0800 CST 127.0.0.1}
+2014/09/26 21:32:09 [E] - [tlog] GameSvrState error. write udp4 127.0.0.1:6667: connection refused
+ info: &{2014-09-26 21:32:09.042683412 +0800 CST 127.0.0.1}
+2014/09/26 21:33:07 [E] - [tlog] GameSvrState error. write udp4 127.0.0.1:6667: connection refused
+ info: &{2014-09-26 21:33:07.471177725 +0800 CST 127.0.0.1}
+2014/09/26 21:34:09 [E] - [tlog] GameSvrState error. write udp4 127.0.0.1:6667: connection refused
+ info: &{2014-09-26 21:34:09.043222612 +0800 CST 127.0.0.1}
+2014/09/26 21:35:07 [E] - [tlog] GameSvrState error. write udp4 127.0.0.1:6667: connection refused
+ info: &{2014-09-26 21:35:07.472260274 +0800 CST 127.0.0.1}
+2014/09/26 21:36:09 [E] - [tlog] GameSvrState error. write udp4 127.0.0.1:6667: connection refused
+ info: &{2014-09-26 21:36:09.04445558 +0800 CST 127.0.0.1}
+2014/09/26 21:37:07 [E] - [tlog] GameSvrState error. write udp4 127.0.0.1:6667: connection refused
+ info: &{2014-09-26 21:37:07.473659374 +0800 CST 127.0.0.1}
+2014/09/26 21:38:09 [E] - [tlog] GameSvrState error. write udp4 127.0.0.1:6667: connection refused
+ info: &{2014-09-26 21:38:09.045775066 +0800 CST 127.0.0.1}
+2014/09/26 21:39:07 [E] - [tlog] GameSvrState error. write udp4 127.0.0.1:6667: connection refused
+ info: &{2014-09-26 21:39:07.476035656 +0800 CST 127.0.0.1}
+2014/09/26 21:40:09 [E] - [tlog] GameSvrState error. write udp4 127.0.0.1:6667: connection refused
+ info: &{2014-09-26 21:40:09.047738276 +0800 CST 127.0.0.1}
+2014/09/26 21:41:07 [E] - [tlog] GameSvrState error. write udp4 127.0.0.1:6667: connection refused
+ info: &{2014-09-26 21:41:07.477478621 +0800 CST 127.0.0.1}
+2014/09/26 21:42:09 [E] - [tlog] GameSvrState error. write udp4 127.0.0.1:6667: connection refused
+ info: &{2014-09-26 21:42:09.048722937 +0800 CST 127.0.0.1}
+2014/09/26 21:43:07 [E] - [tlog] GameSvrState error. write udp4 127.0.0.1:6667: connection refused
+ info: &{2014-09-26 21:43:07.479938173 +0800 CST 127.0.0.1}
+2014/09/26 21:44:09 [E] - [tlog] GameSvrState error. write udp4 127.0.0.1:6667: connection refused
+ info: &{2014-09-26 21:44:09.050219835 +0800 CST 127.0.0.1}
+2014/09/26 21:45:07 [E] - [tlog] GameSvrState error. write udp4 127.0.0.1:6667: connection refused
+ info: &{2014-09-26 21:45:07.481655407 +0800 CST 127.0.0.1}
+2014/09/26 21:46:09 [E] - [tlog] GameSvrState error. write udp4 127.0.0.1:6667: connection refused
+ info: &{2014-09-26 21:46:09.050808784 +0800 CST 127.0.0.1}
+2014/09/26 21:47:07 [E] - [tlog] GameSvrState error. write udp4 127.0.0.1:6667: connection refused
+ info: &{2014-09-26 21:47:07.482492238 +0800 CST 127.0.0.1}
+2014/09/26 21:48:09 [E] - [tlog] GameSvrState error. write udp4 127.0.0.1:6667: connection refused
+ info: &{2014-09-26 21:48:09.052041792 +0800 CST 127.0.0.1}
+2014/09/26 21:49:07 [E] - [tlog] GameSvrState error. write udp4 127.0.0.1:6667: connection refused
+ info: &{2014-09-26 21:49:07.485018463 +0800 CST 127.0.0.1}
+2014/09/26 21:50:09 [E] - [tlog] GameSvrState error. write udp4 127.0.0.1:6667: connection refused
+ info: &{2014-09-26 21:50:09.053295901 +0800 CST 127.0.0.1}
+2014/09/26 21:51:07 [E] - [tlog] GameSvrState error. write udp4 127.0.0.1:6667: connection refused
+ info: &{2014-09-26 21:51:07.48751873 +0800 CST 127.0.0.1}
+2014/09/26 21:52:09 [E] - [tlog] GameSvrState error. write udp4 127.0.0.1:6667: connection refused
+ info: &{2014-09-26 21:52:09.054449354 +0800 CST 127.0.0.1}
+2014/09/26 21:53:07 [E] - [tlog] GameSvrState error. write udp4 127.0.0.1:6667: connection refused
+ info: &{2014-09-26 21:53:07.488895975 +0800 CST 127.0.0.1}
+2014/09/26 21:54:09 [E] - [tlog] GameSvrState error. write udp4 127.0.0.1:6667: connection refused
+ info: &{2014-09-26 21:54:09.056964234 +0800 CST 127.0.0.1}
+2014/09/26 21:55:07 [E] - [tlog] GameSvrState error. write udp4 127.0.0.1:6667: connection refused
+ info: &{2014-09-26 21:55:07.489877192 +0800 CST 127.0.0.1}
+2014/09/26 21:56:09 [E] - [tlog] GameSvrState error. write udp4 127.0.0.1:6667: connection refused
+ info: &{2014-09-26 21:56:09.05876599 +0800 CST 127.0.0.1}
+2014/09/26 21:57:07 [E] - [tlog] GameSvrState error. write udp4 127.0.0.1:6667: connection refused
+ info: &{2014-09-26 21:57:07.491849565 +0800 CST 127.0.0.1}
+2014/09/26 21:58:09 [E] - [tlog] GameSvrState error. write udp4 127.0.0.1:6667: connection refused
+ info: &{2014-09-26 21:58:09.060436592 +0800 CST 127.0.0.1}
+2014/09/26 21:59:07 [E] - [tlog] GameSvrState error. write udp4 127.0.0.1:6667: connection refused
+ info: &{2014-09-26 21:59:07.494342697 +0800 CST 127.0.0.1}
+2014/09/26 22:00:09 [E] - [tlog] GameSvrState error. write udp4 127.0.0.1:6667: connection refused
+ info: &{2014-09-26 22:00:09.062641182 +0800 CST 127.0.0.1}
+2014/09/26 22:01:07 [E] - [tlog] GameSvrState error. write udp4 127.0.0.1:6667: connection refused
+ info: &{2014-09-26 22:01:07.495882266 +0800 CST 127.0.0.1}
+2014/09/26 22:02:09 [E] - [tlog] GameSvrState error. write udp4 127.0.0.1:6667: connection refused
+ info: &{2014-09-26 22:02:09.063726587 +0800 CST 127.0.0.1}
+2014/09/26 22:03:07 [E] - [tlog] GameSvrState error. write udp4 127.0.0.1:6667: connection refused
+ info: &{2014-09-26 22:03:07.496864706 +0800 CST 127.0.0.1}
+2014/09/26 22:04:09 [E] - [tlog] GameSvrState error. write udp4 127.0.0.1:6667: connection refused
+ info: &{2014-09-26 22:04:09.06577108 +0800 CST 127.0.0.1}
+2014/09/26 22:05:07 [E] - [tlog] GameSvrState error. write udp4 127.0.0.1:6667: connection refused
+ info: &{2014-09-26 22:05:07.499632244 +0800 CST 127.0.0.1}
+2014/09/26 22:06:09 [E] - [tlog] GameSvrState error. write udp4 127.0.0.1:6667: connection refused
+ info: &{2014-09-26 22:06:09.067129338 +0800 CST 127.0.0.1}
+2014/09/26 22:07:07 [E] - [tlog] GameSvrState error. write udp4 127.0.0.1:6667: connection refused
+ info: &{2014-09-26 22:07:07.501104206 +0800 CST 127.0.0.1}
+2014/09/26 22:08:09 [E] - [tlog] GameSvrState error. write udp4 127.0.0.1:6667: connection refused
+ info: &{2014-09-26 22:08:09.070119635 +0800 CST 127.0.0.1}
+2014/09/26 22:09:07 [E] - [tlog] GameSvrState error. write udp4 127.0.0.1:6667: connection refused
+ info: &{2014-09-26 22:09:07.50305603 +0800 CST 127.0.0.1}
+2014/09/26 22:10:09 [E] - [tlog] GameSvrState error. write udp4 127.0.0.1:6667: connection refused
+ info: &{2014-09-26 22:10:09.072266139 +0800 CST 127.0.0.1}
+2014/09/26 22:11:07 [E] - [tlog] GameSvrState error. write udp4 127.0.0.1:6667: connection refused
+ info: &{2014-09-26 22:11:07.504783208 +0800 CST 127.0.0.1}
+2014/09/26 22:12:09 [E] - [tlog] GameSvrState error. write udp4 127.0.0.1:6667: connection refused
+ info: &{2014-09-26 22:12:09.074637885 +0800 CST 127.0.0.1}
+2014/09/26 22:13:07 [E] - [tlog] GameSvrState error. write udp4 127.0.0.1:6667: connection refused
+ info: &{2014-09-26 22:13:07.505909544 +0800 CST 127.0.0.1}
+2014/09/26 22:14:09 [E] - [tlog] GameSvrState error. write udp4 127.0.0.1:6667: connection refused
+ info: &{2014-09-26 22:14:09.075914778 +0800 CST 127.0.0.1}
+2014/09/26 22:15:07 [E] - [tlog] GameSvrState error. write udp4 127.0.0.1:6667: connection refused
+ info: &{2014-09-26 22:15:07.507988468 +0800 CST 127.0.0.1}
+2014/09/26 22:16:09 [E] - [tlog] GameSvrState error. write udp4 127.0.0.1:6667: connection refused
+ info: &{2014-09-26 22:16:09.077385694 +0800 CST 127.0.0.1}
+2014/09/26 22:17:07 [E] - [tlog] GameSvrState error. write udp4 127.0.0.1:6667: connection refused
+ info: &{2014-09-26 22:17:07.509216994 +0800 CST 127.0.0.1}
+2014/09/26 22:18:09 [E] - [tlog] GameSvrState error. write udp4 127.0.0.1:6667: connection refused
+ info: &{2014-09-26 22:18:09.078620098 +0800 CST 127.0.0.1}

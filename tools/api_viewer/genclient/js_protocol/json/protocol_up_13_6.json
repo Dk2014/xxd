@@ -1,0 +1,1 @@
+{"action_name":"get_extend_quest_info_by_npc_id","module_name":"quest","protocol":[{"name":"npc_id","type":"int32"}]}

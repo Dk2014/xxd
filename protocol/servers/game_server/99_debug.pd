@@ -1,0 +1,634 @@
+// debug 模块
+mod debug = 99
+{
+    // 
+    //  添加伙伴
+    // 
+    api add_buddy = 0 {
+      in {
+        role_id : int8
+      }
+      out {}
+    }
+
+    // 
+    //  添加物品
+    // 
+    api add_item = 2 {
+      in {
+          item_id : int16
+          number  : int16
+      }
+      out {}
+    }
+
+    //
+    // 设置角色等级
+    //
+    api set_role_level = 3 {
+      in {
+          role_id : int8
+          level   : int16
+      }
+      out {}
+    }
+
+    // 
+    // 加铜钱
+    // 
+    api set_coins = 4 {
+        in {
+            number : int64
+        }
+        out {}
+    } 
+
+    // 
+    // 加元宝
+    // 
+    api set_ingot = 5 {
+        in {
+            number : int64
+        }
+        out {}
+    }
+
+
+    // 增加魂侍
+    api add_ghost = 11 {
+        in {
+            ghost_id : int16 // 魂侍主键
+        }
+        out {}
+    }
+
+    // 增加体力
+    api set_player_physical = 12 {
+      in {
+        physical: int16
+      }
+      out{}
+    }
+
+    // 重置关卡进入次数
+    api reset_level_enter_count = 13 {
+      in {
+        level_id: int32
+      }
+      out{}
+    }
+
+    // 添加经验
+    api add_exp = 14 {
+      in {
+        role_id  :  int8 
+        add_exp  :  int64
+      }
+      out{}
+    }
+
+    // 开启影界
+    api open_ghost_mission = 15 {
+        in {
+            mission_id : int16
+        }
+        out{}
+    }
+
+    //发邮件
+    api send_mail = 16 {
+      in {
+        mail_id : int32
+      }
+      out{}
+    }
+
+    //清空邮件
+    api clear_mail = 17 {
+      in {}
+      out{}
+    }
+
+    // 开启某关卡
+    api open_mission_level = 18 {
+      in {
+        level_id : int32 // 关卡id
+      }
+      out{}
+    }
+
+    // 开始一场战斗
+    api start_battle = 19 {
+      in {
+        battle_type : int8 
+        enemy_id    : int32
+      }
+      out{}
+    }
+
+    // 用名字添加好友
+    [tag("global")]
+    api listen_by_name = 20 {
+      in {
+          name : string //玩家yonghuming
+      }
+      out {}
+    }
+
+    // 任务开启
+    api open_quest = 21 {
+      in {
+          quest_id : int16 // 任务ID
+      }
+      out {}
+    } 
+
+    // 功能开启
+    api open_func = 22 {
+      in {
+          lock : int16 // 功能权值
+      }
+      out {}
+    } 
+    
+    // 添加剑心
+    api add_sword_soul = 23 {
+        in {
+            sword_soul_id : int16 // 剑心主键id
+        }
+        out {}
+    }
+
+    // 添加灵宠
+    api add_battle_pet = 25 {
+        in {
+            petId : int16 // 灵宠表主见（不是怪物ID)
+        }
+        out {
+        }
+    }
+
+    // 重置多人关卡进入次数
+    api reset_multi_level_enter_count = 26 {
+        in {
+        }
+        out {
+        }
+    
+    }
+
+    // 开启多人关卡
+    api open_multi_level = 27 {
+        in {
+                level_id : int16 // 关卡id
+        }
+        out {
+        }
+    }
+
+
+    // 开启所有灵宠格子
+    api open_all_pet_grid = 28 {
+        in {}
+        out {}
+    }
+
+    // 产生一条公告
+    api create_announcement = 29 {
+        in {
+        }
+        out {
+        }
+    }
+	
+    // 增加爱心
+    api add_heart = 30 {
+        in {
+            number : int16
+        }
+        out {}
+    }
+
+    // 刷新难度关卡进入次数
+    api reset_hard_level_enter_count= 31 {
+        in {}
+        out {}
+    }
+
+    // 开启难度关卡
+    api open_hard_level= 32 {
+        in {
+		      level_id: int32
+	      }
+        out {}
+    }
+
+    // 设置VIP等级
+    api set_vip_level= 33 {
+        in {
+		      level: int16
+	      }
+        out {}
+    }
+
+    // 关卡开放时间设置
+    api set_resource_level_open_day = 34 {
+      in {
+        level_type : int8 // 关卡类别 1 铜钱； 2 经验; 9 伙伴； 10 灵宠； 11 魂侍
+        open_day: int8 // 1~6（星期一~星期六）； 0 -- 星期天
+      }
+
+      out {}
+    }
+
+    // 重置关卡开放时间
+    api reset_resource_level_open_day = 35 {
+      in {
+      
+      }
+
+      out{}
+    }
+    // 重置比武场战斗次数
+    api reset_arena_daily_count= 36 {
+      in {}
+      out{}
+    }
+    // 重置剑山拔剑CD（废弃）
+    api reset_sword_soul_draw_cd= 37 {
+      in {}
+      out{}
+    }
+
+    // 设置首次登录时间
+    api set_first_login_time = 38 {
+      in {
+	timestamp : int64 //首次登录时间
+	}
+      out{}
+	}	
+
+    // 首次登录时间提前回一天
+    api earlier_first_login_time = 39 {
+      in {}
+      out{}
+	}	
+
+    // 重置服务器开服时间
+    api reset_server_open_time =40 {
+      in {}
+      out{}
+	}
+
+    // 清空商人刷新时间
+    api clear_trader_refresh_time =41 {
+      in {
+		trader_id: int16
+	}
+      out{}
+	}
+
+    // 添加商人刷新时间
+    api add_trader_refresh_time =42 {
+      in {
+		trader_id: int16
+		timing: int64
+	}
+      out{}
+	}
+
+	//清空商人出现时间
+    	api clear_trader_schedule=43 {
+      in {
+		trader_id: int16
+	}
+      out{}
+	}
+
+	//添加巡游商人出现时间
+    	api add_trader_schedule=44 {
+      in {
+		trader_id: int16
+		expire: int64
+		showup: int64
+		disappear: int64
+	}
+      out{}
+	}
+
+	//开启城镇
+    	api open_town=45 {
+      in {
+		town_id: int16 //城镇ID
+	}
+      out{}
+	}
+
+	//产生测试全局邮件
+	[tag("global")]
+    	api add_global_mail=46 {
+      		in {
+			send_delay: int64 //X秒后发送一封全局邮件
+			expire_delay: int64 //过期时间0-普通 1-领取附件后删除（不支持无附件邮件）  其他-指定延迟X秒过期
+		}
+      		out{}
+	}
+
+    // 产生没有模版的公告
+    api create_announcement_without_tpl = 47 {
+        in {
+        }
+        out {
+        }
+    }
+
+    // 设置累计登录天数
+    api set_login_day = 48 {
+        in {
+		days : int32
+        }
+        out {
+        }
+    }
+    // 重置七天登录奖励
+    api reset_login_award = 49 {
+        in {
+        }
+        out {
+        }
+    }
+	
+	//重置玩家获奖lock
+	api rest_player_award_lock = 50{
+		in{
+			
+		}
+		out {
+			
+		}
+	}
+
+	//重置彩虹关卡
+	api reset_rainbow_level= 51{
+		in{}
+		out {}
+	}
+
+	//设置彩虹关卡
+	api set_rainbow_level= 52{
+		in{
+			segment : int16
+			order   : int8
+		}
+		out {}
+	}
+	//发送信鸽推送
+	api send_push_notification= 53{
+		in{
+		}
+		out {}
+	}
+	// 刷新灵宠pve使用次数
+	api reset_pet_virtual_env= 54{
+		in{
+		}
+		out {}
+	}
+
+	// 增加声望
+	api add_fame = 55 {
+		in {	
+			system:  int16 //游戏系统类型（常量见 fame_system表）
+			val: int //增加声望
+		}
+		out{}
+	}
+	
+	//发送世界聊天（全局）
+	api add_world_chat_message = 56 {
+		in {
+			num: int16 /发送数量	
+		}
+		out{}
+	}
+
+  //月卡用户
+  api month_card = 57{
+    in{
+    }
+    out{}
+  }
+
+  	//开启沙盒模式
+  	api enter_sandbox= 58{
+    		in{}
+    		out{}
+  	}
+	
+	//沙盒回滚
+	api sandbox_rollback = 59 {
+		in {}
+		out {}
+	}
+	//退出沙盒
+	api exit_sandbox= 60 {
+		in{}
+		out {}
+	}
+
+	//影之间隙数据重置
+	api reset_shaded_missions = 61 {
+		in {
+			level_id: int32 // 关卡ID
+		}
+		out {}
+	}
+	//清除玩家聚宝盆数据
+	api clean_cornucopia = 62 {
+		in {}
+		out {}
+	}
+	//获取阵印
+	api add_totem= 63 {
+		in {
+			totem_id : int16 //阵印ID
+		}
+		out {}
+	}
+	//增加符文
+	api add_rune= 64 {
+		in {
+			jade_num : int32 //玉符文
+			rock_num : int32 //石符文
+		}
+		out {}
+	}
+
+	api send_rare_item_message = 65 {
+		in{}
+		out{}
+	}
+
+	//送剑气
+	api add_sword_driving_action = 66 {
+		in {
+			point: int16 // 剑气点
+		}
+		out {}
+	}
+
+	//重置云海御剑
+	api reset_driving_sword_data = 67 {
+		in {
+			cloud: int16
+		}
+		out {}
+	}
+
+  //增加剑心碎片
+  api add_sword_soul_fragment = 68 {
+    in {
+      number : int64
+    }
+    out {}
+  }
+
+  //摇钱树重置
+  api reset_money_tree_status = 69 {
+    in {}
+    out {}
+  }
+
+  //重置当天摇钱次数
+  api reset_today_money_tree = 70 {
+    in {}
+    out {}
+  }
+
+  //元宝拔剑次数清零
+  api clean_sword_soul_ingot_draw_nums = 71 {
+    in {}
+    out {}
+  }
+
+	//云海御剑自动开图
+	api punch_driving_sword_cloud = 72 {
+		in {}
+		out {}
+	}
+
+	//帮派每日捐先清零(互动)
+	[tag("global")]
+	api clear_clique_daily_donate= 73 {
+		in {}
+		out {}
+	}
+
+	//帮派增加贡献(互动)
+	[tag("global")]
+	api set_clique_contrib= 74 {
+		in {
+			contrib : int64 //帮派贡献
+		}
+		out {}
+	}
+
+	//帮派刷新上香次数(互动)
+	[tag("global")]
+	api refresh_clique_worship = 75 {
+		in {}
+		out {}
+	}
+
+	//帮派劫镖胜利(互动)
+	[tag("global")]
+	api clique_escort_hijack_battle_win = 76 {
+		in {
+			boat_id : int64//船只ID
+		}
+		out {}
+	}
+	//帮派夺回胜利(互动)
+	[tag("global")]
+	api clique_escort_recover_battle_win = 77 {
+		in {
+			boat_id : int64//船只ID
+		}
+		out {}
+	}
+	//帮派动态模拟数据(互动)
+	[tag("global")]
+	api clique_escort_notify_message = 87 {
+		in {
+		}
+		out {}
+	}
+
+  //刷新帮派每日任务(互动)
+  [tag("global")]
+  api clique_escort_notify_daily_quest = 88 {
+    in {
+    }
+    out {}
+  }
+
+  //设置帮派建筑等级
+  [tag("global")]
+  api set_clique_building_level = 89 {
+    in {
+			building : int32 //建筑ID
+			level: int16 //等级
+    }
+    out {}
+  }
+  //设置帮派建筑金钱
+  [tag("global")]
+  api set_clique_building_money = 90 {
+    in {
+			building : int32 //建筑ID
+			money: int64 //金钱
+    }
+    out {}
+  }
+  //一件全体运镖
+  [tag("global")]
+  api escort_bench = 91 {
+    in {}
+    out {}
+  }
+    // 重置运镖和劫持次数
+    api reset_clique_escort_daily_num =  92 {
+        in {
+        }
+        out {
+        }
+    }
+	//领取某个系列的第一个任务
+	api take_addition_quest = 93 {
+		in {
+			first_quest_id : int32 //系列第一个任务ID, 0 则清理所有孤立支线任务
+		}
+		out{
+			msg : string //操作说明
+		}
+	}
+    // 设置所有副本评星为max
+    api set_mission_star_max =  94 {
+        in {
+        }
+        out {
+        }
+    }
+	//帮派钱庄快速cd（互动服）
+  	[tag("global")]
+	api clique_bank_cd = 95 {
+		in{}
+		out{}
+	}
+
+	//清理元宝信息
+	api clean_recharge_info = 96 {
+		in{}
+		out{}
+	}
+}

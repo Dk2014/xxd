@@ -1,0 +1,52 @@
+// 每日签到
+mod daily_sign_in = 22
+{
+
+	type award_type enum {
+		NEW_PLAYER_AWARD= 0 	// 新手奖励
+		REGULAR_AWARD= 1 	// 常规奖励
+	}
+
+	//
+	// 获取签到信息
+	//
+	api info = 1 {
+		in {}
+		out {
+			index	: int8	//今日信息index [0, x)
+			records : list {
+				award_type	: award_type //奖励类型
+				award_index	: int8 //奖励索引
+				signed		: bool	//是否已签到
+			}
+		}
+	}
+
+	//
+	// 签到
+	//
+	api sign = 2 {
+		in  {}
+		out {
+			expired : bool	//签到的日期是否已过期
+			index	: int8	//今日信息index
+			records : list {
+				award_type	: award_type //奖励类型
+				award_index	: int8 //奖励索引
+				signed		: bool	//是否已签到
+			}
+		}
+	}
+
+	//
+	// 补签
+	// 
+	api sign_past_day = 3 {
+		in  {
+			index	: int8	//签到日期索引
+		}
+		out  {
+			expired : bool	//签到的日期是否已过期
+		}
+	}
+}

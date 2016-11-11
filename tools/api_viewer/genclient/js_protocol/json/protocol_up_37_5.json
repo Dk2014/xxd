@@ -1,0 +1,1 @@
+{"action_name":"despair_land_watch_record","module_name":"despair_land","protocol":[{"name":"record_type","type":"enum8"},{"name":"camp_type","type":"enum8"},{"name":"level_id","type":"int32"}]}

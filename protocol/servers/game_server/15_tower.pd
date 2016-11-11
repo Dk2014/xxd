@@ -1,0 +1,27 @@
+//
+// 极限关卡-通天塔 接口
+//
+mod tower = 15
+{
+	// 获得玩家当前通天塔信息
+	api get_info = 1 {
+		in{}
+		out{
+			floor_num: int16 // 当前所在层
+			friends : list {
+				role_id         : int8          // 玩家角色ID
+				nickname        : string        // 玩家昵称
+				level           : int16         // 玩家等级
+				floor   	 	: int16 		// 玩家所在楼层(0表示玩家还未开启通天塔)
+			}
+		}
+	}
+
+	// 使用纵云梯
+	api use_ladder = 2 {
+		in {}
+		out{
+			floor_num: int16 // 最终层数
+		}
+	}
+}

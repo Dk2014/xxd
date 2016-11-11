@@ -1,0 +1,1 @@
+{"action_name":"get_event_new_year","module_name":"event","protocol":[{"name":"processes","type":"list8","fields":[{"name":"day","type":"int8"},{"name":"ingot","type":"int32"},{"name":"is_awarded","type":"bool"}]}]}

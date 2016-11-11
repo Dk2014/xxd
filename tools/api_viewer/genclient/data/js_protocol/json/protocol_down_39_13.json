@@ -1,0 +1,1 @@
+{"action_name":"product_make_queue","module_name":"taoyuan","protocol":[{"name":"skill_id","type":"int16"},{"name":"queue","type":"list8","fields":[{"name":"queue_id","type":"int16"},{"name":"item_id","type":"int16"},{"name":"product_type","type":"int8"},{"name":"start_time","type":"int64"},{"name":"end_time","type":"int64"}]}]}

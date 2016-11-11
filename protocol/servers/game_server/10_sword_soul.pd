@@ -1,0 +1,162 @@
+//
+// 剑心通讯接口
+//
+mod sword_soul = 10
+{
+    // 拔剑类型
+    type draw_type enum {
+        COIN  = 0  // 普通拔剑，使用铜钱
+        INGOT = 1  // 元宝拔剑
+    }
+    
+    // 角色剑心装备位    
+    type equip_pos enum {
+        POS1 = 0
+        POS2 = 1
+        POS3 = 2
+        POS4 = 3
+        POS5 = 4
+        POS6 = 5
+        POS7 = 6
+        POS8 = 7
+        POS9 = 8
+        NUM  = 9
+    }
+	
+	// 剑箱标记
+	type box enum {
+		A = 0
+		B = 1
+		C = 2
+		D = 3
+		E = 4
+	}
+	
+    // 获取剑心信息
+    api info = 0 {
+        in {}
+        out {
+            sword_souls : list {
+                id            : int64  // 用户剑心主键
+                sword_soul_id : int16  // 剑心模板id
+                exp           : int32  // 剑心经验
+                level         : int8   // 剑心等级
+            }
+            role_equip : list {
+                role_id : int8   // 角色id
+                pos1_id : int64  // 装备位置1上的剑心
+                pos2_id : int64  // 装备位置2上的剑心
+                pos3_id : int64  // 装备位置3上的剑心
+                pos4_id : int64  // 装备位置4上的剑心
+                pos5_id : int64  // 装备位置5上的剑心
+                pos6_id : int64  // 装备位置6上的剑心
+                pos7_id : int64  // 装备位置7上的剑心
+                pos8_id : int64  // 装备位置8上的剑心
+                pos9_id : int64  // 装备位置9上的剑心
+            }
+            box_state : int8   // 拔剑箱子状态
+            num       : int16   // 当日还剩的拔剑次数
+            ingot_num : int64  // 当天元宝拔剑次数
+            cd_time   : int64  // 下次拔剑次数恢复时间 
+        }
+    }
+
+    // 拔剑
+    api draw = 1 {
+        in {
+            box       : box        // 箱子位置标识
+            draw_type : draw_type  // 是否为元宝拔剑
+        }
+        out {
+            id            : int64  // 用户剑心主键
+            sword_soul_id : int16  // 开出的剑心
+            coins         : int64  // 如果没有拔到剑心，奖励的铜钱
+            box_state     : int8   // 箱子状态
+            fragments     : int64  // 开出的碎片个数
+        }
+    }
+
+    // 升级
+    api upgrade  = 2 {
+        in {
+			target_id : int64 // 用户剑心主键
+			sword_souls : list { // 材料
+                id : int64  // 用户剑心主键
+            }
+        }
+        out {
+            id            : int64  // 用户剑心主键
+            sword_soul_id : int16  // 剑心模板ID
+            exp           : int32  // 剑心经验
+            level         : int8   // 剑心等级
+        }
+    }
+    
+    // 兑换
+    api exchange = 3 {
+        in {
+            sword_soul_id : int16          // 兑换目标剑心模板ID
+        }
+        out {
+            id  : int64  // 用户剑心主键
+        }
+    }
+
+    // 装备剑心，从背包移动到空装备位
+    api equip = 4 {
+        in {
+            from_id   : int64      // 用户剑心id
+            role_id   : int8       // 角色id
+            equip_pos : equip_pos  // 剑心装备位置
+        }
+        out {}
+    }
+    
+    
+    // 卸下剑心
+    api unequip = 5 {
+        in {
+            role_id : int8   // 角色id
+            from_id : int64  // 用户剑心id
+        }
+        out {}
+    }
+
+    // 装备中的剑心，移动到其他空装备位
+    api equip_pos_change = 6 {
+        in {
+            role_id : int8       // 角色id
+            from_id : int64      // 用户剑心id
+            to_pos  : equip_pos  // 剑心装备位置
+        }
+        out {}
+    }
+
+    
+    
+    // 剑心已装备位置互换
+    api swap = 8 {
+        in {
+            role_id : int8   // 角色id
+            from_id : int64  // 发起用户剑心id
+            to_id   : int64  // 目标用户剑心id
+        }
+        out {}
+    }
+	
+	// 剑心背包是否已满
+	api is_bag_full = 9 {
+		in {}
+        out {
+            is_full : bool  // 背包是否已满
+        }
+	}
+	
+	// 剑心背包剩余空位
+	api empty_pos_num = 10 {
+		in {}
+		out {
+			empty_pos_num : int16 // 背包空位数量
+		}
+	}
+}

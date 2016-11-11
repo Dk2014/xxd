@@ -1,0 +1,247 @@
+//
+// 帮派送镖(互动)
+//
+mod clique_escort = 36
+{
+	type boat_status_change enum {
+		MY_BOAT_HIJACKING =0 //我的镖船开始被劫持
+		MY_BOAT_HIJACKED  = 1//我的镖船被劫持完成
+		MY_BOAT_RECOVERED = 2//我的镖船被夺回
+		HIJACKED_BOAT_RECOVERED  = 3//我劫持的镖船被夺回
+		ESCORT_FINISHED = 4//我的镖船运送完成
+		HIJACK_FINISHED = 5 //我劫持的镖船劫持完成
+	}
+	type recover_battle_win_result enum {
+		SUCCESS = 0 //成功
+		BOAT_EXPIRE = 1 //船只不在可夺回状态 
+		NO_PERMISSION = 2 //只有和被劫持船只处于统一帮派才能夺回
+	}
+
+	type hijack_battle_win_result enum {
+		SUCCESS = 0 //成功
+		ESCORT_FINISHED = 1 //镖船已经完成运送
+		HIJACKED = 2 //镖船已被其他人劫持 
+		NO_PERMISSION = 3 //只有和被劫持船只处于统一帮派才能夺回
+	}
+
+	type start_escort_result enum {
+		SUCCESS = 0 //运送成功
+		ILLEGAL_TIME = 1 //不在运镖时间
+		ESCORT_NOT_END = 2 //运镖尚未结束
+		NO_CLIQUE = 3 //没有帮派
+		RUN_OUT = 4 //没有次数
+		NO_BOAT = 5 //没有船只
+	}
+
+	type hijack_boat_result enum {
+		START_BATTLE = 0 //马上开始战斗
+		CLIQUE_MEMBER= 1 //不能抢劫本帮的船
+		HIJACK_NOT_END = 2 //劫持中
+		NO_CLIQUE = 3 //没有帮派
+		RUN_OUT = 4 //没有次数
+		NO_BOAT = 5 //找不到船
+		CAN_NOT_HIJACK = 6 //不在可劫持状态
+	}
+
+	type recover_boat_result enum {
+		START_BATTLE = 0 //马上开始战斗
+		NO_PERMISSION= 1 //不是船主或同帮派成员
+		RECOVERING= 2 //其他人在夺回战斗中
+		NO_BOAT= 3 //找不到船
+		CAN_NOT_RECOVER= 4 //不在可夺回的状态
+	}
+
+	//玩家运送状态
+	type escort_status enum {
+		NONE = 0 //没有运送
+		ESCORT = 1 //运送中（包括船被劫持中、夺回中等状态）
+		FINISHED= 2 //运送完成
+	}
+
+	//镖船状态
+	type boat_status enum {
+		ESCORT = 0 //运送中
+		HIJACK= 1 //劫持中
+		RECOVER= 2 //夺回中
+		HIJACK_FINISH= 3 //劫持完成
+	}
+
+	//玩家劫持状态
+	type hijack_status enum {
+		NONE = 0 //没有劫持
+		HIJACK= 1 //劫持中
+		FINISHED= 2 //劫持完成
+	}
+
+	//镖船消息
+	type clique_boat_message struct {
+		id: int64 //ID
+		tpl_id: int16 //模版ID
+		parameters: string //参数模版
+	}
+
+	//镖船
+	type clique_boat struct {
+		boat_id : int64 //镖船 ID
+		boat_type : int16 //镖船类型
+		status: boat_status //镖船状态
+		escort_time : int64 //已运送时间(当镖船被劫持过或劫持中，运送时间会被分割为2部分这里记录曾经运送过的时间)
+		start_timestamp : int64 //最近一次开始运送时间戳
+		owner_pid : int64 //拥有者pid
+		owner_nick : string //拥有者昵称
+		owner_level : int16 //拥有者等级
+		hijacker_nick : string //劫持者昵称
+		hijacker_pid : int64 //劫持者pid
+		clique_id : int64 //帮派ID（无帮派则为空)
+		clique_name : string //帮派名（无帮派为空）
+		hijack_start_timestamp: int64 //抢劫开始时间
+	}
+
+	//运镖信息
+	api escort_info = 0 {
+		in {}
+		out {
+			daily_escort_num : int16 //今日运镖次数
+			daily_hijack_num : int16 //今日劫镖次数
+			escort_status :  escort_status //送镖状态
+			hijack_status : hijack_status //劫镖状态
+			boat_type : int16 //镖船类型
+		}
+	}
+
+	//使用元宝获得获得宝船
+	api get_ingot_boat= 1 {
+		in {}
+		out {
+			ok : bool //操作成功
+		}
+	}
+
+	//运送镖船
+	api start_escort= 2 {
+		in {}
+		out {
+			result : start_escort_result //操作结果
+			boat : clique_boat //镖船
+		}
+	}
+
+	//劫持镖船
+	api hijack_boat = 3 {
+		in {
+			boat_id : int64 //镖船ID
+		}
+		out {
+			result : hijack_boat_result // 结果
+			boat_id : int64 //镖船ID
+			boat_owner_pid : int64 //船主ID
+			boat_owner_nick : string //船主昵称
+		}
+	}
+
+	//夺回镖船
+	api recover_boat = 4 {
+		in {
+			boat_id : int64 //镖船ID
+		}
+		out {
+			boat_id : int64 //镖船ID
+			result : recover_boat_result // 结果
+			hijacker_pid : int64 //劫船者PID
+			hijacker_nick : string //劫持者昵称
+		}
+	}
+
+	//获取标船列表
+	api list_boats = 5 {
+		in {}
+		out {
+			boats : list {
+				boat : clique_boat //标船
+			}
+		}
+	}
+
+	//获取随机镖船列
+	api get_random_boat = 6 {
+		in {}
+		out {
+			boat_type : int16 //标船类型
+		}
+	}
+
+	//运送完成
+	api notify_escort_finished = 7 {
+		out {}
+	}
+	//劫持完成
+	api notify_hijack_finished = 8 {
+		out {}
+	}
+
+	//夺回战斗胜利
+	api notify_recover_battle_win = 9 {
+		out {
+			boat_id : int64 //船ID
+			result : recover_battle_win_result //夺回结果（战斗失败不会有任何通知）
+			owner_nick : string //船主昵称
+		}
+	}
+	//劫持战斗胜利
+	api notify_hijack_battle_win = 10 {
+		out {
+			boat_id : int64 //船ID
+			result : hijack_battle_win_result //劫持结果（战斗失败不会有任何通知）
+			owner_nick : string //船主昵称
+		}
+	}
+
+	//劫持奖励
+	api take_hijack_award= 11 {
+		in {}
+		out {
+			ok : bool //操作成功
+		}
+	}
+
+	//送镖奖励
+	api take_escort_award= 12 {
+		in {}
+		out {
+			ok : bool //操作成功
+		}
+	}
+
+	//获取最近最新帮派信息
+	[tag("global")]
+	api get_clique_boat_messages = 13 {
+		in {}	
+		out {
+			messages : list {
+				message : clique_boat_message //消息
+			}
+		}
+	}
+
+	//推送帮派频道信息
+	api send_clique_boat_message = 14 {
+		out {	
+			message : clique_boat_message //消息
+		}
+	}
+
+	//确认阅读
+	api read_clique_boat_message = 15 {
+		in{	
+			id : int64 //消息ID
+		}
+		out{}
+	}
+	//镖船动态变化
+	api notify_boat_status_change = 16 {
+		out{
+			boat: clique_boat //镖船
+			change : boat_status_change //镖船状态变化
+		}
+	}
+}
